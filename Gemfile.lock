@@ -19,8 +19,8 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: c74963949bd7a1dcb860831302ba0261339e2485
-  branch: patch-participations
+  revision: a2a4eb1f5f10ee0a3d7ec6788830bfa12c342633
+  branch: develop
   specs:
     decidim (0.9.0.pre)
       decidim-accountability (= 0.9.0.pre)
@@ -36,6 +36,12 @@ GIT
       decidim-surveys (= 0.9.0.pre)
       decidim-system (= 0.9.0.pre)
       decidim-verifications (= 0.9.0.pre)
+
+GIT
+  remote: https://github.com/OpenSourcePolitics/decidim.git
+  revision: c74963949bd7a1dcb860831302ba0261339e2485
+  branch: patch-participations
+  specs:
     decidim-accountability (0.9.0.pre)
       decidim-comments (= 0.9.0.pre)
       decidim-core (= 0.9.0.pre)
