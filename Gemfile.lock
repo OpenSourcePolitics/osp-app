@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-participations.git
-  revision: 0b474c164e65c5e333ac4dee7e2b0cd72447fbf5
+  revision: d0fa15e41cb43930efa25f4365889e6ce5a4f52d
   branch: develop
   specs:
     decidim-participations (0.9.0.pre)
@@ -536,7 +536,7 @@ GEM
       rspec-expectations (~> 3.7.0)
       rspec-mocks (~> 3.7.0)
       rspec-support (~> 3.7.0)
-    rspec-support (3.7.0)
+    rspec-support (3.7.1)
     rubocop (0.51.0)
       parallel (~> 1.10)
       parser (>= 2.3.3.1, < 3.0)
