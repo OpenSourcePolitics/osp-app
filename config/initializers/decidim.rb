@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 Decidim.configure do |config|
-  config.application_name = "OSP Agora"
-  config.mailer_sender = "mako@osp.cat"
+  config.application_name = "Plateforme Citoyenne MEL"
+  config.mailer_sender = "Plateforme Citoyenne MEL <ne-pas-repondre@opensourcepolitics.eu>"
 
   # Change these lines to set your preferred locales
   config.default_locale = :en
@@ -40,7 +40,7 @@ Decidim.configure do |config|
   # that an organization's administrator injects malicious scripts to spy on or
   # take over user accounts.
   #
-  config.enable_html_header_snippets = false
+  config.enable_html_header_snippets = true
 
   if ENV["HEROKU_APP_NAME"].present?
     config.base_uploads_path = ENV["HEROKU_APP_NAME"] + "/"
