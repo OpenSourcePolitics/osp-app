@@ -22,7 +22,6 @@ Decidim.configure do |config|
     Decidim::Initiatives.do_not_require_authorization = true
   end
 
-
   # Custom resource reference generator method
   # config.resource_reference_generator = lambda do |resource, feature|
   #   # Implement your custom method to generate resources references
