@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-participations.git
-  revision: d0fa15e41cb43930efa25f4365889e6ce5a4f52d
+  revision: cdd8449bd81b78ff7ba7016f2d69c8c7fbcd1c79
   branch: develop
   specs:
     decidim-participations (0.9.0.pre)
@@ -19,7 +19,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 95902f14357b42e72c75a106b6b9ff5ec875408d
+  revision: ffffbfaf43e84e02b6b14aa4fad4da16590df793
   specs:
     decidim (0.9.0.pre)
       decidim-accountability (= 0.9.0.pre)
@@ -401,7 +401,7 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.0.0)
     mustermann (1.0.1)
-    newrelic_rpm (4.7.1.340)
+    newrelic_rpm (4.8.0.341)
     nio4r (2.2.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
@@ -453,7 +453,7 @@ GEM
       premailer (~> 1.7, >= 1.7.9)
     public_suffix (3.0.1)
     puma (3.11.2)
-    rack (2.0.3)
+    rack (2.0.4)
     rack-cors (1.0.2)
     rack-protection (2.0.0)
       rack
@@ -571,7 +571,7 @@ GEM
     sendgrid-ruby (5.2.0)
       ruby_http_client (~> 3.2)
       sinatra (>= 1.4.7, < 3)
-    sentry-raven (2.7.1)
+    sentry-raven (2.7.2)
       faraday (>= 0.7.6, < 1.0)
     sidekiq (5.0.5)
       concurrent-ruby (~> 1.0)
