@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
 Decidim.configure do |config|
-  config.application_name = "OSP Agora"
-  config.mailer_sender = "mako@osp.cat"
+  config.application_name = "Plateforme de consultation citoyenne fédérale"
+  config.mailer_sender = "Plateforme de consultation citoyenne <ne-pas-repondre@opensourcepolitics>"
+  config.authorization_handlers = []
 
   # Change these lines to set your preferred locales
-  config.default_locale = :fr
-  config.available_locales = [:en, :fr]
+  config.default_locale = :en
+  config.available_locales = [:en, :ca, :es, :fr, :nl]
 
   # Geocoder configuration
   # config.geocoder = {

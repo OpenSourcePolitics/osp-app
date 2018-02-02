@@ -1,0 +1,34 @@
+---
+fr:
+  decidim:
+    features:
+      polis:
+        name: Conversation Pol.is
+        settings:
+          global:
+            title: Titre
+            description: Description
+            visualization: Désactiver la visualisation (si vous cochez ce paramètre lors de la création de votre conversation, il ne sera plus modifiable par la suite. Pour le modifier il faudra vous rendre dans l'admin de Pol.is)
+            sign_in_social: Activer la connexion via les réseaux sociaux (si vous cochez ce paramètre lors de la création de votre conversation, il ne sera plus modifiable par la suite. Pour le modifier il faudra vous rendre dans l'admin de Pol.is)
+          step:
+            user_can_write: Activer les commentaires
+            user_can_vote: Activer les votes
+        views:
+          titre_message: Participer au débat
+          texte_message_1: Pour participer au débat
+          lien_message_1: connectez vous avec votre compte
+          texte_message_2: ou
+          lien_message_2: inscrivez vous
+          titre_help_1: Comment ça marche ?
+          titre_help_2: Bienvenue sur un nouveau type de discussion.
+          help_1: Votez sur les opinions des autres.
+          help_2: Exprimez la vôtre.
+          help_3: À partir de 7 votants vous pouvez observer des groupes d'opinion se former.
+          help_4: Tentez de faire émerger un consensus en proposant de nouveaux points de vue (Les groupe d'opinion évoluent en temps réel).
+          moder: "Modération :"
+          donnée: "Données :"
+          admin_1: Commentaires
+          admin_2: Participants
+          admin_3: Statistiques
+          admin_4: Export
+          admin_5: Synthèse

@@ -6,6 +6,8 @@ ruby RUBY_VERSION
 
 gem "decidim", git: "https://github.com/decidim/decidim.git", branch: "0.8-stable"
 
+gem "decidim-polis", path: "decidim-polis"
+
 gem "decidim-export", git: "https://github.com/OpenSourcePolitics/decidim-user-export.git"
 
 # Uncomment the following line if you want to use decidim-assemblies plugin

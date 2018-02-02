@@ -1,0 +1,34 @@
+---
+en:
+  decidim:
+    features:
+      polis:
+        name: Pol.is debate
+        settings:
+          global:
+            title: Title
+            description: Description
+            visualization: Disable visualization (if you check this parameter during the creation of your conversation, it will not be modifiable later.To change it you must go to the Pol.is admin)
+            sign_in_social: Activate the connection via social networks (if you check this parameter when creating your conversation, it will not be modifiable thereafter. To change it you will have to go in the Pol.is admin)
+          step:
+            user_can_write: Enable comments
+            user_can_vote: Enable votes
+        views:
+          titre_message: Participate in the debate
+          texte_message_1: To participate in the debate
+          lien_message_1: login with your account
+          texte_message_2: or
+          lien_message_2: register
+          titre_help_1: How does it works ?
+          titre_help_2: Welcome to a new type of discussion.
+          help_1: Vote on the opinions of others.
+          help_2: Express yours
+          help_3: From 7 voters you can observe groups of opinion forming.
+          help_4: Try to bring consensus by proposing new points of view (The opinion groups evolve in real time).
+          moder: "Moderation:"
+          donnée: "Data:"
+          admin_1: Comments
+          admin_2: Participants
+          admin_3: Statistics
+          admin_4: Export
+          admin_5: Summary

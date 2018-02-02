@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180110203201) do
+ActiveRecord::Schema.define(version: 20180202222152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,33 +54,6 @@ ActiveRecord::Schema.define(version: 20180110203201) do
     t.datetime "updated_at", null: false
     t.index ["decidim_accountability_result_id"], name: "index_decidim_accountability_timeline_entries_on_results_id"
     t.index ["entry_date"], name: "index_decidim_accountability_timeline_entries_on_entry_date"
-  end
-
-  create_table "decidim_assemblies", id: :serial, force: :cascade do |t|
-    t.string "slug", null: false
-    t.string "hashtag"
-    t.integer "decidim_organization_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.jsonb "title", null: false
-    t.jsonb "subtitle", null: false
-    t.jsonb "short_description", null: false
-    t.jsonb "description", null: false
-    t.string "hero_image"
-    t.string "banner_image"
-    t.boolean "promoted", default: false
-    t.datetime "published_at"
-    t.jsonb "developer_group"
-    t.jsonb "meta_scope"
-    t.jsonb "local_area"
-    t.jsonb "target"
-    t.jsonb "participatory_scope"
-    t.jsonb "participatory_structure"
-    t.boolean "show_statistics", default: false
-    t.integer "decidim_scope_id"
-    t.boolean "scopes_enabled", default: true, null: false
-    t.index ["decidim_organization_id", "slug"], name: "index_unique_assembly_slug_and_organization", unique: true
-    t.index ["decidim_organization_id"], name: "index_decidim_assemblies_on_decidim_organization_id"
   end
 
   create_table "decidim_attachments", id: :serial, force: :cascade do |t|
@@ -323,14 +296,6 @@ ActiveRecord::Schema.define(version: 20180110203201) do
     t.index ["decidim_reportable_type", "decidim_reportable_id"], name: "decidim_moderations_reportable", unique: true
     t.index ["hidden_at"], name: "decidim_moderations_hidden_at"
     t.index ["report_count"], name: "decidim_moderations_report_count"
-  end
-
-  create_table "decidim_navbar_links", force: :cascade do |t|
-    t.bigint "decidim_organization_id"
-    t.jsonb "title"
-    t.string "link"
-    t.string "target"
-    t.index ["decidim_organization_id"], name: "index_decidim_navbar_links_on_decidim_organization_id"
   end
 
   create_table "decidim_newsletters", id: :serial, force: :cascade do |t|

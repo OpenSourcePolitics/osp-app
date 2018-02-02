@@ -1,0 +1,53 @@
+.links-container{
+  display: flex;
+  border: 1px solid #E8E8E8;
+  border-radius: 4px;
+  padding: 10px;
+  background-color: #fff;
+  .h-link{
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    font-weight: 600;
+    line-height: 27px;
+  }
+  li{
+    list-style-type: none;
+    margin-bottom: 10px;
+  }
+  .label{
+    height: 30px;
+    line-height: 18px;
+    font-size: 17px;
+  }
+}
+.flex{
+  display: flex;
+}
+.appendAdminLink{
+	display: inline;
+}
+
+.admin-btn{
+	color: #ef604d;
+	font-size: 18px;
+  &:hover{
+    opacity: 0.6;
+    color: #ef604d;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .appendAdminLink{
+    margin-left: 50px;
+  }
+
+  .mgn{
+    margin-top: 25px;
+  }
+
+  .links-container{
+    flex-direction: column;
+    .label{
+      margin-bottom: 25px;
+    }
+  }
+}

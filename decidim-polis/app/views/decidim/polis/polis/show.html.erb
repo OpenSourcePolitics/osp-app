@@ -1,0 +1,169 @@
+<div class="row">
+  <div class="columns smallmedium-12 mediumlarge-8">
+    <% if (@moderator || @admin) %>
+      <!-- pol.is admin buttons section -->
+      <div class="container links-container row" style="margin-left: 0px; margin-right: 0px;">
+        <div class="columns mediumlarge-2 flex mgn">
+          <span class="label">
+            Admin Pol.is</span>
+        </div>
+        <div class="columns mediumlarge-5 flex">
+          <p class="h-link">
+            <%= t('decidim.features.polis.views.moder') %>
+            <ul class="appendModerateLink"></ul>
+          </p>
+        </div>
+        <% if @admin %>
+          <div class="columns mediumlarge-5 flex">
+            <p class="h-link">
+              <%= t('decidim.features.polis.views.donnée') %>
+              <ul class="appendAdminLink "></ul>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <!-- end -->
+    <br/>
+    <!-- title and description section -->
+    <div class="section">
+      <div>
+        <h2>
+          <%= translated_attribute @settings.title %>
+        </h2>
+        <p><%= translated_attribute(@settings.description).html_safe %></p>
+      </div>
+    </div>
+    <!-- end -->
+    <!-- pol.is embed section -->
+    <div class="section">
+      <% if user_signed_in? %>
+        <div
+          class='polis column'
+          data-page_id="<%= @page_id %>"
+          data-site_id="<%= @site_id %>"
+          data-ucw="<%= @ucw %>"
+          data-ucv="<%= @ucv %>"
+          data-show_vis="<%= @show_vis %>"
+          data-border="none"
+          data-topic="<%= translated_attribute @settings.title %>"
+          data-ucst="false"
+          data-auth_opt_allow_3rdparty="<%= @sign_in_social %>"
+          data-auth_opt_fb="<%= @sign_in_social %>"
+          data-auth_opt_tw="<%= @sign_in_social %>"
+          data-ucsh="false"
+          data-ucsf="0"
+          data-ui_lang="<%= @langue %>"
+          data-auth_needed_to_write="<%= @sign_in_social %>"
+          data-xid="<%= current_user.id %>"
+          data-x_name="<%= current_user.name %>"
+          data-x_profile_image_url="https://<%= current_organization.host %><%= current_user.avatar %>"
+          style="padding-left:0px;padding-right:0px;"></div>
+        <script async='true' src='https://pol.is/embed.js'></script>
+      <% else %>
+
+        <div class="well">
+          <div class="add-comment">
+            <h5 class="section-heading"><%= t('decidim.features.polis.views.titre_message') %></h5>
+            <p><%= t('decidim.features.polis.views.texte_message_1') %>
+              <a href="/users/sign_in"><%= t('decidim.features.polis.views.lien_message_1') %></a>
+              <%= t('decidim.features.polis.views.texte_message_2') %>
+              <a href="/users/sign_up"><%= t('decidim.features.polis.views.lien_message_2') %></a>
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="polis"
+          data-page_id="<%= @page_id %>"
+          data-site_id="<%= @site_id %>"
+          data-ucw="false"
+          data-ucv="false"
+          data-ucst="false"
+          data-show_vis="true"
+          data-ucsv="true"
+          data-ucsf="0"
+          data-ui_lang="<%= @langue %>"
+          style="padding-left:0px;padding-right:0px;"></div>
+        <script async='true' src='https://pol.is/embed.js'></script>
+      <% end %>
+    </div>
+    <!-- end -->
+  </div>
+  <div class="columns smallmedium-12 mediumlarge-4">
+    <!-- question mark section -->
+    <div class="block-right">
+      <br/>
+      <center>
+        <%= image_tag "question-circle.svg", alt: "image bleue", width: 80, height: 30 %>
+        <h2>
+          <b><%= t('decidim.features.polis.views.titre_help_1') %></b>
+        </h2>
+        <h5>
+          <b><%= t('decidim.features.polis.views.titre_help_2') %></b>
+        </h5>
+      </center>
+    </div>
+    <!-- end -->
+    <!-- timeline helper section -->
+    <div class="block-right">
+      <ol class="timeline">
+        <li class="timeline__item">
+          <div class="timeline__phase">
+            <b style="color: white">1</b>
+          </div>
+          <div class="timeline__info">
+            <div class="timeline__content"><%= t('decidim.features.polis.views.help_1') %></div>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <div class="timeline__phase">
+            <b style="color: white">2</b>
+          </div>
+          <div class="timeline__info">
+            <div class="timeline__content"><%= t('decidim.features.polis.views.help_2') %></div>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <div class="timeline__phase">
+            <b style="color: white">3</b>
+          </div>
+          <div class="timeline__info">
+            <div class="timeline__content"><%= t('decidim.features.polis.views.help_3') %></div>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <div class="timeline__phase">
+            <b style="color: white">4</b>
+          </div>
+          <div class="timeline__info">
+            <div class="timeline__content"><%= t('decidim.features.polis.views.help_4') %></div>
+          </div>
+        </li>
+      </ol>
+    </div>
+    <!-- end -->
+  </div>
+</div>
+<!-- pol.is js script -->
+<script type="text/javascript">
+  function getConversationId() {
+    window.addEventListener('message', function (event) {
+      var data = event.data || {};
+      if (!event.origin.match(/pol.is$/)) {
+        return;
+      }
+      var conversationId = data['conversation'].conversation_id;
+      completeUrl(conversationId)
+    })
+  }
+  function completeUrl(conversation_id) {
+    $('.appendModerateLink').append('<li><a class="btn admin-btn" target="blank" href="https://pol.is/m/' + conversation_id + '/comments"> <%= t('decidim.features.polis.views.admin_1') %> </a></li>')
+    $('.appendModerateLink').append('<li><a class="btn admin-btn" target="blank" href="https://pol.is/m/' + conversation_id + '/participants"> <%= t('decidim.features.polis.views.admin_2') %> </a></li>')
+    $('.appendAdminLink').append('<li><a class="btn admin-btn" target="blank" href="https://pol.is/m/' + conversation_id + '/stats"> <%= t('decidim.features.polis.views.admin_3') %> </a></li>')
+    $('.appendAdminLink').append('<li><a class="btn admin-btn" target="blank" href="https://pol.is/m/' + conversation_id + '/export"> <%= t('decidim.features.polis.views.admin_4') %> </a></li>')
+    $('.appendAdminLink').append('<li><a class="btn admin-btn" target="blank" href="https://pol.is/m/' + conversation_id + '/reports"> <%= t('decidim.features.polis.views.admin_5') %> </a> </li>')
+  }
+  getConversationId()
+</script>
+<!-- end -->
