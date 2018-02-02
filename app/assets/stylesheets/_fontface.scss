@@ -1,0 +1,214 @@
+
+
+@font-face {
+    font-family: 'Futura';
+    src: asset-data-url('decidim/FuturaStd/FuturaStd-Book.eot');
+    src: local('Futura Std Book'), local('FuturaStd-Book'),
+        font-url('decidim/FuturaStd/FuturaStd-Book.eot?#iefix') format('embedded-opentype'),
+        font-url('decidim/FuturaStd/FuturaStd-Book.woff2') format('woff2'),
+        font-url('decidim/FuturaStd/FuturaStd-Book.woff') format('woff'),
+        font-url('decidim/FuturaStd/FuturaStd-Book.ttf') format('truetype'),
+        font-url('decidim/FuturaStd/FuturaStd-Book.svg#FuturaStd-Book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: asset-data-url('decidim/FuturaStd/FuturaStd-BookOblique.eot');
+    src: local('Futura Std Book Oblique'), local('FuturaStd-BookOblique'),
+        font-url('decidim/FuturaStd/FuturaStd-BookOblique.eot?#iefix') format('embedded-opentype'),
+        font-url('decidim/FuturaStd/FuturaStd-BookOblique.woff2') format('woff2'),
+        font-url('decidim/FuturaStd/FuturaStd-BookOblique.woff') format('woff'),
+        font-url('decidim/FuturaStd/FuturaStd-BookOblique.ttf') format('truetype'),
+        font-url('decidim/FuturaStd/FuturaStd-BookOblique.svg#FuturaStd-BookOblique') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: asset-data-url('decidim/FuturaStd/FuturaStd-Light.eot');
+    src: local('Futura Std Light'), local('FuturaStd-Light'),
+        font-url('decidim/FuturaStd/FuturaStd-Light.eot?#iefix') format('embedded-opentype'),
+        font-url('decidim/FuturaStd/FuturaStd-Light.woff2') format('woff2'),
+        font-url('decidim/FuturaStd/FuturaStd-Light.woff') format('woff'),
+        font-url('decidim/FuturaStd/FuturaStd-Light.ttf') format('truetype'),
+        font-url('decidim/FuturaStd/FuturaStd-Light.svg#FuturaStd-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: asset-data-url('decidim/FuturaStd/FuturaStd-LightOblique.eot');
+    src: local('Futura Std Light Oblique'), local('FuturaStd-LightOblique'),
+        font-url('decidim/FuturaStd/FuturaStd-LightOblique.eot?#iefix') format('embedded-opentype'),
+        font-url('decidim/FuturaStd/FuturaStd-LightOblique.woff2') format('woff2'),
+        font-url('decidim/FuturaStd/FuturaStd-LightOblique.woff') format('woff'),
+        font-url('decidim/FuturaStd/FuturaStd-LightOblique.ttf') format('truetype'),
+        font-url('decidim/FuturaStd/FuturaStd-LightOblique.svg#FuturaStd-LightOblique') format('svg');
+    font-weight: 300;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'Futura';
+    src: asset-data-url('decidim/FuturaStd/FuturaStd-MediumOblique.eot');
+    src: local('Futura Std Medium Oblique'), local('FuturaStd-MediumOblique'),
+        font-url('decidim/FuturaStd/FuturaStd-MediumOblique.eot?#iefix') format('embedded-opentype'),
+        font-url('decidim/FuturaStd/FuturaStd-MediumOblique.woff2') format('woff2'),
+        font-url('decidim/FuturaStd/FuturaStd-MediumOblique.woff') format('woff'),
+        font-url('decidim/FuturaStd/FuturaStd-MediumOblique.ttf') format('truetype'),
+        font-url('decidim/FuturaStd/FuturaStd-MediumOblique.svg#FuturaStd-MediumOblique') format('svg');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: asset-data-url('decidim/FuturaStd/FuturaStd-Medium.eot');
+    src: local('Futura Std Medium'), local('FuturaStd-Medium'),
+        font-url('decidim/FuturaStd/FuturaStd-Medium.eot?#iefix') format('embedded-opentype'),
+        font-url('decidim/FuturaStd/FuturaStd-Medium.woff2') format('woff2'),
+        font-url('decidim/FuturaStd/FuturaStd-Medium.woff') format('woff'),
+        font-url('decidim/FuturaStd/FuturaStd-Medium.ttf') format('truetype'),
+        font-url('decidim/FuturaStd/FuturaStd-Medium.svg#FuturaStd-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Futura';
+    src: asset-data-url('decidim/FuturaStd/FuturaStd-MediumOblique.eot');
+    src: local('Futura Std Medium Oblique'), local('FuturaStd-MediumOblique'),
+        font-url('decidim/FuturaStd/FuturaStd-MediumOblique.eot?#iefix') format('embedded-opentype'),
+        font-url('decidim/FuturaStd/FuturaStd-MediumOblique.woff2') format('woff2'),
+        font-url('decidim/FuturaStd/FuturaStd-MediumOblique.woff') format('woff'),
+        font-url('decidim/FuturaStd/FuturaStd-MediumOblique.ttf') format('truetype'),
+        font-url('decidim/FuturaStd/FuturaStd-MediumOblique.svg#FuturaStd-MediumOblique') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: asset-data-url('decidim/FuturaStd/FuturaStd-Medium.eot');
+    src: local('Futura Std Medium'), local('FuturaStd-Medium'),
+        font-url('decidim/FuturaStd/FuturaStd-Medium.eot?#iefix') format('embedded-opentype'),
+        font-url('decidim/FuturaStd/FuturaStd-Medium.woff2') format('woff2'),
+        font-url('decidim/FuturaStd/FuturaStd-Medium.woff') format('woff'),
+        font-url('decidim/FuturaStd/FuturaStd-Medium.ttf') format('truetype'),
+        font-url('decidim/FuturaStd/FuturaStd-Medium.svg#FuturaStd-Medium') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Futura';
+    src: asset-data-url('decidim/FuturaStd/FuturaStd-Bold.eot');
+    src: local('Futura Std Bold'), local('FuturaStd-Bold'),
+        font-url('decidim/FuturaStd/FuturaStd-Bold.eot?#iefix') format('embedded-opentype'),
+        font-url('decidim/FuturaStd/FuturaStd-Bold.woff2') format('woff2'),
+        font-url('decidim/FuturaStd/FuturaStd-Bold.woff') format('woff'),
+        font-url('decidim/FuturaStd/FuturaStd-Bold.ttf') format('truetype'),
+        font-url('decidim/FuturaStd/FuturaStd-Bold.svg#FuturaStd-Bold') format('svg');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: asset-data-url('decidim/FuturaStd/FuturaStd-BoldOblique.eot');
+    src: local('Futura Std Bold Oblique'), local('FuturaStd-BoldOblique'),
+        font-url('decidim/FuturaStd/FuturaStd-BoldOblique.eot?#iefix') format('embedded-opentype'),
+        font-url('decidim/FuturaStd/FuturaStd-BoldOblique.woff2') format('woff2'),
+        font-url('decidim/FuturaStd/FuturaStd-BoldOblique.woff') format('woff'),
+        font-url('decidim/FuturaStd/FuturaStd-BoldOblique.ttf') format('truetype'),
+        font-url('decidim/FuturaStd/FuturaStd-BoldOblique.svg#FuturaStd-BoldOblique') format('svg');
+    font-weight: 800;
+    font-style: italic;
+}
+
+
+// @font-face {
+//     font-family: 'Futura';
+//     src: asset-data-url('decidim/FuturaStd/FuturaStd-Bold.eot');
+//     src: local('Futura Std Bold'), local('FuturaStd-Bold'),
+//         font-url('decidim/FuturaStd/FuturaStd-Bold.eot?#iefix') format('embedded-opentype'),
+//         font-url('decidim/FuturaStd/FuturaStd-Bold.woff2') format('woff2'),
+//         font-url('decidim/FuturaStd/FuturaStd-Bold.woff') format('woff'),
+//         font-url('decidim/FuturaStd/FuturaStd-Bold.ttf') format('truetype'),
+//         font-url('decidim/FuturaStd/FuturaStd-Bold.svg#FuturaStd-Bold') format('svg');
+//     font-weight: bold;
+//     font-style: normal;
+// }
+//
+// @font-face {
+//     font-family: 'Futura';
+//     src: asset-data-url('decidim/FuturaStd/FuturaStd-BoldOblique.eot');
+//     src: local('Futura Std Bold Oblique'), local('FuturaStd-BoldOblique'),
+//         font-url('decidim/FuturaStd/FuturaStd-BoldOblique.eot?#iefix') format('embedded-opentype'),
+//         font-url('decidim/FuturaStd/FuturaStd-BoldOblique.woff2') format('woff2'),
+//         font-url('decidim/FuturaStd/FuturaStd-BoldOblique.woff') format('woff'),
+//         font-url('decidim/FuturaStd/FuturaStd-BoldOblique.ttf') format('truetype'),
+//         font-url('decidim/FuturaStd/FuturaStd-BoldOblique.svg#FuturaStd-BoldOblique') format('svg');
+//     font-weight: bold;
+//     font-style: italic;
+// }
+
+// @font-face {
+//     font-family: 'Futura';
+//     src: asset-data-url('decidim/FuturaStd/FuturaStd-HeavyOblique.eot');
+//     src: local('Futura Std Heavy Oblique'), local('FuturaStd-HeavyOblique'),
+//         font-url('decidim/FuturaStd/FuturaStd-HeavyOblique.eot?#iefix') format('embedded-opentype'),
+//         font-url('decidim/FuturaStd/FuturaStd-HeavyOblique.woff2') format('woff2'),
+//         font-url('decidim/FuturaStd/FuturaStd-HeavyOblique.woff') format('woff'),
+//         font-url('decidim/FuturaStd/FuturaStd-HeavyOblique.ttf') format('truetype'),
+//         font-url('decidim/FuturaStd/FuturaStd-HeavyOblique.svg#FuturaStd-HeavyOblique') format('svg');
+//     font-weight: 900;
+//     font-style: italic;
+// }
+
+// @font-face {
+//     font-family: 'Futura';
+//     src: asset-data-url('decidim/FuturaStd/FuturaStd-Heavy.eot');
+//     src: local('Futura Std Heavy'), local('FuturaStd-Heavy'),
+//         font-url('decidim/FuturaStd/FuturaStd-Heavy.eot?#iefix') format('embedded-opentype'),
+//         font-url('decidim/FuturaStd/FuturaStd-Heavy.woff2') format('woff2'),
+//         font-url('decidim/FuturaStd/FuturaStd-Heavy.woff') format('woff'),
+//         font-url('decidim/FuturaStd/FuturaStd-Heavy.ttf') format('truetype'),
+//         font-url('decidim/FuturaStd/FuturaStd-Heavy.svg#FuturaStd-Heavy') format('svg');
+//     font-weight: 900;
+//     font-style: normal;
+// }
+
+//
+// @font-face {
+//     font-family: 'Futura';
+//     src: asset-data-url('decidim/FuturaStd/FuturaStd-ExtraBold.eot');
+//     src: local('Futura Std Extra Bold'), local('FuturaStd-ExtraBold'),
+//         font-url('decidim/FuturaStd/FuturaStd-ExtraBold.eot?#iefix') format('embedded-opentype'),
+//         font-url('decidim/FuturaStd/FuturaStd-ExtraBold.woff2') format('woff2'),
+//         font-url('decidim/FuturaStd/FuturaStd-ExtraBold.woff') format('woff'),
+//         font-url('decidim/FuturaStd/FuturaStd-ExtraBold.ttf') format('truetype'),
+//         font-url('decidim/FuturaStd/FuturaStd-ExtraBold.svg#FuturaStd-ExtraBold') format('svg');
+//     font-weight: 800;
+//     font-style: normal;
+// }
+//
+// @font-face {
+//     font-family: 'Futura';
+//     src: asset-data-url('decidim/FuturaStd/FuturaStd-ExtraBoldOblique.eot');
+//     src: local('Futura Std Extra Bold Oblique'), local('FuturaStd-ExtraBoldOblique'),
+//         font-url('decidim/FuturaStd/FuturaStd-ExtraBoldOblique.eot?#iefix') format('embedded-opentype'),
+//         font-url('decidim/FuturaStd/FuturaStd-ExtraBoldOblique.woff2') format('woff2'),
+//         font-url('decidim/FuturaStd/FuturaStd-ExtraBoldOblique.woff') format('woff'),
+//         font-url('decidim/FuturaStd/FuturaStd-ExtraBoldOblique.ttf') format('truetype'),
+//         font-url('decidim/FuturaStd/FuturaStd-ExtraBoldOblique.svg#FuturaStd-ExtraBoldOblique') format('svg');
+//     font-weight: 800;
+//     font-style: italic;
+// }

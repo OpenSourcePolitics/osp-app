@@ -1,18 +1,118 @@
 // // Variables
-// 
-// $primary: #ef604d;
-// $secondary: #599aa6;
-// $success: #57d685;
-// $warning: #ffae00;
-// $alert: #ec5840;
-// 
-// $proposals: #238FF7;
-// $actions: #57D685;
-// $debates: #FA6C96;
-// $meetings: #FABC6C;
-// 
-// $twitter: #55acee;
-// $facebook: #3b5998;
-// $google: #dd4b39;
+//
+$primary: #ff9900;
+$secondary: #00a1aa;
+$success: #57d685;
+$warning: #ffae00;
+$alert: #ec5840;
+
+$proposals: #238FF7;
+$actions: #57D685;
+$debates: #FA6C96;
+$meetings: #FABC6C;
+
+$twitter: #55acee;
+$facebook: #3b5998;
+$google: #dd4b39;
 
 @import "decidim/application";
+
+/*------FONTS------*/
+
+@import "fontface";
+// TODO : PR on decidim-core/app/assets/stylesheets/decidim/utils/_settings.scss to add !default on this variable.
+$body-font-family: 'Source Sans Pro', Helvetica, Roboto, Arial, sans-serif;
+
+body, h1, h2, h3, h4, h5, h6, p, a, span {
+  font-family: $body-font-family;
+}
+
+/*------HERO SECTION------*/
+
+.hero{
+  &::after{
+    background-color: rgba($black, .1);
+  }
+  .hero-cta.button {
+    background-color: $secondary;
+    &:hover {
+      background-color: darken($secondary,3);
+    }
+  }
+}
+
+.process-header__main{
+  &::after{
+    background-color: rgba($black, .1);
+  }
+}
+
+/* Home page */
+.footer__subhero {
+display: none;
+}
+
+/*-----Sign up------*/
+/*---hide legal terms and conditions---*/
+.lopd-text {
+display:none;
+}
+
+/*------NAV BAR------*/
+
+/*Navbar color when nav is white*/
+.title-bar
+{
+    background: #F3F3F3 !important;
+}
+
+/* conversation icon */
+.topbar__conversations .icon {
+  fill: #A8A8A8;
+}
+
+/* Home page */
+.footer__subhero {
+display: none;
+}
+/*Color for the org title that displays when there is no logo*/
+.logo-wrapper  span
+{
+    color: #000 !important;
+}
+
+/*color for navbar notification bell*/
+.topbar__notifications .icon
+{
+    fill: #000;
+}
+
+/*color of hamburger menu (displays when screen is small)*/
+.topbar__menu button
+{
+    color: #000 ;
+}
+
+/*color of user menu*/
+.topbar__user__login a
+{
+    color: #000;
+}
+
+/*color of dropdown user menu*/
+.topbar__dropmenu .dropdown>li>a
+{
+    color:#000;
+}
+
+/*color of triangle toggle that displays dropdown menu on mouse hover*/
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after
+{
+    border-top-color: #000 !important;
+}
+
+/*shape of navbar*/
+.main-nav__link--active a
+{
+    box-shadow: inset 0 4px 0 0 #18A2A9;
+}
