@@ -1,35 +1,81 @@
 fr:
+  activemodel:
+    attributes:
+      proposal:
+        address: Adresse
+        has_address: Renseigner une adresse
+      user:
+        nickname: Votre pseudonyme
   decidim:
-    menu:
-      # change "Processus participatifs" in navbar
-      processes: Participations en cours
-    scopes:
-      global: Toute la ville
+    admin:
+      assemblies:
+        create:
+          success: Agenda créé avec succès.
+        destroy:
+          success: Agenda supprimé avec succès.
+        new:
+          title: Nouvel agenda
+        update:
+          success: Agenda mis à jour avec succès.
+      assembly_publications:
+        create:
+          success: Agenda publié avec succès.
+        destroy:
+          success: Agenda dépublié avec succès.
+      menu:
+        assemblies: Agenda
+      models:
+        assembly:
+          name: Agenda
+      titles:
+        assemblies: Agenda
     application:
       documents:
         related_documents: Documents à consulter
+    assemblies:
+      index:
+        title: Agenda
+      pages:
+        home:
+          highlighted_assemblies:
+            active_assemblies: Agendas actifs
+            see_all_assemblies: Voir tous les agendas
+      statistics:
+        assemblies_count: Agenda
+    devise:
+      registrations:
+        new:
+          sign_up_as:
+            user: Citoyen
+          subtitle: Inscrivez-vous pour participer et débattre sur la plateforme.
+      sessions:
+        new:
+          are_you_new?: Nouveau sur la plateforme ?
+    menu:
+      assemblies: Agenda
+      processes: Participer
     participatory_processes:
       pages:
         home:
           highlighted_processes:
-            # change "Processus actif" in homepage
-            active_processes: Participations en cours
-            see_all_processes: Voir toutes les participations en cours
+            active_processes: Processus participatifs en cours
+            see_all_processes: Voir toutes les processus en cours
       show:
         local_area: Périmètre de décision
+        participatory_scope: Objectif du processus participatif
         participatory_structure: Mode de décision
-    devise:
-      sessions:
-        new:
-          are_you_new?: Nouveau sur la plateforme ?
+    scopes:
+      global: Portée globale
+  layouts:
+    decidim:
+      assemblies:
+        index:
+          promoted_assemblies: Agendas mis en avant
+        order_by_assemblies:
+          assemblies:
+            one: '%{count} agenda'
+            other: '%{count} agendas'
   pages:
     home:
       extended:
         how_to_participate: Comment puis-je participer ?
-  activemodel:
-    attributes:
-      proposal:
-        has_address: Renseigner une adresse
-        address: Adresse
-      user:
-        nickname: Votre pseudonyme
