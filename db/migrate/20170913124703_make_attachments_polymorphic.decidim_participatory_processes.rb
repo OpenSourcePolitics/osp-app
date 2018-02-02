@@ -8,7 +8,8 @@ class MakeAttachmentsPolymorphic < ActiveRecord::Migration[5.0]
       rename_table :decidim_participatory_process_attachments, :decidim_attachments
 
       add_column :decidim_attachments, :attachable_type, :string
-      execute("UPDATE decidim_attachments SET attachable_type = 'Decidim::ParticipatoryProcess'")
+      ActiveRecord::Base.connection
+                        .execute("UPDATE decidim_attachments SET attachable_type = 'Decidim::ParticipatoryProcess'")
 
       rename_column :decidim_attachments, :decidim_participatory_process_id, :attachable_id
       add_index :decidim_attachments, [:attachable_id, :attachable_type]

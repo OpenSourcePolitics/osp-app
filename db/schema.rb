@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180110203201) do
+ActiveRecord::Schema.define(version: 20180201202032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -325,14 +325,6 @@ ActiveRecord::Schema.define(version: 20180110203201) do
     t.index ["report_count"], name: "decidim_moderations_report_count"
   end
 
-  create_table "decidim_navbar_links", force: :cascade do |t|
-    t.bigint "decidim_organization_id"
-    t.jsonb "title"
-    t.string "link"
-    t.string "target"
-    t.index ["decidim_organization_id"], name: "index_decidim_navbar_links_on_decidim_organization_id"
-  end
-
   create_table "decidim_newsletters", id: :serial, force: :cascade do |t|
     t.jsonb "subject"
     t.jsonb "body"
@@ -491,7 +483,7 @@ ActiveRecord::Schema.define(version: 20180110203201) do
     t.text "address"
     t.float "latitude"
     t.float "longitude"
-    t.index ["body"], name: "decidim_proposals_proposal_body_search"
+    t.index "md5(body)", name: "decidim_proposals_proposal_body_search"
     t.index ["created_at"], name: "index_decidim_proposals_proposals_on_created_at"
     t.index ["decidim_author_id"], name: "index_decidim_proposals_proposals_on_decidim_author_id"
     t.index ["decidim_feature_id"], name: "index_decidim_proposals_proposals_on_decidim_feature_id"
