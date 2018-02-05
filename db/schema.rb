@@ -319,6 +319,7 @@ ActiveRecord::Schema.define(version: 20180205090637) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "decidim_participatory_space_type", null: false
+    t.string "sqr_status", default: "unmoderate"
     t.string "upstream_moderation", default: "unmoderate"
     t.index ["decidim_participatory_space_id", "decidim_participatory_space_type"], name: "decidim_moderations_participatory_space"
     t.index ["decidim_reportable_type", "decidim_reportable_id"], name: "decidim_moderations_reportable", unique: true
