@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180205090637) do
+ActiveRecord::Schema.define(version: 20180205143862) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -321,6 +321,7 @@ ActiveRecord::Schema.define(version: 20180205090637) do
     t.string "decidim_participatory_space_type", null: false
     t.string "sqr_status", default: "unmoderate"
     t.string "upstream_moderation", default: "unmoderate"
+    t.text "justification"
     t.index ["decidim_participatory_space_id", "decidim_participatory_space_type"], name: "decidim_moderations_participatory_space"
     t.index ["decidim_reportable_type", "decidim_reportable_id"], name: "decidim_moderations_reportable", unique: true
     t.index ["hidden_at"], name: "decidim_moderations_hidden_at"
@@ -429,6 +430,10 @@ ActiveRecord::Schema.define(version: 20180205090637) do
     t.float "latitude"
     t.float "longitude"
     t.string "participation_type"
+    t.date "published_on"
+    t.text "original_body"
+    t.string "recipient_role"
+    t.date "answer_deadline"
     t.index ["body"], name: "decidim_participations_participation_body_search"
     t.index ["created_at"], name: "index_decidim_participations_participations_on_created_at"
     t.index ["decidim_author_id"], name: "index_decidim_participations_on_decidim_author_id"
