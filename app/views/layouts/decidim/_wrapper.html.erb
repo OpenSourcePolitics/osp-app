@@ -1,0 +1,190 @@
+<div class="off-canvas-wrapper">
+  <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+    <div class="off-canvas position-right hide-for-large" data-position="right"
+         id="offCanvas" data-off-canvas>
+      <!-- Close button -->
+      <button class="close-button"
+              aria-label="<%= t("layouts.decidim.header.close_menu") %>" type="button"
+              data-close>
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <!-- Menu -->
+
+      <div class="hide-for-medium" data-set="nav-holder"></div>
+      <div class="hide-for-medium usermenu-off-canvas-holder"
+           data-set="nav-login-holder">
+        <nav class="main-nav">
+         <ul>
+          <p class="category-title"> Editorial des Co-Présidents</p>
+            <li>
+              <a href="https://dialogue-trianon.fr/editorial/editorial-des-co-presidents">Editorial des Co-Présidents</a>
+            </li>
+            <li>
+              <a href= "https://dialogue-trianon.fr/editorial/la-ville-du-futur">Messages des secrétaires généraux</a>
+            </li>
+          </ul>
+          <ul>
+            <p class="category-title">Les coopérations Franco-Russes</p>
+            <li>
+              <a href= "https://dialogue-trianon.fr/les-cooperations-franco-russes/inscrivez-une-cooperation">Inscrivez une coopération</a>
+            </li>
+            <li>
+              <a href= "https://dialogue-trianon.fr/les-cooperations-franco-russes/consultez-les-cooperations-existantes">Consultez les coopérations existantes</a>
+            </li>
+          </ul>
+          <ul>
+            <p class="category-title">Les rencontres autour de "la ville du futur"</p>
+            <p class="sub-category">Institutionnel :</p>
+            <li>
+              <a href= "https://dialogue-trianon.fr/les-rencontres-autour-de-la-ville-du-futur/proposez-un-dialogue">Proposez une rencontre</a>
+            </li>
+            <p class="sub-category">Citoyen :</p>
+            <li>
+              <a href= "https://dialogue-trianon.fr/les-rencontres-autour-de-la-ville-du-futur/inscrivez-vous-aux-rencontres">Inscrivez-vous aux rencontres</a>
+            </li>
+            <li>
+              <a href= "https://forum.dialogue-trianon.fr/">Participez au forum</a>
+            </li>
+          </ul>
+          </nav>
+        </div>
+      </nav>
+    </div>
+    </div>
+
+    <div class="off-canvas-content" data-off-canvas-content>
+      <div class="footer-separator">
+        <!--separates the footer from the rest of the page,
+             creates a sticky footer-->
+      <div class="bg-white">
+        <!-- Topbar -->
+        <div class="title-bar">
+          <!-- <% if current_organization.official_img_header? %>
+            <%= link_to  current_organization.official_url, class: "logo-cityhall" do %>
+              <%= image_tag current_organization.official_img_header.url.to_s , alt: current_organization.name %>
+            <% end %>
+          <% end %> -->
+          <div class="row column topbar">
+            <%= render partial: "layouts/decidim/language_chooser" %>
+            <div class="hide-for-medium topbar__menu">
+              <button type="button" data-toggle="offCanvas">
+                <%= icon "menu", aria_label: t('layouts.decidim.header.navigation'), role: "img" %>
+              </button>
+            </div>
+            <% if current_user %>
+              <div class="topbar__dropmenu topbar__user__logged">
+                <%= link_to decidim.notifications_path, class: "topbar__notifications #{current_user.notifications.any? ? "is-active" : ""}" do %>
+                  <%= icon "bell" %>
+                <% end %>
+                <ul class="dropdown menu" data-dropdown-menu>
+                  <li class="is-dropdown-submenu-parent show-for-medium">
+                    <%= link_to current_user.name, decidim.account_path %>
+                    <ul class="menu is-dropdown-submenu js-append usermenu-off-canvas">
+                      <%= render partial: "layouts/decidim/user_menu" %>
+                    </ul>
+                    <span data-set="nav-login-holder" class="show-for-medium">
+                      <!-- Repeated due to dropdown limitations -->
+                      <ul class="menu is-dropdown-submenu js-append usermenu-off-canvas">
+                        <%= render partial: "layouts/decidim/user_menu" %>
+                      </ul>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            <% else %>
+              <div class="topbar__user show-for-medium" data-set="nav-login-holder">
+                <div class="topbar__user__login js-append">
+                  <%= link_to t('layouts.decidim.header.sign_up'), decidim.new_user_registration_path, class: "sign-up-link" %>
+                  <%= link_to t('layouts.decidim.header.sign_in'), decidim.new_user_session_path, class: "sign-in-link" %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="logo-container">
+          <a href="https://dialogue-trianon.fr/">
+            <%= image_tag "logo-amarante.png", class: 'logo-amarante',width: 350 %>
+          </a>
+        </div>
+        <div class="show-for-medium" data-set="nav-holder">
+          <nav class="navbar js-append">
+            <div class="row column">
+            <!-- Menu desktop -->
+              <nav class="main-nav d-none d-xl-block">
+               <div class="dropdown is-dropdown-submenu-parent">
+                  <span class="nav-link">Editorial des Co-Présidents </span>
+                  <div class="dropdown-content">
+                    <a href= "https://dialogue-trianon.fr/editorial/editorial-des-co-presidents">Editorial des Co-Présidents</a>
+                    <a href= "https://dialogue-trianon.fr/editorial/la-ville-du-futur">Messages des secrétaires généraux</a>
+                  </div>
+                </div>
+                <div class="dropdown is-dropdown-submenu-parent">
+                  <span class="nav-link">Les coopérations Franco-Russes</span>
+                  <div class="dropdown-content">
+                    <a href= "https://dialogue-trianon.fr/les-cooperations-franco-russes/inscrivez-une-cooperation">Inscrivez une coopération</a>
+                    <a href= "https://dialogue-trianon.fr/les-cooperations-franco-russes/consultez-les-cooperations-existantes">Consultez les coopérations existantes</a>
+                  </div>
+                </div>
+                <div class="dropdown is-dropdown-submenu-parent">
+                  <span class="nav-link">Les rencontres autour de "la ville du futur" </span>
+
+                  <div class="dropdown-content">
+                    <span>Institutionnel</span>
+                    <a href= "https://dialogue-trianon.fr/les-rencontres-autour-de-la-ville-du-futur/proposez-un-dialogue">Proposez une rencontre</a>
+                    <span>Citoyen</span>
+                    <a href= "https://dialogue-trianon.fr/les-rencontres-autour-de-la-ville-du-futur/inscrivez-vous-aux-rencontres">Inscrivez-vous aux rencontres</a>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </nav>
+        </div>
+      </div>
+        <main>
+          <%= display_flash_messages %>
+          <%= yield %>
+        </main>
+      </div><!-- /.footer-separator -->
+      <div class="main-footer">
+        <% if current_organization.official_img_footer? %>
+          <%= link_to  current_organization.official_url, class: "main-footer__badge" do %>
+            <%= image_tag current_organization.official_img_footer.url.to_s , alt: current_organization.name %>
+          <% end %>
+        <% end %>
+        <div class="row">
+          <div class="medium-8 large-6 large-offset-3 column main__footer__nav">
+            <% if current_organization.static_pages.any? %>
+              <ul class="footer-nav">
+                <% current_organization.static_pages.each do |page| %>
+                  <li><%= link_to translated_attribute(page.title), decidim.page_path(page) %></li>
+                <% end %>
+              </ul>
+            <% end %>
+          </div>
+          <%= render partial: 'layouts/decidim/social_media_links' %>
+        </div>
+      </div>
+      <div class="mini-footer">
+        <div class="row">
+          <div class="medium-3 large-4 column">
+            <a rel="license" class="cc-badge"
+               href="http://creativecommons.org/licenses/by-sa/4.0/"
+               target="_blank">
+              <%= image_tag("decidim/cc-badge.png", alt: "Creative Commons License" ) %>
+            </a>
+            <%= t('layouts.decidim.footer.made_with_open_source').html_safe %>
+          </div>
+          <div class="medium-3 large-2 column">
+            <div class="decidim-logo">
+              <a rel="decidim"
+                 href="https://decidim.org/"
+                 target="_blank">
+                <%= image_tag("decidim/decidim-logo.svg", alt: "Decidim Logo" ) %>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!--/.off-canvas-content-->
+  </div><!--/.off-canvas-wrapper-inner-->
+</div><!--/.off-canvas-wrapper-->

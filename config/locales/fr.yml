@@ -17,13 +17,10 @@ fr:
     # menu:
       # --> change "Processus participatifs" in navbar
       # processes: Participations en cours
-    participatory_processes:
-      pages:
-        home:
-          # highlighted_processes:
-            # change "Processus actif" in homepage
-            # active_processes: Participations en cours
-            # see_all_processes: Voir toutes les participations en cours
+    # participatory_processes/pages/home/highlighted_processes:
+      # change "Processus actif" in homepage
+      # active_processes: Participations en cours
+      # see_all_processes: Voir toutes les participations en cours
       show:
         local_area: Périmètre de décision
         participatory_structure: Mode de décision

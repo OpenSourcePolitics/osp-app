@@ -9,12 +9,12 @@ gem "decidim-core", git: "https://github.com/OpenSourcePolitics/decidim.git", br
 gem "decidim-proposals", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.9-stable"
 
 gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.9-stable"
-gem "decidim-participations", git: "https://github.com/OpenSourcePolitics/decidim-participations.git"
+# gem "decidim-participations", git: "https://github.com/OpenSourcePolitics/decidim-participations.git"
 
 gem "decidim-export", git: "https://github.com/OpenSourcePolitics/decidim-user-export.git"
 
 # Uncomment the following line if you want to use decidim-assemblies plugin
-# gem "decidim-assemblies", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.9-stable"
+gem "decidim-assemblies", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.9-stable"
 
 gem "puma", "~> 3.0"
 gem "uglifier", ">= 1.3.0"

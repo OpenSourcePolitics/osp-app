@@ -1,15 +1,4 @@
 GIT
-  remote: https://github.com/OpenSourcePolitics/decidim-participations.git
-  revision: f6a4df8ff92a46d0939e7bef37751ada27215bdc
-  specs:
-    decidim-participations (0.9.0.pre)
-      decidim-comments (= 0.9.0.pre)
-      decidim-core (= 0.9.0.pre)
-      kaminari (~> 1.0.1)
-      ransack
-      social-share-button (~> 1.0.0)
-
-GIT
   remote: https://github.com/OpenSourcePolitics/decidim-user-export.git
   revision: bdfb7b4b6b67b24d695b248c583caa74b6e0b74b
   specs:
@@ -18,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: e9aab549eb5e94056b641f309d8333241220c908
+  revision: e310835f0ebab5ea2ed2fb57d57ec8ecf19c9ee0
   branch: 0.9-stable
   specs:
     decidim (0.9.0.pre)
@@ -35,6 +24,8 @@ GIT
       decidim-surveys (= 0.9.0.pre)
       decidim-system (= 0.9.0.pre)
       decidim-verifications (= 0.9.0.pre)
+    decidim-assemblies (0.9.0.pre)
+      decidim-core (= 0.9.0.pre)
     decidim-comments (0.9.0.pre)
       decidim-core (= 0.9.0.pre)
       jquery-rails (~> 4.0)
@@ -293,7 +284,7 @@ GEM
       i18n (>= 0.7)
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
-    ffi (1.9.18)
+    ffi (1.9.21)
     file_validators (2.1.0)
       activemodel (>= 3.0)
       mime-types (>= 1.0)
@@ -498,7 +489,7 @@ GEM
     rainbow (2.2.2)
       rake
     rake (12.3.0)
-    ransack (1.8.6)
+    ransack (1.8.7)
       actionpack (>= 3.0)
       activerecord (>= 3.0)
       activesupport (>= 3.0)
@@ -571,9 +562,9 @@ GEM
       sprockets-rails
       tilt
     searchlight (4.1.0)
-    selenium-webdriver (3.8.0)
+    selenium-webdriver (3.9.0)
       childprocess (~> 0.5)
-      rubyzip (~> 1.0)
+      rubyzip (~> 1.2)
     sendgrid-ruby (5.2.0)
       ruby_http_client (~> 3.2)
       sinatra (>= 1.4.7, < 3)
@@ -663,11 +654,11 @@ DEPENDENCIES
   byebug
   dalli
   decidim!
+  decidim-assemblies!
   decidim-comments!
   decidim-core!
   decidim-dev!
   decidim-export!
-  decidim-participations!
   decidim-proposals!
   faker (~> 1.8.4)
   fog-aws
