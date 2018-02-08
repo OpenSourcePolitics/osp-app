@@ -330,6 +330,7 @@ ActiveRecord::Schema.define(version: 20180121133946) do
     t.jsonb "title"
     t.string "link"
     t.string "target"
+    t.integer "weight"
     t.index ["decidim_organization_id"], name: "index_decidim_navbar_links_on_decidim_organization_id"
   end
 
