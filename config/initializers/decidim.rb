@@ -1,14 +1,15 @@
 # frozen_string_literal: true
 
 Decidim.configure do |config|
-  config.application_name = "OSP Agora"
-  config.mailer_sender = "OSP Agora <ne-pas-repondre@opensourcepolitics.eu>"
+  config.application_name = "Dialogue de Trianon"
+  config.mailer_sender = "Dialogue de Trianon <ne-pas-repondre@opensourcepolitics.eu>"
 
   # Change these lines to set your preferred locales
   config.default_locale = :en
   config.available_locales = [:en, :fr]
 
   config.maximum_attachment_size = 20.megabytes
+  config.maximum_attachment_height_or_width = 6000
 
   # Geocoder configuration
   # config.geocoder = {
