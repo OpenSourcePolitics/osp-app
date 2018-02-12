@@ -4,6 +4,9 @@ fr:
       assembly:
         scopes_enabled: Zone d'application activées
         target: Public visé
+      meeting:
+        end_time: Date et heure de fin
+        start_time: Date et heure de début
       participatory_process:
         end_date: Date de fin
         target: Public visé
@@ -12,9 +15,6 @@ fr:
       proposal:
         address: Adresse
         has_address: Renseigner une adresse
-      meeting:
-        end_time: Date et heure de fin
-        start_time: Date et heure de début
   activerecord:
     attributes:
       decidim/participatory_process:
@@ -51,31 +51,36 @@ fr:
         participatory_process_step:
           fields:
             end_date: Date de fin
-    assemblies:
-      show:
-        target: Public visé
     application:
       documents:
         related_documents: Documents à consulter
+    assemblies:
+      show:
+        target: Public visé
     comments:
       events:
         comment_created:
           comment:
             email_intro: '"%{resource_title}" a reçu un commentaire'
-            email_subject: Nouveau commentaire de %{author_name} dans <a href="%{resource_url}">%{resource_title}</a>
-            notification_title: Nouveau commentaire de %{author_name} dans <a href="%{resource_path}">%{resource_title}</a>
+            email_subject: 'Nouveau commentaire de %{author_name} dans <a href="%{resource_url}">%{resource_title}</a>'
+            notification_title: 'Nouveau commentaire de %{author_name} dans <a href="%{resource_path}">%{resource_title}</a>'
           reply:
             email_intro: '"%{resource_title}" a reçu un commentaire'
-            email_subject: Votre commentaire a reçu une réponse de %{author_name} dans <a href="%{resource_url}">%{resource_title}</a>
-            notification_title: Votre commentaire a reçu une réponse de %{author_name} dans <a href="%{resource_path}">%{resource_title}</a>
+            email_subject: 'Votre commentaire a reçu une réponse de %{author_name} dans <a href="%{resource_url}">%{resource_title}</a>'
+            notification_title: 'Votre commentaire a reçu une réponse de %{author_name} dans <a href="%{resource_path}">%{resource_title}</a>'
       votes:
         create:
           error: Une erreur s'est produite lors du vote sur le commentaire.
     components:
       add_comment_form:
-        account_message: Pour ajouter votre commentaire <a href="%{sign_in_url}"> connectez-vous avec votre compte</a> ou <a href="%{sign_up_url}">inscrivez-vous</a>.
-        remaining_characters: "%{count} caractères restants"
-        remaining_characters_1: "%{count} caractères restants"
+        account_message: 'Pour ajouter votre commentaire <a href="%{sign_in_url}"> connectez-vous avec votre compte</a> ou <a href="%{sign_up_url}">inscrivez-vous</a>.'
+        remaining_characters: '%{count} caractères restants'
+        remaining_characters_1: '%{count} caractères restants'
+      proposal:
+        address: Adresse
+        has_address: Renseigner une adresse
+      user:
+        nickname: Votre pseudonyme
     devise:
       sessions:
         new:
@@ -95,69 +100,67 @@ fr:
             available_slots_help: Laissez-le à 0 si le nombre de places disponibles n'est pas limité.
             registrations_count:
               one: Il y a eu 1 inscription.
-              other: Il y a eu %{count} inscriptions.
+              other: 'Il y a eu %{count} inscriptions.'
           update:
             invalid: Il y a eu un problème lors de l'enregistrement des paramètres d'inscription.
             success: Les paramètres d'inscriptions ont été enregistrés avec succès.
       events:
         close_meeting_event:
-          email_intro: 'La rencontre « %{resource_title} » a été fermée. Vous pouvez lire les conclusions sur cette page :'
-          email_outro: Vous avez reçu cette notification parce que vous suivez la rencontre « %{resource_title} ». Vous pouvez cesser de la suivre en cliquant sur le lien précédent.
-          email_subject: La rencontre %{resource_title} est terminée
-          notification_title: La rencontre <a href="%{resource_path}">%{resource_title}</a> est terminée.
+          email_intro: "La rencontre «\_%{resource_title}\_» a été fermée. Vous pouvez lire les conclusions sur cette page\_:"
+          email_outro: "Vous avez reçu cette notification parce que vous suivez la rencontre «\_%{resource_title}\_». Vous pouvez cesser de la suivre en cliquant sur le lien précédent."
+          email_subject: 'La rencontre %{resource_title} est terminée'
+          notification_title: 'La rencontre <a href="%{resource_path}">%{resource_title}</a> est terminée.'
         meeting_registrations_enabled:
-          email_intro: 'La rencontre « %{resource_title} » a ouvert les inscriptions. Vous pouvez vous inscrire en allant sur la page suivante :'
-          email_outro: Vous avez reçu cette notification parce que vous suivez la rencontre « %{resource_title} ». Vous pouvez cesser de la suivre en cliquant sur le lien précédent.
-          email_subject: La rencontre « %{resource_title} » a ouvert les inscriptions.
-          notification_title: La rencontre <a href="%{resource_path}">%{resource_title}</a> est maintenant ouverte aux inscriptions.
+          email_intro: "La rencontre «\_%{resource_title}\_» a ouvert les inscriptions. Vous pouvez vous inscrire en allant sur la page\_suivante :"
+          email_outro: "Vous avez reçu cette notification parce que vous suivez la rencontre «\_%{resource_title}\_». Vous pouvez cesser de la suivre en cliquant sur le lien précédent."
+          email_subject: "La rencontre «\_%{resource_title}\_» a ouvert les inscriptions."
+          notification_title: 'La rencontre <a href="%{resource_path}">%{resource_title}</a> est maintenant ouverte aux inscriptions.'
         meeting_registrations_over_percentage:
-          email_intro: Les inscriptions à la rencontre %{resource_title} sont à %{percentage} % complètes%.
+          email_intro: 'Les inscriptions à la rencontre %{resource_title} sont à %{percentage} % complètes%.'
           email_outro: Vous avez reçu cette notification parce que vous êtes un administrateur du processus participatif hébergeant la rencontre.
-          email_subject: Les inscriptions à la rencontre %{resource_title} sont à %{percentage} % complètes%
-          notification_title: Les inscriptions à la rencontre <a href="%{resource_path}">%{resource_title}</a> sont à %{percentage} % complètes.
+          email_subject: 'Les inscriptions à la rencontre %{resource_title} sont à %{percentage} % complètes%'
+          notification_title: 'Les inscriptions à la rencontre <a href="%{resource_path}">%{resource_title}</a> sont à %{percentage} % complètes.'
         upcoming_meeting_event:
-          email_intro: La rencontre « %{resource_title} » va commencer dans moins de 48h.
-          email_outro: Vous avez reçu cette notification parce que vous suivez la rencontre « %{resource_title} ». Vous pouvez cesser de la suivre en cliquant sur le lien précédent.
-          email_subject: La réunion « %{resource_title} » va commencer dans moins de 48h.
-          notification_title: La réunion <a href="%{resource_path}">%{resource_title}</a> va commencer dans moins de 48h.
+          email_intro: "La rencontre «\_%{resource_title}\_» va commencer dans moins de 48h."
+          email_outro: "Vous avez reçu cette notification parce que vous suivez la rencontre «\_%{resource_title}\_». Vous pouvez cesser de la suivre en cliquant sur le lien précédent."
+          email_subject: "La réunion «\_%{resource_title}\_» va commencer dans moins de 48h."
+          notification_title: 'La réunion <a href="%{resource_path}">%{resource_title}</a> va commencer dans moins de 48h.'
         update_meeting_event:
-          email_intro: 'La rencontre « %{resource_title} » a été mise à jour. Vous pouvez consulter la nouvelle version en vous rendant sur la page suivante :'
-          email_outro: Vous avez reçu cette notification parce que vous suivez la rencontre « %{resource_title} ». Vous pouvez cesser de la suivre en cliquant sur le lien précédent.
-          email_subject: La rencontre « %{resource_title} » a été mise à jour
-          notification_title: La rencontre <a href="%{resource_path}">%{resource_title}</a> a été mise à jour.
+          email_intro: "La rencontre «\_%{resource_title}\_» a été mise à jour. Vous pouvez consulter la nouvelle version en vous rendant sur la page suivante\_:"
+          email_outro: "Vous avez reçu cette notification parce que vous suivez la rencontre «\_%{resource_title}\_». Vous pouvez cesser de la suivre en cliquant sur le lien précédent."
+          email_subject: "La rencontre «\_%{resource_title}\_» a été mise à jour"
+          notification_title: 'La rencontre <a href="%{resource_path}">%{resource_title}</a> a été mise à jour.'
       mailer:
         registration_mailer:
           confirmation:
             subject: Votre inscription a bien été enregistrée
       meetings:
         filters:
-          past: Passées
-          scope_prompt: Sélectionnez une zone d'application
           going: J'y vais
           join: Participer à la rencontre
           no_slots_available: Il ne reste plus de place
+          past: Passées
           remaining_slots:
             one: Il reste 1 place
-            other: "Il reste %{count} places"
+            other: 'Il reste %{count} places'
+          scope_prompt: Sélectionnez une zone d'application
       models:
         meeting:
           fields:
             end_time: Date et heure de fin
             start_time: Date et heure de début
-      read_more: "(Lire la suite)"
+      read_more: (Lire la suite)
     menu:
-      # --> change "Processus participatifs" in navbar
       processes: Participations en cours
     participatory_processes:
-      pages:
-        home:
-          highlighted_processes:
-            # change "Processus actif" in homepage
-            active_processes: Participations en cours
-            see_all_processes: Voir toutes les participations en cours
       order_by_processes:
         active: Actif
         past: Passés
+      pages:
+        home:
+          highlighted_processes:
+            active_processes: Participations en cours
+            see_all_processes: Voir toutes les participations en cours
       show:
         end_date: Date de fin
         local_area: Périmètre de décision
@@ -179,16 +182,29 @@ fr:
           no_assemblies_yet: Aucune assemblée n'a été créée pour le moment !
         order_by_assemblies:
           assemblies:
-            one: "%{count} assemblée"
-            other: "%{count} assemblées"
+            one: '%{count} assemblée'
+            other: '%{count} assemblées'
       assembly_header:
         assembly_menu_item: L'assemblée
+    menu:
+      processes: Participations en cours
+    participatory_processes:
+      pages:
+        home:
+          highlighted_processes:
+            active_processes: Participations en cours
+            see_all_processes: Voir toutes les participations en cours
+      show:
+        local_area: Périmètre de décision
+        participatory_structure: Mode de décision
+    scopes:
+      global: Toute la ville
   pages:
     home:
       extended:
+        debates_explanation: 'Débattez, partagez vos points de vue et enrichissez les sujets qui comptent pour vous.'
         how_to_participate: Comment puis-je participer ?
-        debates_explanation: Débattez, partagez vos points de vue et enrichissez les sujets qui comptent pour vous.
         meetings_explanation: Restez informés sur où et quand auront lieu les prochaines réunions publiques.
-        proposals_explanation: Proposez vos idées, soutenez des propositions existantes et prenez part aux décisions.
+        proposals_explanation: 'Proposez vos idées, soutenez des propositions existantes et prenez part aux décisions.'
       statistics:
         processes_count: Concertations
