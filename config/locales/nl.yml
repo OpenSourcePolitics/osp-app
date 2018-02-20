@@ -16,6 +16,8 @@ nl:
           form:
             submit: bevestigen
       proposals:
+        orders:
+          label: "Rangschikking voorstellen per:"
         voting_rules:
           proposal_limit:
             description: U kunt maximaal %{limit} voorstellen doen.
