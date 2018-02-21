@@ -765,11 +765,11 @@ ActiveRecord::Schema.define(version: 20180212114850) do
     t.boolean "managed", default: false, null: false
     t.string "roles", default: [], array: true
     t.boolean "email_on_notification", default: false, null: false
-    t.string "personal_url"
-    t.text "about"
     t.string "nickname", limit: 20
     t.datetime "officialized_at"
     t.jsonb "officialized_as"
+    t.string "personal_url"
+    t.text "about"
     t.index ["confirmation_token"], name: "index_decidim_users_on_confirmation_token", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_users_on_decidim_organization_id"
     t.index ["email", "decidim_organization_id"], name: "index_decidim_users_on_email_and_decidim_organization_id", unique: true, where: "((deleted_at IS NULL) AND (managed = false))"
