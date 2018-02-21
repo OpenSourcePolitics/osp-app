@@ -10,7 +10,6 @@ CarrierWave.configure do |config|
 end
 
 # Setup CarrierWave to use Amazon S3. Add `gem "fog-aws" to your Gemfile.
-
 if ENV["HEROKU_APP_NAME"].present?
   if Rails.env.production?
     CarrierWave.configure do |config|

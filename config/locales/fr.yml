@@ -15,6 +15,8 @@ fr:
       proposal:
         address: Adresse
         has_address: Renseigner une adresse
+      user:
+        nickname: Votre pseudonyme
   activerecord:
     attributes:
       decidim/participatory_process:
@@ -76,11 +78,6 @@ fr:
         account_message: 'Pour ajouter votre commentaire <a href="%{sign_in_url}"> connectez-vous avec votre compte</a> ou <a href="%{sign_up_url}">inscrivez-vous</a>.'
         remaining_characters: '%{count} caractères restants'
         remaining_characters_1: '%{count} caractères restants'
-      proposal:
-        address: Adresse
-        has_address: Renseigner une adresse
-      user:
-        nickname: Votre pseudonyme
     devise:
       sessions:
         new:
@@ -208,3 +205,4 @@ fr:
         proposals_explanation: 'Proposez vos idées, soutenez des propositions existantes et prenez part aux décisions.'
       statistics:
         processes_count: Concertations
+        how_to_participate: Comment puis-je participer ?
