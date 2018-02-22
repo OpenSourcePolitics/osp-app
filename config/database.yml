@@ -62,7 +62,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: <%= ENV.fetch("DATABASE_NAME") { "development_app_test" } %>
+  database: <%= ENV.fetch("DATABASE_NAME") { "osp_app_test" } %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -84,5 +84,5 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  # url: <%= ENV['DATABASE_URL'] %>
+  # <<: *default
+  url: <%= ENV['DATABASE_URL'] %>

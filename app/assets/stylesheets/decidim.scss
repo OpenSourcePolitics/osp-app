@@ -1,5 +1,5 @@
-// // Variables
-//
+// Variables
+
 $primary: #ff9900;
 $secondary: #00a1aa;
 $success: #57d685;
@@ -16,6 +16,15 @@ $facebook: #3b5998;
 $google: #dd4b39;
 
 @import "decidim/application";
+
+
+.logo-cityhall {
+  position: static;
+  margin: 0;
+  @media print, screen and (min-width: 40em) {
+    text-align: left;
+  }
+}
 
 /*------FONTS------*/
 

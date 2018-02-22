@@ -17,7 +17,7 @@ gem "uglifier", ">= 1.3.0"
 gem "faker", "~> 1.8.4"
 
 group :development, :test do
-  gem "byebug", platform: :mri
+  gem "pry-byebug", platform: :mri
 
   gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "f-angers-new-proposal-states"
 end
