@@ -11,17 +11,17 @@ fr:
       close_meeting:
         closing_report: Compte rendu
       meeting:
-        registation_terms: ''
+        registation_terms:
         registrations_enabled: Conditions d'inscription
       participatory_process:
+        participatory_process_group_id: Groupe de processus
         developer_group: Promoteur
         local_area: Périmètre
         meta_scope: Échelle
-        participatory_process_group_id: Groupe de processus
         participatory_scope: Objectif
         participatory_structure: Modalités
-        promoted: Mise en avant
         target: Participants
+        promoted: Mise en avant
       participatory_process_group:
         participatory_process_ids: Processus liés
       proposal:
@@ -43,7 +43,7 @@ fr:
   decidim:
     admin:
       actions:
-        new: Nouvelle
+        new: Nouveau
       menu:
         assemblies_submenu:
           features: Fonctionnalités
@@ -61,9 +61,9 @@ fr:
             weight: Position
         participatory_process:
           fields:
-            created_at: Créée le
-            promoted: Mise en évidence
-            published: Publiée
+            created_at: Créé le
+            promoted: Mis en évidence
+            published: Publié
           name: Processus
         participatory_process_group:
           name: Groupes de processus
@@ -91,6 +91,9 @@ fr:
         update:
           error: Une erreur s'est produite lors de la mise à jour de ce lien.
           success: Lien mis à jour avec succès
+      participatory_processes:
+        new:
+          title: nouveau processus
       participatory_process_copies:
         new:
           title: Dupliquer le processus
@@ -158,11 +161,9 @@ fr:
         destroy:
           success: Processus supprimé avec succès.
         index:
-          not_published: Non publiée
-          published: Publiée
+          not_published: Non publié
+          published: Publié
           title: Nouveau processus
-        new:
-          title: nouveau processus
         update:
           error: Une erreur s'est produite lors de la mise à jour de ce processus.
           success: Processus mis à jour avec succès.
@@ -185,9 +186,9 @@ fr:
       show:
         developer_group: Promoteur
         local_area: Périmètre
-        meta_scope: Échelle
         participatory_scope: Objectif
         participatory_structure: Modalités
+        meta_scope: Échelle
         target: Participants
     devise:
       registrations:
@@ -209,6 +210,21 @@ fr:
             votes_blocked: Soutiens bloqués
             votes_enabled: Soutiens activés
             votes_hidden: Cacher le compteur de soutiens
+    proposals:
+      proposals:
+        filters:
+          voted: Soutenues
+        orders:
+          most_voted: Les plus soutenues
+        vote_button:
+          already_voted: Soutenue
+          already_voted_hover: Ne plus soutenir
+          maximum_votes_reached: Nombre maximum de soutiens atteint
+          vote: Soutenir
+        votes_count:
+          count:
+            one: SOUTIEN
+            other: SOUTIENS
     participatory_process_groups:
       show:
         group_participatory_processes: 'Processus pour %{group}'
@@ -239,25 +255,10 @@ fr:
       show:
         developer_group: Promoteur
         local_area: Périmètre
-        meta_scope: Échelle
         participatory_scope: Objectif
         participatory_structure: Modalités
+        meta_scope: Échelle
         target: Participants
-    proposals:
-      proposals:
-        filters:
-          voted: Soutenues
-        orders:
-          most_voted: Les plus soutenues
-        vote_button:
-          already_voted: Soutenue
-          already_voted_hover: Ne plus soutenir
-          maximum_votes_reached: Nombre maximum de soutiens atteint
-          vote: Soutenir
-        votes_count:
-          count:
-            one: SOUTIEN
-            other: SOUTIENS
     scopes:
       global: Portée globale
   layouts:
