@@ -210,6 +210,8 @@ fr:
             votes_blocked: Soutiens bloqués
             votes_enabled: Soutiens activés
             votes_hidden: Cacher le compteur de soutiens
+    menu:
+      processes: Processus
     proposals:
       proposals:
         filters:
