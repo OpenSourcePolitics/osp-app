@@ -227,6 +227,10 @@ fr:
           count:
             one: SOUTIEN
             other: SOUTIENS
+    participations:
+      participations:
+        show:
+          answer_from_moa: Réponse officielle de la maîtrise d'ouvrage
     participatory_process_groups:
       show:
         group_participatory_processes: 'Processus pour %{group}'
