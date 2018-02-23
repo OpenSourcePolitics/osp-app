@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-participations.git
-  revision: fb1ff5889cf12a783ef67c6b282d9237dde69f1a
+  revision: 15f08d5d78b107b5c443bd4b9d7fbfacf0f04645
   branch: 0.9-stable
   specs:
     decidim-participations (0.9.2)
@@ -292,7 +292,7 @@ GEM
       i18n (>= 0.7)
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
-    ffi (1.9.21)
+    ffi (1.9.22)
     file_validators (2.1.0)
       activemodel (>= 3.0)
       mime-types (>= 1.0)
@@ -440,7 +440,7 @@ GEM
       activerecord (>= 4.2, < 5.2)
       request_store (~> 1.1)
     parallel (1.12.1)
-    parser (2.5.0.1)
+    parser (2.5.0.2)
       ast (~> 2.4.0)
     passenger (5.2.0)
       rack
