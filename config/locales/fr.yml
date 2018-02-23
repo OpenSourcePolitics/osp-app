@@ -2,7 +2,7 @@ fr:
   activemodel:
     attributes:
       assembly:
-        developer_group: Promoteur
+        developer_group: Maîtrise d'ouvrage
         local_area: Périmètre
         meta_scope: Échelle
         participatory_scope: Objectif
@@ -15,7 +15,7 @@ fr:
         registrations_enabled: Conditions d'inscription
       participatory_process:
         participatory_process_group_id: Groupe de processus
-        developer_group: Promoteur
+        developer_group: Maîtrise d'ouvrage
         local_area: Périmètre
         meta_scope: Échelle
         participatory_scope: Objectif
@@ -34,7 +34,7 @@ fr:
   activerecord:
     attributes:
       decidim/participatory_process:
-        developer_group: Promoteur
+        developer_group: Maîtrise d'ouvrage
         local_area: Périmètre
         meta_scope: Échelle
         participatory_scope: Objectif
