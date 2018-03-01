@@ -16,3 +16,15 @@ $secondary: #EB1B2A;
 // $google: #dd4b39;
 
 @import "decidim/application";
+
+// .title-bar {
+//   padding: 0 0.5rem;
+// }
+
+.logo-cityhall {
+  position: static;
+  margin: 0;
+  @media print, screen and (min-width: 40em) {
+    text-align: left;
+  }
+}

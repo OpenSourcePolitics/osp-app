@@ -8,6 +8,8 @@ Decidim.configure do |config|
   config.default_locale = :en
   config.available_locales = [:en, :fr]
 
+  config.maximum_attachment_height_or_width = 6000
+
   # Geocoder configuration
   config.geocoder = {
     static_map_url: "https://image.maps.cit.api.here.com/mia/1.6/mapview",
