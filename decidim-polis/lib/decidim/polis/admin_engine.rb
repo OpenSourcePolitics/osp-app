@@ -15,7 +15,7 @@ module Decidim
           resources :attachments
         end
 
-        root to: "polis#index"
+        root to: redirect('../edit')
       end
 
       def load_seed
