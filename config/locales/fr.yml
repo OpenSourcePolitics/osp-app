@@ -1,19 +1,49 @@
 fr:
   activemodel:
     attributes:
+      assembly:
+        developer_group: Promoteur
+        local_area: Périmètre
+        meta_scope: Échelle
+        participatory_scope: Objectif
+        participatory_structure: Modalités
+        target: Participants
+      close_meeting:
+        closing_report: Compte rendu
+      meeting:
+        registation_terms:
+        registrations_enabled: Conditions d'inscription
       participatory_process:
-        participatory_process_group_id: Groupe de la concertation
-        participatory_scope: Objectif de la concertation
+        participatory_process_group_id: Groupe de concertations
+        developer_group: Promoteur
+        local_area: Périmètre
+        meta_scope: Échelle
+        participatory_scope: Objectif
+        participatory_structure: Modalités
+        target: Participants
         promoted: Mise en avant
       participatory_process_group:
-        participatory_process_ids: Concertations liées
+        participatory_process_ids: Concertations liés
       proposal:
         address: Adresse
         has_address: Renseigner une adresse
+      scope:
+        scope_type: Type de zone d'application
       user:
         nickname: Votre pseudonyme
+  activerecord:
+    attributes:
+      decidim/participatory_process:
+        developer_group: Promoteur
+        local_area: Périmètre
+        meta_scope: Échelle
+        participatory_scope: Objectif
+        participatory_structure: Modalités
+        target: Participants
   decidim:
     admin:
+      actions:
+        new: Nouvelle
       assemblies:
         create:
           success: Agenda créé avec succès.
@@ -30,10 +60,13 @@ fr:
           success: Agenda dépublié avec succès.
       menu:
         assemblies: Agenda
+        assemblies_submenu:
+          features: Fonctionnalités
         navbar_links: Liens de navigation
-        participatory_process_groups: Groupes de concertation
+        participatory_process_groups: Groupes de concertations
         participatory_processes: Concertations
         participatory_processes_submenu:
+          features: Fonctionnalités
           process_admins: Administrateurs de la concertation
       models:
         assembly:
@@ -50,7 +83,7 @@ fr:
             published: Publiée
           name: Concertation
         participatory_process_group:
-          name: Groupes de concertation
+          name: Groupes de concertations
         participatory_process_user_role:
           name: Rôle utilisateur de la concertation
       navbar_links:
@@ -75,19 +108,22 @@ fr:
         update:
           error: Une erreur s'est produite lors de la mise à jour de ce lien.
           success: Lien mis à jour avec succès
+      participatory_processes:
+        new:
+          title: nouvelle concertation
       participatory_process_copies:
         new:
           title: Dupliquer la concertation
       participatory_process_groups:
         destroy:
-          success: Le groupe de concertation a été détruit avec succès.
+          success: Le groupe de concertations a été détruit avec succès.
         edit:
-          title: Modifier le groupe de concertation
+          title: Modifier le groupe de concertations
         new:
-          title: Nouveau groupe de concertation
+          title: Nouveau groupe de concertations
         update:
-          error: Il y a eu une erreur lors de la mise à jour de ce groupe de concertation.
-          success: Groupe de concertation mis à jour avec succès.
+          error: Il y a eu une erreur lors de la mise à jour de ce groupe de concertations.
+          success: Groupe de concertations mis à jour avec succès.
       participatory_process_publications:
         create:
           error: Une erreur s'est produite lors de la publication de cette concertation.
@@ -97,29 +133,29 @@ fr:
           success: Concertation supprimée avec succès.
       participatory_process_step_activations:
         create:
-          error: Une erreur s'est produite lors de l'activation de cette étape de concertation.
-          success: Etape de concertation activée avec succès.
+          error: Une erreur s'est produite lors de l'activation de cette étape de la concertation.
+          success: Etape de la concertation activée avec succès.
       participatory_process_steps:
         create:
-          error: Une erreur s'est produite lors de la création d'une nouvelle étape de concertation.
-          success: Etape de concertation créée avec succès.
+          error: Une erreur s'est produite lors de la création d'une nouvelle étape de la concertation.
+          success: Etape de la concertation créée avec succès.
         default_title: Introduction
         destroy:
           error:
             active_step: Vous ne pouvez pas supprimer l'étape active de la concertation.
             last_step: Vous ne pouvez pas supprimer la dernière étape d'une concertation.
-          success: L'étape de concertation a été supprimée avec succès.
+          success: L'étape de la concertation a été supprimée avec succès.
         edit:
-          title: Modifier l'étape de concertation
+          title: Modifier l'étape de la concertation
         index:
           steps_title: Etapes
         new:
-          title: Nouvelle étape de concertation
+          title: Nouvelle étape de la concertation
         ordering:
           error: Une erreur s'est produite lors de la réorganisation des étapes de la concertation.
         update:
-          error: Une erreur s'est produite lors de la mise à jour de cette étape de concertation.
-          success: Etape de concertation mise à jour avec succès.
+          error: Une erreur s'est produite lors de la mise à jour de cette étape de la concertation.
+          success: Etape de la concertation mise à jour avec succès.
       participatory_process_user_roles:
         create:
           error: Une erreur s'est produite lors de l'ajout d'un utilisateur pour cette concertation.
@@ -131,7 +167,7 @@ fr:
         index:
           process_admins_title: Administrateurs de la concertation
         new:
-          title: Nouvel utilisateur de concertation.
+          title: Nouvel utilisateur de la concertation.
         update:
           error: Une erreur s'est produite lors de la mise à jour d'un utilisateur pour cette concertation.
           success: L'utilisateur a été mis à jour avec succès pour cette concertation.
@@ -154,12 +190,12 @@ fr:
           success: Concertation dupliquée avec succès.
       participatory_processes_group:
         create:
-          error: Une erreur s'est produite lors de la création d'un nouveau groupe de concertation.
-          success: Groupe de concertation créé avec succès.
+          error: Une erreur s'est produite lors de la création d'un nouveau groupe de concertations.
+          success: Groupe de concertations créé avec succès.
       titles:
         assemblies: Agenda
         navbar_links: Liens de navigation
-        participatory_process_groups: Groupes de concertation
+        participatory_process_groups: Groupes de concertations
         participatory_processes: Concertations
     application:
       documents:
@@ -172,6 +208,13 @@ fr:
           highlighted_assemblies:
             active_assemblies: Agenda
             see_all_assemblies: Voir tous les agendas
+      show:
+        developer_group: Promoteur
+        local_area: Périmètre
+        participatory_scope: Objectif
+        participatory_structure: Modalités
+        meta_scope: Échelle
+        target: Participants
       statistics:
         assemblies_count: Agenda
     devise:
@@ -183,13 +226,24 @@ fr:
       sessions:
         new:
           are_you_new?: Nouveau sur la plateforme ?
+    features:
+      proposals:
+        actions:
+          vote: Soutenir
+        settings:
+          global:
+            vote_limit: Nombre maximum de soutiens par utilisateur
+          step:
+            votes_blocked: Soutiens bloqués
+            votes_enabled: Soutiens activés
+            votes_hidden: Cacher le compteur de soutiens
     menu:
       assemblies: Agenda
       processes: Participer
     participatory_process_groups:
       show:
-        group_participatory_processes: 'Concertations pour %{group}'
-        title: Groupes de concertation
+        group_participatory_processes: 'Concertation pour %{group}'
+        title: Groupes de concertations
     participatory_process_steps:
       index:
         process_steps: Etapes de la concertation
@@ -203,7 +257,7 @@ fr:
           form:
             slug_help: 'Les identifiants d''URL sont utilisés pour générer les URL qui envoient vers cette concertation. N''accepte que des lettres, des chiffres et des tirets et doit commencer par une lettre. Exemple: %{url}'
       index:
-        title: Concertations
+        title: Concertation
       order_by_processes:
         active: Actives
         all: Toutes
@@ -214,11 +268,29 @@ fr:
             active_processes: Concertations en cours
             see_all_processes: Voir toutes les concertations
       show:
-        local_area: Périmètre de décision
-        participatory_scope: Objectif de la concertation
-        participatory_structure: Mode de décision
+        developer_group: Promoteur
+        local_area: Périmètre
+        participatory_scope: Objectif
+        participatory_structure: Modalités
+        meta_scope: Échelle
+        target: Participants
+    proposals:
+      proposals:
+        filters:
+          voted: Soutenues
+        orders:
+          most_voted: Les plus soutenues
+        vote_button:
+          already_voted: Soutenue
+          already_voted_hover: Ne plus soutenir
+          maximum_votes_reached: Nombre maximum de soutiens atteint
+          vote: Soutenir
+        votes_count:
+          count:
+            one: SOUTIEN
+            other: SOUTIENS
     scopes:
-      global: Portée globale
+      global: Toute la métropole
   layouts:
     decidim:
       assemblies:
@@ -242,4 +314,4 @@ fr:
   pages:
     home:
       extended:
-        how_to_participate: Comment puis-je participer ?
+        how_to_participate: Comment participer ?
