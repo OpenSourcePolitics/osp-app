@@ -43,7 +43,7 @@ fr:
   decidim:
     admin:
       actions:
-        new: Nouvelle
+        new: Nouveau
       menu:
         assemblies_submenu:
           features: Fonctionnalités
@@ -61,9 +61,9 @@ fr:
             weight: Position
         participatory_process:
           fields:
-            created_at: Créée le
-            promoted: Mise en évidence
-            published: Publiée
+            created_at: Créé le
+            promoted: Mis en évidence
+            published: Publié
           name: Processus
         participatory_process_group:
           name: Groupes de processus
@@ -161,8 +161,8 @@ fr:
         destroy:
           success: Processus supprimé avec succès.
         index:
-          not_published: Non publiée
-          published: Publiée
+          not_published: Non publié
+          published: Publié
           title: Nouveau processus
         update:
           error: Une erreur s'est produite lors de la mise à jour de ce processus.
@@ -211,7 +211,7 @@ fr:
             votes_enabled: Soutiens activés
             votes_hidden: Cacher le compteur de soutiens
     menu:
-      processes: Participations en cours
+      processes: Processus
     proposals:
       proposals:
         filters:
@@ -244,16 +244,16 @@ fr:
           form:
             slug_help: 'Les identifiants d''URL sont utilisés pour générer les URL qui envoient vers ce processus. N''accepte que des lettres, des chiffres et des tirets et doit commencer par une lettre. Exemple: %{url}'
       index:
-        title: Participations
+        title: Processus
       order_by_processes:
-        active: Actives
-        all: Toutes
-        past: Passées
+        active: Actifs
+        all: Tous
+        past: Passés
       pages:
         home:
           highlighted_processes:
-            active_processes: Participations en cours
-            see_all_processes: Voir toutes les participations
+            active_processes: Processus en cours
+            see_all_processes: Voir tous les processus
       show:
         developer_group: Promoteur
         local_area: Périmètre
@@ -262,7 +262,7 @@ fr:
         meta_scope: Échelle
         target: Participants
     scopes:
-      global: Toute la ville
+      global: Portée globale
   layouts:
     decidim:
       assembly_header:
@@ -272,11 +272,11 @@ fr:
           promoted_processes: Processus mis en avant
         order_by_processes:
           processes:
-            one: '%{count} participation'
-            other: '%{count} participations'
+            one: '%{count} processus'
+            other: '%{count} processus'
       process_header:
         process_menu_item: Présentation
   pages:
     home:
       extended:
-        how_to_participate: Comment puis-je participer ?
+        how_to_participate: Comment participer ?
