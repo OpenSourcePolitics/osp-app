@@ -14,7 +14,7 @@ fr:
         registation_terms:
         registrations_enabled: Conditions d'inscription
       participatory_process:
-        participatory_process_group_id: Groupe de processus
+        participatory_process_group_id: Groupe de participations
         developer_group: Promoteur
         local_area: Périmètre
         meta_scope: Échelle
@@ -23,7 +23,7 @@ fr:
         target: Participants
         promoted: Mise en avant
       participatory_process_group:
-        participatory_process_ids: Processus liés
+        participatory_process_ids: Participations liées
       proposal:
         address: Adresse
         has_address: Renseigner une adresse
@@ -43,16 +43,16 @@ fr:
   decidim:
     admin:
       actions:
-        new: Nouveau
+        new: Nouvelle
       menu:
         assemblies_submenu:
           features: Fonctionnalités
         navbar_links: Liens de navigation
-        participatory_process_groups: Groupes de processus
-        participatory_processes: Processus
+        participatory_process_groups: Groupes de participations
+        participatory_processes: Participations
         participatory_processes_submenu:
           features: Fonctionnalités
-          process_admins: Administrateurs du processus
+          process_admins: Administrateurs de la participation
       models:
         navbar_link:
           fields:
@@ -61,14 +61,14 @@ fr:
             weight: Position
         participatory_process:
           fields:
-            created_at: Créé le
-            promoted: Mis en évidence
-            published: Publié
-          name: Processus
+            created_at: Créée le
+            promoted: Mise en évidence
+            published: Publiée
+          name: Participation
         participatory_process_group:
-          name: Groupes de processus
+          name: Groupes de participations
         participatory_process_user_role:
-          name: Rôle utilisateur du processus
+          name: Rôle utilisateur de la participation
       navbar_links:
         create:
           error: Une erreur s'est produite lors de la création d'un nouveau lien.
@@ -93,92 +93,92 @@ fr:
           success: Lien mis à jour avec succès
       participatory_processes:
         new:
-          title: nouveau processus
+          title: nouvelle participation
       participatory_process_copies:
         new:
-          title: Dupliquer le processus
+          title: Dupliquer la participation
       participatory_process_groups:
         destroy:
-          success: Le groupe de processus a été détruit avec succès.
+          success: Le groupe de participations a été détruit avec succès.
         edit:
-          title: Modifier le groupe de processus
+          title: Modifier le groupe de participations
         new:
-          title: Nouveau groupe de processus
+          title: Nouveau groupe de participations
         update:
-          error: Il y a eu une erreur lors de la mise à jour de ce groupe de processus.
-          success: Groupe de processus mis à jour avec succès.
+          error: Il y a eu une erreur lors de la mise à jour de ce groupe de participations.
+          success: Groupe de participations mis à jour avec succès.
       participatory_process_publications:
         create:
-          error: Une erreur s'est produite lors de la publication de ce processus.
-          success: Processus publié avec succès.
+          error: Une erreur s'est produite lors de la publication de cette participation.
+          success: Participation publiée avec succès.
         destroy:
-          error: Une erreur s'est produite lors de la publication de ce processus.
-          success: Processus supprimé avec succès.
+          error: Une erreur s'est produite lors de la publication de cette participation.
+          success: Participation supprimée avec succès.
       participatory_process_step_activations:
         create:
-          error: Une erreur s'est produite lors de l'activation de cette étape du processus.
-          success: Etape de processus activée avec succès.
+          error: Une erreur s'est produite lors de l'activation de cette étape de la participation.
+          success: Etape de la participation activée avec succès.
       participatory_process_steps:
         create:
-          error: Une erreur s'est produite lors de la création d'une nouvelle étape du processus.
-          success: Etape du processus créée avec succès.
+          error: Une erreur s'est produite lors de la création d'une nouvelle étape de la participation.
+          success: Etape de la participation créée avec succès.
         default_title: Introduction
         destroy:
           error:
-            active_step: Vous ne pouvez pas supprimer l'étape active du processus.
-            last_step: Vous ne pouvez pas supprimer la dernière étape d'un processus.
-          success: L'étape du processus a été supprimée avec succès.
+            active_step: Vous ne pouvez pas supprimer l'étape active de la participation.
+            last_step: Vous ne pouvez pas supprimer la dernière étape d'une participation.
+          success: L'étape de la participation a été supprimée avec succès.
         edit:
-          title: Modifier l'étape du processus
+          title: Modifier l'étape de la participation
         index:
           steps_title: Etapes
         new:
-          title: Nouvelle étape du processus
+          title: Nouvelle étape de la participation
         ordering:
-          error: Une erreur s'est produite lors de la réorganisation des étapes du processus.
+          error: Une erreur s'est produite lors de la réorganisation des étapes de la participation.
         update:
-          error: Une erreur s'est produite lors de la mise à jour de cette étape du processus.
-          success: Etape du processus mise à jour avec succès.
+          error: Une erreur s'est produite lors de la mise à jour de cette étape de la participation.
+          success: Etape de la participation mise à jour avec succès.
       participatory_process_user_roles:
         create:
-          error: Une erreur s'est produite lors de l'ajout d'un utilisateur pour ce processus.
-          success: Utilisateur créé avec succès pour ce processus.
+          error: Une erreur s'est produite lors de l'ajout d'un utilisateur pour cette participation.
+          success: Utilisateur créé avec succès pour cette participation.
         destroy:
-          success: L'utilisateur a été supprimé avec succès pour ce processus.
+          success: L'utilisateur a été supprimé avec succès pour cette participation.
         edit:
-          title: Mettre à jour l'utilisateur du processus.
+          title: Mettre à jour l'utilisateur de la participation.
         index:
-          process_admins_title: Administrateurs du processus
+          process_admins_title: Administrateurs de la participation
         new:
-          title: Nouvel utilisateur du processus.
+          title: Nouvel utilisateur de la participation.
         update:
-          error: Une erreur s'est produite lors de la mise à jour d'un utilisateur pour ce processus.
-          success: L'utilisateur a été mis à jour avec succès pour ce processus.
+          error: Une erreur s'est produite lors de la mise à jour d'un utilisateur pour cette participation.
+          success: L'utilisateur a été mis à jour avec succès pour cette participation.
       participatory_processes:
         create:
-          error: Une erreur s'est produite lors de la création d'un nouveau processus.
-          success: Processus créé avec succès. Configurez maintenant ses étapes.
+          error: Une erreur s'est produite lors de la création d'une nouvelle participation.
+          success: Participation créée avec succès. Configurez maintenant ses étapes.
         destroy:
-          success: Processus supprimé avec succès.
+          success: Participation supprimée avec succès.
         index:
-          not_published: Non publié
-          published: Publié
-          title: Nouveau processus
+          not_published: Non publiée
+          published: Publiée
+          title: Nouvelle participation
         update:
-          error: Une erreur s'est produite lors de la mise à jour de ce processus.
-          success: Processus mis à jour avec succès.
+          error: Une erreur s'est produite lors de la mise à jour de cette participation.
+          success: Participation mise à jour avec succès.
       participatory_processes_copies:
         create:
-          error: Une erreur s'est produite lors de la duplication de ce processus.
-          success: Processus dupliqué avec succès.
+          error: Une erreur s'est produite lors de la duplication de cette participation.
+          success: Participation dupliquée avec succès.
       participatory_processes_group:
         create:
-          error: Une erreur s'est produite lors de la création d'un nouveau groupe de processus.
-          success: Groupe de processus créé avec succès.
+          error: Une erreur s'est produite lors de la création d'un nouveau groupe de participations.
+          success: Groupe de participations créé avec succès.
       titles:
         navbar_links: Liens de navigation
-        participatory_process_groups: Groupes de processus
-        participatory_processes: Processus
+        participatory_process_groups: Groupes de participations
+        participatory_processes: Participations
     application:
       documents:
         related_documents: Documents à consulter
@@ -211,7 +211,7 @@ fr:
             votes_enabled: Soutiens activés
             votes_hidden: Cacher le compteur de soutiens
     menu:
-      processes: Processus
+      processes: Participations en cours
     proposals:
       proposals:
         filters:
@@ -229,31 +229,31 @@ fr:
             other: SOUTIENS
     participatory_process_groups:
       show:
-        group_participatory_processes: 'Processus pour %{group}'
-        title: Groupes de processus
+        group_participatory_processes: 'Participations pour %{group}'
+        title: Groupes de participations
     participatory_process_steps:
       index:
-        process_steps: Etapes du processus
-        title: Etapes du processus
+        process_steps: Etapes de la participation
+        title: Etapes de la participation
     participatory_processes:
       admin:
         participatory_process_copies:
           form:
-            slug_help: 'Les identifiants d''URL sont utilisés pour générer les URL qui envoient vers ce processus. N''accepte que des lettres, des chiffres et des tirets et doit commencer par une lettre. Exemple: %{url}'
+            slug_help: 'Les identifiants d''URL sont utilisés pour générer les URL qui envoient vers cette participation. N''accepte que des lettres, des chiffres et des tirets et doit commencer par une lettre. Exemple: %{url}'
         participatory_processes:
           form:
-            slug_help: 'Les identifiants d''URL sont utilisés pour générer les URL qui envoient vers ce processus. N''accepte que des lettres, des chiffres et des tirets et doit commencer par une lettre. Exemple: %{url}'
+            slug_help: 'Les identifiants d''URL sont utilisés pour générer les URL qui envoient vers cette participation. N''accepte que des lettres, des chiffres et des tirets et doit commencer par une lettre. Exemple: %{url}'
       index:
-        title: Processus
+        title: Participations
       order_by_processes:
-        active: Actifs
-        all: Tous
-        past: Passés
+        active: Actives
+        all: Toutes
+        past: Passées
       pages:
         home:
           highlighted_processes:
-            active_processes: Processus en cours
-            see_all_processes: Voir tous les processus
+            active_processes: Participations en cours
+            see_all_processes: Voir toutes les participations
       show:
         developer_group: Promoteur
         local_area: Périmètre
@@ -262,18 +262,18 @@ fr:
         meta_scope: Échelle
         target: Participants
     scopes:
-      global: Portée globale
+      global: Toute la ville
   layouts:
     decidim:
       assembly_header:
         assembly_menu_item: Présentation
       participatory_processes:
         index:
-          promoted_processes: Processus mis en avant
+          promoted_processes: Participation mise en avant
         order_by_processes:
           processes:
-            one: '%{count} processus'
-            other: '%{count} processus'
+            one: '%{count} participation'
+            other: '%{count} participations'
       process_header:
         process_menu_item: Présentation
   pages:
