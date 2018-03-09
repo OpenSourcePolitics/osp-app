@@ -6,7 +6,7 @@ ruby RUBY_VERSION
 
 gem "decidim", git: "https://github.com/decidim/decidim.git", branch: "0.9-stable"
 
-gem "decidim-polis", path: "decidim-polis"
+gem "decidim-polis", git: "https://github.com/OpenSourcePolitics/decidim-polis.git"
 # gem "decidim-participations", git: "https://github.com/OpenSourcePolitics/decidim-participations.git", branch: "09-stable"
 
 gem "decidim-export", git: "https://github.com/OpenSourcePolitics/decidim-user-export.git"
