@@ -269,7 +269,7 @@ fr:
         assembly_menu_item: Présentation
       participatory_processes:
         index:
-          promoted_processes: Participation mise en avant
+          promoted_processes: Participations mises en avant
         order_by_processes:
           processes:
             one: '%{count} participation'
