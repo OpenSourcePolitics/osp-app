@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180221025839) do
+ActiveRecord::Schema.define(version: 20180305160748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -427,6 +427,7 @@ ActiveRecord::Schema.define(version: 20180221025839) do
     t.jsonb "highlighted_content_banner_action_subtitle"
     t.string "highlighted_content_banner_action_url"
     t.string "highlighted_content_banner_image"
+    t.string "polis_site_id"
     t.index ["host"], name: "index_decidim_organizations_on_host", unique: true
     t.index ["name"], name: "index_decidim_organizations_on_name", unique: true
   end
@@ -721,7 +722,7 @@ ActiveRecord::Schema.define(version: 20180221025839) do
     t.boolean "managed", default: false, null: false
     t.string "roles", default: [], array: true
     t.boolean "email_on_notification", default: false, null: false
-    t.string "nickname", limit: 20
+    t.string "nickname", limit: 20, default: "", null: false
     t.datetime "officialized_at"
     t.jsonb "officialized_as"
     t.string "personal_url"
