@@ -101,7 +101,7 @@ $warning: $yellow;
 } // arrows of dropdown menu
 
 .subhero .heading3 {
-  font-size: 1.2em;
+  font-size: 0.9em;
 }
 .home-bullet__icon svg {
   fill: $secondary;
@@ -167,8 +167,8 @@ $warning: $yellow;
   border:1px solid white;
   color:white; opacity:0.8;
   &:hover {
-    border: 1px solid white;
-    color: white;
+    border: 1px solid $secondary;
+    color: $secondary;
     opacity: 1;
   }
 } // button "view steps"
@@ -177,6 +177,11 @@ $warning: $yellow;
   background: white;
   color: $secondary;
   &:hover {
+    border: 1px solid darken($secondary, 8);
+    background: white;
+    color: darken($secondary, 8);
+  }
+  &:focus {
     border: 1px solid darken($secondary, 8);
     background: white;
     color: darken($secondary, 8);
