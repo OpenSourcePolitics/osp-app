@@ -18,6 +18,8 @@ gem "uglifier", ">= 1.3.0"
 
 gem "faker", "~> 1.8.4"
 
+gem "sinatra", "~> 2.0.1"
+
 group :development, :test do
   gem "pry-byebug", platform: :mri
 
@@ -32,13 +34,13 @@ group :development do
   gem "web-console"
 end
 
-group :production do
-  gem 'passenger'
-  gem 'fog-aws'
-  gem 'dalli'
-  gem 'sendgrid-ruby'
-  gem 'newrelic_rpm'
-  gem 'lograge'
-  gem 'sentry-raven'
-  gem 'sidekiq'
-end
+# group :production do
+#   gem 'passenger'
+#   gem 'fog-aws'
+#   gem 'dalli'
+#   gem 'sendgrid-ruby'
+#   gem 'newrelic_rpm'
+#   gem 'lograge'
+#   gem 'sentry-raven'
+#   gem 'sidekiq'
+# end
