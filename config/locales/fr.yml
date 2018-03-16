@@ -213,8 +213,15 @@ fr:
     menu:
       processes: Processus
     proposals:
+      admin:
+        proposal_answers:
+          edit:
+            rejected: Non retenue
+      answers:
+        rejected: Non retenue
       proposals:
         filters:
+          rejected: Non retenue
           voted: Soutenues
         orders:
           most_voted: Les plus soutenues
@@ -223,6 +230,8 @@ fr:
           already_voted_hover: Ne plus soutenir
           maximum_votes_reached: Nombre maximum de soutiens atteint
           vote: Soutenir
+        show:
+          proposal_rejected_reason: "Cette proposition n'a pas été retenue parce que:"
         votes_count:
           count:
             one: SOUTIEN

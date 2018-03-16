@@ -38,6 +38,10 @@ $warning: $yellow;
   display:none
 }
 
+.wrapper-home.home-section {
+  display: none;
+}
+
 .title-bar {
   background:white;
 }
@@ -48,6 +52,10 @@ $warning: $yellow;
 
 .navbar {
   background:#000000;
+}
+
+.main-nav__link a {
+  color: white;
 }
 
 .main-nav__link--active a {
@@ -92,7 +100,9 @@ $warning: $yellow;
   opacity: 0.6;
 } // arrows of dropdown menu
 
-
+.subhero .heading3 {
+  font-size: 1.2em;
+}
 .home-bullet__icon svg {
   fill: $secondary;
 }
