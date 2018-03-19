@@ -1,16 +1,4 @@
 Rails.application.configure do
-  # config.active_job.queue_adapter = :sidekiq
-  # config.lograge.enabled = true
-  # config.lograge.formatter = Lograge::Formatters::Json.new
-  # config.lograge.custom_options = lambda do |event|
-  #   {
-  #     remote_ip: event.payload[:remote_ip],
-  #     params: event.payload[:params].except('controller', 'action', 'format', 'utf8'),
-  #     user_id: event.payload[:user_id],
-  #     organization_id: event.payload[:organization_id],
-  #     referer: event.payload[:referer],
-  #   }
-  # end
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -33,14 +21,14 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  # config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
   config.public_file_server.enabled = true
 
   # Compress JavaScripts and CSS.
-  config.assets.js_compressor = Uglifier.new(:harmony => true)
+  # config.assets.js_compressor = :uglifier
   config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
+  # config.assets.compile = false
   config.assets.compile = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
@@ -68,11 +56,7 @@ Rails.application.configure do
   config.log_tags = [ :request_id ]
 
   # Use a different cache store in production.
-  # if ENV["MEMCACHEDCLOUD_SERVERS"].present?
-  #   config.cache_store = :dalli_store, ENV["MEMCACHEDCLOUD_SERVERS"].split(","), {
-  #     username: ENV["MEMCACHEDCLOUD_USERNAME"], password: ENV["MEMCACHEDCLOUD_PASSWORD"]
-  #   }
-  # end
+  # config.cache_store = :mem_cache_store
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
@@ -91,29 +75,29 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
-  config.action_mailer.delivery_method = :smtp
   config.log_formatter = ::Logger::Formatter.new
-  config.action_mailer.smtp_settings = {
-    :address        => Rails.application.secrets.smtp_address,
-    :port           => Rails.application.secrets.smtp_port,
-    :authentication => Rails.application.secrets.smtp_authentication,
-    :user_name      => Rails.application.secrets.smtp_username,
-    :password       => Rails.application.secrets.smtp_password,
-    :domain         => Rails.application.secrets.smtp_domain,
-    :enable_starttls_auto => Rails.application.secrets.smtp_starttls_auto,
-    :openssl_verify_mode => 'none'
-  }
+  # config.action_mailer.smtp_settings = {
+  #   :address        => Rails.application.secrets.smtp_address,
+  #   :port           => Rails.application.secrets.smtp_port,
+  #   :authentication => Rails.application.secrets.smtp_authentication,
+  #   :user_name      => Rails.application.secrets.smtp_username,
+  #   :password       => Rails.application.secrets.smtp_password,
+  #   :domain         => Rails.application.secrets.smtp_domain,
+  #   :enable_starttls_auto => Rails.application.secrets.smtp_starttls_auto,
+  #   :openssl_verify_mode => 'none'
+  # }
+  config.action_mailer.delivery_method = :sendmail
 
-  # if Rails.application.secrets.sendgrid
-  #   config.action_mailer.default_options = {
-  #     "X-SMTPAPI" => {
-  #       filters:  {
-  #         clicktrack: { settings: { enable: 0 } },
-  #         opentrack:  { settings: { enable: 0 } }
-  #       }
-  #     }.to_json
-  #   }
-  # end
+  if Rails.application.secrets.sendgrid
+    config.action_mailer.default_options = {
+      "X-SMTPAPI" => {
+        filters:  {
+          clicktrack: { settings: { enable: 0 } },
+          opentrack:  { settings: { enable: 0 } }
+        }
+      }.to_json
+    }
+  end
 
 
   # Use a different logger for distributed setups.
@@ -129,3 +113,4 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
+

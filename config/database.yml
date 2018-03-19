@@ -25,10 +25,10 @@ default: &default
   host: <%= ENV.fetch("DATABASE_HOST") { "localhost" } %>
   username: <%= ENV.fetch("DATABASE_USERNAME") { "" } %>
   password: <%= ENV.fetch("DATABASE_PASSWORD") { "" } %>
-  database: <%= ENV.fetch("DATABASE_NAME") { "development_app_development" } %>
 
 development:
   <<: *default
+  database: <%= ENV.fetch("DATABASE_NAME") { "development_app_development" } %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -85,4 +85,4 @@ test:
 #
 production:
   <<: *default
-  # url: <%= ENV['DATABASE_URL'] %>
+  database: <%= ENV.fetch("DATABASE_NAME") { "development_app_development" } %>
