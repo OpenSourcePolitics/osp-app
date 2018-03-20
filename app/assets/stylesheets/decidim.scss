@@ -30,6 +30,10 @@ $warning: $yellow;
 
 @import "decidim/application";
 
+.main-footer__badge {
+  position: static;
+}
+
 .mini-footer {
   display:none
 }
