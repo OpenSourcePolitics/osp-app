@@ -32,6 +32,25 @@ $warning: $yellow;
 
 .main-footer__badge {
   position: static;
+  margin: auto;
+}
+
+.main__footer__social {
+  text-align: center;
+    margin-top: 10px;
+}
+
+@media print, screen and (min-width: 40em) {
+  .main__footer__nav {
+    text-align: center;
+  }
+}
+
+@media print, screen and (min-width: 65em) {
+  .main__footer__social {
+    margin-top: 0;
+    text-align: right;
+  }
 }
 
 .mini-footer {
