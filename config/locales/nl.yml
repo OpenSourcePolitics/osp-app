@@ -11,6 +11,8 @@ nl:
         scope: Toepassingsgebied
   decidim:
     proposals:
+      answers:
+        not_answered: En attente de réponse
       admin:
         proposal_notes:
           form:
