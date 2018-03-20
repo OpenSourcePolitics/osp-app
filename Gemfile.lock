@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-participations.git
-  revision: 0c783490497e81360e1f7fe3441ca49952cbd661
+  revision: 05376ae6bd167994828d5aac53d3fde5b634cd3f
   branch: 0.9-stable
   specs:
     decidim-participations (0.9.2)
