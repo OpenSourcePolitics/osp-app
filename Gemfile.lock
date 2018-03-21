@@ -7,8 +7,8 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 3b660d0cf0565ddc3b43f6f50b1b1e6ed14e80b1
-  branch: f-angers-new-proposal-states
+  revision: 1b922d151160fca53b98a7fe4c87a80c0839ca41
+  ref: 1b922d151160fca53b98a7fe4c87a80c0839ca41
   specs:
     decidim (0.9.2)
       decidim-accountability (= 0.9.2)
@@ -219,7 +219,7 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
-    childprocess (0.8.0)
+    childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     codecov (0.1.10)
       json
@@ -263,7 +263,7 @@ GEM
       actionmailer (>= 4.1.0)
       devise (>= 4.0.0)
     diff-lcs (1.3)
-    docile (1.1.5)
+    docile (1.3.0)
     easy_translate (0.5.1)
       thread
       thread_safe
@@ -326,7 +326,7 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
-    i18n-tasks (0.9.20)
+    i18n-tasks (0.9.21)
       activesupport (>= 4.0.2)
       ast (>= 2.1.0)
       easy_translate (>= 0.5.1)
@@ -334,7 +334,7 @@ GEM
       highline (>= 1.7.3)
       i18n
       parser (>= 2.2.3.0)
-      rainbow (~> 2.2)
+      rainbow (>= 2.2.2, < 4.0)
       terminal-table (>= 1.5.1)
     icalendar (2.4.1)
     ice_nine (0.11.2)
@@ -429,7 +429,7 @@ GEM
       activerecord (>= 4.2, < 5.2)
       request_store (~> 1.1)
     parallel (1.12.1)
-    parser (2.5.0.1)
+    parser (2.5.0.4)
       ast (~> 2.4.0)
     passenger (5.2.0)
       rack
@@ -489,8 +489,7 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rainbow (2.2.2)
-      rake
+    rainbow (3.0.0)
     rake (12.3.0)
     ransack (1.8.8)
       actionpack (>= 3.0)
@@ -565,7 +564,7 @@ GEM
       sprockets-rails
       tilt
     searchlight (4.1.0)
-    selenium-webdriver (3.9.0)
+    selenium-webdriver (3.11.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
     sendgrid-ruby (5.2.0)
@@ -578,8 +577,8 @@ GEM
       connection_pool (~> 2.2, >= 2.2.0)
       rack-protection (>= 1.5.0)
       redis (>= 3.3.5, < 5)
-    simplecov (0.15.1)
-      docile (~> 1.1.0)
+    simplecov (0.16.1)
+      docile (~> 1.1)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
