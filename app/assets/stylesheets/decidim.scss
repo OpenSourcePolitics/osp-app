@@ -1,7 +1,7 @@
 // // Variables
 //
-$primary:  #c31632;
-// $secondary: #599aa6;
+$primary:  #c31632 !default;
+// $secondary: black;
 // $success: #57d685;
 // $warning: #ffae00;
 // $alert: #ec5840;
@@ -17,12 +17,123 @@ $primary:  #c31632;
 
 @import "decidim/application";
 
+.title-bar {
+    background: #FFF;
+}
+.topbar__menu button {
+    color: #000;
+}
+.topbar__user__login a {
+color: #C3002F;
+}
+.topbar__dropmenu .dropdown>li>a {
+color:#000;
+}
+.topbar__dropmenu>ul>li>a:after {
+border-top-color: #000 !important;
+}
+
+
+.hero-cta.button.expanded:hover {
+  background: #000;
+}
+
+.button--sc.button.expanded:hover {
+  background: #000;
+}
+
+.button.hollow {
+    border: 1px solid $primary;
+    color : $primary;
+}
+.main-nav__link--active a{
+    box-shadow: inset 0 4px 0 0 $primary;
+}
+
 .logo-cityhall {
-  position: static;
-  margin: 0;
-  @media print, screen and (min-width: 40em) {
-    text-align: left;
+  position: absolute!important;
+  z-index: 1!important;
+  right: 0!important;
+  top: 50%!important;
+  text-align: right!important;
+  margin-top: -19px!important;
+  margin-right: 19px !important;
+}
+
+.logo-wrapper {
+  border-left-color: white;
+}
+
+.logo-wrapper  span {
+    color: #000 !important;
   }
+
+.nav.main-nav li:nth-child(3) {
+display: none;
+}
+.topbar__notifications .icon {
+fill: #000;
+}
+.topbar__conversations .icon {
+fill: #000!important;
+}
+
+.home-bullet__icon svg {
+  fill: $primary;
+}
+.address__icon, .card--list__icon, .process_stats .process_stats-item .icon {
+  fill: $primary;
+}
+.icon .external-icon {
+  fill: $primary!important;
+}
+
+.button.hollow {
+  border: 1px solid $primary;
+  color: $primary;
+  background: transparent!important;
+} // main hollow buttons
+.button.tiny.hollow {
+  border:1px solid $primary;
+  color:$primary; opacity:0.8;
+  background: transparent!important;
+  &:hover {
+    border: 1px solid $primary;
+    color: $primary;
+    opacity: 1;
+    background: transparent!important;
+  }
+}
+.process-nav__link:hover, .process-nav__link:focus, .process-nav__link.is-active {
+  color: $primary;
+}
+.process-nav__link:hover svg, .process-nav__link:focus svg, .process-nav__link.is-active svg {
+  fill: $primary;
+} //link in process navbar
+
+
+.card__button.button.small:hover {
+  background: black;
+}
+
+.button.hollow.secondary {
+  border: 1px solid $primary;
+  background: white;
+  color: $primary;
+  &:hover {
+    border: 1px solid darken($primary, 8);
+    background: white;
+    color: darken($primary, 8);
+  }
+  &:focus {
+    border: 1px solid darken($primary, 8);
+    background: white;
+    color: darken($primary, 8);
+  }
+}
+
+.process-header__hashtag {
+  color: $primary;
 }
 
 h1 {
