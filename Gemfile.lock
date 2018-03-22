@@ -33,12 +33,6 @@ GIT
       decidim-surveys (= 0.9.2)
       decidim-system (= 0.9.2)
       decidim-verifications (= 0.9.2)
-
-GIT
-  remote: https://github.com/decidim/decidim.git
-  revision: 324d994b738d26885f43c606ea1bac91f123cc60
-  ref: 324d994b738d26885f43c606ea1bac91f123cc60
-  specs:
     decidim-accountability (0.9.2)
       decidim-comments (= 0.9.2)
       decidim-core (= 0.9.2)

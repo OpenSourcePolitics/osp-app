@@ -22,7 +22,7 @@ gem "faker", "~> 1.8.4"
 group :development, :test do
   gem "pry-byebug", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/decidim/decidim.git", branch: "0.9-stable"
+  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.9-stable"
 end
 
 group :development do
