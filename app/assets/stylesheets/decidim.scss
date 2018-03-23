@@ -1,8 +1,8 @@
 // // Variables
 //
-// $primary: #ef604d;
-// $secondary: #599aa6;
-// $success: #57d685;
+$primary: #f4bd30;
+$secondary: #9f247e;
+$success: #49A342;
 // $warning: #ffae00;
 // $alert: #ec5840;
 //
@@ -15,12 +15,105 @@
 // $facebook: #3b5998;
 // $google: #dd4b39;
 
+$gray-dark: #72758A;
+$red: #D84D1E;
+$blue: #47A5B8;
+
 @import "decidim/application";
+
+.footer__subhero.extended.subhero.home-section {
+  display: none;
+}
+.wrapper-home.home-section {
+  display: none;
+}
 
 .logo-cityhall {
   position: static;
   margin: 0;
   @media print, screen and (min-width: 40em) {
     text-align: left;
+  }
+}
+
+.title-bar {
+  background:white;
+}
+
+.logo-wrapper  span {
+  color: #000 !important;
+}
+
+
+.topbar__notifications .icon, .topbar__conversations .icon {
+  fill:$gray-dark;
+  opacity: 0.6;
+}
+.topbar__notifications.is-active .icon {
+  fill: $success;
+}
+.topbar__conversations.is-active .icon {
+  fill: $primary;
+}
+
+.topbar__user .topbar__user__login>a {
+  color: $gray-dark;
+  &:hover, &:focus {
+    color: $gray-dark;
+    opacity: 0.8;
+  }
+}
+
+.topbar__dropmenu>ul>li>a {
+  color: $gray-dark;
+} // language & user name
+
+.topbar__dropmenu>ul>li.is-dropdown-submenu-parent.is-active>a {
+  color: $gray-dark;
+  opacity: 0.8;
+}  //hover on active navbar
+.topbar__dropmenu .is-dropdown-submenu a {
+  color: $gray-dark;
+  &:hover, &:focus {
+    color: $gray-dark;
+    opacity: 0.8;
+  }
+}  //dropdown links & hover
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+  border-top-color: $gray-dark!important;
+  opacity: 0.6;
+} // arrows of dropdown menu
+
+.label.proposal-status {
+  background: $red;
+  &.secondary {
+    background: $blue;
+    color: white;
+  }
+  &.success {
+    background: $success;
+    color: black;
+  }
+  &.warning {
+    background:$primary;
+    color: black;
+  }
+} // badge on proposals
+
+.hero{
+  &::after{
+    background-color: rgba($black, 0);
+  }
+} // opacity of background color
+
+.process-header__main{
+  &::after{
+    background-color: rgba($black, 0);
+  }
+}
+
+.highligted-content-banner{
+  &::after{
+    background-color: rgba($black, 0);
   }
 }

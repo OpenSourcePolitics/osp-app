@@ -211,7 +211,7 @@ fr:
             votes_enabled: Soutiens activés
             votes_hidden: Cacher le compteur de soutiens
     menu:
-      processes: Processus
+      processes: Accéder à ma résidence
     proposals:
       answers:
         not_answered: En attente de réponse
@@ -254,7 +254,7 @@ fr:
       pages:
         home:
           highlighted_processes:
-            active_processes: Processus en cours
+            active_processes: Sélection de ma résidence
             see_all_processes: Voir tous les processus
       show:
         developer_group: Promoteur
