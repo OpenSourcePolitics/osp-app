@@ -32,7 +32,6 @@ $warning: $yellow;
 
 .main-footer__badge {
   position: static;
-  margin: auto;
 }
 
 .main__footer__social {
@@ -81,6 +80,10 @@ $warning: $yellow;
   color: white;
 }
 
+.subhero-cta {
+  color: $secondary;
+}
+
 .main-nav__link--active a {
   box-shadow: inset 0 -5px 0 0 $primary;
 }
@@ -124,7 +127,7 @@ $warning: $yellow;
 } // arrows of dropdown menu
 
 .subhero .heading3 {
-  font-size: 0.9em;
+  font-size: 1.2em;
 }
 .home-bullet__icon svg {
   fill: $secondary;
