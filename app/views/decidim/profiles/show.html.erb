@@ -60,20 +60,20 @@
       </div>
     <% end %>
     <%if profile_user.eid_verified? %>
-    <div class="row">
-      <div class="mediumlarge-6 large-6">
-        <div class="card">
-          <div class="badge-card__content">
-            <span>
-              <%= icon "eid-verified" %>
-            </span>
-            <% end %>
-            <span>
-              <%= t("decidim.profiles.eid_verified") %>
-            </span>
+      <div class="row">
+        <div class="mediumlarge-6 large-6">
+          <div class="card">
+            <div class="badge-card__content">
+              <span>
+                <%= icon "eid-verified" %>
+              </span>
+              <span>
+                <%= t("decidim.profiles.eid_verified") %>
+              </span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </main>
