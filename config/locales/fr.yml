@@ -215,10 +215,16 @@ fr:
     menu:
       processes: Participations en cours
     proposals:
+      admin:
+        proposal_answers:
+          edit:
+            accepted: Recevable
       answers:
+        accepted: Recevable
         not_answered: En attente de réponse
       proposals:
         filters:
+          accepted: Recevable
           voted: Soutenues
         orders:
           most_voted: Les plus soutenues
