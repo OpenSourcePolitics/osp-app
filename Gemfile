@@ -13,6 +13,7 @@ gem "decidim-export", git: "https://github.com/OpenSourcePolitics/decidim-user-e
 # Uncomment the following line if you want to use decidim-assemblies plugin
 gem "decidim-assemblies", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.9-nouvelle_aquitaine"
 
+
 gem "puma", "~> 3.0"
 gem "uglifier", ">= 1.3.0"
 
@@ -23,7 +24,8 @@ gem "sinatra", "~> 2.0.1"
 group :development, :test do
   gem "pry-byebug", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.9-nouvelle_aquitaine"
+ gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.9-nouvelle_aquitaine"
+
 end
 
 group :development do
