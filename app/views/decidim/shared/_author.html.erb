@@ -8,7 +8,7 @@
   </span>
 <% else %>
   <span class="author__name"><%= author.name %></span>
-  <% if author.badges.present? %>
+  <% if author.try(:badges).present? %>
     <% author.badges.each do |badge| %>
       <span class="author__badge">
         <%= icon badge %>
