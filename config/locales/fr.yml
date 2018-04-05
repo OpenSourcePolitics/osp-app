@@ -2,7 +2,7 @@ fr:
   activemodel:
     attributes:
       osp_authorization_handler:
-        document_number: Numéro de document d'identité
+        document_number: Numéro du logement
         postal_code: Code postal
         birthday: Date de naissance
       participatory_process:
@@ -123,14 +123,14 @@ fr:
         related_documents: Documents à consulter
     authorization_handlers:
       osp_authorization_handler:
-        explanation: Obtenir une vérification en saisissant un numéro de document d'identité
+        explanation: Obtenir une vérification en saisissant un numéro de logement
         fields:
-          document_number: Numéro de document d'identité
+          document_number: Numéro du logement
           postal_code: Code postal
           birthday: Date de naissance
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
-        name: Procédure d'autorisation factice
+        name: Procédure d'autorisation
     devise:
       registrations:
         new:
@@ -170,8 +170,8 @@ fr:
       authorizations:
         first_login:
           actions:
-            osp_authorization_handler: Vérifier en comparant avec l'exemple du gestionnaire d'autorisation
-            osp_authorization_workflow: Vérifiez par rapport à l'exemple de procédure d'autorisation
+            osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
+            osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
   layouts:
     decidim:
       assembly_header:
