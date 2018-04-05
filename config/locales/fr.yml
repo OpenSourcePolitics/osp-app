@@ -130,7 +130,7 @@ fr:
           birthday: Date de naissance
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
-        name: Procédure d'autorisation factice
+        name: Procédure d'autorisation
     devise:
       registrations:
         new:
