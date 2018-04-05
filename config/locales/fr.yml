@@ -183,6 +183,8 @@ fr:
           processes:
             one: '%{count} résidence'
             other: '%{count} résidences'
+      process_header:
+        process_menu_item: Présentation
   pages:
     home:
       extended:
