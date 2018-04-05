@@ -13,9 +13,9 @@ module Decidim
       super.merge(document_number: document_number, postal_code: postal_code)
     end
 
-    def unique_id
-      document_number
-    end
+    # def unique_id
+    #   document_number
+    # end
 
     private
 
