@@ -2,7 +2,7 @@ fr:
   activemodel:
     attributes:
       osp_authorization_handler:
-        document_number: Numéro de document d'identité
+        document_number: Numéro du logement
         postal_code: Code postal
         birthday: Date de naissance
       participatory_process:
@@ -125,7 +125,7 @@ fr:
       osp_authorization_handler:
         explanation: Obtenir une vérification en saisissant un numéro de document d'identité
         fields:
-          document_number: Numéro de document d'identité
+          document_number: Numéro du logement
           postal_code: Code postal
           birthday: Date de naissance
         name: Formulaire de vérification d'identité
