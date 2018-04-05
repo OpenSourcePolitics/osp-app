@@ -13,7 +13,7 @@ fr:
   decidim:
     admin:
       actions:
-        new: Nouvelle
+        new: Nouveau
       menu:
         participatory_process_groups: Groupes de résidences
         participatory_processes: Résidences
