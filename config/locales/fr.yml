@@ -123,7 +123,7 @@ fr:
         related_documents: Documents à consulter
     authorization_handlers:
       osp_authorization_handler:
-        explanation: Obtenir une vérification en saisissant un numéro de document d'identité
+        explanation: Obtenir une vérification en saisissant un numéro de logement
         fields:
           document_number: Numéro du logement
           postal_code: Code postal
@@ -170,8 +170,8 @@ fr:
       authorizations:
         first_login:
           actions:
-            osp_authorization_handler: Vérifier en comparant avec l'exemple du gestionnaire d'autorisation
-            osp_authorization_workflow: Vérifiez par rapport à l'exemple de procédure d'autorisation
+            osp_authorization_handler: Vérifier son identité avec le formulaire de vérification
+            osp_authorization_workflow: Vérifier son identité avec le formulaire de vérification
   layouts:
     decidim:
       assembly_header:
