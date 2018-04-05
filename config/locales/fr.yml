@@ -172,6 +172,10 @@ fr:
           actions:
             osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
             osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+  devise:
+    invitations:
+      edit:
+        submit_button: Sauvegarder
   layouts:
     decidim:
       assembly_header:
