@@ -2,7 +2,7 @@ fr:
   activemodel:
     attributes:
       assembly:
-        developer_group: Promoteur
+        developer_group: Organisateur
         local_area: Périmètre
         meta_scope: Échelle
         participatory_scope: Objectif
@@ -15,7 +15,7 @@ fr:
         registrations_enabled: Conditions d'inscription
       participatory_process:
         participatory_process_group_id: Groupe de concertations
-        developer_group: Promoteur
+        developer_group: Organisateur
         local_area: Périmètre
         meta_scope: Échelle
         participatory_scope: Objectif
@@ -34,7 +34,7 @@ fr:
   activerecord:
     attributes:
       decidim/participatory_process:
-        developer_group: Promoteur
+        developer_group: Organisateur
         local_area: Périmètre
         meta_scope: Échelle
         participatory_scope: Objectif
@@ -259,12 +259,14 @@ fr:
             active_processes: Concertations en cours
             see_all_processes: Voir toutes les concertations
       show:
-        developer_group: Promoteur
+        developer_group: Organisateur
         local_area: Périmètre
         participatory_scope: Objectif
         participatory_structure: Modalités
         meta_scope: Échelle
         target: Participants
+      statistics:
+        processes_count: Concertations
     scopes:
       global: Toute la ville
   layouts:
@@ -285,6 +287,8 @@ fr:
       extended:
         meetings_explanation: Découvrez où et quand vous pouvez participer aux réunions de concertation.
       footer_sub_hero:
+        footer_sub_hero_body: Construisons une société plus ouverte, transparente et collaborative.<br /> Rejoignez le mouvement, participez et décidez, ensemble.
         footer_sub_hero_headline: La Région Nouvelle-Aquitaine vous donne la parole.
       statistics:
         headline: Les concertations régionales en chiffre
+        processes_count: Concertations
