@@ -42,6 +42,9 @@ fr:
         target: Participants
   decidim:
     admin:
+      officializations:
+        index:
+          badges: Badges
       actions:
         new: Nouveau
       menu:

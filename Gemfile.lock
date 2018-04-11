@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: fed02350dff5286f65fb109ec337ba65da3f2ce2
+  revision: ae0b5ac1798f4f6502be5568d009ca5383b5e057
   branch: 0.9-Bosa/e-ID
   specs:
     decidim (0.9.2)
@@ -208,7 +208,7 @@ GEM
     bindex (0.5.0)
     builder (3.2.3)
     byebug (10.0.0)
-    cancancan (2.1.3)
+    cancancan (2.1.4)
     capybara (2.18.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -260,7 +260,7 @@ GEM
       warden (~> 1.2.3)
     devise-i18n (1.6.1)
       devise (>= 4.4)
-    devise_invitable (1.7.3)
+    devise_invitable (1.7.4)
       actionmailer (>= 4.1.0)
       devise (>= 4.0.0)
     diff-lcs (1.3)
@@ -317,7 +317,7 @@ GEM
     graphiql-rails (1.4.10)
       railties
       sprockets-rails
-    graphql (1.7.13)
+    graphql (1.7.14)
     hashdiff (0.3.7)
     hashie (3.5.7)
     high_voltage (3.0.0)
@@ -433,7 +433,7 @@ GEM
       activerecord (>= 4.2, < 5.2)
       request_store (~> 1.1)
     parallel (1.12.1)
-    parser (2.5.0.4)
+    parser (2.5.0.5)
       ast (~> 2.4.0)
     passenger (5.2.0)
       rack
