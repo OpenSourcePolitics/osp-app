@@ -23,7 +23,7 @@ module Decidim
       end
 
       def avatar_url
-        ActionController::Base.helpers.asset_path("decidim/official-avatar.svg")
+        ActionController::Base.helpers.asset_path("decidim/official-avatar.png")
       end
 
       def deleted?
