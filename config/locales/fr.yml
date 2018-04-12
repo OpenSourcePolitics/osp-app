@@ -13,6 +13,8 @@ fr:
       meeting:
         registation_terms:
         registrations_enabled: Conditions d'inscription
+      organization:
+        cta_button_text: Texte du bouton d'action
       participatory_process:
         participatory_process_group_id: Groupe de processus
         developer_group: Promoteur
@@ -208,19 +210,24 @@ fr:
           vote: Soutenir
         settings:
           global:
-            vote_limit: Nombre maximum de soutiens par utilisateur
+            vote_limit: Nombre maximum de soutiens / votes par utilisateur
+            maximum_votes_per_proposal: Nombre maximum de soutiens / votes par proposition
           step:
-            votes_blocked: Soutiens bloqués
+            votes_blocked: Soutiens / votes bloqués
             votes_enabled: Soutiens activés
-            votes_hidden: Cacher le compteur de soutiens
+            votes_hidden: Cacher le compteur de soutiens / votes
+            votes_weight_enabled: Votes pour / contre / absention activés
     menu:
       processes: Processus
     proposals:
+      answers:
+        not_answered: En attente de réponse
       proposals:
         filters:
           voted: Soutenues
         orders:
           most_voted: Les plus soutenues
+          recent: Les plus récentes
         vote_button:
           already_voted: Soutenue
           already_voted_hover: Ne plus soutenir
