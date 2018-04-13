@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: ee7f5c0f1c7a00aef24841d3f0bfa6f9c458d1ec
+  revision: 387df8aff9fc66f53eeb8a073383c0d6f25baec3
   branch: 0.10-Bosa/e-ID
   specs:
     decidim (0.10.0.pre)
