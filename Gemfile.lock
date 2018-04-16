@@ -14,8 +14,8 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 116903a9e9df126c2b9b4bc31fabe660fa35a858
-  branch: 0.10-stable
+  revision: 50afed61c3e208cd503b7b900bcd7e62c518989a
+  ref: 50afed61c3e208cd503b7b900bcd7e62c518989a
   specs:
     decidim (0.10.0.pre)
       decidim-accountability (= 0.10.0.pre)
@@ -198,7 +198,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
     ast (2.4.0)
-    autoprefixer-rails (8.2.0)
+    autoprefixer-rails (8.3.0)
       execjs
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
@@ -212,7 +212,7 @@ GEM
     bindex (0.5.0)
     builder (3.2.3)
     byebug (10.0.2)
-    cancancan (2.1.4)
+    cancancan (2.2.0)
     capybara (2.18.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -262,7 +262,7 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.6.1)
+    devise-i18n (1.6.2)
       devise (>= 4.4)
     devise_invitable (1.7.4)
       actionmailer (>= 4.1.0)
@@ -378,10 +378,10 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
       ruby_dep (~> 1.2)
-    lograge (0.10.0)
-      actionpack (>= 4)
-      activesupport (>= 4)
-      railties (>= 4)
+    lograge (0.7.1)
+      actionpack (>= 4, < 5.2)
+      activesupport (>= 4, < 5.2)
+      railties (>= 4, < 5.2)
       request_store (~> 1.0)
     loofah (2.2.2)
       crass (~> 1.0.2)
@@ -457,7 +457,7 @@ GEM
       byebug (~> 10.0)
       pry (~> 0.10)
     public_suffix (3.0.2)
-    puma (3.11.3)
+    puma (3.11.4)
     rack (2.0.4)
     rack-cors (1.0.2)
     rack-protection (2.0.1)
@@ -627,7 +627,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.3.0)
     url (0.3.2)
-    valid_email2 (2.2.2)
+    valid_email2 (2.2.3)
       activemodel (>= 3.2)
       mail (~> 2.5)
     virtus (1.0.5)
