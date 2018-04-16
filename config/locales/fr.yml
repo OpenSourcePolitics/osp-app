@@ -124,7 +124,7 @@ fr:
             user: Citoyen
           subtitle: Inscrivez-vous pour participer et débattre sur la plateforme.
     menu:
-      processes: Participations en cours
+      processes: Participations
     participatory_process_groups:
       show:
         group_participatory_processes: 'Participations pour %{group}'
