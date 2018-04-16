@@ -4,6 +4,9 @@
       <div class="card__header">
         <%= link_to proposal do%>
           <h5 class="card__title"><%= proposal.title %></h5>
+          <a id="see-trad" style="font-size:small;" onclick="trad_card($(this))"><%= t('.show_traduction') %></a>
+          <span style="font-size:small; border-bottom: dotted 1px black; margin-right: .8rem" data-tooltip class="icon-state icon-highlight" aria-haspopup="true"  data-disable-hover="false" title="<%= I18n.t("automatic_translation", trad_service: "Deepl", scope: "trads") %>">*</span>
+          <div class="hidden_title" style="display: none;"></div>
         <% end %>
         <div class="card__author author-data author-data--small">
           <%= render partial: "decidim/shared/author_reference", locals: { author: present(proposal).author } %>
@@ -15,6 +18,7 @@
       </div>
       <%= render partial: "proposal_badge", locals: { proposal: proposal } %>
       <p><%= truncate(proposal.body, length: 100) %></p>
+      <div class="hidden_body" style="display: none;"></div>
       <%= render partial: "decidim/shared/tags", locals: { resource: proposal, tags_class_extra: "tags--proposal" } %>
     </div>
     <div class="card__footer">
