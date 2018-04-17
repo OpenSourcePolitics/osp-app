@@ -220,6 +220,7 @@ fr:
     devise:
       registrations:
         new:
+          newsletter: Recevoir les actualités à venir des concertations par la newsletter <a href="mailto:participationcitoyenne@lillemetropole.fr">participationcitoyenne@lillemetropole.fr</a>
           sign_up_as:
             user: Citoyen
           subtitle: Inscrivez-vous pour participer et débattre sur la plateforme.
