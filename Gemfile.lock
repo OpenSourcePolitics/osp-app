@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 387df8aff9fc66f53eeb8a073383c0d6f25baec3
+  revision: e0c1cefae9c372c2477655fe6c3a19e209c72491
   branch: 0.10-Bosa/e-ID
   specs:
     decidim (0.10.0.pre)
@@ -192,7 +192,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
     ast (2.4.0)
-    autoprefixer-rails (8.2.0)
+    autoprefixer-rails (8.3.0)
       execjs
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
@@ -206,7 +206,7 @@ GEM
     bindex (0.5.0)
     builder (3.2.3)
     byebug (10.0.2)
-    cancancan (2.1.4)
+    cancancan (2.2.0)
     capybara (2.18.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -256,7 +256,7 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.6.1)
+    devise-i18n (1.6.2)
       devise (>= 4.4)
     devise_invitable (1.7.4)
       actionmailer (>= 4.1.0)
@@ -626,7 +626,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.3.0)
     url (0.3.2)
-    valid_email2 (2.2.2)
+    valid_email2 (2.2.3)
       activemodel (>= 3.2)
       mail (~> 2.5)
     virtus (1.0.5)
