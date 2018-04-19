@@ -95,36 +95,6 @@ ActiveRecord::Schema.define(version: 20180418160320) do
     t.index ["decidim_organization_id"], name: "index_decidim_areas_on_decidim_organization_id"
   end
 
-  create_table "decidim_assemblies", id: :serial, force: :cascade do |t|
-    t.string "slug", null: false
-    t.string "hashtag"
-    t.integer "decidim_organization_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.jsonb "title", null: false
-    t.jsonb "subtitle", null: false
-    t.jsonb "short_description", null: false
-    t.jsonb "description", null: false
-    t.string "hero_image"
-    t.string "banner_image"
-    t.boolean "promoted", default: false
-    t.datetime "published_at"
-    t.jsonb "developer_group"
-    t.jsonb "meta_scope"
-    t.jsonb "local_area"
-    t.jsonb "target"
-    t.jsonb "participatory_scope"
-    t.jsonb "participatory_structure"
-    t.boolean "show_statistics", default: false
-    t.integer "decidim_scope_id"
-    t.boolean "scopes_enabled", default: true, null: false
-    t.string "reference"
-    t.bigint "decidim_area_id"
-    t.index ["decidim_area_id"], name: "index_decidim_assemblies_on_decidim_area_id"
-    t.index ["decidim_organization_id", "slug"], name: "index_unique_assembly_slug_and_organization", unique: true
-    t.index ["decidim_organization_id"], name: "index_decidim_assemblies_on_decidim_organization_id"
-  end
-
   create_table "decidim_assembly_user_roles", force: :cascade do |t|
     t.integer "decidim_user_id"
     t.integer "decidim_assembly_id"
@@ -403,15 +373,6 @@ ActiveRecord::Schema.define(version: 20180418160320) do
     t.index ["decidim_reportable_type", "decidim_reportable_id"], name: "decidim_moderations_reportable", unique: true
     t.index ["hidden_at"], name: "decidim_moderations_hidden_at"
     t.index ["report_count"], name: "decidim_moderations_report_count"
-  end
-
-  create_table "decidim_navbar_links", force: :cascade do |t|
-    t.bigint "decidim_organization_id"
-    t.jsonb "title"
-    t.string "link"
-    t.string "target"
-    t.integer "weight"
-    t.index ["decidim_organization_id"], name: "index_decidim_navbar_links_on_decidim_organization_id"
   end
 
   create_table "decidim_newsletters", id: :serial, force: :cascade do |t|

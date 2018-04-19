@@ -1,0 +1,38 @@
+nl:
+  activemodel:
+    attributes:
+      proposal:
+        scope_id: Toepassingsgebied
+      project:
+        decidim_scope_id: Toepassingsgebied
+  activerecord:
+    attributes:
+      decidim/participatory_process:
+        scope: Toepassingsgebied
+  decidim:
+    proposals:
+      answers:
+        not_answered: En attente de réponse
+      admin:
+        proposal_notes:
+          form:
+            submit: bevestigen
+      proposals:
+        orders:
+          label: "Rangschikking voorstellen per:"
+        voting_rules:
+          proposal_limit:
+            description: U kunt maximaal %{limit} voorstellen doen.
+          vote_limit:
+            description: U kunt stemmen op %{limit} voorstellen.
+    participatory_processes:
+      order_by_processes:
+        upcoming: Toekomstige
+  pages:
+    home:
+      sub_hero:
+        register: Registreren
+      footer_sub_hero:
+        footer_sub_hero_body: Laten we bouwen aan een open, transparante en collaboratieve maatschappij.
+      statistics:
+        headline: Huidige stand van de burgerinspraak
