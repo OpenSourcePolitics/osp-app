@@ -19,6 +19,7 @@ group :development, :test do
   gem "pry-byebug", platform: :mri
 
   gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.10-stable-trad-auto-merge"
+  gem 'dotenv-rails'
 end
 
 group :development do
