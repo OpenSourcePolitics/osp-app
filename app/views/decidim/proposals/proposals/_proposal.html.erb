@@ -4,7 +4,7 @@
       <div class="card__header">
         <%= link_to proposal do%>
           <h5 class="card__title"><%= proposal.title %></h5>
-          <a id="see-trad" style="font-size:small;" onclick="trad_card($(this))"><%= t('.show_traduction') %></a>
+          <a id="see-trad" style="font-size:small;" onclick="trad_card($(this))"><%= I18n.t("show_traduction", scope: "trads") %></a>
           <span style="font-size:small; border-bottom: dotted 1px black; margin-right: .8rem" data-tooltip class="icon-state icon-highlight" aria-haspopup="true"  data-disable-hover="false" title="<%= I18n.t("automatic_translation", trad_service: "Deepl", scope: "trads") %>">*</span>
           <div class="hidden_title" style="display: none;"></div>
         <% end %>

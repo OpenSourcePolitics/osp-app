@@ -1,5 +1,7 @@
 require "sidekiq/web"
 Rails.application.routes.draw do
+
+  get "/traduction" => "translation#traduction"
   
   authenticate :user, lambda { |u| u.roles.include?("admin") } do
     mount Sidekiq::Web => '/sidekiq'

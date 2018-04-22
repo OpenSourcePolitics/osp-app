@@ -1,0 +1,160 @@
+<% add_decidim_meta_tags({
+  description: translated_attribute(debate.description),
+  title: translated_attribute(debate.title),
+  url: debate_url(debate.id)
+}) %>
+
+<div class="row column view-header">
+  <h2 class="heading2" id="debate-title">
+    <%== translated_attribute debate.title %>
+  </h2>
+  <div class="author-data">
+    <%= render partial: "decidim/shared/author_reference", locals: { author: Decidim::Debates::DebatePresenter.new(debate).author } %>
+    <div class="author-data__extra">
+      <button type="button" data-open="<%= current_user.present? ? 'flagModal' : 'loginModal' %>" title="<%= t('.report') %>" aria-controls="<%= current_user.present? ? 'flagModal' : 'loginModal' %>" aria-haspopup="true" tabindex="0">
+        <%= icon "flag", aria_label: t('.report'), class: 'icon--small' %>
+      </button>
+      <% unless debate.official? %>
+        <%= link_to_current_or_new_conversation_with(debate.author) %>
+      <% end %>
+      <% if debate.commentable? %>
+        <a href="#comments" title="<%= t('.comments') %>">
+          <%= icon "comment-square", aria_label: t('.comments'), role: "img" %> <%= debate.comments.count %>
+        </a>
+      <% end %>
+    </div>
+    <div class="author-data__extra">
+      <a style="margin-right: .3rem" id="see-trad" onclick="traduct_action()"><%= I18n.t("show_traduction", scope: "trads") %></a>
+      <span style="border-bottom: dotted 1px black; margin-right: .8rem" data-tooltip class="icon-state icon-highlight" aria-haspopup="true"  data-disable-hover="false" title="<%= I18n.t("automatic_translation", trad_service: "Deepl", scope: "trads") %>">*</span>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="columns section view-side mediumlarge-4 mediumlarge-push-8
+    large-3 large-push-9">
+    <div class="card extra">
+      <div class="card__content">
+        <% if debate.start_time.present? && debate.end_time.present? %>
+          <div class="extra__date">
+            <%= l debate.start_time, format: "%d" %> <span class="extra__month"><%= l debate.start_time, format: "%B" %></span>
+          </div>
+          <div class="extra__time">
+            <%= l debate.start_time, format: "%H:%M" %> - <%= l debate.end_time, format: "%H:%M" %>
+          </div>
+        <% end %>
+        <%= render partial: "decidim/shared/follow_button", locals: { followable: debate } %>
+      </div>
+    </div>
+    <%= resource_reference(debate) %>
+    <%= render partial: "share", locals: { debate: debate } %>
+  </div>
+  <div class="columns mediumlarge-8 mediumlarge-pull-4">
+    <div class="section">
+      <p>
+        <div id="debate-body">
+          <%= simple_format(translated_attribute(debate.description)) %>
+        </div> 
+      </p>
+      <% if translated_attribute(debate.instructions).present? %>
+        <div class="callout secondary">
+          <%= simple_format(translated_attribute(debate.instructions)) %>
+        </div>
+      <% end %>
+      <% if translated_attribute(debate.information_updates).present? %>
+        <div class="callout success">
+          <%= simple_format(translated_attribute(debate.information_updates)) %>
+        </div>
+      <% end %>
+      <% if debate.category %>
+        <ul class="tags tags--debate">
+          <li><%= link_to translated_attribute(debate.category.name), debates_path(filter: { category_id: debate.category.id }) %></li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= comments_for debate %>
+
+<%= javascript_include_tag "decidim/proposals/social_share" %>
+<%= stylesheet_link_tag "decidim/proposals/social_share" %>
+
+<%=
+  render partial: "decidim/shared/flag_modal", locals: {
+    reportable: debate,
+    form: report_form,
+    url: decidim.report_path(sgid: debate.to_sgid.to_s)
+  }
+%>
+
+<script>
+  var is_trad = false;
+  var original_title = $("#debate-title").text();
+  var original_body = $("#debate-body").html();
+  var target_lang = "<%= I18n.locale.upcase %>";
+
+  function get_traduction(original_text, target_lang, callback) {
+    $.ajax({
+      url : "/api/traduction",
+      type : 'GET',
+      data : "target=" + target_lang + "&original=" + encodeURI(original_text.trim()),
+      dataType : 'json',
+      success : function(body, status) {
+        callback([body["translations"][0]["detected_source_language"], body["translations"][0]["text"]]);
+      },
+      error : function(body, status, error) {
+        console.log(status + error);
+      }
+    });
+  }
+
+  function decodeHtml(html) {
+    var txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+  }
+
+  function traduct_action() {
+    if (is_trad == true) {
+      $("#debate-title").html(original_title);
+      $("#debate-body").html(original_body);
+      $("#see-trad").text("<%= I18n.t("show_traduction", scope: "trads") %>");
+      is_trad = !is_trad;
+    } else {
+      get_traduction(original_title, target_lang, function(converted_title) {
+        get_traduction(original_body, target_lang, function(converted_body) {
+          $("#debate-title").html($(converted_title[1]).text());
+          $("#debate-body").html(converted_body[1]);
+          $("#see-trad").text(decodeHtml("<%= I18n.t("show_the_original", scope: "trads") %>" + " (" + converted_body[0] + ")")); // because of the -> '
+       });
+      });
+      is_trad = !is_trad;
+    }
+  }
+
+  function handleSeeTraductionClick(argument) {
+    $(document).on("click", ".comment__votes > .see_trad_comment_button", function (ev) {
+      var $btnClicked = $(this);
+      var $textToTranslateContainer = $btnClicked.closest(".comment").find(".comment__content p").first();
+      var $hiddenTranslatedTextContainer = $btnClicked.closest(".comment").find(".hidden_trad_comment").first();
+      if ($hiddenTranslatedTextContainer.text() !== "") {
+        $textToTranslateContainer.text($hiddenTranslatedTextContainer.text());
+        $btnClicked.text(decodeHtml("<%= I18n.t("show_traduction", scope: "trads") %>"));
+        $hiddenTranslatedTextContainer.text("");
+      } else {
+        get_traduction($textToTranslateContainer.text(), target_lang, function (converted_comment) {
+          if (target_lang !== converted_comment[0]) {
+            $hiddenTranslatedTextContainer.text($textToTranslateContainer.text());
+            $textToTranslateContainer.text($(converted_comment[1]).text());
+            $textToTranslateContainer.append("<p id=trad-info style='font: small-caption;font-style: italic;color: grey;'><%= I18n.t("automatic_translation", trad_service: "Deepl", scope: "trads") %></p>");
+            $btnClicked.text(decodeHtml("<%= I18n.t("show_the_original", scope: "trads") %>" + " (" + converted_comment[0] + ")"));
+          }
+        });
+      }
+    });  
+  }
+
+  $(function () {
+    handleSeeTraductionClick();
+  });
+</script>

@@ -36,3 +36,7 @@ nl:
         footer_sub_hero_body: Laten we bouwen aan een open, transparante en collaboratieve maatschappij.
       statistics:
         headline: Huidige stand van de burgerinspraak
+  trads:
+    show_traduction: Zie de vertaling
+    show_the_original: Zie het origineel
+    automatic_translation: Automatische vertaling door %{trad_service}
