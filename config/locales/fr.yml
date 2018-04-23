@@ -208,3 +208,7 @@ fr:
     home:
       extended:
         how_to_participate: Comment participer ?
+  trads:
+    show_traduction: Voir la traduction 
+    show_the_original: Voir l'original 
+    automatic_translation: Traduction automatique par %{trad_service}

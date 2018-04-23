@@ -5,3 +5,14 @@ en:
       officializations:
         index:
           badges: Badges
+    proposals:
+      proposals:
+        proposals:
+          show_traduction: Show translation
+          show_the_original: Show the original
+          automatic_translation: Automatic translation by %{trad_service}
+  trads:
+    show_traduction: Show translation
+    show_the_original: Show the original
+    automatic_translation: Automatic translation by %{trad_service}
+
