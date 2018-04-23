@@ -2,7 +2,7 @@
 
 Decidim.configure do |config|
   config.application_name = "Plateforme de consultation citoyenne fédérale"
-  config.mailer_sender = "Plateforme de consultation citoyenne <ne-pas-repondre@opensourcepolitics>"
+  config.mailer_sender = "Plateforme de consultation citoyenne <ne-pas-repondre@opensourcepolitics.eu>"
   config.authorization_handlers = []
 
   # Change these lines to set your preferred locales
