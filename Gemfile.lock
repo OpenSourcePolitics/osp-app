@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: e4f537b4083d211bad35eef3f1ae68cf6f38c103
+  revision: 2f5d34bf4cacc425db8b0eff42c8d68e8afeb94f
   branch: 0.10-stable-trad-auto-merge
   specs:
     decidim (0.10.0.pre)
@@ -560,7 +560,7 @@ GEM
       rubocop (>= 0.53.0)
     ruby-ole (1.2.12.1)
     ruby-progressbar (1.9.0)
-    ruby-saml (1.7.2)
+    ruby-saml (1.8.0)
       nokogiri (>= 1.5.10)
     ruby_dep (1.5.0)
     ruby_http_client (3.3.0)
