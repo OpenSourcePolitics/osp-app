@@ -14,8 +14,8 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 2f5d34bf4cacc425db8b0eff42c8d68e8afeb94f
-  branch: 0.10-stable-trad-auto-merge
+  revision: b5082e94e2c04ec328d262feb07c524f7a8c1e01
+  ref: b5082e94e2c04ec328d262feb07c524f7a8c1e01
   specs:
     decidim (0.10.0.pre)
       decidim-accountability (= 0.10.0.pre)

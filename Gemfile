@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.10-stable-trad-auto-merge"
+gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", ref: "b5082e94e2c04ec328d262feb07c524f7a8c1e01"
 
 gem "decidim-polis", git: "https://github.com/OpenSourcePolitics/decidim-polis.git"
 
@@ -18,7 +18,7 @@ gem "faker", "~> 1.8.4"
 group :development, :test do
   gem "pry-byebug", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.10-stable-trad-auto-merge"
+  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", ref: "b5082e94e2c04ec328d262feb07c524f7a8c1e01"
   gem 'dotenv-rails'
 end
 
