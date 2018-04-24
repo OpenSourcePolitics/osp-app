@@ -12,7 +12,7 @@ nl:
   decidim:
     proposals:
       answers:
-        not_answered: En attente de réponse
+        not_answered: In afwachting van antwoord
       admin:
         proposal_notes:
           form:
@@ -32,8 +32,6 @@ nl:
     home:
       sub_hero:
         register: Registreren
-      footer_sub_hero:
-        footer_sub_hero_body: Laten we bouwen aan een open, transparante en collaboratieve maatschappij.
       statistics:
         headline: Huidige stand van de burgerinspraak
   trads:
