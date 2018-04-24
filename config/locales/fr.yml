@@ -194,7 +194,7 @@ fr:
   layouts:
     decidim:
       assembly_header:
-        assembly_menu_item: Présentation
+        assembly_menu_item: Contexte
       participatory_processes:
         index:
           promoted_processes: Participations mises en avant
@@ -203,12 +203,12 @@ fr:
             one: '%{count} participation'
             other: '%{count} participations'
       process_header:
-        process_menu_item: Présentation
+        process_menu_item: Contexte
   pages:
     home:
       extended:
         how_to_participate: Comment participer ?
   trads:
-    show_traduction: Voir la traduction 
-    show_the_original: Voir l'original 
+    show_traduction: Voir la traduction
+    show_the_original: Voir l'original
     automatic_translation: Traduction automatique par %{trad_service}
