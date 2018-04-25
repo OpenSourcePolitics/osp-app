@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-polis.git
-  revision: 1e2cac746cf404a0572333db9772d99f0ba67357
+  revision: 00f24d67f4329e19e3da0741b4eb1f4c175a9c45
   specs:
     decidim-polis (0.0.1)
       decidim-core
@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 350ddb5367424659b64fa87e4218d61c974d37fd
+  revision: 81c845029d4e6704e10f4cf7a7f0f4f2f2b656bb
   branch: 0.10-stable-trad-auto-merge
   specs:
     decidim (0.10.0.pre)
@@ -466,7 +466,7 @@ GEM
       pry (~> 0.10)
     public_suffix (3.0.2)
     puma (3.11.4)
-    rack (2.0.4)
+    rack (2.0.5)
     rack-cors (1.0.2)
     rack-protection (2.0.1)
       rack
