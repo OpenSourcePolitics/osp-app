@@ -1,6 +1,10 @@
 fr:
   activemodel:
-    attributes:
+      attributes:
+        account:
+          delete_reason: Pour quelle(s) raison(s) supprimez-vous votre compte ?
+        user:
+          name: Votre nom, prénom
       participatory_process:
         participatory_process_group_id: Groupe de participations
         promoted: Mise en avant
@@ -123,12 +127,20 @@ fr:
     devise:
       registrations:
         new:
+          newsletter: J’accepte de recevoir une lettre d’information
+          nickname_help: Votre identifiant public et unique sur cette plateforme qui permet aux autres utilisateurs de vous suivre, de vous contacter ou de vous mentionner dans leurs commentaires. Il s’affichera précédé d’un « @ ».
           sign_up_as:
             user: Citoyen
           subtitle: Inscrivez-vous pour participer et débattre sur la plateforme.
+          terms: les conditions d’utilisation et la politique d’utilisation des données
+          tos_agreement: J’accepte %{link}.
       sessions:
         new:
           are_you_new?: Nouveau sur la plateforme ?
+    events:
+      proposals:
+        proposal_endorsed:
+          email_subject: %{endorser_nickname} a recommandé une nouvelle proposition
     features:
       proposals:
         actions:
@@ -142,6 +154,11 @@ fr:
             votes_enabled: Soutiens activés
             votes_hidden: Cacher le compteur de soutiens / votes
             votes_weight_enabled: Votes pour / contre / absention activés
+    initiatives:
+      events:
+        endorse_initiative_event:
+          email_intro: %{author_name} %{author_nickname}, que vous suivez, a recommandé l'initiative suivante, peut-être que vous voulez contribuer à la conversation:
+          email_subject: Initiative recommandée par %{author_nickname}
     menu:
       processes: Participations
     proposals:
