@@ -5,11 +5,22 @@ nl:
         scope_id: Toepassingsgebied
       project:
         decidim_scope_id: Toepassingsgebied
+      user:
+        name: Uw naam, voornaam
   activerecord:
     attributes:
       decidim/participatory_process:
         scope: Toepassingsgebied
   decidim:
+    devise:
+      registrations:
+        new:
+          newsletter: Ik ga akkoord om een nieuwsbrief te ontvangen
+          nickname_help: Uw unieke publieke identifier op dit platform waarmee andere gebruikers u kunnen volgen, contact met u kunnen opnemen of u kunnen vermelden in hun opmerkingen. Deze wordt voorafgegaan door een "@".
+          sign_in: Aanmelden
+          sign_up_as: Registreren als
+          terms: de gebruiksvoorwaarden en community regels
+          tos_agreement: Ik ga akkoord met %{link}.
     proposals:
       answers:
         not_answered: In afwachting van antwoord
@@ -18,6 +29,8 @@ nl:
           form:
             submit: bevestigen
       proposals:
+        filters:
+          citizens: Burgers
         orders:
           label: "Rangschikking voorstellen per:"
         voting_rules:
@@ -30,6 +43,8 @@ nl:
         upcoming: Toekomstige
   pages:
     home:
+      extended:
+        how_to_participate: Hoe neem ik deel?
       sub_hero:
         register: Registreren
       statistics:
