@@ -26,6 +26,8 @@ nl:
           form:
             submit: bevestigen
       proposals:
+        filters:
+          citizens: Burgers
         orders:
           label: "Rangschikking voorstellen per:"
         voting_rules:
