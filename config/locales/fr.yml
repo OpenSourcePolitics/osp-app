@@ -3,6 +3,8 @@ fr:
       attributes:
         account:
           delete_reason: Pour quelle(s) raison(s) supprimez-vous votre compte ?
+        user:
+          name: Votre nom, prénom
       participatory_process:
         participatory_process_group_id: Groupe de participations
         promoted: Mise en avant
@@ -126,6 +128,7 @@ fr:
       registrations:
         new:
           newsletter: J’accepte de recevoir une lettre d’information
+          nickname_help: Votre identifiant public et unique sur cette plateforme qui permet aux autres utilisateurs de vous suivre, de vous contacter ou de vous mentionner dans leurs commentaires. Il s’affichera précédé d’un « @ ».
           sign_up_as:
             user: Citoyen
           subtitle: Inscrivez-vous pour participer et débattre sur la plateforme.
