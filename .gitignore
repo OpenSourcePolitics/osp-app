@@ -23,3 +23,5 @@
 public/uploads
 
 .env
+
+config/secrets.local.yml

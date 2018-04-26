@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 527dbca00726f8b068fc6acc277052dfce73295b
+  revision: e15b4b22096cc960ada414df8622bce60c40084d
   branch: 0.10-stable-trad-auto-merge
   specs:
     decidim (0.10.0.pre)
@@ -199,7 +199,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
     ast (2.4.0)
-    autoprefixer-rails (8.3.0)
+    autoprefixer-rails (8.3.0.1)
       execjs
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
