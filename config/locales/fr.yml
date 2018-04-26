@@ -123,9 +123,12 @@ fr:
     devise:
       registrations:
         new:
+          newsletter: J’accepte de recevoir une lettre d’information
           sign_up_as:
             user: Citoyen
           subtitle: Inscrivez-vous pour participer et débattre sur la plateforme.
+          terms: les conditions d’utilisation et la politique d’utilisation des données
+          tos_agreement: J’accepte %{link}.
       sessions:
         new:
           are_you_new?: Nouveau sur la plateforme ?

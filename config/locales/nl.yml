@@ -10,6 +10,14 @@ nl:
       decidim/participatory_process:
         scope: Toepassingsgebied
   decidim:
+    devise:
+      registrations:
+        new:
+          sign_in: Aanmelden
+          newsletter: Ik ga akkoord om een nieuwsbrief te ontvangen
+          sign_up_as: Registreren als
+          terms: de gebruiksvoorwaarden en community regels
+          tos_agreement: Ik ga akkoord met %{link}.
     proposals:
       answers:
         not_answered: In afwachting van antwoord
@@ -30,6 +38,8 @@ nl:
         upcoming: Toekomstige
   pages:
     home:
+      extended:
+        how_to_participate: Hoe neem ik deel?
       sub_hero:
         register: Registreren
       statistics:
