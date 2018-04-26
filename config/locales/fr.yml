@@ -1,6 +1,8 @@
 fr:
   activemodel:
-    attributes:
+      attributes:
+        account:
+          delete_reason: Pour quelle(s) raison(s) supprimez-vous votre compte ?
       participatory_process:
         participatory_process_group_id: Groupe de participations
         promoted: Mise en avant
