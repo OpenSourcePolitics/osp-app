@@ -21,6 +21,9 @@ nl:
           sign_up_as: Registreren als
           terms: de gebruiksvoorwaarden en community regels
           tos_agreement: Ik ga akkoord met %{link}.
+      sessions:
+        new:
+          sign_in: Aanmelden
     proposals:
       answers:
         not_answered: In afwachting van antwoord
