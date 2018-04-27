@@ -7,6 +7,8 @@ nl:
         decidim_scope_id: Toepassingsgebied
       user:
         name: Uw naam, voornaam
+        password: Uw wachtwoord
+        password_confirmation: Wachtwoord bevestigen
   activerecord:
     attributes:
       decidim/participatory_process:
@@ -22,7 +24,7 @@ nl:
             legend: Registreren als
             user: Burger
             user_group:: Organisatie/collectief
-          terms: de gebruiksvoorwaarden en community regels
+          terms: de gebruiksvoorwaarden en de privacyverklaring
           tos_agreement: Ik ga akkoord met %{link}.
       sessions:
         new:
@@ -54,7 +56,7 @@ nl:
       sub_hero:
         register: Registreren
       statistics:
-        headline: Huidige stand van de burgerinspraak
+        headline: Huidige stand van %{organization}
   trads:
     show_traduction: Zie de vertaling
     show_the_original: Zie het origineel

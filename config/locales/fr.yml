@@ -5,6 +5,8 @@ fr:
           delete_reason: Pour quelle(s) raison(s) supprimez-vous votre compte ?
         user:
           name: Votre nom, prénom
+          password: Votre mot de passe
+          password_confirmation: Confirmez votre mot de passe
       participatory_process:
         participatory_process_group_id: Groupe de participations
         promoted: Mise en avant
