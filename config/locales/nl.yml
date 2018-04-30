@@ -75,7 +75,7 @@ nl:
       sub_hero:
         register: Registreren
       statistics:
-        headline: Huidige stand van %{organization}
+        headline: Statistieken
   trads:
     show_traduction: Bekijk vertaling
     show_the_original: Bekijk het origineel

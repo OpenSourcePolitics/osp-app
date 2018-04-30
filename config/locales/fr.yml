@@ -210,6 +210,8 @@ fr:
           highlighted_processes:
             active_processes: Participations en cours
             see_all_processes: Voir toutes les participations
+          statistics:
+            headline: Statistiques
     scopes:
       global: Toute la ville
   layouts:
