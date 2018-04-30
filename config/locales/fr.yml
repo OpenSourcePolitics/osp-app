@@ -119,6 +119,8 @@ fr:
         create:
           error: Une erreur s'est produite lors de la création d'un nouveau groupe de participations.
           success: Groupe de participations créé avec succès.
+      profiles:
+        eid_verified: Vérifié.e e-ID / itsme
       titles:
         navbar_links: Liens de navigation
         participatory_process_groups: Groupes de participations
