@@ -243,8 +243,8 @@ fr:
     home:
       extended:
         how_to_participate: Comment participer ?
-    statistics:
-      headline: Statistiques
+      statistics:
+        headline: Statistiques
   trads:
     show_traduction: Voir la traduction
     show_the_original: Voir l'original

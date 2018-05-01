@@ -18,7 +18,7 @@ nl:
   decidim:
     components:
       add_comment_form:
-        account_message: <a href="%{sign_in_url}">Meld je aan met je account</a> of <a href="%{sign_up_url}">registreer je</a> om een nieuwe reactie toe te voegen.
+        account_message: <a href="%{sign_in_url}">Meld je aan met je account</a> of <a href="%{sign_up_url}">schrijf je</a> om een nieuwe reactie toe te voegen.
         title: Voeg je reactie toe
         form:
           body:
