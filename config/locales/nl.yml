@@ -78,7 +78,8 @@ nl:
     omniauth_registrations:
       saml: e-ID of via itsme
     shared:
-      saml: e-ID of via itsme
+      links:
+        saml: e-ID of via itsme
     registrations:
       new:
         sign_in: Aanmelden
