@@ -215,8 +215,6 @@ fr:
           highlighted_processes:
             active_processes: Participations en cours
             see_all_processes: Voir toutes les participations
-          statistics:
-            headline: Statistiques
     scopes:
       global: Toute la ville
   devise:
@@ -243,6 +241,8 @@ fr:
     home:
       extended:
         how_to_participate: Comment participer ?
+    statistics:
+      headline: Statistiques
   trads:
     show_traduction: Voir la traduction
     show_the_original: Voir l'original

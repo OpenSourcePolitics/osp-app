@@ -30,11 +30,13 @@ nl:
         saml: e-ID of via itsme
       omniauth_registrations:
         saml: e-ID of via itsme
+        new:
+          username_help: Publieke naam die op je berichten verschijnt. Met het oog op het waarborgen van de anonimiteit hoeft dit niet jouw echte naam te zijn.
       shared:
         saml: e-ID of via itsme
       registrations:
         new:
-          already_have_account?: Heb je al een account?
+          already_have_an_account?: Heb je al een account?
           newsletter: Ik ga akkoord om een nieuwsbrief te ontvangen
           nickname_help: Je unieke publieke identifier op dit platform waarmee andere gebruikers je kunnen volgen, contact met je kunnen opnemen of je kunnen vermelden in hun opmerkingen. Deze wordt voorafgegaan door een "@".
           sign_in: Aanmelden
