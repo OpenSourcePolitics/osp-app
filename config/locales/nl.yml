@@ -24,11 +24,13 @@ nl:
           body:
             placeholder: Wat vind je hierover?
     profiles:
-      eid_verified: Geverifieerd e-ID / itsme
+      eid_verified: Geverifieerd e-ID/itsme
     devise:
       omniauth_callbacks:
         saml: e-ID of via itsme
       omniauth_registrations:
+        saml: e-ID of via itsme
+      shared:
         saml: e-ID of via itsme
       registrations:
         new:
@@ -67,6 +69,19 @@ nl:
     participatory_processes:
       order_by_processes:
         upcoming: Toekomstige
+  devise:
+    omniauth_callbacks:
+      saml: e-ID of via itsme
+    omniauth_registrations:
+      saml: e-ID of via itsme
+    shared:
+      saml: e-ID of via itsme
+    registrations:
+      new:
+        sign_in: Aanmelden
+    sessions:
+      new:
+        sign_in: Aanmelden
   pages:
     home:
       extended:
