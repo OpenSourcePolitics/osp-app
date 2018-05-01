@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   get "api/traduction" => "translation#traduction"
 
+  # devise_scope :user do
+  #   get '/users/auth/:provider/setup' => 'decidim/omniauth_config#setup'
+  # end
+
   authenticate :user, lambda { |u| u.roles.include?("admin") } do
     mount Sidekiq::Web => '/sidekiq'
   end
