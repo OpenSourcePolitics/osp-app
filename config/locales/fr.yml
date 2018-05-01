@@ -133,7 +133,8 @@ fr:
       omniauth_registrations:
         saml: e-ID ou via itsme
       shared:
-        saml: e-ID ou via itsme
+        links:
+          saml: e-ID ou via itsme
       registrations:
         new:
           newsletter: J’accepte de recevoir une lettre d’information
@@ -223,7 +224,8 @@ fr:
     omniauth_registrations:
       saml: e-ID ou via itsme
     shared:
-      saml: e-ID ou via itsme
+      links:
+        saml: e-ID ou via itsme
   layouts:
     decidim:
       assembly_header:

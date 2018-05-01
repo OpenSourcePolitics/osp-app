@@ -11,6 +11,13 @@ Devise.setup do |config|
       idp_slo_target_url: Rails.application.secrets.omniauth[:saml][:idp_slo_target_url],
       name_identifier_format: Rails.application.secrets.omniauth[:saml][:name_identifier_format],
       uid_attribute: Rails.application.secrets.omniauth[:saml][:uid_attribute],
+      attribute_service_name: 'Eidas extra attributes',
+      attribute_statements: {
+        name: ['uid','name'],
+        email: ['mail', 'email'],
+        first_name: ['surname', 'first_name', 'firstname', 'firstName'],
+        last_name: ['givenName', 'last_name', 'lastname', 'lastName']
+      },
       idp_cert_fingerprint: Rails.application.secrets.omniauth[:saml][:idp_cert_fingerprint],
       idp_cert_fingerprint_validator: lambda { |fingerprint| fingerprint },
       idp_cert: Rails.application.secrets.omniauth[:saml][:idp_cert]
