@@ -142,7 +142,7 @@ fr:
           sign_up_as:
             user: Citoyen
           subtitle: Inscrivez-vous pour participer et débattre sur la plateforme.
-          terms: les conditions d’utilisation et la politique d’utilisation des données
+          terms: les conditions d’utilisation et la déclaration de confidentialité
           tos_agreement: J’accepte %{link}.
       sessions:
         new:
@@ -226,7 +226,7 @@ fr:
     omniauth_registrations:
       saml: e-ID ou via itsme
     shared:
-      saml: e-ID ou via itsme    
+      saml: e-ID ou via itsme
   layouts:
     decidim:
       assembly_header:

@@ -43,7 +43,7 @@ nl:
             user: Burger
             user_group:: Organisatie/collectief
           subtitle: Meld je aan om deel te nemen aan discussies en om voorstellen te steunen.
-          terms: de gebruiksvoorwaarden en de privacyverklaring
+          terms: de gebruiksvoorwaarden en de privacy policy
           tos_agreement: Ik ga akkoord met %{link}.
           username_help: Publieke naam die op je berichten verschijnt. Met het oog op het waarborgen van de anonimiteit hoeft dit niet jouw echte naam te zijn.
       sessions:
