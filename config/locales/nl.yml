@@ -33,7 +33,8 @@ nl:
         new:
           username_help: Publieke naam die op je berichten verschijnt. Met het oog op het waarborgen van de anonimiteit hoeft dit niet jouw echte naam te zijn.
       shared:
-        saml: e-ID of via itsme
+        links:
+          saml: e-ID of via itsme
       registrations:
         new:
           already_have_an_account?: Heb je al een account?
