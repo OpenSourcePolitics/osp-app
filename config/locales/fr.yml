@@ -216,10 +216,6 @@ fr:
           highlighted_processes:
             active_processes: Participations en cours
             see_all_processes: Voir toutes les participations
-          statistics:
-            processes_count: Participations
-      statistics:
-        processes_count: Participations
     scopes:
       global: Toute la ville
   devise:
