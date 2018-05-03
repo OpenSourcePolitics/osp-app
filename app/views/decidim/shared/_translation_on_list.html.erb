@@ -38,7 +38,7 @@ var target_lang = "<%= I18n.locale.upcase %>";
     $.ajax({
       url : "/api/traduction",
       type : 'GET',
-      data : "target=" + target_lang + "&original=" + original_text,
+      data : "target=" + target_lang + "&original=" + encodeURI(original_text),
       dataType : 'json',
       contentType: "application/json",
       success : function(body, status) {
