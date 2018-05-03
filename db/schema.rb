@@ -117,7 +117,10 @@ ActiveRecord::Schema.define(version: 20180423150315) do
     t.jsonb "participatory_structure"
     t.boolean "show_statistics", default: false
     t.integer "decidim_scope_id"
+    t.string "reference"
+    t.bigint "decidim_area_id"
     t.boolean "scopes_enabled", default: true, null: false
+    t.index ["decidim_area_id"], name: "index_decidim_assemblies_on_decidim_area_id"
     t.index ["decidim_organization_id", "slug"], name: "index_unique_assembly_slug_and_organization", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_assemblies_on_decidim_organization_id"
   end
@@ -561,7 +564,7 @@ ActiveRecord::Schema.define(version: 20180423150315) do
     t.bigint "decidim_user_group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index "decidim_proposal_id, decidim_author_id, (COALESCE(decidim_user_group_id, ('-1'::integer)::bigint))", name: "decidim_proposals_proposal_endorsmt_proposal_auth_ugroup_uniq", unique: true
+    t.index "decidim_proposal_id, decidim_author_id, COALESCE(decidim_user_group_id, ('-1'::integer)::bigint)", name: "decidim_proposals_proposal_endorsmt_proposal_auth_ugroup_uniq", unique: true
     t.index ["decidim_author_id"], name: "decidim_proposals_proposal_endorsement_author"
     t.index ["decidim_proposal_id"], name: "decidim_proposals_proposal_endorsement_proposal"
     t.index ["decidim_user_group_id"], name: "decidim_proposals_proposal_endorsement_user_group"
