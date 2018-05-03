@@ -30,6 +30,14 @@ $warning: $yellow;
 
 @import "decidim/application";
 
+.main-footer a {color: #c6c5c6;}
+.main-footer a:hover{color: white!important;}
+.main-nav a {color: #c6c5c6;}
+.main-nav a:hover{color: white!important;}
+.main-nav__link--active a{color: white!important;}
+.footer__subhero{display:none;}
+.subhero .heading3 {font-size: 1.5em;}
+
 .main-footer__badge {
   position: static;
 }
