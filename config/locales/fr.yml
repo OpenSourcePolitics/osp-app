@@ -131,6 +131,8 @@ fr:
           highlighted_processes:
             active_processes: Projets en cours
             see_all_processes: Voir tous les projets
+      statistics:
+        processes_count: Projets
   layouts:
     decidim:
       participatory_processes:
@@ -144,3 +146,5 @@ fr:
     home:
       extended:
         how_to_participate: Comment participer ?
+      statistics:
+        processes_count: Projets
