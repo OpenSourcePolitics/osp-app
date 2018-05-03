@@ -230,3 +230,21 @@ $warning: $yellow;
     color:$white;
   }
 } // badge on proposals
+
+.hero{
+  &::after{
+    background-color: rgba($black, 0.2);
+  }
+} // opacity of background color
+
+.process-header__main{
+  &::after{
+    background-color: rgba($black, 0.2);
+  }
+}
+
+.highligted-content-banner{
+  &::after{
+    background-color: rgba($black, 0.2);
+  }
+}
