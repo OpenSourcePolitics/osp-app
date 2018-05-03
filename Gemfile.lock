@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 0b995cd911b3757b17218067e37e7d1a17ce2488
+  revision: 3d58b5ccd78c93d82a2433bdd76627c3b5539809
   branch: 0.10-stable
   specs:
     decidim (0.10.0.pre)
@@ -184,7 +184,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
     ast (2.4.0)
-    autoprefixer-rails (8.3.0)
+    autoprefixer-rails (8.4.1)
       execjs
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
@@ -387,7 +387,7 @@ GEM
     multipart-post (2.0.0)
     mustermann (1.0.2)
     newrelic_rpm (5.0.0.342)
-    nio4r (2.3.0)
+    nio4r (2.3.1)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     oauth (0.5.4)
@@ -628,7 +628,7 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
-    webmock (3.3.0)
+    webmock (3.4.1)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
