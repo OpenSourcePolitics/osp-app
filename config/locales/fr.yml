@@ -5,6 +5,8 @@ fr:
           delete_reason: Pour quelle(s) raison(s) supprimez-vous votre compte ?
         user:
           name: Votre nom, prénom
+          password: Votre mot de passe
+          password_confirmation: Confirmez votre mot de passe
       participatory_process:
         participatory_process_group_id: Groupe de participations
         promoted: Mise en avant
@@ -116,6 +118,8 @@ fr:
         create:
           error: Une erreur s'est produite lors de la création d'un nouveau groupe de participations.
           success: Groupe de participations créé avec succès.
+      profiles:
+        eid_verified: Vérifié.e e-ID/itsme
       titles:
         navbar_links: Liens de navigation
         participatory_process_groups: Groupes de participations
@@ -124,6 +128,13 @@ fr:
       documents:
         related_documents: Documents à consulter
     devise:
+      omniauth_callbacks:
+        saml: e-ID ou via itsme
+      omniauth_registrations:
+        saml: e-ID ou via itsme
+      shared:
+        links:
+          saml: e-ID ou via itsme
       registrations:
         new:
           newsletter: J’accepte de recevoir une lettre d’information
@@ -131,7 +142,7 @@ fr:
           sign_up_as:
             user: Citoyen
           subtitle: Inscrivez-vous pour participer et débattre sur la plateforme.
-          terms: les conditions d’utilisation et la politique d’utilisation des données
+          terms: les conditions d’utilisation et la déclaration de confidentialité
           tos_agreement: J’accepte %{link}.
       sessions:
         new:
@@ -207,6 +218,14 @@ fr:
             see_all_processes: Voir toutes les participations
     scopes:
       global: Toute la ville
+  devise:
+    omniauth_callbacks:
+      saml: e-ID ou via itsme
+    omniauth_registrations:
+      saml: e-ID ou via itsme
+    shared:
+      links:
+        saml: e-ID ou via itsme
   layouts:
     decidim:
       assembly_header:
@@ -224,6 +243,8 @@ fr:
     home:
       extended:
         how_to_participate: Comment participer ?
+      statistics:
+        headline: Statistiques
   trads:
     show_traduction: Voir la traduction
     show_the_original: Voir l'original

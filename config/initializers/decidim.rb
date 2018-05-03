@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 Decidim.configure do |config|
-  config.application_name = "Plateforme de consultation citoyenne fédérale"
-  config.mailer_sender = "Plateforme de consultation citoyenne <ne-pas-repondre@opensourcepolitics.eu>"
+  config.application_name = "My Opinion"
+  config.mailer_sender = "My Opinion <no-reply@myopinion.belgium.be>"
   config.authorization_handlers = []
 
   # Change these lines to set your preferred locales
@@ -10,11 +10,11 @@ Decidim.configure do |config|
   config.available_locales = [:en, :ca, :es, :fr, :nl]
 
   # Geocoder configuration
-  # config.geocoder = {
-  #   static_map_url: "https://image.maps.cit.api.here.com/mia/1.6/mapview",
-  #   here_app_id: Rails.application.secrets.geocoder[:here_app_id],
-  #   here_app_code: Rails.application.secrets.geocoder[:here_app_code]
-  # }
+  config.geocoder = {
+    static_map_url: "https://image.maps.cit.api.here.com/mia/1.6/mapview",
+    here_app_id: Rails.application.secrets.geocoder[:here_app_id],
+    here_app_code: Rails.application.secrets.geocoder[:here_app_code]
+  }
 
   # Custom resource reference generator method
   # config.resource_reference_generator = lambda do |resource, feature|
