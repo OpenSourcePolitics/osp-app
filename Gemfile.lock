@@ -12,10 +12,8 @@ GIT
     decidim-export (0.0.1)
       decidim-core
 
-GIT
-  remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: b3a2d5e3ec6a4e7da1d6c4e4baaaf7e3b17d671c
-  branch: 0.10-stable-trad-auto-merge
+PATH
+  remote: ../decidim
   specs:
     decidim (0.10.0.pre)
       decidim-accountability (= 0.10.0.pre)

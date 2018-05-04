@@ -37,6 +37,20 @@
               <%= f.hidden_field :oauth_signature %>
               <%= f.hidden_field :uid_name %>
 
+              <p class="lopd-text">
+                <%= strip_tags(translated_attribute(terms_and_conditions_page.content)) %>
+              </p>
+
+              <fieldset>
+                <div class="field">
+                  <%= f.check_box :newsletter, label: t(".newsletter") %>
+                </div>
+
+                <div class="field">
+                  <%= f.check_box :tos_agreement, label: t(".tos_agreement", link: link_to(t(".terms"), page_path("terms-and-conditions"))) %>
+                </div>
+              </fieldset>
+
               <div class="actions">
                 <%= f.submit t(".complete_profile"), class: "button expanded" %>
               </div>
