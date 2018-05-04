@@ -18,5 +18,8 @@
 
 .byebug_history
 
+config/**/*.local.yml
+config/**/*.local.rb
+
 # Ignore public uploads
 public/uploads

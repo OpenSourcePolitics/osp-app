@@ -1,6 +1,10 @@
 :concurrency: 5
 :queues:
-- default
-- mailers
-- newsletter
-- events
+    - default
+
+:production:
+  :queues:
+    - default
+    - mailers
+    - newsletter
+    - events

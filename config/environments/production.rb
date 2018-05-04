@@ -91,6 +91,15 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.action_mailer.delivery_method = :smtp
+
+  if ENV["HEROKU_APP_NAME"].present?
+    config.action_mailer.delivery_method = :letter_opener
+    config.action_mailer.perform_deliveries = true
+  else
+    config.action_mailer.delivery_method = :smtp
+  end
+
+
   config.log_formatter = ::Logger::Formatter.new
   config.action_mailer.smtp_settings = {
     :address        => Rails.application.secrets.smtp_address,

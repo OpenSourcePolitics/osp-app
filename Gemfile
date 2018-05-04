@@ -17,6 +17,7 @@ gem "puma", "~> 3.0"
 gem "uglifier", ">= 1.3.0"
 
 gem "faker", "~> 1.8.4"
+gem "letter_opener_web", "~> 1.3.0"
 
 group :development, :test do
   gem "pry-byebug", platform: :mri
@@ -25,7 +26,6 @@ group :development, :test do
 end
 
 group :development do
-  gem "letter_opener_web", "~> 1.3.0"
   gem "listen", "~> 3.1.0"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
