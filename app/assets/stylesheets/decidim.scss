@@ -1,7 +1,8 @@
 // // Variables
 //
 $primary:  #c31632 !default;
-// $secondary: black;
+$secondary: black;
+// $secondary: #599aa6;
 // $success: #57d685;
 // $warning: #ffae00;
 // $alert: #ec5840;
@@ -112,9 +113,9 @@ fill: #000!important;
 } //link in process navbar
 
 
-.card__button.button.small:hover {
-  background: black;
-}
+// .card__button.button.small:hover {
+//   color: white;
+// }
 
 .button.hollow.secondary {
   border: 1px solid $primary;
@@ -143,3 +144,10 @@ h1 {
 h2 {
   color: black;
 }
+
+.label.proposal-status {
+  &.secondary {
+    background: #599aa6;
+    color: black;
+  }
+} // badge on proposals
