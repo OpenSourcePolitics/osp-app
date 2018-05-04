@@ -31,6 +31,9 @@ nl:
       omniauth_registrations:
         saml: e-ID of via itsme
         new:
+          newsletter: Ik ga akkoord om een nieuwsbrief te ontvangen
+          terms: de gebruiksvoorwaarden en de privacyverklaring
+          tos_agreement: Ik ga akkoord met %{link}.
           username_help: Publieke naam die op je berichten verschijnt. Met het oog op het waarborgen van de anonimiteit hoeft dit niet jouw echte naam te zijn.
       shared:
         links:

@@ -132,6 +132,10 @@ fr:
         saml: e-ID ou via itsme
       omniauth_registrations:
         saml: e-ID ou via itsme
+        new:
+          newsletter: J’accepte de recevoir une lettre d’information
+          terms: les conditions d’utilisation et la déclaration de confidentialité
+          tos_agreement: J’accepte %{link}.
       shared:
         links:
           saml: e-ID ou via itsme
