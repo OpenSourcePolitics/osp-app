@@ -27,8 +27,23 @@ Devise.setup do |config|
     config.omniauth :facebook,
       Rails.application.secrets.omniauth[:facebook][:app_id],
       Rails.application.secrets.omniauth[:facebook][:app_secret],
-      scope: Rails.application.secrets.omniauth[:facebook][:scope],
-      info_fields: Rails.application.secrets.omniauth[:facebook][:info_fields]
+      secure_image_url: true,
+      scope: 'email',
+      info_fields: 'email'
+  end
+
+  if Rails.application.secrets.dig(:omniauth, :google_oauth2).present?
+    config.omniauth :google_oauth2,
+      Rails.application.secrets.omniauth[:google_oauth2][:client_id],
+      Rails.application.secrets.omniauth[:google_oauth2][:client_secret],
+      scope: ['email']
+  end
+
+  if Rails.application.secrets.dig(:omniauth, :twitter).present?
+    config.omniauth :twitter,
+      Rails.application.secrets.omniauth[:twitter][:api_key],
+      Rails.application.secrets.omniauth[:twitter][:api_secret],
+      x_auth_access_type: 'read'
   end
 
 end

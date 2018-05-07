@@ -11,6 +11,8 @@ gem "decidim-polis", git: "https://github.com/OpenSourcePolitics/decidim-polis.g
 
 gem "decidim-export", git: "https://github.com/OpenSourcePolitics/decidim-user-export.git"
 
+gem "high_voltage", "3.0.0"
+
 gem "puma", "~> 3.0"
 gem "uglifier", ">= 1.3.0"
 
