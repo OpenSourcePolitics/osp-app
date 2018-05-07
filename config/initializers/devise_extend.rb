@@ -27,7 +27,6 @@ Devise.setup do |config|
     config.omniauth :facebook,
       Rails.application.secrets.omniauth[:facebook][:app_id],
       Rails.application.secrets.omniauth[:facebook][:app_secret],
-      secure_image_url: true,
       scope: 'email',
       info_fields: 'email'
   end
