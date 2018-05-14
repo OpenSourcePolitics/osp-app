@@ -1,5 +1,12 @@
 // // Variables
-//
+$light-orange: #F39013;
+$dark-orange: #E40521;
+$jaune: #FDCD6D;
+$orange: #F19D03;
+$pink: #E4007D;
+$purple: #78007D;
+$primary: $orange;
+$secondary: $dark-orange;
 // $primary: #ef604d;
 // $secondary: #599aa6;
 // $success: #57d685;
@@ -15,6 +22,8 @@
 // $facebook: #3b5998;
 // $google: #dd4b39;
 
+
+
 @import "decidim/application";
 
 .logo-cityhall {
@@ -24,3 +33,37 @@
     text-align: left;
   }
 }
+
+.title-bar {
+  background: linear-gradient(0.25turn, $light-orange, $dark-orange);
+}
+
+.omnipresent-banner {
+  background-color: white;
+  a {
+    color: black;
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.process_stats-item .icon.external-icon {
+  fill: $primary;
+}
+
+.label.proposal-status {
+  &.primary {
+    background: #ef604d;
+  }
+  &.secondary {
+    background: #599aa6;
+    color: black;
+  }
+  &.success {
+    background:#57d685;
+  }
+  &.warning {
+    background:#ffae00;
+  }
+} // badge on proposals

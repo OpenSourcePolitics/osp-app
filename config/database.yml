@@ -29,6 +29,7 @@ default: &default
 
 development:
   <<: *default
+  database: <%= ENV.fetch("DATABASE_NAME") { "loiret_app_dev" } %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
