@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 66c3a1c24182d40f5d805aca5f15b09efe15d921
+  revision: 3849dbbcd1f5744b9b4b058a90caec5819730d2c
   branch: 0.10-stable
   specs:
     decidim (0.10.0.pre)
@@ -184,7 +184,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
     ast (2.4.0)
-    autoprefixer-rails (8.4.1)
+    autoprefixer-rails (8.5.0)
       execjs
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
@@ -272,8 +272,8 @@ GEM
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.23)
-    file_validators (2.1.0)
-      activemodel (>= 3.0)
+    file_validators (2.3.0)
+      activemodel (>= 3.2)
       mime-types (>= 1.0)
     fog-aws (2.0.1)
       fog-core (~> 1.38)
