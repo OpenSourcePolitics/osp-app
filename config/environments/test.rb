@@ -39,4 +39,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  Decidim::Verifications.register_workflow(:loiret_authorization_handler) do |auth|
+    auth.form = "Decidim::LoiretAuthorizationHandler"
+  end
 end

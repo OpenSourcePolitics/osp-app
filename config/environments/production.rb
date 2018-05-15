@@ -127,4 +127,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  Decidim::Verifications.register_workflow(:loiret_authorization_handler) do |auth|
+    auth.form = "Decidim::LoiretAuthorizationHandler"
+  end
 end
