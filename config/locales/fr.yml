@@ -1,11 +1,21 @@
 ---
 fr:
   activemodel:
-      participatory_process:
-        participatory_process_group_id: Groupe de projets
-        promoted: Mis en avant
-      participatory_process_group:
-        participatory_process_ids: Projets liés
+    assembly:
+      local_area: Périmètre
+    attributes:
+      proposal:
+        title: Titre (entre 16 et 150 caractères)
+    participatory_process:
+      local_area: Périmètre
+      participatory_process_group_id: Groupe de projets
+      promoted: Mis en avant
+    participatory_process_group:
+      participatory_process_ids: Projets liés
+  activerecord:
+    attributes:
+      decidim/participatory_process:
+        local_area: Périmètre
   decidim:
     admin:
       menu:
@@ -50,11 +60,11 @@ fr:
       participatory_process_step_activations:
         create:
           error: Une erreur s'est produite lors de l'activation de cette étape du projet.
-          success: Etape de projets activée avec succès.
+          success: Étape de projets activée avec succès.
       participatory_process_steps:
         create:
           error: Une erreur s'est produite lors de la création d'une nouvelle étape du projet.
-          success: Etape du projet créée avec succès.
+          success: Étape du projet créée avec succès.
         destroy:
           error:
             active_step: Vous ne pouvez pas supprimer l'étape active du projet.
@@ -68,7 +78,7 @@ fr:
           error: Une erreur s'est produite lors de la réorganisation des étapes du projet.
         update:
           error: Une erreur s'est produite lors de la mise à jour de cette étape du projet.
-          success: Etape du projet mise à jour avec succès.
+          success: Étape du projet mise à jour avec succès.
       participatory_process_user_roles:
         create:
           error: Une erreur s'est produite lors de l'ajout d'un utilisateur pour ce projet.
@@ -109,6 +119,29 @@ fr:
         navbar_links: Liens de navigation
         participatory_process_groups: Groupes de projets
         participatory_processes: Projets
+    assemblies:
+      show:
+        local_area: Périmètre
+      statistics:
+        meetings_count: Réunions
+    components:
+      add_comment_form:
+        title: Ajouter un commentaire
+      comment:
+        report:
+          description: Ce contenu est-il inapproprié ?
+          reasons:
+            does_not_belong: Contient d’autres types de contenus qui vous semblent inappropriés (...)
+            offensive: Contient des propos contraires à la loi (...)
+            spam: Contient des publicités, des escroqueries, des pièges à clic ou des robots (...)
+    devise:
+      omniauth_registrations:
+        new:
+          nickname_help: Ne pas utiliser d’espace. Le pseudonyme est utilisé par les contributeurs pour vous interpeller dans les commentaires.
+      registrations:
+        new:
+          nickname_help: Ne pas utiliser d’espace. Le pseudonyme est utilisé par les contributeurs pour vous interpeller dans les commentaires.
+          terms: la Charte de participation
     menu:
       processes: Projets
     participatory_process_groups:
@@ -117,8 +150,8 @@ fr:
         title: Groupes de projets
     participatory_process_steps:
       index:
-        process_steps: Etapes du projet
-        title: Etapes du projet
+        process_steps: Étapes du projet
+        title: Étapes du projet
     participatory_processes:
       index:
         title: Projets
@@ -131,13 +164,28 @@ fr:
           highlighted_processes:
             active_processes: Projets en cours
             see_all_processes: Voir tous les projets
+      show:
+        local_area: Périmètre
       statistics:
         processes_count: Projets
+    participatory_spaces:
+      highlighted_proposals:
+        proposals: 4 propositions aléatoires
+    shared:
+      flag_modal:
+        description: Ce contenu est-il inapproprié ?
+        does_not_belong: Contient d’autres types de contenus qui vous semblent inappropriés (...)
+        offensive: Contient des propos contraires à la loi (...)
+        spam: Contient des publicités, des escroqueries, des pièges à clic ou des robots (...)
+  devise:
+    invitations:
+      edit:
+        nickname_help: Ne pas utiliser d’espace. Le pseudonyme est utilisé par les contributeurs pour vous interpeller dans les commentaires.
   layouts:
     decidim:
       participatory_processes:
         index:
-          promoted_processes: Projets mis en avant
+          promoted_processes: A la une
         order_by_processes:
           processes:
             one: '%{count} projet'

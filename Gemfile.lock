@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 1478339a5536423d5e9670dcc26f12b07bac96e7
+  revision: 8790f9a09464514291610bb97808eeb4ec8d8316
   branch: 0.10-stable
   specs:
     decidim (0.10.0.pre)
@@ -60,7 +60,7 @@ GIT
       foundation-rails (~> 6.4, < 6.5)
       foundation_rails_helper (~> 3.0)
       geocoder (~> 1.4)
-      high_voltage (~> 3.0)
+      high_voltage (= 3.0.0)
       invisible_captcha (~> 0.10.0)
       jquery-rails (~> 4.3)
       mini_magick (~> 4.8)
@@ -184,7 +184,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
     ast (2.4.0)
-    autoprefixer-rails (8.4.1)
+    autoprefixer-rails (8.5.0)
       execjs
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
@@ -272,8 +272,8 @@ GEM
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.23)
-    file_validators (2.1.0)
-      activemodel (>= 3.0)
+    file_validators (2.3.0)
+      activemodel (>= 3.2)
       mime-types (>= 1.0)
     fog-aws (2.0.1)
       fog-core (~> 1.38)
@@ -555,7 +555,7 @@ GEM
       sprockets-rails
       tilt
     searchlight (4.1.0)
-    selenium-webdriver (3.11.0)
+    selenium-webdriver (3.12.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
     sendgrid-ruby (5.2.0)

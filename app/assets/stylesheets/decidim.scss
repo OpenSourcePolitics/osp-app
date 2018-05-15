@@ -260,3 +260,39 @@ $warning: $yellow;
 .row.collapse.buttons__row {
   margin-top: 10px;
 }
+
+.omnipresent-banner a {
+  color: black;
+  &:hover {
+    color: black;
+    opacity: 0.8;
+  }
+}
+
+.timeline__phase__number {
+  color: black!important;
+}
+
+.timeline__date {
+  color: black!important;
+}
+
+.timeline__title {
+  color: black!important;
+}
+
+.process-header__hashtag a {
+  color: $gray-dark;
+}
+
+.text-highlight.heading1.hero-heading {
+  font-size: 3.5rem;
+}
+
+h3 {
+  font-size: 1,5rem;
+}
+
+.button--sc.link.subhero-cta {
+  display: none;
+}
