@@ -67,3 +67,8 @@ $secondary: $dark-orange;
     background:#ffae00;
   }
 } // badge on proposals
+
+.topbar__dropmenu>ul>li.is-dropdown-submenu-parent.is-active>a {
+  color: black;
+  opacity: 0.4;
+}
