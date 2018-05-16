@@ -72,3 +72,10 @@ $secondary: $dark-orange;
   color: black;
   opacity: 0.4;
 }
+
+.topbar__user .topbar__user__login>a {
+  &:hover, &:focus {
+    color: black;
+    opacity: 0.4;
+  }
+}
