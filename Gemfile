@@ -7,7 +7,7 @@ ruby RUBY_VERSION
 gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.9-stable"
 gem "decidim-participations", git: "https://github.com/OpenSourcePolitics/decidim-participations.git", branch: "0.9-stable"
 
-gem "decidim-export", git: "https://github.com/OpenSourcePolitics/decidim-user-export.git"
+# gem "decidim-export", git: "https://github.com/OpenSourcePolitics/decidim-user-export.git"
 
 # Uncomment the following line if you want to use decidim-assemblies plugin
 gem "decidim-assemblies", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.9-stable"
