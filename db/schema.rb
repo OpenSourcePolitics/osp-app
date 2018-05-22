@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180511113555) do
+ActiveRecord::Schema.define(version: 20180522180232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -148,6 +148,26 @@ ActiveRecord::Schema.define(version: 20180511113555) do
     t.index ["decidim_organization_id", "slug"], name: "index_unique_assembly_slug_and_organization", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_assemblies_on_decidim_organization_id"
     t.index ["parent_id"], name: "decidim_assemblies_assemblies_on_parent_id"
+  end
+
+  create_table "decidim_assembly_members", force: :cascade do |t|
+    t.bigint "decidim_assembly_id"
+    t.integer "weight", default: 0, null: false
+    t.string "full_name"
+    t.string "gender"
+    t.date "birthday"
+    t.string "birthplace"
+    t.date "designation_date"
+    t.string "designation_mode"
+    t.string "position"
+    t.string "position_other"
+    t.date "ceased_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "decidim_user_id"
+    t.index ["decidim_assembly_id"], name: "index_decidim_assembly_members_on_decidim_assembly_id"
+    t.index ["decidim_user_id"], name: "index_decidim_assembly_members_on_decidim_user_id"
+    t.index ["weight", "created_at"], name: "index_decidim_assembly_members_on_weight_and_created_at"
   end
 
   create_table "decidim_assembly_user_roles", force: :cascade do |t|
@@ -538,9 +558,24 @@ ActiveRecord::Schema.define(version: 20180511113555) do
     t.jsonb "registration_terms"
     t.integer "reserved_slots", default: 0, null: false
     t.jsonb "services", default: []
+    t.boolean "private_meeting", default: false
+    t.boolean "transparent", default: true
+    t.bigint "organizer_id"
     t.index ["decidim_author_id"], name: "index_decidim_meetings_meetings_on_decidim_author_id"
     t.index ["decidim_component_id"], name: "index_decidim_meetings_meetings_on_decidim_component_id"
     t.index ["decidim_scope_id"], name: "index_decidim_meetings_meetings_on_decidim_scope_id"
+    t.index ["organizer_id"], name: "index_decidim_meetings_meetings_on_organizer_id"
+  end
+
+  create_table "decidim_meetings_minutes", force: :cascade do |t|
+    t.bigint "decidim_meeting_id"
+    t.jsonb "description"
+    t.string "video_url"
+    t.string "audio_url"
+    t.boolean "visible"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["decidim_meeting_id"], name: "index_decidim_meetings_minutes_on_decidim_meeting_id"
   end
 
   create_table "decidim_meetings_registrations", force: :cascade do |t|
@@ -784,7 +819,7 @@ ActiveRecord::Schema.define(version: 20180511113555) do
     t.bigint "decidim_user_group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index "decidim_proposal_id, decidim_author_id, COALESCE(decidim_user_group_id, ('-1'::integer)::bigint)", name: "decidim_proposals_proposal_endorsmt_proposal_auth_ugroup_uniq", unique: true
+    t.index "decidim_proposal_id, decidim_author_id, (COALESCE(decidim_user_group_id, ('-1'::integer)::bigint))", name: "decidim_proposals_proposal_endorsmt_proposal_auth_ugroup_uniq", unique: true
     t.index ["decidim_author_id"], name: "decidim_proposals_proposal_endorsement_author"
     t.index ["decidim_proposal_id"], name: "decidim_proposals_proposal_endorsement_proposal"
     t.index ["decidim_user_group_id"], name: "decidim_proposals_proposal_endorsement_user_group"
