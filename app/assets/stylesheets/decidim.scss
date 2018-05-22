@@ -116,6 +116,14 @@ $warning: $yellow;
   }
 }
 
+.icon.icon--menu {
+  color: $gray-dark;
+  &:hover, &:focus {
+    color: $gray-dark;
+    opacity: 0.8;
+  }
+}
+
 .topbar__dropmenu>ul>li>a {
   color: $gray-dark;
 } // language & user name
@@ -136,9 +144,6 @@ $warning: $yellow;
   opacity: 0.6;
 } // arrows of dropdown menu
 
-.subhero .heading3 {
-  font-size: 1.2em;
-}
 .home-bullet__icon svg {
   fill: $secondary;
 }
@@ -239,19 +244,19 @@ $warning: $yellow;
   }
 } // badge on proposals
 
-.hero{
+.hero {
   &::after{
     background-color: rgba($black, 0.2);
   }
 } // opacity of background color
 
-.process-header__main{
+.process-header__main {
   &::after{
     background-color: rgba($black, 0.2);
   }
 }
 
-.highligted-content-banner{
+.highligted-content-banner {
   &::after{
     background-color: rgba($black, 0.2);
   }
@@ -282,7 +287,7 @@ $warning: $yellow;
 }
 
 .process-header__hashtag a {
-  color: $gray-dark;
+  color: #bbb;
 }
 
 .text-highlight.heading1.hero-heading {
@@ -293,6 +298,6 @@ h3 {
   font-size: 1,5rem;
 }
 
-.button--sc.link.subhero-cta {
-  display: none;
-}
+// .section.upcoming_meetings {
+//   display: none;
+// }
