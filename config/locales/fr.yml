@@ -16,6 +16,8 @@ fr:
         name: Formulaire de vérification d'identité - Département du Loiret
       loiret_authorization_workflow:
         name: Procédure d'autorisation
+    menu:
+      processes: Participations en cours
     verifications:
       authorizations:
         first_login:
