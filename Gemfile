@@ -4,12 +4,12 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "f-angers-new-proposal-states"
+gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "angers-0.10"
 
 gem "decidim-export", git: "https://github.com/OpenSourcePolitics/decidim-user-export.git"
 
 # Uncomment the following line if you want to use decidim-assemblies plugin
-gem "decidim-assemblies", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "f-angers-new-proposal-states"
+gem "decidim-assemblies", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "angers-0.10"
 
 gem "puma", "~> 3.0"
 gem "uglifier", ">= 1.3.0"
@@ -19,7 +19,7 @@ gem "faker", "~> 1.8.4"
 group :development, :test do
   gem "pry-byebug", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "f-angers-new-proposal-states"
+  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "angers-0.10"
 end
 
 group :development do
