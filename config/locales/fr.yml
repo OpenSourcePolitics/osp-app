@@ -128,7 +128,7 @@ fr:
           document_number: Numéro unique
           postal_code: Code postal
           birthday: Date de naissance
-        name: Formulaire de vérification d'identité - Département d'Angers
+        name: Formulaire de vérification d'identité - Ville d'Angers
       angers_authorization_workflow:
         name: Procédure d'autorisation
     devise:
