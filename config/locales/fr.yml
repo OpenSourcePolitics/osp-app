@@ -1,4 +1,3 @@
----
 fr:
   activemodel:
     attributes:
@@ -11,6 +10,10 @@ fr:
         target: Participants
       close_meeting:
         closing_report: Compte rendu
+      mel_authorization_handler:
+        document_number: Numéro unique
+        postal_code: Code postal
+        birthday: Date de naissance
       meeting:
         registation_terms:
         registrations_enabled: Conditions d'inscription
@@ -218,6 +221,16 @@ fr:
         target: Participants
       statistics:
         assemblies_count: Agenda
+    authorization_handlers:
+      mel_authorization_handler:
+        explanation: Vérifier votre identité en saisissant un numéro unique
+        fields:
+          document_number: Numéro unique
+          postal_code: Code postal
+          birthday: Date de naissance
+        name: Formulaire de vérification d'identité - MEL
+      mel_authorization_workflow:
+        name: Procédure d'autorisation
     devise:
       registrations:
         new:
@@ -296,6 +309,12 @@ fr:
             other: SOUTIENS
     scopes:
       global: Toute la métropole
+    verifications:
+      authorizations:
+        first_login:
+          actions:
+            mel_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
+            mel_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
   layouts:
     decidim:
       assemblies:
