@@ -1,6 +1,10 @@
 fr:
   activemodel:
     attributes:
+      angers_authorization_handler:
+        document_number: Numéro unique
+        postal_code: Code postal
+      birthday: Date de naissance
       participatory_process:
         participatory_process_group_id: Groupe de participations
         promoted: Mise en avant
@@ -117,6 +121,16 @@ fr:
     application:
       documents:
         related_documents: Documents à consulter
+    authorization_handlers:
+      angers_authorization_handler:
+        explanation: Vérifier votre identité en saisissant un numéro unique
+        fields:
+          document_number: Numéro unique
+          postal_code: Code postal
+          birthday: Date de naissance
+        name: Formulaire de vérification d'identité - Département d'Angers
+      angers_authorization_workflow:
+        name: Procédure d'autorisation
     devise:
       registrations:
         new:
@@ -156,6 +170,12 @@ fr:
         processes_count: Participations
     scopes:
       global: Toute la ville
+    verifications:
+      authorizations:
+        first_login:
+          actions:
+            angers_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
+            angers_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
   layouts:
     decidim:
       assembly_header:

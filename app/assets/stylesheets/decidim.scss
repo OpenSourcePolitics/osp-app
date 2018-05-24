@@ -121,3 +121,8 @@ display: none;
 {
     box-shadow: inset 0 4px 0 0 #18A2A9;
 }
+
+#user-settings-tabs > li:nth-child(3) {
+  display: none;
+}
+
