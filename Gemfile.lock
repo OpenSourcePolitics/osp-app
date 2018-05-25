@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 7e129fc6a77e06e45bf6cc6509092cd381297595
+  revision: 550c52f903368601a0c58c716d11d27981472541
   branch: 0.11-stable
   specs:
     decidim (0.11.0.pre1)
@@ -221,7 +221,7 @@ GEM
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
     bcrypt (3.1.12)
-    better_html (1.0.10)
+    better_html (1.0.11)
       actionview (>= 4.0)
       activesupport (>= 4.0)
       ast (~> 2.0)
@@ -299,7 +299,7 @@ GEM
       actionmailer (>= 4.1.0)
       devise (>= 4.0.0)
     diff-lcs (1.3)
-    docile (1.3.0)
+    docile (1.3.1)
     doorkeeper (4.3.2)
       railties (>= 4.2)
     doorkeeper-i18n (4.0.0)
@@ -307,7 +307,7 @@ GEM
       thread
       thread_safe
     equalizer (0.0.11)
-    erb_lint (0.0.24)
+    erb_lint (0.0.26)
       activesupport
       better_html (~> 1.0.7)
       colorize
