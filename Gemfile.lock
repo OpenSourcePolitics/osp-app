@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 550c52f903368601a0c58c716d11d27981472541
+  revision: 13c0dbaad3dfb9d7e4e2728f4004923bb2a15460
   branch: 0.11-stable
   specs:
     decidim (0.11.0.pre1)
@@ -373,7 +373,7 @@ GEM
     htmlentities (4.3.4)
     httparty (0.16.2)
       multi_xml (>= 0.5.2)
-    i18n (1.0.0)
+    i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     i18n-tasks (0.9.21)
       activesupport (>= 4.0.2)
@@ -502,7 +502,7 @@ GEM
       pry (~> 0.10)
     public_suffix (3.0.2)
     puma (3.11.3)
-    rack (2.0.4)
+    rack (2.0.5)
     rack-cors (1.0.2)
     rack-protection (2.0.1)
       rack
@@ -675,7 +675,7 @@ GEM
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uber (0.1.0)
-    uglifier (4.1.9)
+    uglifier (4.1.10)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.3.2)
     valid_email2 (2.2.3)
