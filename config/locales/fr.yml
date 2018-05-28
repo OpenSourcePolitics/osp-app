@@ -1,2 +1,8 @@
 ---
 fr:
+  layouts:
+    decidim:
+      assembly_header:
+        assembly_menu_item: Le projet
+      process_header:
+        process_menu_item: Le projet
