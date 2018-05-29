@@ -134,11 +134,15 @@ fr:
     devise:
       registrations:
         new:
+          newsletter: Recevoir une newsletter sur l'actualité de l'Atelier de vos Idées.
           sign_up_as:
             user: Citoyen
           subtitle: Inscrivez-vous pour participer et débattre sur la plateforme.
     menu:
       processes: Participations en cours
+    notifications_settings:
+      show:
+        newsletter_notifications: Je souhaite recevoir une newletter sur l'actualité de l'Atelier de vos Idées.
     participatory_process_groups:
       show:
         group_participatory_processes: 'Participations pour %{group}'
@@ -169,7 +173,7 @@ fr:
       statistics:
         processes_count: Participations
     scopes:
-      global: Toute la ville
+      global: Ensemble des lieux
     verifications:
       authorizations:
         first_login:
@@ -187,6 +191,13 @@ fr:
           processes:
             one: '%{count} participation'
             other: '%{count} participations'
+        participatory_process:
+          take_part: Je participe
+        promoted_process:
+          take_part: Je participe
+      participatory_process_widgets:
+        show:
+          take_part: Je participe
       process_header:
         process_menu_item: Présentation
   pages:
