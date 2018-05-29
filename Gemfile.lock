@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 5757e00c9a4d43fa93e2c588bf22f32ee963cab7
-  branch: 0.10-stable
+  revision: 145c89f4ed1d3628551a842551afcf6f1c82c191
+  ref: 145c89f4ed1d3628551a842551afcf6f1c82c191
   specs:
     decidim (0.10.0.pre)
       decidim-accountability (= 0.10.0.pre)
@@ -611,7 +611,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.9)
       execjs (>= 0.3.0, < 3)
-    unicode-display_width (1.3.2)
+    unicode-display_width (1.3.3)
     url (0.3.2)
     valid_email2 (2.2.3)
       activemodel (>= 3.2)
