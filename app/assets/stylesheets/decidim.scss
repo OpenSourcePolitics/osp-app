@@ -201,12 +201,14 @@ $warning: $yellow;
   color: $secondary;
 } // main hollow buttons
 .button.tiny.hollow {
-  border:1px solid white;
-  color:white; opacity:0.8;
+  border:0;
+  color:black;
+  background-color: $primary;
   &:hover {
-    border: 1px solid $secondary;
-    color: $secondary;
-    opacity: 1;
+    border:0;
+    color:black;
+    background-color: $primary;
+    opacity: 0.8;
   }
 } // button "view steps"
 .button.hollow.secondary {
@@ -297,3 +299,19 @@ h3 {
 // .section.upcoming_meetings {
 //   display: none;
 // }
+
+.icon--flag.icon.icon--small {
+  fill: $pink;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.icon--envelope-closed.icon.icon--small {
+  fill: $blue;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+
