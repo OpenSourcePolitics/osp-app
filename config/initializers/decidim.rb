@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 Decidim.configure do |config|
-  config.application_name = "OSP Agora"
-  config.mailer_sender = "OSP Agora <ne-pas-repondre@opensourcepolitics.eu>"
+  config.application_name = "Département du Loiret"
+  config.mailer_sender = "Département du Loiret <ne-pas-repondre@loiret.fr>"
 
   # Change these lines to set your preferred locales
   config.default_locale = :fr

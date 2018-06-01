@@ -26,12 +26,16 @@ $secondary: $dark-orange;
 
 @import "decidim/application";
 
-.logo-cityhall {
-  position: static;
-  margin: 0;
-  @media print, screen and (min-width: 40em) {
-    text-align: left;
-  }
+// .logo-cityhall {
+//   position: static;
+//   margin: 0;
+//   @media print, screen and (min-width: 40em) {
+//     text-align: left;
+//   }
+// }
+
+.topbar__user__logged {
+  padding-right: 4.5rem;
 }
 
 .title-bar {
@@ -88,4 +92,39 @@ $secondary: $dark-orange;
   color: white;
 }
 
+.button {
+  background-color: #ff3333;
+  color: white;
+  &:hover {
+    background-color: #f16d03;
+    color: white;
+  }
+}
 
+.button.hollow {
+  border: 1px solid #ff3333;
+  color: #ff3333;
+  &:hover {
+    border: 1px solid #f16d03;
+    color: #f16d03;
+  }
+}
+
+.card__button.button.small.secondary {
+  background-color: #ff3333;
+  color: white;
+  &:hover {
+    background-color: #f16d03;
+    color: white;
+  }
+}
+
+.button.tiny.hollow {
+  border: 1px solid #ff3333;
+  color: #ff3333;
+  &:hover {
+    border: 1px solid #f16d03;
+    color: #f16d03;
+    opacity: 1;
+  }
+}
