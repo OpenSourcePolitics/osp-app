@@ -38,6 +38,10 @@ $secondary: $dark-orange;
   padding-right: 4.5rem;
 }
 
+.topbar__user__login {
+  padding-right: 4.5rem;
+}
+
 .title-bar {
   background: linear-gradient(0.25turn, $light-orange, $dark-orange);
 }
@@ -92,39 +96,6 @@ $secondary: $dark-orange;
   color: white;
 }
 
-.button {
-  background-color: #ff3333;
-  color: white;
-  &:hover {
-    background-color: #f16d03;
-    color: white;
-  }
-}
-
-.button.hollow {
-  border: 1px solid #ff3333;
-  color: #ff3333;
-  &:hover {
-    border: 1px solid #f16d03;
-    color: #f16d03;
-  }
-}
-
-.card__button.button.small.secondary {
-  background-color: #ff3333;
-  color: white;
-  &:hover {
-    background-color: #f16d03;
-    color: white;
-  }
-}
-
-.button.tiny.hollow {
-  border: 1px solid #ff3333;
-  color: #ff3333;
-  &:hover {
-    border: 1px solid #f16d03;
-    color: #f16d03;
-    opacity: 1;
-  }
+.row.collapse.buttons__row {
+  margin-top: 10px;
 }
