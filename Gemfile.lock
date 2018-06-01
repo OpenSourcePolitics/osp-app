@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 23f6546a9b8b70136b0fbbb6c529f74aedaadb26
+  revision: 2c8bbab4633b9105b622609bcb86d298ff9fae91
   branch: 0.10-stable-trad-auto-merge
   specs:
     decidim (0.10.0.pre)
@@ -327,7 +327,7 @@ GEM
     graphiql-rails (1.4.10)
       railties
       sprockets-rails
-    graphql (1.8.0)
+    graphql (1.8.1)
     hashdiff (0.3.7)
     hashie (3.5.7)
     high_voltage (3.0.0)
