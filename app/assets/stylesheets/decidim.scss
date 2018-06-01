@@ -18,13 +18,13 @@
 @import "decidim/application";
 @import "fontface";
 
-.logo-cityhall {
-  position: static;
-  margin: 0;
-  @media print, screen and (min-width: 40em) {
-    text-align: left;
-  }
-}
+// .logo-cityhall {
+//   position: static;
+//   margin: 0;
+//   @media print, screen and (min-width: 40em) {
+//     text-align: left;
+//   }
+// }
 
 .row.collapse.buttons__row {
   margin-top: 10px;
