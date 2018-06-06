@@ -180,7 +180,6 @@ fr:
         not_answered: En attente de réponse
       proposals:
         filters:
-          rejected: Non recevable
           voted: N'afficher que les propositions pour lesquelles j'ai voté
         orders:
           recent: Les plus récentes
