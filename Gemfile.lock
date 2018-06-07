@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 775048b764d4afc8f760fa6f860c8d6735cd1c08
+  revision: 7bbab850e6d1c9f07e4c5d61a883bd6a501c796f
   branch: 0.11-stable-moderation
   specs:
     decidim (0.11.0.pre1)
@@ -364,7 +364,7 @@ GEM
     graphiql-rails (1.4.10)
       railties
       sprockets-rails
-    graphql (1.8.1)
+    graphql (1.8.2)
     hashdiff (0.3.7)
     hashie (3.5.7)
     high_voltage (3.0.0)
@@ -597,7 +597,7 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
-    rubocop-rspec (1.25.1)
+    rubocop-rspec (1.26.0)
       rubocop (>= 0.53.0)
     ruby-ole (1.2.12.1)
     ruby-progressbar (1.9.0)
