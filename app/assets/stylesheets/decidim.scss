@@ -314,4 +314,10 @@ h3 {
   }
 }
 
-
+.author-data button {
+  color: $pink;
+  &:hover {
+    color: rgba($pink, 0.8);
+    cursor: pointer;
+  }
+}
