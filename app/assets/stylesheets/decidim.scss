@@ -300,24 +300,20 @@ h3 {
 //   display: none;
 // }
 
-.icon--flag.icon.icon--small {
+.icon--flag.icon.icon--small,
+.author-data button .icon-flag.icon.icon--small {
   fill: $pink;
   &:hover {
     opacity: 0.8;
+    cursor: pointer;
   }
 }
 
-.icon--envelope-closed.icon.icon--small {
+.icon--envelope-closed.icon.icon--small,
+.author-data button .icon-envelope-closed.icon.icon--small {
   fill: $blue;
   &:hover {
     opacity: 0.8;
-  }
-}
-
-.author-data button {
-  color: $pink;
-  &:hover {
-    color: rgba($pink, 0.8);
     cursor: pointer;
   }
 }
