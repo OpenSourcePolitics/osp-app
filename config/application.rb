@@ -11,6 +11,10 @@ module DevelopmentApp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
+    if ENV["ASSET_HOST"].present?
+      config.action_mailer.asset_host = ENV['ASSET_HOST']
+    end
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
