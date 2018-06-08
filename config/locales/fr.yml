@@ -5,11 +5,13 @@ fr:
       local_area: Périmètre
     attributes:
       decidim/user:
+        nickname: Votre identifiant
         password: Mot de passe (minimum 6 caractères)
         password_confirmation: Confirmez votre mot de passe
       proposal:
         title: Titre (entre 16 et 150 caractères)
       user:
+        nickname: Votre identifiant
         password: Mot de passe (minimum 6 caractères)
         password_confirmation: Confirmez votre mot de passe
     participatory_process:

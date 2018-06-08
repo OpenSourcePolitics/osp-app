@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: b6312ebba2ed9da8a576a2e352068c3761cacfa8
+  revision: a13a1d5f2ff9efced75f73effe0690e8c14982c3
   branch: 0.10-stable
   specs:
     decidim (0.10.0.pre)
@@ -184,7 +184,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
     ast (2.4.0)
-    autoprefixer-rails (8.6.0)
+    autoprefixer-rails (8.6.1)
       execjs
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
@@ -307,7 +307,7 @@ GEM
     graphiql-rails (1.4.10)
       railties
       sprockets-rails
-    graphql (1.8.1)
+    graphql (1.8.2)
     hashdiff (0.3.7)
     hashie (3.5.7)
     high_voltage (3.0.0)
@@ -534,7 +534,7 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
-    rubocop-rspec (1.25.1)
+    rubocop-rspec (1.26.0)
       rubocop (>= 0.53.0)
     ruby-ole (1.2.12.1)
     ruby-progressbar (1.9.0)
