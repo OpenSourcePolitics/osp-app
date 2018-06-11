@@ -138,10 +138,6 @@ fr:
       comment:
         report:
           description: Ce contenu est-il inapproprié ?
-          reasons:
-            does_not_belong: Contient d’autres types de contenus qui vous semblent inappropriés (activités illégales, menaces suicidaires, informations personnelles,...)
-            offensive: Contient des propos contraires à la loi (propos racistes, sexistes, insultes, attaques personnelles, menaces de mort, incitations au suicide ou toute forme de discours de haine,...)
-            spam: Contient des publicités, des escroqueries, des pièges à clic (clickbait) ou des robots fonctionnant au script (script bots)
     devise:
       omniauth_registrations:
         new:
@@ -182,9 +178,6 @@ fr:
     shared:
       flag_modal:
         description: Ce contenu est-il inapproprié ?
-        does_not_belong: Contient d’autres types de contenus qui vous semblent inappropriés (...)
-        offensive: Contient des propos contraires à la loi (...)
-        spam: Contient des publicités, des escroqueries, des pièges à clic ou des robots (...)
   devise:
     invitations:
       edit:
