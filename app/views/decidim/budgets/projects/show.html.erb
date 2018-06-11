@@ -5,7 +5,7 @@
 
 <div class="row column view-header">
   <% if current_user.present? && current_settings.votes_enabled? %>
-    <%= render partial: "budget_summary", locals: { include_heading: false } %>
+    <%= render partial: "budget_summary", locals: { include_heading: current_component.settings.vote_per_project? ? true : false } %>
   <% end %>
   <%= link_to projects_path, class: "muted-link" do %>
     <%= icon "chevron-left", class: "icon--small" %>
@@ -37,11 +37,11 @@
   </div>
   <div class="columns mediumlarge-8 mediumlarge-pull-4">
     <div class="section">
+
+      <%= decidim_sanitize translated_attribute project.description %>
       <% if component_settings.geocoding_enabled? %>
         <%= render partial: "decidim/shared/static_map", locals: { icon_name: "proposals", geolocalizable: project } %>
       <% end %>
-
-      <%= decidim_sanitize translated_attribute project.description %>
       <%= render partial: "decidim/shared/tags", locals: { resource: project, tags_class_extra: "tags--project" } %>
     </div>
     <%= linked_resources_for project, :proposals, "included_proposals" %>

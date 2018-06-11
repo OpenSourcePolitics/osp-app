@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 67edda893125f653a8d30683c26b82f93034e7b3
+  revision: 8b86d510c4ec037889cc464cd844684d2fa4d2d5
   branch: 0.11-angers-budget
   specs:
     decidim (0.11.0.pre1)
@@ -210,7 +210,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
     ast (2.4.0)
-    autoprefixer-rails (8.6.0)
+    autoprefixer-rails (8.6.2)
       execjs
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
@@ -369,7 +369,7 @@ GEM
     hashdiff (0.3.7)
     hashie (3.5.7)
     high_voltage (3.0.0)
-    highline (1.7.10)
+    highline (2.0.0)
     html_tokenizer (0.0.7)
     htmlentities (4.3.4)
     httparty (0.16.2)
@@ -487,7 +487,7 @@ GEM
     pg (1.0.0)
     polyamorous (1.3.3)
       activerecord (>= 3.0)
-    powerpack (0.1.1)
+    powerpack (0.1.2)
     premailer (1.11.1)
       addressable
       css_parser (>= 1.6.0)

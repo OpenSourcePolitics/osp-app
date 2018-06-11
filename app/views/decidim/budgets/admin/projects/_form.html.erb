@@ -18,7 +18,7 @@
 
     <% if component_settings.geocoding_enabled? %>
       <div class="row column">
-        <%= form.text_field :address %>
+        <%= form.text_field :address, label: t(".fields.address") %>
       </div>
     <% end %>
 
