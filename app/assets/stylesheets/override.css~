@@ -1,302 +1,153 @@
 <style type="text/css" media="screen">
-/*Theme color :
-primary : blueviolet
-secondary : blue
-third : black*/
+/* CMD + D and replace each scss variable with its associated color
+Theme color :
+$prim-ary: #0050a0;
+$hover-prim-ary: #00376d; (10%darker)
+$callout-prim-ary: $callout-primary; (90%lighter)
+$secon-dary: #FDD267; ()
+$hover-secon-dary: #fcc335; (10%darker)
+$callout-secon-dary: $callout-secondary; (90%lighter)
+$succ-ess: $success;
+$hover-succ-ess: $hover-success; (10%darker)
+$warn-ing: $warning ;
+$hover-warn-ing: $hover-warning; (10%darker)
+$callout-warn-ing: $callout-warning; (90%lighter)*/
 
 
-/*------NAV BAR------*/
+/*________YOU MIGHT WANT TO DISABLE________*/
+/*.mini-footer{display:none}*/
+.lopd-text{display:none} /* CGU when signing up */
 
-/*Navbar color when nav is white*/
-.title-bar
-{
-    background: #FFF;
-}
-/*Color for the org title that displays when there is no logo*/
-.logo-wrapper  span
-{
-    color: #000 !important;
-}
+/*________LOGIN/LOGOUT NAVBAR________*/
 
-/*color for navbar notification bell*/
-.topbar__notifications .icon
-{
-    fill: #000;
-}
+.title-bar{background:#FDD267;}
+.logo-wrapper span {color: #2f2f2f!important}
+.logo-wrapper span::before{border-left: 4px solid #2f2f2f!important}
+.topbar__notifications .icon, .topbar__conversations .icon{fill:#2f2f2f;}
+.topbar__notifications .icon, .topbar__conversations .icon{fill:#2f2f2f;}
+.dropdown.menu>li.is-dropdown-submenu-parent>a::after{border-top-color: #2f2f2f!important;}
+.topbar__dropmenu>ul>li>a{color:#2f2f2f}
+.topbar__dropmenu>ul>li>a:focus,.topbar__dropmenu>ul>li>a:hover{color:#747474}
+.topbar__dropmenu>ul>li.is-dropdown-submenu-parent.is-active>a{color:#747474}
+.topbar__dropmenu>ul>li.is-dropdown-submenu-parent>a:after{border-color:#2f2f2f}
+.topbar__dropmenu>ul>li.is-dropdown-submenu-parent>a:focus:after,.topbar__dropmenu>ul>li.is-dropdown-submenu-parent>a:hover:after{border-top-color:#747474}
+.topbar__dropmenu .is-dropdown-submenu a:focus,.topbar__dropmenu .is-dropdown-submenu a:hover{color:#747474}
+.topbar__user>ul>li>a{font-weight:normal;color:#2f2f2f}
+.topbar__user>ul>li>a:focus,.topbar__user>ul>li>a:hover{color:#747474}
+.topbar__user__login a{font-weight:normal;color:#2f2f2f}
+.topbar__user__login a:focus,.topbar__user__login a:hover{color:#747474}
+.topbar__dropmenu .is-dropdown-submenu a{color:#2f2f2f}
 
-/*color of hamburger menu (displays when screen is small)*/
-.topbar__menu button
-{
-    color: #000;
-}
+/*________MENU NAVBAR________*/
+.main-nav__link--active a {box-shadow: inset 0 6px 0 0 #0050a0;}
 
-/*color of user menu*/
-.topbar__user__login a
-{
-    color: #000;
-}
-
-/*color of dropdown user menu*/
-.topbar__dropmenu .dropdown>li>a
-{
-    color:#000;
-}
-
-/*color of triangle toggle that displays dropdown menu on mouse hover*/
-.topbar__dropmenu>ul>li>a:after
-{
-    border-top-color: #000 !important;
-}
-/*------END OF PRIMARY NAV BAR------*/
-
-/*color of secondary navbar highlight*/
-.main-nav__link--active a
-{
-    box-shadow: inset 0 4px 0 0 blueviolet;
-}
-
-/*------END OF SECONDARY NAV BAR------*/
-
-/*------PARTICIPATORY PROCESS HEADER------*/
+/*________PROPOSITION COLLECTION SORT CONTROLS________*/
+.collection-sort-controls a {color: #0050a0;}
+.collection-sort-controls .is-dropdown-submenu-parent.is-active a {color: #0050a0;}
+.collection-sort-controls a:focus, .collection-sort-controls a:hover {color: #00376d;}
 
 
-/*disable dark filter on process image header*/
-.process-header__main:after
-{
-    background-color: transparent;
-}
+/*________TITLES BORDERS________*/
+.section-heading:before{background-color: #0050a0;}
 
-/*makes process header go up*/
-.wrapper
-{
-    padding-top: 1rem;
-}
+/*________ANNOUNCEMENTS and ALERTS________*/
+ .callout.secondary{border-left: 8px solid #FDD267; background-color: #fef0cc;}
 
-/*button for see participatory process*/
-.button.hollow
-{
-    border: 1px solid blueviolet;
-    color: blueviolet;
-}
-
-/*shape participatory process*/
-.section-heading:before
-{
-    background-color: blueviolet;
-}
-
-/*shape*/
-.callout.secondary
-{
-    border-left: 8px solid blueviolet;
-}
-.card__datetime
-{
-    border-left: 4px solid blueviolet;
-}
-
-/*little flag*/
-.author-data a, .author-data button:hover
-{
-    color: blue;
-}
-.author-data a, .author-data button
-{
-    color: blueviolet;
-}
-
-/*------END OF PARTICIPATORY PROCESS HEADER------*/
-
-
-/*------BUTTONS AND ICONS---------*/
-
-/*little icon*/
-.home-bullet__icon svg
-{
-    fill: blueviolet;
-}
-
-/*icon localisation*/
-.address__icon
-{
-    fill: blueviolet;
-}
-
-/*icon result*/
-.card--list__icon
-{
-    fill: blueviolet;
-}
-
-/*processus icons*/
-.process_stats .process_stats-item .icon
-{
-    color: blueviolet;
-}
-
-/*button "participate"*/
-.button--sc.large
-{
-    background-color: blueviolet;
-}
-/*regular button color*/
-.button
-{
-    background-color : blueviolet;
-}
-/*secondary button*/
-.button.secondary {
-    background-color: blue;
-    border: blue;
-    color: white;
-}
-.button.hollow.secondary {
-    background-color: transparent;
-    border: blueviolet;
-    color: blueviolet;
-}
-/*hover button "participate"*/
-.button:hover, .button:focus
-{
-    background-color: blue;
-    color: #FFF;
-}
-
-/*button for see participatory process*/
-.button.hollow:focus, .button.hollow:hover
-{
-    border-color: blue;
-    color: blue;
-}
+/*________CARDS________*/
+.card__datetime{border-left: 4px solid #FDD267;}
+.author-data a, .author-data button{color: #0050a0;}
+.author-data a:hover, .author-data button:hover{color: #00376d;}
 
 /*name user*/
-.author-data .author__name
-{
-    color: blueviolet;
-}
+.author-data .author__name{color: #0050a0;}
+.author-data .author__name:hover{color: #00376d;}
+/*tags*/
+.card__title {color: #0050a0;}
+.card__title:hover {color: #00376d;}
+.card__link:hover{color: #FDD267;}
+.tags a{border: 1px solid #0050a0;color: #0050a0}
+.card--list__heading{color: #0050a0}
+.card--list__heading:hover{color: #00376d}
 
-/*button hover "sign up"*/
-a:hover, a:focus
-{
-    color: blue;
-}
+/*________ICONS________*/
+.home-bullet__icon svg {fill: #0050a0;}
+.address__icon, .card--list__icon, .process_stats .process_stats-item .icon{fill: #0050a0;}
+// .icon .external-icon {fill: #FDD267;}
 
-/*button "sign up"*/
-.subhero-cta
-{
-    color: blueviolet;
-}
+/*________BUTTONS________*/
 
-/*button large*/
-.button
-{
-    background-color: blueviolet;
-}
+/* regular buttons */
+.button.expanded{color:white!important;background:#0050a0}
+.button.expanded:focus,.button.expanded:hover {color:white;background:#00376d}
+.button.button--sc{color:white!important;background:#017acd!important}
+.button.button--sc:focus, .button.button--sc:hover {color:white;background:#006bb4!important}
+.button.expanded.button--sc.success{color:white;background-color:#57d685;}
 
-/*button secondary*/
-.button.hollow.secondary
-{
-    border: 1px solid blueviolet;
-    color: blueviolet;
-}
+/* big see-through buttons */
+.button.expanded.hollow {border: 1px solid #0050a0;color: #0050a0!important;background:transparent!important}
+.button.expanded.hollow:focus,.button.expanded.hollow:hover {border: 1px solid #00376d;color: #00376d!important;background:transparent!important}
+.button.expanded.hollow.secondary {border: 1px solid #0050a0!important;color: #0050a0!important;background:transparent!important}
+.button.expanded.hollow.secondary:hover {border: 1px solid #00376d!important;color: #00376d!important;background:transparent!important}
 
-/*button neutral*/
-.opinion-toggle--meh:hover, .opinion-toggle--meh:focus, .opinion-toggle--meh.is-active
-{
-    background-color: blue;
-}
+/* small buttons */
+.button.small {color:white; background-color: #0050a0}
+.button.small:hover {color:white; background-color: #00376d}
+.button.small.secondary {color:white; background-color: #0050a0!important}
+.button.small.secondary:hover {color:white; background-color: #00376d!important}
+.button.small.hollow {border: 1px solid #0050a0;color: #0050a0!important;background:transparent!important}
+.button.small.hollow:hover {border: 1px solid #00376d;color: #00376d!important;background:transparent!important}
 
-/*button disable*/
-.button.disabled, .button.disabled:hover, .button.disabled:focus, .button[disabled], .button[disabled]:hover, .button[disabled]:focus
-{
-    background-color: blueviolet;
-}
 
-/*border button tag*/
-.tags a
-{
-    border: 1px solid;
-}
+/* "Register" button */
+.subhero-cta{color: #0050a0;}
+.subhero-cta:hover{color: #FDD267;}
 
-/*button secondary*/
-.button.hollow.secondary:hover
-{
-    border: 1px solid blue;
-    color: blue;
-}
-.button.hollow.secondary
-{
-    border: 1px solid blueviolet;
-    color: blueviolet;
-}
+/* "View steps" button */
+.button.tiny.hollow {color:white; background-color: #fcc335; border: transparent}
+.button.tiny.hollow:hover {color:white; background-color: #FDD267; border: transparent}
 
-/*upload button*/
-.card--list__data__icon .icon
-{
-    fill: blueviolet;
-}
-.card--list__data__icon:hover .icon
-{
-    fill: blue;
-}
+/* button disable */
+.button.disabled, .button.disabled:hover, .button.disabled:focus, .button[disabled], .button[disabled]:hover, .button[disabled]:focus{background-color: #fcc335;}
 
-/*-----------END BUTTONS AND ICONS---------*/
+/* upload button */
+.card--list__data__icon .icon{fill: #FDD267;}
+.card--list__data__icon:hover .icon{fill: #fcc335;}
 
-/*--------- LINK---------------*/
+.button.clear {color: #0050a0}
+.button.clear:hover {color: #00376d}
+.close.button {color: #0050a0}
 
-/*some link*/
-a
-{
-    color: blue;
-}
+/*________LINKS________*/
+.link {color: #0050a0;}
+a {color: #0050a0;}
+a:hover {color: #00376d;}
+.picker-content a {color:#FDD267}
 
-/*link share*/
-.link
-{
-    color: blue;
-}
+/*________HERO SECTION________*/
+/* hide HERO description .hero-heading{display: none;} */
 
-/*key down for menu*/
-.dropdown.menu>li.is-dropdown-submenu-parent>a::after
-{
-    border-color: blue transparent transparent;
-}
+/* HOME/PROCESS selected process (active/past)*/
+.order-by__tab.is-active{color: #FDD267;}
 
-/*title link*/
-.card__link:hover
-{
-    color: blueviolet;
-}
 
-/*----------END LINK-----------*/
-
-/*----------------NAVIGATION SECTION-----------------------*/
+/*________PROCESS HEADER________*/
 
 /*progress bar*/
-.process-header__progress .phase-item--past::after
-{
-    background-color: blue;
-}
-.process-header__progress .phase-item--past span
-{
-    background-color: blue;
-}
+.process-header__progress .phase-item--past::after{background-color: #FDD267;}
+.process-header__progress .phase-item--past span{background-color: #FDD267;}
 
-/*name of section*/
-.process-nav__link:hover, .process-nav__link.is-active
-{
-    color: blueviolet;
-}
-.process-nav__link:hover svg, .process-nav__link.is-active svg
-{
-    fill: blueviolet;
-}
+/*name and icons of features*/
+.process-nav__link {color: #0050a0;}
+.process-nav__link svg {fill: #0050a0;}
+.process-nav__link:hover, .process-nav__link.is-active{color: #FDD267;}
+.process-nav__link:hover svg, .process-nav__link.is-active svg{fill: #FDD267;}
+.process-nav__link:focus, .process-nav__link.is-active{color: #FDD267;}
+.process-nav__link:focus svg, .process-nav__link.is-active svg{fill: #FDD267;}
 
-/*before after now*/
-.order-by__tab.is-active
-{
-    color: blueviolet;
-}
+/*________TIMELINE HEADER________*/
 
-/*------------------END NAVIGATION SECTION--------------------------*/
+.timeline__item:before{background:#0050a0}
+.timeline__item--current .timeline__info{border-color:#0050a0}.timeline__item--current .timeline__header{background-color:#0050a0}
+.timeline__phase{background:#0050a0}
+
 </style>
