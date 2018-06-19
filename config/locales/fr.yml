@@ -1,12 +1,21 @@
 ---
 fr:
-  layouts:
-    decidim:
-      assembly_header:
-        assembly_menu_item: Le projet
-      process_header:
-        process_menu_item: Le projet
+  activemodel:
+    attributes:
+      nancy_authorization_handler:
+        document_number: Numéro unique
+        postal_code: Code postal
+        birthday: Date de naissance
   decidim:
+    nancy_authorization_handler:
+      explanation: Vérifier votre identité en saisissant un numéro unique
+      fields:
+        document_number: Numéro unique
+        postal_code: Code postal
+        birthday: Date de naissance
+      name: Formulaire de vérification d'identité - Nancy
+    nancy_authorization_workflow:
+      name: Procédure d'autorisation
     events:
       comments:
         comment_by_followed_user:
@@ -63,3 +72,16 @@ fr:
           email_outro: Vous avez reçu cette notification parce que vous avez été mentionné dans %{resource_title}.
           email_subject: Vous avez été mentionné dans %{resource_title}
           notification_title: Vous avez été mentionné dans <a href="%{resource_path}">%{resource_title}</a> par <a href="%{author_path}">%{author_name} %{author_nickname}</a>
+    verifications:
+      authorizations:
+        first_login:
+          actions:
+            nancy_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
+            nancy_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+  layouts:
+    decidim:
+      assembly_header:
+        assembly_menu_item: Le projet
+      process_header:
+        process_menu_item: Le projet
+

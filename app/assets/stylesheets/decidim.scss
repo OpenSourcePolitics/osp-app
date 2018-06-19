@@ -165,3 +165,7 @@ $primary: #f15252;
   background-color: black;
   opacity: 0.2;
 }
+
+#user-settings-tabs > li:nth-child(3) {
+  display: none;
+}
