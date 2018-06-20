@@ -49,5 +49,7 @@ Decidim.configure do |config|
   end
 end
 
+Geocoder.configure(:timeout => 10)
+
 Rails.application.config.i18n.available_locales = Decidim.available_locales
 Rails.application.config.i18n.default_locale = Decidim.default_locale
