@@ -28,3 +28,15 @@
 .hidden{
   display: none!important
 }
+
+@media print, screen and (min-width: 40em){
+.budget-list__data {
+    flex-basis: 21rem;
+  }
+}
+
+@media print, screen and (min-width: 40em){
+  .budget-list__number {
+    font-size: 1.3rem;
+  }
+}
