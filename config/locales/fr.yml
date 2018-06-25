@@ -339,3 +339,5 @@ fr:
     home:
       extended:
         how_to_participate: Comment participer ?
+      statistics:
+        assemblies_count: Agenda
