@@ -5,13 +5,11 @@ fr:
       local_area: Périmètre
     attributes:
       decidim/user:
-        nickname: Votre identifiant
         password: Mot de passe (minimum 6 caractères)
         password_confirmation: Confirmez votre mot de passe
       proposal:
         title: Titre (entre 16 et 150 caractères)
       user:
-        nickname: Votre identifiant
         password: Mot de passe (minimum 6 caractères)
         password_confirmation: Confirmez votre mot de passe
     participatory_process:
@@ -141,11 +139,13 @@ fr:
     devise:
       omniauth_registrations:
         new:
-          nickname_help: Ne pas utiliser d’espace. Le pseudonyme est utilisé par les contributeurs pour vous interpeller dans les commentaires.
+          nickname_help: Cet identifiant est public et unique sur cette plateforme ; il permet aux autres utilisateurs de vous suivre, de vous contacter ou de vous mentionner dans leurs commentaires. Il s’affichera précédé d’un « @ » ; il ne doit pas contenir d’espace ni de caractère spécial.
+          username_help: Le nom est public et apparaît dans votre profil et sur vos messages. Dans le but de garantir l'anonymat, vous pouvez choisir n'importe quel nom. Pour contribuer au nom d'une organisation (association, entreprise, etc.), vous pouvez saisir le nom de cette organisation.
       registrations:
         new:
-          nickname_help: Ne pas utiliser d’espace. Le pseudonyme est utilisé par les contributeurs pour vous interpeller dans les commentaires.
+          nickname_help: Cet identifiant est public et unique sur cette plateforme ; il permet aux autres utilisateurs de vous suivre, de vous contacter ou de vous mentionner dans leurs commentaires. Il s’affichera précédé d’un « @ » ; il ne doit pas contenir d’espace ni de caractère spécial.
           terms: la Charte de participation
+          username_help: Le nom est public et apparaît dans votre profil et sur vos messages. Dans le but de garantir l'anonymat, vous pouvez choisir n'importe quel nom. Pour contribuer au nom d'une organisation (association, entreprise, etc.), vous pouvez saisir le nom de cette organisation.
     menu:
       processes: Projets
     participatory_process_groups:
@@ -181,7 +181,7 @@ fr:
   devise:
     invitations:
       edit:
-        nickname_help: Ne pas utiliser d’espace. Le pseudonyme est utilisé par les contributeurs pour vous interpeller dans les commentaires.
+        nickname_help: Cet identifiant est public et unique sur cette plateforme ; il permet aux autres utilisateurs de vous suivre, de vous contacter ou de vous mentionner dans leurs commentaires. Il s’affichera précédé d’un « @ » ; il ne doit pas contenir d’espace ni de caractère spécial.
   layouts:
     decidim:
       participatory_processes:
