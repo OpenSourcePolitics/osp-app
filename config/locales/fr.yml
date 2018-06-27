@@ -12,6 +12,10 @@ fr:
       participatory_process:
         scope_id: Secteur
         scopes_enabled: Secteurs activés
+      prod_authorization_handler:
+        document_number: Numéro unique
+        postal_code: Code postal
+        birthday: Date de naissance
       project:
         decidim_scope_id: Secteur
       proposal:
@@ -74,6 +78,16 @@ fr:
     assemblies:
       statistics:
         endorsements_count: Associations
+    authorization_handlers:
+      prod_authorization_handler:
+        explanation: Vérifier votre identité en saisissant un numéro unique
+        fields:
+          document_number: Numéro unique
+          postal_code: Code postal
+          birthday: Date de naissance
+        name: Formulaire de vérification d'identité (Production)
+      prod_authorization_workflow:
+        name: Procédure d'autorisation
     events:
       proposals:
         endorsing_enabled:
@@ -123,6 +137,12 @@ fr:
       global: Portée générale
       prompt: Sélectionner un secteur
       scopes: Secteurs
+    verifications:
+      authorizations:
+        first_login:
+          actions:
+            prod_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
+            prod_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
   errors:
     messages:
       cycle_detected: un secteur ne peut pas être du même niveau que ses descendants
