@@ -1,2 +1,132 @@
 ---
 fr:
+  activemodel:
+    attributes:
+      attachment:
+        title: Titre de la pièce jointe
+      assembly:
+        scope_id: Secteur
+        scopes_enabled: Secteurs activés
+      meeting:
+        decidim_scope_id: Secteur
+      participatory_process:
+        scope_id: Secteur
+        scopes_enabled: Secteurs activés
+      project:
+        decidim_scope_id: Secteur
+      proposal:
+        scope_id: Secteur
+        title: Titre (entre 16 et 150 caractères - doit commencer par une majuscule)
+      result:
+        decidim_scope_id: Secteur
+      scope:
+        scope_type: Type de secteur
+        scope_type_id: Type de secteur
+  activerecord:
+    attributes:
+      decidim/participatory_process:
+        scope: Secteur
+  decidim:
+    accountability:
+      results:
+        filters:
+          scopes: Secteur
+    admin:
+      menu:
+        scope_types: Types de secteur
+        scopes: Secteurs
+      models:
+        scope:
+          fields:
+            scope_type: Type de secteur
+      scope_types:
+        create:
+          error: Une erreur s'est produite lors de la création d'un nouveau type de secteur.
+          success: Type de secteur créé avec succès.
+        destroy:
+          success: Le type de secteur a été détruit avec succès
+        edit:
+          title: Modifier le type de secteur
+        new:
+          create: Créer un type de secteur
+          title: Nouveau secteur
+        update:
+          error: Une erreur s'est produite lors de la mise à jour du secteur.
+          success: Type de secteur mis à jour avec succès
+      scopes:
+        create:
+          error: Une erreur s'est produite lors de la création d'un nouveau secteur.
+          success: Secteur créé avec succès.
+        destroy:
+          success: Secteur supprimé avec succès
+        edit:
+          title: Editer le secteur
+        new:
+          create: Créer un secteur
+          title: Nouveau secteur
+        no_scopes: Pas de secteur à ce niveau.
+        update:
+          error: Une erreur s'est produite lors de la mise à jour du secteur.
+          success: Secteur mis à jour avec succès
+      titles:
+        scope_types: Types de secteur
+        scopes: Secteurs
+    assemblies:
+      statistics:
+        endorsements_count: Associations
+    events:
+      proposals:
+        endorsing_enabled:
+          email_intro: 'Vous pouvez désormais vous associer à des propositions dans %{participatory_space_title}! Commencez à participer à cette page:'
+          email_subject: Vous pouvez désormais vous associer à des propositions dans %{participatory_space_title}
+          notification_title: Vous pouvez maintenant <a href="%{resource_path}">vous associer à des propositions</a> dans <a href="%{participatory_space_url}">%{participatory_space_title}</a>
+        proposal_endorsed:
+          email_intro: "%{endorser_name} %{endorser_nickname}, que vous suivez, vient de s'associer à une proposition qui pourrait vous intéresser, vérifiez-la et contribuez:"
+          email_subject: "%{endorser_nickname} s'est associé à une nouvelle proposition"
+          notification_title: <a href="%{endorser_path}">%{endorser_name} %{endorser_nickname}</a>, que vous suivez, s'est associé à la proposition <a href="%{resource_path}">%{resource_title}</a>.
+    features:
+      proposals:
+        actions:
+          endorse: S'associer
+        settings:
+          step:
+            endorsements_blocked: Empêcher les utilisateurs de s'associer à une proposition
+            endorsements_enabled: Autoriser les utilisateurs à s'associer à une proposition
+    proposals:
+      models:
+        proposal:
+          fields:
+            scope: Secteur
+      proposal_endorsements:
+        create:
+          error: Des erreurs sont survenues au moment de s'associer à la proposition.
+      proposal_endorsements_helper:
+        endorsement_button:
+          already_endorsed: Déjà associé
+          endorse: S'associer
+      proposals:
+        endorsement_button:
+          already_endorsed: Déjà associé
+          already_endorsed_hover: Ne plus s'associer
+        endorsement_identities_cabin:
+          endorse: S'associer
+        endorsements_card_row:
+          endorse: S'associer
+        endorsements_listing:
+          see_all: Voir tout
+          see_less: Voir moins
+          title: Liste des associés
+    participatory_processes:
+      statistics:
+        endorsements_count: Associations
+    scopes:
+      global: Portée générale
+      prompt: Sélectionner un secteur
+      scopes: Secteurs
+  errors:
+    messages:
+      cycle_detected: un secteur ne peut pas être du même niveau que ses descendants
+  pages:
+    home:
+      statistics:
+        endorsements_count: Associations
