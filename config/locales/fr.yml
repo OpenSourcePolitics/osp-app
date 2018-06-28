@@ -175,6 +175,17 @@ fr:
     participatory_spaces:
       highlighted_proposals:
         proposals: 4 propositions aléatoires
+    proposals:
+      admin_log:
+        proposal:
+          create: "%{user_name} a créé la proposition %{resource_name} sur l'espace %{space_name} en tant que proposition du Département"
+      models:
+        proposal:
+          fields:
+            official_proposal: Proposition du Département
+      proposals:
+        filters:
+          official: Propositions du Département
     shared:
       flag_modal:
         description: Ce contenu est-il inapproprié ?
