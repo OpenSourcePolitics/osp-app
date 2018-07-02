@@ -24,7 +24,7 @@ module Decidim
             id: @proposal.scope.try(:id),
             name: @proposal.scope.try(:name)
           },
-          author_id: @proposal.author.id,
+          author_id: author_id,
           title: @proposal.title,
           body: @proposal.body,
           votes: @proposal.proposal_votes_count,
@@ -44,6 +44,10 @@ module Decidim
 
       def feature
         proposal.feature
+      end
+
+      def author_id
+        proposal.decidim_author_id ? proposal.decidim_author_id : "Official"
       end
 
       def meetings
