@@ -172,6 +172,22 @@ fr:
             see_all_processes: Voir toutes les participations
       statistics:
         processes_count: Participations
+    proposals:
+      admin:
+        proposal_answers:
+          edit:
+            accepted: Recevable
+            rejected: Non recevable
+      answers:
+        accepted: Recevable
+        rejected: Non recevable
+      proposals:
+        filters:
+          accepted: Recevable
+          rejected: Non recevable
+        show:
+          proposal_accepted_reason: 'Cette proposition a été jugée recevable parce que :'
+          proposal_rejected_reason: 'Cette proposition n''a pas été jugée recevable parce que:'
     scopes:
       global: Ensemble des lieux
     verifications:
