@@ -136,4 +136,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  Decidim::Verifications.register_workflow(:prod_authorization_handler) do |auth|
+    auth.form = "Decidim::ProdAuthorizationHandler"
+  end
 end
