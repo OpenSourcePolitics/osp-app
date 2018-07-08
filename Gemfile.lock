@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 58c3b318d00b951120fa218196dc79152780190b
+  revision: 4147e0d2efb10e0bfa6cb052d41fb5fc652d17dc
   branch: angers-0.10
   specs:
     decidim (0.10.0.pre)
@@ -191,7 +191,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
     ast (2.4.0)
-    autoprefixer-rails (8.5.0)
+    autoprefixer-rails (8.6.5)
       execjs
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
@@ -213,7 +213,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (>= 2.0, < 4.0)
-    carrierwave (1.2.2)
+    carrierwave (1.2.3)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
@@ -234,13 +234,13 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
-    connection_pool (2.2.1)
+    connection_pool (2.2.2)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
-    crass (1.0.3)
+    crass (1.0.4)
     css_parser (1.6.0)
       addressable
-    dalli (2.7.6)
+    dalli (2.7.8)
     date_validator (0.9.0)
       activemodel
       activesupport
@@ -267,32 +267,33 @@ GEM
       thread_safe
     equalizer (0.0.11)
     erubi (1.7.1)
-    excon (0.60.0)
+    excon (0.62.0)
     execjs (2.7.0)
-    factory_bot (4.8.2)
+    factory_bot (4.10.0)
       activesupport (>= 3.0.0)
-    factory_bot_rails (4.8.2)
-      factory_bot (~> 4.8.2)
+    factory_bot_rails (4.10.0)
+      factory_bot (~> 4.10.0)
       railties (>= 3.0.0)
     faker (1.8.7)
       i18n (>= 0.7)
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
-    ffi (1.9.23)
+    ffi (1.9.25)
     file_validators (2.3.0)
       activemodel (>= 3.2)
       mime-types (>= 1.0)
-    fog-aws (2.0.0)
-      fog-core (~> 1.38)
-      fog-json (~> 1.0)
+    fog-aws (3.0.0)
+      fog-core (~> 2.1)
+      fog-json (~> 1.1)
       fog-xml (~> 0.1)
       ipaddress (~> 0.8)
-    fog-core (1.45.0)
+    fog-core (2.1.0)
       builder
       excon (~> 0.58)
       formatador (~> 0.2)
-    fog-json (1.0.2)
-      fog-core (~> 1.0)
+      mime-types
+    fog-json (1.2.0)
+      fog-core
       multi_json (~> 1.10)
     fog-xml (0.1.3)
       fog-core
@@ -308,21 +309,21 @@ GEM
       activesupport (>= 4.1, < 6.0)
       railties (>= 4.1, < 6.0)
       tzinfo (~> 1.2, >= 1.2.2)
-    geocoder (1.4.8)
+    geocoder (1.4.9)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     graphiql-rails (1.4.10)
       railties
       sprockets-rails
-    graphql (1.8.0)
+    graphql (1.8.4)
     hashdiff (0.3.7)
     hashie (3.5.7)
     high_voltage (3.0.0)
-    highline (1.7.10)
+    highline (2.0.0)
     htmlentities (4.3.4)
     httparty (0.16.2)
       multi_xml (>= 0.5.2)
-    i18n (1.0.0)
+    i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     i18n-tasks (0.9.21)
       activesupport (>= 4.0.2)
@@ -363,7 +364,7 @@ GEM
       addressable (~> 2.3)
     letter_opener (1.6.0)
       launchy (~> 2.2)
-    letter_opener_web (1.3.3)
+    letter_opener_web (1.3.4)
       actionmailer (>= 3.2)
       letter_opener (~> 1.0)
       railties (>= 3.2)
@@ -393,9 +394,9 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.0.0)
     mustermann (1.0.2)
-    newrelic_rpm (4.8.0.341)
+    newrelic_rpm (5.2.0.345)
     nio4r (2.3.1)
-    nokogiri (1.8.2)
+    nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     oauth (0.5.4)
     oauth2 (1.4.0)
@@ -429,13 +430,13 @@ GEM
     parallel (1.12.1)
     parser (2.5.1.0)
       ast (~> 2.4.0)
-    passenger (5.2.0)
+    passenger (5.3.3)
       rack
       rake (>= 0.8.1)
     pg (1.0.0)
     polyamorous (1.3.3)
       activerecord (>= 3.0)
-    powerpack (0.1.1)
+    powerpack (0.1.2)
     premailer (1.11.1)
       addressable
       css_parser (>= 1.6.0)
@@ -450,10 +451,10 @@ GEM
       byebug (~> 10.0)
       pry (~> 0.10)
     public_suffix (3.0.2)
-    puma (3.11.2)
-    rack (2.0.4)
+    puma (3.11.4)
+    rack (2.0.5)
     rack-cors (1.0.2)
-    rack-protection (2.0.1)
+    rack-protection (2.0.3)
       rack
     rack-test (1.0.0)
       rack (>= 1.0, < 3)
@@ -495,7 +496,7 @@ GEM
       activesupport (>= 3.0)
       i18n
       polyamorous (~> 1.3.2)
-    rb-fsevent (0.10.2)
+    rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     rectify (0.11.0)
@@ -541,7 +542,7 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
-    rubocop-rspec (1.25.1)
+    rubocop-rspec (1.26.0)
       rubocop (>= 0.53.0)
     ruby-ole (1.2.12.1)
     ruby-progressbar (1.9.0)
@@ -550,8 +551,7 @@ GEM
     rubyzip (1.2.1)
     safe_yaml (1.0.4)
     sass (3.4.25)
-    sassc (1.11.4)
-      bundler
+    sassc (1.12.1)
       ffi (~> 1.9.6)
       sass (>= 3.3.0)
     sassc-rails (1.3.0)
@@ -562,15 +562,15 @@ GEM
       sprockets-rails
       tilt
     searchlight (4.1.0)
-    selenium-webdriver (3.12.0)
+    selenium-webdriver (3.13.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
     sendgrid-ruby (5.2.0)
       ruby_http_client (~> 3.2)
       sinatra (>= 1.4.7, < 3)
-    sentry-raven (2.7.2)
+    sentry-raven (2.7.4)
       faraday (>= 0.7.6, < 1.0)
-    sidekiq (5.1.1)
+    sidekiq (5.1.3)
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
       rack-protection (>= 1.5.0)
@@ -580,10 +580,10 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
-    sinatra (2.0.1)
+    sinatra (2.0.3)
       mustermann (~> 1.0)
       rack (~> 2.0)
-      rack-protection (= 2.0.1)
+      rack-protection (= 2.0.3)
       tilt (~> 2.0)
     social-share-button (1.1.0)
       coffee-rails
@@ -594,7 +594,7 @@ GEM
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
-    sprockets (3.7.1)
+    sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-es6 (0.9.2)
@@ -616,9 +616,9 @@ GEM
       nokogiri (~> 1.8.0, >= 1.7.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (4.1.8)
+    uglifier (4.1.14)
       execjs (>= 0.3.0, < 3)
-    unicode-display_width (1.3.2)
+    unicode-display_width (1.4.0)
     url (0.3.2)
     valid_email2 (2.2.3)
       activemodel (>= 3.2)
@@ -630,12 +630,12 @@ GEM
       equalizer (~> 0.0, >= 0.0.9)
     warden (1.2.7)
       rack (>= 1.0)
-    web-console (3.5.1)
+    web-console (3.6.2)
       actionview (>= 5.0)
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
-    webmock (3.4.1)
+    webmock (3.4.2)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
@@ -644,7 +644,7 @@ GEM
     websocket-extensions (0.1.3)
     wisper (2.0.0)
     wisper-rspec (1.1.0)
-    xpath (3.0.0)
+    xpath (3.1.0)
       nokogiri (~> 1.8)
 
 PLATFORMS
@@ -661,15 +661,20 @@ DEPENDENCIES
   letter_opener_web (~> 1.3.0)
   listen (~> 3.1.0)
   lograge (~> 0.7.1)
+  loofah (~> 2.2.1)
   newrelic_rpm
+  nokogiri (~> 1.8.2)
   passenger
   pry-byebug
   puma (~> 3.0)
+  rails-html-sanitizer (~> 1.0.4)
   sendgrid-ruby
   sentry-raven
   sidekiq
+  sinatra (~> 2.0.2)
   spring
   spring-watcher-listen (~> 2.0.0)
+  sprockets (~> 3.7.2)
   uglifier (>= 1.3.0)
   web-console
 
