@@ -99,3 +99,6 @@ $secondary: $dark-orange;
 .row.collapse.buttons__row {
   margin-top: 10px;
 }
+
+.menu.is-dropdown-submenu.submenu.first-sub.vertical>li>a{color:$orange;}
+.menu.is-dropdown-submenu.submenu.first-sub.vertical>li>a:hover{color:$dark-orange}
