@@ -11,6 +11,9 @@ fr:
         promoted: Mise en avant
       participatory_process_group:
         participatory_process_ids: Résidences liées
+    models:
+      decidim/proposals/accepted_proposal_event: Proposition soumise au vote
+      decidim/proposals/rejected_proposal_event: Proposition non recevable
   decidim:
     admin:
       actions:
@@ -137,6 +140,35 @@ fr:
           sign_up_as:
             user: Citoyen
           subtitle: Inscrivez-vous pour participer et débattre sur la plateforme.
+    events:
+      proposals:
+        proposal_accepted:
+          email_intro: 'La proposition "%{resource_title}" est soumise au vote. Vous pouvez lire la réponse sur cette page :'
+          email_outro: Vous venez de recevoir cette notification parce que vous suivez "%{resource_title}". Vous pouvez à tout moment arrêter de la suivre en cliquant sur ce dernier lien.
+          email_subject: Une proposition que vous suivez est soumise au vote
+          notification_title: La proposition <a href="%{resource_path}">%{resource_title}</a> est soumise au vote.
+        proposal_rejected:
+          email_intro: 'La proposition "%{resource_title}" n''a pas été jugée recevable. Vous pouvez lire le commentaire ici :'
+          email_outro: Vous avez reçu cette notification parce que vous suivez "%{resource_title}". Vous pouvez cesser de le suivre en allant sur le lien précédent.
+          email_subject: Une proposition que vous suivez n'a pas été jugée recevable
+          notification_title: La proposition <a href="%{resource_path}">%{resource_title}</a> n'a pas été jugée recevable.
+    proposals:
+      admin:
+        proposal_answers:
+          edit:
+            accepted: Soumise au vote
+            rejected: Non recevable
+      answers:
+        accepted: Soumise au vote
+        rejected: Non recevable
+      proposals:
+        filters:
+          accepted: Soumises au vote
+          except_rejected: Toutes sauf les propositions non recevables
+          rejected: Non recevables
+        show:
+          proposal_accepted_reason: 'Cette proposition est soumise au vote parce que :'
+          proposal_rejected_reason: 'Cette proposition n''a pas été jugée recevable parce que :'
     menu:
       processes: Accéder à ma résidence
     participatory_process_groups:
