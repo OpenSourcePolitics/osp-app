@@ -1,3 +1,4 @@
+---
 fr:
   activemodel:
     attributes:
@@ -33,6 +34,18 @@ fr:
       participatory_processes:
         new:
           title: nouvelle résidence
+        create:
+          error: Une erreur s'est produite lors de la création d'une nouvelle résidence.
+          success: Résidence créée avec succès. Configurez maintenant ses étapes.
+        destroy:
+          success: Résidence supprimée avec succès.
+        index:
+          not_published: Non publiée
+          published: Publiée
+          title: Nouvelle résidence
+        update:
+          error: Une erreur s'est produite lors de la mise à jour de cette résidence.
+          success: Résidence mise à jour avec succès.
       participatory_process_copies:
         new:
           title: Dupliquer la résidence
@@ -93,19 +106,6 @@ fr:
         update:
           error: Une erreur s'est produite lors de la mise à jour d'un utilisateur pour cette résidence.
           success: L'utilisateur a été mis à jour avec succès pour cette résidence.
-      participatory_processes:
-        create:
-          error: Une erreur s'est produite lors de la création d'une nouvelle résidence.
-          success: Résidence créée avec succès. Configurez maintenant ses étapes.
-        destroy:
-          success: Résidence supprimée avec succès.
-        index:
-          not_published: Non publiée
-          published: Publiée
-          title: Nouvelle résidence
-        update:
-          error: Une erreur s'est produite lors de la mise à jour de cette résidence.
-          success: Résidence mise à jour avec succès.
       participatory_processes_copies:
         create:
           error: Une erreur s'est produite lors de la duplication de cette résidence.
