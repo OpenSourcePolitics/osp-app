@@ -183,6 +183,7 @@ fr:
         rejected: Non recevable
       proposals:
         filters:
+          except_rejected: Toutes sauf les propositions non recevables
           accepted: Recevable
           rejected: Non recevable
         show:
