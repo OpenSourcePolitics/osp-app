@@ -130,14 +130,6 @@ GIT
       wisper-rspec (~> 1.0)
     decidim-generators (0.12.1)
       decidim-core (= 0.12.1)
-    decidim-initiatives (0.12.1)
-      decidim-admin (= 0.12.1)
-      decidim-comments (= 0.12.1)
-      decidim-core (= 0.12.1)
-      decidim-verifications (= 0.12.1)
-      kaminari (~> 1.0)
-      social-share-button (~> 1.0)
-      wicked (~> 1.3)
     decidim-meetings (0.12.1)
       cells-erb (~> 0.1.0)
       cells-rails (~> 0.0.9)
@@ -743,8 +735,6 @@ GEM
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
-    wicked (1.3.2)
-      railties (>= 3.0.7)
     wisper (2.0.0)
     wisper-rspec (1.1.0)
     xpath (3.1.0)
@@ -758,7 +748,6 @@ DEPENDENCIES
   dalli
   decidim!
   decidim-dev!
-  decidim-initiatives!
   faker (~> 1.8.4)
   fog-aws
   letter_opener_web (~> 1.3.0)
