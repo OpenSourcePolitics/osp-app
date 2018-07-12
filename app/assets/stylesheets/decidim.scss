@@ -68,3 +68,29 @@ $secondary: #EB1B2A;
   display: none;
 }
 
+.title-bar{background:white;}
+.logo-wrapper span {color: black!important}
+.logo-wrapper span::before{border-left: 4px solid black!important}
+.topbar__notifications .icon, .topbar__conversations .icon{fill:black;}
+.topbar__notifications .icon, .topbar__conversations .icon{fill:black;}
+.dropdown.menu>li.is-dropdown-submenu-parent>a::after{border-top-color: black;}
+.topbar__dropmenu>ul>li>a{color:black}
+// .topbar__dropmenu>ul>li.is-dropdown-submenu-parent.is-active>a{color:#F5F5F5}
+.menu.is-dropdown-submenu.submenu.first-sub.vertical>li>a{color:$primary;}
+// .menu.is-dropdown-submenu.submenu.first-sub.vertical>li>a:hover{color:#ba0230}
+.topbar__user__login a{font-weight:normal;color:black;}
+// .topbar__user__login a:focus,.topbar__user__login a:hover{color:#F5F5F5}
+
+.card__link {
+  color:black;
+  &:hover {
+    color:$primary;
+  }
+}
+
+.tags a {
+  color:black;
+  &:hover {
+    color:$primary;
+  }
+}
