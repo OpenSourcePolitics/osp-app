@@ -1,7 +1,7 @@
 // // Variables
 //
-// $primary: #ef604d;
-// $secondary: #599aa6;
+$primary: #EB1B2A;
+$secondary: #EB1B2A;
 // $success: #57d685;
 // $warning: #ffae00;
 // $alert: #ec5840;
@@ -34,25 +34,25 @@
   padding-bottom: 0;
 
   option {
-      position: relative;
-      display: block;
-      margin: 0 -15px 5px  0;
-      padding: 5px 10px;
-      font-size: 90%;
-      line-height: 17px;
-      color: $secondary;
-      border: 1px solid #e8e8e8;
-      border-radius: 3px;
-      cursor: pointer;
-      white-space: normal !important;
-      word-break: break-all !important;
-      overflow-wrap: break-word !important;
-      text-overflow: clip;
-      overflow-x: hidden;
+    position: relative;
+    display: block;
+    margin: 0 -15px 5px  0;
+    padding: 5px 10px;
+    font-size: 90%;
+    line-height: 17px;
+    color: $secondary;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    cursor: pointer;
+    white-space: normal !important;
+    word-break: break-all !important;
+    overflow-wrap: break-word !important;
+    text-overflow: clip;
+    overflow-x: hidden;
 
-      &:hover {
-        background: #e8e8e8;
-      }
+    &:hover {
+      background: #e8e8e8;
+    }
   }
 
   &:focus {
@@ -62,6 +62,9 @@
       color: white;
     }
   }
-
-
 }
+
+#user-settings-tabs > li:nth-child(3) {
+  display: none;
+}
+
