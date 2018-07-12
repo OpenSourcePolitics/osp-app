@@ -2,126 +2,37 @@ fr:
   activemodel:
     attributes:
       participatory_process:
-        announcement: Annonce
-        banner_image: Image d'en-tête
-        copy_categories: Copier les catégories
-        copy_features: Copier les fonctionnalités
-        copy_steps: Copier les étapes
-        description: Description
-        developer_group: Organisateur
-        domain: Domaine
-        end_date: Date de fin
-        hashtag: Hashtag
-        hero_image: Image de la page d'accueil
-        local_area: Espace d'organisation
-        meta_scope: Échelle
         participatory_process_group_id: Groupe de consultations
-        participatory_scope: Objectif
-        participatory_structure: Modalités
-        promoted: Mise en avant
-        published_at: Publiée à
-        scope_id: Périmètre d'application
-        scopes_enabled: Périmètres d'application activés
-        short_description: Résumé
-        show_statistics: Montrer les statistiques
-        slug: Identifiant
-        start_date: Date de début
-        subtitle: Sous-titre
-        target: Participants
-        title: Titre
       participatory_process_group:
-        description: Description
-        hero_image: Image
-        name: Nom
         participatory_process_ids: Consultations liées
-      participatory_process_step:
-        description: Description
-        end_date: Date de fin
-        short_description: Résumé
-        start_date: Date de début
-        title: Titre
-      participatory_process_user_role:
-        email: Email
-        name: Nom
-        role: Rôle
   errors:
     messages:
       invalid_participatory_process: Consultation invalide
   decidim:
     admin:
-      actions:
-        activate: Activer
-        configure: Configurer
-        confirm_destroy: Confirmer la suppression
-        destroy: Supprimer
-        duplicate: Dupliquer
-        edit: Modifier
-        new: Nouveau
-        preview: Aperçu
-        publish: Publier
-        resend_invitation: Renvoyer l'invitation
-        unpublish: Dépublier
       menu:
         participatory_process_groups: Groupes de consultations
         participatory_processes: Consultations
         participatory_processes_submenu:
-          attachment_collections: Dossiers
-          attachment_files: Fichiers
-          attachments: Documents liés
-          categories: Catégories
-          features: Fonctionnalités
-          info: Information
-          moderations: Modérations
-          moderation:
-            upstream: A priori
-            downstream: A posteriori
           process_admins: Administrateurs de la consultation
-          steps: Étapes
       models:
         participatory_process:
-          fields:
-            created_at: Créée le
-            promoted: Mise en évidence
-            published: Publiée
-            title: Titre
           name: Consultation
         participatory_process_group:
-          fields:
-            name: Nom
           name: Groupes de consultations
         participatory_process_step:
-          fields:
-            end_date: Date de fin
-            start_date: Date de début
-            title: Titre
           name: Étape de la consultation
         participatory_process_user_role:
-          fields:
-            email: Email
-            name: Nom
-            role: Rôle
           name: Rôle utilisateur de la consultation
-          roles:
-            admin: Administrateur
-            collaborator: Relecteur
-            moderator: Modérateur
-        user:
-          fields:
-            invitation_accepted_at: Invitation acceptée à
-            invitation_sent_at: Invitation envoyée à
       participatory_process_copies:
         new:
-          copy: Copie
-          select: Sélectionnez les données que vous souhaitez dupliquer
           title: Dupliquer la consultation
       participatory_process_groups:
         destroy:
           success: Le groupe de consultations a été détruit avec succès.
         edit:
           title: Modifier le groupe de consultations
-          update: Mettre à jour
         new:
-          create: Créer
           title: Nouveau groupe de consultations
         update:
           error: Il y a eu une erreur lors de la mise à jour de ce groupe de consultations.
@@ -141,7 +52,6 @@ fr:
         create:
           error: Une erreur s'est produite lors de la création d'une nouvelle étape de la consultation.
           success: Étape de la consultation créée avec succès.
-        default_title: Introduction
         destroy:
           error:
             active_step: Vous ne pouvez pas supprimer l'étape active de la consultation.
@@ -149,11 +59,7 @@ fr:
           success: L'étape de la consultation a été supprimée avec succès.
         edit:
           title: Modifier l'étape de la consultation
-          update: Mettre à jour
-        index:
-          steps_title: Étapes
         new:
-          create: Créer
           title: Nouvelle étape de la consultation
         ordering:
           error: Une erreur s'est produite lors de la réorganisation des étapes de la consultation.
@@ -172,7 +78,6 @@ fr:
         index:
           process_admins_title: Administrateurs de la consultation
         new:
-          create: Créer
           title: Nouvel utilisateur de la consultation.
         update:
           error: Une erreur s'est produite lors de la mise à jour d'un utilisateur pour cette consultation.
@@ -183,15 +88,7 @@ fr:
           success: Consultation créée avec succès. Configurez maintenant ses étapes.
         destroy:
           success: Consultation supprimée avec succès.
-        edit:
-          update: Mettre à jour
-        form:
-          title: Informations générales
-        index:
-          not_published: Non publiée
-          published: Publiée
         new:
-          create: Créer
           title: Nouvelle consultation
         update:
           error: Une erreur s'est produite lors de la mise à jour de cette consultation.
@@ -207,10 +104,6 @@ fr:
       titles:
         participatory_process_groups: Groupes de consultations
         participatory_processes: Consultations
-      users:
-        resend_invitation:
-          error: Une erreur s'est produite lors de l'envoi de l’invitation.
-          success: Invitation renvoyée avec succès.
     admin_log:
       participatory_process:
         create: "%{user_name} a créé la consultation %{resource_name}"
@@ -226,18 +119,6 @@ fr:
         create: "%{user_name} a invité l'utilisateur %{resource_name} à la consultation %{space_name}"
         delete: "%{user_name} a supprimé l'utilisateur %{resource_name} à partir de la consultation %{space_name}"
         update: "%{user_name} a changé le rôle de l'utilisateur %{resource_name} dans la consultation %{space_name}"
-    events:
-      participatory_process:
-        step_activated:
-          email_intro: 'L''étape %{resource_title} est maintenant active pour %{participatory_space_title}. Vous pouvez le voir sur cette page:'
-          email_outro: Vous avez reçu cette notification, car vous suivez %{participatory_space_title}. Vous pouvez arrêter de recevoir des notifications en suivant le lien précédent.
-          email_subject: Une mise à jour de %{participatory_space_title}
-          notification_title: L'étape %{resource_title} est maintenant active pour <a href="%{resource_path}">%{participatory_space_title}</a>
-        step_changed:
-          email_intro: 'Les dates pour l''étape %{resource_title} à %{participatory_space_title} ont été mises à jour. Vous pouvez le voir sur cette page:'
-          email_outro: Vous avez reçu cette notification, car vous suivez %{participatory_space_title}. Vous pouvez arrêter de recevoir des notifications en suivant le lien précédent.
-          email_subject: Une mise à jour de %{participatory_space_title}
-          notification_title: Les dates de l'étape <a href="%{resource_path}">%{resource_title}</a> à <a href="%{participatory_space_url}">%{participatory_space_title}</a> ont été mises à jour.
     menu:
       processes: Consultations
     participatory_process_groups:
@@ -259,55 +140,15 @@ fr:
             slug_help: 'Les identifiants d''URL sont utilisés pour générer les URL qui envoient vers cette consultation. N''accepte que des lettres, des chiffres et des tirets et doit commencer par une lettre. Exemple: %{url}'
       index:
         title: Consultation
-      order_by_processes:
-        active: Actives
-        all: Toutes
-        past: Passées
-        upcoming: À venir
       pages:
         home:
           highlighted_processes:
             active_processes: Consultations actives
-            active_step: 'Étape actuelle :'
             see_all_processes: Voir toutes les consultations
-      participatory_process_groups:
-        none: Aucun
-      participatory_processes:
-        index:
-          loading: Chargement des résultats...
-      show:
-        developer_group: Organisateur
-        end_date: Date de fin
-        local_area: Espace d'organisation
-        participatory_scope: Objectif
-        participatory_structure: Modalités
-        scope: Échelle
-        start_date: Date de début
-        target: Participants
       statistics:
-        answers_count: Réponses
-        comments_count: Commentaires
-        endorsements_count: Recommandations
-        headline: Activité
-        meetings_count: Rencontres
-        orders_count: Soutiens
-        pages_count: Pages
         processes_count: Consultations
-        projects_count: Projets
-        proposals_count: Propositions
-        results_count: Résultats
-        surveys_count: Enquêtes
-        users_count: Participants
-        votes_count: Soutiens
   layouts:
     decidim:
-      participatory_process_groups:
-        participatory_process_group:
-          browse: Parcourir
-      participatory_process_widgets:
-        show:
-          active_step: "Étape actuelle :"
-          take_part: Participer
       participatory_processes:
         index:
           promoted_processes: Consultations mises en avant
@@ -315,19 +156,6 @@ fr:
           processes:
             one: "%{count} consultation"
             other: "%{count} consultations"
-        participatory_process:
-          active_step: 'Étape actuelle :'
-          take_part: Participer
-        promoted_process:
-          active_step: 'Étape actuelle :'
-          more_info: Plus d'informations
-          take_part: Participer
-      process_header:
-        process_menu_item: Présentation
-        unfold: Déplier
-      process_header_steps:
-        step: Étape %{current} sur %{total}
-        view_steps: Voir les étapes
   pages:
     home:
       statistics:
