@@ -18,10 +18,20 @@ fr:
       promoted: Mis en avant
     participatory_process_group:
       participatory_process_ids: Projets liés
+    models:
+      decidim/proposals/endorsing_enabled_event: Activer le module de recommandations
+      decidim/proposals/voting_enabled_event: Activer le module de votes
   activerecord:
     attributes:
       decidim/participatory_process:
         local_area: Périmètre
+    models:
+      decidim/proposals/proposal_endorsement:
+        one: Recommandation
+        other: Recommandations
+      decidim/proposals/proposal_vote:
+        one: Soutien
+        other: Soutiens
   decidim:
     admin:
       menu:
@@ -125,17 +135,44 @@ fr:
         navbar_links: Liens de navigation
         participatory_process_groups: Groupes de projets
         participatory_processes: Projets
+    accountability:
+      results:
+        show:
+          stats:
+            votes: Soutiens
     assemblies:
       show:
         local_area: Périmètre
       statistics:
+        endorsement_count: Recommandations
         meetings_count: Réunions
+        votes_count: Soutiens
     components:
       add_comment_form:
         title: Ajouter un commentaire
       comment:
         report:
           description: Ce contenu est-il inapproprié ?
+      proposals:
+        settings:
+          global:
+            vote_limit: Limite de soutiens par utilisateur
+          step:
+            endorsements_blocked: Bloquer les recommandations
+            endorsements_enabled: Activer le module de recommandations
+            votes_blocked: Bloquer les soutiens/votes
+            votes_enabled: Activer le module de soutien
+            votes_weight_enabled: Activer le module de votes "Pour/Contre/Abstention"
+            votes_hidden: Cacher les soutiens/votes (si le module de soutiens/votes est activé, le décompte des soutiens/votes sera caché)
+    debates:
+      debates:
+        filters:
+          citizens: Initiés par les citoyens
+          official: Initiés par le Département
+        models:
+          debate:
+            fields:
+              official_debate: Débat initié par le Département
     devise:
       omniauth_registrations:
         new:
@@ -146,8 +183,32 @@ fr:
           nickname_help: Cet identifiant est public et unique sur cette plateforme ; il permet aux autres utilisateurs de vous suivre, de vous contacter ou de vous mentionner dans leurs commentaires. Il s’affichera précédé d’un « @ » ; il ne doit pas contenir d’espace ni de caractère spécial.
           terms: la Charte de participation
           username_help: Le nom est public et apparaît dans votre profil et sur vos messages. Dans le but de garantir l'anonymat, vous pouvez choisir n'importe quel nom. Pour contribuer au nom d'une organisation (association, entreprise, etc.), vous pouvez saisir le nom de cette organisation.
+    event:
+      proposals:
+        creation_enabled:
+          endorsing_enabled:
+            email_intro: 'Vous pouvez recommander les différentes propositions dans %{participatory_space_title} ! Commencez à participer en vous rendant sur cette page :'
+            email_subject: Vous pouvez désormais recommander des propositions dans %{participatory_space_title}
+            notification_title: Vous pouvez maintenant commencer à <a href="%{resource_path}">recommander les propositions</a> dans <a href="%{participatory_space_url}">%{participatory_space_title}</a>
+          proposal_endorsed:
+            email_intro: "%{endorser_name} %{endorser_nickname}, que vous suivez, vient de recommander une proposition qui pourrait vous intéresser, consultez-la et contribuez :"
+            email_subject: "%{endorser_nickname} a soutenu une nouvelle proposition"
+            notification_title: La proposition <a href="%{resource_path}">%{resource_title}</a> a été soutenue par <a href="%{endorser_path}">%{endorser_name} %{endorser_nickname}</a>.
+          voting_enabled:
+            email_intro: 'Vous pouvez recommander les propositions de %{participatory_space_title} ! Participez ici :'
+            email_subject: Vous pouvez désormais soutenir les propositions dans %{participatory_space_title}
+            notification_title: Vous pouvez maintenant commencer <a href="%{resource_path}">à soutenir les propositions</a> de <a href="%{participatory_space_url}">%{participatory_space_title}</a>
     menu:
       processes: Projets
+    pages:
+      home:
+        extended:
+          how_to_participate: Comment participer ?
+        statistics:
+          assemblies_count: Assemblée
+          endorsements_count: Recommandations
+          processes_count: Projets
+          votes_count: Soutiens
     participatory_process_groups:
       show:
         group_participatory_processes: 'Projet pour %{group}'
@@ -171,21 +232,85 @@ fr:
       show:
         local_area: Périmètre
       statistics:
+        endorsement_count: Recommandations
         processes_count: Projets
+        votes_count: Soutiens
     participatory_spaces:
       highlighted_proposals:
         proposals: 4 propositions aléatoires
     proposals:
+      admin:
+        shared:
+          info_proposal:
+            proposal_votes_count: Nombre de votes
+            proposal_votes_weight: Nombre de votes
       admin_log:
         proposal:
           create: "%{user_name} a créé la proposition %{resource_name} sur l'espace %{space_name} en tant que proposition du Département"
       models:
         proposal:
           fields:
+            endorsements: Recommandations
             official_proposal: Proposition du Département
+            votes: Soutiens
+      proposal_endorsements:
+        create:
+          error: Des erreurs sont survenues au moment de recommander la proposition.
+      proposal_endorsements_helper:
+        endorsement_button:
+          already_endorsed: Recommandée
+          endorse: Recommander
+      proposal_votes:
+        create:
+          error: Des erreurs se sont produites lors du soutien de la proposition.
       proposals:
+        endorsement_identities_cabin:
+          endorse: Recommander
+        endorsements_card_row:
+          endorse: Recommander
         filters:
           official: Propositions du Département
+          voted: Ne montrer que les propositions que j'ai soutenues
+        linked_proposals:
+          proposal_votes:
+            one: soutien
+            other: soutiens
+        show:
+          endorsements_list: Liste des recommandations
+        orders:
+          most_voted: Les plus soutenues
+        vote_button:
+          already_voted: Déjà soutenue
+          already_voted_hover: Retirer le soutien
+          maximum_votes_reached: Nombre maximum de soutiens atteint
+          no_votes_remaining: Aucun soutien restant
+          vote: Soutenir
+          votes_blocked: Soutiens désactivés
+        votes_count:
+          count:
+            one: SOUTIEN
+            other: SOUTIENS
+          most_popular_proposal: Proposition la plus populaire
+          need_more_votes: Besoin de plus de soutiens
+        vote_weight:
+          count:
+            one: SOUTIEN
+            other: SOUTIENS
+          maximum_votes_reached: Nombre maximum de soutiens atteint
+          most_popular_proposal: Proposition la plus populaire
+          need_more_votes: Besoin de plus de soutiens
+          neutral : Neutre
+          no_votes_remaining: Aucun soutien restant
+          votes_blocked: Soutiens désactivés
+        voting_rules:
+          can_accumulate_supports_beyond_threshold:
+            description: Chaque proposition doit rassembler plus de %{limit} soutiens
+          threshold_per_proposal:
+            description: Pour être acceptées, les propositions doivent atteindre %{limit} soutiens
+          title: 'Le soutien est soumis aux règles suivantes :'
+          vote_limit:
+            description: Vous pouvez soutenir %{limit} propositions au maximum.
+            votes: Soutiens
     shared:
       flag_modal:
         description: Ce contenu est-il inapproprié ?
@@ -202,9 +327,3 @@ fr:
           processes:
             one: '%{count} projet'
             other: '%{count} projets'
-  pages:
-    home:
-      extended:
-        how_to_participate: Comment participer ?
-      statistics:
-        processes_count: Projets

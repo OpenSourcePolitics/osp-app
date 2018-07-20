@@ -317,3 +317,8 @@ h3 {
     cursor: pointer;
   }
 }
+
+.card__footer.card__footer--spaces {
+  background: rgba($primary, 0.1);
+  border-top-color: rgba($primary, 0.6);
+}
