@@ -293,7 +293,7 @@ $warning: $yellow;
 }
 
 h3 {
-  font-size: 1,5rem;
+  font-size: 1.5rem!important;
 }
 
 // .section.upcoming_meetings {
@@ -321,4 +321,15 @@ h3 {
 .card__footer.card__footer--spaces {
   background: rgba($primary, 0.1);
   border-top-color: rgba($primary, 0.6);
+}
+
+.card.alert {
+  border-top-color: #616161;
+  &:hover {
+    border-color: #616161;
+  }
+}
+
+.card__text .card__text--status.alert {
+  color: #616161;
 }
