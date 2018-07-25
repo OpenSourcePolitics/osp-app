@@ -2,6 +2,9 @@ fr:
   activemodel:
     attributes:
       assembly:
+        area_id: Zone d'application
+        assembly_type: Type d'agora
+        assembly_type_other: Autre type d'agora
         developer_group: Promoteur
         local_area: Périmètre
         meta_scope: Échelle
@@ -44,28 +47,74 @@ fr:
         participatory_scope: Objectif
         participatory_structure: Modalités
         target: Participants
+    models:
+      decidim/assembly:
+        one: Agora
+        other: Agora
+      decidim/assembly_member:
+        one: Membre de l'agora
+        other: Membres de l'agora
+      decidim/assembly_user_role:
+        one: Fonction du membre dans l'agora
+        other: Fonctions du membre dans l'agora
   decidim:
     admin:
       actions:
-        new: Nouvelle
+        new_assembly: Nouvelle agora
       assemblies:
         create:
-          success: Agenda créé avec succès.
+          error: Une erreur s'est produite lors de la création d'une nouvelle agora.
+          success: Agora créée avec succès.
         destroy:
-          success: Agenda supprimé avec succès.
+          success: Agora supprimée avec succès.
         new:
-          title: Nouvel agenda
+          title: Nouvelle agora
         update:
-          success: Agenda mis à jour avec succès.
+          error: Une erreur s'est produite lors de la duplication de cette agora.
+          success: Agora mise à jour avec succès.
+      assembly_members:
+        create:
+          error: Une erreur s'est produite lors de l'ajout d'un membre pour cette agora.
+          success: Membre créé avec succès pour cette agora.
+        destroy:
+          success: Membre supprimé avec succès pour cette agora.
+        edit:
+          title: Mettre à jour le membre de l'agora.
+          update: Mettre à jour
+        index:
+          assembly_members_title: Membres de l'agora
+        new:
+          create: Créer
+          title: Nouveau membre de l'agora.
+        update:
+          error: Une erreur s'est produite lors de la mise à jour du membre de cette agora.
+          success: Membre mis à jour avec succès pour cette agora.
       assembly_publications:
         create:
-          success: Agenda publié avec succès.
+          success: Agora publiée avec succès.
         destroy:
-          success: Agenda dépublié avec succès.
+          success: Agora dépubliée avec succès.
+      assembly_user_roles:
+        create:
+          error: Une erreur s'est produite lors de l'ajout d'un utilisateur pour cette agora.
+          success: Utilisateur ajouté avec succès à cette agora.
+        destroy:
+          success: Utilisateur supprimé avec succès de cette agora.
+        edit:
+          title: Mettre à jour l'utilisateur de l'agora.
+          update: Mettre à jour
+        index:
+          assembly_admins_title: Administrateurs de l'agora
+        new:
+          create: Créer
+          title: Nouvel utilisateur de l'agora.
+        update:
+          error: Une erreur s'est produite lors de la mise à jour d'un utilisateur pour cette agora.
+          success: Utilisateur mis à jour avec succès pour cette agora.
       menu:
-        assemblies: Agenda
+        assemblies: Agora
         assemblies_submenu:
-          features: Fonctionnalités
+          assembly_admins: Administrateurs de l'agora
         navbar_links: Liens de navigation
         participatory_process_groups: Groupes de concertations
         participatory_processes: Concertations
@@ -74,7 +123,9 @@ fr:
           process_admins: Administrateurs de la concertation
       models:
         assembly:
-          name: Agenda
+          name: Agora
+        assembly_user_role:
+          name: Utilisateur de l'agora
         navbar_link:
           fields:
             link: Lien
@@ -197,7 +248,7 @@ fr:
           error: Une erreur s'est produite lors de la création d'un nouveau groupe de concertations.
           success: Groupe de concertations créé avec succès.
       titles:
-        assemblies: Agenda
+        assemblies: Agora
         navbar_links: Liens de navigation
         participatory_process_groups: Groupes de concertations
         participatory_processes: Concertations
@@ -205,22 +256,32 @@ fr:
       documents:
         related_documents: Documents à consulter
     assemblies:
+      admin:
+        assemblies:
+          form:
+            duration_help: Si la durée de cette agora est limitée, sélectionnez la date de fin. Sinon sa durée ne sera pas limitée.
+            included_at_help: Sélectionnez la date à laquelle cette agora a été ajoutée à Decidim. Elle ne doit pas nécessairement être identique à la date de création.
+            select_an_assembly_type: Sélectionnez un type d'agora
       index:
-        title: Agenda
+        title: Agora
       pages:
         home:
           highlighted_assemblies:
-            active_assemblies: Agenda
-            see_all_assemblies: Voir tous les agendas
+            active_assemblies: Agora
+            see_all_assemblies: Voir toutes les agora
       show:
+        area: Zone d'application
+        assembly_type: Type d'agora
+        children: Agora
         developer_group: Promoteur
         local_area: Périmètre
         participatory_scope: Objectif
         participatory_structure: Modalités
+        private_space: Ceci est une agora privée
         meta_scope: Échelle
         target: Participants
       statistics:
-        assemblies_count: Agenda
+        assemblies_count: Agora
     authorization_handlers:
       mel_authorization_handler:
         explanation: Vérifier votre identité en saisissant un numéro unique
@@ -253,7 +314,7 @@ fr:
             votes_enabled: Soutiens activés
             votes_hidden: Cacher le compteur de soutiens
     menu:
-      assemblies: Agenda
+      assemblies: Agora
       processes: Participer
     participatory_process_groups:
       show:
@@ -315,15 +376,19 @@ fr:
           actions:
             mel_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
             mel_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+  devise:
+    mailer:
+      invite_private_user:
+        subject: Vous avez été invité à une agora privée sur %{organization}
   layouts:
     decidim:
       assemblies:
         index:
-          promoted_assemblies: Agendas mis en avant
+          promoted_assemblies: Agora mise en avant
         order_by_assemblies:
           assemblies:
-            one: '%{count} agenda'
-            other: '%{count} agendas'
+            one: '%{count} agora'
+            other: '%{count} agora'
       assembly_header:
         assembly_menu_item: Présentation
       participatory_processes:
@@ -340,4 +405,4 @@ fr:
       extended:
         how_to_participate: Comment participer ?
       statistics:
-        assemblies_count: Agenda
+        assemblies_count: Agora
