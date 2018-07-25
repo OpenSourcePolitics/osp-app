@@ -1,3 +1,4 @@
+// = require jquery
 // = require leaflet
 // = require leaflet-tilelayer-here
 // = require leaflet-svg-icon
