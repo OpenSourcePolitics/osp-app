@@ -9,12 +9,29 @@ fr:
         area_id: Zone d'application
         assembly_type: Type d'agora
         assembly_type_other: Autre type d'agora
+        decidim_scope_id: Secteur géographique
+        scope_id: Secteur géographique
+        scopes_enabled: Secteur géographiques géographiques activés
+      meetings:
+        decidim_scope_id: Secteur géographique
       participatory_process:
         participatory_process_group_id: Groupe de participations
         promoted: Mise en avant
       participatory_process_group:
         participatory_process_ids: Participations liées
+      project:
+        decidim_scope_id: Secteur géographique
+      proposal:
+        scope_id: Secteur géographique
+      result:
+        decidim_scope_id: Secteur géographique
+      scope_type: Type de secteur géographique
+      scope_type_id: Type de secteur géographique
   decidim:
+    accountability:
+      result:
+        filters:
+          scopes: Secteur géographique
     admin:
       actions:
         new_assembly: Nouvelle agora
@@ -76,6 +93,7 @@ fr:
         participatory_processes: Participations
         participatory_processes_submenu:
           process_admins: Administrateurs de la participation
+        scope_types: Types de secteur géographique
       models:
         assembly:
           name: Agora
@@ -100,6 +118,10 @@ fr:
           name: Groupes de participations
         participatory_process_user_role:
           name: Rôle utilisateur de la participation
+        scope:
+          fields:
+            name: Titre
+            scope_type: Type de secteur géographique
       participatory_processes:
         new:
           title: nouvelle participation
@@ -184,11 +206,52 @@ fr:
         create:
           error: Une erreur s'est produite lors de la création d'un nouveau groupe de participations.
           success: Groupe de participations créé avec succès.
+      scope_types:
+        create:
+          error: Une erreur s'est produite lors de la création d'un nouveau type de secteur géographique.
+          success: Type de secteur géographique créé avec succès.
+        destroy:
+          success: Le type de secteur géographique a été supprimé avec succès
+        edit:
+          title: Modifier le type de secteur géographique
+          update: Mettre à jour
+        new:
+          create: Créer un type de secteur géographique
+          title: Nouveau secteur géographique
+        update:
+          error: Une erreur s'est produite lors de la mise à jour de ce secteur géographique.
+          success: Type de secteur géographique mis à jour avec succès
+      scopes:
+        create:
+          error: Une erreur s'est produite lors de la création d'un nouveau périmètre d’application.
+          success: Secteur géographique créé avec succès.
+        destroy:
+          success: Secteur géographique supprimé avec succès
+        edit:
+          title: Modifier le secteur géographique
+          update: Mettre à jour
+        new:
+          create: Créer un secteur géographique
+          title: Nouveau secteur géographique
+        no_scopes: Pas de secteur géographique à ce niveau.
+        update:
+          error: Une erreur s'est produite lors de la mise à jour de ce secteur géographique.
+          success: Secteur géographique mis à jour avec succès
       titles:
         assemblies: Agora
         navbar_links: Liens de navigation
         participatory_process_groups: Groupes de participations
         participatory_processes: Participations
+        scope_types: Types de secteur géographique
+        scopes: Secteur géographiques géographiques
+    admin_log:
+      scope:
+        create: "%{user_name} a créé le secteur géographique %{resource_name}"
+        create_with_parent: "%{user_name} a créé le secteur géographique %{resource_name} à l'intérieur du secteur géographique %{parent_scope}"
+        delete: "%{user_name} a supprimé le secteur géographique %{resource_name}"
+        delete_with_parent: "%{user_name} a supprimé le secteur géographique %{resource_name} à l'intérieur du secteur géographique %{parent_scope}"
+        update: "%{user_name} a mis à jour le secteur géographique %{resource_name}"
+        update_with_parent: "%{user_name} a mis à jour le secteur géographique %{resource_name} à l'intérieur du secteur géographique %{parent_scope}"
     application:
       documents:
         related_documents: Documents à consulter
@@ -261,8 +324,15 @@ fr:
             see_all_processes: Voir toutes les participations
       statistics:
         processes_count: Participations
+    proposals:
+      models:
+        proposal:
+          fields:
+            scope: Secteur géographique
     scopes:
       global: Toute la ville
+      prompt: Sélectionnez un secteur géographique
+      scopes: Secteur géographique
     verifications:
       authorizations:
         first_login:
