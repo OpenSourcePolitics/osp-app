@@ -4,7 +4,11 @@ fr:
       angers_authorization_handler:
         document_number: Numéro unique
         postal_code: Code postal
-      birthday: Date de naissance
+        birthday: Date de naissance
+      assembly:
+        area_id: Zone d'application
+        assembly_type: Type d'agora
+        assembly_type_other: Autre type d'agora
       participatory_process:
         participatory_process_group_id: Groupe de participations
         promoted: Mise en avant
@@ -13,13 +17,79 @@ fr:
   decidim:
     admin:
       actions:
-        new: Nouveau
+        new_assembly: Nouvelle agora
+      assemblies:
+        create:
+          error: Une erreur s'est produite lors de la création d'une nouvelle agora.
+          success: Agora créée avec succès.
+        destroy:
+          success: Agora supprimée avec succès.
+        new:
+          title: Nouvelle agora
+        update:
+          error: Une erreur s'est produite lors de la duplication de cette agora.
+          success: Agora mise à jour avec succès.
+      assembly_members:
+        create:
+          error: Une erreur s'est produite lors de l'ajout d'un membre pour cette agora.
+          success: Membre créé avec succès pour cette agora.
+        destroy:
+          success: Membre supprimé avec succès pour cette agora.
+        edit:
+          title: Mettre à jour le membre de l'agora.
+          update: Mettre à jour
+        index:
+          assembly_members_title: Membres de l'agora
+        new:
+          create: Créer
+          title: Nouveau membre de l'agora.
+        update:
+          error: Une erreur s'est produite lors de la mise à jour du membre de cette agora.
+          success: Membre mis à jour avec succès pour cette agora.
+      assembly_publications:
+        create:
+          success: Agora publiée avec succès.
+        destroy:
+          success: Agora dépubliée avec succès.
+      assembly_user_roles:
+        create:
+          error: Une erreur s'est produite lors de l'ajout d'un utilisateur pour cette agora.
+          success: Utilisateur ajouté avec succès à cette agora.
+        destroy:
+          success: Utilisateur supprimé avec succès de cette agora.
+        edit:
+          title: Mettre à jour l'utilisateur de l'agora.
+          update: Mettre à jour
+        index:
+          assembly_admins_title: Administrateurs de l'agora
+        new:
+          create: Créer
+          title: Nouvel utilisateur de l'agora.
+        update:
+          error: Une erreur s'est produite lors de la mise à jour d'un utilisateur pour cette agora.
+          success: Utilisateur mis à jour avec succès pour cette agora.
       menu:
+        assemblies: Agora
+          assemblies_submenu:
+            assembly_admins: Administrateurs de l'agora
         participatory_process_groups: Groupes de participations
         participatory_processes: Participations
         participatory_processes_submenu:
           process_admins: Administrateurs de la participation
       models:
+        assembly:
+          name: Agora
+        assembly_user_role:
+          name: Utilisateur de l'agora
+        decidim/assembly:
+          one: Agora
+          other: Agora
+        decidim/assembly_member:
+          one: Membre de l'agora
+          other: Membres de l'agora
+        decidim/assembly_user_role:
+          one: Fonction du membre dans l'agora
+          other: Fonctions du membre dans l'agora
         participatory_process:
           fields:
             created_at: Créée le
@@ -115,12 +185,33 @@ fr:
           error: Une erreur s'est produite lors de la création d'un nouveau groupe de participations.
           success: Groupe de participations créé avec succès.
       titles:
+        assemblies: Agora
         navbar_links: Liens de navigation
         participatory_process_groups: Groupes de participations
         participatory_processes: Participations
     application:
       documents:
         related_documents: Documents à consulter
+    assemblies:
+      admin:
+        assemblies:
+          form:
+            duration_help: Si la durée de cette agora est limitée, sélectionnez la date de fin. Sinon sa durée ne sera pas limitée.
+            included_at_help: Sélectionnez la date à laquelle cette agora a été ajoutée à Decidim. Elle ne doit pas nécessairement être identique à la date de création.
+            select_an_assembly_type: Sélectionnez un type d'agora
+      index:
+        title: Agora
+      pages:
+        home:
+          highlighted_assemblies:
+            active_assemblies: Agora
+            see_all_assemblies: Voir toutes les agora
+      show:
+        assembly_type: Type d'agora
+        children: Agora
+        private_space: Ceci est une agora privée
+      statistics:
+        assemblies_count: Agora
     authorization_handlers:
       angers_authorization_handler:
         explanation: Vérifier votre identité en saisissant un numéro unique
@@ -138,6 +229,7 @@ fr:
             user: Citoyen
           subtitle: Inscrivez-vous pour participer et débattre sur la plateforme.
     menu:
+      assemblies: Agora
       processes: Participations en cours
       assemblies: Donnez-nous votre avis
     participatory_process_groups:
@@ -179,6 +271,13 @@ fr:
             angers_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
   layouts:
     decidim:
+      assemblies:
+        index:
+          promoted_assemblies: Agora mise en avant
+        order_by_assemblies:
+          assemblies:
+            one: '%{count} agora'
+            other: '%{count} agora'
       assembly_header:
         assembly_menu_item: Présentation
       participatory_processes:
@@ -196,3 +295,4 @@ fr:
         how_to_participate: Comment participer ?
       statistics:
         processes_count: Participations
+        assemblies_count: Agora
