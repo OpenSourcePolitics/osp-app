@@ -277,6 +277,7 @@ fr:
             other: soutiens
         show:
           endorsements_list: Liste des recommandations
+          withdraw_confirmation: "Êtes-vous sûr de vouloir retirer cette proposition ? Si vous retirez cette proposition, celle-ci continuera à être visible de tous. Si vous souhaitez qu’elle ne soit plus visible parce qu’elle contient par exemple des informations personnelles, il faut la signaler en cliquant sur le drapeau rose sous le titre de la proposition, après la date : les administrateurs de la plateforme la masqueront alors."
         orders:
           most_voted: Les plus soutenues
         vote_button:
