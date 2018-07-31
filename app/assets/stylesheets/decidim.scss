@@ -23,7 +23,6 @@ $pink: #E2208C;
 $yellow: #FFD301;
 $blue: #45C4EC;
 $gray-dark: #616161;
-
 $primary: $light-green;
 $secondary: $dark-green;
 $warning: $yellow;
@@ -332,4 +331,30 @@ h3 {
 
 .card__text .card__text--status.alert {
   color: #616161;
+}
+
+.topbar__search{
+  position: relative;
+
+  input,
+  input:focus{
+    color: #51626c;
+    border: 0;
+    padding-left: $input-padding * 4;
+    box-shadow: none;
+    background: #e0e8eb;
+
+    @include breakpoint(medium){
+      background: #e0e8eb;
+    }
+  }
+
+  svg{
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: $input-padding;
+    transform: translateY(-50%);
+    opacity: .5;
+  }
 }
