@@ -6,7 +6,7 @@ version: 2
 
 notify:
   webhooks:
-  - url: https://osp.rocket.chat/hooks/CWDekWnPrND2Ep9n5/2ZSkKzCSxofmY29qW3yufe8tcpBDHECZsnYaga73h7RR9WHR
+  - url: https://webhook.site/9e764774-2b19-45c8-a4c6-b22d68709a46
 
 jobs:
   build:
