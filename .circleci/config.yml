@@ -6,7 +6,7 @@ version: 2
 
 notify:
   webhooks:
-  - url: https://osp.rocket.chat/hooks/$RocketChatToken
+  - url: https://osp.rocket.chat/hooks/CWDekWnPrND2Ep9n5/2ZSkKzCSxofmY29qW3yufe8tcpBDHECZsnYaga73h7RR9WHR
 
 jobs:
   build:
