@@ -6,7 +6,7 @@ version: 2
 
 notify:
   webhooks:
-  - url: https://webhook.site/9e764774-2b19-45c8-a4c6-b22d68709a46
+  - url: https://hooks.zapier.com/hooks/catch/3700786/quauhs/
 
 jobs:
   build:
