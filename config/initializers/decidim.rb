@@ -17,6 +17,7 @@ Decidim.configure do |config|
     here_app_code: Rails.application.secrets.geocoder[:here_app_code]
   }
 
+  config.skip_first_login_authorization = true
   # Custom resource reference generator method
   # config.resource_reference_generator = lambda do |resource, feature|
   #   # Implement your custom method to generate resources references
