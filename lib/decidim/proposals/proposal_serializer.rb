@@ -33,7 +33,7 @@ module Decidim
           published_at: @proposal.published_at,
           hidden: @proposal.hidden?,
           url: url,
-          feature: { id: feature.id },
+          component: { id: component.id },
           meeting_urls: meetings
         }
       end
@@ -42,8 +42,8 @@ module Decidim
 
       attr_reader :proposal
 
-      def feature
-        proposal.feature
+      def component
+        proposal.component
       end
 
       def author_id
