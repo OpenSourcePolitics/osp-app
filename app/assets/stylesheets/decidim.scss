@@ -358,3 +358,7 @@ h3 {
     opacity: .5;
   }
 }
+
+#user-settings-tabs > li:nth-child(3) {
+  display: none;
+}

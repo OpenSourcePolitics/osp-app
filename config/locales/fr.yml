@@ -7,6 +7,10 @@ fr:
       decidim/user:
         password: Mot de passe (minimum 6 caractères)
         password_confirmation: Confirmez votre mot de passe
+      osp_authorization_handler:
+        document_number: Numéro unique
+        postal_code: Code postal
+        birthday: Date de naissance
       proposal:
         title: Titre (entre 16 et 150 caractères)
       user:
@@ -147,6 +151,16 @@ fr:
         endorsement_count: Recommandations
         meetings_count: Réunions
         votes_count: Soutiens
+    authorization_handlers:
+      osp_authorization_handler:
+        explanation: Vérifier votre identité en saisissant un numéro unique
+        fields:
+          document_number: Numéro unique
+          postal_code: Code postal
+          birthday: Date de naissance
+        name: Formulaire de vérification d'identité
+      osp_authorization_workflow:
+        name: Procédure d'autorisation
     components:
       add_comment_form:
         title: Ajouter un commentaire
@@ -315,6 +329,12 @@ fr:
     shared:
       flag_modal:
         description: Ce contenu est-il inapproprié ?
+    verifications:
+      authorizations:
+        first_login:
+          actions:
+            osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
+            osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
   devise:
     invitations:
       edit:
