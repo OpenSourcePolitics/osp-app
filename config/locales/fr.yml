@@ -221,6 +221,7 @@ fr:
         statistics:
           assemblies_count: Assemblée
           endorsements_count: Recommandations
+          headline: Activité sur %{organization}
           processes_count: Projets
           votes_count: Soutiens
     participatory_process_groups:
