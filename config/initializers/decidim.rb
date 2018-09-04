@@ -5,7 +5,7 @@ Decidim.configure do |config|
   config.mailer_sender = "Loire Atlantique <participation.citoyenne@loire-atlantique.fr>"
 
   # Change these lines to set your preferred locales
-  config.default_locale = :fr
+  config.default_locale = :en
   config.available_locales = [:en, :fr]
 
   config.maximum_attachment_height_or_width = 6000
