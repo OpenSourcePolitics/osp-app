@@ -14,6 +14,14 @@ module DevelopmentApp
 
     config.action_mailer.asset_host = "https://participer.loire-atlantique.fr"
 
+    config.after_initialize do
+      if Decidim.geocoder.present?
+        Geocoder.configure(
+          lookup: :nominatim
+        )
+      end
+    end
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
