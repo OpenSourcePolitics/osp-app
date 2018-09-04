@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 7d2cdf94351439e1dd3118e6665be93352197f5e
+  revision: c59ae461fc6c8581e9c8d64c90206f2a0985ce12
   branch: 0.12-stable
   specs:
     decidim (0.12.2)
@@ -242,9 +242,11 @@ GEM
       parser (>= 2.4)
       smart_properties
     bindex (0.5.0)
+    bootsnap (1.3.1)
+      msgpack (~> 1.0)
     builder (3.2.3)
     byebug (10.0.2)
-    capybara (3.4.2)
+    capybara (3.7.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -298,7 +300,7 @@ GEM
     declarative-option (0.1.0)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
-    devise (4.4.3)
+    devise (4.5.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 6.0)
@@ -311,12 +313,9 @@ GEM
       devise (>= 4.0.0)
     diff-lcs (1.3)
     docile (1.3.1)
-    doorkeeper (4.4.1)
+    doorkeeper (4.4.2)
       railties (>= 4.2)
     doorkeeper-i18n (4.0.0)
-    easy_translate (0.5.1)
-      thread
-      thread_safe
     equalizer (0.0.11)
     erb_lint (0.0.26)
       activesupport
@@ -330,10 +329,10 @@ GEM
     erubi (1.7.1)
     excon (0.62.0)
     execjs (2.7.0)
-    factory_bot (4.10.0)
+    factory_bot (4.11.0)
       activesupport (>= 3.0.0)
-    factory_bot_rails (4.10.0)
-      factory_bot (~> 4.10.0)
+    factory_bot_rails (4.11.0)
+      factory_bot (~> 4.11.0)
       railties (>= 3.0.0)
     faker (1.8.7)
       i18n (>= 0.7)
@@ -376,7 +375,7 @@ GEM
     graphiql-rails (1.4.11)
       railties
       sprockets-rails
-    graphql (1.8.6)
+    graphql (1.8.8)
     hashdiff (0.3.7)
     hashie (3.5.7)
     highline (2.0.0)
@@ -386,12 +385,11 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
-    i18n-tasks (0.9.21)
+    i18n-tasks (0.9.24)
       activesupport (>= 4.0.2)
       ast (>= 2.1.0)
-      easy_translate (>= 0.5.1)
       erubi
-      highline (>= 1.7.3)
+      highline (>= 2.0.0)
       i18n
       parser (>= 2.2.3.0)
       rainbow (>= 2.2.2, < 4.0)
@@ -462,6 +460,7 @@ GEM
     mixlib-cli (1.7.0)
     mixlib-config (2.2.13)
       tomlrb
+    msgpack (1.2.4)
     multi_json (1.13.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
@@ -507,7 +506,7 @@ GEM
     passenger (5.3.3)
       rack
       rake (>= 0.8.1)
-    pg (1.0.0)
+    pg (1.1.2)
     pg_search (2.1.2)
       activerecord (>= 4.2)
       activesupport (>= 4.2)
@@ -592,33 +591,33 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
-    rspec (3.7.0)
-      rspec-core (~> 3.7.0)
-      rspec-expectations (~> 3.7.0)
-      rspec-mocks (~> 3.7.0)
+    rspec (3.8.0)
+      rspec-core (~> 3.8.0)
+      rspec-expectations (~> 3.8.0)
+      rspec-mocks (~> 3.8.0)
     rspec-cells (0.3.4)
       cells (>= 4.0.0, < 6.0.0)
       rspec-rails (~> 3.2)
-    rspec-core (3.7.1)
-      rspec-support (~> 3.7.0)
-    rspec-expectations (3.7.0)
+    rspec-core (3.8.0)
+      rspec-support (~> 3.8.0)
+    rspec-expectations (3.8.1)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.7.0)
+      rspec-support (~> 3.8.0)
     rspec-html-matchers (0.9.1)
       nokogiri (~> 1)
       rspec (>= 3.0.0.a, < 4)
-    rspec-mocks (3.7.0)
+    rspec-mocks (3.8.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.7.0)
-    rspec-rails (3.7.2)
+      rspec-support (~> 3.8.0)
+    rspec-rails (3.8.0)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
-      rspec-core (~> 3.7.0)
-      rspec-expectations (~> 3.7.0)
-      rspec-mocks (~> 3.7.0)
-      rspec-support (~> 3.7.0)
-    rspec-support (3.7.1)
+      rspec-core (~> 3.8.0)
+      rspec-expectations (~> 3.8.0)
+      rspec-mocks (~> 3.8.0)
+      rspec-support (~> 3.8.0)
+    rspec-support (3.8.0)
     rspec_junit_formatter (0.3.0)
       rspec-core (>= 2, < 4, != 2.12.0)
     rubocop (0.54.0)
@@ -631,10 +630,10 @@ GEM
     rubocop-rspec (1.26.0)
       rubocop (>= 0.53.0)
     ruby-ole (1.2.12.1)
-    ruby-progressbar (1.9.0)
+    ruby-progressbar (1.10.0)
     ruby_dep (1.5.0)
     ruby_http_client (3.3.0)
-    rubyzip (1.2.1)
+    rubyzip (1.2.2)
     safe_yaml (1.0.4)
     sass (3.4.25)
     sassc (1.11.4)
@@ -649,7 +648,7 @@ GEM
       sprockets-rails
       tilt
     searchlight (4.1.0)
-    selenium-webdriver (3.13.1)
+    selenium-webdriver (3.14.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
     sendgrid-ruby (5.2.0)
@@ -675,7 +674,7 @@ GEM
     smart_properties (1.13.1)
     social-share-button (1.1.0)
       coffee-rails
-    spreadsheet (1.1.7)
+    spreadsheet (1.1.8)
       ruby-ole (>= 1.0)
     spring (2.0.2)
       activesupport (>= 4.2)
@@ -697,7 +696,6 @@ GEM
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
     thor (0.20.0)
-    thread (0.2.2)
     thread_safe (0.3.6)
     tilt (2.0.8)
     tomlrb (1.2.7)
@@ -710,7 +708,7 @@ GEM
     uglifier (4.1.14)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.4.0)
-    valid_email2 (2.2.3)
+    valid_email2 (2.3.0)
       activemodel (>= 3.2)
       mail (~> 2.5)
     virtus (1.0.5)
@@ -741,6 +739,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootsnap (~> 1.3)
   dalli
   decidim!
   decidim-dev!
@@ -767,7 +766,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 2.5.0p0
+   ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.2
+   1.16.4
