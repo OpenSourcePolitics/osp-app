@@ -1,0 +1,1 @@
+"use strict";$(function(){var e,c,t;e=window,c=$("#participatory_process_scopes_enabled"),t=$("#participatory_process_scope_id"),$(".edit_participatory_process, .new_participatory_process").length>0&&(c.on("change",function(c){var a=c.target.checked;e.theDataPicker.enabled(t,a)}),e.theDataPicker.enabled(t,c.prop("checked")))});

@@ -1,0 +1,1 @@
+"use strict";window.addEventListener("message",function(t){if("GET_HEIGHT"===t.data.type){var e=document.body,n=document.documentElement,a=Math.max(e.scrollHeight,e.offsetHeight,n.clientHeight,n.scrollHeight,n.offsetHeight);parent.postMessage({type:"SET_HEIGHT",height:a},"*")}}),$(function(){$("a").attr("target","_blank")});

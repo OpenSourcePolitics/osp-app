@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
+gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable-budget"
 # gem "decidim", path: "../decidim"
 
 # gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
@@ -26,7 +26,7 @@ gem "faker", "~> 1.8"
 group :development, :test do
   gem "byebug", "~> 10.0", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
+  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable-budget"
   # gem "decidim-dev", path: "../decidim"
 end
 
