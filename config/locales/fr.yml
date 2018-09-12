@@ -4,7 +4,11 @@ fr:
       loiret_authorization_handler:
         document_number: Numéro unique
         postal_code: Code postal
-      birthday: Date de naissance
+        birthday: Date de naissance
+      osp_authorization_handler:
+        document_number: Numéro unique
+        postal_code: Code postal
+        birthday: Date de naissance
       participatory_process:
         participatory_process_group_id: Groupe de participations
         promoted: Mise en avant
@@ -131,6 +135,15 @@ fr:
         name: Formulaire de vérification d'identité du département du Loiret
       loiret_authorization_workflow:
         name: Procédure d'autorisation
+      osp_authorization_handler:
+        explanation: Vérifier votre identité en saisissant un numéro unique
+        fields:
+          document_number: Numéro unique
+          postal_code: Code postal
+          birthday: Date de naissance
+        name: Formulaire de vérification d'identité
+      osp_authorization_workflow:
+        name: Procédure d'autorisation
     devise:
       registrations:
         new:
@@ -197,6 +210,8 @@ fr:
           actions:
             loiret_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
             loiret_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+            osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
+            osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
   layouts:
     decidim:
       assembly_header:

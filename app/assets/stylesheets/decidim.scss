@@ -34,6 +34,34 @@ $secondary: $dark-orange;
 //   }
 // }
 
+
+.initiative-types-select {
+  white-space: normal !important;
+  word-break: break-all !important;
+  overflow-wrap: break-word !important;
+
+  padding-bottom: 0;
+
+  option {
+      position: relative;
+      display: block;
+      margin: 0 -15px 5px  0;
+      padding: 5px 10px;
+      font-size: 90%;
+      line-height: 17px;
+      color: $secondary;
+      border: 1px solid #e8e8e8;
+      border-radius: 3px;
+      cursor: pointer;
+      white-space: normal !important;
+      word-break: break-all !important;
+      overflow-wrap: break-word !important;
+      text-overflow: clip;
+      overflow-x: hidden;
+
+      &:hover {
+        background: #e8e8e8;
+      }
 .topbar__user__logged {
   padding-right: 4.5rem;
 }
@@ -54,6 +82,18 @@ $secondary: $dark-orange;
       color: $primary;
     }
   }
+
+  &:focus {
+    border-color: #238FF7;
+    option:checked {
+      background: #238FF7;
+      color: white;
+    }
+  }
+}
+
+#user-settings-tabs > li:nth-child(3) {
+  display: none;
 }
 
 .process_stats-item .icon.external-icon {

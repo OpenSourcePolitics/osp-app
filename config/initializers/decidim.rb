@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 Decidim.configure do |config|
+  config.skip_first_login_authorization = ENV["SKIP_FIRST_LOGIN_AUTHORIZATION"] ? ActiveRecord::Type::Boolean.new.cast(ENV["SKIP_FIRST_LOGIN_AUTHORIZATION"]) : true
   config.application_name = "Département du Loiret"
   config.mailer_sender = "Département du Loiret <ne-pas-repondre@loiret.fr>"
 
   # Change these lines to set your preferred locales
-  config.default_locale = :fr
+  config.default_locale = :en
   config.available_locales = [:en, :fr]
 
   config.maximum_attachment_height_or_width = 6000
@@ -16,6 +17,12 @@ Decidim.configure do |config|
     here_app_id: Rails.application.secrets.geocoder[:here_app_id],
     here_app_code: Rails.application.secrets.geocoder[:here_app_code]
   }
+
+  if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_require_authorization)
+    # puts "Decidim::Initiatives are loaded"
+    Decidim::Initiatives.do_not_require_authorization = true
+  end
+
 
   # Custom resource reference generator method
   # config.resource_reference_generator = lambda do |resource, feature|
