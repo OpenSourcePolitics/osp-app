@@ -1,12 +1,5 @@
 // // Variables
-$light-orange: #F39013;
-$dark-orange: #E40521;
-$jaune: #FDCD6D;
-$orange: #F19D03;
-$pink: #E4007D;
-$purple: #78007D;
-$primary: $orange;
-$secondary: $dark-orange;
+//
 // $primary: #ef604d;
 // $secondary: #599aa6;
 // $success: #57d685;
@@ -21,8 +14,6 @@ $secondary: $dark-orange;
 // $twitter: #55acee;
 // $facebook: #3b5998;
 // $google: #dd4b39;
-
-
 
 @import "decidim/application";
 
@@ -62,25 +53,6 @@ $secondary: $dark-orange;
       &:hover {
         background: #e8e8e8;
       }
-.topbar__user__logged {
-  padding-right: 4.5rem;
-}
-
-.topbar__user__login {
-  padding-right: 4.5rem;
-}
-
-.title-bar {
-  background: linear-gradient(0.25turn, $light-orange, $dark-orange);
-}
-
-.omnipresent-banner {
-  background-color: white;
-  a {
-    color: black;
-    &:hover {
-      color: $primary;
-    }
   }
 
   &:focus {
@@ -95,50 +67,3 @@ $secondary: $dark-orange;
 #user-settings-tabs > li:nth-child(3) {
   display: none;
 }
-
-.process_stats-item .icon.external-icon {
-  fill: $primary;
-}
-
-.label.proposal-status {
-  &.primary {
-    background: #ef604d;
-  }
-  &.secondary {
-    background: #599aa6;
-    color: black;
-  }
-  &.success {
-    background:#57d685;
-  }
-  &.warning {
-    background:#ffae00;
-  }
-} // badge on proposals
-
-.topbar__dropmenu>ul>li.is-dropdown-submenu-parent.is-active>a {
-  color: black;
-  opacity: 0.4;
-}
-
-.topbar__user .topbar__user__login>a {
-  &:hover, &:focus {
-    color: black;
-    opacity: 0.4;
-  }
-}
-
-#user-settings-tabs > li:nth-child(3) {
-  display: none;
-}
-
-.process-header__hashtag a {
-  color: white;
-}
-
-.row.collapse.buttons__row {
-  margin-top: 10px;
-}
-
-.menu.is-dropdown-submenu.submenu.first-sub.vertical>li>a{color:$orange;}
-.menu.is-dropdown-submenu.submenu.first-sub.vertical>li>a:hover{color:$dark-orange}
