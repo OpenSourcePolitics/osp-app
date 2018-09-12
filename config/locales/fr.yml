@@ -153,6 +153,10 @@ fr:
           subtitle: Inscrivez-vous pour participer et débattre sur la plateforme.
     menu:
       processes: Participations en cours
+    messaging:
+      conversation_mailer:
+        new_conversation:
+          outro: Profitez de l'Atelier de vos Idées.
     notifications_settings:
       show:
         newsletter_notifications: Je souhaite recevoir une newletter sur l'actualité de l'Atelier de vos Idées.
