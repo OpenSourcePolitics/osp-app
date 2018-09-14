@@ -30,7 +30,7 @@ fr:
         target: Participants
         promoted: Mise en avant
       participatory_process_group:
-        participatory_process_ids: Participations liés
+        participatory_process_ids: Participations liées
       proposal:
         address: Adresse
         has_address: Renseigner une adresse
