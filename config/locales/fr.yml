@@ -20,6 +20,10 @@ fr:
       meeting:
         registation_terms:
         registrations_enabled: Conditions d'inscription
+      osp_authorization_handler:
+        document_number: Numéro unique
+        postal_code: Code postal
+        birthday: Date de naissance
       participatory_process:
         participatory_process_group_id: Groupe de participations
         developer_group: Promoteur
@@ -61,6 +65,8 @@ fr:
     admin:
       actions:
         new_assembly: Nouvelle agora
+        participatory_process:
+          new: Nouvelle participation
       assemblies:
         create:
           error: Une erreur s'est produite lors de la création d'une nouvelle agora.
@@ -164,8 +170,20 @@ fr:
           error: Une erreur s'est produite lors de la mise à jour de ce lien.
           success: Lien mis à jour avec succès
       participatory_processes:
+        create:
+          error: Une erreur s'est produite lors de la création d'une nouvelle participation.
+          success: Participation créée avec succès. Configurez maintenant ses étapes.
+        destroy:
+          success: Participation supprimée avec succès.
+        index:
+          not_published: Non publiée
+          published: Publiée
+          title: Nouvelle participation
         new:
           title: nouvelle participation
+        update:
+          error: Une erreur s'est produite lors de la mise à jour de cette participation.
+          success: Participation mise à jour avec succès.
       participatory_process_copies:
         new:
           title: Dupliquer la participation
@@ -226,19 +244,6 @@ fr:
         update:
           error: Une erreur s'est produite lors de la mise à jour d'un utilisateur pour cette participation.
           success: L'utilisateur a été mis à jour avec succès pour cette participation.
-      participatory_processes:
-        create:
-          error: Une erreur s'est produite lors de la création d'une nouvelle participation.
-          success: Participation créée avec succès. Configurez maintenant ses étapes.
-        destroy:
-          success: Participation supprimée avec succès.
-        index:
-          not_published: Non publiée
-          published: Publiée
-          title: Nouvelle participation
-        update:
-          error: Une erreur s'est produite lors de la mise à jour de cette participation.
-          success: Participation mise à jour avec succès.
       participatory_processes_copies:
         create:
           error: Une erreur s'est produite lors de la duplication de cette participation.
@@ -291,6 +296,15 @@ fr:
           birthday: Date de naissance
         name: Formulaire de vérification d'identité - MEL
       mel_authorization_workflow:
+        name: Procédure d'autorisation
+      osp_authorization_handler:
+        explanation: Vérifier votre identité en saisissant un numéro unique
+        fields:
+          document_number: Numéro unique
+          postal_code: Code postal
+          birthday: Date de naissance
+        name: Formulaire de vérification d'identité - MEL
+      osp_authorization_workflow:
         name: Procédure d'autorisation
     devise:
       registrations:
@@ -376,6 +390,8 @@ fr:
           actions:
             mel_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
             mel_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+            osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
+            osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
   devise:
     mailer:
       invite_private_user:
