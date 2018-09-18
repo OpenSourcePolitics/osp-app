@@ -1,29 +1,20 @@
-// // Variables
-//
-// $primary: #ef604d;
-// $secondary: #599aa6;
-// $success: #57d685;
-// $warning: #ffae00;
-// $alert: #ec5840;
-//
-// $proposals: #238FF7;
-// $actions: #57D685;
-// $debates: #FA6C96;
-// $meetings: #FABC6C;
-//
-// $twitter: #55acee;
-// $facebook: #3b5998;
-// $google: #dd4b39;
+// Variables
+$primary: #e31869;
+$secondary: #44baec;
+$success: #c9d100;
+$warning: #ffae00;
+$alert: #ec5840;
+
+$proposals: #238FF7;
+$actions: #57D685;
+$debates: #FA6C96;
+$meetings: #FABC6C;
+
+$twitter: #55acee;
+$facebook: #3b5998;
+$google: #dd4b39;
 
 @import "decidim/application";
-
-// .logo-cityhall {
-//   position: static;
-//   margin: 0;
-//   @media print, screen and (min-width: 40em) {
-//     text-align: left;
-//   }
-// }
 
 
 .initiative-types-select {
@@ -64,6 +55,97 @@
   }
 }
 
+.hero{
+  &::after{
+    background-color: rgba($black, .1);
+  }
+  .hero-cta.button {
+    background-color: $primary;
+    &:hover {
+      background-color: darken($primary,3);
+    }
+  }
+}
+
+.process-header__main{
+  &::after{
+    background-color: rgba($black, .1);
+  }
+}
+
+
+/*-----Sign up------*/
+
+/*------NAV BAR------*/
+
+/*Navbar color when nav is white*/
+.title-bar
+{
+    background: #fff !important;
+}
+
+/* conversation icon */
+.topbar__conversations .icon {
+  fill: #A8A8A8;
+}
+
+
+/*Color for the org title that displays when there is no logo*/
+.logo-wrapper  span
+{
+    color: #000 !important;
+}
+
+/*color for navbar notification bell*/
+.topbar__notifications .icon
+{
+    fill: #000;
+}
+
+/*color of hamburger menu (displays when screen is small)*/
+.topbar__menu button
+{
+    color: #000 ;
+}
+
+/*color of user menu*/
+.topbar__user__login a
+{
+    color: #000;
+}
+
+/*color of dropdown user menu*/
+.topbar__dropmenu .dropdown>li>a
+{
+    color:#000;
+}
+
+/*color of triangle toggle that displays dropdown menu on mouse hover*/
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after
+{
+    border-top-color: #000 !important;
+}
+
+
+/*shape of navbar*/
+.main-nav__link--active a
+{
+    box-shadow: inset 0 4px 0 0 #e31869;
+}
+
 #user-settings-tabs > li:nth-child(3) {
   display: none;
+}
+
+.section-heading::before {
+    background-color: #c9d100;
+}
+
+.card__footer.card__footer--spaces {
+    background: rgba(201, 209, 0, 0.2);
+    border-top-color: rgba(201, 209, 0, 0.6);
+}
+
+.process_stats .process_stats-item .icon {
+    color: $success;
 }
