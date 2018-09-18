@@ -16,6 +16,10 @@ Decidim.configure do |config|
     here_app_id: Rails.application.secrets.geocoder[:here_app_id],
     here_app_code: Rails.application.secrets.geocoder[:here_app_code]
   }
+  
+  if Decidim.geocoder.present?
+    Geocoder::Configuration.timeout = 15
+  end
 
   # Custom resource reference generator method
   # config.resource_reference_generator = lambda do |resource, feature|
