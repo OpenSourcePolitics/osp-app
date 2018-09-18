@@ -12,9 +12,9 @@ module DevelopmentApp
     config.load_defaults 5.1
     config.time_zone = "Paris"
 
-    if ENV["ASSET_HOST"].present?
-      config.action_mailer.asset_host = ENV['ASSET_HOST']
-    end
+    # This needs to be set for correct images URLs in emails
+    # DON'T FORGET to ALSO set this in `config/initializers/carrierwave.rb`
+    config.action_mailer.asset_host = "https://ecrivons.angers.fr"
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
