@@ -1,15 +1,17 @@
 # frozen_string_literal: true
 
 Decidim.configure do |config|
-  config.application_name = "OSP Agora"
-  config.mailer_sender = "OSP Agora <ne-pas-repondre@opensourcepolitics.eu>"
+  config.skip_first_login_authorization = ENV["SKIP_FIRST_LOGIN_AUTHORIZATION"] ? ActiveRecord::Type::Boolean.new.cast(ENV["SKIP_FIRST_LOGIN_AUTHORIZATION"]) : true
+  config.application_name = "Plateforme Citoyenne MEL"
+  config.mailer_sender = "Plateforme Citoyenne MEL <ne-pas-repondre@opensourcepolitics.eu>"
 
   # Change these lines to set your preferred locales
-  config.default_locale = :fr
+  config.default_locale = :en
   config.available_locales = [:en, :fr]
 
   config.maximum_attachment_height_or_width = 6000
-
+  config.maximum_attachment_admin_size = 250.megabytes
+  
   # Geocoder configuration
   config.geocoder = {
     static_map_url: "https://image.maps.cit.api.here.com/mia/1.6/mapview",
@@ -17,7 +19,7 @@ Decidim.configure do |config|
     here_app_code: Rails.application.secrets.geocoder[:here_app_code]
   }
 
-  if defined?(Decidim::Initiatives)
+  if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_require_authorization)
     # puts "Decidim::Initiatives are loaded"
     Decidim::Initiatives.do_not_require_authorization = true
   end
