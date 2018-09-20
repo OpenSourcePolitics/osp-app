@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-questions.git
-  revision: e07b10e056188899255cb9639cc0ad7a174e08d9
+  revision: da4e63a5bce67b89a60013be8fbd933cfd7b9feb
   branch: master
   specs:
     decidim-questions (0.12.2)
