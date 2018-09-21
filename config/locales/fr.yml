@@ -17,9 +17,6 @@ fr:
         document_number: Numéro unique
         postal_code: Code postal
         birthday: Date de naissance
-      meeting:
-        registation_terms:
-        registrations_enabled: Conditions d'inscription
       osp_authorization_handler:
         document_number: Numéro unique
         postal_code: Code postal
