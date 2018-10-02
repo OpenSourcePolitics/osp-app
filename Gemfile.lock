@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: cb876a399adee184bdcee270011e1a0b4321e2c9
+  revision: f59534a507b40e89647a9f7a62f66a244e81917f
   branch: 0.12-stable-budget
   specs:
     decidim (0.12.2)
@@ -341,7 +341,7 @@ GEM
     file_validators (2.3.0)
       activemodel (>= 3.2)
       mime-types (>= 1.0)
-    fog-aws (3.2.0)
+    fog-aws (3.3.0)
       fog-core (~> 2.1)
       fog-json (~> 1.1)
       fog-xml (~> 0.1)
@@ -751,4 +751,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.5
+   1.16.4
