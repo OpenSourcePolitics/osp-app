@@ -7,6 +7,7 @@ CarrierWave.configure do |config|
   config.directory_permissions = 0o777
   config.storage = :file
   config.enable_processing = !Rails.env.test?
+  config.asset_host = "https://monopinion.belgium.be"
 end
 
 # Setup CarrierWave to use Amazon S3. Add `gem "fog-aws" to your Gemfile.

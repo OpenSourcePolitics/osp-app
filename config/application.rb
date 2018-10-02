@@ -12,16 +12,7 @@ module DevelopmentApp
     config.load_defaults 5.1
     config.time_zone = "Brussels"
 
-    if ENV["ASSET_HOST"].present?
-      if !ENV["HEROKU_APP_NAME"].present?
-        if Rails.env.production?
-          protocol = 'https'
-        else
-          protocol = 'http'
-        end
-        config.action_mailer.asset_host = "#{protocol}://#{ENV['ASSET_HOST']}"
-      end
-    end
+    config.action_mailer.asset_host = "https://monopinion.belgium.be"
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
