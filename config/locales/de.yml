@@ -1,3 +1,4 @@
 ---
 de:
-  locale/name: Deutsch
+  locale:
+    name: Deutsch
