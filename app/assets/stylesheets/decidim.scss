@@ -144,6 +144,9 @@ display: none;
 .topbar__user__login a
 {
     color: #000;
+  @media screen and (max-width: 40em) {
+      color: #fff;
+    }
 }
 
 /*color of dropdown user menu*/
