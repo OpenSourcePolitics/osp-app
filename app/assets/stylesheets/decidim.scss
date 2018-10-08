@@ -20,7 +20,6 @@ $gray-dark: #72758A;
 $red: #D84D1E;
 $blue: #47A5B8;
 
-
 @import "decidim/application";
 
 .initiative-types-select {
@@ -112,12 +111,18 @@ $blue: #47A5B8;
 .topbar__dropmenu > ul > li > a {
   color: $gray-dark;
 }
+
 // language & user name
 
 .topbar__dropmenu > ul > li.is-dropdown-submenu-parent.is-active > a {
   color: $gray-dark;
   opacity: 0.8;
 }
+
+.topbar__menu {
+  color: #000;
+}
+
 //hover on active navbar
 .topbar__dropmenu .is-dropdown-submenu a {
   color: $gray-dark;
@@ -128,11 +133,13 @@ $blue: #47A5B8;
     opacity: 0.8;
   }
 }
+
 //dropdown links & hover
 .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
-  border-top-color: $gray-dark!important;
+  border-top-color: $gray-dark !important;
   opacity: 0.6;
 }
+
 // arrows of dropdown menu
 
 .label.proposal-status {
@@ -153,6 +160,7 @@ $blue: #47A5B8;
     color: black;
   }
 }
+
 // badge on proposals
 
 .hero {
@@ -160,6 +168,7 @@ $blue: #47A5B8;
     background-color: rgba($black, 0);
   }
 }
+
 // opacity of background color
 
 .process-header__main {
