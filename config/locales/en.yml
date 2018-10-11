@@ -1,3 +1,13 @@
 ---
 en:
   hello: Hello world
+  devise:
+    mailer:
+      invitation_instructions:
+        accept_until: Cette invitation est valable du lundi 15 octobre au %{due_date}.
+        hello: Hello %{email},
+        ignore: |-
+          Attention : votre compte ne sera pas validé avant d'avoir cliqué sur le lien ci-dessus.
+        invited_you_as_admin: "%{invited_by} has invited you as an admin of %{application}. You can accept it through the link below."
+        invited_you_as_private_user: "Monsieur le Maire d'Orsay, David Ros, vous invite à participer à la consultation sur les rythmes scolaires et périscolaires pour la rentrée 2019. Cliquez sur le lien ci-dessous pour accéder à la page de création de votre pseudonyme et mot de passe, puis à la consultation."
+        someone_invited_you_as_private_user: Monsieur le Maire d'Orsay, David Ros, vous invite à participer à la consultation sur les rythmes scolaires et périscolaires pour la rentrée 2019. Cliquez sur le lien ci-dessous pour accéder à la page de création de votre pseudonyme et mot de passe, puis à la consultation.
