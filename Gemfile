@@ -4,8 +4,8 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
-#gem "decidim", path: "../decidim"
+# gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
+gem "decidim", path: "../decidim"
 
 # gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
 # gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
@@ -28,8 +28,8 @@ gem "ruby-progressbar"
 group :development, :test do
   gem "byebug", "~> 10.0", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
-  #gem "decidim-dev", path: "../decidim"
+  # gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
+  gem "decidim-dev", path: "../decidim"
 end
 
 group :development do
@@ -38,6 +38,7 @@ group :development do
   gem "spring", "~> 2.0"
   gem "spring-watcher-listen", "~> 2.0"
   gem "web-console", "~> 3.5"
+  gem 'meta_request'
 end
 
 group :production do
