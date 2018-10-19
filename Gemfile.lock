@@ -1,5 +1,7 @@
-PATH
-  remote: ../decidim
+GIT
+  remote: https://github.com/OpenSourcePolitics/decidim.git
+  revision: 0f30736c90b0a5d55c17efd495daa71d73db273a
+  branch: 0.12-stable
   specs:
     decidim (0.12.2)
       decidim-accountability (= 0.12.2)
@@ -244,8 +246,7 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.3)
     byebug (10.0.2)
-    callsite (0.0.11)
-    capybara (3.9.0)
+    capybara (3.8.1)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -306,7 +307,7 @@ GEM
       warden (~> 1.2.3)
     devise-i18n (1.6.5)
       devise (>= 4.4)
-    devise_invitable (1.7.5)
+    devise_invitable (1.7.4)
       actionmailer (>= 4.1.0)
       devise (>= 4.0.0)
     diff-lcs (1.3)
@@ -373,7 +374,7 @@ GEM
     graphiql-rails (1.4.11)
       railties
       sprockets-rails
-    graphql (1.8.11)
+    graphql (1.8.10)
     hashdiff (0.3.7)
     hashie (3.5.7)
     highline (2.0.0)
@@ -406,7 +407,7 @@ GEM
     jquery-tmpl-rails (1.1.0)
       rails (>= 3.1.0)
     json (2.1.0)
-    jwt (2.1.0)
+    jwt (1.5.6)
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.1.1)
@@ -448,10 +449,6 @@ GEM
       kramdown (~> 1.12, >= 1.12.0)
       mixlib-cli (~> 1.7, >= 1.7.0)
       mixlib-config (~> 2.2, >= 2.2.1)
-    meta_request (0.6.0)
-      callsite (~> 0.0, >= 0.0.11)
-      rack-contrib (>= 1.1, < 3)
-      railties (>= 3.0.0, < 6)
     method_source (0.9.0)
     mime-types (3.2.2)
       mime-types-data (~> 3.2015)
@@ -474,9 +471,9 @@ GEM
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     oauth (0.5.4)
-    oauth2 (1.4.1)
-      faraday (>= 0.8, < 0.16.0)
-      jwt (>= 1.0, < 3.0)
+    oauth2 (1.4.0)
+      faraday (>= 0.8, < 0.13)
+      jwt (~> 1.0)
       multi_json (~> 1.3)
       multi_xml (~> 0.5)
       rack (>= 1.2, < 3)
@@ -525,8 +522,6 @@ GEM
     rack (2.0.5)
     rack-attack (5.2.0)
       rack
-    rack-contrib (2.1.0)
-      rack (~> 2.0)
     rack-cors (1.0.2)
     rack-protection (2.0.3)
       rack
@@ -594,7 +589,7 @@ GEM
       rspec-rails (~> 3.2)
     rspec-core (3.8.0)
       rspec-support (~> 3.8.0)
-    rspec-expectations (3.8.2)
+    rspec-expectations (3.8.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.8.0)
     rspec-html-matchers (0.9.1)
@@ -642,9 +637,9 @@ GEM
       sprockets-rails
       tilt
     searchlight (4.1.0)
-    selenium-webdriver (3.14.1)
+    selenium-webdriver (3.14.0)
       childprocess (~> 0.5)
-      rubyzip (~> 1.2, >= 1.2.2)
+      rubyzip (~> 1.2)
     sendgrid-ruby (5.2.0)
       ruby_http_client (~> 3.2)
       sinatra (>= 1.4.7, < 3)
@@ -701,7 +696,7 @@ GEM
     uglifier (4.1.19)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.4.0)
-    valid_email2 (2.3.1)
+    valid_email2 (2.3.0)
       activemodel (>= 3.2)
       mail (~> 2.5)
     virtus (1.0.5)
@@ -725,7 +720,7 @@ GEM
     websocket-extensions (0.1.3)
     wisper (2.0.0)
     wisper-rspec (1.1.0)
-    xpath (3.2.0)
+    xpath (3.1.0)
       nokogiri (~> 1.8)
 
 PLATFORMS
@@ -742,7 +737,6 @@ DEPENDENCIES
   letter_opener_web (~> 1.3)
   listen (~> 3.1)
   lograge
-  meta_request
   newrelic_rpm
   puma (~> 3.0)
   ruby-progressbar
