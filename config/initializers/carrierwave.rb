@@ -1,3 +1,4 @@
+require 'carrierwave/storage/fog'
 # frozen_string_literal: true
 
 # Default CarrierWave setup.
