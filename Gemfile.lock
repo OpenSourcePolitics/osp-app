@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: f0afb12edb911d4e8d84aab242ce0d470bed02a7
+  revision: 4f96ece96a4b1e4626209c19c7f15a95d827db66
   branch: fix/survey-choices-export
   specs:
     decidim (0.12.2)
