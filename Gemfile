@@ -4,11 +4,11 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "fix/survey-choices-export"
+gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
 # gem "decidim", path: "../decidim"
 
-# gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "fix/survey-choices-export"
-# gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "fix/survey-choices-export"
+# gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
+# gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
 
 # gem "decidim-consultations", path: "../decidim"
 # gem "decidim-initiatives", path: "../decidim"
@@ -26,7 +26,7 @@ gem "faker", "~> 1.8"
 group :development, :test do
   gem "byebug", "~> 10.0", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "fix/survey-choices-export"
+  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
   # gem "decidim-dev", path: "../decidim"
 end
 
