@@ -195,7 +195,7 @@ de:
             other: UNTERSTÜTZUNGEN
     participatory_process_groups:
       show:
-        group_participatory_processes: Beteiligungen für %{group}'
+        group_participatory_processes: 'Beteiligungen für %{group}'
         title: Beteiligungsgruppen
     participatory_process_steps:
       index:
@@ -239,7 +239,7 @@ de:
           promoted_processes: Beteiligungen hervorgehoben
         order_by_processes:
           processes:
-            one: '%{count} Beteiligung‘
+            one: '%{count} Beteiligung'
             other: '%{count} Beteiligungen'
       process_header:
         process_menu_item: Kontext
