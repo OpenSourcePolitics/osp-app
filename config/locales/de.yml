@@ -169,6 +169,8 @@ de:
             votes_enabled: Aktivierte Unterstützungen
             votes_hidden: Unterstützungs-/Stimmungszähler ausblenden
             votes_weight_enabled: Stimmen für/gegen/abwesend aktiviert
+      polis:
+        name: Pol.is
     initiatives:
       events:
         endorse_initiative_event:

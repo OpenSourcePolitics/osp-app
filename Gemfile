@@ -9,8 +9,6 @@ gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch:
 
 gem "decidim-polis", git: "https://github.com/OpenSourcePolitics/decidim-polis.git"
 
-gem "decidim-export", git: "https://github.com/OpenSourcePolitics/decidim-user-export.git"
-
 gem "high_voltage", "3.0.0"
 
 gem "puma", "~> 3.0"
