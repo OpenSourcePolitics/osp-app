@@ -1,4 +1,257 @@
 ---
 de:
+  activemodel:
+      attributes:
+        account:
+          delete_reason: Aus welchem Grund/welchen Gründen löschen Sie Ihr Konto?
+        user:
+          name: Ihr Name, Vorname
+          password: Ihr Passwort
+          password_confirmation: Passwort bestätigen
+      participatory_process:
+        participatory_process_group_id: Beteiligungsgruppe
+        promoted: Hervorhebung
+      participatory_process_group:
+        participatory_process_ids: Verknüpfte Beteiligungen
+  decidim:
+    admin:
+      officializations:
+        index:
+          badges: Badges
+      actions:
+        new: Neu
+      menu:
+        participatory_process_groups: Beteiligungsgruppen
+        participatory_processes: Beteiligungen
+        participatory_processes_submenu:
+          process_admins: Beteiligungsadministratoren
+      models:
+        participatory_process:
+          fields:
+            created_at: Erstellt am
+            promoted: Betonung
+            published: Veröffentlicht
+          name: Beteiligung
+        participatory_process_group:
+          name: Beteiligungsgruppen
+        participatory_process_user_role:
+          name: Benutzerrolle in der Beteiligung
+      participatory_processes:
+        create:
+          error: Beim Erstellen einer neuen Beteiligung ist ein Fehler aufgetreten.
+          success: Beteiligung erfolgreich erstellt. Konfigurieren Sie jetzt die Schritte.
+        destroy:
+          success: Beteiligung erfolgreich gelöscht
+        index:
+          not_published: Nicht veröffentlicht
+          published: Veröffentlicht
+          title: Neue Beteiligung
+        new:
+          title: neue Beteiligung
+        update:
+          error: Bei der Aktualisierung dieser Beteiligung ist ein Fehler aufgetreten.
+          success: Beteiligung erfolgreich aktualisiert.
+      participatory_process_copies:
+        new:
+          title: Beteiligung duplizieren
+      participatory_process_groups:
+        destroy:
+          success: Die Beteiligungsgruppe wurde erfolgreich eliminiert.
+        edit:
+          title: Beteiligungsgruppe ändern
+        new:
+          title: Neue Beteiligungsgruppe
+        update:
+          error: Bei der Aktualisierung dieser Beteiligungsgruppe ist ein Fehler aufgetreten.
+          success: Beteiligungsgruppe erfolgreich aktualisiert.
+      participatory_process_publications:
+        create:
+          error: Bei der Veröffentlichung dieser Beteiligung ist ein Fehler aufgetreten.
+          success: Beteiligung erfolgreich veröffentlicht.
+        destroy:
+          error: Bei der Veröffentlichung dieser Beteiligung ist ein Fehler aufgetreten.
+          success: Beteiligung erfolgreich gelöscht
+      participatory_process_step_activations:
+        create:
+          error: Bei der Aktivierung dieses Beteiligungsschritts ist ein Fehler aufgetreten.
+          success: Beteiligungsschritt erfolgreich aktiviert.
+      participatory_process_steps:
+        create:
+          error: Beim Erstellen eines neuen Beteiligungsschritts ist ein Fehler aufgetreten.
+          success: Beteiligungsschritt erfolgreich erstellt.
+        default_title: Einführung
+        destroy:
+          error:
+            active_step: Sie können den aktiven Beteiligungsschritt nicht löschen.
+            last_step: Sie können den letzten Beteiligungsschritt nicht löschen.
+          success: Der Beteiligungsschritt wurde erfolgreich gelöscht.
+        edit:
+          title: Beteiligungsschritt ändern
+        index:
+          steps_title: Schritte
+        new:
+          title: Neuer Beteiligungsschritt
+        ordering:
+          error: Bei der Neuorganisation der Beteiligungsschritte ist ein Fehler aufgetreten.
+        update:
+          error: Bei der Aktualisierung dieses Beteiligungsschritts ist ein Fehler aufgetreten.
+          success: Beteiligungsschritt erfolgreich aktualisiert.
+      participatory_process_user_roles:
+        create:
+          error: Beim Hinzufügen eines Benutzers zu dieser Beteiligung ist ein Fehler aufgetreten.
+          success: Benutzer erfolgreich für diese Beteiligung erstellt.
+        destroy:
+          success: Der Benutzer wurde erfolgreich für diese Beteiligung gelöscht.
+        edit:
+          title: Aktualisierung des Beteiligungsbenutzers
+        index:
+          process_admins_title: Beteiligungsadministratoren
+        new:
+          title: Neuer Beteiligungsbenutzer
+        update:
+          error: Bei der Aktualisierung eines Benutzers für diese Beteiligung ist ein Fehler aufgetreten.
+          success: Der Benutzer wurde erfolgreich für diese Beteiligung aktualisiert.
+      participatory_processes_copies:
+        create:
+          error: Bei der Duplikation dieser Beteiligung ist ein Fehler aufgetreten.
+          success: Beteiligung erfolgreich dupliziert.
+      participatory_processes_group:
+        create:
+          error: Beim Erstellen einer neuen Beteiligungsgruppe ist ein Fehler aufgetreten.
+          success: Beteiligungsgruppe erfolgreich erstellt.
+      profiles:
+        eid_verified: Geprüfte e-ID/itsme
+      titles:
+        navbar_links: Navigationslinks
+        participatory_process_groups: Beteiligungsgruppen
+        participatory_processes: Beteiligungen
+    application:
+      documents:
+        related_documents: Abzurufende Dokumente
+    devise:
+      omniauth_callbacks:
+        saml: e-ID oder über itsme
+      omniauth_registrations:
+        saml: e-ID oder über itsme
+        new:
+          newsletter: Ich bin damit einverstanden, einen Informationsbrief zu erhalten
+          terms: die Nutzungsbedingungen und die Vertraulichkeitserklärung
+          tos_agreement: Ich stimme %{link} zu.
+      shared:
+        links:
+          saml: e-ID oder über itsme
+      registrations:
+        new:
+          newsletter: Ich bin damit einverstanden, einen Informationsbrief zu erhalten
+          nickname_help: Ihr öffentlicher und eindeutiger Benutzername auf dieser Plattform, durch den andere Benutzer Ihnen folgen, Sie kontaktieren und in ihren Kommentaren erwähnen können. Er wird mit einem vorangestellten „@" angezeigt.
+          sign_up_as:
+            user: Bürger
+          subtitle: Melden Sie sich an, um an der Plattform teilnehmen und diskutieren zu können.
+          terms: die Nutzungsbedingungen und die Vertraulichkeitserklärung
+          tos_agreement: Ich stimme %{link} zu.
+      sessions:
+        new:
+          are_you_new?: Neu auf der Plattform?
+    events:
+      proposals:
+        proposal_endorsed:
+          email_subject: "%{endorser_nickname} hat einen neuen Vorschlag empfohlen"
+    features:
+      proposals:
+        actions:
+          vote: Unterstützen
+        settings:
+          global:
+            vote_limit: Maximale Anzahl der Unterstützungen / Stimmen pro Benutzer
+            maximum_votes_per_proposal: Maximale Anzahl der Unterstützungen / Stimmen pro Vorschlag
+          step:
+            votes_blocked: blockierte Unterstützungen / blockierte Stimmen
+            votes_enabled: Aktivierte Unterstützungen
+            votes_hidden: Unterstützungs-/Stimmungszähler ausblenden
+            votes_weight_enabled: Stimmen für/gegen/abwesend aktiviert
+    initiatives:
+      events:
+        endorse_initiative_event:
+          email_intro: "%{author_name} %{author_nickname}, dem Sie folgen, hat die folgende Initiative empfohlen. Vielleicht möchten Sie zum Gespräch beitragen?"
+          email_subject: Initiative empfohlen von %{author_nickname}
+    menu:
+      processes: Beteiligungen
+    proposals:
+      answers:
+        not_answered: Wartet auf Antwort
+      proposals:
+        filters:
+          voted: Nur Vorschläge anzeigen, für die ich abgestimmt habe
+        orders:
+          recent: Die aktuellsten
+        vote_button:
+          already_voted: Unterstützt
+          already_voted_hover: Nicht mehr unterstützen
+          maximum_votes_reached: Maximale Unterstützungsanzahl erreicht
+          vote: Unterstützen
+        votes_count:
+          count:
+            one: UNTERSTÜTZUNG
+            other: UNTERSTÜTZUNGEN
+    participatory_process_groups:
+      show:
+        group_participatory_processes: Beteiligungen für %{group}'
+        title: Beteiligungsgruppen
+    participatory_process_steps:
+      index:
+        process_steps: Beteiligungsschritte
+        title: Beteiligungsschritte
+    participatory_processes:
+      admin:
+        participatory_process_copies:
+          form:
+            slug_help: 'Es wurden die URL-Identifikatoren verwendet, um die URLs zu erzeugen, die zu dieser Beteiligung führen. Akzeptiert nur Buchstaben, Ziffern und Bindestriche und muss mit einem Buchstaben beginnen. Beispiel %{url}'
+        participatory_processes:
+          form:
+            slug_help: 'Es wurden die URL-Identifikatoren verwendet, um die URLs zu erzeugen, die zu dieser Beteiligung führen. Akzeptiert nur Buchstaben, Ziffern und Bindestriche und muss mit einem Buchstaben beginnen. Beispiel %{url}'
+      index:
+        title: Beteiligungen
+      order_by_processes:
+        active: Aktiv
+        all: Alle
+        past: Vergangen
+      pages:
+        home:
+          highlighted_processes:
+            active_processes: Beteiligungen laufen
+            see_all_processes: Alle Beteiligungen sehen
+    scopes:
+      global: Die ganze Stadt
+  devise:
+    omniauth_callbacks:
+      saml: e-ID oder über itsme
+    omniauth_registrations:
+      saml: e-ID oder über itsme
+    shared:
+      links:
+        saml: e-ID oder über itsme
+  layouts:
+    decidim:
+      assembly_header:
+        assembly_menu_item: Kontext
+      participatory_processes:
+        index:
+          promoted_processes: Beteiligungen hervorgehoben
+        order_by_processes:
+          processes:
+            one: '%{count} Beteiligung‘
+            other: '%{count} Beteiligungen'
+      process_header:
+        process_menu_item: Kontext
   locale:
     name: Deutsch
+  pages:
+    home:
+      extended:
+        how_to_participate: Wie können Sie teilnehmen?
+      statistics:
+        headline: Statistiken
+  trads:
+    show_traduction: Übersetzung anzeigen
+    show_the_original: Original anzeigen
+    automatic_translation: Automatische Übersetzung durch %{trad_service}
