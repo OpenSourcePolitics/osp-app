@@ -5,7 +5,7 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 
 gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
-#gem "decidim", path: "../decidim"
+# gem "decidim", path: "../decidim"
 
 # gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
 # gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
@@ -24,12 +24,13 @@ gem "uglifier", "~> 4.1"
 gem "faker", "~> 1.8"
 
 gem "ruby-progressbar"
+gem 'sentry-raven'
 
 group :development, :test do
   gem "byebug", "~> 10.0", platform: :mri
 
   gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
-  #gem "decidim-dev", path: "../decidim"
+  # gem "decidim-dev", path: "../decidim"
 end
 
 group :development do
@@ -41,11 +42,11 @@ group :development do
 end
 
 group :production do
+  gem 'passenger'
   gem 'fog-aws'
   gem 'dalli'
   gem 'sendgrid-ruby'
   gem 'newrelic_rpm'
   gem 'lograge'
-  gem 'sentry-raven'
   gem 'sidekiq'
 end
