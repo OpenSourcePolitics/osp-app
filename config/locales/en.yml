@@ -4,10 +4,18 @@ en:
   devise:
     mailer:
       invitation_instructions:
-        accept_until: Cette invitation est valable du lundi 15 octobre au %{due_date}.
-        hello: Hello %{email},
+        accept_until: This invitation will expire on the %{due_date}.
+        hello: Bonjour %{email},
         ignore: |-
-          Attention : votre compte ne sera pas validé avant d'avoir cliqué sur le lien ci-dessus.
+          Warning: your account will not be validated until you click on the link above.
         invited_you_as_admin: "%{invited_by} has invited you as an admin of %{application}. You can accept it through the link below."
-        invited_you_as_private_user: "Monsieur le Maire d'Orsay, David Ros, vous invite à participer à la consultation sur les rythmes scolaires et périscolaires pour la rentrée 2019. Cliquez sur le lien ci-dessous pour accéder à la page de création de votre pseudonyme et mot de passe, puis à la consultation."
-        someone_invited_you_as_private_user: Monsieur le Maire d'Orsay, David Ros, vous invite à participer à la consultation sur les rythmes scolaires et périscolaires pour la rentrée 2019. Cliquez sur le lien ci-dessous pour accéder à la page de création de votre pseudonyme et mot de passe, puis à la consultation.
+        accept: Accept invitation
+        invited_you_custom_1: |-
+          Après une phase d’amélioration et de test de la plateforme de consultation, elle est désormais opérationnelle.
+          J’ai donc décidé de relancer une nouvelle consultation concernant les rythmes scolaires et périscolaires.
+        invited_you_custom_2: |-
+          Vous avez, comme précédemment, 4 semaines à partir du 5 novembre pour vous exprimer.
+          Pour plus de clarté, les parents qui ont déjà voté doivent le faire à nouveau.
+          Cliquez sur le lien ci-dessous pour accéder à la page de création de votre pseudonyme et de votre mot de passe, puis à la consultation.
+      invite_private_user:
+        subject: "Message from David ROS, Mayor of ORSAY"
