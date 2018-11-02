@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 54b2b0d0310a70f213916a470de63bf26f8ef12a
+  revision: cc7ad509eaa277bb3860d63fa505bc5df1cdfd11
   branch: 0.12-stable
   specs:
     decidim (0.12.2)
@@ -439,7 +439,7 @@ GEM
       activesupport (>= 4)
       railties (>= 4)
       request_store (~> 1.0)
-    loofah (2.2.2)
+    loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -578,7 +578,7 @@ GEM
       activesupport (>= 4.1.0)
       virtus (~> 1.0.5)
       wisper (>= 1.6.1)
-    redis (4.0.2)
+    redis (4.0.3)
     regexp_parser (1.2.0)
     request_store (1.4.1)
       rack (>= 1.4)
