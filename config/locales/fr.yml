@@ -27,7 +27,7 @@ fr:
   devise:
     mailer:
       invitation_instructions:
-        accept_until: Cette invitation expirera le %{due_date}.
+        accept_until: Cette invitation expirera le dimanche 2 décembre 2018 à 23h59.
         hello: Bonjour %{email},
         ignore: |-
           Attention : votre compte ne sera pas validé avant d'avoir cliqué sur le lien ci-dessus.
