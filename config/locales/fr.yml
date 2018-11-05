@@ -1,4 +1,3 @@
----
 fr:
   activemodel:
     attributes:
@@ -6,7 +5,29 @@ fr:
         document_number: Numéro unique
         postal_code: Code postal
         birthday: Date de naissance
+        participatory_process:
+          private_space: Espace privé
+          osp_authorization_handler:
+            document_number: Numéro unique
+            postal_code: Code postal
+            birthday: Date de naissance
   decidim:
+    authorization_handlers:
+      osp_authorization_handler:
+        explanation: Vérifier votre identité en saisissant un numéro unique
+        fields:
+          document_number: Numéro unique
+          postal_code: Code postal
+          birthday: Date de naissance
+        name: Formulaire de vérification d'identité
+      osp_authorization_workflow:
+        name: Procédure d'autorisation
+      verifications:
+        authorizations:
+          first_login:
+            actions:
+              osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
+              osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
     nancy_authorization_handler:
       explanation: Vérifier votre identité en saisissant un numéro unique
       fields:
@@ -28,4 +49,3 @@ fr:
         assembly_menu_item: Le projet
       process_header:
         process_menu_item: Le projet
-
