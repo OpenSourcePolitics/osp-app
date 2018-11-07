@@ -32,3 +32,10 @@ fr:
           actions:
             osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
             osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+  devise:
+    mailer:
+      invitation_instructions:
+        hello: Bonjour %{email},
+        accept: Accepter l'invitation
+      invite_private_user:
+        subject: "Budget participatif 2ème édition : inscrivez-vous sur participez.nanterre.fr"

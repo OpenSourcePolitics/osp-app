@@ -142,43 +142,43 @@ def import_without_email(id, first_name, last_name)
     roles: [],
     tos_agreement: true
   )
-  form = Decidim::Admin::ImpersonateUserForm.from_params(
-    user: new_user,
-    name: new_user.name,
-    reason: 'import',
-    handler_name: 'osp_authorization_handler',
-    authorization: Decidim::AuthorizationHandler.handler_for(
-      'osp_authorization_handler',
-      {
-        user: new_user,
-        document_number: id
-      }
-    )
-  ).with_context(
-    current_organization: current_organization,
-    current_user: current_user
-  )
+  # form = Decidim::Admin::ImpersonateUserForm.from_params(
+  #   user: new_user,
+  #   name: new_user.name,
+  #   reason: 'import',
+  #   handler_name: 'osp_authorization_handler',
+  #   authorization: Decidim::AuthorizationHandler.handler_for(
+  #     'osp_authorization_handler',
+  #     {
+  #       user: new_user,
+  #       document_number: id
+  #     }
+  #   )
+  # ).with_context(
+  #   current_organization: current_organization,
+  #   current_user: current_user
+  # )
 
-  privatable_to = current_process
-
-  Decidim::Admin::ImpersonateUser.call(form) do
-    on(:ok) do |user|
-      Decidim::ParticipatorySpacePrivateUser.find_or_create_by!(
-        user: user,
-        privatable_to: privatable_to
-      )
-      Rails.logger.debug I18n.t("participatory_space_private_users.create.success", scope: "decidim.admin")
-      Rails.logger.debug "Registered user with id: #{id}, first_name: #{first_name}, last_name: #{last_name} --> #{user.id}"
-    end
-
-    on(:invalid) do
-      Rails.logger.debug I18n.t("participatory_space_private_users.create.error", scope: "decidim.admin")
-      Rails.logger.debug user.errors.full_messages if user.invalid?
-      Rails.logger.debug form.errors.full_messages if form.invalid?
-      Rails.logger.debug "Failed to register user with id: #{id}, first_name: #{first_name}, last_name: #{last_name} !!"
-      # exit 1
-    end
-  end
+  # privatable_to = current_process
+  #
+  # Decidim::Admin::ImpersonateUser.call(form) do
+  #   on(:ok) do |user|
+  #     Decidim::ParticipatorySpacePrivateUser.find_or_create_by!(
+  #       user: user,
+  #       privatable_to: privatable_to
+  #     )
+  #     Rails.logger.debug I18n.t("participatory_space_private_users.create.success", scope: "decidim.admin")
+  #     Rails.logger.debug "Registered user with id: #{id}, first_name: #{first_name}, last_name: #{last_name} --> #{user.id}"
+  #   end
+  #
+  #   on(:invalid) do
+  #     Rails.logger.debug I18n.t("participatory_space_private_users.create.error", scope: "decidim.admin")
+  #     Rails.logger.debug user.errors.full_messages if user.invalid?
+  #     Rails.logger.debug form.errors.full_messages if form.invalid?
+  #     Rails.logger.debug "Failed to register user with id: #{id}, first_name: #{first_name}, last_name: #{last_name} !!"
+  #     # exit 1
+  #   end
+  # end
 
 end
 
@@ -192,15 +192,15 @@ def import_with_email(id, first_name, last_name, email)
   )
   Decidim::Admin::CreateParticipatorySpacePrivateUser.call(form, current_user, current_process) do
     on(:ok) do |user|
-      Decidim::Authorization.create_or_update_from(
-        Decidim::AuthorizationHandler.handler_for(
-          'osp_authorization_handler',
-          {
-            user: user,
-            document_number: id
-          }
-        )
-      )
+      # Decidim::Authorization.create_or_update_from(
+      #   Decidim::AuthorizationHandler.handler_for(
+      #     'osp_authorization_handler',
+      #     {
+      #       user: user,
+      #       document_number: id
+      #     }
+      #   )
+      # )
       Rails.logger.debug I18n.t("participatory_space_private_users.create.success", scope: "decidim.admin")
       Rails.logger.debug "Registered user with id: #{id}, first_name: #{first_name}, last_name: #{last_name}, email: #{email} --> #{user.id}"
     end
