@@ -67,3 +67,8 @@ $secondary: #0e87e9;
 #user-settings-tabs > li:nth-child(3) {
   display: none;
 }
+
+.footer-social__icon.fa-icon {
+  position: relative;
+  top: -4px;
+}
