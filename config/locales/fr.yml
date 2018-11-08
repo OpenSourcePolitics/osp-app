@@ -33,6 +33,9 @@ fr:
             osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
             osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
   devise:
+    invitations:
+      user:
+        updated: "Votre compte a été mis à jour."
     mailer:
       invitation_instructions:
         hello: Bonjour %{email},

@@ -1,3 +1,7 @@
 ---
 en:
   hello: Hello world
+  devise:
+    invitations:
+      user:
+        updated: "Your account was updated succesfully."
