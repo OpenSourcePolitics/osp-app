@@ -1,23 +1,33 @@
 # frozen_string_literal: true
 
 Decidim.configure do |config|
+
+  config.release = {
+    commit: `git rev-parse --short HEAD`.strip,
+    branch: `git rev-parse --abbrev-ref HEAD`.strip,
+    repo: `basename \`git rev-parse --show-toplevel\``.strip
+  }
+
+  config.skip_first_login_authorization = ENV["SKIP_FIRST_LOGIN_AUTHORIZATION"] ? ActiveRecord::Type::Boolean.new.cast(ENV["SKIP_FIRST_LOGIN_AUTHORIZATION"]) : true
   config.application_name = "OSP Agora"
   config.mailer_sender = "OSP Agora <ne-pas-repondre@opensourcepolitics.eu>"
 
   # Change these lines to set your preferred locales
-  config.default_locale = :fr
+  config.default_locale = :en
   config.available_locales = [:en, :fr]
 
   config.maximum_attachment_height_or_width = 6000
 
   # Geocoder configuration
-  config.geocoder = {
-    static_map_url: "https://image.maps.cit.api.here.com/mia/1.6/mapview",
-    here_app_id: Rails.application.secrets.geocoder[:here_app_id],
-    here_app_code: Rails.application.secrets.geocoder[:here_app_code]
-  }
+  if !Rails.application.secrets.geocoder[:here_app_id].blank?
+    config.geocoder = {
+      static_map_url: "https://image.maps.cit.api.here.com/mia/1.6/mapview",
+      here_app_id: Rails.application.secrets.geocoder[:here_app_id],
+      here_app_code: Rails.application.secrets.geocoder[:here_app_code]
+    }
+  end
 
-  if defined?(Decidim::Initiatives)
+  if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_require_authorization)
     # puts "Decidim::Initiatives are loaded"
     Decidim::Initiatives.do_not_require_authorization = true
   end
