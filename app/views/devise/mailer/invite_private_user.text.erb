@@ -1,0 +1,19 @@
+<%= t("devise.mailer.invitation_instructions.hello", email: @resource.name) %>
+
+Vous avez contribué sur participez.nanterre.fr, l’agora permanente de la Ville de Nanterre,
+pour donner votre avis pendant les assises pour la ville, sur le projet de reconversion des Papeteries
+ou encore pour l’évaluation du plan climat air énergie territorial…etc.
+
+Pour continuer à innover et prolonger les possibilités de participation en ligne des habitant·e·s
+nous avons choisi d’améliorer la plateforme open source en rejoignant le réseau Decidim.
+Vous pouvez dès aujourd’hui l’utiliser pour déposer une proposition dans le cadre des budgets participatifs 2019.
+Renouvelez votre inscription, et continuez à nous faire part de vos propositions
+et à débattre des projets de la ville en ligne, et lors des rendez-vous publics proposés.
+
+<%= accept_invitation_url(@resource, invitation_token: @token, host: @resource.organization.host) %>
+
+A très bientôt !
+
+L’équipe de l’Agora, maison des initiatives citoyennes de la ville de Nanterre.
+
+Attention : votre compte ne sera pas validé avant d'avoir cliqué sur le lien ci-dessus.
