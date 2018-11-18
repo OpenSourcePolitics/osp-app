@@ -27,18 +27,17 @@ fr:
   devise:
     mailer:
       invitation_instructions:
-        accept_until: Cette invitation expirera le dimanche 2 décembre 2018 à 23h59.
+        accept_until: Les participations seront définitivement clôturées le dimanche 2 décembre à 23h59.
         hello: Bonjour %{email},
         ignore: |-
+          En cas de question, vous pouvez contacter rentree2019@mairie-orsay.fr ou vous rendre au pôle accueil famille.
           Attention : votre compte ne sera pas validé avant d'avoir cliqué sur le lien ci-dessus.
         invited_you_as_admin: "%{invited_by} vous a invité en tant qu'administrateur de l'espace - %{application} -. Vosu pouvez accepter en cliquant sur le lien ci-dessous."
         accept: Accepter l'invitation
         invited_you_custom_1: |-
-          Après une phase d’amélioration et de test de la plateforme de consultation, elle est désormais opérationnelle.
-          J’ai donc décidé de relancer une nouvelle consultation concernant les rythmes scolaires et périscolaires.
+          Une consultation en ligne sur les rythmes scolaires et périscolaires pour la rentrée 2019 à Orsay est ouverte depuis deux semaines.
+          Nous invitons chaque parent et chaque enseignant, qui ne l'auraient pas encore fait, à participer en répondant au questionnaire en ligne.
         invited_you_custom_2: |-
-          Vous avez, comme précédemment, 4 semaines à partir du 5 novembre pour vous exprimer.
-          Pour plus de clarté, les parents qui ont déjà voté doivent le faire à nouveau.
-          Cliquez sur le lien ci-dessous pour accéder à la page de création de votre pseudonyme et de votre mot de passe, puis à la consultation.
+          Pour accéder au questionnaire, vous devez cliquer sur le lien ci-dessous et choisir votre pseudonyme et votre mot de passe.
       invite_private_user:
         subject: "Message de David ROS Maire d'ORSAY"
