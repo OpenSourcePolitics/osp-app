@@ -1,13 +1,13 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-polis.git
-  revision: 00f24d67f4329e19e3da0741b4eb1f4c175a9c45
+  revision: 3eeda65
   specs:
     decidim-polis (0.0.1)
       decidim-core
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 5b828c141387a1d1a2a33898ca8b977a745c2d53
+  revision: 8a0d541
   branch: 0.10-stable-trad-auto-merge
   specs:
     decidim (0.10.0.pre)
