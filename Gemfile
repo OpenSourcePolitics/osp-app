@@ -22,11 +22,8 @@ gem "uglifier", "~> 4.1"
 
 gem "faker", "~> 1.8"
 
-gem "loofah" , "~> 2.2.1"
-gem "nokogiri", "~> 1.8.2"
-gem "rails-html-sanitizer", "~> 1.0.4"
-gem "sinatra", "~> 2.0.2"
-gem "sprockets", "~> 3.7.2"
+gem "ruby-progressbar"
+gem 'sentry-raven'
 
 group :development, :test do
   gem "byebug", "~> 10.0", platform: :mri
@@ -44,11 +41,11 @@ group :development do
 end
 
 group :production do
+  gem 'passenger'
   gem 'fog-aws'
   gem 'dalli'
   gem 'sendgrid-ruby'
   gem 'newrelic_rpm'
   gem 'lograge'
-  gem 'sentry-raven'
   gem 'sidekiq'
 end
