@@ -1,4 +1,3 @@
----
 fr:
   activemodel:
     assembly:
@@ -7,6 +6,8 @@ fr:
       decidim/user:
         password: Mot de passe (minimum 6 caractères)
         password_confirmation: Confirmez votre mot de passe
+      participatory_process:
+        private_space: Espace privé
       osp_authorization_handler:
         document_number: Numéro unique
         postal_code: Code postal
@@ -337,6 +338,17 @@ fr:
             osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
             osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
   devise:
+    failure:
+      user:
+        already_authenticated: Vous êtes déjà connecté.
+        inactive: Votre compte n'est pas encore activé.
+        invalid: "%{authentication_keys} ou mot de passe invalide."
+        invited: Vous avez une invitation en attente, acceptez-la pour terminer la création de votre compte.
+        last_attempt: Vous avez encore une tentative avant que votre compte soit verrouillé.
+        locked: Ton compte est bloqué.
+        not_found_in_database: "%{authentication_keys} ou mot de passe invalide."
+        timeout: Votre session a expiré. Veuillez vous connecter à nouveau pour continuer.
+        unauthenticated: Vous devez vous connecter ou vous inscrire avant de continuer.
     invitations:
       edit:
         nickname_help: Cet identifiant est public et unique sur cette plateforme ; il permet aux autres utilisateurs de vous suivre, de vous contacter ou de vous mentionner dans leurs commentaires. Il s’affichera précédé d’un « @ » ; il ne doit pas contenir d’espace ni de caractère spécial.

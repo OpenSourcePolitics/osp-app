@@ -6,18 +6,21 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module DevelopmentApp
+module DecidimApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
     config.time_zone = "Paris"
 
+    # This needs to be set for correct images URLs in emails
+    # DON'T FORGET to ALSO set this in `config/initializers/carrierwave.rb`
     config.action_mailer.asset_host = "https://participer.loire-atlantique.fr"
 
     config.after_initialize do
       if Decidim.geocoder.present?
         Geocoder.configure(
-          lookup: :nominatim
+          lookup: :nominatim,
+          :timeout  => 30
         )
       end
     end
