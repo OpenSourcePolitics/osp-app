@@ -113,6 +113,16 @@ body {
   color: $warning;
 }
 
+@media screen and (min-width: 50em) {
+  section.hero .mediumlarge-3 {
+    width: 33%;
+
+    .hero-cta {
+      white-space: nowrap;
+    }
+  }
+}
+
 h1, .h1,
 h2, .h2,
 h3, .h3,
