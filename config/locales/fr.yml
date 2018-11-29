@@ -35,12 +35,12 @@ fr:
         invited_you_as_admin: "%{invited_by} vous a invité en tant qu'administrateur de l'espace - %{application} -. Vosu pouvez accepter en cliquant sur le lien ci-dessous."
         accept: Accepter l'invitation
         invited_you_custom_1: |-
-          Une consultation en ligne sur les rythmes scolaires et périscolaires pour la rentrée 2019 à Orsay est ouverte depuis deux semaines.
-          Nous invitons chaque parent et chaque enseignant, qui ne l'auraient pas encore fait, à participer en répondant au questionnaire en ligne.
+          La concertation en ligne sur les rythmes scolaires et périscolaires pour la rentrée 2019 à Orsay ouverte par David Ros, maire d'Orsay, se termine ce dimanche 2 décembre à 23h59.
+Cliquez sur le lien ci-dessous pour choisir votre pseudonyme et votre mot de passe, puis accédez au questionnaire.
         invited_you_custom_2: |-
           Pour accéder au questionnaire, vous devez cliquer sur le lien ci-dessous et choisir votre pseudonyme et votre mot de passe.
       invite_private_user:
-        subject: "Message de David ROS Maire d'ORSAY"
+        subject: "Derniers jours pour répondre à la consultation sur la rentrée 2019 à Orsay"
   devise:
     failure:
       user:
