@@ -1,6 +1,6 @@
 // // Variables
 //
-$primary: #FFFFFF;
+$primary: #149b9e;
 $secondary: #DD9E23;
 // $success: #57d685;
 // $warning: #ffae00;
@@ -64,40 +64,96 @@ $navbar-background: darken( $title-bar-background, 10%);
 
 .title-bar {
   background: $title-bar-background;
+  color: $dark-gray;
 }
 
 .navbar {
   background: $navbar-background;
 }
 
+.topbar__search svg {
+  color: $dark-gray;
+}
+
 @media print, screen and (min-width: 40em) {
   .topbar__search input,
   .topbar__search input:focus {
     background: darken( $title-bar-background, 10%);
+    color: $dark-gray;
+
+    &::placeholder {
+      color: darken($medium-gray, 20%);
+    }
   }
 }
 
 @media print, screen and (min-width: 40em) {
   .main-nav__link--active a {
-    box-shadow: inset 0 4px 0 0 #e8e8e8;
+    box-shadow: inset 0 4px 0 0 $primary;
+  }
+}
+
+.main-nav__link a {
+  color: $dark-gray;
+  &:hover {
+    background: darken( $title-bar-background, 20%);;
+    color: $dark-gray;
+  }
+}
+
+.topbar__user__login a {
+  color: lighten($dark-gray, 20%);
+}
+
+.topbar__dropmenu > ul > li > a {
+  color: $dark-gray;
+
+  &:hover, &:active {
+    color: $secondary;
+  }
+
+  &::after{
+    margin-top: -1px !important;
+    border-top-color: $dark-gray !important;
+  }
+}
+
+.topbar__dropmenu .is-dropdown-submenu li {
+  a {
+    color: darken($secondary, 10%);
+  }
+
+  &:hover a {
+    color: $secondary;
   }
 }
 
 .dropdown.menu .is-active > a {
-  color: #e8e8e8;
-}
-
-.topbar__dropmenu .is-dropdown-submenu li:hover a {
   color: $secondary;
 }
 
 .main-footer {
   background: $title-bar-background;
   a {
-    color: #e8e8e8;
+    color: $dark-gray;
   }
 }
 
 .mini-footer {
-  background: $navbar-background;
+  background: darken($navbar-background,10%);
+  color: $dark-gray;
+  a {
+    color: lighten($dark-gray, 20%);
+  }
+}
+
+.main-footer__badge {
+  text-align: center;
+}
+
+@media print, screen and (min-width: 64em) {
+  .main-footer__badge {
+    position: relative;
+    text-align: left;
+  }
 }
