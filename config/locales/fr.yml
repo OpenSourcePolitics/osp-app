@@ -18,6 +18,8 @@ fr:
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
+    scopes:
+      global: Tous les quartiers
     verifications:
       authorizations:
         first_login:
