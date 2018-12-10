@@ -253,7 +253,7 @@ fr:
         votes_count: Soutiens
     participatory_spaces:
       highlighted_proposals:
-        proposals: 4 propositions aléatoires
+        proposals: Quelques propositions
     proposals:
       admin:
         shared:
