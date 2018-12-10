@@ -8,6 +8,10 @@ fr:
         postal_code: Code postal
         birthday: Date de naissance
   decidim:
+    proposals:
+      proposals:
+        voting_rules:
+          title: "La contribution est soumise aux règles suivantes :"
     authorization_handlers:
       osp_authorization_handler:
         explanation: Vérifier votre identité en saisissant un numéro unique
