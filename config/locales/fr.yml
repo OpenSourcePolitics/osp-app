@@ -43,14 +43,14 @@ fr:
           actions:
             nancy_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
             nancy_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+            osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
+            osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
   layouts:
     decidim:
       assembly_header:
         assembly_menu_item: Le projet
       process_header:
         process_menu_item: Le projet
-            osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
-            osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
   devise:
     failure:
       user:
