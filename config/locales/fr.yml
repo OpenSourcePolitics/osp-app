@@ -27,6 +27,11 @@ fr:
       proposal:
         address: Adresse
         has_address: Renseigner une adresse
+        private_space: Espace privé
+      osp_authorization_handler:
+        document_number: Numéro unique
+        postal_code: Code postal
+        birthday: Date de naissance
       scope:
         scope_type: Type de zone d'application
       user:
@@ -190,6 +195,16 @@ fr:
         participatory_structure: Modalités
         meta_scope: Échelle
         target: Participants
+    authorization_handlers:
+      osp_authorization_handler:
+        explanation: Vérifier votre identité en saisissant un numéro unique
+        fields:
+          document_number: Numéro unique
+          postal_code: Code postal
+          birthday: Date de naissance
+        name: Formulaire de vérification d'identité
+      osp_authorization_workflow:
+        name: Procédure d'autorisation
     devise:
       registrations:
         new:
@@ -199,7 +214,7 @@ fr:
       sessions:
         new:
           are_you_new?: Nouveau sur la plateforme ?
-    features:
+    components:
       proposals:
         actions:
           vote: Soutenir
@@ -269,6 +284,24 @@ fr:
         processes_count: Concertations
     scopes:
       global: Toute la ville
+    verifications:
+      authorizations:
+        first_login:
+          actions:
+            osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
+            osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+  devise:
+    failure:
+      user:
+        already_authenticated: Vous êtes déjà connecté.
+        inactive: Votre compte n'est pas encore activé.
+        invalid: "%{authentication_keys} ou mot de passe invalide."
+        invited: Vous avez une invitation en attente, acceptez-la pour terminer la création de votre compte.
+        last_attempt: Vous avez encore une tentative avant que votre compte soit verrouillé.
+        locked: Ton compte est bloqué.
+        not_found_in_database: "%{authentication_keys} ou mot de passe invalide."
+        timeout: Votre session a expiré. Veuillez vous connecter à nouveau pour continuer.
+        unauthenticated: Vous devez vous connecter ou vous inscrire avant de continuer.
   layouts:
     decidim:
       assembly_header:

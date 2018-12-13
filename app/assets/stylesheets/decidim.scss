@@ -1,8 +1,7 @@
 // // Variables
 //
-$primary:  #c31632 !default;
-$secondary: black;
-// $secondary: #599aa6;
+$primary: #c31632 !default;
+$secondary: black; // $secondary: #599aa6;
 // $success: #57d685;
 // $warning: #ffae00;
 // $alert: #ec5840;
@@ -15,25 +14,27 @@ $secondary: black;
 // $twitter: #55acee;
 // $facebook: #3b5998;
 // $google: #dd4b39;
-
 @import "decidim/application";
 
 .title-bar {
-    background: #FFF;
-}
-.topbar__menu button {
-    color: #000;
-}
-.topbar__user__login a {
-color: #C3002F;
-}
-.topbar__dropmenu .dropdown>li>a {
-color:#000;
-}
-.topbar__dropmenu>ul>li>a:after {
-border-top-color: #000 !important;
+  background: #FFF;
 }
 
+.topbar__menu button {
+  color: #000;
+}
+
+.topbar__user__login a {
+  color: #C3002F;
+}
+
+.topbar__dropmenu .dropdown > li > a {
+  color: #000;
+}
+
+.topbar__dropmenu > ul > li > a:after {
+  border-top-color: #000 !important;
+}
 
 .hero-cta.button.expanded:hover {
   background: #000;
@@ -44,11 +45,12 @@ border-top-color: #000 !important;
 }
 
 .button.hollow {
-    border: 1px solid $primary;
-    color : $primary;
+  border: 1px solid $primary;
+  color: $primary;
 }
-.main-nav__link--active a{
-    box-shadow: inset 0 4px 0 0 $primary;
+
+.main-nav__link--active a {
+  box-shadow: inset 0 4px 0 0 $primary;
 }
 
 .logo-cityhall {
@@ -65,26 +67,81 @@ border-top-color: #000 !important;
   border-left-color: white;
 }
 
-.logo-wrapper  span {
-    color: #000 !important;
-  }
+.logo-wrapper span {
+  color: #000 !important;
+}
 
 .nav.main-nav li:nth-child(3) {
-display: none;
+  display: none;
 }
+
 .topbar__notifications .icon {
-fill: #000;
+  fill: #000;
 }
+// .logo-cityhall {
+//   position: static;
+//   margin: 0;
+//   @media print, screen and (min-width: 40em) {
+//     text-align: left;
+//   }
+// }
+
+.initiative-types-select {
+  white-space: normal !important;
+  word-break: break-all !important;
+  overflow-wrap: break-word !important;
+  padding-bottom: 0;
+
+  option {
+    position: relative;
+    display: block;
+    margin: 0 -15px 5px 0;
+    padding: 5px 10px;
+    font-size: 90%;
+    line-height: 17px;
+    color: $secondary;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    cursor: pointer;
+    white-space: normal !important;
+    word-break: break-all !important;
+    overflow-wrap: break-word !important;
+    text-overflow: clip;
+    overflow-x: hidden;
+
+    &:hover {
+      background: #e8e8e8;
+    }
+  }
+
+  &:focus {
+    border-color: #238FF7;
+
+    option:checked {
+      background: #238FF7;
+      color: white;
+    }
+  }
+}
+
+#user-settings-tabs > li:nth-child(3) {
+  display: none;
+}
+
 .topbar__conversations .icon {
-fill: #000!important;
+  fill: #000!important;
 }
 
 .home-bullet__icon svg {
   fill: $primary;
 }
-.address__icon, .card--list__icon, .process_stats .process_stats-item .icon {
+
+.address__icon,
+.card--list__icon,
+.process_stats .process_stats-item .icon {
   fill: $primary;
 }
+
 .icon .external-icon {
   fill: $primary!important;
 }
@@ -93,11 +150,15 @@ fill: #000!important;
   border: 1px solid $primary;
   color: $primary;
   background: transparent!important;
-} // main hollow buttons
+}
+// main hollow buttons
+
 .button.tiny.hollow {
-  border:1px solid $primary;
-  color:$primary; opacity:0.8;
+  border: 1px solid $primary;
+  color: $primary;
+  opacity: 0.8;
   background: transparent!important;
+
   &:hover {
     border: 1px solid $primary;
     color: $primary;
@@ -105,14 +166,19 @@ fill: #000!important;
     background: transparent!important;
   }
 }
-.process-nav__link:hover, .process-nav__link:focus, .process-nav__link.is-active {
+
+.process-nav__link.is-active,
+.process-nav__link:focus,
+.process-nav__link:hover {
   color: $primary;
 }
-.process-nav__link:hover svg, .process-nav__link:focus svg, .process-nav__link.is-active svg {
+
+.process-nav__link.is-active svg,
+.process-nav__link:focus svg,
+.process-nav__link:hover svg {
   fill: $primary;
-} //link in process navbar
-
-
+}
+//link in process navbar
 // .card__button.button.small:hover {
 //   color: white;
 // }
@@ -121,11 +187,13 @@ fill: #000!important;
   border: 1px solid $primary;
   background: white;
   color: $primary;
+
   &:hover {
     border: 1px solid darken($primary, 8);
     background: white;
     color: darken($primary, 8);
   }
+
   &:focus {
     border: 1px solid darken($primary, 8);
     background: white;
@@ -150,4 +218,54 @@ h2 {
     background: #599aa6;
     color: black;
   }
-} // badge on proposals
+}
+// badge on proposals
+
+.card--proposal {
+  &.card--proposal-list > .columns {
+    padding: 0;
+
+    &:last-child {
+      border-left: 1px solid #e8e8e8;
+    }
+
+    .card__content {
+      padding: 1.2rem 1.5rem 2rem;
+    }
+
+    .card__text--status {
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-right: 0.5rem;
+    }
+
+    .tags--proposal {
+      display: inline-block;
+    }
+
+    .card__status .card-data__item {
+      padding-top: 1.2em;
+    }
+
+    .card__footer {
+      border-bottom-left-radius: 0;
+    }
+
+    .card__support {
+      .vote_weight_section {
+        flex: 1;
+      }
+
+      @media print, screen and (min-width: 40em) {
+        padding: 1.7rem;
+        justify-content: center;
+      }
+    }
+
+  }
+}
+
+.opinion-toggle--meh {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
