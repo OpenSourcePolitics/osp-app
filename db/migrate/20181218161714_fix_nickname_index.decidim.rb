@@ -3,6 +3,7 @@
 
 class FixNicknameIndex < ActiveRecord::Migration[5.1]
   class User < ApplicationRecord
+    include Decidim::Nicknamizable
     self.table_name = :decidim_users
   end
 
