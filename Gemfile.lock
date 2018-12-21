@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: b1e9fac19e84b17e6017bd83c2783a9a21a2a78a
+  revision: 8185bdd597750aa5dc09d0135a1d12c11ca0ac9f
   branch: 0.12-stable
   specs:
     decidim (0.12.2)
@@ -461,7 +461,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     mixlib-cli (1.7.0)
-    mixlib-config (2.2.18)
+    mixlib-config (2.2.13)
       tomlrb
     msgpack (1.2.4)
     multi_json (1.13.1)
