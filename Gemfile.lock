@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 67f689d1263c2435874cb673f5d926517263a697
-  branch: fix/wizard-create-step-cookie_overflow
+  revision: 8185bdd597750aa5dc09d0135a1d12c11ca0ac9f
+  branch: 0.12-stable
   specs:
     decidim (0.12.2)
       decidim-accountability (= 0.12.2)
@@ -692,7 +692,7 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
-    tomlrb (1.2.7)
+    tomlrb (1.2.8)
     truncato (0.7.10)
       htmlentities (~> 4.3.1)
       nokogiri (~> 1.8.0, >= 1.7.0)
@@ -701,7 +701,7 @@ GEM
     uber (0.1.0)
     uglifier (4.1.19)
       execjs (>= 0.3.0, < 3)
-    unicode-display_width (1.4.0)
+    unicode-display_width (1.4.1)
     valid_email2 (2.3.1)
       activemodel (>= 3.2)
       mail (~> 2.5)
