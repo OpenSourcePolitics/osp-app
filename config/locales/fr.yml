@@ -33,6 +33,7 @@ fr:
             osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
             osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
   devise:
+<<<<<<< HEAD
     invitations:
       user:
         updated: "Votre compte a été mis à jour."
@@ -42,3 +43,16 @@ fr:
         accept: Accepter l'invitation
       invite_private_user:
         subject: "Budget participatif 2ème édition : inscrivez-vous sur participez.nanterre.fr"
+=======
+    failure:
+      user:
+        already_authenticated: Vous êtes déjà connecté.
+        inactive: Votre compte n'est pas encore activé.
+        invalid: "%{authentication_keys} ou mot de passe invalide."
+        invited: Vous avez une invitation en attente, acceptez-la pour terminer la création de votre compte.
+        last_attempt: Vous avez encore une tentative avant que votre compte soit verrouillé.
+        locked: Ton compte est bloqué.
+        not_found_in_database: "%{authentication_keys} ou mot de passe invalide."
+        timeout: Votre session a expiré. Veuillez vous connecter à nouveau pour continuer.
+        unauthenticated: Vous devez vous connecter ou vous inscrire avant de continuer.
+>>>>>>> 0.12-stable
