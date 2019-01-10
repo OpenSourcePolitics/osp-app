@@ -22,12 +22,12 @@ fr:
         participatory_structure: Modalités
         target: Participants
         promoted: Mise en avant
+        private_space: Espace privé
       participatory_process_group:
         participatory_process_ids: Concertations liées
       proposal:
         address: Adresse
         has_address: Renseigner une adresse
-        private_space: Espace privé
       osp_authorization_handler:
         document_number: Numéro unique
         postal_code: Code postal
@@ -205,6 +205,12 @@ fr:
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
+    verifications:
+      authorizations:
+        first_login:
+          actions:
+            osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
+            osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
     devise:
       registrations:
         new:
@@ -284,13 +290,6 @@ fr:
         processes_count: Concertations
     scopes:
       global: Toute la ville
-    verifications:
-      authorizations:
-        first_login:
-          actions:
-            osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
-            osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
-  devise:
     failure:
       user:
         already_authenticated: Vous êtes déjà connecté.

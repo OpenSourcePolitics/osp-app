@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-# gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-nouvelle_aquitaine"
+# gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
 gem "decidim", path: "../decidim"
 
 # gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
