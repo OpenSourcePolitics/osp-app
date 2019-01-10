@@ -4,8 +4,8 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-nouvelle_aquitaine"
-# gem "decidim", path: "../decidim"
+# gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-nouvelle_aquitaine"
+gem "decidim", path: "../decidim"
 
 # gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
 # gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
@@ -31,8 +31,8 @@ gem "sinatra", "~> 2.0.1"
 group :development, :test do
   gem "byebug", "~> 10.0", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-nouvelle_aquitaine"
-  # gem "decidim-dev", path: "../decidim"
+  # gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-nouvelle_aquitaine"
+  gem "decidim-dev", path: "../decidim"
 end
 
 group :development do
