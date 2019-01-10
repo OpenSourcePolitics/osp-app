@@ -220,38 +220,11 @@ fr:
       sessions:
         new:
           are_you_new?: Nouveau sur la plateforme ?
-    components:
-      proposals:
-        actions:
-          vote: Soutenir
-        settings:
-          global:
-            vote_limit: Nombre maximum de soutiens / votes par utilisateur
-            maximum_votes_per_proposal: Nombre maximum de soutiens / votes par proposition
-          step:
-            votes_blocked: Soutiens / votes bloqués
-            votes_enabled: Soutiens / votes activés
-            votes_hidden: Cacher le compteur de soutiens / votes
     menu:
       processes: Concertations
     proposals:
       answers:
         not_answered: En attente de réponse
-      proposals:
-        filters:
-          voted: Soutenues
-        orders:
-          most_voted: Les plus soutenues
-          recent: Les plus récentes
-        vote_button:
-          already_voted: Soutenue
-          already_voted_hover: Ne plus soutenir
-          maximum_votes_reached: Nombre maximum de soutiens atteint
-          vote: Soutenir
-        votes_count:
-          count:
-            one: SOUTIEN
-            other: SOUTIENS
     participatory_process_groups:
       show:
         group_participatory_processes: 'Concertations pour %{group}'

@@ -56,11 +56,15 @@ $secondary: black; // $secondary: #599aa6;
 .logo-cityhall {
   position: absolute!important;
   z-index: 1!important;
-  right: 0!important;
+  right: 0;
   top: 50%!important;
   text-align: right!important;
-  margin-top: -19px!important;
+  margin-top: -19px;
   margin-right: 19px !important;
+  @media screen and (max-width: 40em) {
+    right: 25px !important;
+    margin-top: -14px!important;
+  }
 }
 
 .logo-wrapper {
@@ -78,13 +82,6 @@ $secondary: black; // $secondary: #599aa6;
 .topbar__notifications .icon {
   fill: #000;
 }
-// .logo-cityhall {
-//   position: static;
-//   margin: 0;
-//   @media print, screen and (min-width: 40em) {
-//     text-align: left;
-//   }
-// }
 
 .initiative-types-select {
   white-space: normal !important;
@@ -268,4 +265,16 @@ h2 {
 .opinion-toggle--meh {
   font-size: 0.9rem;
   font-weight: 600;
+}
+
+@media screen and (max-width: 28.0625em) {
+  .card__link {
+      word-break: break-word;
+  }
+}
+
+@media print, screen and (min-width: 40em) {
+  .author-data {
+    max-width: none;
+  }
 }
