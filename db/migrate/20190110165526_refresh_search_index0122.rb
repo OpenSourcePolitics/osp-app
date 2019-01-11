@@ -10,10 +10,16 @@ class RefreshSearchIndex0122 < ActiveRecord::Migration[5.2]
 
     # From decidim-core/lib/decidim/searchable.rb
     Decidim::Proposals::Proposal.all.each do |p|
-
       unless p.nil? || p.component.nil?
         p.try_add_to_index_as_search_resource
         p.try_update_index_for_search_resource
+      end
+    end
+
+    Decidim::Meetings::Meeting.all.each do |m|
+      unless m.nil? || m.component.nil?
+        m.try_add_to_index_as_search_resource
+        # m.try_update_index_for_search_resource
       end
     end
 
