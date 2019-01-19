@@ -1,7 +1,7 @@
 // // Variables
 //
-// $primary: #ef604d;
-// $secondary: #599aa6;
+$primary: #D0021B;
+$secondary: #4A90E2;
 // $success: #57d685;
 // $warning: #ffae00;
 // $alert: #ec5840;
@@ -17,14 +17,8 @@
 
 @import "decidim/application";
 
-// .logo-cityhall {
-//   position: static;
-//   margin: 0;
-//   @media print, screen and (min-width: 40em) {
-//     text-align: left;
-//   }
-// }
-
+$title-bar-background: #FFFFFF;
+$navbar-background: darken( $title-bar-background, 10%);
 
 .initiative-types-select {
   white-space: normal !important;
@@ -66,4 +60,109 @@
 
 #user-settings-tabs > li:nth-child(3) {
   display: none;
+}
+
+.title-bar {
+  background: $title-bar-background;
+  color: $dark-gray;
+
+  .logo-wrapper span {
+   color: $dark-gray;
+  }
+}
+
+.navbar {
+  background: $navbar-background;
+}
+
+.topbar__search svg,
+.topbar__edit__link a {
+  color: $dark-gray;
+
+  &:hover, &:active {
+    color: $secondary;
+  }
+}
+
+@media print, screen and (min-width: 40em) {
+  .topbar__search input,
+  .topbar__search input:focus {
+    background: darken( $title-bar-background, 10%);
+    color: $dark-gray;
+
+    &::placeholder {
+      color: darken($medium-gray, 20%);
+    }
+  }
+}
+
+@media print, screen and (min-width: 40em) {
+  .main-nav__link--active a {
+    box-shadow: inset 0 4px 0 0 $primary;
+  }
+}
+
+.main-nav__link a {
+  color: $dark-gray;
+  &:hover {
+    background: darken( $title-bar-background, 20%);;
+    color: $dark-gray;
+  }
+}
+
+.topbar__user__login a {
+  color: lighten($dark-gray, 20%);
+}
+
+.topbar__dropmenu > ul > li > a {
+  color: $dark-gray;
+
+  &:hover, &:active {
+    color: $secondary;
+  }
+
+  &::after{
+    margin-top: -1px !important;
+    border-top-color: $dark-gray !important;
+  }
+}
+
+.topbar__dropmenu .is-dropdown-submenu li {
+  a {
+    color: darken($secondary, 10%);
+  }
+
+  &:hover a {
+    color: $secondary;
+  }
+}
+
+.dropdown.menu .is-active > a {
+  color: $secondary;
+}
+
+.main-footer {
+  background: $title-bar-background;
+  a {
+    color: $dark-gray;
+  }
+}
+
+.mini-footer {
+  background: darken($navbar-background,10%);
+  color: $dark-gray;
+  a {
+    color: lighten($dark-gray, 20%);
+  }
+}
+
+.main-footer__badge {
+  text-align: center;
+}
+
+@media print, screen and (min-width: 64em) {
+  .main-footer__badge {
+    position: relative;
+    text-align: left;
+  }
 }

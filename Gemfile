@@ -24,7 +24,9 @@ gem "uglifier", "~> 4.1"
 gem "faker", "~> 1.8"
 
 gem "ruby-progressbar"
-gem 'sentry-raven'
+gem "sentry-raven"
+
+gem "json", "2.1.0"
 
 group :development, :test do
   gem "byebug", "~> 10.0", platform: :mri
@@ -42,11 +44,11 @@ group :development do
 end
 
 group :production do
-  gem 'passenger'
-  gem 'fog-aws'
-  gem 'dalli'
-  gem 'sendgrid-ruby'
-  gem 'newrelic_rpm'
-  gem 'lograge'
-  gem 'sidekiq'
+  gem "passenger"
+  gem "fog-aws"
+  gem "dalli"
+  gem "sendgrid-ruby"
+  gem "newrelic_rpm"
+  gem "lograge"
+  gem "sidekiq"
 end
