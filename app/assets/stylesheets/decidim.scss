@@ -62,8 +62,10 @@ $secondary: black; // $secondary: #599aa6;
   margin-top: -19px;
   margin-right: 19px !important;
   @media screen and (max-width: 40em) {
-    right: 25px !important;
-    margin-top: -14px!important;
+    img {
+      margin-right: 25px;
+      margin-top: 7px;
+    }
   }
 }
 
