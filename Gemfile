@@ -4,16 +4,16 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
+gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-nouvelle_aquitaine"
 # gem "decidim", path: "../decidim"
 
-# gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
-# gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-stable"
+# gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-nouvelle_aquitaine"
+# gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.12-nouvelle_aquitaine"
 
 # gem "decidim-consultations", path: "../decidim"
 # gem "decidim-initiatives", path: "../decidim"
 
-# gem "decidim-participations", git: "https://github.com/OpenSourcePolitics/decidim-participations.git", branch: "09-stable"
+# gem "decidim-participations", git: "https://github.com/OpenSourcePolitics/decidim-participations.git", branch: "0.12-nouvelle_aquitaine"
 # gem "decidim-export", git: "https://github.com/OpenSourcePolitics/decidim-user-export.git"
 
 gem "bootsnap", "~> 1.3"
