@@ -1,7 +1,7 @@
 version: '3'
 services:
   app:
-    image: decidim/decidim:0.12.2
+    image: opensourcepolitics/osp-app:latest
     volumes:
       - .:/app
       - bundle:/usr/local/bundle
@@ -10,7 +10,8 @@ services:
       - PORT=3000
       - DATABASE_HOST=pg
       - DATABASE_USERNAME=postgres
-      - RAILS_ENV=development
+      - RAILS_ENV=production
+      - SECRET_KEY_BASE=f97271c0788641d98a8a7feaa2b8b40fdc28f83285a4f23703abdaf3ac0641a4f047788fd15e4b698e026325ebda371573c370fd6a3bdb720d7e04a580b84882
     ports:
       - 3000:3000
     links:
