@@ -12,7 +12,7 @@ seed:
 	docker-compose run -e SEED=true app bundle exec rake db:seed
 
 admin:
-	docker-compose run app echo 'Decidim::System::Admin.new(email: "system@example.org", password: "decidim123456", password_confirmation: "decidim123456)' | bundle exec rails c
+	docker-compose run app rake admin:create
 
 up:
 	docker-compose up
@@ -23,7 +23,10 @@ down:
 bg:
 	docker-compose up -d
 
-release: build push
+release: clean build push
+
+clean:
+	rm -f ${PWD}/tmp/pids/server.pid
 
 build:
 	docker build -t osp-app . --tag opensourcepolitics/osp-app:latest --tag opensourcepolitics/osp-app:0.12.0
