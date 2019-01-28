@@ -1,5 +1,7 @@
 start: up setup
 
+prod: bg setup
+
 setup:
 	docker-compose run app bundle exec rake db:create decidim:upgrade db:migrate
 
@@ -17,6 +19,9 @@ up:
 
 down:
 	docker-compose down
+
+bg:
+	docker-compose up -d
 
 release: build push
 
