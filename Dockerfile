@@ -24,6 +24,9 @@ RUN npm install -g npm@6.3.0
 WORKDIR /app
 RUN mkdir -p /app
 
+COPY docker-entrypoint.sh /app/
+RUN chmod +x /app/docker-entrypoint.sh
+
 COPY Gemfile* /app/
-RUN bundle install
+RUN bundle check || bundle install
 COPY . /app/

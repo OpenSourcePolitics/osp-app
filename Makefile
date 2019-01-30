@@ -23,6 +23,9 @@ down:
 bg:
 	docker-compose -f docker-compose.prod.yml up -d
 
+pull:
+	docker-compose -f docker-compose.prod.yml pull
+
 release: clean build push
 
 clean:
