@@ -21,7 +21,7 @@ down:
 	docker-compose down
 
 bg:
-	docker-compose up -d
+	docker-compose -f docker-compose.prod.yml up -d
 
 release: clean build push
 

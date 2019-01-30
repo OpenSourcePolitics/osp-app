@@ -2,13 +2,12 @@ version: '3'
 services:
   app:
     restart: unless-stopped
-    build: .
+    image: opensourcepolitics/osp-app:latest
     volumes:
-    - .:/app
-    - bundle:/usr/local/bundle
-    - node_modules:/app/node_modules
+      - bundle:/usr/local/bundle
+      - node_modules:/app/node_modules
     environment:
-      - RAILS_ENV=development
+      - RAILS_ENV=production
     env_file:
       - .docker.env
     command: ["rails", "server", "-b", "0.0.0.0"]
@@ -16,10 +15,7 @@ services:
     ports:
       - 3000:3000
     depends_on:
-      - redis
-      - sidekiq
       - pg
-      - memcached
     networks:
       - default
 
@@ -33,18 +29,15 @@ services:
 
   sidekiq:
     restart: unless-stopped
-    build: .
+    image: opensourcepolitics/osp-app:latest
     command: ["bundle", "exec", "sidekiq", "-C", "config/sidekiq.yml"]
     environment:
-    - RAILS_ENV=development
+      - RAILS_ENV=production
     env_file:
-    - .docker.env
-    volumes:
-    - .:/app
+      - .docker.env
     depends_on:
     - pg
     - redis
-    - memcached
     networks:
     - default
 
