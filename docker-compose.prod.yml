@@ -14,18 +14,8 @@ services:
     entrypoint: /app/docker-entrypoint.sh
     ports:
       - 3000:3000
-    depends_on:
-      - pg
     networks:
       - default
-
-  pg:
-    restart: unless-stopped
-    image: postgres
-    volumes:
-    - pg-data:/var/lib/postgresql/data
-    networks:
-    - default
 
   sidekiq:
     restart: unless-stopped
@@ -35,35 +25,12 @@ services:
       - RAILS_ENV=production
     env_file:
       - .docker.env
-    depends_on:
-    - pg
-    - redis
-    networks:
-    - default
-
-  memcached:
-    restart: unless-stopped
-    image: memcached
-    ports:
-    - 11211:11211
-    networks:
-    - default
-
-  redis:
-    restart: unless-stopped
-    image: redis
-    ports:
-    - 6379:6379
-    volumes:
-    - redis-data:/var/lib/redis/data
     networks:
     - default
 
 volumes:
   node_modules: {}
   bundle: {}
-  pg-data: {}
-  redis-data: {}
 
 networks:
   default:
