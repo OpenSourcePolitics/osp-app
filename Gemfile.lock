@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-questions.git
-  revision: 5f6d6dbaccc5be8c4c083f141db11eae0241718b
+  revision: b5c6bc2cc0701953490c22b8a40b1f80d86e311e
   branch: feature/admin_manages_questions
   specs:
     decidim-questions (0.16.0)
@@ -816,7 +816,7 @@ DEPENDENCIES
   web-console (~> 3.5)
 
 RUBY VERSION
-   ruby 2.5.1p57
+   ruby 2.5.3p105
 
 BUNDLED WITH
    1.17.3
