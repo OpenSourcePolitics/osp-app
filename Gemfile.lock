@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-questions.git
-  revision: b5c6bc2cc0701953490c22b8a40b1f80d86e311e
-  branch: feature/admin_manages_questions
+  revision: a00f64340b14e5404dad14e6cffc96e66960eb9f
+  branch: master
   specs:
     decidim-questions (0.16.0)
       acts_as_list (>= 0.9)
@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 307e4ed9f9096c32e148d7f8f2d2756429149708
+  revision: 62e849eabfe9356861fdbe77ae7082172fcac5dd
   branch: 0.16-stable
   specs:
     decidim (0.16.0)

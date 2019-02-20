@@ -8,7 +8,7 @@ gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch:
 # gem "decidim", path: "../decidim"
 # gem "decidim-map", path: "../decidim-map"
 
-gem "decidim-questions", git: "https://github.com/OpenSourcePolitics/decidim-questions.git", branch: "feature/admin_manages_questions"
+gem "decidim-questions", git: "https://github.com/OpenSourcePolitics/decidim-questions.git", branch: "master"
 # gem "decidim-questions", path: "../decidim-questions"
 
 # gem "decidim-conferences", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-stable"
