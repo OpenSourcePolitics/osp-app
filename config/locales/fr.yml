@@ -252,6 +252,7 @@ fr:
           highlighted_processes:
             active_processes: Concertations en cours
             see_all_processes: Voir toutes les concertations
+            active_step: Étape actuelle
       show:
         developer_group: Organisateur
         local_area: Périmètre
@@ -261,6 +262,10 @@ fr:
         target: Participants
       statistics:
         processes_count: Concertations
+    proposals:
+      proposals:
+        orders:
+          label: 'Trier par :'
     scopes:
       global: Toute la ville
     failure:
