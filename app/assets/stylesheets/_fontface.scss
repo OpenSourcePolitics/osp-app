@@ -1,3 +1,17 @@
+/* League Spartan Bold - latin */
+@font-face {
+    font-family: 'League Spartan';
+    src: url('decidim/LeagueSpartan-Bold.eot');
+    src: local('League Spartan Bold'), local('LeagueSpartan-Bold'),
+        url('decidim/LeagueSpartan-Bold.eot?#iefix') format('embedded-opentype'),
+        url('decidim/LeagueSpartan-Bold.woff2') format('woff2'),
+        url('decidim/LeagueSpartan-Bold.woff') format('woff'),
+        url('decidim/LeagueSpartan-Bold.ttf') format('truetype'),
+        url('decidim/LeagueSpartan-Bold.svg#LeagueSpartan-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
 /* roboto-regular - latin */
 @font-face {
   font-family: 'Roboto';

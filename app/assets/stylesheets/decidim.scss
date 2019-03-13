@@ -1,7 +1,7 @@
 // // Variables
 //
-$primary: #E00a63 ;
-$secondary: #30a5af;
+$primary: #040954 ;
+$secondary: darken(#E3F4F4,50);
 // $success: #57d685;
 // $warning: #ffae00;
 // $alert: #ec5840;
@@ -22,7 +22,8 @@ $title-bar-background: #FFFFFF;
 $navbar-background: darken( $title-bar-background, 10%);
 
 $primary-font: 'Roboto', Helvetica, Roboto, Arial, sans-serif;
-$heading-font: $primary-font;
+$heading-font: 'League Spartan', Roboto, Arial, sans-serif;
+
 
 .initiative-types-select {
   white-space: normal !important;
@@ -160,6 +161,7 @@ h2, .h2,
 h3, .h3,
 h4, .h4, .heading4 {
   font-family: $heading-font;
+  font-weight: bold;
   .footer__subhero & {
     font-family: $primary-font;
   }
@@ -172,7 +174,7 @@ h4, .h4, .heading4 {
 
 .home-pam__number {
   font-family: $heading-font;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 .footer__subhero {
