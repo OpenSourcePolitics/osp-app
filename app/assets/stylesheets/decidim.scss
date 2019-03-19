@@ -63,9 +63,7 @@ $heading-font: 'League Spartan', Roboto, Arial, sans-serif;
   }
 }
 
-#user-settings-tabs > li:nth-child(3) {
-  display: none;
-}
+
 
 body {
   font-family: $primary-font;
@@ -206,3 +204,8 @@ h4, .h4, .heading4 {
     text-align: left;
   }
 }
+
+// Hide autorisation handler profile tab
+// #user-settings-tabs > li:nth-child(3) {
+//   display: none;
+// }
