@@ -16,7 +16,7 @@ $success: #49A342;
 // $facebook: #3b5998;
 // $google: #dd4b39;
 
-$gray-dark: #72758A;
+$gray-dark: darken(#72758A, 30);
 $red: #D84D1E;
 $blue: #47A5B8;
 
@@ -161,6 +161,15 @@ $blue: #47A5B8;
   }
 }
 
+.topbar__edit__link a{
+  color: $secondary;
+
+  &:hover{
+    background: $navbar-bg-hover;
+    color: darken($secondary,20);
+  }
+}
+
 // badge on proposals
 
 .hero {
@@ -183,6 +192,7 @@ $blue: #47A5B8;
   }
 }
 
-#user-settings-tabs > li:nth-child(3) {
-  display: none;
-}
+// Hide autorisation handler profile tab
+// #user-settings-tabs > li:nth-child(3) {
+//   display: none;
+// }
