@@ -154,6 +154,15 @@ body {
   color: $secondary;
 }
 
+.topbar__edit__link a{
+  color: $secondary;
+
+  &:hover{
+    background: $navbar-bg-hover;
+    color: darken($secondary,20);
+  }
+}
+
 h1, .h1,
 h2, .h2,
 h3, .h3,
