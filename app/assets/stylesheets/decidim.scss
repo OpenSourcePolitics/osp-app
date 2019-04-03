@@ -62,10 +62,6 @@ $heading-font: $primary-font;
   }
 }
 
-#user-settings-tabs > li:nth-child(3) {
-  display: none;
-}
-
 body {
   font-family: $primary-font;
   font-weight: normal;
@@ -204,3 +200,7 @@ h4, .h4, .heading4 {
     text-align: left;
   }
 }
+
+// #user-settings-tabs > li:nth-child(3) {
+//   display: none;
+// }
