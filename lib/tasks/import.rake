@@ -126,11 +126,7 @@ def import_data(id, first_name, last_name, email)
   require 'extends/commands/decidim/admin/create_participatory_space_private_user_extends.rb'
   require 'extends/commands/decidim/admin/impersonate_user_extends.rb'
 
-  if email.nil?
-    import_without_email(id, first_name, last_name)
-  else
-    import_with_email(id, first_name, last_name, email)
-  end
+  import_with_email(id, first_name, last_name, email) unless email.nil?
 end
 
 def import_without_email(id, first_name, last_name)
@@ -190,16 +186,12 @@ def import_with_email(id, first_name, last_name, email)
     },
     privatable_to: current_process
   )
+
   Decidim::Admin::CreateParticipatorySpacePrivateUser.call(form, current_user, current_process) do
     on(:ok) do |user|
-      Decidim::Authorization.create_or_update_from(
-        Decidim::AuthorizationHandler.handler_for(
-          'osp_authorization_handler',
-          {
-            user: user,
-            document_number: id
-          }
-        )
+      Decidim::ParticipatorySpacePrivateUser.find_or_create_by!(
+        user: user,
+        privatable_to: other_process
       )
       Rails.logger.debug I18n.t("participatory_space_private_users.create.success", scope: "decidim.admin")
       Rails.logger.debug "Registered user with id: #{id}, first_name: #{first_name}, last_name: #{last_name}, email: #{email} --> #{user.id}"
@@ -229,4 +221,8 @@ end
 
 def current_process
   @current_process ||= Decidim::ParticipatoryProcess.find(@process)
+end
+
+def other_process
+  @other_process ||= Decidim::ParticipatoryProcess.find(4)
 end
