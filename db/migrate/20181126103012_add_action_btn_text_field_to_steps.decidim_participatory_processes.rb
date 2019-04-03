@@ -3,6 +3,6 @@
 
 class AddActionBtnTextFieldToSteps < ActiveRecord::Migration[5.2]
   def change
-    add_column :decidim_participatory_process_steps, :action_btn_text, :jsonb
+    add_column :decidim_participatory_process_steps, :action_btn_text, :jsonb unless column_exists?(:decidim_participatory_process_steps, :action_btn_text)
   end
 end
