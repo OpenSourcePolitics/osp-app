@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 989ef0230ccfe3e7eec9cf728e0353d298532d0d
-  branch: 0.12-stable
+  revision: 5db49d26d90e825110616064581aaebad3a2472e
+  branch: alt/mel-0.12
   specs:
     decidim (0.12.2)
       decidim-accountability (= 0.12.2)
