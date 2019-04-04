@@ -19,5 +19,13 @@ module DecidimApp
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    config.after_initialize do
+      if Decidim.geocoder.present?
+        Geocoder.configure(
+          :timeout  => 30
+        )
+      end
+    end
   end
 end
