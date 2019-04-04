@@ -112,7 +112,7 @@ end
 def check_csv(file)
   file.each do |row|
     # Check if id, first_name, last_name are nil
-    if row[0].nil? || row[1].nil? || row[2].nil?
+    if row[0].nil? && row[1].nil? && row[2].nil?
       puts "Something went wrong, empty field(s) on line #{$INPUT_LINE_NUMBER}"
       puts row.inspect
       exit 1
@@ -132,7 +132,7 @@ end
 def import_without_email(id, first_name, last_name)
   new_user = Decidim::User.new(
     managed: true,
-    name: set_name(first_name, last_name),
+    name: set_name(first_name, last_name, id),
     organization: current_organization,
     admin: false,
     roles: [],
@@ -181,7 +181,7 @@ end
 def import_with_email(id, first_name, last_name, email)
   form = Decidim::Admin::ParticipatorySpacePrivateUserForm.from_params(
     {
-      name: set_name(first_name, last_name),
+      name: set_name(first_name, last_name, id),
       email: email
     },
     privatable_to: current_process
@@ -207,8 +207,13 @@ def import_with_email(id, first_name, last_name, email)
 
 end
 
-def set_name(first_name, last_name)
-  first_name + ' ' + last_name
+def set_name(first_name, last_name, id)
+  first_name = '' if first_name.blank?
+  last_name = '' if last_name.blank?
+  id = '' if id.blank?
+  name = first_name + ' ' + last_name
+  name = id if name.blank?
+  name
 end
 
 def current_user
