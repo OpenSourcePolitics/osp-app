@@ -213,7 +213,7 @@ def set_name(first_name, last_name, id)
   id = '' if id.blank?
   name = first_name + ' ' + last_name
   name = id if name.blank?
-  name
+  name.at(0..128) 
 end
 
 def current_user
