@@ -50,4 +50,4 @@ fr:
         someone_invited_you_as_private_user: Vous avez été invité en tant qu'utilisateur privé de %{application}, vous pouvez l'accepter via le lien ci-dessous.
         subject: Instructions d'invitation
       invite_private_user:
-        subject: "Rejoignez l'Agora Génération·s !"
+        subject: "Plus que 2 jours pour voter!"
