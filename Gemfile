@@ -4,12 +4,14 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-stable"
+gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-upstream_moderation"
 # gem "decidim", path: "../decidim"
 # gem "decidim-map", path: "../decidim-map"
 
-gem "decidim-questions", git: "https://github.com/OpenSourcePolitics/decidim-questions.git", branch: "master"
+gem "decidim-questions", git: "https://github.com/OpenSourcePolitics/decidim-questions.git", branch: "tmp/merge-upstream"
 # gem "decidim-questions", path: "../decidim-questions"
+
+gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git"
 
 # gem "decidim-conferences", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-stable"
 # gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-stable"
@@ -32,7 +34,7 @@ gem 'sentry-raven'
 group :development, :test do
   gem "byebug", "~> 10.0", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-stable"
+  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-upstream_moderation"
   # gem "decidim-dev", path: "../decidim"
 end
 
