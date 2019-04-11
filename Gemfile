@@ -12,6 +12,7 @@ gem "decidim-questions", git: "https://github.com/OpenSourcePolitics/decidim-que
 # gem "decidim-questions", path: "../decidim-questions"
 
 gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git"
+# gem "decidim-term_customizer", path: "../decidim-module-term_customizer"
 
 # gem "decidim-conferences", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-stable"
 # gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-stable"
