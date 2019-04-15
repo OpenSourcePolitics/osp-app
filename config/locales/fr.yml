@@ -7,20 +7,162 @@ fr:
         document_number: Numéro unique
         postal_code: Code postal
         birthday: Date de naissance
+      participatory_process:
+        participatory_process_group_id: Groupe de résidences
+        promoted: Mise en avant
+      participatory_process_group:
+        participatory_process_ids: Résidences liées
   decidim:
+    admin:
+      actions:
+        new: Nouveau
+      menu:
+        participatory_process_groups: Groupes de résidences
+        participatory_processes: Résidences
+        participatory_processes_submenu:
+          process_admins: Administrateurs de la résidence
+      models:
+        participatory_process:
+          fields:
+            created_at: Créée le
+            promoted: Mise en évidence
+            published: Publiée
+          name: Résidence
+        participatory_process_group:
+          name: Groupes de résidences
+        participatory_process_user_role:
+          name: Rôle utilisateur de la résidence
+      participatory_processes:
+        new:
+          title: nouvelle résidence
+        create:
+          error: Une erreur s'est produite lors de la création d'une nouvelle résidence.
+          success: Résidence créée avec succès. Configurez maintenant ses étapes.
+        destroy:
+          success: Résidence supprimée avec succès.
+        index:
+          not_published: Non publiée
+          published: Publiée
+          title: Nouvelle résidence
+        update:
+          error: Une erreur s'est produite lors de la mise à jour de cette résidence.
+          success: Résidence mise à jour avec succès.
+      participatory_process_copies:
+        new:
+          title: Dupliquer la résidence
+      participatory_process_groups:
+        destroy:
+          success: Le groupe de résidences a été détruit avec succès.
+        edit:
+          title: Modifier le groupe de résidences
+        new:
+          title: Nouveau groupe de résidences
+        update:
+          error: Il y a eu une erreur lors de la mise à jour de ce groupe de résidences.
+          success: Groupe de résidences mis à jour avec succès.
+      participatory_process_publications:
+        create:
+          error: Une erreur s'est produite lors de la publication de cette résidence.
+          success: Résidence publiée avec succès.
+        destroy:
+          error: Une erreur s'est produite lors de la publication de cette résidence.
+          success: Résidence supprimée avec succès.
+      participatory_process_step_activations:
+        create:
+          error: Une erreur s'est produite lors de l'activation de cette étape de la résidence.
+          success: Etape de la résidence activée avec succès.
+      participatory_process_steps:
+        create:
+          error: Une erreur s'est produite lors de la création d'une nouvelle étape de la résidence.
+          success: Etape de la résidence créée avec succès.
+        default_title: Introduction
+        destroy:
+          error:
+            active_step: Vous ne pouvez pas supprimer l'étape active de la résidence.
+            last_step: Vous ne pouvez pas supprimer la dernière étape d'une résidence.
+          success: L'étape de la résidence a été supprimée avec succès.
+        edit:
+          title: Modifier l'étape de la résidence
+        index:
+          steps_title: Etapes
+        new:
+          title: Nouvelle étape de la résidence
+        ordering:
+          error: Une erreur s'est produite lors de la réorganisation des étapes de la résidence.
+        update:
+          error: Une erreur s'est produite lors de la mise à jour de cette étape de la résidence.
+          success: Etape de la résidence mise à jour avec succès.
+      participatory_process_user_roles:
+        create:
+          error: Une erreur s'est produite lors de l'ajout d'un utilisateur pour cette résidence.
+          success: Utilisateur créé avec succès pour cette résidence.
+        destroy:
+          success: L'utilisateur a été supprimé avec succès pour cette résidence.
+        edit:
+          title: Mettre à jour l'utilisateur de la résidence.
+        index:
+          process_admins_title: Administrateurs de la résidence
+        new:
+          title: Nouvel utilisateur de la résidence.
+        update:
+          error: Une erreur s'est produite lors de la mise à jour d'un utilisateur pour cette résidence.
+          success: L'utilisateur a été mis à jour avec succès pour cette résidence.
+      participatory_processes_copies:
+        create:
+          error: Une erreur s'est produite lors de la duplication de cette résidence.
+          success: Résidence dupliquée avec succès.
+      participatory_processes_group:
+        create:
+          error: Une erreur s'est produite lors de la création d'un nouveau groupe de résidences.
+          success: Groupe de résidences créé avec succès.
+      titles:
+        navbar_links: Liens de navigation
+        participatory_process_groups: Groupes de résidences
+        participatory_processes: Résidences
     authorization_handlers:
       osp_authorization_handler:
-        explanation: Vérifier votre identité en saisissant un numéro unique
+        explanation: Obtenir une vérification en saisissant un numéro de logement
         fields:
-          document_number: Numéro unique
+          document_number: Numéro du logement
           postal_code: Code postal
           birthday: Date de naissance
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
+    menu:
+      processes: Accéder à ma résidence
+    participatory_process_groups:
+      show:
+        group_participatory_processes: 'Résidences pour %{group}'
+        title: Groupes de résidences
+    participatory_process_steps:
+      index:
+        process_steps: Etapes de la résidence
+        title: Etapes de la résidence
+    participatory_processes:
+      index:
+        title: Résidences
+      order_by_processes:
+        active: Actives
+        all: Toutes
+        past: Passées
+      pages:
+        home:
+          highlighted_processes:
+            active_processes: Résidences en cours
+            see_all_processes: Voir toutes les résidences
     verifications:
       authorizations:
         first_login:
           actions:
             osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
             osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+  layouts:
+    decidim:
+      participatory_processes:
+        index:
+          promoted_processes: Résidences mises en avant
+        order_by_processes:
+          processes:
+            one: '%{count} résidence'
+            other: '%{count} résidences'
