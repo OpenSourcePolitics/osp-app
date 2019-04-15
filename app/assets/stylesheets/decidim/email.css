@@ -48,7 +48,9 @@ img {
   width: auto;
   max-width: 100%;
   clear: both;
-  display: block; }
+  display: block;
+  margin: auto;
+}
 
 center {
   width: 100%;
@@ -907,14 +909,14 @@ small {
   color: #cacaca; }
 
 a {
-  color: #5295ad;
+  color: #008094;
   text-decoration: none; }
   a:hover {
-    color: #147dc2; }
+    color: #00515e; }
   a:active {
-    color: #147dc2; }
+    color: #00515e; }
   a:visited {
-    color: #5295ad; }
+    color: #008094; }
 
 h1 a,
 h1 a:visited,
@@ -1365,26 +1367,20 @@ body.outlook p {
 
 table.body th.decidim-bar, table.body td.decidim-bar{
   padding: 10px 0;
-  background-color: #808080;
-}
-
-table.body td.decidim-bar a {
-  color: #f3f3f3;
-  text-decoration: none;
-}
-table.body td.decidim-bar a:hover {
-  color: #F1A109;
-}
-table.body td.decidim-bar a:active {
-  color: #F1A109;
-}
-table.body td.decidim-bar a:visited {
-  color: #f3f3f3;
+  background-color: #fff;
 }
 
 table.body{
   background-color: #f3f3f3;
   margin: 20px 0;
+}
+
+td.decidim-bar a{
+  color: #008094;
+}
+
+td.decidim-bar a:hover{
+  color: #F39E19;
 }
 
 .decidim-logo{
@@ -1394,23 +1390,15 @@ table.body{
 .decidim-logo a{
   display: inline-block;
   height: 30px;
+  color: #008094;
+}
+
+.decidim-logo a:hover{
+  color: #F39E19;
 }
 
 .cityhall-bar{
-  background-color: #808080;
-}
-.cityhall-bar a {
-  color: #f3f3f3;
-  text-decoration: none;
-}
-.cityhall-bar a:hover {
-  color: #F1A109;
-}
-.cityhall-bar a:active {
-  color: #F1A109;
-}
-.cityhall-bar a:visited {
-  color: #f3f3f3;
+  background-color: #fff;
 }
 
 .cityhall-logo{
