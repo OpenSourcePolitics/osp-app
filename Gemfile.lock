@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git
-  revision: 0974f04010aa8d0d4ee821893dd512bd66384138
+  revision: 42f33a94ce318317fc566bc7e80a5b2b2683ba85
   specs:
     decidim-term_customizer (0.16.5)
       decidim-admin (~> 0.16.0)
@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-questions.git
-  revision: 6765c5d4d6ad60fa01f5e0774f7885fc8d7fe20f
+  revision: 49ada19c4222b3a9ca724dc94af3eaa8abcee605
   branch: tmp/merge-upstream
   specs:
     decidim-questions (0.16.0)
@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 9002283fd049144d0a1cad2471e691c980d5d99c
+  revision: 5db84dfaae13e892b7864826a7b987998fe1d9cf
   branch: 0.16-upstream_moderation
   specs:
     decidim (0.16.0)
