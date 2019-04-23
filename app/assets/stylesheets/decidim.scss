@@ -63,9 +63,10 @@ $primary: #f15252;
   }
 }
 
-#user-settings-tabs > li:nth-child(3) {
-  display: none;
-}
+// Hide autorisation handler profile tab
+// #user-settings-tabs > li:nth-child(3) {
+//   display: none;
+// }
 
 // .main-nav__link--active a {
 //   box-shadow: inset 0 -5px 0 0 $primary;

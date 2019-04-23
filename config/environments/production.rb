@@ -1,7 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  config.logger = Logger.new(STDOUT)
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -62,6 +61,8 @@ Rails.application.configure do
     config.cache_store = :dalli_store, ENV["MEMCACHEDCLOUD_SERVERS"].split(","), {
       username: ENV["MEMCACHEDCLOUD_USERNAME"], password: ENV["MEMCACHEDCLOUD_PASSWORD"]
     }
+  else
+    config.cache_store = :mem_cache_store
   end
 
   # Use a real queuing backend for Active Job (and separate queues per environment)

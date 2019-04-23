@@ -19,17 +19,21 @@ class RenameFeatureToComponentLastTake < ActiveRecord::Migration[5.1]
     end
 
     # rubocop:disable Rails/SkipsModelValidations
-    Version.where(item_type: "Decidim::Feature").update_all(item_type: "Decidim::Component")
-    ActionLog.where(resource_type: "Decidim::Feature").update_all(resource_type: "Decidim::Component")
-    # rubocop:enable Rails/SkipsModelValidations
+    if Version.table_exists?
+      Version.where(item_type: "Decidim::Feature").update_all(item_type: "Decidim::Component")
+    end
+    if ActionLog.table_exists?
+      ActionLog.where(resource_type: "Decidim::Feature").update_all(resource_type: "Decidim::Component")
+      # rubocop:enable Rails/SkipsModelValidations
 
-    ActionLog.find_each do |log|
-      new_extra = log.extra.dup
-      next if new_extra["component"].present?
-      new_extra["component"] = new_extra["feature"]
-      new_extra.delete("feature")
-      log.extra = new_extra
-      log.save!
+      ActionLog.find_each do |log|
+        new_extra = log.extra.dup
+        next if new_extra["component"].present?
+        new_extra["component"] = new_extra["feature"]
+        new_extra.delete("feature")
+        log.extra = new_extra
+        log.save!
+      end
     end
   end
 end

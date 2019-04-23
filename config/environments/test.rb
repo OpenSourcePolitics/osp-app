@@ -43,11 +43,4 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-
-  # No precompilation on demand on first request
-  config.assets.check_precompiled_asset = false
-
-  Decidim::Verifications.register_workflow(:nancy_authorization_handler) do |auth|
-    auth.form = "Decidim::NancyAuthorizationHandler"
-  end
 end
