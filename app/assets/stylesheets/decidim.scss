@@ -58,9 +58,10 @@ $navbar-background: darken( $title-bar-background, 10%);
   }
 }
 
-#user-settings-tabs > li:nth-child(3) {
-  display: none;
-}
+// Hide autorisation handler profile tab
+// #user-settings-tabs > li:nth-child(3) {
+//   display: none;
+// }
 
 .title-bar {
   background: $title-bar-background;
