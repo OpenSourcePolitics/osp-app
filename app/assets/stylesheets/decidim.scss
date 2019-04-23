@@ -151,3 +151,11 @@ $secondary: $dark-orange;
 .menu.is-dropdown-submenu.submenu.first-sub.vertical>li>a{color:$orange;}
 .menu.is-dropdown-submenu.submenu.first-sub.vertical>li>a:hover{color:$dark-orange}
 
+.highlighted_proposals .card--proposal {
+  width: 100%;
+}
+
+// Hide autorisation handler profile tab
+// #user-settings-tabs > li:nth-child(3) {
+//   display: none;
+// }
