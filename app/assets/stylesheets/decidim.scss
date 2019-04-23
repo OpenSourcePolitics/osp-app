@@ -15,21 +15,16 @@ $secondary: #EB1B2A;
 // $facebook: #3b5998;
 // $google: #dd4b39;
 
-@import "decidim/application";
+$gray-dark: darken(#72758A, 30);
+$red: #EB1B2A;
+$blue: #47A5B8;
 
-// .logo-cityhall {
-//   position: static;
-//   margin: 0;
-//   @media print, screen and (min-width: 40em) {
-//     text-align: left;
-//   }
-// }
+@import "decidim/application";
 
 .initiative-types-select {
   white-space: normal !important;
   word-break: break-all !important;
   overflow-wrap: break-word !important;
-
   padding-bottom: 0;
 
   option {
@@ -56,6 +51,7 @@ $secondary: #EB1B2A;
 
   &:focus {
     border-color: #238FF7;
+
     option:checked {
       background: #238FF7;
       color: white;
@@ -63,7 +59,11 @@ $secondary: #EB1B2A;
   }
 }
 
-#user-settings-tabs > li:nth-child(3) {
+.footer__subhero.extended.subhero.home-section {
+  display: none;
+}
+
+.wrapper-home.home-section {
   display: none;
 }
 
@@ -71,70 +71,119 @@ $secondary: #EB1B2A;
   background: white;
 }
 
-.logo-wrapper {
-  span {
-    color: black !important
+.logo-wrapper span {
+  color: #000 !important;
+}
+
+.topbar__conversations .icon,
+.topbar__notifications .icon {
+  fill: $gray-dark;
+  opacity: 0.6;
+}
+
+.topbar__notifications.is-active .icon {
+  fill: $success;
+}
+
+.topbar__conversations.is-active .icon {
+  fill: $primary;
+}
+
+.topbar__user .topbar__user__login > a {
+  color: $gray-dark;
+
+  &:focus,
+  &:hover {
+    color: $gray-dark;
+    opacity: 0.8;
   }
-}
-
-.logo-wrapper span::before {
-  border-left: 4px solid black !important
-}
-
-.topbar__notifications .icon, .topbar__conversations .icon {
-  fill: black;
-}
-
-.topbar__notifications .icon, .topbar__conversations .icon {
-  fill: black;
-}
-
-.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
-  border-top-color: black;
 }
 
 .topbar__dropmenu > ul > li > a {
-  color: black;
-  @media screen and (max-width: 40em) {
-    color: white;
-  }
+  color: $gray-dark;
 }
 
-// .topbar__dropmenu>ul>li.is-dropdown-submenu-parent.is-active>a{color:#F5F5F5}
-.menu.is-dropdown-submenu.submenu.first-sub.vertical > li > a {
-  color: $primary;
+// language & user name
+
+.topbar__dropmenu > ul > li.is-dropdown-submenu-parent.is-active > a {
+  color: $gray-dark;
+  opacity: 0.8;
 }
 
 .topbar__menu {
-  color: black;
+  color: #000;
 }
 
-// .menu.is-dropdown-submenu.submenu.first-sub.vertical>li>a:hover{color:#ba0230}
-.topbar__user__login a {
-  font-weight: normal;
-  color: black;
-  @media screen and (max-width: 40em) {
-    color: #FFF;
-  }
-}
+//hover on active navbar
+.topbar__dropmenu .is-dropdown-submenu a {
+  color: $gray-dark;
 
-// .topbar__user__login a:focus,.topbar__user__login a:hover{color:#F5F5F5}
-
-.card__link {
-  color: black;
+  &:focus,
   &:hover {
-    color: $primary;
+    color: $gray-dark;
+    opacity: 0.8;
   }
 }
 
-.tags a {
-  color: black;
-  &:hover {
-    color: $primary;
+//dropdown links & hover
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+  border-top-color: $gray-dark !important;
+  opacity: 0.6;
+}
+
+// arrows of dropdown menu
+
+.label.proposal-status {
+  background: $red;
+
+  &.secondary {
+    background: $blue;
+    color: white;
+  }
+
+  &.success {
+    background: $success;
+    color: black;
+  }
+
+  &.warning {
+    background: $primary;
+    color: black;
   }
 }
 
-.card__footer.card__footer--spaces {
-  background: rgba($primary, 0.06);
-  border-top-color: rgba($primary, 0.6);
+.topbar__edit__link a{
+  color: $secondary;
+
+  &:hover{
+    background: $navbar-bg-hover;
+    color: darken($secondary,20);
+  }
+}
+
+// badge on proposals
+
+.hero {
+  &::after {
+    background-color: rgba($black, 0);
+  }
+}
+
+// opacity of background color
+
+.process-header__main {
+  &::after {
+    background-color: rgba($black, 0);
+  }
+}
+
+.highligted-content-banner {
+  &::after {
+    background-color: rgba($black, 0);
+  }
+}
+
+// Hide autorisation handler profile tab
+#user-settings-tabs > li:nth-child(3) {
+  display: none;
 }
