@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-questions.git
-  revision: 49ada19c4222b3a9ca724dc94af3eaa8abcee605
+  revision: 78fdd028c5981817eecc6cc59a615eb0051fc889
   branch: tmp/merge-upstream
   specs:
     decidim-questions (0.16.0)
