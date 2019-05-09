@@ -5,6 +5,7 @@ fr:
         sidebar:
           sidekiq: sidekiq
           pghero: pghero
+          split: split
   activemodel:
     attributes:
       participatory_process:

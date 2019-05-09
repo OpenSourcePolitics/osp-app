@@ -37,3 +37,4 @@ en:
         sidebar:
           sidekiq: sidekiq
           pghero: pghero
+          split: split

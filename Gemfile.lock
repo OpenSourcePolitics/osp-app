@@ -709,6 +709,7 @@ GEM
       rufus-scheduler (~> 3.2)
       sidekiq (>= 3)
       tilt (>= 1.4.0)
+    simple-random (1.0.3)
     simplecov (0.16.1)
       docile (~> 1.1)
       json (>= 1.8, < 3)
@@ -722,6 +723,10 @@ GEM
     smart_properties (1.13.1)
     social-share-button (1.2.0)
       coffee-rails
+    split (3.3.2)
+      redis (>= 2.1)
+      simple-random (>= 0.9.3)
+      sinatra (>= 1.2.6)
     spreadsheet (1.2.3)
       ruby-ole (>= 1.0)
     spring (2.0.2)
@@ -812,6 +817,7 @@ DEPENDENCIES
   sentry-raven
   sidekiq
   sidekiq-scheduler
+  split
   spring (~> 2.0)
   spring-watcher-listen (~> 2.0)
   uglifier (~> 4.1)

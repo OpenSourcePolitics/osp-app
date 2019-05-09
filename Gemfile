@@ -52,4 +52,5 @@ group :production do
   gem "sidekiq-scheduler"
   gem "pghero"
   gem "pg_query", ">= 0.9.0"
+  gem "split", require: "split/dashboard"
 end
