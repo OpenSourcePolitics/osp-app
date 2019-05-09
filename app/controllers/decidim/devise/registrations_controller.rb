@@ -15,6 +15,7 @@ module Decidim
       invisible_captcha
 
       def new
+        ab_finished(:register_button)
         @form = form(RegistrationForm).from_params(
             user: {
                 sign_up_as: "user"
