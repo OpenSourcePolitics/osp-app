@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'carrierwave/storage/fog'
-
 # Default CarrierWave setup.
 #
 CarrierWave.configure do |config|
