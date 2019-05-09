@@ -4,6 +4,7 @@ fr:
       system:
         sidebar:
           sidekiq: sidekiq
+          pghero: pghero
   activemodel:
     attributes:
       participatory_process:

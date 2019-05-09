@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_02_162611) do
+ActiveRecord::Schema.define(version: 2019_05_09_152133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -1287,6 +1287,17 @@ ActiveRecord::Schema.define(version: 2019_05_02_162611) do
     t.string "type"
     t.index ["decidim_organization_id"], name: "index_oauth_applications_on_decidim_organization_id"
     t.index ["uid"], name: "index_oauth_applications_on_uid", unique: true
+  end
+
+  create_table "pghero_query_stats", force: :cascade do |t|
+    t.text "database"
+    t.text "user"
+    t.text "query"
+    t.bigint "query_hash"
+    t.float "total_time"
+    t.bigint "calls"
+    t.datetime "captured_at"
+    t.index ["database", "captured_at"], name: "index_pghero_query_stats_on_database_and_captured_at"
   end
 
   create_table "versions", force: :cascade do |t|

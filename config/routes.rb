@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   authenticate :admin do
     mount Sidekiq::Web, at: "sidekiq", as: :sidekiq
+    mount PgHero::Engine, at: "pghero"
   end
 
   if Rails.env.development?

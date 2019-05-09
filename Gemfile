@@ -50,4 +50,6 @@ group :production do
   gem "lograge"
   gem "sidekiq"
   gem "sidekiq-scheduler"
+  gem "pghero"
+  gem "pg_query", ">= 0.9.0"
 end
