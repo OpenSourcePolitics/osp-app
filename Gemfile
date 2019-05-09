@@ -26,6 +26,12 @@ gem "faker", "~> 1.8"
 gem "ruby-progressbar"
 gem "sentry-raven"
 
+gem "split", require: "split/dashboard"
+gem "sidekiq"
+gem "sidekiq-scheduler"
+gem "pghero"
+gem "pg_query", ">= 0.9.0"
+
 group :development, :test do
   gem "byebug", "~> 10.0", platform: :mri
 
@@ -48,9 +54,4 @@ group :production do
   gem "sendgrid-ruby"
   gem "newrelic_rpm"
   gem "lograge"
-  gem "sidekiq"
-  gem "sidekiq-scheduler"
-  gem "pghero"
-  gem "pg_query", ">= 0.9.0"
-  gem "split", require: "split/dashboard"
 end
