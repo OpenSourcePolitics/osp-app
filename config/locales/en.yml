@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  layouts:
+    decidim:
+      system:
+        sidebar:
+          sidekiq: sidekiq

@@ -1,0 +1,17 @@
+<div class="title">
+  <h1>
+    <%= link_to root_path do %>
+      <%= title %>
+    <% end %>
+  </h1>
+</div>
+
+<%= main_menu.render %>
+
+<% if Rails.env.production? %>
+  <nav class="secondary-nav">
+    <ul><%= link_to t(".sidekiq"), "/sidekiq" %></ul>
+  </nav>
+<% end %>
+
+<%= render partial: "layouts/decidim/system/login_items" %>

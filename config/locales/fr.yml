@@ -1,4 +1,9 @@
 fr:
+  layouts:
+    decidim:
+      system:
+        sidebar:
+          sidekiq: sidekiq
   activemodel:
     attributes:
       participatory_process:

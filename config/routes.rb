@@ -5,7 +5,7 @@ require "sidekiq-scheduler/web"
 
 Rails.application.routes.draw do
 
-  authenticate :user, lambda(&:admin?) do
+  authenticate :admin do
     mount Sidekiq::Web, at: "sidekiq", as: :sidekiq
   end
 
