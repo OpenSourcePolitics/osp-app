@@ -4,3 +4,8 @@
 - mailers
 - newsletter
 - events
+
+:schedule:
+  CalculateAllMetrics:
+    cron: '30 9 * * *'
+    class: OrdersReminderJob

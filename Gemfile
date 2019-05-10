@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-stable"
+gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "feature/order-reminder"
 # gem "decidim", path: "../decidim"
 # gem "decidim-map", path: "../decidim-map"
 
@@ -26,10 +26,13 @@ gem "faker", "~> 1.8"
 gem "ruby-progressbar"
 gem 'sentry-raven'
 
+gem "sidekiq"
+gem "sidekiq-scheduler"
+
 group :development, :test do
   gem "byebug", "~> 10.0", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-stable"
+  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "feature/order-reminder"
   # gem "decidim-dev", path: "../decidim"
 end
 
@@ -48,5 +51,4 @@ group :production do
   gem 'sendgrid-ruby'
   gem 'newrelic_rpm'
   gem 'lograge'
-  gem 'sidekiq'
 end
