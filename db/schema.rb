@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_10_160716) do
+ActiveRecord::Schema.define(version: 2019_05_02_162611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -764,6 +764,7 @@ ActiveRecord::Schema.define(version: 2019_04_10_160716) do
     t.string "id_documents_methods", default: ["online"], array: true
     t.jsonb "id_documents_explanation_text", default: {}
     t.boolean "user_groups_enabled", default: false, null: false
+    t.jsonb "colors", default: {}
     t.index ["host"], name: "index_decidim_organizations_on_host", unique: true
     t.index ["name"], name: "index_decidim_organizations_on_name", unique: true
   end
@@ -970,6 +971,7 @@ ActiveRecord::Schema.define(version: 2019_04_10_160716) do
     t.integer "position"
     t.string "participatory_text_level"
     t.boolean "created_in_meeting", default: false
+    t.boolean "collaborative_draft_origin", default: false
     t.index "md5(body)", name: "decidim_proposals_proposal_body_search"
     t.index "md5(title)", name: "decidim_proposals_proposal_title_search"
     t.index ["created_at"], name: "index_decidim_proposals_proposals_on_created_at"

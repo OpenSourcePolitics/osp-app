@@ -8,7 +8,7 @@ gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch:
 # gem "decidim", path: "../decidim"
 # gem "decidim-map", path: "../decidim-map"
 
-gem "decidim-questions", git: "https://github.com/OpenSourcePolitics/decidim-questions.git", branch: "tmp/merge-upstream"
+gem "decidim-questions", git: "https://github.com/OpenSourcePolitics/decidim-questions.git", branch: "feature/upstream_moderation"
 # gem "decidim-questions", path: "../decidim-questions"
 
 gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git"
