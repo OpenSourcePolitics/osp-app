@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_02_162611) do
+ActiveRecord::Schema.define(version: 2019_05_21_093731) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -1083,6 +1083,7 @@ ActiveRecord::Schema.define(version: 2019_05_02_162611) do
     t.string "participatory_text_level"
     t.boolean "created_in_meeting", default: false
     t.string "recipient", default: ""
+    t.integer "recipient_ids", default: [], null: false, array: true
     t.index "md5(body)", name: "decidim_questions_question_body_search"
     t.index "md5(title)", name: "decidim_questions_question_title_search"
     t.index ["created_at"], name: "index_decidim_questions_questions_on_created_at"

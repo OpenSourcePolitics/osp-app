@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-questions.git
-  revision: 748b29ecb041cd001000b589a8935c68ae97f1c6
+  revision: 8f3f06df3eeb817d2149bea7b528af695664309f
   branch: feature/upstream_moderation
   specs:
     decidim-questions (0.16.1)
@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 487187c9cfd576c525ab6afbd58e424d403628cc
+  revision: dd08c007407b323aee2722345cb1897759bcb353
   branch: 0.16-upstream_moderation
   specs:
     decidim (0.16.1)
@@ -464,7 +464,7 @@ GEM
     jquery-tmpl-rails (1.1.0)
       rails (>= 3.1.0)
     json (2.2.0)
-    jwt (2.1.0)
+    jwt (2.2.0)
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.1.1)
@@ -638,7 +638,7 @@ GEM
       wisper (>= 1.6.1)
     redcarpet (3.4.0)
     redis (4.1.1)
-    regexp_parser (1.5.0)
+    regexp_parser (1.5.1)
     request_store (1.4.1)
       rack (>= 1.4)
     responders (2.4.1)
@@ -691,7 +691,7 @@ GEM
     ruby-progressbar (1.10.0)
     ruby_dep (1.5.0)
     ruby_http_client (3.3.0)
-    rubyzip (1.2.2)
+    rubyzip (1.2.3)
     safe_yaml (1.0.5)
     sass (3.4.25)
     sassc (1.12.1)
@@ -705,7 +705,7 @@ GEM
       sprockets-rails
       tilt
     searchlight (4.1.0)
-    selenium-webdriver (3.142.2)
+    selenium-webdriver (3.142.3)
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
     sendgrid-ruby (5.3.0)
