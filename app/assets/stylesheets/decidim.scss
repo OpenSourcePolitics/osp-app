@@ -58,8 +58,17 @@ $navbar-background: darken( $title-bar-background, 10%);
   }
 }
 
-#user-settings-tabs > li:nth-child(3) {
-  display: none;
+.highlighted_proposals .card--proposal {
+  width: 100%;
+}
+
+// Hide autorisation handler profile tab
+// #user-settings-tabs > li:nth-child(3) {
+//   display: none;
+// }
+
+.main-footer__badge{
+  position: initial;
 }
 
 .title-bar {
