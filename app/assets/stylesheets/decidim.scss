@@ -1,7 +1,7 @@
 // // Variables
 //
-// $primary: #ef604d;
-// $secondary: #599aa6;
+$primary: #2877ad;
+$secondary: #e66938;
 // $success: #57d685;
 // $warning: #ffae00;
 // $alert: #ec5840;
@@ -75,4 +75,52 @@
 
 .main-footer__badge{
   position: initial;
+}
+
+.title-bar {
+  background: #ffff !important;
+}
+
+.topbar__conversations .icon,
+.topbar__notifications .icon {
+  fill: grey;
+}
+
+.topbar__user > ul > li > a {
+  font-weight: normal;
+  color: black;
+}
+
+.topbar__user__login a {
+  font-weight: normal;
+  color: black;
+}
+
+.topbar__dropmenu > ul > li > a {
+  font-weight: normal;
+  color: black;
+}
+
+.topbar__edit__link a {
+  font-weight: normal;
+  color: black;
+}
+
+.icon--pencil .icon {
+  font-weight: normal;
+  color: black;
+}
+
+@media only screen and (max-width: 411px) {
+  .topbar__menu button {
+    color: #000;
+  }
+
+  .topbar__user__login a {
+    color: #fff;
+  }
+
+  .topbar__dropmenu > ul > li > a {
+    color: #fff;
+  }
 }
