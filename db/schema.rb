@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_21_093731) do
+ActiveRecord::Schema.define(version: 2019_06_13_130335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -765,6 +765,8 @@ ActiveRecord::Schema.define(version: 2019_05_21_093731) do
     t.jsonb "id_documents_explanation_text", default: {}
     t.boolean "user_groups_enabled", default: false, null: false
     t.jsonb "colors", default: {}
+    t.jsonb "smtp_settings"
+    t.string "deepl_api_key"
     t.index ["host"], name: "index_decidim_organizations_on_host", unique: true
     t.index ["name"], name: "index_decidim_organizations_on_name", unique: true
   end
@@ -1084,6 +1086,7 @@ ActiveRecord::Schema.define(version: 2019_05_21_093731) do
     t.boolean "created_in_meeting", default: false
     t.string "recipient", default: ""
     t.integer "recipient_ids", default: [], null: false, array: true
+    t.datetime "first_interacted_at"
     t.index "md5(body)", name: "decidim_questions_question_body_search"
     t.index "md5(title)", name: "decidim_questions_question_title_search"
     t.index ["created_at"], name: "index_decidim_questions_questions_on_created_at"

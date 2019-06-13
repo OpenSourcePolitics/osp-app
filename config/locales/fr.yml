@@ -8,6 +8,12 @@ fr:
         postal_code: Code postal
         birthday: Date de naissance
   decidim:
+    admin:
+      models:
+        participatory_process_user_role:
+          roles:
+            committee: CPDP
+            service: MOA
     authorization_handlers:
       osp_authorization_handler:
         explanation: Vérifier votre identité en saisissant un numéro unique
@@ -18,6 +24,12 @@ fr:
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
+    questions:
+      admin:
+        questions:
+          form:
+            committee: CPDP
+            service: MOA
     verifications:
       authorizations:
         first_login:

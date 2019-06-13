@@ -6,7 +6,6 @@ ruby RUBY_VERSION
 
 gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-upstream_moderation"
 # gem "decidim", path: "../decidim"
-# gem "decidim-map", path: "../decidim-map"
 
 gem "decidim-questions", git: "https://github.com/OpenSourcePolitics/decidim-questions.git", branch: "feature/upstream_moderation"
 # gem "decidim-questions", path: "../decidim-questions"
