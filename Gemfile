@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "Fix/oauth-form-error"
+gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "feature/after_sign_in_path"
 # gem "decidim", path: "../decidim"
 # gem "decidim-map", path: "../decidim-map"
 
@@ -34,7 +34,7 @@ gem "omniauth-oauth2", ">= 1.4.0", "< 2.0"
 group :development, :test do
   gem "byebug", "~> 10.0", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "Fix/oauth-form-error"
+  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "feature/after_sign_in_path"
   # gem "decidim-dev", path: "../decidim"
 end
 
