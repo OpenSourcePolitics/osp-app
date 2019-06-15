@@ -18,6 +18,12 @@ fr:
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
+    budget:
+      projects:
+       budget_summary:
+        description_per_budget: Sélectionnez les projets que vous souhaitez voir être réalisés puis confirmez votre choix. Les projets choisis doivent atteindre le montant minimum cumulé de %{minimum_budget}.
+        description_per_project: A quels projets devrions-nous allouer un budget ? Choisissez %{minimum_project} projet(s) et confirmez votre vote.
+        title: Vous décidez
     verifications:
       authorizations:
         first_login:
