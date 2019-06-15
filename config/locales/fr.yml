@@ -21,8 +21,12 @@ fr:
     budgets:
       projects:
         budget_summary:
+          cancel_order: supprimer votre vote et recommencer
+          checked_out:
+            description: Vous avez déjà voté. Si vous avez changé d'avis, vous pouvez %{cancel_link}.
+            title: Vote terminé
           description_per_budget: Sélectionnez les projets que vous souhaitez voir être réalisés puis confirmez votre choix. Les projets choisis doivent atteindre le montant minimum cumulé de %{minimum_budget}.
-          description_per_project: A quels projets devrions-nous allouer un budget ? Choisissez %{minimum_project} projet(s) et confirmez votre vote.
+          description_per_project: Faîtes votre choix puis confirmer le. Vous devez choisir %{minimum_project} projet(s).
           title: Vous décidez
     verifications:
       authorizations:
