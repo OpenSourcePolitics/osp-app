@@ -1365,7 +1365,7 @@ body.outlook p {
 
 table.body th.decidim-bar, table.body td.decidim-bar{
   padding: 10px 0;
-  background-color: #575756;
+  background-color: white;
 }
 
 table.body td.decidim-bar a {
@@ -1397,10 +1397,10 @@ table.body{
 }
 
 .cityhall-bar{
-  background-color: #575756;
+  background-color: white;
 }
 .cityhall-bar a {
-  color: #f3f3f3;
+  color: #575756;
   text-decoration: none;
 }
 .cityhall-bar a:hover {
