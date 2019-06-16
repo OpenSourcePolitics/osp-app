@@ -1396,6 +1396,13 @@ table.body{
   height: 30px;
 }
 
+.mailer-logo,
+.mailer-logo > a,
+.mailer-logo > a > img{
+  display: inline-block;
+  margin: 0 auto;
+}
+
 .cityhall-bar{
   background-color: white;
 }
