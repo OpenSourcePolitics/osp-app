@@ -5,9 +5,7 @@
 version: 2
 jobs:
   build:
-
     working_directory: ~/repo
-
     docker:
       - image: circleci/ruby:2.5.3-node
         environment:
@@ -20,6 +18,8 @@ jobs:
           POSTGRES_USER: root
           POSTGRES_DB: circle-test_test
       - image: redis
+    environment:
+      RAILS_ENV: test
 
     steps:
       - checkout
