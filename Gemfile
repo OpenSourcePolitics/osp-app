@@ -31,6 +31,9 @@ group :development, :test do
 
   gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-stable"
   # gem "decidim-dev", path: "../decidim"
+  gem "rspec-rails", "~> 3.8"
+  gem "capybara"
+  gem "capybara-screenshot"
 end
 
 group :development do
