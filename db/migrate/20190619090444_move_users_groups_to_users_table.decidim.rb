@@ -65,7 +65,7 @@ class MoveUsersGroupsToUsersTable < ActiveRecord::Migration[5.2]
         verified_at: old_user_group.verified_at
       }
       new_attributes = clean_attributes.merge(
-        nickname: UserBaseEntity.nicknamize(clean_attributes["name"]),
+        nickname: Decidim::UserBaseEntity.nicknamize(clean_attributes["name"]),
         extended_data: extended_data
       )
       new_user_group = NewUserGroup.create!(new_attributes)
