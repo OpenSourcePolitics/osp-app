@@ -68,15 +68,6 @@ $google: #dd4b39;
   width: 100%;
 }
 
-// Hide autorisation handler profile tab
-// #user-settings-tabs > li:nth-child(3) {
-//   display: none;
-// }
-
-.main-footer__badge{
-  position: initial;
-}
-
 /*------FONTS------*/
 
 @import "fontface";
@@ -178,4 +169,8 @@ display: none;
 
 #user-settings-tabs > li:nth-child(3) {
   display: none;
+}
+
+.main-footer__badge {
+  left: 14%;
 }
