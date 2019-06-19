@@ -51,9 +51,7 @@ jobs:
       # Database setup
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
-
-      # boot server
-      - run: bundle exec rake -s &
+      - run: bundle exec rake db:seed
 
       # run tests!
       - run:
