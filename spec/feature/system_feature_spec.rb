@@ -4,7 +4,7 @@ require "rails_helper"
 
 describe "system page", type: :feature do
   before do
-    visit 'http://localhost:3000/system'
+    visit "http://localhost:3000/system"
   end
 
   it "displays connection message" do
