@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: ec20252b48d9f374b681503608e4247ccde5ed23
+  revision: 3fa88ff5a535520fdede5e6af0e43c3d471427c8
   branch: feature/after_sign_in_path
   specs:
     decidim (0.16.1)
