@@ -73,6 +73,18 @@
 //   display: none;
 // }
 
-.main-footer__badge{
+.mini-footer{
+  img {
+    vertical-align: bottom;
+    max-height: 32px;
+    width: auto;
+  }
+}
+
+.main-footer__badge {
   position: initial;
+
+  @media print, screen and (min-width: 64em) {
+    position: initial;
+  }
 }
