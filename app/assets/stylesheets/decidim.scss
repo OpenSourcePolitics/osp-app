@@ -1,7 +1,5 @@
-// // Variables
-//
-// $primary: #ef604d;
-// $secondary: #599aa6;
+$primary: #E0037A;
+$secondary: #55AADB;
 // $success: #57d685;
 // $warning: #ffae00;
 // $alert: #ec5840;
@@ -16,6 +14,13 @@
 // $google: #dd4b39;
 
 @import "decidim/application";
+
+$gray-dark: darken(#72758A, 30);
+$red: #D84D1E;
+$blue: #47A5B8;
+
+$title-bar-background: #FFFFFF;
+$navbar-background: darken( $title-bar-background, 10%);
 
 // .logo-cityhall {
 //   position: static;
