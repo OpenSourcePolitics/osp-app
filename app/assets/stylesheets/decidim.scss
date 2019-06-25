@@ -158,6 +158,7 @@ $navbar-background: darken( $title-bar-background, 10%);
 
 .main-footer__badge {
   text-align: center;
+  position: initial;
 }
 
 @media print, screen and (min-width: 64em) {

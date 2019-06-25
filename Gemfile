@@ -25,7 +25,6 @@ gem "faker", "~> 1.8"
 
 gem "ruby-progressbar"
 gem "sentry-raven"
-
 gem "json", "2.1.0"
 
 group :development, :test do
@@ -51,4 +50,5 @@ group :production do
   gem "newrelic_rpm"
   gem "lograge"
   gem "sidekiq"
+  gem "sidekiq-scheduler"
 end
