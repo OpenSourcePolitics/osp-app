@@ -1,0 +1,412 @@
+// // Variables
+//
+// $primary: #ef604d;
+// $secondary: #599aa6;
+// $success: #57d685;
+// $warning: #ffae00;
+// $alert: #ec5840;
+//
+// $proposals: #238ff7;
+// $actions: #57d685;
+// $debates: #fa6c96;
+// $meetings: #fabc6c;
+//
+// $twitter: #55acee;
+// $facebook: #3b5998;
+// $google: #dd4b39;
+
+$light-green: #AEC900;
+$primary-hover: #95B000;
+$dark-green: #098E2C;
+$secondary-hover: #007513;
+$pink: #E2208C;
+$yellow: #FFD301;
+$blue: #45C4EC;
+$gray-dark: #616161;
+$primary: $light-green;
+$secondary: $dark-green;
+$warning: $yellow;
+
+@import "decidim/application";
+
+.main-footer a {color: #c6c5c6!important;}
+.main-footer a:hover{color: white!important;}
+.main-nav a {color: #c6c5c6!important;}
+.main-nav a:hover{color: white!important;}
+.main-nav__link--active a{color: white!important;}
+.footer__subhero{display:none!important;}
+.subhero .heading3 {font-size: 1.5em!important;}
+
+.main-footer__badge {
+  position: static;
+}
+
+.main__footer__social {
+  text-align: center;
+    margin-top: 10px;
+}
+
+@media print, screen and (min-width: 40em) {
+  .main__footer__nav {
+    text-align: center;
+  }
+}
+
+@media print, screen and (min-width: 65em) {
+  .main__footer__social {
+    margin-top: 0;
+    text-align: right;
+  }
+}
+
+.mini-footer {
+  display:none
+}
+
+.wrapper-home.home-section {
+  display: none;
+}
+
+.title-bar {
+  background:white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.logo-wrapper  span {
+  color: #000 !important;
+}
+
+.navbar {
+  background:#000000;
+}
+
+.main-nav__link a {
+  color: white;
+}
+
+.subhero-cta {
+  color: $secondary;
+}
+
+.main-nav__link--active a {
+  box-shadow: inset 0 -5px 0 0 $primary;
+}
+.topbar__notifications .icon, .topbar__conversations .icon {
+  fill:$gray-dark;
+  opacity: 0.6;
+}
+.topbar__notifications.is-active .icon {
+  fill: $yellow;
+}
+.topbar__conversations.is-active .icon {
+  fill: $primary;
+}
+
+.topbar__user .topbar__user__login>a {
+  color: $gray-dark;
+  &:hover, &:focus {
+    color: $gray-dark;
+    opacity: 0.8;
+  }
+}
+
+.icon.icon--menu {
+  color: $gray-dark;
+  &:hover, &:focus {
+    color: $gray-dark;
+    opacity: 0.8;
+  }
+}
+
+.topbar__dropmenu>ul>li>a {
+  color: $gray-dark;
+} // language & user name
+
+.topbar__dropmenu>ul>li.is-dropdown-submenu-parent.is-active>a {
+  color: $gray-dark;
+  opacity: 0.8;
+}  //hover on active navbar
+.topbar__dropmenu .is-dropdown-submenu a {
+  color: $gray-dark;
+  &:hover, &:focus {
+    color: $gray-dark;
+    opacity: 0.8;
+  }
+}  //dropdown links & hover
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+  border-top-color: $gray-dark!important;
+  opacity: 0.6;
+} // arrows of dropdown menu
+
+.home-bullet__icon svg {
+  fill: $secondary;
+}
+.address__icon, .card--list__icon, .process_stats .process_stats-item .icon {
+  fill: $secondary;
+}
+.icon .external-icon {
+  fill: $secondary;
+}
+
+.process-nav__link {
+  color: $gray-dark;
+  opacity:0.8;
+  svg {
+    color: $gray-dark;
+    opacity:0.8;
+  }
+}
+.process-nav__link:hover, .process-nav__link:focus, .process-nav__link.is-active {
+  color: $secondary;
+}
+.process-nav__link:hover svg, .process-nav__link:focus svg, .process-nav__link.is-active svg {
+  fill: $secondary;
+} //link in process navbar
+
+.button {
+  color: black;
+  &:hover, &:focus {
+    color: black;
+  }
+} //main buttons
+
+.card__button.button.small {
+  background:$primary;
+  color: black;
+  &:hover {
+    background:darken($primary, 8);
+    color: black;
+  }
+} // card button on process
+.button_to .card__button.button.small {
+  background:$secondary;
+  color: black;
+  &:hover {
+    background:darken($secondary, 8);
+    color: black;
+  }
+} //vote button
+.card__button.button.small.success {
+  background:$yellow;
+  color: black;
+  &:hover {
+    background:darken($yellow, 8);
+    color: black;
+  }
+} //voted button
+.button.hollow {
+  border: 1px solid $secondary;
+  color: $secondary;
+} // main hollow buttons
+.button.tiny.hollow {
+  border:0;
+  color:black;
+  background-color: $primary;
+  &:hover {
+    border:0;
+    color:black;
+    background-color: $primary;
+    opacity: 0.8;
+  }
+} // button "view steps"
+.button.hollow.secondary {
+  border: 1px solid $secondary;
+  background: white;
+  color: $secondary;
+  &:hover {
+    border: 1px solid darken($secondary, 8);
+    background: white;
+    color: darken($secondary, 8);
+  }
+  &:focus {
+    border: 1px solid darken($secondary, 8);
+    background: white;
+    color: darken($secondary, 8);
+  }
+} // "more info" small buttons on processes
+
+.label.proposal-status {
+  background: $gray-dark;
+  &.secondary {
+    background: $blue;
+    color: black;
+  }
+  &.success {
+    background:$primary;
+  }
+  &.warning {
+    background:$pink;
+    color:$white;
+  }
+} // badge on proposals
+
+.hero {
+  &::after{
+    background-color: rgba($black, 0.2);
+  }
+} // opacity of background color
+
+.process-header__main {
+  &::after{
+    background-color: rgba($black, 0.2);
+  }
+}
+
+.highligted-content-banner {
+  &::after{
+    background-color: rgba($black, 0.2);
+  }
+}
+
+.row.collapse.buttons__row {
+  margin-top: 10px;
+}
+
+.omnipresent-banner a {
+  color: black;
+  &:hover {
+    color: black;
+    opacity: 0.8;
+  }
+}
+
+.timeline__phase__number {
+  color: black!important;
+}
+
+.timeline__date {
+  color: black!important;
+}
+
+.timeline__title {
+  color: black!important;
+}
+
+.process-header__hashtag a {
+  color: #e0e8ed!important;
+}
+
+.text-highlight.heading1.hero-heading {
+  font-size: 3.5rem;
+}
+
+h3 {
+  font-size: 1.5rem!important;
+}
+
+// .section.upcoming_meetings {
+//   display: none;
+// }
+
+.icon--flag.icon.icon--small,
+.author-data button .icon-flag.icon.icon--small {
+  fill: $pink;
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}
+
+.icon--envelope-closed.icon.icon--small,
+.author-data button .icon-envelope-closed.icon.icon--small {
+  fill: $blue;
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}
+
+.card__footer.card__footer--spaces {
+  background: rgba($primary, 0.1);
+  border-top-color: rgba($primary, 0.6);
+}
+
+.card.alert {
+  border-top-color: #616161;
+  &:hover {
+    border-color: #616161;
+  }
+}
+
+.card__text .card__text--status.alert {
+  color: #616161;
+}
+
+.topbar__search{
+  position: relative;
+
+  input,
+  input:focus{
+    color: #51626c;
+    border: 0;
+    padding-left: $input-padding * 4;
+    box-shadow: none;
+    background: #e0e8eb;
+
+    @include breakpoint(medium){
+      background: #e0e8eb;
+    }
+  }
+
+  svg{
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: $input-padding;
+    transform: translateY(-50%);
+    opacity: .5;
+  }
+
+}
+
+.initiative-types-select {
+  white-space: normal !important;
+  word-break: break-all !important;
+  overflow-wrap: break-word !important;
+
+  padding-bottom: 0;
+
+  option {
+      position: relative;
+      display: block;
+      margin: 0 -15px 5px  0;
+      padding: 5px 10px;
+      font-size: 90%;
+      line-height: 17px;
+      color: $secondary;
+      border: 1px solid #e8e8e8;
+      border-radius: 3px;
+      cursor: pointer;
+      white-space: normal !important;
+      word-break: break-all !important;
+      overflow-wrap: break-word !important;
+      text-overflow: clip;
+      overflow-x: hidden;
+
+      &:hover {
+        background: #e8e8e8;
+      }
+  }
+
+  &:focus {
+    border-color: #238FF7;
+    option:checked {
+      background: #238FF7;
+      color: white;
+    }
+  }
+}
+
+.highlighted_proposals .card--proposal {
+  width: 100%;
+}
+
+// Hide autorisation handler profile tab
+// #user-settings-tabs > li:nth-child(3) {
+//   display: none;
+// }
+
+.main-footer__badge{
+  position: initial;
+}

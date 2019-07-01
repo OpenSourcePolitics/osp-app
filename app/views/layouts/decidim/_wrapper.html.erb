@@ -1,3 +1,15 @@
+<%
+if respond_to?(:current_component) && current_component && can_be_managed?(current_component)
+  edit_link(
+    manage_component_path(current_component),
+    :read,
+    :component,
+    component: current_component,
+    current_participatory_space: current_participatory_space
+  )
+end
+%>
+
 <div class="off-canvas-wrapper">
   <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
     <div class="off-canvas position-right hide-for-large" data-position="right"
@@ -37,7 +49,7 @@
             </div>
             <% if current_user %>
               <div class="topbar__dropmenu topbar__user__logged">
-                <%= link_to decidim.profile_notifications_path(current_user.nickname), class: "topbar__notifications #{current_user.notifications.any? ? "is-active" : ""}" do %>
+                <%= link_to decidim.notifications_path, class: "topbar__notifications #{current_user.notifications.any? ? "is-active" : ""}" do %>
                   <%= icon "bell" %>
                 <% end %>
                 <%= link_to decidim.conversations_path, class: "topbar__conversations #{current_user.unread_conversations.any? ? "is-active" : ""}" do %>
@@ -61,11 +73,14 @@
             <% else %>
               <div class="topbar__user show-for-medium" data-set="nav-login-holder">
                 <div class="topbar__user__login js-append">
-                  <%= link_to t("layouts.decidim.header.sign_up"), decidim.new_user_registration_path, class: "sign-up-link" %>
+                  <% if current_organization.sign_up_enabled? %>
+                    <%= link_to t("layouts.decidim.header.sign_up"), decidim.new_user_registration_path, class: "sign-up-link" %>
+                  <% end %>
                   <%= link_to t("layouts.decidim.header.sign_in"), decidim.new_user_session_path, class: "sign-in-link" %>
                 </div>
               </div>
             <% end %>
+            <%= render partial: "layouts/decidim/edit_link" %>
           </div>
         </div>
         <div class="show-for-medium" data-set="nav-holder">
@@ -83,7 +98,7 @@
       </div><!-- /.footer-separator -->
       <div class="main-footer">
         <div class="row">
-          <div class="medium-3 large-3 column">
+          <div class="medium-4 large-3 column">
             <% if current_organization.official_img_footer? %>
               <%= link_to  current_organization.official_url, class: "main-footer__badge" do %>
                 <%= image_tag current_organization.official_img_footer.url.to_s , alt: current_organization.name %>
@@ -91,20 +106,25 @@
             <% end %>
           </div>
           <div class="medium-8 large-6 column main__footer__nav">
-            <% if current_organization.static_pages.any? %>
               <ul class="footer-nav">
-                <% current_organization.static_pages.sorted_by_i18n_title.each do |page| %>
-                  <li><%= link_to translated_attribute(page.title), decidim.page_path(page) %></li>
+                <% if current_organization.static_pages.any? %>
+                  <% current_organization.static_page_topics.where(show_in_footer: true).each do |page_topic| %>
+                    <li><%= link_to translated_attribute(page_topic.title), decidim.page_path(page_topic.pages.first) %></li>
+                  <% end %>
+
+                  <% current_organization.static_pages.where(show_in_footer: true).each do |page| %>
+                    <li><%= link_to translated_attribute(page.title), decidim.page_path(page) %></li>
+                  <% end %>
                 <% end %>
+                <li><%= link_to t("layouts.decidim.footer.download_open_data"), decidim.open_data_download_path %></li>
               </ul>
-            <% end %>
           </div>
           <%= render partial: "layouts/decidim/social_media_links" %>
         </div>
       </div>
       <div class="mini-footer">
         <div class="row">
-          <div class="medium-3 large-6 column">
+          <div class="medium-12 large-10 column">
             <a rel="license" class="cc-badge"
                href="http://creativecommons.org/licenses/by-sa/4.0/"
                target="_blank">
@@ -112,7 +132,7 @@
             </a>
             <%= t("layouts.decidim.footer.made_with_open_source").html_safe %>
           </div>
-          <div class="medium-3 large-2 column">
+          <div class="medium-12 large-2 column">
             <div class="decidim-logo">
               <a rel="decidim"
                  href="https://decidim.org/"
