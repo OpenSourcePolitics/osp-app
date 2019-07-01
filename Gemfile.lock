@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 1fd5d352a79f0e1eadfe1064c2fce22b34a38389
+  revision: f36290266fd279a8ba03439eebb2c65ff6f956fe
   branch: 0.16-upstream_moderation
   specs:
     decidim (0.16.1)
@@ -669,7 +669,7 @@ GEM
     rspec-cells (0.3.4)
       cells (>= 4.0.0, < 6.0.0)
       rspec-rails (~> 3.2)
-    rspec-core (3.8.1)
+    rspec-core (3.8.2)
       rspec-support (~> 3.8.0)
     rspec-expectations (3.8.4)
       diff-lcs (>= 1.2.0, < 2.0)
