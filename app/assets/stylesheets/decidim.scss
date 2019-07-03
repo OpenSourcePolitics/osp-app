@@ -114,6 +114,10 @@ $navbar-background: darken( $title-bar-background, 10%);
   }
 }
 
+.topbar__notifications .icon, .topbar__conversations .icon {
+  fill: $yellow;
+}
+
 .topbar__notifications.is-active .icon {
   fill: $success;
 }
