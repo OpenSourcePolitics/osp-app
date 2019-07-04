@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
-  authenticate :user, ->(u) { u.admin? } do
-    mount Sidekiq::Web => "/sidekiq"
+  authenticate :user, lambda { |u| u.roles.include?("admin") } do
+    mount Sidekiq::Web => '/sidekiq'
   end
 
   mount Decidim::Core::Engine => '/'
