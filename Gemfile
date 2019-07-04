@@ -32,4 +32,5 @@ end
 group :production do
   gem "sidekiq"
   gem "fog-aws"
+  gem "dalli-elasticache"
 end
