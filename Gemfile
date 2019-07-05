@@ -5,8 +5,8 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 
 gem "decidim", "0.18.0"
-# gem "decidim-consultations", "0.18.0"
-# gem "decidim-initiatives", "0.18.0"
+gem "decidim-consultations", "0.18.0"
+gem "decidim-initiatives", "0.18.0"
 
 gem "bootsnap", "~> 1.3"
 
@@ -14,6 +14,10 @@ gem "puma", "~> 3.0"
 gem "uglifier", "~> 4.1"
 
 gem "faker", "~> 1.9"
+
+# Avoid wicked_pdf require error
+gem "wicked_pdf"
+gem "wkhtmltopdf-binary"
 
 group :development, :test do
   gem "byebug", "~> 10.0", platform: :mri
