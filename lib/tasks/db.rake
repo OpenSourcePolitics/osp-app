@@ -2,7 +2,7 @@
 
 namespace :decidim do
   Rails.logger = Logger.new(STDOUT)
-  ActiveRecord::Base.logger = Logger.new(STDOUT)
+  # ActiveRecord::Base.logger = Logger.new(STDOUT)
 
   namespace :db do
 
