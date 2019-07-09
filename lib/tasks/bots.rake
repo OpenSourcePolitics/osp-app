@@ -3,9 +3,9 @@
 require 'ruby-progressbar'
 
 namespace :decidim do
-  desc "Deletes User records for bots, usage decidim:clean_bots force=(y/n)"
+  desc 'Deletes User records for bots, usage decidim:clean_bots force=(y/n)'
   task clean_bots: :environment do
-    force = ENV["force"]
+    force = ENV['force']
     log = Logger.new(STDOUT)
     # ActiveRecord::Base.logger = Logger.new(STDOUT)
     # log = ActiveSupport::Logger.new(Rails.root.join("log", "clean-bots-#{Time.now.strftime '%Y-%m-%d-%H:%M:%S'}.log"))
@@ -20,56 +20,51 @@ namespace :decidim do
       total_messages = 0
 
       bots.find_each(batch_size: 1000) do |user|
-
-        puts "--------------------------------------------------"
+        puts '--------------------------------------------------'
         puts "\u{1f194} #{user.id} - @#{user.nickname}"
-        puts """#{user.name}"" <#{user.email}>"
+        puts '' "#{user.name}" " <#{user.email}>"
         puts "\u{1f517} #{user.personal_url}"
         puts "\u{1f4dd} #{user.about.truncate(25)}"
-
 
         activities = Decidim::ActionLog.where(user: user).count
         reports = Decidim::Report.where(user: user).count
         comments = Decidim::Comments::Comment.where(author: user).count
         messages = Decidim::Messaging::Message.where(sender: user).count
 
-        puts "-----------------------------------"
+        puts '-----------------------------------'
         puts "|   \u{2705}   |   \u{1f6a9}   |   \u{1f4ac}   |   \u{1f4e7}   |"
-        puts "-----------------------------------"
-        puts "|  #{'%5.5s' % activities} | #{'%5.5s' % reports} |  #{'%5.5s' % comments} | #{'%5.5s' % messages} |"
+        puts '-----------------------------------'
+        puts "|  #{format('%5.5s', activities)} | #{format('%5.5s', reports)} |  #{format('%5.5s', comments)} | #{format('%5.5s', messages)} |"
         # puts "\u{26a0} #{activities}"
         # puts "\u{1f6a9} #{reports}"
         # puts "\u{1f4ac} #{comments}"
         # puts "\u{2709} #{messages}"
-        puts "--------------------------------------------------"
+        puts '--------------------------------------------------'
 
         total_activities = activities
         total_reports = reports
         total_comments = comments
         total_messages = messages
         total_bots += 1
-
       end
 
-      puts "--------------------------------------------------"
+      puts '--------------------------------------------------'
       puts "  TOTAL : #{total_bots} bots detected"
-      puts "-----------------------------------"
+      puts '-----------------------------------'
       puts "|   \u{2705}   |   \u{1f6a9}   |   \u{1f4ac}   |   \u{1f4e7}   |"
-      puts "-----------------------------------"
-      puts "|  #{'%5.5s' % total_activities} | #{'%5.5s' % total_reports} |  #{'%5.5s' % total_comments} | #{'%5.5s' % total_messages} |"
-      puts "--------------------------------------------------"
-
+      puts '-----------------------------------'
+      puts "|  #{format('%5.5s', total_activities)} | #{format('%5.5s', total_reports)} |  #{format('%5.5s', total_comments)} | #{format('%5.5s', total_messages)} |"
+      puts '--------------------------------------------------'
 
       begin
         puts "\u{26a0} Are you sure you want to ANONYMIZE these users \u{2049} (y/n)"
-        anonymize = %w(y n).include?(force) ? force : STDIN.gets.strip.downcase
-      end until %w(y n).include?(anonymize)
-
+        anonymize = %w[y n].include?(force) ? force : STDIN.gets.strip.downcase
+      end until %w[y n].include?(anonymize)
 
       begin
         puts "\u{26a0} \u{26a0} Are you sure you want to DESTROY theirs contributions \u{2049} (y/n)"
-        destroy = %w(y n).include?(force) ? force : STDIN.gets.strip.downcase
-      end until %w(y n).include?(destroy)
+        destroy = %w[y n].include?(force) ? force : STDIN.gets.strip.downcase
+      end until %w[y n].include?(destroy)
 
       if anonymize == 'y'
         puts "\u{1f4a5} Let's go !"
@@ -85,16 +80,18 @@ namespace :decidim do
             Decidim::ActionLog.where(user: user).destroy_all
           end
 
-          Decidim::DestroyAccount.call(user, Decidim::DeleteAccountForm.from_params({
-            delete_reason: "Bot cleaning of @#{user.nickname} (#{user.id})"
-          }))
+          Decidim::DestroyAccount.call(
+              user,
+              Decidim::DeleteAccountForm.from_params(
+                  delete_reason: "Bot cleaning of @#{user.nickname} (#{user.id})"
+              )
+          )
 
           progressbar.increment
         end
       else
         puts "\u{1f937} sorry for the confusion ..."
       end
-
     end
     log.close
   end
