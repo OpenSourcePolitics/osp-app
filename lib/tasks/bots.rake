@@ -2,13 +2,20 @@
 
 require 'ruby-progressbar'
 
+
 namespace :decidim do
-  desc 'Deletes User records for bots, usage decidim:clean_bots force=(y/n)'
+  desc 'Deletes User records for bots, usage decidim:clean_bots force=(y/n) log=(false/default -> true)'
   task clean_bots: :environment do
     force = ENV['force']
-    log = Logger.new(STDOUT)
-    # ActiveRecord::Base.logger = Logger.new(STDOUT)
-    # log = ActiveSupport::Logger.new(Rails.root.join("log", "clean-bots-#{Time.now.strftime '%Y-%m-%d-%H:%M:%S'}.log"))
+    @log = ENV['log']
+
+    @logger = Logger.new(Rails.root.join("log", "clean-bots-#{Time.now.strftime '%Y-%m-%d-%H:%M:%S'}.log")) unless @log == "false"
+
+    def log(line)
+      puts line
+      @logger.info(line) unless @log == "false"
+    end
+
     begin
       bots = Decidim::User.where(deleted_at: nil, sign_in_count: 1)
       bots = bots.where.not(about: nil, personal_url: nil)
@@ -20,26 +27,26 @@ namespace :decidim do
       total_messages = 0
 
       bots.find_each(batch_size: 1000) do |user|
-        puts '--------------------------------------------------'
-        puts "\u{1f194} #{user.id} - @#{user.nickname}"
-        puts '' "#{user.name}" " <#{user.email}>"
-        puts "\u{1f517} #{user.personal_url}"
-        puts "\u{1f4dd} #{user.about.truncate(25)}"
+        log('--------------------------------------------------')
+        log("\u{1f194} #{user.id} - @#{user.nickname}")
+        log('' "#{user.name}" " <#{user.email}>")
+        log("\u{1f517} #{user.personal_url}")
+        log("\u{1f4dd} #{user.about.truncate(25)}")
 
         activities = Decidim::ActionLog.where(user: user).count
         reports = Decidim::Report.where(user: user).count
         comments = Decidim::Comments::Comment.where(author: user).count
         messages = Decidim::Messaging::Message.where(sender: user).count
 
-        puts '-----------------------------------'
-        puts "|   \u{2705}   |   \u{1f6a9}   |   \u{1f4ac}   |   \u{1f4e7}   |"
-        puts '-----------------------------------'
-        puts "|  #{format('%5.5s', activities)} | #{format('%5.5s', reports)} |  #{format('%5.5s', comments)} | #{format('%5.5s', messages)} |"
-        # puts "\u{26a0} #{activities}"
-        # puts "\u{1f6a9} #{reports}"
-        # puts "\u{1f4ac} #{comments}"
-        # puts "\u{2709} #{messages}"
-        puts '--------------------------------------------------'
+        log('-----------------------------------')
+        log("|   \u{2705}   |   \u{1f6a9}   |   \u{1f4ac}   |   \u{1f4e7}   |")
+        log('-----------------------------------')
+        log("|  #{format('%5.5s', activities)} | #{format('%5.5s', reports)} |  #{format('%5.5s', comments)} | #{format('%5.5s', messages)} |")
+        # log("\u{26a0} #{activities}")
+        # log("\u{1f6a9} #{reports}")
+        # log("\u{1f4ac} #{comments}")
+        # log("\u{2709} #{messages}")
+        log("--------------------------------------------------")
 
         total_activities = activities
         total_reports = reports
@@ -48,26 +55,26 @@ namespace :decidim do
         total_bots += 1
       end
 
-      puts '--------------------------------------------------'
-      puts "  TOTAL : #{total_bots} bots detected"
-      puts '-----------------------------------'
-      puts "|   \u{2705}   |   \u{1f6a9}   |   \u{1f4ac}   |   \u{1f4e7}   |"
-      puts '-----------------------------------'
-      puts "|  #{format('%5.5s', total_activities)} | #{format('%5.5s', total_reports)} |  #{format('%5.5s', total_comments)} | #{format('%5.5s', total_messages)} |"
-      puts '--------------------------------------------------'
+      log('--------------------------------------------------')
+      log("  TOTAL : #{total_bots} bots detected")
+      log('-----------------------------------')
+      log("|   \u{2705}   |   \u{1f6a9}   |   \u{1f4ac}   |   \u{1f4e7}   |")
+      log('-----------------------------------')
+      log("|  #{format('%5.5s', total_activities)} | #{format('%5.5s', total_reports)} |  #{format('%5.5s', total_comments)} |) #{format('%5.5s', total_messages)} |")
+      log("--------------------------------------------------")
 
       begin
-        puts "\u{26a0} Are you sure you want to ANONYMIZE these users \u{2049} (y/n)"
+        log("\u{26a0} Are you sure you want to ANONYMIZE these users \u{2049} (y/n)")
         anonymize = %w[y n].include?(force) ? force : STDIN.gets.strip.downcase
       end until %w[y n].include?(anonymize)
 
       begin
-        puts "\u{26a0} \u{26a0} Are you sure you want to DESTROY theirs contributions \u{2049} (y/n)"
+        log("\u{26a0} \u{26a0} Are you sure you want to DESTROY theirs contributions \u{2049} (y/n)")
         destroy = %w[y n].include?(force) ? force : STDIN.gets.strip.downcase
       end until %w[y n].include?(destroy)
 
       if anonymize == 'y'
-        puts "\u{1f4a5} Let's go !"
+        log("\u{1f4a5} Let's go !")
 
         progressbar = ProgressBar.create(title: 'Deleting users', total: total_bots, format: '%t |%b%i| %p%% %t')
 
@@ -90,9 +97,11 @@ namespace :decidim do
           progressbar.increment
         end
       else
-        puts "\u{1f937} Sorry for the confusion ..."
+        log("\u{1f937} Sorry for the confusion ...")
       end
     end
-    log.close
+
+    Rails.logger.close
+    Rails.logger = Logger.new(STDOUT)
   end
 end
