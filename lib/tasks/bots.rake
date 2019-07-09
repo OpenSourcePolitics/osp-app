@@ -90,7 +90,7 @@ namespace :decidim do
           progressbar.increment
         end
       else
-        puts "\u{1f937} sorry for the confusion ..."
+        puts "\u{1f937} Sorry for the confusion ..."
       end
     end
     log.close
