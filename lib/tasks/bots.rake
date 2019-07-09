@@ -3,8 +3,9 @@
 require 'ruby-progressbar'
 
 namespace :decidim do
-  desc "Deletes User records for bots"
+  desc "Deletes User records for bots, usage decidim:clean_bots force=(y/n)"
   task clean_bots: :environment do
+    force = ENV["force"]
     log = Logger.new(STDOUT)
     # ActiveRecord::Base.logger = Logger.new(STDOUT)
     # log = ActiveSupport::Logger.new(Rails.root.join("log", "clean-bots-#{Time.now.strftime '%Y-%m-%d-%H:%M:%S'}.log"))
@@ -61,13 +62,13 @@ namespace :decidim do
 
       begin
         puts "\u{26a0} Are you sure you want to ANONYMIZE these users \u{2049} (y/n)"
-        anonymize = STDIN.gets.strip.downcase
+        anonymize = %w(y n).include?(force) ? force : STDIN.gets.strip.downcase
       end until %w(y n).include?(anonymize)
 
 
       begin
         puts "\u{26a0} \u{26a0} Are you sure you want to DESTROY theirs contributions \u{2049} (y/n)"
-        destroy = STDIN.gets.strip.downcase
+        destroy = %w(y n).include?(force) ? force : STDIN.gets.strip.downcase
       end until %w(y n).include?(destroy)
 
       if anonymize == 'y'
