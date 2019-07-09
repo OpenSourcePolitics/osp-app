@@ -42,10 +42,6 @@ namespace :decidim do
         log("|   \u{2705}   |   \u{1f6a9}   |   \u{1f4ac}   |   \u{1f4e7}   |")
         log('-----------------------------------')
         log("|  #{format('%5.5s', activities)} | #{format('%5.5s', reports)} |  #{format('%5.5s', comments)} | #{format('%5.5s', messages)} |")
-        # log("\u{26a0} #{activities}")
-        # log("\u{1f6a9} #{reports}")
-        # log("\u{1f4ac} #{comments}")
-        # log("\u{2709} #{messages}")
         log("--------------------------------------------------")
 
         total_activities = activities
@@ -60,7 +56,7 @@ namespace :decidim do
       log('-----------------------------------')
       log("|   \u{2705}   |   \u{1f6a9}   |   \u{1f4ac}   |   \u{1f4e7}   |")
       log('-----------------------------------')
-      log("|  #{format('%5.5s', total_activities)} | #{format('%5.5s', total_reports)} |  #{format('%5.5s', total_comments)} |) #{format('%5.5s', total_messages)} |")
+      log("|  #{format('%5.5s', total_activities)} | #{format('%5.5s', total_reports)} |  #{format('%5.5s', total_comments)} | #{format('%5.5s', total_messages)} |")
       log("--------------------------------------------------")
 
       begin
@@ -84,7 +80,6 @@ namespace :decidim do
             Decidim::Comments::CommentVote.where(author: user).destroy_all
             Decidim::Comments::Comment.where(author: user).destroy_all
             Decidim::Messaging::Message.where(sender: user).destroy_all
-            Decidim::ActionLog.where(user: user).destroy_all
           end
 
           Decidim::DestroyAccount.call(
