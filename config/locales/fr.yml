@@ -9,21 +9,32 @@ fr:
         birthday: Date de naissance
   decidim:
     authorization_handlers:
-      osp_authorization_handler:
-        explanation: Vérifier votre identité en saisissant un numéro unique
+      osp_level_1_authorization_handler:
+        explanation: Vérifier votre identité en saisissant un numéro unique (L1)
         fields:
-          document_number: Numéro unique
+          document_number: Numéro unique (L1)
           postal_code: Code postal
           birthday: Date de naissance
-        name: Formulaire de vérification d'identité
-      osp_authorization_workflow:
-        name: Procédure d'autorisation
+        name: Formulaire de vérification niveau 1
+      osp_level_1_authorization_workflow:
+        name: Procédure de vérification niveau 1
+      osp_level_2_authorization_handler:
+        explanation: Vérifier votre identité en saisissant un numéro unique (L2)
+        fields:
+          document_number: Numéro unique (L2)
+          postal_code: Code postal
+          birthday: Date de naissance
+        name: Formulaire de vérification niveau 2
+      osp_level_2_authorization_workflow:
+        name: Procédure de vérification niveau 2
     verifications:
       authorizations:
         first_login:
           actions:
-            osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
-            osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+            osp_level_1_authorization_handler: Vérification niveau 1
+            osp_level_1_authorization_workflow: Vérification niveau 1
+            osp_level_2_authorization_handler: Vérification niveau 2
+            osp_level_2_authorization_workflow: Vérification niveau 2
   layouts:
     decidim:
       footer:

@@ -19,6 +19,10 @@
 #   end
 # end
 
-Decidim::Verifications.register_workflow(:osp_authorization_handler) do |auth|
-  auth.form = "Decidim::OspAuthorizationHandler"
+Decidim::Verifications.register_workflow(:osp_level_1_authorization_handler) do |auth|
+  auth.form = "Decidim::OspLevel1AuthorizationHandler"
+end
+
+Decidim::Verifications.register_workflow(:osp_level_1_authorization_handler) do |auth|
+  auth.form = "Decidim::OspLevel2AuthorizationHandler"
 end
