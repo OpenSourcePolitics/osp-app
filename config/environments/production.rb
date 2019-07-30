@@ -104,5 +104,7 @@ Rails.application.configure do
 
   config.active_job.queue_adapter = :sidekiq
 
-  config.cache_store = :dalli_store, Dalli::ElastiCache.new(ENV["ELASTICACHE_HOST"]).servers, { :expires_in => 1.day, :compress => true }
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+    config.cache_store = :dalli_store, Dalli::ElastiCache.new(ENV["ELASTICACHE_HOST"]).servers, { :expires_in => 1.day, :compress => true }
+  end
 end
