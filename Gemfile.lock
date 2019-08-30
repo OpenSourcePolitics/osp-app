@@ -1,7 +1,5 @@
-GIT
-  remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 616801af897a8521ad93356c84c8a35e64c044e8
-  branch: 0.18-merge
+PATH
+  remote: ../decidim
   specs:
     decidim (0.18.0)
       decidim-accountability (= 0.18.0)
@@ -552,7 +550,7 @@ GEM
       request_store (~> 1.1)
     paper_trail-association_tracking (1.1.1)
     parallel (1.17.0)
-    parser (2.6.3.0)
+    parser (2.6.4.0)
       ast (~> 2.4.0)
     passenger (6.0.2)
       rack

@@ -2,10 +2,10 @@
 # This migration comes from decidim (originally 20180810092428)
 
 class MoveOrganizationFieldsToHeroContentBlock < ActiveRecord::Migration[5.2]
-  class ::Decidim::Organization < ApplicationRecord
+  class Decidim::Organization < ApplicationRecord
     self.table_name = :decidim_organizations
 
-    mount_uploader :homepage_image, ::Decidim::HomepageImageUploader
+    mount_uploader :homepage_image, Decidim::HomepageImageUploader
   end
 
   def change

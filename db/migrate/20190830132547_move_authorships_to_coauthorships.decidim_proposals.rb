@@ -22,6 +22,7 @@ class MoveAuthorshipsToCoauthorships < ActiveRecord::Migration[5.1]
         coauthorable_id: proposal.id,
         coauthorable_type: "Decidim::Proposals::Proposal",
         decidim_author_id: author_id,
+        decidim_author_type: 'Decidim::UserBaseEntity',
         decidim_user_group_id: user_group_id
       )
     end
