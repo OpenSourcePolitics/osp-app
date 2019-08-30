@@ -1,6 +1,6 @@
 {
   "name": "osp-app",
-  "version": "0.8.4",
+  "version": "0.18.0",
   "private": true,
   "dependencies": {}
 }

@@ -1,20 +1,33 @@
 # frozen_string_literal: true
 
 Decidim.configure do |config|
+  config.skip_first_login_authorization = ENV["SKIP_FIRST_LOGIN_AUTHORIZATION"] ? ActiveRecord::Type::Boolean.new.cast(ENV["SKIP_FIRST_LOGIN_AUTHORIZATION"]) : true
   config.application_name = "My Opinion"
   config.mailer_sender = "My Opinion <no-reply@myopinion.belgium.be>"
-  config.authorization_handlers = []
 
   # Change these lines to set your preferred locales
   config.default_locale = :fr
   config.available_locales = [:en, :ca, :es, :fr, :nl, :de]
 
+  config.maximum_attachment_height_or_width = 6000
+
   # Geocoder configuration
-  config.geocoder = {
-    static_map_url: "https://image.maps.cit.api.here.com/mia/1.6/mapview",
-    here_app_id: Rails.application.secrets.geocoder[:here_app_id],
-    here_app_code: Rails.application.secrets.geocoder[:here_app_code]
-  }
+  if !Rails.application.secrets.geocoder[:here_app_id].blank?
+    config.geocoder = {
+      static_map_url: "https://image.maps.cit.api.here.com/mia/1.6/mapview",
+      here_app_id: Rails.application.secrets.geocoder[:here_app_id],
+      here_app_code: Rails.application.secrets.geocoder[:here_app_code]
+    }
+  end
+
+  if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_require_authorization)
+    # puts "Decidim::Initiatives are loaded"
+    Decidim::Initiatives.minimum_committee_members = 1
+    Decidim::Initiatives.do_not_require_authorization = true
+    Decidim::Initiatives.print_enabled = false
+    Decidim::Initiatives.face_to_face_voting_allowed = false
+  end
+
 
   # Custom resource reference generator method
   # config.resource_reference_generator = lambda do |resource, feature|
@@ -42,6 +55,43 @@ Decidim.configure do |config|
   # take over user accounts.
   #
   config.enable_html_header_snippets = true
+
+  # SMS gateway configuration
+  #
+  # If you want to verify your users by sending a verification code via
+  # SMS you need to provide a SMS gateway service class.
+  #
+  # An example class would be something like:
+  #
+  # class MySMSGatewayService
+  #   attr_reader :mobile_phone_number, :code
+  #
+  #   def initialize(mobile_phone_number, code)
+  #     @mobile_phone_number = mobile_phone_number
+  #     @code = code
+  #   end
+  #
+  #   def deliver_code
+  #     # Actual code to deliver the code
+  #     true
+  #   end
+  # end
+  #
+  # config.sms_gateway_service = 'Decidim::Verifications::Sms::ExampleGateway'
+
+  # Etherpad configuration
+  #
+  # Only needed if you want to have Etherpad integration with Decidim. See
+  # Decidim docs at docs/services/etherpad.md in order to set it up.
+  #
+
+  if !Rails.application.secrets.etherpad[:server].blank?
+    config.etherpad = {
+      server: Rails.application.secrets.etherpad[:server],
+      api_key: Rails.application.secrets.etherpad[:api_key],
+      api_version: Rails.application.secrets.etherpad[:api_version]
+    }
+  end
 
   if ENV["HEROKU_APP_NAME"].present?
     config.base_uploads_path = ENV["HEROKU_APP_NAME"] + "/"
