@@ -1,28 +1,24 @@
-# # Failsafe : (re)force all extends to be loaded
-# # decidim-core
-# require "decidim/extends/notification_mailer_extend.rb"
-# require "decidim/extends/email_notification_generator_extend.rb"
-# require "decidim/extends/moderation_extend.rb"
-# require "decidim/extends/commands/create_omniauth_registration_extend.rb"
-# require "decidim/extends/forms/omniauth_registration_form_extend.rb"
-# require "decidim/extends/models/user_extend.rb"
-# require "decidim/extends/controllers/omniauth_registrations_controller_extend.rb"
-# # decidim-comments
-# require 'decidim/extends/create_comment_extend.rb'
-# require 'decidim/extends/create_proposal_extend.rb'
-# require 'decidim/extends/commentable_extend.rb'
-# require 'decidim/extends/comment_extend.rb'
-# require 'decidim/extends/comment_created_event_extend.rb'
-# require 'decidim/extends/sorted_comments_extend.rb'
-# # decidim-proposals
-# require "decidim/extends/models/proposal_extend.rb"
-# require "decidim/extends/commands/vote_proposal_extend.rb"
-# require "decidim/extends/models/abilities/current_user_ability_extend.rb"
-# require "decidim/extends/models/proposal_vote_extend.rb"
-# require "decidim/extends/presenters/official_author_presenter_extend.rb"
-# # decidim-budgets
-# require "decidim/extends/project_extend.rb"
-# # decidim-debates
-# require 'decidim/extends/presenters/official_author_presenter_extend.rb'
-# # decidim-meetings
-# require "decidim/extends/meeting_extend.rb"
+# frozen_string_literal: true
+
+ActiveSupport.on_load(:active_record) {
+
+  def database_exists?
+    ActiveRecord::Base.connection
+  rescue ActiveRecord::NoDatabaseError
+    false
+  else
+    true
+  end
+
+  # Models needs to be loaded AFTER DB init because of legacy Migrations
+  if database_exists?
+    if ActiveRecord::Base.connection.table_exists?(:decidim_users)
+      require 'extends/models/decidim/user_extend.rb'
+    end
+  end
+
+}
+
+require 'extends/presenters/decidim/user_presenter_extend.rb'
+require 'extends/presenters/decidim/proposals/official_author_presenter_extend.rb'
+require 'extends/cells/decidim/author_cell_extend.rb'

@@ -4,8 +4,8 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-# gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.18-merge"
-gem "decidim", path: "../decidim"
+gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.18-merge"
+# gem "decidim", path: "../decidim"
 # gem "decidim-map", path: "../decidim-map"
 
 # gem "decidim-conferences", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.18-dev"
@@ -33,13 +33,15 @@ gem "sentry-raven"
 
 gem "letter_opener_web", "~> 1.3"
 
+gem "omniauth-saml", "~> 1.10.0"
+
 group :development, :test do
   gem "byebug", "~> 10.0", platform: :mri
 
   gem 'dotenv-rails'
 
-  # gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.18-merge"
-  gem "decidim-dev", path: "../decidim"
+  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.18-merge"
+  # gem "decidim-dev", path: "../decidim"
 end
 
 group :development do

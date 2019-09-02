@@ -1,11 +1,7 @@
 require "sidekiq/web"
 Rails.application.routes.draw do
 
-  get "api/traduction" => "translation#traduction"
-
-  # devise_scope :user do
-  #   get '/users/auth/:provider/setup' => 'decidim/omniauth_config#setup'
-  # end
+  # get "api/traduction" => "translation#traduction"
 
   authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => '/sidekiq'
