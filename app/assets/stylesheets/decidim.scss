@@ -16,15 +16,51 @@
 // $google: #dd4b39;
 
 @import "decidim/application";
+@import "fontface";
 
-// .logo-cityhall {
-//   position: static;
-//   margin: 0;
-//   @media print, screen and (min-width: 40em) {
-//     text-align: left;
-//   }
-// }
+$primary-font: 'Gilroy', Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: $primary-font;
+$heading-font: 'DINCond-BlackAlternate', Roboto, Arial, sans-serif;
 
+body {
+  font-family: $primary-font;
+  font-weight: normal;
+}
+
+.main-nav {
+  font-family: $heading-font;
+  font-weight: bold;
+}
+
+.logo-wrapper {
+  font-family: $heading-font;
+  font-weight: bold;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4, .heading4 {
+  font-family: $heading-font;
+  font-weight: bold;
+  .footer__subhero & {
+    font-family: $primary-font;
+  }
+}
+
+.card__title, .home-pam__title {
+  font-family: $primary-font;
+  font-weight: bold;
+}
+
+.home-pam__number {
+  font-family: $heading-font;
+  font-weight: bold;
+}
+
+.footer__subhero {
+  font-family: $primary-font;
+}
 
 .initiative-types-select {
   white-space: normal !important;
