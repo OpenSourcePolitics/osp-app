@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_203149) do
+ActiveRecord::Schema.define(version: 2019_09_02_150320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -140,9 +140,9 @@ ActiveRecord::Schema.define(version: 2019_03_04_203149) do
     t.boolean "show_statistics", default: false
     t.integer "decidim_scope_id"
     t.boolean "scopes_enabled", default: true, null: false
+    t.boolean "private_space", default: false
     t.string "reference"
     t.bigint "decidim_area_id"
-    t.boolean "private_space", default: false
     t.bigint "parent_id"
     t.ltree "parents_path"
     t.integer "children_count", default: 0
@@ -165,11 +165,9 @@ ActiveRecord::Schema.define(version: 2019_03_04_203149) do
     t.string "facebook_handler"
     t.string "youtube_handler"
     t.string "github_handler"
-    t.string "hostname"
     t.index ["decidim_area_id"], name: "index_decidim_assemblies_on_decidim_area_id"
     t.index ["decidim_organization_id", "slug"], name: "index_unique_assembly_slug_and_organization", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_assemblies_on_decidim_organization_id"
-    t.index ["hostname"], name: "index_decidim_assemblies_on_hostname", unique: true
     t.index ["parent_id"], name: "decidim_assemblies_assemblies_on_parent_id"
   end
 
@@ -293,6 +291,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_203149) do
     t.integer "parent_id"
     t.integer "decidim_participatory_space_id"
     t.string "decidim_participatory_space_type"
+    t.string "color"
     t.index ["decidim_participatory_space_id", "decidim_participatory_space_type"], name: "index_decidim_categories_on_decidim_participatory_space"
     t.index ["parent_id"], name: "index_decidim_categories_on_parent_id"
   end
@@ -365,87 +364,6 @@ ActiveRecord::Schema.define(version: 2019_03_04_203149) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["participatory_space_id", "participatory_space_type"], name: "index_decidim_components_on_decidim_participatory_space"
-  end
-
-  create_table "decidim_consultations", force: :cascade do |t|
-    t.string "slug", null: false
-    t.integer "decidim_organization_id"
-    t.jsonb "title", null: false
-    t.jsonb "subtitle", null: false
-    t.jsonb "description", null: false
-    t.string "banner_image"
-    t.string "introductory_video_url"
-    t.date "start_voting_date", null: false
-    t.integer "decidim_highlighted_scope_id"
-    t.datetime "published_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.date "end_voting_date", null: false
-    t.date "results_published_at"
-    t.string "introductory_image"
-    t.index ["decidim_highlighted_scope_id"], name: "index_decidim_consultations_on_decidim_highlighted_scope_id"
-    t.index ["decidim_organization_id", "slug"], name: "index_unique_consultation_slug_and_organization", unique: true
-    t.index ["decidim_organization_id"], name: "index_decidim_consultations_on_decidim_organization_id"
-    t.index ["description"], name: "decidim_consultations_description_search"
-    t.index ["published_at"], name: "index_decidim_consultations_on_published_at"
-    t.index ["subtitle"], name: "decidim_consultations_subtitle_search"
-    t.index ["title"], name: "decidim_consultations_title_search"
-  end
-
-  create_table "decidim_consultations_questions", force: :cascade do |t|
-    t.bigint "decidim_consultation_id"
-    t.bigint "decidim_scope_id"
-    t.jsonb "title", null: false
-    t.jsonb "subtitle", null: false
-    t.jsonb "what_is_decided", null: false
-    t.jsonb "promoter_group", null: false
-    t.jsonb "participatory_scope", null: false
-    t.jsonb "question_context"
-    t.string "banner_image"
-    t.string "reference"
-    t.string "hashtag"
-    t.datetime "published_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "decidim_organization_id", null: false
-    t.string "slug", null: false
-    t.integer "votes_count", default: 0, null: false
-    t.jsonb "origin_scope"
-    t.jsonb "origin_title"
-    t.string "origin_url"
-    t.string "i_frame_url"
-    t.boolean "external_voting"
-    t.integer "responses_count", default: 0, null: false
-    t.string "hero_image"
-    t.integer "order"
-    t.index ["decidim_consultation_id"], name: "index_consultations_questions_on_consultation_id"
-    t.index ["decidim_organization_id", "slug"], name: "index_unique_question_slug_and_organization", unique: true
-    t.index ["decidim_scope_id"], name: "index_decidim_consultations_questions_on_decidim_scope_id"
-    t.index ["origin_scope"], name: "consultation_questions_origin_scope_search"
-    t.index ["origin_title"], name: "consultation_questions_origin_title_search"
-    t.index ["published_at"], name: "index_decidim_consultations_questions_on_published_at"
-  end
-
-  create_table "decidim_consultations_responses", force: :cascade do |t|
-    t.jsonb "title"
-    t.bigint "decidim_consultations_questions_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "votes_count", default: 0, null: false
-    t.index ["decidim_consultations_questions_id"], name: "index_consultations_responses_on_consultation_questions"
-  end
-
-  create_table "decidim_consultations_votes", force: :cascade do |t|
-    t.bigint "decidim_consultation_question_id"
-    t.bigint "decidim_author_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "decidim_user_group_id"
-    t.bigint "decidim_consultations_response_id"
-    t.index ["decidim_author_id"], name: "index_consultations_votes_on_author"
-    t.index ["decidim_consultation_question_id", "decidim_author_id", "decidim_user_group_id"], name: "index_question_votes_author_unique", unique: true
-    t.index ["decidim_consultation_question_id"], name: "index_consultations_votes_on_consultation_question"
-    t.index ["decidim_consultations_response_id"], name: "index_consultations_votes_on_consultations_response_id"
   end
 
   create_table "decidim_content_blocks", force: :cascade do |t|
@@ -604,79 +522,6 @@ ActiveRecord::Schema.define(version: 2019_03_04_203149) do
     t.index ["decidim_user_id"], name: "index_decidim_impersonation_logs_on_decidim_user_id"
   end
 
-  create_table "decidim_initiatives", force: :cascade do |t|
-    t.jsonb "title", null: false
-    t.jsonb "description", null: false
-    t.integer "decidim_organization_id"
-    t.bigint "decidim_author_id"
-    t.datetime "published_at"
-    t.integer "state", default: 0, null: false
-    t.integer "signature_type", default: 0, null: false
-    t.date "signature_start_date"
-    t.date "signature_end_date"
-    t.jsonb "answer"
-    t.datetime "answered_at"
-    t.string "answer_url"
-    t.integer "initiative_votes_count", default: 0, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "decidim_user_group_id"
-    t.string "hashtag"
-    t.integer "initiative_supports_count", default: 0, null: false
-    t.integer "scoped_type_id"
-    t.datetime "first_progress_notification_at"
-    t.datetime "second_progress_notification_at"
-    t.integer "offline_votes"
-    t.index "md5((description)::text)", name: "decidim_initiatives_description_search"
-    t.index ["answered_at"], name: "index_decidim_initiatives_on_answered_at"
-    t.index ["decidim_author_id"], name: "index_decidim_initiatives_on_decidim_author_id"
-    t.index ["decidim_organization_id"], name: "index_decidim_initiatives_on_decidim_organization_id"
-    t.index ["published_at"], name: "index_decidim_initiatives_on_published_at"
-    t.index ["title"], name: "decidim_initiatives_title_search"
-  end
-
-  create_table "decidim_initiatives_committee_members", force: :cascade do |t|
-    t.bigint "decidim_initiatives_id"
-    t.bigint "decidim_users_id"
-    t.integer "state", default: 0, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["decidim_initiatives_id"], name: "index_decidim_committee_members_initiative"
-    t.index ["decidim_users_id"], name: "index_decidim_committee_members_user"
-    t.index ["state"], name: "index_decidim_initiatives_committee_members_on_state"
-  end
-
-  create_table "decidim_initiatives_type_scopes", force: :cascade do |t|
-    t.bigint "decidim_initiatives_types_id"
-    t.bigint "decidim_scopes_id"
-    t.integer "supports_required", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["decidim_initiatives_types_id"], name: "idx_scoped_initiative_type_type"
-    t.index ["decidim_scopes_id"], name: "idx_scoped_initiative_type_scope"
-  end
-
-  create_table "decidim_initiatives_types", force: :cascade do |t|
-    t.jsonb "title", null: false
-    t.jsonb "description", null: false
-    t.integer "decidim_organization_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "banner_image"
-    t.index ["decidim_organization_id"], name: "index_decidim_initiative_types_on_decidim_organization_id"
-  end
-
-  create_table "decidim_initiatives_votes", force: :cascade do |t|
-    t.bigint "decidim_initiative_id", null: false
-    t.bigint "decidim_author_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "decidim_user_group_id"
-    t.index ["decidim_author_id"], name: "index_decidim_initiatives_votes_on_decidim_author_id"
-    t.index ["decidim_initiative_id", "decidim_author_id", "decidim_user_group_id"], name: "decidim_initiatives_voutes_author_uniqueness_index", unique: true
-    t.index ["decidim_initiative_id"], name: "index_decidim_initiatives_votes_on_decidim_initiative_id"
-  end
-
   create_table "decidim_meetings_agenda_items", force: :cascade do |t|
     t.bigint "decidim_agenda_id"
     t.integer "position"
@@ -736,10 +581,10 @@ ActiveRecord::Schema.define(version: 2019_03_04_203149) do
     t.integer "available_slots", default: 0, null: false
     t.jsonb "registration_terms"
     t.integer "reserved_slots", default: 0, null: false
-    t.jsonb "services", default: []
     t.boolean "private_meeting", default: false
     t.boolean "transparent", default: true
     t.bigint "organizer_id"
+    t.jsonb "services", default: []
     t.boolean "registration_form_enabled", default: false
     t.index ["decidim_author_id"], name: "index_decidim_meetings_meetings_on_decidim_author_id"
     t.index ["decidim_component_id"], name: "index_decidim_meetings_meetings_on_decidim_component_id"
@@ -918,6 +763,9 @@ ActiveRecord::Schema.define(version: 2019_03_04_203149) do
     t.string "id_documents_methods", default: ["online"], array: true
     t.jsonb "id_documents_explanation_text", default: {}
     t.boolean "user_groups_enabled", default: false, null: false
+    t.jsonb "colors", default: {}
+    t.jsonb "smtp_settings"
+    t.string "deepl_api_key"
     t.index ["host"], name: "index_decidim_organizations_on_host", unique: true
     t.index ["name"], name: "index_decidim_organizations_on_name", unique: true
   end
@@ -994,8 +842,8 @@ ActiveRecord::Schema.define(version: 2019_03_04_203149) do
     t.jsonb "announcement"
     t.boolean "scopes_enabled", default: true, null: false
     t.date "start_date"
-    t.string "reference"
     t.boolean "private_space", default: false
+    t.string "reference"
     t.index ["decidim_organization_id", "slug"], name: "index_unique_process_slug_and_organization", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_processes_on_decidim_organization_id"
   end
@@ -1116,13 +964,14 @@ ActiveRecord::Schema.define(version: 2019_03_04_203149) do
     t.text "address"
     t.float "latitude"
     t.float "longitude"
-    t.integer "proposal_notes_count", default: 0, null: false
     t.integer "proposal_endorsements_count", default: 0, null: false
     t.datetime "published_at"
+    t.integer "proposal_notes_count", default: 0, null: false
     t.integer "coauthorships_count", default: 0, null: false
     t.integer "position"
     t.string "participatory_text_level"
     t.boolean "created_in_meeting", default: false
+    t.boolean "collaborative_draft_origin", default: false
     t.index "md5(body)", name: "decidim_proposals_proposal_body_search"
     t.index "md5(title)", name: "decidim_proposals_proposal_title_search"
     t.index ["created_at"], name: "index_decidim_proposals_proposals_on_created_at"
@@ -1374,11 +1223,11 @@ ActiveRecord::Schema.define(version: 2019_03_04_203149) do
     t.string "roles", default: [], array: true
     t.boolean "email_on_notification", default: false, null: false
     t.string "nickname", limit: 20, default: "", null: false
-    t.datetime "officialized_at"
-    t.jsonb "officialized_as"
     t.string "personal_url"
     t.text "about"
     t.datetime "accepted_tos_version"
+    t.datetime "officialized_at"
+    t.jsonb "officialized_as"
     t.string "newsletter_token", default: ""
     t.datetime "newsletter_notifications_at"
     t.string "type", null: false
@@ -1460,8 +1309,6 @@ ActiveRecord::Schema.define(version: 2019_03_04_203149) do
   add_foreign_key "decidim_attachments", "decidim_attachment_collections", column: "attachment_collection_id", name: "fk_decidim_attachments_attachment_collection_id", on_delete: :nullify
   add_foreign_key "decidim_authorizations", "decidim_users"
   add_foreign_key "decidim_categorizations", "decidim_categories"
-  add_foreign_key "decidim_consultations_responses", "decidim_consultations_questions", column: "decidim_consultations_questions_id"
-  add_foreign_key "decidim_consultations_votes", "decidim_consultations_responses"
   add_foreign_key "decidim_identities", "decidim_organizations"
   add_foreign_key "decidim_newsletters", "decidim_users", column: "author_id"
   add_foreign_key "decidim_participatory_process_steps", "decidim_participatory_processes"

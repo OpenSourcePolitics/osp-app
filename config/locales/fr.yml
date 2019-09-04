@@ -159,6 +159,8 @@ fr:
             osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
   layouts:
     decidim:
+      footer:
+        download_open_data: Données ouvertes
       participatory_processes:
         index:
           promoted_processes: Résidences mises en avant
