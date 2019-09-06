@@ -167,3 +167,12 @@ $navbar-background: darken( $title-bar-background, 10%);
     text-align: left;
   }
 }
+
+// Hide autorisation handler profile tab
+// #user-settings-tabs > li:nth-child(3) {
+//   display: none;
+// }
+
+.main-footer__badge{
+  position: initial;
+}

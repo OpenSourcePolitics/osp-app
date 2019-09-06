@@ -16,6 +16,8 @@ gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch:
 # gem "decidim-consultations", path: "../decidim"
 # gem "decidim-initiatives", path: "../decidim"
 
+gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git"
+
 gem "bootsnap", "~> 1.3"
 
 gem "puma", "~> 3.0"
@@ -27,8 +29,10 @@ gem "ruby-progressbar"
 gem "sentry-raven"
 gem "json", "2.1.0"
 
+gem "pg_search"
+
 group :development, :test do
-  gem "byebug", "~> 10.0", platform: :mri
+  gem "byebug", "~> 11.0", platform: :mri
 
   gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-stable"
   # gem "decidim-dev", path: "../decidim"
