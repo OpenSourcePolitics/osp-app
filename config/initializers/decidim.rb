@@ -15,6 +15,14 @@ Decidim.configure do |config|
       here_app_code: Rails.application.secrets.geocoder[:here_app_code]
   }
 
+  if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_require_authorization)
+    Decidim::Initiatives.minimum_committee_members = 0
+    Decidim::Initiatives.do_not_require_authorization = true
+    Decidim::Initiatives.print_enabled = false
+    Decidim::Initiatives.face_to_face_voting_allowed = false
+    Decidim::Initiatives.default_components = []
+  end
+
   # Custom resource reference generator method
   # config.reference_generator = lambda do |resource, component|
   #   # Implement your custom method to generate resources references
