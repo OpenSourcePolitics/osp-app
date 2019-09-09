@@ -5,8 +5,8 @@ Decidim.configure do |config|
   config.mailer_sender = "ne-pas-repondre@opensourcepolitics.eu"
 
   # Change these lines to set your preferred locales
-  config.default_locale = :fr
-  config.available_locales = [:fr, :en, :ca, :es]
+  config.default_locale = :en
+  config.available_locales = [:en, :fr]
 
   # Geocoder configuration
   config.geocoder = {
