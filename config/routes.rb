@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   devise_scope :user do
-    get '/admin/sign_in', to: "decidim/devise/sessions#new"
+    get '/admin_sign_in', to: "decidim/devise/sessions#new"
   end
 
 
