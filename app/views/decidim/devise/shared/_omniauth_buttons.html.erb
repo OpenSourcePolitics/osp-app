@@ -1,4 +1,4 @@
-<% if Devise.mappings[:user].omniauthable? && any_social_provider_enabled? && !request.env['PATH_INFO'].include?("/admin/") %>
+<% if Devise.mappings[:user].omniauthable? && any_social_provider_enabled? && !request.env['PATH_INFO'].include?("/admin_sign_in") %>
   <div class="row">
     <div class="columns large-4 mediumlarge-6 medium-8 medium-centered">
       <%- Decidim::User.omniauth_providers.each do |provider| %>
