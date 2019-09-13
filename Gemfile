@@ -27,7 +27,7 @@ gem "ruby-progressbar"
 gem "sentry-raven"
 
 group :development, :test do
-  gem "byebug", "~> 10.0", platform: :mri
+  gem "byebug", "~> 11.0", platform: :mri
 
   gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-stable"
   # gem "decidim-dev", path: "../decidim"
