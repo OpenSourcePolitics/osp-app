@@ -291,3 +291,13 @@ h2 {
     max-width: none;
   }
 }
+
+.author-data .author__avatar {
+  margin-left: -25px;
+
+  img {
+    border-radius: 0;
+    max-width: 20px;
+    margin-top: -2px;
+  }
+}
