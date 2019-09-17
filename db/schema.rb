@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_19_091257) do
+ActiveRecord::Schema.define(version: 2019_09_17_123933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -291,6 +291,7 @@ ActiveRecord::Schema.define(version: 2019_06_19_091257) do
     t.integer "parent_id"
     t.integer "decidim_participatory_space_id"
     t.string "decidim_participatory_space_type"
+    t.string "color"
     t.index ["decidim_participatory_space_id", "decidim_participatory_space_type"], name: "index_decidim_categories_on_decidim_participatory_space"
     t.index ["parent_id"], name: "index_decidim_categories_on_parent_id"
   end
@@ -797,6 +798,7 @@ ActiveRecord::Schema.define(version: 2019_06_19_091257) do
     t.datetime "updated_at", null: false
     t.boolean "active", default: false
     t.integer "position"
+    t.jsonb "action_btn_text"
     t.jsonb "cta_text", default: {}
     t.string "cta_path"
     t.index ["decidim_participatory_process_id", "active"], name: "unique_index_to_avoid_duplicate_active_steps", unique: true, where: "(active = true)"
@@ -963,9 +965,9 @@ ActiveRecord::Schema.define(version: 2019_06_19_091257) do
     t.text "address"
     t.float "latitude"
     t.float "longitude"
+    t.integer "proposal_notes_count", default: 0, null: false
     t.integer "proposal_endorsements_count", default: 0, null: false
     t.datetime "published_at"
-    t.integer "proposal_notes_count", default: 0, null: false
     t.integer "coauthorships_count", default: 0, null: false
     t.integer "position"
     t.string "participatory_text_level"
@@ -1222,11 +1224,11 @@ ActiveRecord::Schema.define(version: 2019_06_19_091257) do
     t.string "roles", default: [], array: true
     t.boolean "email_on_notification", default: false, null: false
     t.string "nickname", limit: 20, default: "", null: false
+    t.datetime "officialized_at"
+    t.jsonb "officialized_as"
     t.string "personal_url"
     t.text "about"
     t.datetime "accepted_tos_version"
-    t.datetime "officialized_at"
-    t.jsonb "officialized_as"
     t.string "newsletter_token", default: ""
     t.datetime "newsletter_notifications_at"
     t.string "type", null: false
