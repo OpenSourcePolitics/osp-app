@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: ffd0fb445319f93fdb6ccfd94e2d1652fe2cbb2f
+  revision: dc4f1370fe898b1873917e3d216f5b4acc66eb93
   branch: 0.16-stable
   specs:
     decidim (0.16.1)
@@ -701,7 +701,7 @@ GEM
       rubyzip (~> 1.2, >= 1.2.2)
     sendgrid-ruby (6.0.0)
       ruby_http_client (~> 3.3.0)
-    sentry-raven (2.11.1)
+    sentry-raven (2.11.2)
       faraday (>= 0.7.6, < 1.0)
     sidekiq (6.0.0)
       connection_pool (>= 2.2.2)
@@ -713,7 +713,7 @@ GEM
       rufus-scheduler (~> 3.2)
       sidekiq (>= 3)
       tilt (>= 1.4.0)
-    simplecov (0.17.0)
+    simplecov (0.17.1)
       docile (~> 1.1)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
