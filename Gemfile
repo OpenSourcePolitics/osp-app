@@ -16,8 +16,8 @@ gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch:
 # gem "decidim-consultations", path: "../decidim"
 # gem "decidim-initiatives", path: "../decidim"
 
-# gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git"
-# gem "decidim-polis", git: "https://github.com/OpenSourcePolitics/decidim-polis.git"
+gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git", branch: "0.18-stable"
+gem "decidim-polis", git: "https://github.com/OpenSourcePolitics/decidim-polis.git", branch: "0.18-stable"
 
 # gem "high_voltage", "3.0.0"
 

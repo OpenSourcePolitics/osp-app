@@ -1,10 +1,14 @@
 fr:
-  activemodel:
-    attributes:
   decidim:
     admin:
       profiles:
         eid_verified: Vérifié.e e-ID/itsme
+      participatory_process:
+        private_space: Espace privé
+      osp_authorization_handler:
+        document_number: Numéro unique
+        postal_code: Code postal
+        birthday: Date de naissance
     authorization_handlers:
       osp_authorization_handler:
         explanation: Vérifier votre identité en saisissant un numéro unique
@@ -41,3 +45,7 @@ fr:
     show_traduction: Voir la traduction
     show_the_original: Voir l'original
     automatic_translation: Traduction automatique par %{trad_service}
+  layouts:
+    decidim:
+      footer:
+        download_open_data: Données ouvertes
