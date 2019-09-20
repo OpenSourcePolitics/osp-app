@@ -234,6 +234,9 @@ fr:
     decidim:
       assembly_header:
         assembly_menu_item: Présentation
+      decidim:
+        footer:
+          download_open_data: Données ouvertes
       participatory_processes:
         index:
           promoted_processes: Participations mises en avant
