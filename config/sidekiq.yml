@@ -4,11 +4,12 @@
 - mailers
 - newsletter
 - events
+- metrics
 
 :schedule:
   CalculateAllMetrics:
     every: ['24h', first_in: '1m']
     class: CalculateAllMetricsJob
-  PreloadOpenDataJob:
+  PreloadOpenData:
     every: ['24h', first_in: '1m']
     class: PreloadOpenDataJob
