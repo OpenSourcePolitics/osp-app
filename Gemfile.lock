@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-urlaliases.git
-  revision: 2866301aeb06fd038f044f1d86a296dc55237084
+  revision: 2d910f627b909e9a350f3cd3dfc4f2d8f180acf2
   specs:
     decidim-url_aliases (0.0.1)
       decidim-core (>= 0.16.1)
