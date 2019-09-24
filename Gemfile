@@ -16,6 +16,8 @@ gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch:
 # gem "decidim-consultations", path: "../decidim"
 # gem "decidim-initiatives", path: "../decidim"
 
+gem "decidim-url_aliases", git: "https://github.com/OpenSourcePolitics/decidim-urlaliases.git"
+
 gem "bootsnap", "~> 1.3"
 
 gem "puma", "~> 3.0"
@@ -33,7 +35,7 @@ gem "sinatra", "~> 2.0.2"
 gem "sprockets", "~> 3.7.2"
 
 group :development, :test do
-  gem "byebug", "~> 10.0", platform: :mri
+  gem "byebug", "~> 11.0", platform: :mri
 
   gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-stable"
   # gem "decidim-dev", path: "../decidim"

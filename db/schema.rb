@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_03_100904) do
+ActiveRecord::Schema.define(version: 2019_09_24_213352) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -291,6 +291,7 @@ ActiveRecord::Schema.define(version: 2019_06_03_100904) do
     t.integer "parent_id"
     t.integer "decidim_participatory_space_id"
     t.string "decidim_participatory_space_type"
+    t.string "color"
     t.index ["decidim_participatory_space_id", "decidim_participatory_space_type"], name: "index_decidim_categories_on_decidim_participatory_space"
     t.index ["parent_id"], name: "index_decidim_categories_on_parent_id"
   end
@@ -1290,6 +1291,32 @@ ActiveRecord::Schema.define(version: 2019_06_03_100904) do
     t.string "type"
     t.index ["decidim_organization_id"], name: "index_oauth_applications_on_decidim_organization_id"
     t.index ["uid"], name: "index_oauth_applications_on_uid", unique: true
+  end
+
+  create_table "redirect_rules", id: :serial, force: :cascade do |t|
+    t.string "source", null: false
+    t.boolean "source_is_regex", default: false, null: false
+    t.boolean "source_is_case_sensitive", default: false, null: false
+    t.string "destination", null: false
+    t.boolean "active", default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer "decidim_organization_id"
+    t.index ["active"], name: "index_redirect_rules_on_active"
+    t.index ["source"], name: "index_redirect_rules_on_source"
+    t.index ["source_is_case_sensitive"], name: "index_redirect_rules_on_source_is_case_sensitive"
+    t.index ["source_is_regex"], name: "index_redirect_rules_on_source_is_regex"
+  end
+
+  create_table "request_environment_rules", id: :serial, force: :cascade do |t|
+    t.integer "redirect_rule_id", null: false
+    t.string "environment_key_name", null: false
+    t.string "environment_value", null: false
+    t.boolean "environment_value_is_regex", default: false, null: false
+    t.boolean "environment_value_is_case_sensitive", default: true, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["redirect_rule_id"], name: "index_request_environment_rules_on_redirect_rule_id"
   end
 
   create_table "versions", force: :cascade do |t|

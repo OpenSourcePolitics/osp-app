@@ -14,7 +14,7 @@ module DevelopmentApp
 
     # This needs to be set for correct images URLs in emails
     # DON'T FORGET to ALSO set this in `config/initializers/carrierwave.rb`
-    config.action_mailer.asset_host = "https://participer.loire-atlantique.fr"
+    # config.action_mailer.asset_host = "https://participer.loire-atlantique.fr"
 
     config.after_initialize do
       if Decidim.geocoder.present?
@@ -24,6 +24,8 @@ module DevelopmentApp
         )
       end
     end
+
+    config.redirector.silence_sql_logs = true
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
