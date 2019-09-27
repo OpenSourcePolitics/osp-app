@@ -24,6 +24,23 @@ fr:
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
+    events:
+      admin:
+        upstream_hidden:
+          affected_user:
+            email_intro: Nous n’avons pas pu procéder à la publication de votre commentaire car son contenu ne respecte pas notre charte de modération.
+            email_outro: L'équipe de modération
+            email_subject: Nous n'avons pas publié votre message sur le site du débat [%{participatory_space_title}]
+            notification_title: Nous n'avons pas publié votre message sur le site du débat <a href="%{participatory_space_path}">"%{participatory_space_title}"</a>
+          email_intro: Nous n’avons pas pu procéder à la publication de votre commentaire car son contenu ne respecte pas notre charte de modération.
+          email_outro: L'équipe de modération
+          email_subject: Nous n'avons pas publié votre message sur le site du débat [%{participatory_space_title}]
+          followers:
+            email_intro: Nous n’avons pas pu procéder à la publication de la contribution suivante car son contenu ne respecte pas la charte de modération.
+            email_outro: L'équipe de modération
+            email_subject: Rejet d'une contribution sur le site du débat "%{participatory_space_title}"
+            notification_title: Rejet d'une contribution sur le site du débat <a href="%{participatory_space_path}">"%{participatory_space_title}"</a>
+          notification_title: Nous n'avons pas publié votre message sur le site du débat <a href="%{participatory_space_path}">"%{participatory_space_title}"</a>
     questions:
       admin:
         questions:
