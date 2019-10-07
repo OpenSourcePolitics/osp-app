@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_06_214707) do
+ActiveRecord::Schema.define(version: 2019_10_04_221824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -226,7 +226,6 @@ ActiveRecord::Schema.define(version: 2019_09_06_214707) do
 
   create_table "decidim_authorizations", id: :serial, force: :cascade do |t|
     t.string "name", null: false
-    t.jsonb "metadata"
     t.integer "decidim_user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -234,6 +233,7 @@ ActiveRecord::Schema.define(version: 2019_09_06_214707) do
     t.datetime "granted_at"
     t.jsonb "verification_metadata", default: {}
     t.string "verification_attachment"
+    t.text "encrypted_metadata"
     t.index ["decidim_user_id", "name"], name: "index_decidim_authorizations_on_decidim_user_id_and_name", unique: true
     t.index ["decidim_user_id"], name: "index_decidim_authorizations_on_decidim_user_id"
   end
@@ -625,6 +625,7 @@ ActiveRecord::Schema.define(version: 2019_09_06_214707) do
     t.integer "offline_votes"
     t.string "decidim_author_type", null: false
     t.string "reference"
+    t.string "online_signature_types", default: ["devise"], array: true
     t.index "md5((description)::text)", name: "decidim_initiatives_description_search"
     t.index ["answered_at"], name: "index_decidim_initiatives_on_answered_at"
     t.index ["decidim_author_id", "decidim_author_type"], name: "index_decidim_initiatives_on_decidim_author"
@@ -824,6 +825,7 @@ ActiveRecord::Schema.define(version: 2019_09_06_214707) do
     t.string "related_object_type"
     t.bigint "related_object_id"
     t.bigint "decidim_category_id"
+    t.index ["day", "metric_type", "decidim_organization_id", "participatory_space_type", "participatory_space_id", "related_object_type", "related_object_id", "decidim_category_id"], name: "idx_metric_by_day_type_org_space_object_category", unique: true
     t.index ["day"], name: "index_decidim_metrics_on_day"
     t.index ["decidim_category_id"], name: "index_decidim_metrics_on_decidim_category_id"
     t.index ["decidim_organization_id"], name: "index_decidim_metrics_on_decidim_organization_id"
@@ -922,6 +924,8 @@ ActiveRecord::Schema.define(version: 2019_09_06_214707) do
     t.jsonb "smtp_settings"
     t.jsonb "colors", default: {}
     t.boolean "force_users_to_authenticate_before_access_organization", default: false
+    t.jsonb "omniauth_settings"
+    t.string "online_signature_types", default: [], array: true
     t.index ["host"], name: "index_decidim_organizations_on_host", unique: true
     t.index ["name"], name: "index_decidim_organizations_on_name", unique: true
   end

@@ -185,34 +185,41 @@ $navbar-background: darken( $title-bar-background, 10%);
   }
 }
 
-.button--france_connect {
-  margin: 0 auto;
+.button--france_connect,
+.button--france_connect_uid,
+.button--france_connect_profile {
   background-color: #034EA2;
 
-  width: 280px;
-  height: 80px;
+  &.button--social {
+    margin: 0 auto;
 
-  .button--social__icon {
-    display: block;
-    float: left;
-    padding: .35em .5em;
+    // width: 280px;
     height: 80px;
+    margin-bottom: 1rem;
 
-    .icon {
-      width: 4em;
-      height: 4em;
+    .button--social__icon {
+      display: block;
+      float: left;
+      padding: .35em .5em;
+      height: 80px;
+
+      .icon {
+        width: 4em;
+        height: 4em;
+      }
     }
-  }
 
-  .button--label {
-    display: block;
-    padding-top: 0.6em;
-    font-size: 1.2rem;
-    text-align: center;
-    line-height: 1.5rem;
+    .button--label {
+      display: block;
+      padding-top: 0.6em;
+      font-size: 1.2rem;
+      text-align: center;
+      line-height: 1.5rem;
 
-    b {
-      font-size: 1.42rem;
+      b {
+        font-size: 1.42rem;
+        white-space: nowrap;
+      }
     }
   }
 }
