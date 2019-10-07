@@ -17,10 +17,11 @@ Decidim.configure do |config|
 
   if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_require_authorization)
     Decidim::Initiatives.minimum_committee_members = 0
-    Decidim::Initiatives.do_not_require_authorization = true
-    Decidim::Initiatives.print_enabled = false
-    Decidim::Initiatives.face_to_face_voting_allowed = false
+    # Decidim::Initiatives.do_not_require_authorization = true
+    Decidim::Initiatives.print_enabled = true
+    Decidim::Initiatives.face_to_face_voting_allowed = true
     Decidim::Initiatives.default_components = []
+    Decidim::Initiatives.timestamp_service = "Decidim::Initiatives::UtcTimestamp"
   end
 
   # Custom resource reference generator method
@@ -95,7 +96,7 @@ Decidim.configure do |config|
   #   end
   # end
   #
-  # config.timestamp_service = "MyTimestampService"
+  config.timestamp_service = "Decidim::Initiatives::UtcTimestamp"
 
   # PDF signature service configuration
   #

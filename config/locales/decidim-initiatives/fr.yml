@@ -439,7 +439,8 @@ fr:
       initiatives_type:
         actions:
           title: actes
-          vote: Vote
+          create: Créer une pétition
+          vote: Signer une pétition
   layouts:
     decidim:
       admin:
