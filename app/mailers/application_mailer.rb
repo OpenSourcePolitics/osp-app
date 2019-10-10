@@ -1,4 +1,4 @@
 class ApplicationMailer < Decidim::ApplicationMailer
-  default from: 'from@example.com'
-  layout 'mailer'
+  default from: Decidim.config.mailer_sender
+  layout "decidim/mailer"
 end
