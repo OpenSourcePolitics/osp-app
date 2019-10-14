@@ -4,9 +4,9 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "tmp/master-initiatives-extras"
-gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "tmp/master-initiatives-extras"
-gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "tmp/master-initiatives-extras"
+gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "tmp/master-initiatives-extras-merge"
+# gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "tmp/master-initiatives-extras"
+gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "tmp/master-initiatives-extras-merge"
 
 # gem "decidim", path: "../decidim"
 # gem "decidim-consultations", path: "../decidim"
@@ -34,10 +34,12 @@ gem "faker", "~> 1.9"
 gem "wicked_pdf"
 gem "wkhtmltopdf-binary"
 
+gem "sprockets", "~> 3.7.2"
+
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "tmp/master-initiatives-extras"
+  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "tmp/master-initiatives-extras-merge"
   # gem "decidim-dev", path: "../decidim"
 end
 

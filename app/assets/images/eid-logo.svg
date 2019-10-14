@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="31px" height="19px" viewBox="0 0 31 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>eid-logo</title>
+    <desc>Created with Sketch.</desc>
+    <g id="CSAM---EID" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="eid-logo" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="person">
+                <g id="Vector">
+                    <g id="path1_fill-link" transform="translate(0.700000, 0.310000)">
+                        <path d="M9.18966,0 C6.65101,0 4.59483,2.57081 4.59483,5.74353 C4.59483,8.91626 6.65101,11.4871 9.18966,11.4871 C11.7283,11.4871 13.7845,8.91626 13.7845,5.74353 C13.7845,2.57081 11.7283,0 9.18966,0 Z M4.37887,11.4871 C1.92064,11.579 0,13.6007 0,16.0819 L0,18.3793 L18.3793,18.3793 L18.3793,16.0819 C18.3793,13.6007 16.4587,11.579 14.0004,11.4871 C12.7598,12.8885 11.0506,13.7845 9.18966,13.7845 C7.32875,13.7845 5.61947,12.8885 4.37887,11.4871 Z" id="path1_fill"></path>
+                    </g>
+                </g>
+            </g>
+            <g id="check" transform="translate(19.000000, 5.000000)">
+                <g id="Vector">
+                    <g id="path2_fill-link" transform="translate(0.000000, 0.020000)">
+                        <polygon id="path2_fill" points="9.27234 0 8.23163 1.02718 4.20628 5.1792 3.07582 4.01317 2.03511 2.98599 0 5.08515 0.995843 6.15861 3.16701 8.39811 4.20773 9.42529 5.24844 8.39811 10.3145 3.17262 11.3103 2.09915 9.27524 0"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

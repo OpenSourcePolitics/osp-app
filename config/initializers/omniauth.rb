@@ -66,3 +66,31 @@ if Rails.application.secrets.dig(:omniauth, :decidim).present? && Rails.applicat
 
   Decidim::User.omniauth_providers << :decidim
 end
+
+if Rails.application.secrets.dig(:omniauth, :saml).present? && Rails.application.secrets.dig(:omniauth, :saml, :enabled)
+  Devise.setup do |config|
+    config.omniauth :saml,
+      idp_sso_target_url: Rails.application.secrets.dig(:omniauth, :saml, :idp_sso_target_url),
+      assertion_consumer_service_url: Rails.application.secrets.dig(:omniauth, :saml, :assertion_consumer_service_url),
+      authn_context: Rails.application.secrets.dig(:omniauth, :saml, :authn_context),
+      issuer: Rails.application.secrets.dig(:omniauth, :saml, :issuer),
+      protocol_binding: "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST",
+      authn_context_comparison: "minimum",
+      authn_force: false,
+      idp_slo_target_url: Rails.application.secrets.dig(:omniauth, :saml, :idp_slo_target_url),
+      name_identifier_format: "urn:oasis:names:tc:SAML:2.0:nameid-format:transient",
+      uid_attribute: "urn:be:fedict:iam:attr:fedid",
+      attribute_service_name: 'Eidas extra attributes',
+      attribute_statements: {
+        name: ['uid','name'],
+        email: ['mail', 'email'],
+        first_name: ['surname', 'first_name', 'firstname', 'firstName'],
+        last_name: ['givenName', 'last_name', 'lastname', 'lastName']
+      },
+      idp_cert_fingerprint: Rails.application.secrets.dig(:omniauth, :saml, :idp_cert_fingerprint),
+      idp_cert_fingerprint_validator: lambda { |fingerprint| fingerprint },
+      idp_cert: Rails.application.secrets.dig(:omniauth, :saml, :idp_cert)
+  end
+
+  Decidim::User.omniauth_providers << :saml
+end

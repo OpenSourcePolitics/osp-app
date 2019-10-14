@@ -185,43 +185,75 @@ $navbar-background: darken( $title-bar-background, 10%);
   }
 }
 
+.button--social {
+  margin: 0 auto;
+
+  $icon-height: 32px;
+
+  height: 2.8em;
+  margin-bottom: 1rem;
+
+  .button--social__icon {
+    display: block;
+    float: left;
+    padding: .35em .5em;
+    height: 2.5em;
+
+    .icon {
+      width: 2em;
+      height: 2em;
+    }
+  }
+
+  .button--label {
+    display: block;
+    padding-top: 0.6em;
+    line-height: 1.5rem;
+  }
+}
+
 .button--france_connect,
 .button--france_connect_uid,
 .button--france_connect_profile {
   background-color: #034EA2;
 
-  &.button--social {
-    margin: 0 auto;
+  .button--label b {
+    white-space: nowrap;
+  }
 
-    // width: 280px;
-    height: 80px;
-    margin-bottom: 1rem;
+  .sessions & {
+    &.button--social {
+      margin: 0 auto;
 
-    .button--social__icon {
-      display: block;
-      float: left;
-      padding: .35em .5em;
-      height: 80px;
+      height: 4.8em;
+      margin-bottom: 1rem;
 
-      .icon {
-        width: 4em;
-        height: 4em;
+      .button--social__icon {
+        display: block;
+        float: left;
+        padding: .35em .5em;
+        height: 3em;
+
+        .icon {
+          width: 4em;
+          height: 4em;
+        }
       }
-    }
 
-    .button--label {
-      display: block;
-      padding-top: 0.6em;
-      font-size: 1.2rem;
-      text-align: center;
-      line-height: 1.5rem;
+      .button--label {
+        display: block;
+        padding-top: 0.6em;
+        text-align: center;
+        line-height: 1.5rem;
 
-      b {
-        font-size: 1.42rem;
-        white-space: nowrap;
+        b {
+          font-size: 1.2rem;
+        }
       }
     }
   }
+
+
 }
 
 .logo-wrapper a {
