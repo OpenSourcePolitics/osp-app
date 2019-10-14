@@ -11,8 +11,8 @@ class MoveSignatureTypeToInitativeType < ActiveRecord::Migration[5.2]
     if !ActiveRecord::Base.connection.table_exists?("decidim_initiatives_types") || InitiativesType.count.zero?
       Rails.logger.info "Skipping migration since there's no InitiativesType table"
       return
-    else
-      raise "You need to edit this migration to continue"
+    # else
+    #   raise "You need to edit this migration to continue"
     end
     # rubocop:enable Style/GuardClause
 
