@@ -1,1 +1,1 @@
-require 'extends/confirmations_controller_extend'
+# require 'extends/confirmations_controller_extend'
