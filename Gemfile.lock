@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git
+  revision: c3f55598f6f87bc805f8e960d6b10baa2f8d0d98
+  specs:
+    decidim-term_customizer (0.16.5)
+      decidim-admin (~> 0.16.0)
+      decidim-core (~> 0.16.0)
+
+GIT
   remote: https://github.com/OpenSourcePolitics/decidim-urlaliases.git
   revision: 2d910f627b909e9a350f3cd3dfc4f2d8f180acf2
   specs:
@@ -812,6 +820,7 @@ DEPENDENCIES
   dalli
   decidim!
   decidim-dev!
+  decidim-term_customizer!
   decidim-url_aliases!
   faker (~> 1.8)
   fog-aws
