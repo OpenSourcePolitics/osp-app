@@ -2,6 +2,7 @@ version: '3'
 services:
   app:
     build: .
+    image: osp-app:0.18-dev
     volumes:
       - .:/app
       - bundle:/usr/local/bundle
@@ -19,12 +20,13 @@ services:
     entrypoint: /app/docker-entrypoint.sh
 
   pg:
-    image: postgres
+    image: postgres:11
     volumes:
       - pg-data:/var/lib/postgresql/data
 
   sidekiq:
     build: .
+    image: osp-app:0.18-dev
     command: ["sidekiq", "-C", "config/sidekiq.yml"]
     environment:
       - REDIS_URL=redis://redis:6379
