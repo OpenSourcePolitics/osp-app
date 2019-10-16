@@ -85,7 +85,14 @@ if Rails.application.secrets.dig(:omniauth, :saml).present? && Rails.application
         name: ['uid','name'],
         email: ['mail', 'email'],
         first_name: ['surname', 'first_name', 'firstname', 'firstName'],
-        last_name: ['givenName', 'last_name', 'lastname', 'lastName']
+        last_name: ['givenName', 'last_name', 'lastname', 'lastName'],
+        default_locale: ['locale', 'urn:be:fedict:iam:attr:locale'],
+        locale: ['PrefLanguage', 'pref_language', 'preflanguage', 'locale', 'urn:be:fedict:iam:attr:locale'],
+        nickname: ['uid'],
+        rrn: ['egovNRN', 'egovnrn', 'egov_nrn', 'nrn', 'rrn'],
+        authentication_method: ['authenticationmethod'],
+        authentication_level: ['urn:be:fedict:iam:attr:authenticationmethod'],
+        authentication_context: ['urn:be:fedict:iam:attr:context']
       },
       idp_cert_fingerprint: Rails.application.secrets.dig(:omniauth, :saml, :idp_cert_fingerprint),
       idp_cert_fingerprint_validator: lambda { |fingerprint| fingerprint },
