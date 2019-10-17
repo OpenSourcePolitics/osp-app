@@ -1,10 +1,9 @@
+require "rake"
+
 class OrdersReminderJob < ApplicationJob
   queue_as :default
 
   def perform
-    application_name = Rails.application.class.parent_name
-    application = Object.const_get(application_name)
-    application::Application.load_tasks
-    Rake::Task["decidim:budgets:reminder"].invoke
+    system "rake decidim:budgets:reminder"
   end
 end
