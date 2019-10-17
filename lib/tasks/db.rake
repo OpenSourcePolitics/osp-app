@@ -2,7 +2,9 @@
 
 namespace :decidim do
   Rails.logger = Logger.new(STDOUT)
-  ActiveRecord::Base.logger = Logger.new(STDOUT)
+  if Rails.env.development?
+    ActiveRecord::Base.logger = Logger.new(STDOUT)
+  end
 
   namespace :db do
 
