@@ -18,6 +18,11 @@ fr:
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
+    proposals:
+      proposals:
+        count:
+          proposals_count:
+            one: "%{count} proposition"
     verifications:
       authorizations:
         first_login:
