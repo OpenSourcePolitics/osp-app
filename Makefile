@@ -51,3 +51,6 @@ init:
 	@make migration
 	@make upgrade
 	@make seed
+
+build-no-cache:
+	docker-compose build --no-cache
