@@ -29,8 +29,6 @@ gem "ruby-progressbar"
 gem "sentry-raven"
 
 gem "letter_opener_web", "~> 1.3"
-gem "sprockets", "~>3.7.2"
-
 
 group :development, :test do
   gem "byebug", "~> 10.0", platform: :mri

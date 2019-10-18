@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 8073525704536922d3905326675aeb0538598a4c
+  revision: 69f6528b0ad1ac6b1f8a828daad243aa2e22168b
   branch: 0.18-merge
   specs:
     decidim (0.18.0)
@@ -809,7 +809,6 @@ DEPENDENCIES
   sidekiq-scheduler
   spring (~> 2.0)
   spring-watcher-listen (~> 2.0)
-  sprockets (~> 3.7.2)
   uglifier (~> 4.1)
   web-console (~> 3.5)
 
