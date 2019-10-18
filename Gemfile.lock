@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git
+  revision: 8424d78d5c05398685fba65a4eefd3dbdfc381cd
+  branch: 0.18-stable
+  specs:
+    decidim-term_customizer (0.18.0)
+      decidim-admin (~> 0.18.0)
+      decidim-core (~> 0.18.0)
+
+GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
   revision: 69f6528b0ad1ac6b1f8a828daad243aa2e22168b
   branch: 0.18-merge
@@ -794,6 +803,7 @@ DEPENDENCIES
   dalli
   decidim!
   decidim-dev!
+  decidim-term_customizer!
   faker (~> 1.8)
   fog-aws
   letter_opener_web (~> 1.3)
