@@ -429,6 +429,13 @@ fr:
           highlighted_initiatives:
             active_initiatives: Pétitions actives
             see_all_initiatives: Voir toutes les pétitions
+      state:
+        accepted: Acceptée
+        created: Créée
+        discarded: Retirée
+        published: Publiée
+        rejected: Rejetée
+        validating: Validation technique
       states:
         accepted: Acceptées
         expired: Expirées
