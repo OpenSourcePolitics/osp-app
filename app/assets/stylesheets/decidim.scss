@@ -18,6 +18,9 @@
 @import "decidim/application";
 @import "fontface";
 
+$title-bar-background: #4f4f4f;
+$navbar-background: darken( $title-bar-background, 10%);
+
 $primary-font: 'Roboto', Roboto, Helvetica, Arial, sans-serif;
 $heading-font: 'Panton', Roboto, Arial, sans-serif;
 
