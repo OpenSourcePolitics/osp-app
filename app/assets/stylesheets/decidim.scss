@@ -159,3 +159,25 @@ h4, .h4, .heading4 {
     }
   }
 }
+
+.logo-wrapper a {
+  display: flex;
+  align-items: center;
+
+  img {
+    display: flex;
+    margin-right: .5rem;
+  }
+
+  span{
+    display: flex;
+    color: $dark-gray;
+    font-weight: 600;
+    font-size: 1.4em;
+    border-left: 2px solid $navbar-background;
+    text-align: left;
+    padding: .5rem;
+    line-height: 1;
+    position: relative;
+  }
+}
