@@ -104,6 +104,9 @@ end
                 <%= image_tag current_organization.official_img_footer.url.to_s , alt: current_organization.name %>
               <% end %>
             <% end %>
+            <%= link_to "https://toulouse-metropole.fr", class: "main-footer__badge secondary" do %>
+              <%= image_tag "toulouse/logo-metropole.png" , alt: "Toulouse métropole" %>
+            <% end %>
           </div>
           <ul class="main__footer__nav footer-nav">
             <% if current_organization.static_pages.any? %>

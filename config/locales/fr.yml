@@ -28,3 +28,7 @@ fr:
     decidim:
       footer:
         download_open_data: Données ouvertes
+  layouts:
+    decidim:
+      cookie_warning:
+        ok: 'J''accepte'

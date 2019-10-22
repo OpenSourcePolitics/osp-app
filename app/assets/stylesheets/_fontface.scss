@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'Roboto';
+    src: font-url('decidim/Roboto/Roboto-Light.eot');
+    src: local('Roboto Light'), local('Roboto-Light'),
+        font-url('decidim/Roboto/Roboto-Light.eot?#iefix') format('embedded-opentype'),
+        asset-data-url('decidim/Roboto/Roboto-Light.woff2') format('woff2'),
+        font-url('decidim/Roboto/Roboto-Light.woff') format('woff'),
+        font-url('decidim/Roboto/Roboto-Light.ttf') format('truetype'),
+        font-url('decidim/Roboto/Roboto-Light.svg#Roboto-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: font-url('decidim/Roboto/Roboto-Regular.eot');
+    src: local('Roboto'), local('Roboto-Regular'),
+        font-url('decidim/Roboto/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+        asset-data-url('decidim/Roboto/Roboto-Regular.woff2') format('woff2'),
+        font-url('decidim/Roboto/Roboto-Regular.woff') format('woff'),
+        font-url('decidim/Roboto/Roboto-Regular.ttf') format('truetype'),
+        font-url('decidim/Roboto/Roboto-Regular.svg#Roboto-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: font-url('decidim/Roboto/Roboto-Italic.eot');
+    src: local('Roboto Italic'), local('Roboto-Italic'),
+        font-url('decidim/Roboto/Roboto-Italic.eot?#iefix') format('embedded-opentype'),
+        asset-data-url('decidim/Roboto/Roboto-Italic.woff2') format('woff2'),
+        font-url('decidim/Roboto/Roboto-Italic.woff') format('woff'),
+        font-url('decidim/Roboto/Roboto-Italic.ttf') format('truetype'),
+        font-url('decidim/Roboto/Roboto-Italic.svg#Roboto-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Panton';
+    src: font-url('decidim/Panton/hinted-Panton-Regular.eot');
+    src: local('Panton Regular'), local('Panton-Regular'),
+        font-url('decidim/Panton/hinted-Panton-Regular.eot?#iefix') format('embedded-opentype'),
+        asset-data-url('decidim/Panton/hinted-Panton-Regular.woff2') format('woff2'),
+        font-url('decidim/Panton/hinted-Panton-Regular.woff') format('woff'),
+        font-url('decidim/Panton/hinted-Panton-Regular.ttf') format('truetype'),
+        font-url('decidim/Panton/hinted-Panton-Regular.svg#Panton-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Panton';
+    src: font-url('decidim/Panton/hinted-Panton-SemiBold.eot');
+    src: local('Panton SemiBold'), local('Panton-SemiBold'),
+        font-url('decidim/Panton/hinted-Panton-SemiBold.eot?#iefix') format('embedded-opentype'),
+        asset-data-url('decidim/Panton/hinted-Panton-SemiBold.woff2') format('woff2'),
+        font-url('decidim/Panton/hinted-Panton-SemiBold.woff') format('woff'),
+        font-url('decidim/Panton/hinted-Panton-SemiBold.ttf') format('truetype'),
+        font-url('decidim/Panton/hinted-Panton-SemiBold.svg#Panton-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Panton';
+    src: font-url('decidim/Panton/hinted-Panton-Bold.eot');
+    src: local('Panton Bold'), local('Panton-Bold'),
+        font-url('decidim/Panton/hinted-Panton-Bold.eot?#iefix') format('embedded-opentype'),
+        asset-data-url('decidim/Panton/hinted-Panton-Bold.woff2') format('woff2'),
+        font-url('decidim/Panton/hinted-Panton-Bold.woff') format('woff'),
+        font-url('decidim/Panton/hinted-Panton-Bold.ttf') format('truetype'),
+        font-url('decidim/Panton/hinted-Panton-Bold.svg#Panton-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
