@@ -47,7 +47,7 @@ end
 group :production do
   # gem "rubocop-rails"
   gem "passenger"
-  gem "fog-aws"
+  gem "fog-scaleway", "~> 0.5"
   gem "dalli"
   gem "sendgrid-ruby"
   gem "newrelic_rpm"

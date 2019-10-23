@@ -17,18 +17,31 @@ if ENV["HEROKU_APP_NAME"].present?
   if Rails.env.production?
     CarrierWave.configure do |config|
       config.storage = :fog
-      config.fog_provider = 'fog/aws'                                             # required
+      config.fog_provider = 'fog/aws' # required
       config.fog_credentials = {
-        provider:              'AWS',                                             # required
-        aws_access_key_id:     Rails.application.secrets.aws_access_key_id,     # required
-        aws_secret_access_key: Rails.application.secrets.aws_secret_access_key, # required
-        region:                'eu-central-1',                                    # optional, defaults to 'us-east-1'
-        host:                  's3.eu-central-1.amazonaws.com',                                  # optional, defaults to nil
+          provider: 'AWS', # required
+          aws_access_key_id: Rails.application.secrets.aws_access_key_id, # required
+          aws_secret_access_key: Rails.application.secrets.aws_secret_access_key, # required
+          region: 'eu-central-1', # optional, defaults to 'us-east-1'
+          host: 's3.eu-central-1.amazonaws.com', # optional, defaults to nil
       }
-      config.fog_directory  = 'decidim-heroku'                                 # required
-      config.fog_public     = true                                               # optional, defaults to true
-      config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" }    # optional, defaults to {}
+      config.fog_directory = 'decidim-heroku' # required
+      config.fog_public = true # optional, defaults to true
+      config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" } # optional, defaults to {}
       config.storage = :fog
+    end
+  end
+
+  if ENV["SCALEWAY_ORGANIZATION_ID"].present?
+    if Rails.env.production?
+      CarrierWave.configure do |config|
+        config.fog_credentials = {
+            provider: 'scaleway',
+            scaleway_organization: ENV["SCALEWAY_ORGANIZATION_ID"],
+            scaleway_token: ENV["SCALEWAY_TOKEN"],
+            scaleway_region: "par1"
+        }
+      end
     end
   end
 end
