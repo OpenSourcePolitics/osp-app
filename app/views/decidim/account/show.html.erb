@@ -9,26 +9,27 @@
       <%= f.text_field :name %>
       <%= f.text_field :nickname %>
       <%= f.email_field :email %>
-      <%= f.url_field :personal_url %>
-      <%= f.text_area :about, rows: 5 %>
 
-      <div class="field">
-        <%= f.select :gender, Decidim::User.gender_options, prompt: true, include_blank: @account.gender.present? %>
-      </div>
+
+      <%= f.select :gender, Decidim::User.gender_options, prompt: true, include_blank: @account.gender.present? %>
 
       <div class="field date inline">
-        <%= f.date_select :date_of_birth, start_year: 1900, end_year: 16.years.ago.year, default: 35.years.ago, prompt: { day: t("decidim.users.date_select.day"), month: t("decidim.users.date_select.month"), year: t("decidim.users.date_select.year") } %>
+        <%= f.label :date_of_birth %>
+        <div class="select-wrapper">
+          <%= date_select :user, :date_of_birth, start_year: 1900, end_year: 16.years.ago.year, selected: @account.date_of_birth, prompt: { day: t("decidim.users.date_select.day"), month: t("decidim.users.date_select.month"), year: t("decidim.users.date_select.year") } %>
+        </div>
       </div>
 
-      <div class="field">
-        <%= f.select :region, Decidim::User.region_options, prompt: true, include_blank: @account.region.present? %>
-      </div>
+      <%= f.select :region, Decidim::User.region_options, prompt: true, include_blank: @account.region.present? %>
+
+      <%= f.url_field :personal_url %>
+      <%= f.text_area :about, rows: 5 %>
 
       <% if @account.errors[:password].any? || @account.errors[:password_confirmation].any? %>
         <%= render partial: "password_fields", locals: { form: f } %>
       <% else %>
         <p>
-          <a data-toggle="passwordChange" class="change-password"><%= t ".change_password" %></a>
+          <a data-toggle="passwordChange" class="button small hollow change-password"><%= t ".change_password" %></a>
         </p>
         <div id="passwordChange" class="toggle-show" data-toggler=".is-expanded">
           <%= render partial: "password_fields", locals: { form: f } %>

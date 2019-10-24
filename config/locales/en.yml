@@ -65,6 +65,8 @@ en:
         84: "Auvergne-Rhône-Alpes"
         93: "Provence-Alpes-Côte d'Azur"
         94: "Corse"
+        98: "Nouvelle-Calédonie"
+        99: "French Citizens Abroad"
   layouts:
     decidim:
       footer:

@@ -23,24 +23,26 @@ module UserExtend
 
     def regions
       [
+        "84", # AUVERGNE RHONE ALPES
+        "27", # BOURGOGNE FRANCHE COMTE
+        "53", # BRETAGNE
+        "24", # CENTRE VAL DE LOIRE
+        "94", # CORSE
+        "44", # GRAND EST
+        "32", # HAUTS DE FRANCE
+        "11", # ILE DE FRANCE
+        "28", # NORMANDIE
+        "75", # NOUVELLE AQUITAINE
+        "76", # OCCITANIE
+        "52", # PAYS DE LA LOIRE
+        "93", # PROVENCE ALPES COTE D AZUR
         "1", # GUADELOUPE
         "2", # MARTINIQUE
         "3", # GUYANE
         "4", # LA REUNION
         "6", # MAYOTTE
-        "11", # ILE DE FRANCE
-        "24", # CENTRE VAL DE LOIRE
-        "27", # BOURGOGNE FRANCHE COMTE
-        "28", # NORMANDIE
-        "32", # HAUTS DE FRANCE
-        "44", # GRAND EST
-        "52", # PAYS DE LA LOIRE
-        "53", # BRETAGNE
-        "75", # NOUVELLE AQUITAINE
-        "76", # OCCITANIE
-        "84", # AUVERGNE RHONE ALPES
-        "93", # PROVENCE ALPES COTE D AZUR
-        "94", # CORSE
+        "98", # NOUVELLE CALEDONIE
+        "99", # FRANCAIS DE L ETRANGER
       ]
     end
 

@@ -50,6 +50,8 @@ fr:
         84: "Auvergne-Rhône-Alpes"
         93: "Provence-Alpes-Côte d'Azur"
         94: "Corse"
+        98: "Nouvelle-Calédonie"
+        99: "Français de l'étranger"
     verifications:
       authorizations:
         first_login:

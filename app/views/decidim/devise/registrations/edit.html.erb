@@ -35,7 +35,10 @@
   </div>
 
   <div class="field date inline">
-    <%= f.date_select :date_of_birth, start_year: 1900, end_year: 16.years.ago.year, default: 35.years.ago, prompt: { day: t("decidim.users.date_select.day"), month: t("decidim.users.date_select.month"), year: t("decidim.users.date_select.year") } %>
+    <%= f.label :date_of_birth %>
+    <div class="select-wrapper">
+      <%= date_select :user, :date_of_birth, start_year: 1900, end_year: 16.years.ago.year, selected: resource.date_of_birth, prompt: { day: t("decidim.users.date_select.day"), month: t("decidim.users.date_select.month"), year: t("decidim.users.date_select.year") } %>
+    </div>
   </div>
 
   <div class="field">

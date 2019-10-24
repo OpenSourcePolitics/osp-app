@@ -158,4 +158,23 @@ h4, .h4, .heading4 {
   }
 }
 
-.field.date.inline label {}
+label abbr[data-toggle] {
+  margin-bottom: 0;
+  line-height: .8;
+  border: none;
+  color: $alert;
+}
+
+.field.date.inline .select-wrapper {
+  display: flex;
+  margin: 0 -.35rem 1rem;
+
+  select {
+    margin: 0 .35rem;
+  }
+}
+
+.button.hollow.change-password {
+  border-color: $secondary;
+  color: $secondary;
+}
