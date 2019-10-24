@@ -33,23 +33,19 @@ end
 #   end
 # end
 
-# require "carrierwave/storage/fog"
-#
-# if Rails.application.secrets.dig(:scaleway, :id).present?
-#   CarrierWave.configure do |config|
-#     config.storage = :fog
-#     config.fog_provider = 'fog/aws'
-#     config.fog_credentials = {
-#         provider: 'AWS',
-#         aws_access_key_id: Rails.application.secrets.scaleway.dig(:id),
-#         aws_secret_access_key: Rails.application.secrets.scaleway.dig(:token),
-#         region: "fr-par",
-#         endpoint: "https://s3.fr-par.scw.cloud"
-#     }
-#     config.fog_directory = Rails.application.secrets.scaleway.fetch(:butcket_name) { "osp_app" }
-#     config.fog_attributes = {
-#         'Cache-Control' => "max-age=#{365.day.to_i}",
-#         'X-Content-Type-Options' => "nosniff"
-#     }
-#   end
+# CarrierWave.configure do |config|
+#   config.storage = :fog
+#   config.fog_provider = 'fog/aws'
+#   config.fog_credentials = {
+#       provider: 'AWS',
+#       aws_access_key_id: Rails.application.secrets.scaleway.dig(:id),
+#       aws_secret_access_key: Rails.application.secrets.scaleway.dig(:token),
+#       region: "fr-par",
+#       endpoint: "https://s3.fr-par.scw.cloud"
+#   }
+#   config.fog_directory = Rails.application.secrets.scaleway.fetch(:bucket_name) { "osp_app" }
+#   config.fog_attributes = {
+#       'Cache-Control' => "max-age=#{365.day.to_i}",
+#       'X-Content-Type-Options' => "nosniff"
+#   }
 # end
