@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Gotham';
+    src: asset-data-url('decidim/Gotham/Gotham-Medium.eot');
+    src: local('Gotham Medium'), local('Gotham-Medium'),
+        font-url('decidim/Gotham/Gotham-Medium.eot?#iefix') format('embedded-opentype'),
+        font-url('decidim/Gotham/Gotham-Medium.woff2') format('woff2'),
+        font-url('decidim/Gotham/Gotham-Medium.woff') format('woff'),
+        font-url('decidim/Gotham/Gotham-Medium.ttf') format('truetype'),
+        font-url('decidim/Gotham/Gotham-Medium.svg#Gotham-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: asset-data-url('decidim/Gotham/Gotham-Book.eot');
+    src: local('Gotham Book'), local('Gotham-Book'),
+        font-url('decidim/Gotham/Gotham-Book.eot?#iefix') format('embedded-opentype'),
+        font-url('decidim/Gotham/Gotham-Book.woff2') format('woff2'),
+        font-url('decidim/Gotham/Gotham-Book.woff') format('woff'),
+        font-url('decidim/Gotham/Gotham-Book.ttf') format('truetype'),
+        font-url('decidim/Gotham/Gotham-Book.svg#Gotham-Book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: asset-data-url('decidim/Gotham/Gotham-Light.eot');
+    src: local('Gotham Light'), local('Gotham-Light'),
+        font-url('decidim/Gotham/Gotham-Light.eot?#iefix') format('embedded-opentype'),
+        font-url('decidim/Gotham/Gotham-Light.woff2') format('woff2'),
+        font-url('decidim/Gotham/Gotham-Light.woff') format('woff'),
+        font-url('decidim/Gotham/Gotham-Light.ttf') format('truetype'),
+        font-url('decidim/Gotham/Gotham-Light.svg#Gotham-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Rounded';
+    src: asset-data-url('decidim/GothamRounded/GothamRounded-Medium.eot');
+    src: local('Gotham Rounded Medium'), local('GothamRounded-Medium'),
+        font-url('decidim/GothamRounded/GothamRounded-Medium.eot?#iefix') format('embedded-opentype'),
+        font-url('decidim/GothamRounded/GothamRounded-Medium.woff2') format('woff2'),
+        font-url('decidim/GothamRounded/GothamRounded-Medium.woff') format('woff'),
+        font-url('decidim/GothamRounded/GothamRounded-Medium.ttf') format('truetype'),
+        font-url('decidim/GothamRounded/GothamRounded-Medium.svg#GothamRounded-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Rounded';
+    src: asset-data-url('decidim/GothamRounded/GothamRounded-Book.eot');
+    src: local('Gotham Rounded Book'), local('GothamRounded-Book'),
+        font-url('decidim/GothamRounded/GothamRounded-Book.eot?#iefix') format('embedded-opentype'),
+        font-url('decidim/GothamRounded/GothamRounded-Book.woff2') format('woff2'),
+        font-url('decidim/GothamRounded/GothamRounded-Book.woff') format('woff'),
+        font-url('decidim/GothamRounded/GothamRounded-Book.ttf') format('truetype'),
+        font-url('decidim/GothamRounded/GothamRounded-Book.svg#GothamRounded-Book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

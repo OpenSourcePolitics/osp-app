@@ -1,0 +1,41 @@
+<div class="row">
+  <%= decidim_form_for(@account, url: account_path, method: :put, html: { autocomplete: "nope" }) do |f| %>
+    <input autocomplete="off" name="hidden" type="password" style="display:none;">
+    <div class="columns large-4">
+      <%= f.upload :avatar %>
+    </div>
+
+    <div class="columns large-8 end">
+      <%= f.text_field :name %>
+      <%= f.text_field :nickname %>
+      <%= f.email_field :email %>
+      <%= f.url_field :personal_url %>
+      <%= f.text_area :about, rows: 5 %>
+
+      <div class="field">
+        <%= f.select :gender, Decidim::User.gender_options, prompt: true, include_blank: @account.gender.present? %>
+      </div>
+
+      <div class="field date inline">
+        <%= f.date_select :date_of_birth, start_year: 1900, end_year: 16.years.ago.year, default: 35.years.ago, prompt: { day: t("decidim.users.date_select.day"), month: t("decidim.users.date_select.month"), year: t("decidim.users.date_select.year") } %>
+      </div>
+
+      <div class="field">
+        <%= f.select :region, Decidim::User.region_options, prompt: true, include_blank: @account.region.present? %>
+      </div>
+
+      <% if @account.errors[:password].any? || @account.errors[:password_confirmation].any? %>
+        <%= render partial: "password_fields", locals: { form: f } %>
+      <% else %>
+        <p>
+          <a data-toggle="passwordChange" class="change-password"><%= t ".change_password" %></a>
+        </p>
+        <div id="passwordChange" class="toggle-show" data-toggler=".is-expanded">
+          <%= render partial: "password_fields", locals: { form: f } %>
+        </div>
+      <% end %>
+
+      <%= f.submit t(".update_account"), disable_with: true %>
+    <% end %>
+  </div>
+</div>

@@ -17,14 +17,52 @@
 
 @import "decidim/application";
 
-// .logo-cityhall {
-//   position: static;
-//   margin: 0;
-//   @media print, screen and (min-width: 40em) {
-//     text-align: left;
-//   }
-// }
+@import "fontface";
+// TODO : PR on decidim-core/app/assets/stylesheets/decidim/utils/_settings.scss to add !default on this variable.
+$body-font-family: 'Gotham','Roboto', 'Source Sans Pro', Helvetica, Arial, sans-serif;
 
+$primary-font: $body-font-family;
+$heading-font: 'Gotham Rounded', Roboto, Arial, sans-serif;
+
+body {
+  font-family: $primary-font;
+  font-weight: normal;
+}
+
+.logo-wrapper {
+  font-family: $heading-font;
+  font-weight: bold;
+}
+
+.main-nav {
+  font-family: $heading-font;
+  font-weight: bold;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4, .heading4 {
+  font-family: $heading-font;
+  font-weight: bold;
+  .footer__subhero & {
+    font-family: $primary-font;
+  }
+}
+
+.card__title, .home-pam__title {
+  font-family: $primary-font;
+  font-weight: bold;
+}
+
+.home-pam__number {
+  font-family: $heading-font;
+  font-weight: bold;
+}
+
+.footer__subhero {
+  font-family: $primary-font;
+}
 
 .initiative-types-select {
   white-space: normal !important;
@@ -119,3 +157,5 @@
     }
   }
 }
+
+.field.date.inline label {}

@@ -2,6 +2,7 @@
 # entry point, but you can change what controller it inherits from
 # so you can customize some methods.
 class DecidimController < ApplicationController
+  include ::RegistrationsControllerExtend
   before_action :set_raven_context
 
   private
