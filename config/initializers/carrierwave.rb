@@ -41,8 +41,8 @@ CarrierWave.configure do |config|
   config.fog_provider = 'fog/aws'
   config.fog_credentials = {
       provider: 'AWS',
-      aws_access_key_id: Rails.application.secrets.scaleway.id,
-      aws_secret_access_key: Rails.application.secrets.scaleway.token,
+      aws_access_key_id: Rails.application.secrets.scaleway.dig(:id),
+      aws_secret_access_key: Rails.application.secrets.scaleway.dig(:token),
       region: "fr-par",
       endpoint: "https://s3.fr-par.scw.cloud"
   }
