@@ -26,9 +26,9 @@ module CreateOmniauthRegistrationExtend
         # TODO: raise ActiveRecord::RecordInvalid because of quality setting on uploader, this line is a quick fix
         @user.remote_avatar_url = form.avatar_url if form.avatar_url.present? && !form.avatar_url.end_with?("svg")
         @user.skip_confirmation! if verified_email
-        @user.gender = form.gender
-        @user.date_of_birth = form.date_of_birth
-        @user.region = form.region
+        @user.encrypted_gender = Decidim::AttributeEncryptor.encrypt(form.gender)
+        @user.encrypted_date_of_birth = Decidim::AttributeEncryptor.encrypt(form.date_of_birth&.to_s)
+        @user.encrypted_region = Decidim::AttributeEncryptor.encrypt(form.region)
       end
 
       @user.tos_agreement = "1"

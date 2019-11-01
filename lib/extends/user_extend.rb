@@ -4,6 +4,29 @@ require "active_support/concern"
 module UserExtend
   extend ActiveSupport::Concern
 
+  included do
+
+    attr_reader :gender
+    attr_reader :date_of_birth
+    attr_reader :region
+
+    def gender
+      return unless encrypted_gender.present?
+      @gender ||= Decidim::AttributeEncryptor.decrypt(encrypted_gender)
+    end
+
+    def date_of_birth
+      return unless encrypted_date_of_birth.present?
+      @date_of_birth ||= Decidim::AttributeEncryptor.decrypt(encrypted_date_of_birth).to_date
+    end
+
+    def region
+      return unless encrypted_region.present?
+      @region ||= Decidim::AttributeEncryptor.decrypt(encrypted_region)
+    end
+
+  end
+
   class_methods do
 
     def genders

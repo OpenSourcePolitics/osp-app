@@ -19,9 +19,9 @@ module CreateRegistrationExtend
         newsletter_notifications_at: form.newsletter_at,
         email_on_notification: true,
         accepted_tos_version: form.current_organization.tos_version,
-        gender: form.gender,
-        date_of_birth: form.date_of_birth,
-        region: form.region
+        encrypted_gender: Decidim::AttributeEncryptor.encrypt(form.gender),
+        encrypted_date_of_birth: Decidim::AttributeEncryptor.encrypt(form.date_of_birth&.to_s),
+        encrypted_region: Decidim::AttributeEncryptor.encrypt(form.region)
       )
     end
   end

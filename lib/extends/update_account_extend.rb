@@ -13,9 +13,9 @@ module UpdateAccountExtend
       @user.email = @form.email
       @user.personal_url = @form.personal_url
       @user.about = @form.about
-      @user.gender = @form.gender
-      @user.date_of_birth = @form.date_of_birth
-      @user.region = @form.region
+      @user.encrypted_gender = Decidim::AttributeEncryptor.encrypt(@form.gender)
+      @user.encrypted_date_of_birth = Decidim::AttributeEncryptor.encrypt(@form.date_of_birth&.to_s)
+      @user.encrypted_region = Decidim::AttributeEncryptor.encrypt(@form.region)
     end
   end
 end
