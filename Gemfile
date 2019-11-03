@@ -16,7 +16,9 @@ gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch:
 # gem "decidim-consultations", path: "../decidim"
 # gem "decidim-initiatives", path: "../decidim"
 
-# gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git"
+gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git", branch: "0.18-stable"
+gem 'decidim-unique_identity', git: "https://github.com/OpenSourcePolitics/decidim-module-unique-identity"
+# gem 'decidim-unique_identity', path: "../decidim-module-unique-identity"
 
 gem "bootsnap", "~> 1.3"
 
@@ -29,6 +31,8 @@ gem "ruby-progressbar"
 gem "sentry-raven"
 
 gem "letter_opener_web", "~> 1.3"
+
+gem "sprockets", "~> 3.7.2"
 
 group :development, :test do
   gem "byebug", "~> 10.0", platform: :mri
