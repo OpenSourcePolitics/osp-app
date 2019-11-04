@@ -1,0 +1,67 @@
+.author-row {
+  display: flex;
+  align-items: center;
+
+  .author--avatar {
+    img {
+      max-width: 3.5em;
+      border-radius: .5rem;
+    }
+  }
+
+  .author--name {
+    margin-left: .7rem;
+    font-size: 110%;
+    line-height: 100%;
+
+    small {
+      display: block;
+      color: #666;
+    }
+  }
+
+  .author--actions {
+    margin-left: 2rem;
+    // align-self: baseline;
+
+    .button {
+      text-transform: lowercase;
+      font-variant: small-caps;
+      font-size: 100%;
+      font-weight: bold;
+
+      margin-bottom: 0;
+
+      &.tiny{ padding: .15rem .5rem .35rem; }
+
+      .icon{
+        vertical-align: inherit;
+        margin-right: .25rem;
+      }
+    }
+  }
+}
+
+.initiative-info {
+  strong {
+    display: block;
+    text-transform: lowercase;
+    font-variant: small-caps;
+    color: #666;
+  }
+
+  .flex-column {
+    display: flex;
+
+    .info-box {
+      border: 1px solid #ddd;
+      border-radius: .5rem;
+      margin-right: .5rem;
+      padding: 0 .5rem .5rem;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}

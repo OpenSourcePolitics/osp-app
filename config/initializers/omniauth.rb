@@ -2,8 +2,31 @@
 
 Rails.application.config.middleware.use OmniAuth::Builder do
   OmniAuth.config.logger = Rails.logger
+  # OmniAuth.config.allowed_request_methods = %i[get post delete]
 end
 
+
+# if Rails.application.secrets.dig(:omniauth, :france_connect_uid).present? && Rails.application.secrets.dig(:omniauth, :france_connect_uid, :enabled)
+#   ::Devise.setup do |config|
+#     config.omniauth :france_connect_uid,
+#       Rails.application.secrets.dig(:omniauth, :france_connect_uid, :identifier),
+#       Rails.application.secrets.dig(:omniauth, :france_connect_uid, :secret),
+#       Rails.application.secrets.dig(:omniauth, :france_connect_uid, :host)
+#   end
+#
+#   Decidim::User.omniauth_providers << :france_connect_uid
+# end
+#
+# if Rails.application.secrets.dig(:omniauth, :france_connect_profile).present? && Rails.application.secrets.dig(:omniauth, :france_connect_profile, :enabled)
+#   ::Devise.setup do |config|
+#     config.omniauth :france_connect_profile,
+#       Rails.application.secrets.dig(:omniauth, :france_connect_profile, :identifier),
+#       Rails.application.secrets.dig(:omniauth, :france_connect_profile, :secret),
+#       Rails.application.secrets.dig(:omniauth, :france_connect_profile, :host)
+#   end
+#
+#   Decidim::User.omniauth_providers << :france_connect_profile
+# end
 
 if Rails.application.secrets.dig(:omniauth, :france_connect_uid).present? && Rails.application.secrets.dig(:omniauth, :france_connect_uid, :enabled)
   ::Devise.setup do |config|

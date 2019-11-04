@@ -146,9 +146,9 @@ fr:
             title: Répondez pour %{title}
           info_initiative:
             created_at: Créé à
-            description: La description
-            initiative_votes_count: Les votes comptent
-            initiatives: Les pétitions
+            description: Description
+            initiative_votes_count: Signatures
+            initiatives: Pétitions
             state: Etat
         committee_requests:
           index:
