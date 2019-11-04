@@ -1,0 +1,55 @@
+<div class="card">
+  <div class="card-divider">
+    <h2 class="card-title">
+      <%= link_to "#{t ".initiatives"} > ", initiatives_path %>
+      <%= decidim_sanitize translated_attribute(initiative.title) %>
+    </h2>
+  </div>
+
+  <div class="card-section">
+    <div class="author-row">
+      <div class="author--avatar">
+        <%= image_tag initiative.author.avatar_url %>
+      </div>
+      <div class="author--name">
+        <%= initiative.author.name %>
+        <small>@<%= initiative.author.nickname %></small>
+      </div>
+      <div class="author--actions">
+        <% if authorizations.any? && authorizations.first.metadata.present? %>
+          <%= metadata_modal_button_to authorizations.first, method: :get, remote: true, class: "button tiny hollow" do %>
+            <%= icon "shield" %>
+            <%= t "actions.metadata", scope: "decidim.verifications.omniauth.admin.authorizations.index" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-section initiative-info">
+    <div class="row column">
+      <strong><%= t ".description" %></strong>
+      <div><%= decidim_sanitize translated_attribute(initiative.description) %></div>
+    </div>
+    <div class="row column flex-column">
+      <div class="info-box">
+        <strong><%= t ".created_at" %></strong>
+        <p><%= l initiative.created_at, format: :decidim_short %></p>
+      </div>
+      <div class="info-box">
+        <strong><%= t ".state" %></strong>
+        <p><%= I18n.t(initiative.state, scope: "decidim.initiatives.admin_states") %></p>
+      </div>
+      <div class="info-box">
+        <strong><%= t ".initiative_votes_count" %></strong>
+        <p class="text-right"><b><%= initiative.initiative_votes_count %></b>/<%= initiative.scoped_type.supports_required %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render partial: "decidim/shared/authorization_modal" %>
+
+<%= stylesheet_link_tag "decidim/admin/initiatives-extras" %>
+<%= stylesheet_link_tag "decidim/omniauth/extras" %>
+<%= javascript_include_tag "decidim/admin/reveal" %>

@@ -18,8 +18,7 @@ Decidim.configure do |config|
   if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_require_authorization)
     Decidim::Initiatives.minimum_committee_members = 0
     # Decidim::Initiatives.do_not_require_authorization = true
-    Decidim::Initiatives.print_enabled = true
-    # Decidim::Initiatives.face_to_face_voting_allowed = true
+    Decidim::Initiatives.print_enabled = false
     Decidim::Initiatives.default_components = []
     Decidim::Initiatives.timestamp_service = "Decidim::Initiatives::UtcTimestamp"
   end
