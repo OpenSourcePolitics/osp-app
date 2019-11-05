@@ -12,7 +12,7 @@ module ConfirmationsControllerExtend
       if first_login_and_not_authorized?(resource)
         decidim_verifications.authorizations_path
       else
-        super
+        after_invite_path_for(resource)
       end
     end
 
