@@ -10,7 +10,7 @@
       </div>
       <div class="author--name">
         <%= current_initiative.author.name %>
-        <small>@<%= current_initiative.author.nickname %></small>
+        <small><%= current_initiative.author.nickname %></small>
       </div>
       <div class="author--actions">
         <% if authorizations && authorizations.any? && authorizations.first.metadata.present? %>
