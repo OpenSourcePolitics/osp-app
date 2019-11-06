@@ -43,6 +43,7 @@ if Rails.application.secrets.dig(:omniauth, :france_connect_uid).present? && Rai
         token_endpoint: '/api/v1/token',
         userinfo_endpoint: '/api/v1/userinfo',
         jwks_uri: '/api/v1/jwk',
+        end_session_endpoint: '/api/v1/logout',
         identifier: Rails.application.secrets.dig(:omniauth, :france_connect_uid, :identifier),
         secret: Rails.application.secrets.dig(:omniauth, :france_connect_uid, :secret),
         redirect_uri: Rails.application.secrets.dig(:omniauth, :france_connect_uid, :redirect_uri)
@@ -68,6 +69,7 @@ if Rails.application.secrets.dig(:omniauth, :france_connect_profile).present? &&
         token_endpoint: '/api/v1/token',
         userinfo_endpoint: '/api/v1/userinfo',
         jwks_uri: '/api/v1/jwk',
+        end_session_endpoint: '/api/v1/logout',
         identifier: Rails.application.secrets.dig(:omniauth, :france_connect_profile, :identifier),
         secret: Rails.application.secrets.dig(:omniauth, :france_connect_profile, :secret),
         redirect_uri: Rails.application.secrets.dig(:omniauth, :france_connect_profile, :redirect_uri)
