@@ -92,7 +92,7 @@ end
         </div>
 
         <main>
-          <%= display_flash_messages %>
+          <%= display_flash_messages key_matching: { omniauth: :success, logout: :success } %>
           <%= yield %>
         </main>
       </div><!-- /.footer-separator -->
