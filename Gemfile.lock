@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: fa17835dff5f664a71c695aa48c6d4e455a0c7e1
+  revision: 3e6a7c78defe3443c4cdc6d84573e29b1697c849
   branch: feature/setup-comments-on-components-or-organization
   specs:
     decidim (0.18.0)
