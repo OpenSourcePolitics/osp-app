@@ -4,19 +4,19 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-stable"
+gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.18-merge"
 # gem "decidim", path: "../decidim"
 # gem "decidim-map", path: "../decidim-map"
 
-# gem "decidim-conferences", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-stable"
-# gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-stable"
-# gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-stable"
+# gem "decidim-conferences", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.18-dev"
+# gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.18-dev"
+# gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.18-dev"
 
 # gem "decidim-conferences", path: "../decidim"
 # gem "decidim-consultations", path: "../decidim"
 # gem "decidim-initiatives", path: "../decidim"
 
-gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git"
+gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git", branch: "0.18-stable"
 
 gem "bootsnap", "~> 1.3"
 
@@ -28,15 +28,19 @@ gem "faker", "~> 1.8"
 gem "ruby-progressbar"
 gem "sentry-raven"
 
-group :development, :test do
-  gem "byebug", "~> 11.0", platform: :mri
+gem "letter_opener_web", "~> 1.3"
 
-  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-stable"
+gem "sprockets", "~> 3.7"
+
+group :development, :test do
+  gem "dotenv-rails"
+  gem "byebug", "~> 10.0", platform: :mri
+
+  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.18-merge"
   # gem "decidim-dev", path: "../decidim"
 end
 
 group :development do
-  gem "letter_opener_web", "~> 1.3"
   gem "listen", "~> 3.1"
   gem "spring", "~> 2.0"
   gem "spring-watcher-listen", "~> 2.0"
@@ -44,6 +48,7 @@ group :development do
 end
 
 group :production do
+  # gem "rubocop-rails"
   gem "passenger"
   gem "fog-aws"
   gem "dalli"
