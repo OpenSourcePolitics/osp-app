@@ -1,18 +1,14 @@
-if Rails.env.production?
-  require "sidekiq/web"
-end
+# frozen_string_literal: true
+
+require 'sidekiq/web'
+require 'sidekiq-scheduler/web'
 
 Rails.application.routes.draw do
-
-  if Rails.env.production?
-    authenticate :user, lambda { |u| u.admin? } do
-      mount Sidekiq::Web => '/sidekiq'
-    end
+  authenticate :admin do
+    mount Sidekiq::Web => '/sidekiq'
   end
 
-  if Rails.env.development?
-    mount LetterOpenerWeb::Engine, at: "/letter_opener"
-  end
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 
   mount Decidim::Core::Engine => '/'
   # mount Decidim::Map::Engine => '/map'
