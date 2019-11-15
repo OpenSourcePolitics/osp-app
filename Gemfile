@@ -32,6 +32,8 @@ gem "letter_opener_web", "~> 1.3"
 
 gem "sprockets", "~> 3.7"
 
+gem "newrelic_rpm"
+
 group :development, :test do
   gem "dotenv-rails"
   gem "byebug", "~> 10.0", platform: :mri
