@@ -25,7 +25,6 @@ Rails.application.configure do
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = Uglifier.new(:harmony => true)
-  config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
@@ -62,6 +61,8 @@ Rails.application.configure do
     config.cache_store = :dalli_store, ENV["MEMCACHEDCLOUD_SERVERS"].split(","), {
       username: ENV["MEMCACHEDCLOUD_USERNAME"], password: ENV["MEMCACHEDCLOUD_PASSWORD"]
     }
+  else
+    config.cache_store = :mem_cache_store
   end
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
@@ -81,6 +82,9 @@ Rails.application.configure do
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
+
+  # config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.delivery_method = :letter_opener_web
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
@@ -132,5 +136,4 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
 end
