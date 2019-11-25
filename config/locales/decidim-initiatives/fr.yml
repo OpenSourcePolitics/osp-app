@@ -296,7 +296,7 @@ fr:
         show_similar_initiatives:
           back: Retour
           compare_help: Si l'une des pétitions suivantes est similaire à la vôtre, nous vous encourageons à l'appuyer. Votre proposition aura ainsi plus de possibilités de se réaliser.
-          continue: Mon pétition est différente
+          continue: Ma pétition est différente
           more_information: "(Plus d'informations)"
       events:
         create_initiative_event:

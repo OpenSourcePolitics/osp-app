@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 6eb1fc1ec6efe2a5badd9bc383d32351a8f9afb4
+  revision: 8f6d2c16ea5ae2317a6139935d55de6a94d9bdb8
   branch: tmp/master-initiatives-extras-merge
   specs:
     decidim (0.20.0.dev)
@@ -92,7 +92,7 @@ GIT
       invisible_captcha (~> 0.12)
       jquery-rails (~> 4.3)
       kaminari (~> 1.1)
-      loofah (~> 2.2)
+      loofah (~> 2.3.1)
       mini_magick (~> 4.9)
       mustache (~> 1.1.0)
       nobspw (~> 0.6.0)
@@ -326,7 +326,7 @@ GEM
     cells-rails (0.0.9)
       actionpack (>= 3.0)
       cells (>= 4.1.6, < 5.0.0)
-    charlock_holmes (0.7.6)
+    charlock_holmes (0.7.7)
     childprocess (3.0.0)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -378,7 +378,7 @@ GEM
     docile (1.3.2)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-    doorkeeper (5.2.1)
+    doorkeeper (5.2.2)
       railties (>= 5)
     doorkeeper-i18n (4.0.1)
     equalizer (0.0.11)
@@ -394,7 +394,7 @@ GEM
     erubi (1.9.0)
     etherpad-lite (0.3.0)
       rest-client (>= 1.6)
-    excon (0.68.0)
+    excon (0.69.1)
     execjs (2.7.0)
     factory_bot (4.11.1)
       activesupport (>= 3.0.0)
@@ -471,7 +471,7 @@ GEM
       ice_cube (~> 0.16)
     ice_cube (0.16.3)
     ice_nine (0.11.2)
-    invisible_captcha (0.12.2)
+    invisible_captcha (0.13.0)
       rails (>= 3.2.0)
     ipaddress (0.8.3)
     jaro_winkler (1.5.4)
@@ -482,7 +482,7 @@ GEM
     jquery-tmpl-rails (1.1.0)
       rails (>= 3.1.0)
     json (2.2.0)
-    json-jwt (1.10.2)
+    json-jwt (1.11.0)
       activesupport (>= 4.2)
       aes_key_wrap
       bindata
@@ -595,7 +595,7 @@ GEM
     paper_trail (10.3.1)
       activerecord (>= 4.2)
       request_store (~> 1.1)
-    parallel (1.18.0)
+    parallel (1.19.1)
     parser (2.6.5.0)
       ast (~> 2.4.0)
     pg (1.1.4)
@@ -614,12 +614,13 @@ GEM
     rack (2.0.7)
     rack-attack (6.2.1)
       rack (>= 1.0, < 3)
-    rack-cors (1.0.3)
-    rack-oauth2 (1.10.0)
+    rack-cors (1.1.0)
+      rack (>= 2.0.0)
+    rack-oauth2 (1.10.1)
       activesupport
       attr_required
       httpclient
-      json-jwt (>= 1.9.0)
+      json-jwt (>= 1.11.0)
       rack
     rack-protection (2.0.7)
       rack
@@ -657,7 +658,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.19.0, < 2.0)
     rainbow (3.0.0)
-    rake (13.0.0)
+    rake (13.0.1)
     ransack (2.1.1)
       actionpack (>= 5.0)
       activerecord (>= 5.0)
@@ -689,15 +690,15 @@ GEM
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
       rspec-mocks (~> 3.9.0)
-    rspec-cells (0.3.4)
+    rspec-cells (0.3.5)
       cells (>= 4.0.0, < 6.0.0)
-      rspec-rails (~> 3.2)
+      rspec-rails (< 5.0)
     rspec-core (3.9.0)
       rspec-support (~> 3.9.0)
     rspec-expectations (3.9.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
-    rspec-html-matchers (0.9.1)
+    rspec-html-matchers (0.9.2)
       nokogiri (~> 1)
       rspec (>= 3.0.0.a, < 4)
     rspec-mocks (3.9.0)
@@ -724,7 +725,7 @@ GEM
     rubocop-rails (2.0.1)
       rack (>= 1.1)
       rubocop (>= 0.70.0)
-    rubocop-rspec (1.36.0)
+    rubocop-rspec (1.37.0)
       rubocop (>= 0.68.1)
     ruby-ole (1.2.12.2)
     ruby-progressbar (1.10.1)
@@ -789,7 +790,7 @@ GEM
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.10)
-    tomlrb (1.2.8)
+    tomlrb (1.2.9)
     truncato (0.7.11)
       htmlentities (~> 4.3.1)
       nokogiri (>= 1.7.0, <= 2.0)
@@ -841,7 +842,7 @@ GEM
       activesupport
     wisper (2.0.1)
     wisper-rspec (1.1.0)
-    wkhtmltopdf-binary (0.12.4)
+    wkhtmltopdf-binary (0.12.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
 
