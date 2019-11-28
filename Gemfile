@@ -16,7 +16,7 @@ gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch:
 # gem "decidim-consultations", path: "../decidim"
 # gem "decidim-initiatives", path: "../decidim"
 
-# gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git"
+gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git", branch: "0.dev"
 
 gem "bootsnap", "~> 1.3"
 
@@ -31,6 +31,11 @@ gem "sentry-raven"
 gem "letter_opener_web", "~> 1.3"
 
 gem "sprockets", "~> 3.7"
+
+# gem "omniauth-saml", "~> 1.10.0"
+gem "omniauth-oauth2"
+# gem "omniauth_openid_connect", "0.3.1"
+# gem "omniauth-jwt"
 
 group :development, :test do
   gem "dotenv-rails"
