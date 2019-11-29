@@ -5,6 +5,8 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 
 gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.18-merge"
+gem "decidim-homepage_interactive_map", git: "https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map"
+
 # gem "decidim", path: "../decidim"
 # gem "decidim-map", path: "../decidim-map"
 

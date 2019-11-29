@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map
+  revision: 84728d6617063a09a6af8fc7af31a8c2aa61bc59
+  specs:
+    decidim-homepage_interactive_map (0.18.0)
+      decidim-admin (= 0.18.0)
+      decidim-core (= 0.18.0)
+      decidim-dev (= 0.18.0)
+
+GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
   revision: 8b12416735587bd61444669aad25ec77020bb86e
   branch: 0.18-merge
@@ -798,6 +807,7 @@ DEPENDENCIES
   dalli
   decidim!
   decidim-dev!
+  decidim-homepage_interactive_map!
   dotenv-rails
   faker (~> 1.8)
   fog-aws
