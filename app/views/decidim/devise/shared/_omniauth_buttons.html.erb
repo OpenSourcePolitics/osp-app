@@ -1,6 +1,6 @@
-<% if Devise.mappings[:user].omniauthable? && any_social_provider_enabled? && !request.env['PATH_INFO'].include?("/admin_sign_in") %>
+<% if Devise.mappings[:user].omniauthable? && any_social_provider_enabled? %>
   <div class="row">
-    <div class="<%= column_classes %>">
+    <div class="columns large-4 mediumlarge-6 medium-8 medium-centered">
       <%- Decidim::User.omniauth_providers.each do |provider| %>
         <% if social_provider_enabled?(provider) && (request.env.dig(:available_authorizations).nil? || request.env.dig(:available_authorizations).include?(provider.to_s)) %>
           <div class="social-register">
