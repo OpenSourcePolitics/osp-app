@@ -5,7 +5,7 @@ Decidim.configure do |config|
   config.mailer_sender = "ne-pas-repondre@opensourcepolitics.eu"
 
   # Change these lines to set your preferred locales
-  config.default_locale = :en
+  config.default_locale = :fr
   config.available_locales = [:en, :fr]
 
   # Geocoder configuration
@@ -17,7 +17,7 @@ Decidim.configure do |config|
 
   if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_require_authorization)
     Decidim::Initiatives.minimum_committee_members = 0
-    # Decidim::Initiatives.do_not_require_authorization = true
+    Decidim::Initiatives.default_signature_time_period_length = 6.months
     Decidim::Initiatives.print_enabled = false
     Decidim::Initiatives.default_components = []
     Decidim::Initiatives.timestamp_service = "Decidim::Initiatives::UtcTimestamp"

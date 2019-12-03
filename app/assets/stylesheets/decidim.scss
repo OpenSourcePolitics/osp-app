@@ -217,6 +217,10 @@ $navbar-background: darken( $title-bar-background, 10%);
 .button--france_connect_profile {
   background-color: #034EA2;
 
+  &:hover {
+    background-color: #034EA2;
+  }
+
   .button--label b {
     white-space: nowrap;
   }
@@ -319,3 +323,5 @@ $navbar-background: darken( $title-bar-background, 10%);
     margin-top: 3rem;
   }
 }
+
+#profile-tabs li:nth-of-type(1) { display: none; }

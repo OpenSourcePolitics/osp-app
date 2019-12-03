@@ -62,7 +62,7 @@ if Rails.application.secrets.dig(:omniauth, :france_connect_profile).present? &&
       scope: [:openid, :email, :identite_pivot],
       client_signing_alg: :HS256,
       client_auth_method: :body,
-      acr_values: "eidas2" ,
+      acr_values: "eidas1" ,
       client_options: {
         host: Rails.application.secrets.dig(:omniauth, :france_connect_profile, :host),
         authorization_endpoint: '/api/v1/authorize',
