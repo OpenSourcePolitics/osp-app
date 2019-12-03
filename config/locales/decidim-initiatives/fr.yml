@@ -40,7 +40,7 @@ fr:
           données personnelles
         minimum_committee_members: Minimum de membres du comité
         online_signature_enabled: Signature en ligne activée
-        only_global_scope_enabled: Ne permettre que la création d'pétitionsde portée
+        only_global_scope_enabled: Ne permettre que la création de pétitions de portée
           globale
         promoting_committee_enabled: Activer les comités de promotion sur ce type
           de pétition(témoin.s dont l'invitation par l'auteur est obligatoire pour
