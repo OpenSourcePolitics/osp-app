@@ -4,9 +4,9 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "tmp/master-initiatives-extras-merge"
-# gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "tmp/master-initiatives-extras-merge"
-gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "tmp/master-initiatives-extras-merge"
+gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
+# gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
+gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
 
 # gem "decidim", path: "../decidim"
 # gem "decidim-consultations", path: "../decidim"
@@ -40,7 +40,7 @@ gem "sprockets", "~> 3.7.2"
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "tmp/master-initiatives-extras-merge"
+  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
   # gem "decidim-dev", path: "../decidim"
 end
 
