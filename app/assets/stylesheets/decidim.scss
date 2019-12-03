@@ -2,8 +2,8 @@
 //
 
 // $primary: #ef604d;
-$primary: #005E8B;
-$secondary: #ef604d;
+// $primary: #005E8B;
+// $secondary: #ef604d;
 // $secondary: #599aa6;
 // $success: #57d685;
 // $warning: #ffae00;
@@ -20,13 +20,13 @@ $secondary: #ef604d;
 
 @import "decidim/application";
 
-@import "fontface";
+// @import "fontface";
 // TODO : PR on decidim-core/app/assets/stylesheets/decidim/utils/_settings.scss to add !default on this variable.
-$body-font-family: 'Roboto Slab','Roboto', 'Source Sans Pro', Helvetica, Arial, sans-serif;
+// $body-font-family: 'Roboto Slab','Roboto', 'Source Sans Pro', Helvetica, Arial, sans-serif;
 
-body, h1, h2, h3, h4, h5, h6, p, a, span {
-  font-family: $body-font-family;
-}
+// body, h1, h2, h3, h4, h5, h6, p, a, span {
+//   font-family: $body-font-family;
+// }
 
 $title-bar-background: #FFFFFF;
 $navbar-background: darken( $title-bar-background, 10%);
@@ -78,102 +78,6 @@ $navbar-background: darken( $title-bar-background, 10%);
 //   display: none;
 // }
 
-.title-bar {
-  background: $title-bar-background;
-  color: $dark-gray;
-}
-
-.navbar {
-  background: $navbar-background;
-}
-
-.topbar__search svg {
-  color: $dark-gray;
-}
-
-@media print, screen and (min-width: 40em) {
-  .topbar__search input,
-  .topbar__search input:focus {
-    background: darken( $title-bar-background, 10%);
-    color: $dark-gray;
-
-    &::placeholder {
-      color: darken($medium-gray, 20%);
-    }
-  }
-}
-
-@media print, screen and (min-width: 40em) {
-  .main-nav__link--active a {
-    box-shadow: inset 0 4px 0 0 $primary;
-  }
-}
-
-.main-nav__link a {
-  color: $dark-gray;
-  &:hover {
-    background: darken( $title-bar-background, 20%);;
-    color: $dark-gray;
-  }
-}
-
-.topbar__user__login a {
-  color: lighten($dark-gray, 20%);
-}
-
-.topbar__dropmenu > ul > li > a {
-  color: $dark-gray;
-
-  &:hover, &:active {
-    color: $secondary;
-  }
-
-  &::after{
-    margin-top: -1px !important;
-    border-top-color: $dark-gray !important;
-  }
-}
-
-.topbar__dropmenu .is-dropdown-submenu li {
-  a {
-    color: darken($secondary, 10%);
-  }
-
-  &:hover a {
-    color: $secondary;
-  }
-}
-
-.topbar__edit__link {
-  .icon {
-    fill: darken($primary, 10%);
-
-    &:hover {
-      fill: $primary;
-    }
-  }
-  span { display: none; }
-}
-
-.dropdown.menu .is-active > a {
-  color: $secondary;
-}
-
-.main-footer {
-  background: $title-bar-background;
-  a {
-    color: $dark-gray;
-  }
-}
-
-.mini-footer {
-  background: darken($navbar-background,10%);
-  color: $dark-gray;
-  a {
-    color: lighten($dark-gray, 20%);
-  }
-}
-
 .main-footer__badge {
   text-align: center;
 }
@@ -210,54 +114,6 @@ $navbar-background: darken( $title-bar-background, 10%);
     padding-top: 0.6em;
     line-height: 1.5rem;
   }
-}
-
-.button--france_connect,
-.button--france_connect_uid,
-.button--france_connect_profile {
-  background-color: #034EA2;
-
-  &:hover {
-    background-color: #034EA2;
-  }
-
-  .button--label b {
-    white-space: nowrap;
-  }
-
-  .sessions & {
-    &.button--social {
-      margin: 0 auto;
-
-      height: 4.8em;
-      margin-bottom: 1rem;
-
-      .button--social__icon {
-        display: block;
-        float: left;
-        padding: .35em .5em;
-        height: 3em;
-
-        .icon {
-          width: 4em;
-          height: 4em;
-        }
-      }
-
-      .button--label {
-        display: block;
-        padding-top: 0.6em;
-        text-align: center;
-        line-height: 1.5rem;
-
-        b {
-          font-size: 1.2rem;
-        }
-      }
-    }
-  }
-
-
 }
 
 .logo-wrapper a {
@@ -324,4 +180,4 @@ $navbar-background: darken( $title-bar-background, 10%);
   }
 }
 
-#profile-tabs li:nth-of-type(1) { display: none; }
+// #profile-tabs li:nth-of-type(1) { display: none; }
