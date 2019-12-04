@@ -1,13 +1,13 @@
 <%
-if respond_to?(:current_component) && current_component && can_be_managed?(current_component)
-  edit_link(
-    manage_component_path(current_component),
-    :read,
-    :component,
-    component: current_component,
-    current_participatory_space: current_participatory_space
-  )
-end
+  if respond_to?(:current_component) && current_component && can_be_managed?(current_component)
+    edit_link(
+        manage_component_path(current_component),
+        :read,
+        :component,
+        component: current_component,
+        current_participatory_space: current_participatory_space
+    )
+  end
 %>
 
 <div class="off-canvas-wrapper">
@@ -32,8 +32,8 @@ end
         <!-- Topbar -->
         <div class="title-bar">
           <% if current_organization.official_img_header? %>
-            <%= link_to  current_organization.official_url, class: "logo-cityhall" do %>
-              <%= image_tag current_organization.official_img_header.url.to_s , alt: current_organization.name %>
+            <%= link_to current_organization.official_url, class: "logo-cityhall" do %>
+              <%= image_tag current_organization.official_img_header.url.to_s, alt: current_organization.name %>
             <% end %>
           <% end %>
           <div class="row column topbar">
@@ -100,12 +100,12 @@ end
         <div class="row">
           <div class="footer-logo">
             <% if current_organization.official_img_footer? %>
-              <%= link_to  current_organization.official_url, class: "main-footer__badge" do %>
-                <%= image_tag current_organization.official_img_footer.url.to_s , alt: current_organization.name %>
+              <%= link_to current_organization.official_url, target: "_blank", class: "main-footer__badge primary" do %>
+                <%= image_tag current_organization.official_img_footer.url.to_s, alt: current_organization.name %>
               <% end %>
             <% end %>
-            <%= link_to "https://toulouse-metropole.fr", class: "main-footer__badge secondary" do %>
-              <%= image_tag "toulouse/logo-metropole.png" , alt: "Toulouse métropole" %>
+            <%= link_to "https://toulouse-metropole.fr", target: "_blank", class: "main-footer__badge secondary" do %>
+              <%= image_tag "toulouse/logo-metropole.png", alt: "Toulouse métropole" %>
             <% end %>
           </div>
           <ul class="main__footer__nav footer-nav">
@@ -129,13 +129,13 @@ end
         <div class="row">
           <div class="decidim-logo">
             <a rel="decidim" href="https://decidim.org/" target="_blank">
-              <%= image_tag("decidim/decidim-logo-mobile--inv.svg", alt: "Decidim Logo" ) %>
+              <%= image_tag("decidim/decidim-logo-mobile--inv.svg", alt: "Decidim Logo") %>
             </a>
           </div>
           <a rel="license" class="cc-badge"
              href="http://creativecommons.org/licenses/by-sa/4.0/"
              target="_blank">
-            <%= image_tag("decidim/cc-by-sa--inv.svg", alt: "Creative Commons License" ) %>
+            <%= image_tag("decidim/cc-by-sa--inv.svg", alt: "Creative Commons License") %>
           </a>
           <div class="mf-text">
             <%= t("layouts.decidim.footer.made_with_open_source").html_safe %>
