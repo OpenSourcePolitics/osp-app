@@ -11,13 +11,13 @@ class MoveSignatureTypeToInitativeType < ActiveRecord::Migration[5.2]
       Rails.logger.info "Skipping migration since there's no InitiativesType table"
       return
     elsif InitiativesType.count.positive?
-      raise "You need to edit this migration to continue"
+      # raise "You need to edit this migration to continue"
     end
 
     # This flag says when mixed and face-to-face voting methods
     # are allowed. If set to false, only online voting will be
     # allowed
-    # face_to_face_voting_allowed = true
+    face_to_face_voting_allowed = false
 
     add_column :decidim_initiatives_types, :signature_type, :integer, null: false, default: 0
 

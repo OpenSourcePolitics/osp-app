@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 827e3c34be9fbe5f49d45118d284d06e78b561ec
+  revision: f3780079744fa9f13f0f02895fb61b696e770cd2
   branch: alt/petition
   specs:
     decidim (0.20.0.dev)
@@ -538,7 +538,7 @@ GEM
     multi_json (1.14.1)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
-    mustache (1.1.0)
+    mustache (1.1.1)
     netrc (0.11.0)
     nio4r (2.5.2)
     nobspw (0.6.1)

@@ -34,3 +34,12 @@ en:
     decidim:
       footer:
         download_open_data: Open data
+  decidim:
+    authorization_handlers:
+      admin:
+        dummy_authorization_handler:
+          help:
+            - Add complementary informations to your account
+      dummy_authorization_handler:
+        name: BOSA dummy authorization
+        explanation: Add complementary informations to your account

@@ -135,12 +135,7 @@ end
 Rails.application.config.i18n.available_locales = Decidim.available_locales
 Rails.application.config.i18n.default_locale = Decidim.default_locale
 
-Decidim::Verifications.register_workflow(:census) do |workflow|
+Decidim::Verifications.register_workflow(:dummy_authorization_handler) do |workflow|
   workflow.form = "DummyAuthorizationHandler"
   # workflow.action_authorizer = "DummyActionAuthorizer"
-
-  workflow.options do |options|
-    options.attribute :document_number, type: :string, required: false
-    options.attribute :date_of_birth, type: Decidim::Attributes::LocalizedDate, required: false
-  end
 end

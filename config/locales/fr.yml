@@ -4,3 +4,8 @@ fr:
     decidim:
       footer:
         download_open_data: Données ouvertes
+  decidim:
+    authorization_handlers:
+      dummy_authorization_handler:
+        name: BOSA dummy authorization
+        explanation: Ajouter des informations complémentaires à votre profil
