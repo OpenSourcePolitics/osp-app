@@ -3,6 +3,11 @@
     <div class="<%= column_classes %>">
       <%- Decidim::User.omniauth_providers.each do |provider| %>
         <% if social_provider_enabled?(provider) && (request.env.dig(:available_authorizations).nil? || request.env.dig(:available_authorizations).include?(provider.to_s)) %>
+          <% if I18n.exists?("decidim.omniauth.#{provider}.explanation") %>
+            <div class="callout">
+              <%== t("decidim.omniauth.#{provider}.explanation") %>
+            </div>
+          <% end %>
           <div class="social-register">
             <%= link_to decidim.send("user_#{provider}_omniauth_authorize_path"), class: "button button--social button--#{provider.to_s.parameterize}", method: :post do %>
               <span class="button--social__icon">
