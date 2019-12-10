@@ -187,17 +187,18 @@ $navbar-background: darken( $title-bar-background, 10%);
 
 .button--social {
   margin: 0 auto;
+  white-space: nowrap;
 
   $icon-height: 32px;
 
-  height: 2.8em;
+  // height: 2.8em;
+  padding-bottom: 0.6em;
   margin-bottom: 1rem;
 
   .button--social__icon {
     display: block;
     float: left;
     padding: .35em .5em;
-    height: 2.5em;
 
     .icon {
       width: 2em;
@@ -206,7 +207,7 @@ $navbar-background: darken( $title-bar-background, 10%);
   }
 
   .button--label {
-    display: block;
+    display: inline-block;
     padding-top: 0.6em;
     line-height: 1.5rem;
   }
@@ -225,47 +226,51 @@ $navbar-background: darken( $title-bar-background, 10%);
     white-space: nowrap;
   }
 
-  .sessions & {
-    &.button--social {
-      margin: 0 auto;
-
-      height: 2.8em;
-      margin-bottom: 1rem;
-
-      .button--social__icon {
-        display: block;
-        float: left;
-        padding: .35em .5em;
-        height: 2.5em;
-
-        .icon {
-          width: 2em;
-          height: 2em;
-        }
-      }
-
-      .button--label {
-        display: block;
-        padding-top: 0.6em;
-        text-align: center;
-        line-height: 1.5rem;
-
-        b {
-          font-size: 1.2rem;
-        }
-      }
-    }
-  }
+  // .sessions & {
+  //   &.button--social {
+  //     margin: 0 auto;
+  //
+  //     height: 2.8em;
+  //     margin-bottom: 1rem;
+  //
+  //     .button--social__icon {
+  //       display: block;
+  //       float: left;
+  //       padding: .35em .5em;
+  //       height: 2.5em;
+  //
+  //       .icon {
+  //         width: 2em;
+  //         height: 2em;
+  //       }
+  //     }
+  //
+  //     .button--label {
+  //       display: block;
+  //       padding-top: 0.6em;
+  //       text-align: center;
+  //       line-height: 1.5rem;
+  //
+  //       b {
+  //         font-size: 1.2rem;
+  //       }
+  //     }
+  //   }
+  // }
 
 
 }
 
 .sessions .callout {
-  margin:  0 -4rem 1rem -4rem;
+  margin:  0 -3rem 1rem -3rem;
+
+  @media print, screen and (max-width: 640px) {
+    margin: 0 0 1rem 0;
+  }
 }
 
 .logo-wrapper a {
-  display: flex;
+  display: inline-block;
   align-items: center;
 
   img {
