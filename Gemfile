@@ -18,6 +18,8 @@ gem "decidim-conferences", git: "https://github.com/OpenSourcePolitics/decidim.g
 
 # gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git"
 
+gem "decidim-homepage_interactive_map", git: "https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map.git"
+
 gem "bootsnap", "~> 1.3"
 
 gem "puma", "~> 3.0"
