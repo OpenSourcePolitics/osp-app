@@ -4,3 +4,17 @@ fr:
     decidim:
       footer:
         download_open_data: Données ouvertes
+  decidim:
+    omniauth:
+      france_connect_uid:
+        explanation: "<b>La connexion via FranceConnect permet de garantir votre anonymat</b>
+        (aucune donnée personnelle n'est récupérée),<br/>tout en assurant qu'une pétition
+        est signée une seule fois par une même personne physique existante."
+      france_connect_profile:
+        explanation: "<b>L'auteur d'une pétition ne peut être anonyme.</b><br/>
+        <p>Toutefois, le Sénat ne récupère, via l'authentification FranceConnect,
+        que les informations suivantes : <br/>
+        nom, prénom(s), date de naissance, adresse électronique et identifiant technique.<br/>
+        <b>Les noms et prénoms des auteurs de pétition sont publiés avec la pétition.</b><br/>
+        Les autres éléments ne sont en aucun cas rendus publics.
+        </p>"

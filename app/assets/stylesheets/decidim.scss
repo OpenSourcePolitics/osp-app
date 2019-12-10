@@ -229,18 +229,18 @@ $navbar-background: darken( $title-bar-background, 10%);
     &.button--social {
       margin: 0 auto;
 
-      height: 4.8em;
+      height: 2.8em;
       margin-bottom: 1rem;
 
       .button--social__icon {
         display: block;
         float: left;
         padding: .35em .5em;
-        height: 3em;
+        height: 2.5em;
 
         .icon {
-          width: 4em;
-          height: 4em;
+          width: 2em;
+          height: 2em;
         }
       }
 
@@ -258,6 +258,10 @@ $navbar-background: darken( $title-bar-background, 10%);
   }
 
 
+}
+
+.sessions .callout {
+  margin:  0 -4rem 1rem -4rem;
 }
 
 .logo-wrapper a {
@@ -325,3 +329,11 @@ $navbar-background: darken( $title-bar-background, 10%);
 }
 
 #profile-tabs li:nth-of-type(1) { display: none; }
+
+.reveal .section-heading {
+  margin-left: .15rem;
+}
+
+.initiative {
+  .follow-section { display: none; }
+}
