@@ -18,6 +18,7 @@ gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch:
 
 gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git", branch: "0.18-stable"
 gem "decidim-polis", git: "https://github.com/OpenSourcePolitics/decidim-polis.git", branch: "0.18-stable"
+gem "decidim-socio_demographic_authorization_handler", git: "https://github.com/OpenSourcePolitics/decidim-module-socio_demographic_authorization_handler"
 
 # gem "high_voltage", "3.0.0"
 
@@ -34,11 +35,11 @@ gem "sentry-raven"
 gem "letter_opener_web", "~> 1.3"
 
 gem "omniauth-saml", "~> 1.10.0"
+gem "sprockets", "~> 3.7"
 
 group :development, :test do
+  gem "dotenv-rails"
   gem "byebug", "~> 10.0", platform: :mri
-
-  gem 'dotenv-rails'
 
   gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.18-merge"
   # gem "decidim-dev", path: "../decidim"

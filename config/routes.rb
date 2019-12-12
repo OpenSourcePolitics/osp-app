@@ -1,16 +1,15 @@
-require "sidekiq/web"
+# frozen_string_literal: true
+
+require 'sidekiq/web'
+require 'sidekiq-scheduler/web'
+
 Rails.application.routes.draw do
-
-  # get "api/traduction" => "translation#traduction"
-
-  authenticate :user, lambda { |u| u.admin? } do
+  authenticate :admin do
     mount Sidekiq::Web => '/sidekiq'
     # mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
-  if Rails.env.development?
-    mount LetterOpenerWeb::Engine, at: "/letter_opener"
-  end
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 
   mount Decidim::Core::Engine => '/'
   # mount Decidim::Map::Engine => '/map'
