@@ -1,36 +1,20 @@
 <div class="row">
   <%= decidim_form_for(@account, url: account_path, method: :put, html: { autocomplete: "nope" }) do |f| %>
     <%= f.hidden_field :id %>
-    <input autocomplete="off" name="hidden" type="password" style="display:none;">
-    <div class="columns large-4">
-      <%= f.upload :avatar %>
-    </div>
-
-    <div class="columns large-8 end">
+    <div class="columns large-8 large-offset-2 end">
       <%= f.text_field :name, disabled: true %>
       <%= f.hidden_field :name %>
 
       <%= f.text_field :nickname, disabled: true %>
       <%= f.hidden_field :nickname %>
 
-      <%= f.email_field :email %>
-      
-      <% if !Decidim::Identity.exists?(:user => @account.id) %>
-        <% if @account.errors[:password].any? || @account.errors[:password_confirmation].any? %>
-          <%= render partial: "password_fields", locals: { form: f } %>
-        <% else %>
-          <p>
-            <a data-toggle="passwordChange" class="change-password"><%= t ".change_password" %></a>
-          </p>
-          <div id="passwordChange" class="toggle-show" data-toggler=".is-expanded">
-            <%= render partial: "password_fields", locals: { form: f } %>
-          </div>
-        <% end %>
-      <% end %>
+      <% if @account.email.present? %>
+        <%= f.email_field :email %>
 
-      <div class="actions">
-        <%= f.submit t(".update_account"), disable_with: true %>
-      </div>
+        <div class="actions">
+          <%= f.submit t(".update_account"), disable_with: true %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

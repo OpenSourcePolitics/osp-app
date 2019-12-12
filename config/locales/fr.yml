@@ -5,6 +5,39 @@ fr:
       footer:
         download_open_data: Données ouvertes
   decidim:
+    anonymous_user: "Authentifié(e)"
+    authorization_handlers:
+      admin:
+        decidim:
+          help:
+            - Confirmer une identité avec un compte Decidim externe
+        france_connect:
+          help:
+            - Confirmer une identité avec un compte France Connect
+        france_connect_uid:
+          help:
+            - Confirmer une identité avec un compte France Connect "Anonyme"
+        france_connect_profile:
+          help:
+            - Confirmer une identité avec un compte France Connect "Auteur"
+        saml:
+          help:
+            - Confirmer une identité avec un compte CSAM eID
+      decidim:
+        name: Omniauth Decidim
+        explanation: Confirmer votre identité avec un compte Decidim externe
+      france_connect:
+        name: France Connect
+        explanation: Confirmer votre identité avec un compte France Connect
+      france_connect_uid:
+        name: France Connect Level I
+        explanation: Confirmer votre identité avec un compte France Connect "Anonyme"
+      france_connect_profile:
+        name: France Connect Level II
+        explanation: Confirmer votre identité avec un compte France Connect "Auteur"
+      saml:
+        name: CSAM eID
+        explanation: Confirmer votre identité avec un compte CSAM eID
     omniauth:
       france_connect_uid:
         explanation: "<b>La connexion via FranceConnect permet de garantir votre anonymat</b>
