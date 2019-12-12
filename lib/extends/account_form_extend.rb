@@ -6,7 +6,7 @@ module AccountFormExtend
   extend ActiveSupport::Concern
 
   included do
-    validates :email, presence: true, 'valid_email_2/email': { mx: true }
+    validates :email, 'valid_email_2/email': { mx: true }
 
     validates :avatar, file_size: { less_than_or_equal_to: ->(_record) { Decidim.maximum_avatar_size } }
 

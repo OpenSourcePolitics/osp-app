@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
+require "omniauth/strategies/decidim"
+require "omniauth/strategies/france_connect_uid"
+require "omniauth/strategies/france_connect_profile"
+require "omniauth/strategies/eid_saml"
+
 Rails.application.config.middleware.use OmniAuth::Builder do
   OmniAuth.config.logger = Rails.logger
   # OmniAuth.config.allowed_request_methods = %i[get post delete]
