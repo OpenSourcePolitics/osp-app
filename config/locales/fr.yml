@@ -19,6 +19,8 @@ fr:
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
+      socio_demographic_authorization_handler:
+        name: informations complémentaires
     devise:
       omniauth_callbacks:
         saml: e-ID ou via itsme
