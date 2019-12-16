@@ -19,6 +19,7 @@ gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch:
 gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git", branch: "0.18-stable"
 gem "decidim-polis", git: "https://github.com/OpenSourcePolitics/decidim-polis.git", branch: "0.18-stable"
 gem "decidim-socio_demographic_authorization_handler", git: "https://github.com/OpenSourcePolitics/decidim-module-socio_demographic_authorization_handler"
+# gem "decidim-socio_demographic_authorization_handler",  path: "../decidim-module-socio_demographic_authorization_handler"
 
 # gem "high_voltage", "3.0.0"
 
