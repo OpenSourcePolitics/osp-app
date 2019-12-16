@@ -1,0 +1,12 @@
+nl:
+  activemodel:
+    models:
+      decidim/budgets/decidim_events_budgets_reminder_order: Reminder order event
+  decidim:
+    events:
+      budgets:
+        reminder_order:
+          email_intro: 'A vote is still pending! You can always continue by clicking here: <a href=''%{resource_url}''>%{participatory_space_title}</a>'
+          email_outro: Bedankt voor je bijdrage
+          email_subject: A vote is still pending on %{participatory_space_title} notification
+          notification_title: 'A vote is still pending! You can always continue by clicking here: <a href=''%{resource_url}''>%{participatory_space_title}</a>'
