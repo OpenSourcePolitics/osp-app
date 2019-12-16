@@ -20,7 +20,12 @@ fr:
       osp_authorization_workflow:
         name: Procédure d'autorisation
       socio_demographic_authorization_handler:
-        name: informations complémentaires
+        explanation: Complétez les informations de votre profil
+        name: Informations complémentaires
+        fields:
+          age: Âge
+          gender: Genre
+          scope_id: Périmètre
     devise:
       omniauth_callbacks:
         saml: e-ID ou via itsme
@@ -35,6 +40,8 @@ fr:
           actions:
             osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
             osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+        new:
+          authorize_with: Complétez les informations de votre profil
   devise:
     omniauth_callbacks:
       saml: e-ID ou via itsme

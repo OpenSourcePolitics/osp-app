@@ -35,12 +35,26 @@ en:
       officializations:
         index:
           badges: Badges
+    authorization_handlers:
+      osp_authorization_handler:
+        explanation: Complete your profile informations
+        name: OSP Authorization handler
+      socio_demographic_authorization_handler:
+        name: Additional informations
+        fields:
+          age: Age
+          gender: Gender
+          scope_id: Scope
     proposals:
       proposals:
         proposals:
           show_traduction: Show translation
           show_the_original: Show the original
           automatic_translation: Automatic translation by %{trad_service}
+    verifications:
+      authorizations:
+        new:
+          authorize_with: Complete your profile informations
   layouts:
     decidim:
       footer:
