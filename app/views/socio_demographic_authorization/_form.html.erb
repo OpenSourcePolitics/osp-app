@@ -1,7 +1,7 @@
 <%= hidden_field :authorization_handler, :handler_name, value: "socio_demographic_authorization_handler" %>
 <div class="card-section">
   <div class="field">
-    <%= scopes_picker_field form, :scope_id, root: nil, label: t(".scope") %>
+    <%= scopes_picker_field form, :scope_id, root: nil %>
   </div>
   <div class="field">
     <%= form.select :gender, %w(Man Woman Undefined).map { |gender| [I18n.t(gender.downcase, scope: "decidim.verifications.genders"), gender.downcase] }, { include_blank: t('decidim.verifications.genders.blank_option')} %>
