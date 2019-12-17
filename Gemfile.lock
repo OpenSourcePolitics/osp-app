@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module-socio_demographic_authorization_handler
-  revision: 274c6e5f94d3e2a842416dcce60b18387b96ab29
+  revision: 40f5cccc02ff48e559a2ef6c8103fadfcbb1256c
   specs:
     decidim-socio_demographic_authorization_handler (0.18.0)
       decidim-core (= 0.18.0)
