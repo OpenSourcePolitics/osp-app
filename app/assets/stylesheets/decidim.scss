@@ -198,22 +198,25 @@ h4, .h4, .heading4 {
   }
 }
 
-.edit_user {
-  div {
-    &:first-of-type {
-      display: none;
-    }
+.tabs-content {
+  .edit_user {
+    div {
+      &:first-of-type {
+        display: none;
+      }
 
-    &:last-of-type {
-      label {
-        &:nth-of-type(4) {
-          display: none;
-        }
+      &:last-of-type {
+        label {
+          &:nth-of-type(4) {
+            display: none;
+          }
 
-        &:last-of-type {
-          display: none;
+          &:last-of-type {
+            display: none;
+          }
         }
       }
     }
   }
 }
+
