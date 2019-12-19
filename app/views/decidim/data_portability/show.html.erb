@@ -1,0 +1,7 @@
+<div class="row data-portability">
+  <% if @account.email.present? %>
+    <strong><%= t(".download_data") %></strong>
+    <p><%= t(".download_data_description", user_email: current_user.email).html_safe %></p>
+    <%= button_to t(".request_data"), export_data_portability_path, class: "button", data: { disable: true } %>
+  <% end %>
+</div>

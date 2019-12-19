@@ -261,6 +261,57 @@ $navbar-background: darken( $title-bar-background, 10%);
 
 }
 
+.topbar__user__logged .dropdown.menu > li.is-dropdown-submenu-parent {
+  & > a.user-menu {
+    display:flex ;
+    align-items: center;
+    padding: 0 1rem 0 0;
+
+    .user-menu--icon {
+      .icon {
+        width: 2.5em;
+        height: 2.5em;
+      }
+    }
+
+    .user-menu--label {
+      font-size: .65rem;
+      margin: 0 .5rem;
+
+      b {
+        font-size: .85rem;
+        line-height: 1rem;
+      }
+    }
+
+    &::after{ display: block; }
+    &:hover::after { border-top-color: $secondary !important; }
+  }
+
+  &.is-active > a.user-menu::after { border-top-color: $secondary !important; }
+  .is-dropdown-submenu {
+    margin-top: .75rem;
+    min-width: 100%;
+
+    .is-dropdown-submenu-item {
+      text-align: center;
+      text-transform: uppercase;
+      padding: .15rem 0;
+      font-size: 90%;
+    }
+  }
+}
+
+a.button > .icon.small {
+  width: .75em;
+  height: .75em;
+  vertical-align: middle;
+}
+
+.open-modal-button {
+  font-weight: bold;
+}
+
 .sessions .callout {
   margin:  0 -3rem 1rem -3rem;
 
@@ -337,6 +388,12 @@ $navbar-background: darken( $title-bar-background, 10%);
 #user-settings-tabs li:nth-of-type(2),
 #user-settings-tabs li:nth-of-type(4) { display: none; }
 
+main.anonymous {
+  #user-settings-tabs li:nth-of-type(1),
+  #user-settings-tabs li:nth-of-type(5),
+  #user-settings-tabs li:last-of-type { display: none; }
+}
+
 .reveal .section-heading {
   margin-left: .15rem;
 }
@@ -344,3 +401,5 @@ $navbar-background: darken( $title-bar-background, 10%);
 .initiative {
   .follow-section { display: none; }
 }
+
+.omniauth-explanation { margin-bottom: 1.5rem; }
