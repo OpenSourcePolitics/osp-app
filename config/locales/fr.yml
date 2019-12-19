@@ -4,8 +4,17 @@ fr:
     decidim:
       footer:
         download_open_data: Données ouvertes
+      user_profile:
+        authorizations: Voir les autorisations associées à votre compte
+        back_to_account: Retour à votre compte
+      user_menu:
+        admin_dashboard: Administration
   decidim:
-    anonymous_user: "Authentifié(e)"
+    account:
+      show:
+        unconfirmed_email: "l'adresse <code>%{email}</code> est en cours de validation.<br/>
+        Un courriel vous a été transmis à cette adresse contenant un lien nous permettant
+        de confirmer son existence."
     authorization_handlers:
       admin:
         decidim:
@@ -39,15 +48,28 @@ fr:
         name: CSAM eID
         explanation: Confirmer votre identité avec un compte CSAM eID
     omniauth:
+      france_connect:
+        external:
+          link: "https://franceconnect.gouv.fr/"
+          text: "Qu'est-ce-que FranceConnect ?"
       france_connect_uid:
-        explanation: "<b>La connexion via FranceConnect permet de garantir votre anonymat</b>
-        (aucune donnée personnelle n'est récupérée),<br/>tout en assurant qu'une pétition
-        est signée une seule fois par une même personne physique existante."
+        explanation: "<b>La connexion via FranceConnect en tant que \"Signataire\" permet de garantir votre anonymat</b>,<br/>
+         tout en assurant qu'une pétition n'est signée une seule fois par une même personne physique.<br/>
+        <b>Aucune donnée personnelle n'est récupérée lors de la connexion avec FranceConnect</b>"
+        anonymous_user: "Authentifié(e) avec<br/><b>FranceConnect</b>"
       france_connect_profile:
         explanation: "<b>L'auteur d'une pétition ne peut être anonyme.</b><br/>
-        <p>Toutefois, le Sénat ne récupère, via l'authentification FranceConnect,
+        <p>Toutefois, le Sénat ne récupère, via l'authentification FranceConnect \"Auteur\",
         que les informations suivantes : <br/>
         nom, prénom(s), date de naissance, adresse électronique et identifiant technique.<br/>
         <b>Les noms et prénoms des auteurs de pétition sont publiés avec la pétition.</b><br/>
         Les autres éléments ne sont en aucun cas rendus publics.
         </p>"
+    verifications:
+      authorizations:
+        index:
+          title: Liste des autorisations
+  devise:
+    shared:
+      links:
+        signed_in_with_provider: "Authentifié(e) avec %{provider} <br/>"

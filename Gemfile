@@ -19,7 +19,7 @@ gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decid
 # gem "decidim-initiatives_extras", git: "https://github.com/OpenSourcePolitics/decidim.git"
 
 # gem "omniauth-decidim", path: "../omniauth-decidim"
-gem "decidim-omniauth_extras", path: "../decidim-module-omniauth_extras"
+# gem "decidim-omniauth_extras", path: "../decidim-module-omniauth_extras"
 # gem "decidim-initiatives_extras", path: "../decidim-module-initiatives_extras"
 
 # gem "decidim-blazer", path: "../decidim-module-blazer"
@@ -36,6 +36,10 @@ gem "wicked_pdf"
 gem "wkhtmltopdf-binary"
 
 gem "sprockets", "~> 3.7.2"
+
+gem "omniauth-oauth2", ">= 1.4.0", "< 2.0"
+gem "omniauth_openid_connect", "0.3.1"
+gem "omniauth-saml", "~> 1.10"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri

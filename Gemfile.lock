@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 39531a8ac5c116e302e82525706e15e2ce748ace
+  revision: e04eb3ecf8888ddebe0e0efe79019f9e9b015237
   branch: alt/petition
   specs:
     decidim (0.20.0.dev)
@@ -211,16 +211,6 @@ GIT
     decidim-verifications (0.20.0.dev)
       decidim-core (= 0.20.0.dev)
 
-PATH
-  remote: ../decidim-module-omniauth_extras
-  specs:
-    decidim-omniauth_extras (0.20.0.dev)
-      decidim-core (= 0.20.0.dev)
-      omniauth (~> 1.5)
-      omniauth-oauth2 (>= 1.4.0, < 2.0)
-      omniauth-saml (~> 1.10)
-      omniauth_openid_connect (= 0.3.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -301,7 +291,7 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
-    builder (3.2.3)
+    builder (3.2.4)
     byebug (11.0.1)
     capybara (3.29.0)
       addressable
@@ -365,8 +355,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.8.2)
-      devise (>= 4.6)
+    devise-i18n (1.9.0)
+      devise (>= 4.7.1)
     devise_invitable (1.7.5)
       actionmailer (>= 4.1.0)
       devise (>= 4.0.0)
@@ -378,7 +368,7 @@ GEM
     docile (1.3.2)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-    doorkeeper (5.2.2)
+    doorkeeper (5.2.3)
       railties (>= 5)
     doorkeeper-i18n (4.0.1)
     equalizer (0.0.11)
@@ -442,7 +432,7 @@ GEM
     graphiql-rails (1.4.11)
       railties
       sprockets-rails
-    graphql (1.9.16)
+    graphql (1.9.17)
     hashdiff (1.0.0)
     hashie (3.6.0)
     highline (2.0.3)
@@ -451,7 +441,7 @@ GEM
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    httparty (0.17.1)
+    httparty (0.17.3)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
     httpclient (2.8.3)
@@ -467,7 +457,7 @@ GEM
       rails-i18n
       rainbow (>= 2.2.2, < 4.0)
       terminal-table (>= 1.5.1)
-    icalendar (2.6.0)
+    icalendar (2.6.1)
       ice_cube (~> 0.16)
     ice_cube (0.16.3)
     ice_nine (0.11.2)
@@ -481,7 +471,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-tmpl-rails (1.1.0)
       rails (>= 3.1.0)
-    json (2.2.0)
+    json (2.3.0)
     json-jwt (1.11.0)
       activesupport (>= 4.2)
       aes_key_wrap
@@ -508,7 +498,7 @@ GEM
       actionmailer (>= 3.2)
       letter_opener (~> 1.0)
       railties (>= 3.2)
-    listen (3.2.0)
+    listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.3.1)
@@ -538,11 +528,11 @@ GEM
     multi_json (1.14.1)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
-    mustache (1.1.0)
+    mustache (1.1.1)
     netrc (0.11.0)
     nio4r (2.5.2)
     nobspw (0.6.1)
-    nokogiri (1.10.5)
+    nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
     oauth (0.5.4)
     oauth2 (1.4.2)
@@ -610,9 +600,9 @@ GEM
       actionmailer (>= 3)
       premailer (~> 1.7, >= 1.7.9)
     public_suffix (4.0.1)
-    puma (3.12.1)
+    puma (3.12.2)
     rack (2.0.7)
-    rack-attack (6.2.1)
+    rack-attack (6.2.2)
       rack (>= 1.0, < 3)
     rack-cors (1.1.0)
       rack (>= 2.0.0)
@@ -725,7 +715,7 @@ GEM
     rubocop-rails (2.0.1)
       rack (>= 1.1)
       rubocop (>= 0.70.0)
-    rubocop-rspec (1.37.0)
+    rubocop-rspec (1.37.1)
       rubocop (>= 0.68.1)
     ruby-ole (1.2.12.2)
     ruby-progressbar (1.10.1)
@@ -856,12 +846,14 @@ DEPENDENCIES
   decidim!
   decidim-dev!
   decidim-initiatives!
-  decidim-omniauth_extras!
   decidim-term_customizer!
   faker (~> 1.9)
   fog-aws
   letter_opener_web (~> 1.3)
   listen (~> 3.1)
+  omniauth-oauth2 (>= 1.4.0, < 2.0)
+  omniauth-saml (~> 1.10)
+  omniauth_openid_connect (= 0.3.1)
   puma (~> 3.0)
   sidekiq
   spring (~> 2.0)
