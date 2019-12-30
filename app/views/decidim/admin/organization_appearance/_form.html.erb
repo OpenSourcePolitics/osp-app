@@ -118,12 +118,12 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="columns xlarge-6">
+    <% if Decidim.enable_html_header_snippets %>
+      <div class="row column">
         <%= form.text_area :header_snippets %>
         <p class="help-text"><%= t(".header_snippets_help") %></p>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
 
