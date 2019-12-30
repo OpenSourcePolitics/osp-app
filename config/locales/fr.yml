@@ -51,7 +51,7 @@ fr:
       france_connect:
         external:
           link: "https://franceconnect.gouv.fr/"
-          text: "Qu'est-ce-que FranceConnect ?"
+          text: "Qu'est-ce-que France Connect ?"
       france_connect_uid:
         explanation: "<b>La connexion via FranceConnect en tant que \"Signataire\" permet de garantir votre anonymat</b>,<br/>
          tout en assurant qu'une pétition n'est signée une seule fois par une même personne physique.<br/>

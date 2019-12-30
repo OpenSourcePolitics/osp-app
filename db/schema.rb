@@ -10,12 +10,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_31_181215) do
+ActiveRecord::Schema.define(version: 2019_12_30_143032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
+
+  create_table "blazer_audits", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "query_id"
+    t.text "statement"
+    t.string "data_source"
+    t.datetime "created_at"
+    t.index ["query_id"], name: "index_blazer_audits_on_query_id"
+    t.index ["user_id"], name: "index_blazer_audits_on_user_id"
+  end
+
+  create_table "blazer_checks", force: :cascade do |t|
+    t.bigint "creator_id"
+    t.bigint "query_id"
+    t.string "state"
+    t.string "schedule"
+    t.text "emails"
+    t.text "slack_channels"
+    t.string "check_type"
+    t.text "message"
+    t.datetime "last_run_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["creator_id"], name: "index_blazer_checks_on_creator_id"
+    t.index ["query_id"], name: "index_blazer_checks_on_query_id"
+  end
+
+  create_table "blazer_dashboard_queries", force: :cascade do |t|
+    t.bigint "dashboard_id"
+    t.bigint "query_id"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dashboard_id"], name: "index_blazer_dashboard_queries_on_dashboard_id"
+    t.index ["query_id"], name: "index_blazer_dashboard_queries_on_query_id"
+  end
+
+  create_table "blazer_dashboards", force: :cascade do |t|
+    t.bigint "creator_id"
+    t.text "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["creator_id"], name: "index_blazer_dashboards_on_creator_id"
+  end
+
+  create_table "blazer_queries", force: :cascade do |t|
+    t.bigint "creator_id"
+    t.string "name"
+    t.text "description"
+    t.text "statement"
+    t.string "data_source"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["creator_id"], name: "index_blazer_queries_on_creator_id"
+  end
 
   create_table "decidim_accountability_results", id: :serial, force: :cascade do |t|
     t.jsonb "title"
@@ -288,6 +343,7 @@ ActiveRecord::Schema.define(version: 2019_10_31_181215) do
     t.integer "parent_id"
     t.integer "decidim_participatory_space_id"
     t.string "decidim_participatory_space_type"
+    t.integer "weight", default: 0, null: false
     t.index ["decidim_participatory_space_id", "decidim_participatory_space_type"], name: "index_decidim_categories_on_decidim_participatory_space"
     t.index ["parent_id"], name: "index_decidim_categories_on_parent_id"
   end
@@ -465,15 +521,6 @@ ActiveRecord::Schema.define(version: 2019_10_31_181215) do
     t.index ["organization_id"], name: "index_decidim_contextual_help_sections_on_organization_id"
   end
 
-  create_table "decidim_continuity_badge_statuses", force: :cascade do |t|
-    t.integer "current_streak", default: 0, null: false
-    t.integer "integer", default: 0, null: false
-    t.date "last_session_at", null: false
-    t.string "subject_type", null: false
-    t.bigint "subject_id", null: false
-    t.index ["subject_type", "subject_id"], name: "decidim_continuity_statuses_subject"
-  end
-
   create_table "decidim_debates_debates", id: :serial, force: :cascade do |t|
     t.jsonb "title"
     t.jsonb "description"
@@ -617,19 +664,18 @@ ActiveRecord::Schema.define(version: 2019_10_31_181215) do
     t.jsonb "answer"
     t.datetime "answered_at"
     t.string "answer_url"
-    t.integer "initiative_votes_count", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "decidim_user_group_id"
     t.string "hashtag"
-    t.integer "initiative_supports_count", default: 0, null: false
     t.integer "scoped_type_id"
     t.datetime "first_progress_notification_at"
     t.datetime "second_progress_notification_at"
-    t.integer "offline_votes"
     t.string "decidim_author_type", null: false
     t.string "reference"
     t.string "online_signature_types", default: ["devise"], array: true
+    t.jsonb "online_votes", default: {}
+    t.jsonb "offline_votes", default: {}
     t.index "md5((description)::text)", name: "decidim_initiatives_description_search"
     t.index ["answered_at"], name: "index_decidim_initiatives_on_answered_at"
     t.index ["decidim_author_id", "decidim_author_type"], name: "index_decidim_initiatives_on_decidim_author"
@@ -674,6 +720,9 @@ ActiveRecord::Schema.define(version: 2019_10_31_181215) do
     t.boolean "undo_online_signatures_enabled", default: true, null: false
     t.boolean "promoting_committee_enabled", default: true, null: false
     t.integer "signature_type", default: 0, null: false
+    t.boolean "comments_enabled", default: true, null: false
+    t.boolean "child_scope_threshold_enabled", default: false, null: false
+    t.boolean "only_global_scope_enabled", default: false, null: false
     t.index ["decidim_organization_id"], name: "index_decidim_initiative_types_on_decidim_organization_id"
   end
 
@@ -682,12 +731,11 @@ ActiveRecord::Schema.define(version: 2019_10_31_181215) do
     t.bigint "decidim_author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "decidim_user_group_id"
     t.text "encrypted_metadata"
     t.string "timestamp"
     t.string "hash_id"
+    t.integer "decidim_scope_id"
     t.index ["decidim_author_id"], name: "index_decidim_initiatives_votes_on_decidim_author_id"
-    t.index ["decidim_initiative_id", "decidim_author_id", "decidim_user_group_id"], name: "decidim_initiatives_voutes_author_uniqueness_index", unique: true
     t.index ["decidim_initiative_id"], name: "index_decidim_initiatives_votes_on_decidim_initiative_id"
   end
 
@@ -1423,6 +1471,9 @@ ActiveRecord::Schema.define(version: 2019_10_31_181215) do
     t.string "notification_types", default: "all", null: false
     t.datetime "officialized_at"
     t.jsonb "officialized_as"
+    t.integer "failed_attempts", default: 0, null: false
+    t.string "unlock_token"
+    t.datetime "locked_at"
     t.index ["confirmation_token"], name: "index_decidim_users_on_confirmation_token", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_users_on_decidim_organization_id"
     t.index ["email", "decidim_organization_id"], name: "index_decidim_users_on_email_and_decidim_organization_id", unique: true, where: "((deleted_at IS NULL) AND (managed = false) AND ((type)::text = 'Decidim::User'::text))"
@@ -1434,6 +1485,7 @@ ActiveRecord::Schema.define(version: 2019_10_31_181215) do
     t.index ["nickname", "decidim_organization_id"], name: "index_decidim_users_on_nickame_and_decidim_organization_id", unique: true, where: "((deleted_at IS NULL) AND (managed = false))"
     t.index ["officialized_at"], name: "index_decidim_users_on_officialized_at"
     t.index ["reset_password_token"], name: "index_decidim_users_on_reset_password_token", unique: true
+    t.index ["unlock_token"], name: "index_decidim_users_on_unlock_token", unique: true
   end
 
   create_table "decidim_verifications_csv_data", force: :cascade do |t|
