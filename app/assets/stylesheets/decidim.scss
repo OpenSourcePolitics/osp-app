@@ -263,13 +263,19 @@ $navbar-background: darken( $title-bar-background, 10%);
 
 .button--social--custom {
   display: block;
-  margin: 0 auto 1rem;
+  margin: 0 auto;
+  padding: 0;
   background-color: transparent;
   max-width: 282px;
 
   &:hover, &:focus {
     background-color: transparent;
   }
+}
+
+.social-register {
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .topbar__user__logged .dropdown.menu > li.is-dropdown-submenu-parent {
