@@ -261,6 +261,17 @@ $navbar-background: darken( $title-bar-background, 10%);
 
 }
 
+.button--social--custom {
+  display: block;
+  margin: 0 auto 1rem;
+  background-color: transparent;
+  max-width: 282px;
+
+  &:hover, &:focus {
+    background-color: transparent;
+  }
+}
+
 .topbar__user__logged .dropdown.menu > li.is-dropdown-submenu-parent {
   & > a.user-menu {
     display:flex ;
@@ -289,6 +300,7 @@ $navbar-background: darken( $title-bar-background, 10%);
   }
 
   &.is-active > a.user-menu::after { border-top-color: $secondary !important; }
+
   .is-dropdown-submenu {
     margin-top: .75rem;
     min-width: 100%;
@@ -298,6 +310,11 @@ $navbar-background: darken( $title-bar-background, 10%);
       text-transform: uppercase;
       padding: .15rem 0;
       font-size: 90%;
+
+      &.small a {
+        color: $primary;
+        font-variant: small-caps;
+      }
     }
   }
 }

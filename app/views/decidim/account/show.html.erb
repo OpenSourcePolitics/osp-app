@@ -11,7 +11,7 @@
           </div>
         <% end %>
         <% if I18n.exists?("decidim.omniauth.france_connect.external.link") %>
-          <%= link_to decidim_verifications.authorizations_path, class: "button hollow secondary expanded" do %>
+          <%= link_to t("link", scope: "decidim.omniauth.france_connect.external"), class: "button hollow secondary expanded", target: "_blank" do %>
             <%= t("text", scope: "decidim.omniauth.france_connect.external") %>
             &nbsp;
             <%= icon "external-link", class: "small" %>
