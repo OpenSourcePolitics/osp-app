@@ -32,7 +32,7 @@ module DestroyAccountExtend
       Decidim::Initiative.where(author: @user).each do |initiative|
         Rails.logger.debug initiative.id
         Rails.logger.debug initiative.state
-        if %w(created validating).include?(initiative.state)
+        if %w(created validating accepted).include?(initiative.state)
           Rails.logger.debug "will be discarded"
           initiative.update_columns(state: "discarded")
         else

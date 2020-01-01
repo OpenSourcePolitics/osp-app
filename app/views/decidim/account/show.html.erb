@@ -11,15 +11,18 @@
           </div>
         <% end %>
         <% if I18n.exists?("decidim.omniauth.france_connect.external.link") %>
-          <%= link_to t("link", scope: "decidim.omniauth.france_connect.external"), class: "button hollow secondary expanded", target: "_blank" do %>
+          <%= link_to t("link", scope: "decidim.omniauth.france_connect.external"), class: "button hollow small expanded", target: "_blank" do %>
             <%= t("text", scope: "decidim.omniauth.france_connect.external") %>
             &nbsp;
-            <%= icon "external-link", class: "small" %>
+            <%= icon "external-link" %>
           <% end %>
         <% end %>
       <% end %>
       <%= link_to decidim_verifications.authorizations_path, class: "button hollow expanded" do %>
         <%= t("authorizations", scope: "layouts.decidim.user_profile") %>
+      <% end %>
+      <%= link_to decidim.destroy_user_session_path, method: :delete, class: "button primary expanded" do %>
+        <%= t("sign_out", scope: "layouts.decidim.user_menu") %>
       <% end %>
     </div>
   </div>
@@ -34,8 +37,6 @@
 
                 <%= f.text_field :name, disabled: true %>
                 <%= f.hidden_field :name %>
-
-                <%= f.text_field :nickname, disabled: true %>
                 <%= f.hidden_field :nickname %>
 
                 <%= f.email_field :email %>
@@ -58,7 +59,7 @@
 
         <% @delete_form = controller.form(Decidim::DeleteAccountForm).from_model(current_user) %>
         <%= decidim_form_for(@delete_form, url: account_path, method: :delete, html: { class: "user-form delete-account" }) do |f| %>
-          <input type="submit" class="button open-modal-button hollow expanded" value="<%= t("confirm.title", scope: "decidim.account.delete").upcase %>">
+          <input type="submit" class="button open-modal-button hollow alert expanded" value="<%= t("confirm.title", scope: "decidim.account.delete").upcase %>">
         <% end %>
 
         <div class="reveal" id="deleteConfirm" data-reveal>
