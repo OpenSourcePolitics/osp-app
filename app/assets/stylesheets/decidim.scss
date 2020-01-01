@@ -2,9 +2,9 @@
 //
 
 // $primary: #ef604d;
-$primary: #005E8B;
-$secondary: #ef604d;
+$primary: #2b3951;
 // $secondary: #599aa6;
+$secondary: #e94b4e;
 // $success: #57d685;
 // $warning: #ffae00;
 // $alert: #ec5840;
@@ -325,10 +325,10 @@ $navbar-background: darken( $title-bar-background, 10%);
   }
 }
 
-a.button > .icon.small {
-  width: .75em;
-  height: .75em;
-  vertical-align: middle;
+a.button.small > .icon {
+  width: .65em;
+  height: .65em;
+  vertical-align: baseline;
 }
 
 .open-modal-button {
@@ -426,3 +426,5 @@ main.anonymous {
 }
 
 .omniauth-explanation { margin-bottom: 1.5rem; }
+
+.topbar__search, .topbar__notifications { display: none; }

@@ -12,13 +12,13 @@ module OmniAuth
           email: user_info.email,
           nickname: ::Decidim::UserBaseEntity.nicknamize(find_nickname),
           first_name: user_info.given_name,
-          last_name: user_info.family_name,
+          last_name: user_info.preferred_username || user_info.family_name,
           date_of_birth: user_info.birthdate
         }
       end
 
       def find_name
-        "#{user_info.given_name} #{user_info.family_name}"
+        "#{user_info.given_name} #{user_info.preferred_username || user_info.family_name}"
       end
 
       def find_nickname

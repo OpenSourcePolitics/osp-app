@@ -6,11 +6,6 @@
   </li>
 <% end %>
 <li><%= link_to t(".profile"), decidim.account_path %></li>
-<% if current_user.email.present? %>
-  <% if current_user.nickname.present? && !current_user.managed? %>
-    <li><%= link_to t(".public_profile"), decidim.profile_path(current_user.nickname) %></li>
-  <% end %>
-<% end %>
 <% if allowed_to? :read, :admin_dashboard %>
   <li><%= link_to t(".admin_dashboard"), decidim_admin.root_path %></li>
 <% end %>
