@@ -24,6 +24,34 @@ fr:
           actions:
             osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
             osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+  devise:
+    mailer:
+      invitation_instructions:
+        accept: Accepter l'invitation
+        accept_until: Cette invitation expirera le %{due_date}.
+        decline: Refuser l'invitation
+        hello: Bonjour %{email},
+        ignore: |-
+          Si vous ne souhaitez pas participer à cette concertation, il vous suffit d’ignorer cet e-mail.<br /><br />
+          C’est ensemble que nous évoluons, avec votre participation et grâce à vos contributions !<br /><br />
+          À bientôt,<br /><br />
+          L’équipe #APTIC
+        # invited_you_as_admin: "%{invited_by} vous a invité en tant qu'administrateur de %{application}. Vous pouvez accepter cette invitation grâce au lien ci-dessous."
+        invited_you_as_private_user: |-
+          Comme à chaque évolution importante, #APTIC implique les parties prenantes.
+          Rendez-vous à partir du 6 janvier jusqu’au 2 février pour faire évoluer ensemble la Charte #APTIC.
+          Pour participer, il vous suffit d’accepter l’invitation via le lien ci-dessous. Les étapes y sont détaillées
+          et vous pourrez directement proposer des modifications, amender, commenter et interagir.
+        # someone_invited_you: Vous avez été invité à %{application}. Vous pouvez accepter cette invitation grâce au lien ci-dessous.
+        # someone_invited_you_as_admin: Vous avez été invité en tant qu'administrateur de %{application}, vous pouvez l'accepter via le lien ci-dessous.
+        someone_invited_you_as_private_user:  |-
+          Comme à chaque évolution importante, #APTIC implique les parties prenantes.
+          Rendez-vous à partir du 6 janvier jusqu’au 2 février pour faire évoluer ensemble la Charte #APTIC.
+          Pour participer, il vous suffit d’accepter l’invitation via le lien ci-dessous. Les étapes y sont détaillées
+          et vous pourrez directement proposer des modifications, amender, commenter et interagir.
+        subject: "Lancement de la nouvelle plateforme de concertation !"
+      invite_private_user:
+        subject: Lancement de la nouvelle plateforme de concertation !
   layouts:
     decidim:
       footer:
