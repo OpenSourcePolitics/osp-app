@@ -228,5 +228,5 @@ def current_organization
 end
 
 def current_process
-  @current_process ||= Decidim::ParticipatoryProcess.find(@process)
+  @current_process ||= Decidim::Assembly.find(@process)
 end
