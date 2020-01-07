@@ -38,28 +38,31 @@
     </div>
 
     <div class="row column">
-      <%= form.translated :editor, :description, toolbar: :full, lines: 8, disabled: !allowed_to?(:update, :initiative, initiative: current_initiative) %>
+      <%= form.translated :text_area, :description, rows: 8, maxlength: 10000, autocomplete: :off, disabled: !allowed_to?(:update, :initiative, initiative: current_initiative) %>
     </div>
 
     <div class="row">
-      <div class="columns xlarge-6">
-        <%= form.select :type_id,
-                        initiative_type_options,
-                        {},
-                        {
-                          disabled: !@form.signature_type_updatable?,
-                          "data-scope-selector": "initiative_decidim_scope_id",
-                          "data-scope-id": form.object.decidim_scope_id,
-                          "data-scope-search-url": decidim_initiatives.initiative_type_scopes_search_url,
-                          "data-signature-types-selector": "initiative_signature_type",
-                          "data-signature-type": current_initiative.signature_type,
-                          "data-signature-types-search-url": decidim_initiatives.initiative_type_signature_types_search_url
-                        } %>
-      </div>
-
-      <div class="columns xlarge-6">
-        <%= form.select :decidim_scope_id, [], {}, { disabled: !@form.signature_type_updatable? } %>
-      </div>
+      <% if current_user.admin? && initiative_type_options.length > 1 %>
+        <div class="columns xlarge-6">
+          <%= form.select :type_id,
+                          initiative_type_options,
+                          {},
+                          {
+                            disabled: !@form.signature_type_updatable?,
+                            "data-scope-selector": "initiative_decidim_scope_id",
+                            "data-scope-id": form.object.decidim_scope_id,
+                            "data-scope-search-url": decidim_initiatives.initiative_type_scopes_search_url,
+                            "data-signature-types-selector": "initiative_signature_type",
+                            "data-signature-type": current_initiative.signature_type,
+                            "data-signature-types-search-url": decidim_initiatives.initiative_type_signature_types_search_url
+                          } %>
+        </div>
+      <% end %>
+      <% if !current_initiative.type.only_global_scope_enabled %>
+        <div class="columns xlarge-6">
+          <%= form.select :decidim_scope_id, [], {}, { disabled: !@form.signature_type_updatable? } %>
+        </div>
+      <% end %>
     </div>
 
     <% if current_initiative.published? && current_user.admin? %>
@@ -74,16 +77,6 @@
       </div>
     <% end %>
 
-    <div class="row">
-      <div class="columns xlarge-6">
-        <%= form.text_field :hashtag, disabled: !allowed_to?(:update, :initiative, initiative: current_initiative) %>
-      </div>
-
-      <div class="columns xlarge-6">
-        <%= form.select :signature_type, [], {}, { disabled: !@form.signature_type_updatable? } %>
-      </div>
-    </div>
-
     <% if current_initiative.accepts_offline_votes? && current_user.admin? %>
       <div class="row">
         <div class="columns xlarge-6">
@@ -96,3 +89,5 @@
     <% end %>
   </div>
 </div>
+
+<%= javascript_include_tag "decidim/initiatives/scoped_type" %>

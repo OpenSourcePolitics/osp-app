@@ -8,7 +8,7 @@
       <% if allowed_to? :send_to_technical_validation, :initiative, initiative: current_initiative %>
         <%= link_to t(".send_to_technical_validation"),
                     send_to_technical_validation_initiative_path(current_initiative),
-                    class: "button muted",
+                    class: "button warning",
                     data: { confirm: t(".confirm") } %>
       <% elsif current_initiative.created? %>
         <%= link_to t(".send_to_technical_validation"), "#", class: "button muted disabled" %>

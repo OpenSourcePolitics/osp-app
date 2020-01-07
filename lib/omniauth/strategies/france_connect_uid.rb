@@ -5,6 +5,7 @@ module OmniAuth
   module Strategies
     class FranceConnectUid < OmniAuth::Strategies::OpenIDConnect
 
+      option :name, :france_connect_uid
       option :origin_param, "redirect_url"
 
       info do
