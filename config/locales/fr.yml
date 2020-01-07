@@ -30,25 +30,29 @@ fr:
         accept: Accepter l'invitation
         accept_until: Cette invitation expirera le %{due_date}.
         decline: Refuser l'invitation
-        hello: Bonjour %{email},
+        hello: 'Bonjour chers #apticulteurs !,'
         ignore: |-
           Si vous ne souhaitez pas participer à cette concertation, il vous suffit d’ignorer cet e-mail.<br /><br />
           C’est ensemble que nous évoluons, avec votre participation et grâce à vos contributions !<br /><br />
-          À bientôt,<br /><br />
+          Bonne journée,<br /><br />
           L’équipe #APTIC
         # invited_you_as_admin: "%{invited_by} vous a invité en tant qu'administrateur de %{application}. Vous pouvez accepter cette invitation grâce au lien ci-dessous."
         invited_you_as_private_user: |-
-          Comme à chaque évolution importante, #APTIC implique les parties prenantes.
-          Rendez-vous à partir du 6 janvier jusqu’au 2 février pour faire évoluer ensemble la Charte #APTIC.
-          Pour participer, il vous suffit d’accepter l’invitation via le lien ci-dessous. Les étapes y sont détaillées
-          et vous pourrez directement proposer des modifications, amender, commenter et interagir.
+          Hier l'envoi des invitations à participer à la plateforme de concertation a connu un léger bug
+          qui a pu vous empêcher d'y accéder, et nous en sommes désolés.<br /><br />
+          Nos équipes techniques ont fait le nécessaire !<br /><br /><br />
+          Pour participer à faire évoluer ensemble la charte #APTIC,
+          il vous suffit d'accepter votre invitation personnelle via le lien ci-dessous.<br /><br />
+          Les étapes y sont détaillées et vous pourrez directement proposer des modifications, amender, commenter et interagir :
         # someone_invited_you: Vous avez été invité à %{application}. Vous pouvez accepter cette invitation grâce au lien ci-dessous.
         # someone_invited_you_as_admin: Vous avez été invité en tant qu'administrateur de %{application}, vous pouvez l'accepter via le lien ci-dessous.
         someone_invited_you_as_private_user:  |-
-          Comme à chaque évolution importante, #APTIC implique les parties prenantes.
-          Rendez-vous à partir du 6 janvier jusqu’au 2 février pour faire évoluer ensemble la Charte #APTIC.
-          Pour participer, il vous suffit d’accepter l’invitation via le lien ci-dessous. Les étapes y sont détaillées
-          et vous pourrez directement proposer des modifications, amender, commenter et interagir.
+          Hier l'envoi des invitations à participer à la plateforme de concertation a connu un léger bug
+          qui a pu vous empêcher d'y accéder, et nous en sommes désolés.<br /><br />
+          Nos équipes techniques ont fait le nécessaire !<br /><br /><br />
+          Pour participer à faire évoluer ensemble la charte #APTIC,
+          il vous suffit d'accepter votre invitation personnelle via le lien ci-dessous.<br /><br />
+          Les étapes y sont détaillées et vous pourrez directement proposer des modifications, amender, commenter et interagir :
         subject: "Lancement de la nouvelle plateforme de concertation !"
       invite_private_user:
         subject: Lancement de la nouvelle plateforme de concertation !
