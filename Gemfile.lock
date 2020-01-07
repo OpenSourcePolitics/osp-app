@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module-unique-identity
-  revision: 7dec5d2f4f0636b25cc3cc1876353f3369e97bcd
+  revision: 0a410cfb7dddd6274dcb6758114fff6f9bacd2a9
   specs:
     decidim-unique_identity (0.18.0)
       decidim-admin (= 0.18.0)
