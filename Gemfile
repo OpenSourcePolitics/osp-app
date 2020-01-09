@@ -55,6 +55,7 @@ end
 
 group :production do
   # gem "rubocop-rails"
+  gem "dotenv-rails"
   gem "passenger"
   gem "fog-aws"
   gem "dalli"
