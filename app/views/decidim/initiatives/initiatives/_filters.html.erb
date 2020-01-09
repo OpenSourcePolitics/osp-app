@@ -18,7 +18,7 @@
                                     :last,
                                     legend_title: t(".state") %>
 
-  <% if current_user %>
+  <% if current_user && current_user.email.present? %>
     <%= form.collection_radio_buttons :author,
                                     [["any", t(".any")], ["myself", t(".myself")]],
                                     :first,

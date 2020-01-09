@@ -47,6 +47,15 @@ fr:
       saml:
         name: CSAM eID
         explanation: Confirmer votre identité avec un compte CSAM eID
+    pages:
+      terms_and_conditions:
+        refuse:
+          modal_body: Si vous refusez, vous ne pourrez pas utiliser la plateforme.
+          modal_btn_continue: Accepter les conditions <br/> et continuer
+          modal_btn_exit: Refuser les conditions <br/> et se déconnecter
+          modal_button: Refuser les conditions d'utilisation
+          modal_close: Fermer la fenêtre
+          modal_title: Refusez-vous vraiment les conditions d'utilisation ?
     omniauth:
       france_connect:
         external:
