@@ -37,6 +37,8 @@ gem "wkhtmltopdf-binary"
 
 gem "sprockets", "~> 3.7.2"
 
+gem 'activerecord-session_store'
+
 gem "omniauth-oauth2", ">= 1.4.0", "< 2.0"
 gem "omniauth_openid_connect", "0.3.1"
 gem "omniauth-saml", "~> 1.10"
