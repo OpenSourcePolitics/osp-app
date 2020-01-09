@@ -30,8 +30,11 @@ if Rails.application.secrets.dig(:scaleway, :id).present? && Rails.env.productio
         provider: 'AWS',
         aws_access_key_id: Rails.application.secrets.dig(:scaleway, :id),
         aws_secret_access_key: Rails.application.secrets.dig(:scaleway, :token),
+        aws_signature_version: 4,
         region: "fr-par",
-        endpoint: "https://s3.fr-par.scw.cloud"
+        host: "s3.fr-par.scw.cloud",
+        endpoint: "https://s3.fr-par.scw.cloud",
+        enable_signature_v4_streaming: false
     }
     config.storage = :fog
     config.fog_directory = Rails.application.secrets.dig(:scaleway, :bucket_name) { "bosa-bucket" }
