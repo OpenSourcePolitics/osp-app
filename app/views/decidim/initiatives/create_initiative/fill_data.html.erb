@@ -32,7 +32,7 @@
             </div>
 
             <div class="field">
-              <%= f.text_area :description, rows: 8, maxlength: 1500, autocomplete: :off, required: true %>
+              <%= f.text_area :description, rows: 8, maxlength: 10000, autocomplete: :off, required: true %>
             </div>
 
             <% signature_type_options = signature_type_options(f.object) %>
