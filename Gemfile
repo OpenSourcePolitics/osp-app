@@ -37,6 +37,9 @@ gem "wkhtmltopdf-binary"
 
 gem "sprockets", "~> 3.7.2"
 
+gem "ruby-saml", path: "../ruby-saml"
+gem "omniauth-saml", path: "../omniauth-saml"
+
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 

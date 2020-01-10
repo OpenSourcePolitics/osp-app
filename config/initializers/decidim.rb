@@ -6,7 +6,9 @@ Decidim.configure do |config|
 
   # Change these lines to set your preferred locales
   config.default_locale = :fr
-  config.available_locales = [:en, :fr]
+  config.available_locales = [:en, :fr, :nl, :de]
+
+  config.maximum_attachment_height_or_width = 6000
 
   # Geocoder configuration
   config.geocoder = {
