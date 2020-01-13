@@ -3,19 +3,37 @@
     <div class="columns large-4 mediumlarge-6 medium-8 medium-centered">
       <%- Decidim::User.omniauth_providers.each do |provider| %>
         <% if social_provider_enabled?(provider) && (request.env.dig(:available_authorizations).nil? || request.env.dig(:available_authorizations).include?(provider.to_s)) %>
+          <% if I18n.exists?("decidim.omniauth.#{provider}.explanation") %>
+            <div class="callout">
+              <%== t("decidim.omniauth.#{provider}.explanation") %>
+            </div>
+          <% end %>
           <div class="social-register">
-            <%= link_to decidim.send("user_#{provider}_omniauth_authorize_path"), class: "button button--social button--#{provider.to_s.parameterize}", method: :post do %>
-              <span class="button--social__icon">
-                <%= oauth_icon provider %>
-              </span>
-              <span class="button--label">
-                <% if Rails.application.secrets.dig(:omniauth, provider.to_sym, :provider_name).present? %>
-                  <%= t("devise.shared.links.sign_in_with_provider", provider: "") %>
-                  <b><%= Rails.application.secrets.dig(:omniauth, provider.to_sym, :provider_name) %></b>
-                <% else %>
-                  <%= t("devise.shared.links.sign_in_with_provider", provider: normalize_provider_name(provider).titleize) %>
+            <% if Rails.application.secrets.dig(:omniauth, provider.to_sym, :button_path).present? %>
+              <%= link_to decidim.send("user_#{provider}_omniauth_authorize_path"), class: "button button--social--custom", method: :post do %>
+                <%= image_tag Rails.application.secrets.dig(:omniauth, provider.to_sym, :button_path), alt: t("devise.shared.links.sign_in_with_provider", provider: normalize_provider_name(provider).titleize) %>
+              <% end %>
+              <% if I18n.exists?("decidim.omniauth.france_connect.external.link") %>
+                <%= link_to t("link", scope: "decidim.omniauth.france_connect.external"), class: "primary", target: "_blank" do %>
+                  <small>
+                    <%= t("text", scope: "decidim.omniauth.france_connect.external") %>
+                  </small>
                 <% end %>
-              </span>
+              <% end %>
+            <% else %>
+              <%= link_to decidim.send("user_#{provider}_omniauth_authorize_path"), class: "button button--social button--#{provider.to_s.parameterize}", method: :post do %>
+                <span class="button--social__icon">
+                  <%= oauth_icon provider %>
+                </span>
+                <span class="button--label">
+                  <% if Rails.application.secrets.dig(:omniauth, provider.to_sym, :provider_name).present? %>
+                    <%= t("devise.shared.links.sign_in_with_provider", provider: "") %>
+                    <b><%= Rails.application.secrets.dig(:omniauth, provider.to_sym, :provider_name) %></b>
+                  <% else %>
+                    <%= t("devise.shared.links.sign_in_with_provider", provider: normalize_provider_name(provider).titleize) %>
+                  <% end %>
+                </span>
+              <% end %>
             <% end %>
           </div>
         <% end %>

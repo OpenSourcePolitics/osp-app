@@ -16,6 +16,8 @@ module DecidimAws
     Decidim.unconfirmed_access_for = 0.days
 
     config.action_mailer.asset_host = "https://broom.osp.cat"
+    # config.session_store :active_record_store,
+    #   :key => '_decidim_session'
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

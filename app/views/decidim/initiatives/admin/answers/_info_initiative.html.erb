@@ -13,7 +13,6 @@
       </div>
       <div class="author--name">
         <%= initiative.author.name %>
-        <small>@<%= initiative.author.nickname %></small>
       </div>
       <div class="author--actions">
         <% if authorizations && authorizations.any? && authorizations.first.metadata.present? %>
@@ -29,7 +28,9 @@
   <div class="card-section initiative-info">
     <div class="row column">
       <strong><%= t ".description" %></strong>
-      <div><%= decidim_sanitize translated_attribute(initiative.description) %></div>
+      <div class="description">
+        <%= decidim_sanitize(translated_attribute(initiative.description)) %>
+      </div>
     </div>
     <div class="row column flex-column">
       <div class="info-box">
@@ -42,7 +43,7 @@
       </div>
       <div class="info-box">
         <strong><%= t ".initiative_votes_count" %></strong>
-        <p class="text-right"><b><%= initiative.initiative_votes_count %></b>/<%= initiative.scoped_type.supports_required %></p>
+        <p class="text-right"><b><%= initiative.online_votes_count %></b>/<%= initiative.scoped_type.supports_required %></p>
       </div>
     </div>
   </div>
@@ -51,5 +52,4 @@
 <%= render partial: "decidim/shared/authorization_modal" %>
 
 <%= stylesheet_link_tag "decidim/admin/initiatives-extras" %>
-<%= stylesheet_link_tag "decidim/omniauth/extras" %>
 <%= javascript_include_tag "decidim/admin/reveal" %>

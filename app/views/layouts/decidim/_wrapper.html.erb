@@ -57,7 +57,28 @@ end
                 <% end %>
                 <ul class="dropdown menu" data-dropdown-menu>
                   <li class="is-dropdown-submenu-parent show-for-medium">
-                    <%= link_to current_user.name, decidim.account_path %>
+                    <% if current_user.identities.present? && current_user.identities.first.provider.match(/^france_connect.*/) %>
+                      <% provider = current_user.identities.first.provider %>
+                      <%= link_to decidim.account_path, class: "user-menu" do %>
+                        <div class="user-menu--icon">
+                          <%= oauth_icon provider %>
+                        </div>
+                        <div class="user-menu--label">
+                          <% if current_user.email.present? %>
+                            <%= current_user.name %>
+                          <% elsif I18n.exists?("decidim.omniauth.#{provider}.anonymous_user") %>
+                            <%== t("decidim.omniauth.#{provider}.anonymous_user") %>
+                          <% elsif Rails.application.secrets.dig(:omniauth, provider.to_sym, :provider_name).present? %>
+                            <%== t("devise.shared.links.signed_in_with_provider", provider: "") %>
+                            <b><%= Rails.application.secrets.dig(:omniauth, provider.to_sym, :provider_name) %></b>
+                          <% else %>
+                            <%== t("devise.shared.links.signed_in_with_provider", provider: normalize_provider_name(provider).titleize) %>
+                          <% end %>
+                        </div>
+                      <% end %>
+                    <% else %>
+                      <%= link_to (current_user.email.present? ? current_user.name : t("decidim.anonymous_user")), decidim.account_path %>
+                    <% end %>
                     <ul class="menu is-dropdown-submenu js-append usermenu-off-canvas">
                       <%= render partial: "layouts/decidim/user_menu" %>
                     </ul>
@@ -91,7 +112,7 @@ end
           </nav>
         </div>
 
-        <main>
+        <main class="<%= (current_user && current_user.email.present?) ? "well-known" : "anonymous" %>">
           <%= display_flash_messages key_matching: { omniauth: :success, logout: :success } %>
           <%= yield %>
         </main>

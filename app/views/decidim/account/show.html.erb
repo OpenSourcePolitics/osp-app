@@ -1,31 +1,94 @@
+<div class="columns user-header"></div>
+
 <div class="row">
-  <%= decidim_form_for(@account, url: account_path, method: :put, html: { autocomplete: "nope" }) do |f| %>
-    <input autocomplete="off" name="hidden" type="password" style="display:none;">
-    <div class="columns large-4">
-      <%= f.upload :avatar %>
-    </div>
-
-    <div class="columns large-8 end">
-      <%= f.text_field :name, disabled: true %>
-      <%= f.text_field :nickname, disabled: true %>
-      <%= f.email_field :email %>
-
-      <% if !Decidim::Identity.exists?(:user => @account.id) %>
-        <% if @account.errors[:password].any? || @account.errors[:password_confirmation].any? %>
-          <%= render partial: "password_fields", locals: { form: f } %>
-        <% else %>
-          <p>
-            <a data-toggle="passwordChange" class="change-password"><%= t ".change_password" %></a>
-          </p>
-          <div id="passwordChange" class="toggle-show" data-toggler=".is-expanded">
-            <%= render partial: "password_fields", locals: { form: f } %>
+  <div class="columns large-8 large-offset-2 end">
+    <div class="callout">
+      <% if current_user.identities.present? && current_user.identities.first.provider.match(/^france_connect.*/) %>
+        <% provider = current_user.identities.first.provider %>
+        <% if I18n.exists?("decidim.omniauth.#{provider}.explanation") %>
+          <div class="omniauth-explanation">
+            <%== t("decidim.omniauth.#{provider}.explanation") %>
           </div>
         <% end %>
+        <% if I18n.exists?("decidim.omniauth.france_connect.external.link") %>
+          <%= link_to t("link", scope: "decidim.omniauth.france_connect.external"), class: "button hollow small expanded", target: "_blank" do %>
+            <%= t("text", scope: "decidim.omniauth.france_connect.external") %>
+            &nbsp;
+            <%= icon "external-link" %>
+          <% end %>
+        <% end %>
       <% end %>
-
-      <div class="actions">
-        <%= f.submit t(".update_account"), disable_with: true %>
-      </div>
-    <% end %>
+      <%= link_to decidim_verifications.authorizations_path, class: "button hollow expanded" do %>
+        <%= t("authorizations", scope: "layouts.decidim.user_profile") %>
+      <% end %>
+      <%= link_to decidim.destroy_user_session_path, method: :delete, class: "button primary expanded" do %>
+        <%= t("sign_out", scope: "layouts.decidim.user_menu") %>
+      <% end %>
+    </div>
   </div>
 </div>
+
+<% if @account.email.present? %>
+  <div class="row">
+    <div class="columns large-8 large-offset-2 end">
+      <div class="callout">
+        <%= decidim_form_for(@account, url: account_path, method: :put, html: { autocomplete: "nope" }) do |f| %>
+          <%= f.hidden_field :id %>
+
+                <%= f.text_field :name, disabled: true %>
+                <%= f.hidden_field :name %>
+                <%= f.hidden_field :nickname %>
+
+                <%= f.email_field :email %>
+
+                <% if Devise.mappings[:user].confirmable? && current_user.unconfirmed_email.present? && current_user.unconfirmed_email != @account.email %>
+                  <div class="callout warning">
+                    <p>
+                      <%== t(".unconfirmed_email", email: current_user.unconfirmed_email ) %>
+                    </p>
+                    <p>
+                      <%= link_to t("devise.shared.links.didn_t_receive_confirmation_instructions"), new_confirmation_path(Devise.mappings[:user].name) %>
+                    </p>
+                  </div>
+                <% end %>
+
+                <div class="actions">
+                  <%= f.submit t(".update_account"),class: "button expanded"  ,disable_with: true %>
+                </div>
+        <% end %>
+
+        <%= link_to decidim.data_portability_path, class: "button hollow expanded" do %>
+          <%= t("my_data", scope: "layouts.decidim.user_profile") %>
+        <% end %>
+
+        <% @delete_form = controller.form(Decidim::DeleteAccountForm).from_model(current_user) %>
+        <%= decidim_form_for(@delete_form, url: account_path, method: :delete, html: { class: "user-form delete-account" }) do |f| %>
+          <input type="submit" class="button open-modal-button hollow alert expanded" value="<%= t("confirm.title", scope: "decidim.account.delete").upcase %>">
+        <% end %>
+
+        <div class="reveal" id="deleteConfirm" data-reveal>
+          <div class="callout alert">
+            <p><%= t("alert", scope: "decidim.account.delete") %></p>
+          </div>
+          <p><%= t("explanation", scope: "decidim.account.delete") %></p>
+          <%= decidim_form_for(@delete_form, url: account_path, method: :delete, html: { class: "user-form delete-account-modal" }) do |f| %>
+            <div>
+              <label>
+                <span class="user-form__label"><%= t("activemodel.attributes.account.delete_reason") %></span>
+                <%= f.text_area :delete_reason, rows: 2, label: false %>
+              </label>
+            </div>
+
+            <p><%= t("confirm.question", scope: "decidim.account.delete") %></p>
+
+            <input type="submit" class="button expanded" value="<%= t("confirm.ok", scope: "decidim.account.delete") %>">
+
+            <button class="close-button" data-close aria-label="<%= t("confirm.close", scope: "decidim.account.delete") %>" type="button">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -30,6 +30,39 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  decidim:
+    authorization_handlers:
+      admin:
+        decidim:
+          help:
+            - Validate with an external Decidim account
+        france_connect:
+          help:
+            - Validate with a France Connect account
+        france_connect_uid:
+          help:
+            - Validate with a France Connect Level I account
+        france_connect_profile:
+          help:
+            - Validate with a France Connect Level II account
+        saml:
+          help:
+            - Validate with a CSAM eID account
+      decidim:
+        name: Omniauth Decidim
+        explanation: Validate with your external Decidim account
+      france_connect:
+        name: France Connect
+        explanation: Validate with your France Connect account
+      france_connect_uid:
+        name: France Connect Level I
+        explanation: Validate with your France Connect account
+      france_connect_profile:
+        name: France Connect Level II
+        explanation: Validate with your France Connect account
+      saml:
+        name: CSAM eID
+        explanation: Validate with your CSAM eID account
   layouts:
     decidim:
       footer:

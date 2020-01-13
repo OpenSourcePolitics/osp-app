@@ -1,0 +1,38 @@
+<% content_for :back_link do %>
+  <%= link_to :back do %>
+    <%= icon "chevron-left", class: "icon--small" %>
+    <%= t(".back") %>
+  <% end %>
+<% end %>
+
+<div class="row">
+  <div class="medium-centered">
+    <div class="callout secondary">
+      <%= t ".help" %>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="medium-centered">
+    <div class="card">
+      <div class="card__content">
+        <%= decidim_form_for(@form, url: next_wizard_path, method: :put, html: { class: "form new_initiative_previous_form" }) do |f| %>
+          <%= f.hidden_field :type_id %>
+
+          <div class="field">
+            <%= f.text_field :title, autofocus: true, required: true %>
+          </div>
+
+          <div class="field">
+            <%= f.text_area :description, rows: 8, maxlength: 10000, autocomplete: :off, required: true %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit t(".continue"), class: "button expanded" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

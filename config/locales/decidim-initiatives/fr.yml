@@ -3,6 +3,8 @@ fr:
   activemodel:
     attributes:
       initiative:
+        answer: Réponse
+        answer_url: Lien externe
         decidim_user_group_id: Auteur
         description: Description
         offline_votes: Votes en présentiel
@@ -197,8 +199,8 @@ fr:
       admin:
         answers:
           edit:
-            answer: Réponse
-            title: Répondez pour %{title}
+            answer: Répondre
+            title: Réponse pour %{title}
           info_initiative:
             created_at: Créé à
             description: Description
@@ -559,7 +561,7 @@ fr:
     decidim:
       admin:
         initiative:
-          attachments: Documents liés
+          attachments: Pièce(s) jointe(s)
           committee_members: Membres du Comité de promotion
           components: Fonctionnalités
           information: Informations
@@ -575,11 +577,12 @@ fr:
         title: Créer une nouvelle pétition
       initiative_header:
         initiative_menu_item: Pétition
+      initiative_header_steps:
+        description: Période de recueil des signatures
       initiative_signature_creation_header:
         back: Retour
         fill_personal_data: Complétez vos données
         finish: terminer
-        finished: Signature de la pétition créée
         finished: Pétition signée avec succès
         see_steps: voir les étapes
         select_identity: Sélectionner une identité
