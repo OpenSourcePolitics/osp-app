@@ -105,6 +105,9 @@ fr:
       authorizations:
         index:
           title: Liste des autorisations
+      metadata:
+        content:
+          active_email: "<b>Cet utilisateur peut être contacté via l'adresse de courriel <br/><a href=\"mailto:%{email}\">%{email}</a></b>"
   devise:
     mailer:
       confirmation_instructions:
