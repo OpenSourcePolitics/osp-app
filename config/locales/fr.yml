@@ -127,6 +127,8 @@ fr:
     decidim:
       footer:
         download_open_data: Données ouvertes
+      mailer:
+        footer: À bientôt sur la plateforme de <a href="%{organization_url}">e-pétitions</a> du Sénat.
       user_profile:
         authorizations: Voir les autorisations associées à votre compte
         back_to_account: Retour à votre compte

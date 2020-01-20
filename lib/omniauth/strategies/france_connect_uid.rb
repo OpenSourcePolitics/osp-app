@@ -26,10 +26,6 @@ module OmniAuth
         hash
       end
 
-      def other_phase
-        call_app!
-      end
-
       def end_session_uri
         return unless client_options.end_session_endpoint
 
@@ -56,6 +52,10 @@ module OmniAuth
 
       def session_state
         session['omniauth.state'] = params["state"] || SecureRandom.hex(16)
+      end
+      
+      def other_phase
+        call_app!
       end
     end
   end
