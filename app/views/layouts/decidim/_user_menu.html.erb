@@ -1,10 +1,3 @@
-<% if I18n.exists?("decidim.omniauth.france_connect.external.link") %>
-  <li class="small">
-    <%= link_to t("link", scope: "decidim.omniauth.france_connect.external"), target: "_blank" do %>
-      <%= t("text", scope: "decidim.omniauth.france_connect.external") %>
-    <% end %>
-  </li>
-<% end %>
 <li><%= link_to t(".profile"), decidim.account_path %></li>
 <% if allowed_to? :read, :admin_dashboard %>
   <li><%= link_to t(".admin_dashboard"), decidim_admin.root_path %></li>

@@ -87,10 +87,6 @@ fr:
           modal_close: Fermer la fenêtre
           modal_title: Refusez-vous vraiment les conditions d'utilisation ?
     omniauth:
-      france_connect:
-        external:
-          link: "https://franceconnect.gouv.fr/"
-          text: "Qu'est-ce-que FranceConnect ?"
       france_connect_uid:
         explanation: "<b>La connexion via FranceConnect en tant que \"Signataire\" permet de garantir votre anonymat</b>,<br/>
          tout en assurant qu'une pétition n'est signée une seule fois par une même personne physique.<br/>

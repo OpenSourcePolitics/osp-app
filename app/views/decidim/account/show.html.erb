@@ -10,13 +10,6 @@
             <%== t("decidim.omniauth.#{provider}.explanation") %>
           </div>
         <% end %>
-        <% if I18n.exists?("decidim.omniauth.france_connect.external.link") %>
-          <%= link_to t("link", scope: "decidim.omniauth.france_connect.external"), class: "button hollow small expanded", target: "_blank" do %>
-            <%= t("text", scope: "decidim.omniauth.france_connect.external") %>
-            &nbsp;
-            <%= icon "external-link" %>
-          <% end %>
-        <% end %>
       <% end %>
       <%= link_to decidim_verifications.authorizations_path, class: "button hollow expanded" do %>
         <%= t("authorizations", scope: "layouts.decidim.user_profile") %>
