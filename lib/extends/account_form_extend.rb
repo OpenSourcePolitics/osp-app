@@ -10,7 +10,7 @@ module AccountFormExtend
 
     validates :avatar, file_size: { less_than_or_equal_to: ->(_record) { Decidim.maximum_avatar_size } }
 
-    # validate :unique_email
+    validate :unique_email
   end
 end
 
