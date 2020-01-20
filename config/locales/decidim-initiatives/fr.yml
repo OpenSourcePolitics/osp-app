@@ -371,7 +371,7 @@ fr:
           choose_html: Je veux créer un <strong>%{title}</strong>
           more_information: "(Plus d'informations)"
           select: Créer une pétition
-          select_initiative_type_help: Les pétitionssont un moyen par lequel la
+          select_initiative_type_help: Les pétitions sont un moyen par lequel la
             communauté des citoyens peut se manifester afin que le conseil municipal
             entreprenne des actions d'intérêt général qui relèvent des champs de compétence
             municipaux. Quelle pétition voulez-vous lancer ?
@@ -381,7 +381,7 @@ fr:
             du Comité de promotion
         show_similar_initiatives:
           back: Retour
-          compare_help: Si l'une des pétitionssuivantes est similaire à la vôtre,
+          compare_help: Si l'une des pétitions suivantes est similaire à la vôtre,
             nous vous encourageons à l'appuyer. Votre proposition aura ainsi plus
             de possibilités de se réaliser.
           continue: Ma pétition est différente
@@ -389,7 +389,7 @@ fr:
       events:
         create_initiative_event:
           email_intro: "%{author_name} %{author_nickname}, que vous suivez, a créé
-            une nouvelle pétition, lisez -la et contribuez :"
+            une nouvelle pétition, lisez-la et contribuez :"
           email_outro: Vous avez reçu cette notification, car vous suivez %{author_nickname}.
             Vous pouvez arrêter de recevoir des notifications à partir du lien précédent.
           email_subject: Nouvelle pétition de %{author_nickname}
@@ -397,7 +397,7 @@ fr:
             a été créée par <a href="%{author_path}">%{author_name} %{author_nickname}</a>.
         endorse_initiative_event:
           email_intro: "%{author_name} %{author_nickname}, que vous suivez, a soutenu
-            la pétitionsuivante; vous pouvez y contribuer si vous le souhaitez :"
+            la pétition suivante; vous pouvez y contribuer si vous le souhaitez :"
           email_outro: Vous avez reçu cette notification parce que vous suivez %{author_nickname}.
             Vous pouvez arrêter de recevoir des notifications à partir du lien précédent.
           email_subject: Pétition soutenue par %{author_nickname}
