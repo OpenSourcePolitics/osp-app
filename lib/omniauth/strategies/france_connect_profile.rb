@@ -9,11 +9,11 @@ module OmniAuth
 
       info do
         {
-          name: "#{user_info.given_name} #{find_name}",
+          name: "#{user_info.given_name} #{find_name}".strip,
           email: user_info.email,
           nickname: ::Decidim::UserBaseEntity.nicknamize(find_name),
-          first_name: user_info.given_name,
-          last_name: find_name,
+          first_name: user_info.given_name&.strip,
+          last_name: find_name&.strip,
           date_of_birth: user_info.birthdate
         }
       end
@@ -30,10 +30,6 @@ module OmniAuth
         hash = super
         hash.logout = end_session_uri
         hash
-      end
-
-      def other_phase
-        call_app!
       end
 
       def end_session_uri
@@ -62,6 +58,10 @@ module OmniAuth
 
       def session_state
         session['omniauth.state'] = params["state"] || SecureRandom.hex(16)
+      end
+
+      def other_phase
+        call_app!
       end
     end
   end

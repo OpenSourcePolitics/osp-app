@@ -104,6 +104,9 @@ fr:
       authorizations:
         index:
           title: Liste des autorisations
+      metadata:
+        content:
+          active_email: "<b>Cet utilisateur peut être contacté via l'adresse de courriel <br/><a href=\"mailto:%{email}\">%{email}</a></b>"
   devise:
     mailer:
       confirmation_instructions:
@@ -123,6 +126,8 @@ fr:
     decidim:
       footer:
         download_open_data: Données ouvertes
+      mailer:
+        footer: <a href="%{organization_url}">%{organization_name}</a>
       user_profile:
         authorizations: Voir les autorisations associées à votre compte
         back_to_account: Retour à votre compte

@@ -128,22 +128,23 @@ fr:
             <a href="%{resource_path}">%{resource_title}</a> a été prolongée.
         milestone_completed:
           affected_user:
-            email_intro: Votre pétition %{resource_title} a atteint %{percentage}%
-              de signatures!
+            email_intro: Votre pétition" %{resource_title}" a atteint %{percentage}%
+              de signatures requises!
             email_outro: Vous avez reçu cette notification car vous êtes l'auteur
-              de la pétition%{resource_title}.
-            email_subject: Nouvelle étape franchie !
+              de cette pétition.
+            email_subject: Votre pétition" %{resource_title}" a atteint %{percentage}%
+              de signatures requises!
             notification_title: Votre pétition <a href="%{resource_path}">%{resource_title}</a>
-              a atteint les %{percentage}% de signatures.
+              a atteint %{percentage}% de signatures requises.
           follower:
-            email_intro: La pétition %{resource_title} a atteint %{percentage}% des
+            email_intro: La pétition "%{resource_title}" a atteint %{percentage}% des
               signatures requises !
-            email_outro: Vous avez reçu cette notification parce que vous suivez %{resource_title}.
+            email_outro: Vous avez reçu cette notification parce que vous suivez "%{resource_title}".
               Vous pouvez cesser de recevoir des notifications en suivant le lien
               précédent.
             email_subject: Nouvelle étape franchie !
             notification_title: La pétition <a href="%{resource_path}">%{resource_title}</a>
-              a atteint les %{percentage}% de signatures.
+              a atteint %{percentage}% de signatures requises.
     gamification:
       badges:
         initiatives:
@@ -294,11 +295,11 @@ fr:
             success: Le type de pétitiona été mis à jour avec succès
       admin_log:
         initiative:
-          publish: "%{user_name} a publié la pétition%{resource_name}"
-          send_to_technical_validation: "%{user_name} a envoyé la pétition%{resource_name}
+          publish: "%{user_name} a publié la pétition %{resource_name}"
+          send_to_technical_validation: "%{user_name} a envoyé la pétition %{resource_name}
             à la validation technique"
-          unpublish: "%{user_name} a dépublié la pétition%{resource_name}"
-          update: "%{user_name} a mis à jour la pétition%{resource_name}"
+          unpublish: "%{user_name} a dépublié la pétition %{resource_name}"
+          update: "%{user_name} a mis à jour la pétition %{resource_name}"
       admin_states:
         accepted: Acceptée
         created: Créée
@@ -320,12 +321,12 @@ fr:
         fill_data:
           back: Retour
           continue: Continuer
-          fill_data_help: "<ul> <li>Vérifier le contenu de votre pétition. Votre
-            titre est-il facile à comprendre ? L'objectif de votre pétition est-il
-            clair ?</li> <li>Vous devez choisir le type de recueil des signatures
-            : en présentiel, en ligne ou une combinaison des deux</li> <li>Quelle
-            est le secteur géographique de la pétition? Ville, arrondissement, quartier
-            ?</li> </ul>"
+          fill_data_help: |-
+            <ul>
+              <li>Vérifier le contenu de votre pétition. Votre titre est-il facile à comprendre ? L'objectif de votre pétition est-il clair ?</li>
+              <li>Vous devez choisir le type de recueil des signatures : en présentiel, en ligne ou une combinaison des deux</li>
+              <li>Quelle est le secteur géographique de la pétition? Ville, arrondissement, quartier?</li>
+            </ul>
           initiative_type: Type de pétition
           more_information: "(Plus d'informations)"
           select_scope: Sélectionnez une portée
@@ -371,7 +372,7 @@ fr:
           choose_html: Je veux créer un <strong>%{title}</strong>
           more_information: "(Plus d'informations)"
           select: Créer une pétition
-          select_initiative_type_help: Les pétitionssont un moyen par lequel la
+          select_initiative_type_help: Les pétitions sont un moyen par lequel la
             communauté des citoyens peut se manifester afin que le conseil municipal
             entreprenne des actions d'intérêt général qui relèvent des champs de compétence
             municipaux. Quelle pétition voulez-vous lancer ?
@@ -381,7 +382,7 @@ fr:
             du Comité de promotion
         show_similar_initiatives:
           back: Retour
-          compare_help: Si l'une des pétitionssuivantes est similaire à la vôtre,
+          compare_help: Si l'une des pétitions suivantes est similaire à la vôtre,
             nous vous encourageons à l'appuyer. Votre proposition aura ainsi plus
             de possibilités de se réaliser.
           continue: Ma pétition est différente
@@ -389,7 +390,7 @@ fr:
       events:
         create_initiative_event:
           email_intro: "%{author_name} %{author_nickname}, que vous suivez, a créé
-            une nouvelle pétition, lisez -la et contribuez :"
+            une nouvelle pétition, lisez-la et contribuez :"
           email_outro: Vous avez reçu cette notification, car vous suivez %{author_nickname}.
             Vous pouvez arrêter de recevoir des notifications à partir du lien précédent.
           email_subject: Nouvelle pétition de %{author_nickname}
@@ -397,7 +398,7 @@ fr:
             a été créée par <a href="%{author_path}">%{author_name} %{author_nickname}</a>.
         endorse_initiative_event:
           email_intro: "%{author_name} %{author_nickname}, que vous suivez, a soutenu
-            la pétitionsuivante; vous pouvez y contribuer si vous le souhaitez :"
+            la pétition suivante; vous pouvez y contribuer si vous le souhaitez :"
           email_outro: Vous avez reçu cette notification parce que vous suivez %{author_nickname}.
             Vous pouvez arrêter de recevoir des notifications à partir du lien précédent.
           email_subject: Pétition soutenue par %{author_nickname}
@@ -513,24 +514,28 @@ fr:
           most_popular_initiative: Pétition la plus populaire
           need_more_votes: Besoin de plus de signatures
       initiatives_mailer:
-        creation_subject: Votre pétition '%{title}' a été créée
+        creation_subject: Votre pétition "%{title}" est rédigée
         initiative_link:
-          check_initiative_details: Vous pouvez accéder aux détails de la pétition
-          here: ici
-        more_information: Vous trouverez ici plus d'informations sur le processus
-          de création d'une pétition.
-        progress_report_body_for: La pétition %{title} a atteint %{percentage}% des
-          soutiens requis.
-        progress_report_for: 'Résumé de la pétition : %{title}'
+          check_initiative_details: Vous pouvez y accéder
+          here: en suivant ce lien
+        more_information: |-
+          Vous pouvez la modifier et éventuellement ajouter des pièces jointes.<br/><br/>
+          Pour cela, accéder au menu "Tableau de bord" de votre compte auteur,
+          cliquer sur  "pétitions" dans le menu à gauche et cliquer sur votre pétition.<br/><br/>
+          <b>Attention ! Elle n'est pas encore publiée :</b><br/><br/>
+          il vous reste à l'envoyer à la validation technique du Sénat
+          en cliquant sur le bouton « Envoyer à la validation technique ».<br/><br/>
+          Une fois votre pétition envoyée, le Sénat s'engage à vous répondre dans un délai de quinze jours et,
+          <a href="https://petitions.senat.fr/pages/petition_recevabilite">si votre pétition est recevable</a>,
+          la publier et l’ouvrir au recueil de signatures.
+        progress_report_body_for: La pétition "%{title}" a atteint %{percentage}% des signatures requises.
+        progress_report_for: La pétition "%{title}" a atteint %{percentage}% des signatures requises.
         promotal_committee_help: Rappelez-vous que vous devez inviter au moins %{member_count}
           personnes au Comité de promotion. Envoyez le lien suivant pour les inviter
-        status_change_body_for: 'Le statut de la pétition %{title} a été changé
-          pour : %{state}'
-        status_change_for: La pétition %{title} a changé de statut
-        technical_validation_body_for: Une validation technique a été demandée pour
-          la pétition%{title}.
-        technical_validation_for: Une validation technique a été demandée pour la pétition
-          %{title}.
+        status_change_body_for: 'Le statut de la pétition "%{title}" a été changé pour : %{state}'
+        status_change_for: La pétition "%{title}" a changé de statut
+        technical_validation_body_for: Une validation technique a été demandée pour la pétition "%{title}".
+        technical_validation_for: Une validation technique a été demandée pour la pétition %{title}.
       last_activity:
         new_initiative: Nouvelle pétition
       pages:

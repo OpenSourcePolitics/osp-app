@@ -337,3 +337,13 @@ a.button.small > .icon {
 .omniauth-explanation { margin-bottom: 1.5rem; }
 
 // .topbar__search, .topbar__notifications { display: none; }
+
+.initiative-description {
+  white-space: pre-line;
+}
+
+.filters__section {
+  .select2 option {
+    white-space: normal;
+  }
+}

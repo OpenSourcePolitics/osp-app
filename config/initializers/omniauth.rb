@@ -41,7 +41,21 @@ if Rails.application.secrets.dig(:omniauth, :saml).present? && Rails.application
       },
       idp_cert_fingerprint: Rails.application.secrets.dig(:omniauth, :saml, :idp_cert_fingerprint),
       idp_cert_fingerprint_validator: lambda { |fingerprint| fingerprint },
-      idp_cert: Rails.application.secrets.dig(:omniauth, :saml, :idp_cert)
+      idp_cert: Rails.application.secrets.dig(:omniauth, :saml, :idp_cert),
+      # authn_force: false,
+      force_authn: true,
+      security: {
+        authn_requests_signed: true,     # Enable or not signature on AuthNRequest
+        logout_requests_signed:  true,     # Enable or not signature on Logout Request
+        logout_responses_signed:  true,     # Enable or not signature on Logout Response
+        want_assertions_signed:  true,     # Enable or not the requirement of signed assertion
+        metadata_signed:  true,     # Enable or not signature on Metadata
+        digest_method:  XMLSecurity::Document::SHA1,
+        signature_method:  XMLSecurity::Document::RSA_SHA1,
+        embed_sign:  false
+      },
+      certificate: Rails.application.secrets.dig(:omniauth, :saml, :idp_cert),
+      private_key: Rails.application.secrets.dig(:omniauth, :saml, :idp_key)
   end
 
   Decidim::User.omniauth_providers << :saml
