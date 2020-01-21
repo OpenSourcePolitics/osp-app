@@ -69,7 +69,7 @@ namespace :heroku do
     app_name_raw = `git rev-parse --abbrev-ref HEAD`
     digit = /\d.\d.-/.match(app_name_raw)
 
-    return app_name_raw.tr('_', '-')[0..29].chomp if digit.nil?
+    return app_name_raw.tr('_', '-').tr('/', '-')[0..29].chomp if digit.nil?
 
     app_name_raw.gsub(digit[0], '').tr('_', '-')[0..29].chomp
   end
