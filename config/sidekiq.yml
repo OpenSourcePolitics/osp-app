@@ -6,3 +6,23 @@
   - newsletters_opt_in
   - events
   - metrics
+
+:schedule:
+  CalculateAllMetrics:
+    every: '5 17 * * *'
+    class: CalculateAllMetricsJob
+  PreloadOpenData:
+    every: '5 17 * * *'
+    class: PreloadOpenDataJob
+  CheckPublishedInitiatives:
+    every: '5 17 * * *'
+    class: CheckPublishedInitiatives
+  CheckValidatingInitiatives:
+    every: '5 17 * * *'
+    class: CheckValidatingInitiatives
+  NotifyProgressInitiatives:
+    every: '5 17 * * *'
+    class: NotifyProgressInitiatives
+  CleanSessions:
+    every: '5 17 * * *'
+    class: CleanSessions
