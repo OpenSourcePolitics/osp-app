@@ -442,3 +442,7 @@ main.anonymous {
     white-space: normal;
   }
 }
+
+.callout > form > :last-child {
+  margin-bottom: 0;
+}
