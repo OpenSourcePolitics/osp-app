@@ -17,6 +17,7 @@ gem "decidim-conferences", git: "https://github.com/OpenSourcePolitics/decidim.g
 # gem "decidim-initiatives", path: "../decidim"
 
 gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git", branch: "0.dev"
+gem "decidim-phone_authorization_handler", git: "https://github.com/Quentinchampenois/decidim-module_phone_authorization_handler"
 
 gem "bootsnap", "~> 1.3"
 

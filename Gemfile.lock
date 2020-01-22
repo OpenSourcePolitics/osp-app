@@ -203,6 +203,13 @@ GIT
     decidim-verifications (0.18.0)
       decidim-core (= 0.18.0)
 
+GIT
+  remote: https://github.com/Quentinchampenois/decidim-module_phone_authorization_handler
+  revision: 7a92c5486c57a555e5b91be94efb31c7d5858c4f
+  specs:
+    decidim-phone_authorization_handler (0.18.0)
+      decidim-core (= 0.18.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -816,6 +823,7 @@ DEPENDENCIES
   decidim!
   decidim-conferences!
   decidim-dev!
+  decidim-phone_authorization_handler!
   decidim-term_customizer!
   dotenv-rails
   faker (~> 1.8)
