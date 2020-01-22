@@ -59,6 +59,7 @@ end
 
 group :production do
   gem "sidekiq"
+  gem "sidekiq-scheduler"
   gem "fog-aws"
   gem "dalli-elasticache"
 end
