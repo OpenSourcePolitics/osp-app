@@ -1,16 +1,17 @@
 # frozen_string_literal: true
 
 require "sidekiq/web"
+require 'sidekiq-scheduler/web'
 
 Rails.application.routes.draw do
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
-  authenticate :user, lambda { |u| u.admin? } do
+  authenticate :admin do
     mount Sidekiq::Web => '/sidekiq'
   end
-
+  
   devise_scope :user do
     get '/admin_sign_in', to: "decidim/devise/sessions#new"
   end
