@@ -226,5 +226,9 @@ h4, .h4, .heading4 {
   }
 }
 
-
-
+#interactive_map {
+  .district-number,
+  .marker-cluster div {
+    font-family: $heading-font !important;
+  }
+}

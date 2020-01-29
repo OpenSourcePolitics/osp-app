@@ -19,6 +19,7 @@ gem "decidim-conferences", git: "https://github.com/OpenSourcePolitics/decidim.g
 # gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git"
 
 gem "decidim-homepage_interactive_map", git: "https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map.git"
+# gem "decidim-homepage_interactive_map", path: "../decidim-module-homepage_interactive_map"
 
 gem "bootsnap", "~> 1.3"
 
@@ -33,6 +34,8 @@ gem "sentry-raven"
 gem "letter_opener_web", "~> 1.3"
 
 gem "sprockets", "~> 3.7"
+
+gem "omniauth-oauth2", ">= 1.4.0", "< 2.0"
 
 group :development, :test do
   gem "dotenv-rails"

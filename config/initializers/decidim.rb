@@ -14,8 +14,8 @@ Decidim.configure do |config|
   # Geocoder configuration
   if !Rails.application.secrets.geocoder[:here_api_key].blank?
     config.geocoder = {
-        static_map_url: "https://image.maps.ls.hereapi.com/mia/1.6/mapview",
-        here_api_key: Rails.application.secrets.geocoder[:here_api_key]
+      static_map_url: "https://image.maps.cit.api.here.com/mia/1.6/mapview",
+      here_api_key: Rails.application.secrets.geocoder[:here_api_key]
     }
   end
 
