@@ -47,15 +47,6 @@ fr:
         decidim:
           help:
             - Confirmer une identité avec un compte Decidim externe
-        france_connect:
-          help:
-            - Confirmer une identité avec un compte France Connect
-        france_connect_uid:
-          help:
-            - Confirmer une identité avec un compte France Connect "Anonyme"
-        france_connect_profile:
-          help:
-            - Confirmer une identité avec un compte France Connect "Auteur"
         saml:
           help:
             - Confirmer une identité avec un compte CSAM eID
@@ -65,15 +56,6 @@ fr:
       dummy_authorization_handler:
         name: BOSA dummy authorization
         explanation: Ajouter des informations complémentaires à votre profil
-      france_connect:
-        name: France Connect
-        explanation: Confirmer votre identité avec un compte France Connect
-      france_connect_uid:
-        name: France Connect Level I
-        explanation: Confirmer votre identité avec un compte France Connect "Anonyme"
-      france_connect_profile:
-        name: France Connect Level II
-        explanation: Confirmer votre identité avec un compte France Connect "Auteur"
       saml:
         name: CSAM eID
         explanation: Confirmer votre identité avec un compte CSAM eID
@@ -86,20 +68,6 @@ fr:
           modal_button: Refuser les conditions d'utilisation
           modal_close: Fermer la fenêtre
           modal_title: Refusez-vous vraiment les conditions d'utilisation ?
-    omniauth:
-      france_connect_uid:
-        explanation: "<b>La connexion via FranceConnect en tant que \"Signataire\" permet de garantir votre anonymat</b>,<br/>
-         tout en assurant qu'une pétition n'est signée une seule fois par une même personne physique.<br/>
-        <b>Aucune donnée personnelle n'est récupérée lors de la connexion avec FranceConnect</b>"
-        anonymous_user: "Authentifié(e) avec<br/><b>FranceConnect</b>"
-      france_connect_profile:
-        explanation: "<b>L'auteur d'une pétition ne peut être anonyme.</b><br/>
-        <p>Toutefois, le Sénat ne récupère, via l'authentification FranceConnect \"Auteur\",
-        que les informations suivantes : <br/>
-        nom, prénom(s), date de naissance, adresse électronique et identifiant technique.<br/>
-        <b>Les noms et prénoms des auteurs de pétition sont publiés avec la pétition.</b><br/>
-        Les autres éléments ne sont en aucun cas rendus publics.
-        </p>"
     verifications:
       authorizations:
         index:

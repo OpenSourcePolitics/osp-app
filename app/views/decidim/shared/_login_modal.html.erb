@@ -6,7 +6,7 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <% if current_organization.sign_in_enabled? && request.env['PATH_INFO'].include?("/admin_sign_in") %>
+  <% if current_organization.sign_in_enabled? %>
     <div class="row">
       <div class="columns medium-8 medium-centered">
           <%= decidim_form_for(Decidim::User.new, as: :user, url: session_path(:user), html: { class: "register-form new_user" }) do |f| %>

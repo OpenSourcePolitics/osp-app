@@ -7,10 +7,8 @@ GIT
       decidim-admin
       decidim-core
 
-GIT
-  remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 77832de60971f00f267745a8e0fec28343fbe3db
-  branch: alt/petition
+PATH
+  remote: ../decidim
   specs:
     decidim (0.21.0.pre.dev)
       decidim-accountability (= 0.21.0.pre.dev)
@@ -73,6 +71,7 @@ GIT
       anchored (>= 1.1.0)
       autoprefixer-rails (~> 8.0)
       batch-loader (~> 1.2)
+      browser (~> 2.7)
       carrierwave (~> 1.3)
       cells-erb (~> 0.1.0)
       cells-rails (~> 0.0.9)
@@ -81,13 +80,14 @@ GIT
       decidim-api (= 0.21.0.pre.dev)
       devise (~> 4.7)
       devise-i18n (~> 1.2)
+      diffy (~> 3.3)
       doorkeeper (~> 5.1)
       doorkeeper-i18n (~> 4.0)
       etherpad-lite (~> 0.3)
       file_validators (~> 2.1)
       foundation-rails (~> 6.4, < 6.5)
       foundation_rails_helper (~> 3.0)
-      geocoder (~> 1.5)
+      geocoder (~> 1.6.1)
       hashdiff (>= 0.4.0, < 2.0.0)
       invisible_captcha (~> 0.12)
       jquery-rails (~> 4.3)
@@ -138,7 +138,7 @@ GIT
       i18n-tasks (~> 0.9.18)
       mdl (~> 0.5.0)
       nokogiri (>= 1.10.4)
-      puma (~> 3.12)
+      puma (>= 3.12)
       rails-controller-testing (~> 1.0)
       rspec-cells (~> 0.3.4)
       rspec-html-matchers (~> 0.9.1)
@@ -148,7 +148,7 @@ GIT
       rubocop-rails (~> 2.0)
       rubocop-rspec (~> 1.21)
       selenium-webdriver (~> 3.142)
-      simplecov (~> 0.16)
+      simplecov (~> 0.17.1)
       system_test_html_screenshots (~> 0.1.1)
       webmock (~> 3.6)
       wisper-rspec (~> 1.0)
@@ -187,7 +187,6 @@ GIT
       cells-rails (~> 0.0.9)
       decidim-comments (= 0.21.0.pre.dev)
       decidim-core (= 0.21.0.pre.dev)
-      diffy (~> 3.3)
       doc2text (~> 0.4.2)
       kaminari (~> 1.1)
       ransack (~> 2.1.1)
@@ -298,9 +297,10 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
+    browser (2.7.1)
     builder (3.2.4)
     byebug (11.0.1)
-    capybara (3.30.0)
+    capybara (3.31.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -375,7 +375,7 @@ GEM
     docile (1.3.2)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-    doorkeeper (5.2.3)
+    doorkeeper (5.3.0)
       railties (>= 5)
     doorkeeper-i18n (4.0.1)
     dotenv (2.7.5)
@@ -390,7 +390,7 @@ GEM
       rainbow
       rubocop (~> 0.51)
       smart_properties
-    erbse (0.1.3)
+    erbse (0.1.4)
       temple
     erubi (1.9.0)
     etherpad-lite (0.3.0)
@@ -437,13 +437,13 @@ GEM
       activesupport (>= 4.1, < 6.0)
       railties (>= 4.1, < 6.0)
       tzinfo (~> 1.2, >= 1.2.2)
-    geocoder (1.6.0)
+    geocoder (1.6.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     graphiql-rails (1.4.11)
       railties
       sprockets-rails
-    graphql (1.10.0)
+    graphql (1.10.1)
     hashdiff (1.0.0)
     hashie (3.6.0)
     highline (2.0.3)
@@ -488,18 +488,18 @@ GEM
       aes_key_wrap
       bindata
     jwt (2.2.1)
-    kaminari (1.1.1)
+    kaminari (1.2.0)
       activesupport (>= 4.1.0)
-      kaminari-actionview (= 1.1.1)
-      kaminari-activerecord (= 1.1.1)
-      kaminari-core (= 1.1.1)
-    kaminari-actionview (1.1.1)
+      kaminari-actionview (= 1.2.0)
+      kaminari-activerecord (= 1.2.0)
+      kaminari-core (= 1.2.0)
+    kaminari-actionview (1.2.0)
       actionview
-      kaminari-core (= 1.1.1)
-    kaminari-activerecord (1.1.1)
+      kaminari-core (= 1.2.0)
+    kaminari-activerecord (1.2.0)
       activerecord
-      kaminari-core (= 1.1.1)
-    kaminari-core (1.1.1)
+      kaminari-core (= 1.2.0)
+    kaminari-core (1.2.0)
     kramdown (1.17.0)
     launchy (2.4.3)
       addressable (~> 2.3)
@@ -527,7 +527,7 @@ GEM
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.1009)
-    mimemagic (0.3.3)
+    mimemagic (0.3.4)
     mini_magick (4.10.1)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
@@ -763,7 +763,7 @@ GEM
     smart_properties (1.15.0)
     social-share-button (1.2.1)
       coffee-rails
-    spreadsheet (1.2.5)
+    spreadsheet (1.2.6)
       ruby-ole (>= 1.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)

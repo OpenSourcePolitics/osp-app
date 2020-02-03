@@ -11,11 +11,15 @@ Decidim.configure do |config|
 
   config.maximum_attachment_height_or_width = 6000
 
+  # Restrict access to the system part with an authorized ip list.
+  # You can use a single ip like ("1.2.3.4"), or an ip subnet like ("1.2.3.4/24")
+  # You may specify multiple ip in an array ["1.2.3.4", "1.2.3.4/24"]
+  # config.system_whitelist_ips = ["127.0.0.1"]
+
   # Geocoder configuration
   config.geocoder = {
       static_map_url: "https://image.maps.cit.api.here.com/mia/1.6/mapview",
-      here_app_id: Rails.application.secrets.geocoder[:here_app_id],
-      here_app_code: Rails.application.secrets.geocoder[:here_app_code]
+      here_api_key: Rails.application.secrets.geocoder[:here_api_key]
   }
 
   if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_require_authorization)
@@ -137,8 +141,3 @@ end
 
 Rails.application.config.i18n.available_locales = Decidim.available_locales
 Rails.application.config.i18n.default_locale = Decidim.default_locale
-
-Decidim::Verifications.register_workflow(:dummy_authorization_handler) do |workflow|
-  workflow.form = "DummyAuthorizationHandler"
-  # workflow.action_authorizer = "DummyActionAuthorizer"
-end

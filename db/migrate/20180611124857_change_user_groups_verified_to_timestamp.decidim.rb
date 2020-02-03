@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# This migration comes from decidim_admin (originally 20170128112958)
+# This migration comes from decidim (originally 20170128112958)
 
 class ChangeUserGroupsVerifiedToTimestamp < ActiveRecord::Migration[5.0]
   def change
