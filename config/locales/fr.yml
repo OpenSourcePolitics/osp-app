@@ -418,6 +418,8 @@ fr:
             other: '%{count} agora'
       assembly_header:
         assembly_menu_item: Présentation
+      footer:
+        download_open_data: Données ouvertes
       participatory_processes:
         index:
           promoted_processes: Participations mises en avant
