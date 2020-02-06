@@ -37,7 +37,7 @@ fr:
         comments_enabled: Activer les commentaires
         description: Description
         document_number_authorization_handler: Niveau d'autorisation nécessaire pour
-          signer les pétitionsde ce type
+          signer les pétitions de ce type
         extra_fields_legal_information: Informations juridiques sur la collecte de
           données personnelles
         minimum_committee_members: Minimum de membres du comité
@@ -45,8 +45,8 @@ fr:
         only_global_scope_enabled: Ne permettre que la création de pétitions de portée
           globale
         promoting_committee_enabled: Activer les comités de promotion sur ce type
-          de pétition(témoin.s dont l'invitation par l'auteur est obligatoire pour
-          la validation de la pétitionsi cette fonctionnalité est activée)
+          de pétition (témoin.s dont l'invitation par l'auteur est obligatoire pour
+          la validation de la pétition si cette fonctionnalité est activée)
         title: Titre
         undo_online_signatures_enabled: Autoriser les utilisateurs à annuler leurs
           signatures en ligne
@@ -128,11 +128,11 @@ fr:
             <a href="%{resource_path}">%{resource_title}</a> a été prolongée.
         milestone_completed:
           affected_user:
-            email_intro: Votre pétition" %{resource_title}" a atteint %{percentage}%
+            email_intro: Votre pétition "%{resource_title}" a atteint %{percentage}%
               de signatures requises!
             email_outro: Vous avez reçu cette notification car vous êtes l'auteur
               de cette pétition.
-            email_subject: Votre pétition" %{resource_title}" a atteint %{percentage}%
+            email_subject: Votre pétition "%{resource_title}" a atteint %{percentage}%
               de signatures requises!
             notification_title: Votre pétition <a href="%{resource_path}">%{resource_title}</a>
               a atteint %{percentage}% de signatures requises.
@@ -156,7 +156,7 @@ fr:
           description_another: Ce participant a publié %{score} pétitions.
           description_own: Vous avez publié %{score} pétitions.
           name: Pétitions publiées
-          next_level_in: Obtenez %{score} autres pétitionspubliées pour atteindre
+          next_level_in: Obtenez %{score} autres pétitions publiées pour atteindre
             le niveau supérieur!
           unearned_another: Cet utilisateur n'a pas encore publié de pétition.
           unearned_own: Vous n'avez pas encore publié de pétition.
@@ -276,7 +276,7 @@ fr:
             error: Une erreur s'est produite
             success: Un nouveau type de pétitiona été créé avec succès
           destroy:
-            success: Le type de pétitiona été supprimé avec succès
+            success: Le type de pétition a été supprimé avec succès
           edit:
             confirm_destroy: Êtes-vous certain ?
             destroy: Supprimer
@@ -292,7 +292,7 @@ fr:
             title: Nouveau type de pétition
           update:
             error: Une erreur s'est produite
-            success: Le type de pétitiona été mis à jour avec succès
+            success: Le type de pétition a été mis à jour avec succès
       admin_log:
         initiative:
           publish: "%{user_name} a publié la pétition %{resource_name}"
@@ -338,7 +338,7 @@ fr:
           more_information: "(Plus d'informations)"
         finish_help:
           access_reminder: Rappelez-vous que vous serez toujours en mesure d'accéder
-            à vos pétitionsvia le menu utilisateur.
+            à vos pétitions via le menu utilisateur.
           help_for_organizations: Si vous êtes une association, vous devrez télécharger
             les procès-verbaux du conseil d'administration de toutes les organisations
             qui constituent le Comité de promotion
@@ -361,7 +361,7 @@ fr:
           more_information: "(Plus d'informations)"
         promotal_committee:
           back: Retour
-          individual_help_text: Ce type d’pétition citoyenne nécessite une Commission
+          individual_help_text: Ce type de pétition citoyenne nécessite une Commission
             de promotion composée d’au moins %{committee_size} personnes. Vous devez
             partager le lien suivant avec les autres personnes participant à cette
             pétition. Lorsque vos contacts recevront ce lien, ils devront suivre
@@ -427,7 +427,7 @@ fr:
       initiative_votes:
         create:
           error: Il y a eu des erreurs lors de la signature de la pétition.
-          invalid: Les données fournies pour signer la pétitionne sont pas valides
+          invalid: Les données fournies pour signer la pétition ne sont pas valides
           success_html: Toutes nos félicitations! La pétition <strong> %{title}</strong>
             a été signée correctement
         personal_data:

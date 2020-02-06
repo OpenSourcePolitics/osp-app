@@ -72,6 +72,10 @@ fr:
       authorizations:
         index:
           title: Liste des autorisations
+        first_login:
+          actions:
+            saml: Confirmer votre identité avec un compte CSAM eID
+            dummy_authorization_handler: Ajouter des informations complémentaires à votre profil
       metadata:
         content:
           active_email: "<b>Cet utilisateur peut être contacté via l'adresse de courriel <br/><a href=\"mailto:%{email}\">%{email}</a></b>"

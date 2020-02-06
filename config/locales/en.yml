@@ -36,43 +36,28 @@ en:
         decidim:
           help:
             - Validate with an external Decidim account
-        france_connect:
+        dummy_authorization_handler:
           help:
-            - Validate with a France Connect account
-        france_connect_uid:
-          help:
-            - Validate with a France Connect Level I account
-        france_connect_profile:
-          help:
-            - Validate with a France Connect Level II account
+            - Validate with your external Decidim account
         saml:
           help:
             - Validate with a CSAM eID account
       decidim:
         name: Omniauth Decidim
         explanation: Validate with your external Decidim account
-      france_connect:
-        name: France Connect
-        explanation: Validate with your France Connect account
-      france_connect_uid:
-        name: France Connect Level I
-        explanation: Validate with your France Connect account
-      france_connect_profile:
-        name: France Connect Level II
-        explanation: Validate with your France Connect account
+      dummy_authorization_handler:
+        name: BOSA dummy authorization
+        explanation: Add additional informations to your account
       saml:
         name: CSAM eID
         explanation: Validate with your CSAM eID account
+    verifications:
+      authorizations:
+        first_login:
+          actions:
+            saml: Validate with your CSAM eID account
+            dummy_authorization_handler: Add additional informations to your account
   layouts:
     decidim:
       footer:
         download_open_data: Open data
-  decidim:
-    authorization_handlers:
-      admin:
-        dummy_authorization_handler:
-          help:
-            - Add complementary informations to your account
-      dummy_authorization_handler:
-        name: BOSA dummy authorization
-        explanation: Add complementary informations to your account

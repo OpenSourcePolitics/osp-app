@@ -7,8 +7,10 @@ GIT
       decidim-admin
       decidim-core
 
-PATH
-  remote: ../decidim
+GIT
+  remote: https://github.com/OpenSourcePolitics/decidim.git
+  revision: 19be8d66f2ba44e414012f974aceea6cae7477f9
+  branch: alt/petition
   specs:
     decidim (0.21.0.pre.dev)
       decidim-accountability (= 0.21.0.pre.dev)
@@ -443,7 +445,7 @@ GEM
     graphiql-rails (1.4.11)
       railties
       sprockets-rails
-    graphql (1.10.1)
+    graphql (1.10.2)
     hashdiff (1.0.0)
     hashie (3.6.0)
     highline (2.0.3)
@@ -831,7 +833,7 @@ GEM
     webfinger (1.1.0)
       activesupport
       httpclient (>= 2.4)
-    webmock (3.8.0)
+    webmock (3.8.1)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
