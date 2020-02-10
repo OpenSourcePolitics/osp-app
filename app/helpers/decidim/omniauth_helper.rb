@@ -35,6 +35,10 @@ module Decidim
       name ||= provider.to_s.split("_").first
       icon(name)
     end
+
+    # Public: pretty print provider name
+    def provider_name(provider)
+      provider.to_s.gsub(/_|-/, " ").camelize
+    end
   end
 end
-
