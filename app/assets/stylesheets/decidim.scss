@@ -17,14 +17,12 @@
 
 @import "decidim/application";
 
-// .logo-cityhall {
-//   position: static;
-//   margin: 0;
-//   @media print, screen and (min-width: 40em) {
-//     text-align: left;
-//   }
-// }
+@import "fontface";
+$body-font-family: 'Rubik', Helvetica, Roboto, Arial, sans-serif;
 
+body, h1, h2, h3, h4, h5, h6, p, a, span {
+  font-family: $body-font-family;
+}
 
 .initiative-types-select {
   white-space: normal !important;

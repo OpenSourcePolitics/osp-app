@@ -1,0 +1,130 @@
+@font-face {
+    font-family: 'Rubik';
+    src: url('hinted-Rubik-Regular.eot');
+    src: local('Rubik Regular'), local('Rubik-Regular'),
+        url('hinted-Rubik-Regular.eot?#iefix') format('embedded-opentype'),
+        url('hinted-Rubik-Regular.woff2') format('woff2'),
+        url('hinted-Rubik-Regular.woff') format('woff'),
+        url('hinted-Rubik-Regular.ttf') format('truetype'),
+        url('hinted-Rubik-Regular.svg#Rubik-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('hinted-Rubik-BoldItalic.eot');
+    src: local('Rubik Bold Italic'), local('Rubik-BoldItalic'),
+        url('hinted-Rubik-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('hinted-Rubik-BoldItalic.woff2') format('woff2'),
+        url('hinted-Rubik-BoldItalic.woff') format('woff'),
+        url('hinted-Rubik-BoldItalic.ttf') format('truetype'),
+        url('hinted-Rubik-BoldItalic.svg#Rubik-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('hinted-Rubik-MediumItalic.eot');
+    src: local('Rubik Medium Italic'), local('Rubik-MediumItalic'),
+        url('hinted-Rubik-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('hinted-Rubik-MediumItalic.woff2') format('woff2'),
+        url('hinted-Rubik-MediumItalic.woff') format('woff'),
+        url('hinted-Rubik-MediumItalic.ttf') format('truetype'),
+        url('hinted-Rubik-MediumItalic.svg#Rubik-MediumItalic') format('svg');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('hinted-Rubik-Medium.eot');
+    src: local('Rubik Medium'), local('Rubik-Medium'),
+        url('hinted-Rubik-Medium.eot?#iefix') format('embedded-opentype'),
+        url('hinted-Rubik-Medium.woff2') format('woff2'),
+        url('hinted-Rubik-Medium.woff') format('woff'),
+        url('hinted-Rubik-Medium.ttf') format('truetype'),
+        url('hinted-Rubik-Medium.svg#Rubik-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('hinted-Rubik-Italic.eot');
+    src: local('Rubik Italic'), local('Rubik-Italic'),
+        url('hinted-Rubik-Italic.eot?#iefix') format('embedded-opentype'),
+        url('hinted-Rubik-Italic.woff2') format('woff2'),
+        url('hinted-Rubik-Italic.woff') format('woff'),
+        url('hinted-Rubik-Italic.ttf') format('truetype'),
+        url('hinted-Rubik-Italic.svg#Rubik-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('hinted-Rubik-Black.eot');
+    src: local('Rubik Black'), local('Rubik-Black'),
+        url('hinted-Rubik-Black.eot?#iefix') format('embedded-opentype'),
+        url('hinted-Rubik-Black.woff2') format('woff2'),
+        url('hinted-Rubik-Black.woff') format('woff'),
+        url('hinted-Rubik-Black.ttf') format('truetype'),
+        url('hinted-Rubik-Black.svg#Rubik-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('hinted-Rubik-Bold.eot');
+    src: local('Rubik Bold'), local('Rubik-Bold'),
+        url('hinted-Rubik-Bold.eot?#iefix') format('embedded-opentype'),
+        url('hinted-Rubik-Bold.woff2') format('woff2'),
+        url('hinted-Rubik-Bold.woff') format('woff'),
+        url('hinted-Rubik-Bold.ttf') format('truetype'),
+        url('hinted-Rubik-Bold.svg#Rubik-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('hinted-Rubik-LightItalic.eot');
+    src: local('Rubik Light Italic'), local('Rubik-LightItalic'),
+        url('hinted-Rubik-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('hinted-Rubik-LightItalic.woff2') format('woff2'),
+        url('hinted-Rubik-LightItalic.woff') format('woff'),
+        url('hinted-Rubik-LightItalic.ttf') format('truetype'),
+        url('hinted-Rubik-LightItalic.svg#Rubik-LightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('hinted-Rubik-BlackItalic.eot');
+    src: local('Rubik Black Italic'), local('Rubik-BlackItalic'),
+        url('hinted-Rubik-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('hinted-Rubik-BlackItalic.woff2') format('woff2'),
+        url('hinted-Rubik-BlackItalic.woff') format('woff'),
+        url('hinted-Rubik-BlackItalic.ttf') format('truetype'),
+        url('hinted-Rubik-BlackItalic.svg#Rubik-BlackItalic') format('svg');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('hinted-Rubik-Light.eot');
+    src: local('Rubik Light'), local('Rubik-Light'),
+        url('hinted-Rubik-Light.eot?#iefix') format('embedded-opentype'),
+        url('hinted-Rubik-Light.woff2') format('woff2'),
+        url('hinted-Rubik-Light.woff') format('woff'),
+        url('hinted-Rubik-Light.ttf') format('truetype'),
+        url('hinted-Rubik-Light.svg#Rubik-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+

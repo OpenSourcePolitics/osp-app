@@ -4,13 +4,13 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-upstream_moderation"
+gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.18-upstream_moderation"
 # gem "decidim", path: "../decidim"
 
 gem "decidim-questions", git: "https://github.com/OpenSourcePolitics/decidim-questions.git", branch: "feature/upstream_moderation"
 # gem "decidim-questions", path: "../decidim-questions"
 
-gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git"
+gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git", branch: "0.18-stable"
 # gem "decidim-term_customizer", path: "../decidim-module-term_customizer"
 
 # gem "decidim-conferences", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-stable"
@@ -34,7 +34,7 @@ gem "sentry-raven"
 group :development, :test do
   gem "byebug", "~> 10.0", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.16-upstream_moderation"
+  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.18-upstream_moderation"
   # gem "decidim-dev", path: "../decidim"
 end
 
