@@ -9,6 +9,13 @@ fr:
         birthday: Date de naissance
   decidim:
     authorization_handlers:
+      admin:
+        cas:
+          help:
+            - Confirmer une identité avec un compte IDNUM
+      cas:
+        name: IDNUM étudiant
+        explanation: Confirmer votre identité avec un compte IDNUM étudiant
       osp_authorization_handler:
         explanation: Vérifier votre identité en saisissant un numéro unique
         fields:
@@ -27,8 +34,13 @@ fr:
       authorizations:
         first_login:
           actions:
+            cas: Confirmer votre identité avec un compte IDNUM étudiant
             osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
             osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+  devise:
+    shared:
+      links:
+        signed_in_with_provider: "Authentifié(e) avec %{provider} <br/>"
   layouts:
     decidim:
       footer:

@@ -4,13 +4,13 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.18-merge"
+gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
 # gem "decidim", path: "../decidim"
 # gem "decidim-map", path: "../decidim-map"
 
-# gem "decidim-conferences", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.18-dev"
-# gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.18-dev"
-# gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.18-dev"
+# gem "decidim-conferences", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
+# gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
+# gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
 
 # gem "decidim-conferences", path: "../decidim"
 # gem "decidim-consultations", path: "../decidim"
@@ -37,9 +37,9 @@ gem "omniauth-cas",  "~> 1.1.1"
 
 group :development, :test do
   gem "dotenv-rails"
-  gem "byebug", "~> 10.0", platform: :mri
+  gem "byebug", "~> 11.0", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.18-merge"
+  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
   # gem "decidim-dev", path: "../decidim"
 end
 
