@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: af2c68da23ce9960b4fa6474d92d9dd65164a3d7
+  revision: 17891deb62f1fbab32f1953d9b41a8bf679bdd9d
   branch: alt/petition
   specs:
     decidim (0.21.0.pre.dev)
@@ -436,7 +436,7 @@ GEM
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    httparty (0.17.3)
+    httparty (0.18.0)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
     i18n (1.8.2)

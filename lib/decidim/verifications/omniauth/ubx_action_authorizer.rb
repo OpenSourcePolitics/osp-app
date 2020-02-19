@@ -11,6 +11,7 @@ module Decidim
 
           if status_code == :ok && authorization.metadata["status"] != "student"
             status_code = :unauthorized
+            data[:fields] = { "status" => authorization.metadata["status"] }
           end
 
           [status_code, data]

@@ -1,0 +1,40 @@
+<% base_code = authorizations.global_code || :missing %>
+<div class="reveal__header <%= base_code %>-authorization">
+  <h3 class="reveal__title"><%= t ".#{base_code}.title" %></h3>
+</div>
+<% authorizations.statuses.each do |status| %>
+  <% next if status.ok? || (authorizations.global_code && status.code != base_code) || authorization_anti_affinity.include?(status.handler_name) %>
+  <div class="row column">
+    <p><%= t ".#{status.code}.explanation", authorization: t("#{status.handler_name}.name", scope: "decidim.authorization_handlers") %></p>
+    <% if status.data[:extra_explanation] %>
+      <p><%= t status.data[:extra_explanation][:key], **status.data[:extra_explanation][:params] %></p>
+    <% end %>
+  </div>
+  <% if status.data[:fields] %>
+    <div class="row column">
+      <% status.data[:fields].each do |field, value| %>
+        <div class="callout alert">
+          <%= t ".#{status.code}.invalid_field", field: t("#{status.handler_name}.fields.#{field}", scope: "decidim.authorization_handlers"), value: value ? "(#{value})" : "" %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="row column">
+    <% if status.data[:action].present? %>
+      <%= link_to t(".#{status.code}.#{status.data[:action]}", authorization: t("#{status.handler_name}.name", scope: "decidim.authorization_handlers")), authorize_action_path(status.handler_name), class: "button expanded" %>
+    <% else %>
+      <%= link_to t("sign_out", scope: "layouts.decidim.user_menu"), decidim.destroy_user_session_path, method: :delete, class: "button hollow expanded" %>
+    <% end %>
+  </div>
+  <% if status.data[:cancel] %>
+    <div class="text-center">
+      <button class="link" data-close><%= t ".#{status.code}.cancel" %></button>
+    </div>
+  <% end %>
+<% end %>
+<% disabled_methods.each do |handler| %>
+  <p class="explanation">
+    <%= t ".missing.explanation", authorization: t("#{handler.name}.name", scope: "decidim.authorization_handlers") %>
+  </p>
+  <%= link_to t("sign_out", scope: "layouts.decidim.user_menu"), decidim.destroy_user_session_path, method: :delete, class: "button expanded" %>
+<% end %>

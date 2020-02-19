@@ -17,9 +17,13 @@ fr:
           help:
             - Confirmer une identité avec un compte Decidim externe
       cas:
+        fields:
+          status: votre statut
         name: IDNUM étudiant
         explanation: Confirmer votre identité avec un compte IDNUM étudiant
       decidim:
+        fields:
+          status: votre statut
         name: Decidim SSO
         explanation: Confirmer votre identité avec un compte Decidim externe
       osp_authorization_handler:
@@ -31,6 +35,13 @@ fr:
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
+    authorization_modals:
+      content:
+        unauthorized:
+          explanation: Désolé, vous ne pouvez pas effectuer cette action.
+          invalid_field: "%{field} \"%{value}\" n'est pas valide."
+          ok: Fermer
+          title: Action impossible
     proposals:
       proposals:
         count:

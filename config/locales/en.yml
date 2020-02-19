@@ -40,9 +40,13 @@ en:
           help:
             - Validate with an external Decidim account
       cas:
+        fields:
+          status: status
         name: IDNUM student
         explanation: Validate with an external IDNUM student account
       decidim:
+        fields:
+          status: status
         name: Decidim SSO
         explanation: Validate with an external Decidim account
       osp_authorization_handler:

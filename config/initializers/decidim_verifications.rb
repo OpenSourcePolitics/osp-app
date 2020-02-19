@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "decidim/verifications/omniauth/ubx_action_authorizer"
+
 Decidim::Verifications.unregister_workflow(:csv_census)
 Decidim::Verifications.unregister_workflow(:id_documents)
 Decidim::Verifications.unregister_workflow(:postal_letter)
