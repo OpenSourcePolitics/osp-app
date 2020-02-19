@@ -30,6 +30,41 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  decidim:
+    authorization_handlers:
+      admin:
+        cas:
+          help:
+            - Validate with an external CAS account
+        decidim:
+          help:
+            - Validate with an external Decidim account
+      cas:
+        name: IDNUM student
+        explanation: Validate with an external IDNUM student account
+      decidim:
+        name: Decidim SSO
+        explanation: Validate with an external Decidim account
+      osp_authorization_handler:
+        explanation: Validate with a unique ID number
+        fields:
+          document_number: Unique ID
+          postal_code: Postal code
+          birthday: Birthdate
+        name: Identity verification form
+      osp_authorization_workflow:
+        name: Authorization process
+    system:
+      organizations:
+        omniauth_settings:
+          cas:
+            host: External service host (without http(s)://)
+            provider_name: External service name
+          decidim:
+            client_id: Client ID
+            client_secret: Client secret
+            provider_name: External service name
+            site_url: External service URL (with http(s)://)
   layouts:
     decidim:
       footer:

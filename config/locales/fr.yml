@@ -13,9 +13,15 @@ fr:
         cas:
           help:
             - Confirmer une identité avec un compte IDNUM
+        decidim:
+          help:
+            - Confirmer une identité avec un compte Decidim externe
       cas:
         name: IDNUM étudiant
         explanation: Confirmer votre identité avec un compte IDNUM étudiant
+      decidim:
+        name: Decidim SSO
+        explanation: Confirmer votre identité avec un compte Decidim externe
       osp_authorization_handler:
         explanation: Vérifier votre identité en saisissant un numéro unique
         fields:
@@ -30,6 +36,17 @@ fr:
         count:
           proposals_count:
             one: "%{count} proposition"
+    system:
+      organizations:
+        omniauth_settings:
+          cas:
+            host: Hôte du serveur distant (sans http(s)://)
+            provider_name: Nom du service distant
+          decidim:
+            client_id: Client ID
+            client_secret: Client secret
+            provider_name: Nom du service distant
+            site_url: URL du serveur distant (avec http(s)://)
     verifications:
       authorizations:
         first_login:
