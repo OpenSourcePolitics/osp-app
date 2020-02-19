@@ -19,7 +19,7 @@ module OmniAuth
       info do
         # Rails.logger.debug raw_info
         prune!({
-          name: generate_name || raw_info[options[:name_key].to_s,
+          name: generate_name || raw_info[options[:name_key].to_s],
           email: raw_info[options[:email_key].to_s],
           nickname: raw_info[options[:nickname_key].to_s],
           first_name: raw_info[options[:first_name_key].to_s],
