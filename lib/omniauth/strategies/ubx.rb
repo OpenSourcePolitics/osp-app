@@ -9,7 +9,8 @@ module OmniAuth
       option :origin_param, "redirect_url"
       option :service_validate_url, "/p3/serviceValidate"
 
-      option :name_key, 'givenName'
+      option :first_name_key, 'givenName'
+      option :last_name_key, 'sn'
       option :status_key, 'eduPersonEntitlement'
 
       # As required by https://github.com/intridea/omniauth/wiki/Auth-Hash-Schema
@@ -17,7 +18,7 @@ module OmniAuth
       info do
         # Rails.logger.debug raw_info
         prune!({
-          name: raw_info[options[:name_key].to_s],
+          name: generate_name || raw_info[options[:name_key].to_s,
           email: raw_info[options[:email_key].to_s],
           nickname: raw_info[options[:nickname_key].to_s],
           first_name: raw_info[options[:first_name_key].to_s],
@@ -27,6 +28,12 @@ module OmniAuth
           phone: raw_info[options[:phone_key].to_s],
           status: raw_info[options[:status_key].to_s]
         })
+      end
+
+      def generate_name
+        [raw_info[options[:first_name_key].to_s],raw_info[options[:last_name_key].to_s]].select do |attr|
+          attr.present?
+        end.join(" ")
       end
 
     end
