@@ -30,6 +30,6 @@ else
     config.enable_processing = !Rails.env.test?
     # This needs to be set for correct attachment file URLs in emails
     # DON'T FORGET to ALSO set this in `config/application.rb`
-    config.asset_host = "https://broom.osp.cat"
+    # config.asset_host = "https://broom.osp.cat"
   end
 end

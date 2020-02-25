@@ -1,0 +1,5 @@
+<% if key == :scope_id %>
+  <%= Decidim::Scope.find(value).name[current_locale] || Decidim::Scope.find(value).name[Decidim.default_locale] || value %>
+<% else %>
+  <%= value %>
+<% end %>

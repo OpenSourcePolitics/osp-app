@@ -3,7 +3,7 @@
 </div>
 
 <div class="card">
-  <%= table_from_data @metadata.select { |k,v| ![:gender, :nickname].include?(k) } %>
+  <%= table_from_data @metadata.select { |k,v| ![:provider].include?(k) } %>
 </div>
 
 <div class="card">

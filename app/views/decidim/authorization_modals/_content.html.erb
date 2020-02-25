@@ -16,16 +16,12 @@
   </div>
   <% authorizations.statuses.each do |status| %>
     <% next if status.ok? || (authorizations.global_code && status.code != base_code) || authorization_anti_affinity.include?(status.handler_name) %>
-    <p><%= t ".#{status.code}.explanation", authorization: t("#{status.handler_name}.name", scope: "decidim.authorization_handlers") %></p>
+    <p class="lead"><%= t ".#{status.code}.explanation", authorization: t("#{status.handler_name}.name", scope: "decidim.authorization_handlers") %></p>
     <% if status.data[:extra_explanation] %>
-      <p><%= t status.data[:extra_explanation][:key], **status.data[:extra_explanation][:params] %></p>
+      <p class="extra-explanation"><%= t status.data[:extra_explanation][:key], **status.data[:extra_explanation][:params] %></p>
     <% end %>
-    <% if status.data[:fields] %>
-      <ul>
-        <% status.data[:fields].each do |field, value| %>
-          <li><strong><%= t ".#{status.code}.invalid_field", field: t("#{status.handler_name}.fields.#{field}", scope: "decidim.authorization_handlers"), value: value ? "(#{value})" : "" %></strong></li>
-        <% end %>
-      </ul>
+    <% status.data[:fields].each do |field, value| %>
+      <p class="invalid_field"><strong><%= t ".#{status.code}.invalid_field", field: t("#{status.handler_name}.fields.#{field}", scope: "decidim.authorization_handlers"), value: value ? "#{value}" : "" %></strong></p>
     <% end %>
     <div class="row">
       <div class="columns medium-8 medium-offset-2">

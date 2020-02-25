@@ -57,8 +57,17 @@ fr:
         name: BOSA dummy authorization
         explanation: Ajouter des informations complémentaires à votre profil
       saml:
+        fields:
+          date_of_birth: Votre date de naissance
         name: CSAM eID
         explanation: Confirmer votre identité avec un compte CSAM eID
+    authorization_modals:
+      content:
+        unauthorized:
+          explanation: Désolé, vous ne pouvez pas effectuer cette action.
+          invalid_field: "%{field} n'est pas valide. %{value}"
+          ok: Fermer
+          title: Action impossible
     pages:
       terms_and_conditions:
         refuse:
@@ -79,6 +88,9 @@ fr:
       metadata:
         content:
           active_email: "<b>Cet utilisateur peut être contacté via l'adresse de courriel <br/><a href=\"mailto:%{email}\">%{email}</a></b>"
+      omniauth:
+        errors:
+          minimum_age: Vous devez avoir au moins %{minimum_age} ans.
   devise:
     mailer:
       confirmation_instructions:

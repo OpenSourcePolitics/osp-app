@@ -347,3 +347,23 @@ a.button.small > .icon {
     white-space: normal;
   }
 }
+
+.card--list__data table.metadata {
+  tr {
+    background-color: transparent !important;
+    border-bottom: 1px solid #f2f2f2;
+  }
+
+  .key {
+    font-variant: small-caps;
+    text-transform: lowercase;
+    text-align: right;
+    border-right: 1px solid #f2f2f2;
+  }
+
+  .value {
+    text-transform: none;
+    color: #3d393c;
+    text-align: left;
+  }
+}

@@ -25,3 +25,8 @@
     </div>
   <% end %>
 </div>
+<% if authorization.metadata.present? %>
+  <div class="card--list__data">
+    <%= table_from_data authorization.metadata.select { |k,v| ![:provider].include?(k) } %>
+  </div>
+<% end %>

@@ -51,8 +51,17 @@ en:
       saml:
         name: CSAM eID
         explanation: Validate with your CSAM eID account
+    authorization_modals:
+      content:
+        unauthorized:
+          explanation: Sorry, you are not allowed to perfom this action
+          invalid_field: "%{field} is not valid. %{value}"
+          ok: Close
+          title: Action forbidden
     verifications:
       authorizations:
+        index:
+          title: Authorizations list
         first_login:
           actions:
             saml: Validate with your CSAM eID account
@@ -61,3 +70,5 @@ en:
     decidim:
       footer:
         download_open_data: Open data
+      user_profile:
+        back_to_account: Back to account
