@@ -26,7 +26,7 @@ class DummyAuthorizationHandler < Decidim::AuthorizationHandler
   attribute :name_and_surname, String
   attribute :document_number, String
   attribute :postal_code, String
-  # attribute :date_of_birth, Decidim::Attributes::LocalizedDate
+  attribute :date_of_birth, Decidim::Attributes::LocalizedDate
   attribute :scope_id, Integer
 
   # The only method that needs to be implemented for an authorization handler.
@@ -54,7 +54,7 @@ class DummyAuthorizationHandler < Decidim::AuthorizationHandler
   # it's created, and available though authorization.metadata
   #
   def metadata
-    super.merge(document_number: document_number, postal_code: postal_code, scope_id: scope_id)
+    super.merge(document_number: document_number, postal_code: postal_code, date_of_birth: date_of_birth, scope_id: scope_id)
   end
 
   # Useful when you want to link an authorization to a scope in order to check

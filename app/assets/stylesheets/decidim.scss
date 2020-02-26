@@ -367,3 +367,9 @@ a.button.small > .icon {
     text-align: left;
   }
 }
+
+.icon.inline-error {
+  font-size: 75%;
+  color: $alert;
+  margin-left: 1rem;
+}
