@@ -8,6 +8,18 @@ fr:
         postal_code: Code postal
         birthday: Date de naissance
   decidim:
+    pages:
+      home:
+        statistics:
+          question_count: Question count
+          question_accepted: Question accepted
+    metrics:
+      question_votes:
+        title: Question votes title
+        description: Description
+      question_endorsements:
+        title: Question endorsements title
+        description: Description
     admin:
       models:
         participatory_process_user_role:
