@@ -19,9 +19,12 @@ Decidim::Verifications.unregister_workflow(:sms)
 Decidim::Verifications.register_workflow(:cas) do |workflow|
   workflow.engine = Decidim::Verifications::Omniauth::Engine
   workflow.admin_engine = Decidim::Verifications::Omniauth::AdminEngine
-  workflow.action_authorizer = "Decidim::Verifications::Omniauth::UbxActionAuthorizer"
-  # workflow.form = "Decidim::Verifications::Omniauth::OmniauthAuthorizationForm"
   workflow.omniauth_provider = :cas
-  # workflow.anti_affinity = [:decidim]
-  # workflow.minimum_age = 18
+end
+
+Decidim::Verifications.register_workflow(:cas_student) do |workflow|
+  workflow.engine = Decidim::Verifications::Omniauth::Engine
+  workflow.admin_engine = Decidim::Verifications::Omniauth::AdminEngine
+  workflow.action_authorizer = "Decidim::Verifications::Omniauth::UbxActionAuthorizer"
+  workflow.omniauth_provider = :cas
 end
