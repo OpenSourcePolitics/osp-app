@@ -1,6 +1,15 @@
 <div class="reveal__header">
   <h3 class="card-title"><%= t ".title" %></h3>
 </div>
+
 <div class="card">
   <%= table_from_data @metadata.select { |k,v| ![:gender, :nickname].include?(k) } %>
+</div>
+
+<div class="card">
+  <div class="callout primary">
+    <p>
+      <%== t(".active_email", email: @user.email ) %>
+    </p>
+  </div>
 </div>

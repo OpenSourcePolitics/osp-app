@@ -31,30 +31,34 @@
 <% if @account.email.present? %>
   <div class="row">
     <div class="columns large-8 large-offset-2 end">
+
+      <% if Devise.mappings[:user].confirmable? && current_user.unconfirmed_email.present? && current_user.unconfirmed_email != @account.email %>
+        <div class="callout warning">
+          <%= decidim_form_for current_user, as: :user, url: user_confirmation_path, html: { method: :post, class: "register-form new_user" } do |f| %>
+            <%= f.hidden_field :email, value: current_user.unconfirmed_email %>
+            <p>
+              <%== t(".unconfirmed_email", email: current_user.unconfirmed_email ) %>
+            </p>
+            <%= f.submit t("devise.confirmations.new.resend_confirmation_instructions"), class: "button hollow expanded small" %>
+          <% end %>
+        </div>
+      <% end %>
+
       <div class="callout">
+
         <%= decidim_form_for(@account, url: account_path, method: :put, html: { autocomplete: "nope" }) do |f| %>
           <%= f.hidden_field :id %>
 
-                <%= f.text_field :name, disabled: true %>
-                <%= f.hidden_field :name %>
-                <%= f.hidden_field :nickname %>
+          <%= f.text_field :name, disabled: true %>
 
-                <%= f.email_field :email %>
+          <%= f.hidden_field :name %>
+          <%= f.hidden_field :nickname %>
 
-                <% if Devise.mappings[:user].confirmable? && current_user.unconfirmed_email.present? && current_user.unconfirmed_email != @account.email %>
-                  <div class="callout warning">
-                    <p>
-                      <%== t(".unconfirmed_email", email: current_user.unconfirmed_email ) %>
-                    </p>
-                    <p>
-                      <%= link_to t("devise.shared.links.didn_t_receive_confirmation_instructions"), new_confirmation_path(Devise.mappings[:user].name) %>
-                    </p>
-                  </div>
-                <% end %>
+          <%= f.email_field :email %>
 
-                <div class="actions">
-                  <%= f.submit t(".update_account"),class: "button expanded"  ,disable_with: true %>
-                </div>
+          <div class="actions">
+            <%= f.submit t(".update_account"),class: "button expanded"  ,disable_with: true %>
+          </div>
         <% end %>
 
         <%= link_to decidim.data_portability_path, class: "button hollow expanded" do %>

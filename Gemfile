@@ -24,10 +24,9 @@ gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decid
 
 # gem "decidim-blazer", path: "../decidim-module-blazer"
 
-gem "bootsnap", "~> 1.3"
-
-gem "puma", "~> 3.0"
-gem "uglifier", "~> 4.1"
+gem "bootsnap"
+gem "puma"
+gem "uglifier"
 
 gem "faker", "~> 1.9"
 
@@ -35,11 +34,13 @@ gem "faker", "~> 1.9"
 gem "wicked_pdf"
 gem "wkhtmltopdf-binary"
 
-gem "sprockets", "~> 3.7.2"
+gem 'activerecord-session_store'
 
 gem "omniauth-oauth2", ">= 1.4.0", "< 2.0"
 gem "omniauth_openid_connect", "0.3.1"
 gem "omniauth-saml", "~> 1.10"
+
+gem 'rubyzip', require: 'zip'
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
@@ -58,6 +59,7 @@ end
 
 group :production do
   gem "sidekiq"
+  gem "sidekiq-scheduler"
   gem "fog-aws"
   gem "dalli-elasticache"
 end

@@ -1,20 +1,47 @@
 ---
 fr:
-  layouts:
-    decidim:
-      footer:
-        download_open_data: Données ouvertes
-      user_profile:
-        authorizations: Voir les autorisations associées à votre compte
-        back_to_account: Retour à votre compte
-      user_menu:
-        admin_dashboard: Administration
+  activemodel:
+    attributes:
+      attachment:
+        attachment_collection_id: Dossier
+        description: Description
+        file: Fichier (*.pdf)
+        title: Titre
+        weight: Ordre de présentation
+    models:
+      decidim/attachment_created_event: Pièce jointe
   decidim:
     account:
       show:
         unconfirmed_email: "l'adresse <code>%{email}</code> est en cours de validation.<br/>
         Un courriel vous a été transmis à cette adresse contenant un lien nous permettant
         de confirmer son existence."
+    admin:
+      attachments:
+        create:
+          error: Une erreur s'est produite lors de la création d'un nouvelle pièce jointe.
+          success: Pièce jointe créée avec succès.
+        destroy:
+          success: Pièce jointe supprimée avec succès.
+        edit:
+          title: Modifier la pièce jointe
+          update: Mettre à jour
+        index:
+          attachments_title: Pièce(s) jointe(s) (2 maximum)
+        new:
+          create: Envoyer
+          title: Nouvelle pièce jointe
+        update:
+          error: Une erreur s'est produite lors de la mise à jour de cette pièce jointe.
+          success: Pièce jointe mise à jour avec succès.
+      menu:
+        participatory_processes_submenu:
+          attachments: Pièce(s) jointe(s)
+      models:
+        attachment:
+          fields:
+            weight: Ordre de présentation de la pièce jointe
+          name: Pièce jointe
     authorization_handlers:
       admin:
         decidim:
@@ -47,6 +74,15 @@ fr:
       saml:
         name: CSAM eID
         explanation: Confirmer votre identité avec un compte CSAM eID
+    pages:
+      terms_and_conditions:
+        refuse:
+          modal_body: Si vous refusez, vous ne pourrez pas utiliser la plateforme.
+          modal_btn_continue: Accepter les conditions <br/> et continuer
+          modal_btn_exit: Refuser les conditions <br/> et se déconnecter
+          modal_button: Refuser les conditions d'utilisation
+          modal_close: Fermer la fenêtre
+          modal_title: Refusez-vous vraiment les conditions d'utilisation ?
     omniauth:
       france_connect:
         external:
@@ -69,7 +105,32 @@ fr:
       authorizations:
         index:
           title: Liste des autorisations
+      metadata:
+        content:
+          active_email: "<b>Cet utilisateur peut être contacté via l'adresse de courriel <br/><a href=\"mailto:%{email}\">%{email}</a></b>"
   devise:
+    mailer:
+      confirmation_instructions:
+        action: Confirmer mon compte
+        greeting: Bonjour %{recipient},
+        instruction: 'Vous pouvez confirmer votre compte email par le lien ci-dessous:'
+        subject: Instructions de confirmation
+      email_changed:
+        action: Confirmer ma nouvelle adresse
+        greeting: Bonjour %{recipient},
+        instruction: 'Nous vous contactons pour vous informer que votre adresse e-mail a été modifiée à %{email}. Vous pouvez la confirmer via le lien ci-dessous:'
+        subject: Courriel modifié
     shared:
       links:
         signed_in_with_provider: "Authentifié(e) avec %{provider} <br/>"
+  layouts:
+    decidim:
+      footer:
+        download_open_data: Données ouvertes
+      mailer:
+        footer: À bientôt sur la plateforme de <a href="%{organization_url}">e-pétitions</a> du Sénat.
+      user_profile:
+        authorizations: Voir les autorisations associées à votre compte
+        back_to_account: Retour à votre compte
+      user_menu:
+        admin_dashboard: Administration
