@@ -22,8 +22,7 @@ module OmniAuth
           email: raw_info["email"],
           nickname: raw_info["nickname"],
           name: raw_info["name"],
-          image: raw_info["image"],
-          scope_id: 9
+          image: raw_info["image"]
         }
       end
 

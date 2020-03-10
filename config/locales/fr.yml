@@ -13,6 +13,9 @@ fr:
         cas:
           help:
             - Confirmer une identité avec un compte IDNUM
+        cas_student:
+          help:
+            - Confirmer une identité avec un compte IDNUM étudiant
         decidim:
           help:
             - Confirmer une identité avec un compte Decidim externe
@@ -20,6 +23,11 @@ fr:
         fields:
           status: votre statut
         name: IDNUM
+        explanation: Confirmer votre identité avec un compte IDNUM
+      cas_student:
+        fields:
+          status: votre statut
+        name: IDNUM étudiant
         explanation: Confirmer votre identité avec un compte IDNUM
       decidim:
         fields:
@@ -63,6 +71,8 @@ fr:
         first_login:
           actions:
             cas: Confirmer votre identité avec un compte IDNUM
+            cas_student: Confirmer votre identité avec un compte IDNUM étudiant
+            decidim: Confirmer votre identité avec un compte Decidim externe
             osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
             osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
   devise:
