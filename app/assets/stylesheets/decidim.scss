@@ -200,18 +200,20 @@ h4, .h4, .heading4 {
 
 .edit-account {
   div {
-    &:first-of-type {
-      display: none;
-    }
+    &:not(#passwordChange) {
+      &:first-of-type {
+        display: none;
+      }
 
-    &:last-of-type {
-      label {
-        &:nth-of-type(4) {
-          display: none;
-        }
+      &:last-of-type {
+        label {
+          &:nth-of-type(4) {
+            display: none;
+          }
 
-        &:last-of-type {
-          display: none;
+          &:nth-of-type(5) {
+            display: none;
+          }
         }
       }
     }
