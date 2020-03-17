@@ -7,13 +7,12 @@ Decidim.configure do |config|
 
   # Change these lines to set your preferred locales
   config.default_locale = :fr
-  config.available_locales = [:en, :fr]
+  config.available_locales = [:fr]
 
   # Geocoder configuration
   config.geocoder = {
       static_map_url: "https://image.maps.cit.api.here.com/mia/1.6/mapview",
-      here_app_id: Rails.application.secrets.geocoder[:here_app_id],
-      here_app_code: Rails.application.secrets.geocoder[:here_app_code]
+      here_api_key: Rails.application.secrets.geocoder[:here_api_key]
   }
 
   if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_require_authorization)

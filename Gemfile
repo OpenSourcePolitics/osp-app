@@ -36,9 +36,9 @@ gem "wkhtmltopdf-binary"
 
 gem 'activerecord-session_store'
 
-gem "omniauth-oauth2", ">= 1.4.0", "< 2.0"
+# gem "omniauth-oauth2", ">= 1.4.0", "< 2.0"
 gem "omniauth_openid_connect", "0.3.1"
-gem "omniauth-saml", "~> 1.10"
+# gem "omniauth-saml", "~> 1.10"
 
 gem 'rubyzip', require: 'zip'
 

@@ -37,7 +37,7 @@ fr:
         comments_enabled: Activer les commentaires
         description: Description
         document_number_authorization_handler: Niveau d'autorisation nécessaire pour
-          signer les pétitionsde ce type
+          signer les pétitions de ce type
         extra_fields_legal_information: Informations juridiques sur la collecte de
           données personnelles
         minimum_committee_members: Minimum de membres du comité
@@ -46,7 +46,7 @@ fr:
           globale
         promoting_committee_enabled: Activer les comités de promotion sur ce type
           de pétition(témoin.s dont l'invitation par l'auteur est obligatoire pour
-          la validation de la pétitionsi cette fonctionnalité est activée)
+          la validation de la pétition si cette fonctionnalité est activée)
         title: Titre
         undo_online_signatures_enabled: Autoriser les utilisateurs à annuler leurs
           signatures en ligne
@@ -156,7 +156,7 @@ fr:
           description_another: Ce participant a publié %{score} pétitions.
           description_own: Vous avez publié %{score} pétitions.
           name: Pétitions publiées
-          next_level_in: Obtenez %{score} autres pétitionspubliées pour atteindre
+          next_level_in: Obtenez %{score} autres pétitions publiées pour atteindre
             le niveau supérieur!
           unearned_another: Cet utilisateur n'a pas encore publié de pétition.
           unearned_own: Vous n'avez pas encore publié de pétition.
@@ -193,7 +193,7 @@ fr:
             ou une zone de l'organisation. Au cours du processus de collecte de signatures,
             davantage de personnes peuvent ajouter à cette demande et la transmettre
             à l’organisation.</p>\n"
-          title: Comment fonctionnent les pétitions?
+          title: Comment fonctionnent les pétitions ?
     initiatives:
       actions:
         answer: Réponse
@@ -338,7 +338,7 @@ fr:
           more_information: "(Plus d'informations)"
         finish_help:
           access_reminder: Rappelez-vous que vous serez toujours en mesure d'accéder
-            à vos pétitionsvia le menu utilisateur.
+            à vos pétitions via le menu utilisateur.
           help_for_organizations: Si vous êtes une association, vous devrez télécharger
             les procès-verbaux du conseil d'administration de toutes les organisations
             qui constituent le Comité de promotion
@@ -449,7 +449,7 @@ fr:
         count:
           title:
             one: "%{count} pétition"
-            other: "%{count} pétitions"
+            other: "%{count} pétitions "
         filters:
           any: Toutes les pétitions
           author: Auteur
@@ -521,7 +521,7 @@ fr:
         more_information: |-
           Vous pouvez la modifier et éventuellement ajouter des pièces jointes.<br/>
           Pour cela, accéder au menu "Tableau de bord" de votre compte auteur,
-          cliquer sur  "pétitions" dans le menu à gauche et cliquer sur votre pétition.<br/><br/>
+          cliquer sur  "Pétitions " dans le menu à gauche et cliquer sur votre pétition.<br/><br/>
           Attention ! Elle n'est pas encore publiée :<br/>
           il vous reste à l'envoyer à la validation technique du Sénat
           en cliquant sur le bouton « Envoyer à la validation technique ».<br/><br/>
