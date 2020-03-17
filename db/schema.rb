@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_06_224430) do
+ActiveRecord::Schema.define(version: 2020_03_17_113808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -332,6 +332,8 @@ ActiveRecord::Schema.define(version: 2020_02_06_224430) do
     t.datetime "updated_at", null: false
     t.integer "decidim_author_id", null: false
     t.string "decidim_author_type", null: false
+    t.integer "decidim_user_group_id"
+    t.integer "endorsements_count", default: 0, null: false
     t.index ["decidim_author_id", "decidim_author_type"], name: "index_decidim_blogs_posts_on_decidim_author"
     t.index ["decidim_component_id"], name: "index_decidim_blogs_posts_on_decidim_component_id"
   end
@@ -571,6 +573,19 @@ ActiveRecord::Schema.define(version: 2020_02_06_224430) do
     t.index ["decidim_component_id"], name: "index_decidim_debates_debates_on_decidim_component_id"
   end
 
+  create_table "decidim_endorsements", force: :cascade do |t|
+    t.string "resource_type"
+    t.bigint "resource_id"
+    t.string "decidim_author_type"
+    t.bigint "decidim_author_id"
+    t.integer "decidim_user_group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["decidim_author_type", "decidim_author_id"], name: "idx_endorsements_authors"
+    t.index ["resource_type", "resource_id", "decidim_author_type", "decidim_author_id", "decidim_user_group_id"], name: "idx_endorsements_rsrcs_and_authors", unique: true
+    t.index ["resource_type", "resource_id"], name: "index_decidim_endorsements_on_resource_type_and_resource_id"
+  end
+
   create_table "decidim_follows", force: :cascade do |t|
     t.bigint "decidim_user_id", null: false
     t.string "decidim_followable_type"
@@ -707,6 +722,7 @@ ActiveRecord::Schema.define(version: 2020_02_06_224430) do
     t.string "online_signature_types", default: ["devise"], array: true
     t.jsonb "online_votes", default: {"total"=>0}
     t.jsonb "offline_votes", default: {"total"=>0}
+    t.boolean "no_signature", default: false
     t.index "md5((description)::text)", name: "decidim_initiatives_description_search"
     t.index ["answered_at"], name: "index_decidim_initiatives_on_answered_at"
     t.index ["decidim_author_id", "decidim_author_type"], name: "index_decidim_initiatives_on_decidim_author"
@@ -754,6 +770,7 @@ ActiveRecord::Schema.define(version: 2020_02_06_224430) do
     t.boolean "comments_enabled", default: true, null: false
     t.boolean "child_scope_threshold_enabled", default: false, null: false
     t.boolean "only_global_scope_enabled", default: false, null: false
+    t.boolean "no_signature_allowed", default: false
     t.index ["decidim_organization_id"], name: "index_decidim_initiative_types_on_decidim_organization_id"
   end
 
@@ -1093,9 +1110,12 @@ ActiveRecord::Schema.define(version: 2020_02_06_224430) do
     t.boolean "private_space", default: false
     t.string "reference"
     t.bigint "decidim_area_id"
+    t.bigint "decidim_scope_type_id"
+    t.boolean "show_metrics", default: true
     t.index ["decidim_area_id"], name: "index_decidim_participatory_processes_on_decidim_area_id"
     t.index ["decidim_organization_id", "slug"], name: "index_unique_process_slug_and_organization", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_processes_on_decidim_organization_id"
+    t.index ["decidim_scope_type_id"], name: "index_decidim_participatory_processes_on_decidim_scope_type_id"
   end
 
   create_table "decidim_participatory_space_links", id: :serial, force: :cascade do |t|
@@ -1220,6 +1240,11 @@ ActiveRecord::Schema.define(version: 2020_02_06_224430) do
     t.integer "position"
     t.string "participatory_text_level"
     t.boolean "created_in_meeting", default: false
+    t.integer "endorsements_count", default: 0, null: false
+    t.decimal "cost"
+    t.jsonb "cost_report"
+    t.jsonb "execution_period"
+    t.datetime "state_published_at"
     t.index "md5(body)", name: "decidim_proposals_proposal_body_search"
     t.index "md5(title)", name: "decidim_proposals_proposal_title_search"
     t.index ["created_at"], name: "index_decidim_proposals_proposals_on_created_at"
@@ -1228,6 +1253,16 @@ ActiveRecord::Schema.define(version: 2020_02_06_224430) do
     t.index ["proposal_endorsements_count"], name: "idx_decidim_proposals_proposals_on_proposal_endorsemnts_count"
     t.index ["proposal_votes_count"], name: "index_decidim_proposals_proposals_on_proposal_votes_count"
     t.index ["state"], name: "index_decidim_proposals_proposals_on_state"
+  end
+
+  create_table "decidim_proposals_valuation_assignments", force: :cascade do |t|
+    t.bigint "decidim_proposal_id", null: false
+    t.string "valuator_role_type", null: false
+    t.bigint "valuator_role_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["decidim_proposal_id"], name: "decidim_proposals_valuation_assignment_proposal"
+    t.index ["valuator_role_type", "valuator_role_id"], name: "decidim_proposals_valuation_assignment_valuator_role"
   end
 
   create_table "decidim_reports", id: :serial, force: :cascade do |t|
@@ -1613,6 +1648,7 @@ ActiveRecord::Schema.define(version: 2020_02_06_224430) do
   add_foreign_key "decidim_newsletters", "decidim_users", column: "author_id"
   add_foreign_key "decidim_participatory_process_steps", "decidim_participatory_processes"
   add_foreign_key "decidim_participatory_processes", "decidim_organizations"
+  add_foreign_key "decidim_participatory_processes", "decidim_scope_types"
   add_foreign_key "decidim_scope_types", "decidim_organizations"
   add_foreign_key "decidim_scopes", "decidim_organizations"
   add_foreign_key "decidim_scopes", "decidim_scope_types", column: "scope_type_id"

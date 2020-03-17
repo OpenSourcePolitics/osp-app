@@ -4,14 +4,15 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
-# gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
-gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
+gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition-without-signature"
+# gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition-without-signature"
+gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition-without-signature"
 
 # gem "decidim", path: "../decidim"
 # gem "decidim-consultations", path: "../decidim"
 # gem "decidim-initiatives", path: "../decidim"
 
+gem "decidim-initiatives_no_signature_allowed", git: "https://github.com/OpenSourcePolitics/decidim-module-initiatives_nosignature_allowed.git"
 gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git", branch: "0.dev"
 
 # gem "omniauth-decidim", git: "https://github.com/OpenSourcePolitics/decidim.git"
@@ -47,7 +48,7 @@ gem "rubyzip", require: "zip"
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
+  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition-without-signature"
   # gem "decidim-dev", path: "../decidim"
 end
 
