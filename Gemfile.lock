@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 2f5cc642d9b27ce518239abd713ce4cbd6983926
+  revision: 565f2a2c21bbc1f179c33caedfd1575a19d3219c
   branch: alt/petition-without-signature
   specs:
     decidim (0.21.0.pre.dev)
