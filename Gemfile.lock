@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module-initiatives_nosignature_allowed.git
-  revision: 92c245e6464614779df4c53c0affb0a890436eff
+  revision: 6f528db5b75731bfb1107361ef66978d25c56a40
+  branch: alt/petition
   specs:
     decidim-initiatives_no_signature_allowed (0.21.0.pre.dev)
       decidim-core (= 0.21.0.pre.dev)
@@ -17,7 +18,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 098d458fed67f13c0d0d3b7c48f34e35e591d7f9
+  revision: 2f5cc642d9b27ce518239abd713ce4cbd6983926
   branch: alt/petition-without-signature
   specs:
     decidim (0.21.0.pre.dev)
@@ -628,7 +629,7 @@ GEM
       addressable
       css_parser (>= 1.6.0)
       htmlentities (>= 4.0.0)
-    premailer-rails (1.10.3)
+    premailer-rails (1.11.0)
       actionmailer (>= 3)
       premailer (~> 1.7, >= 1.7.9)
     public_suffix (4.0.3)
@@ -823,7 +824,7 @@ GEM
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
-    tomlrb (1.2.9)
+    tomlrb (1.3.0)
     truncato (0.7.11)
       htmlentities (~> 4.3.1)
       nokogiri (>= 1.7.0, <= 2.0)

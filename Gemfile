@@ -12,18 +12,10 @@ gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.g
 # gem "decidim-consultations", path: "../decidim"
 # gem "decidim-initiatives", path: "../decidim"
 
-gem "decidim-initiatives_no_signature_allowed", git: "https://github.com/OpenSourcePolitics/decidim-module-initiatives_nosignature_allowed.git"
+gem "decidim-initiatives_no_signature_allowed", git: "https://github.com/OpenSourcePolitics/decidim-module-initiatives_nosignature_allowed.git", branch: "alt/petition"
+# gem "decidim-initiatives_no_signature_allowed", path: "../_modules/decidim-module-initiatives_nosignature_allowed"
+
 gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git", branch: "0.dev"
-
-# gem "omniauth-decidim", git: "https://github.com/OpenSourcePolitics/decidim.git"
-# gem "decidim-omniauth_extras", git: "https://github.com/OpenSourcePolitics/decidim.git"
-# gem "decidim-initiatives_extras", git: "https://github.com/OpenSourcePolitics/decidim.git"
-
-# gem "omniauth-decidim", path: "../omniauth-decidim"
-# gem "decidim-omniauth_extras", path: "../decidim-module-omniauth_extras"
-# gem "decidim-initiatives_extras", path: "../decidim-module-initiatives_extras"
-
-# gem "decidim-blazer", path: "../decidim-module-blazer"
 
 gem "bootsnap"
 gem "puma"

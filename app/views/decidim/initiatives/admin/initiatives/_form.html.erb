@@ -12,7 +12,7 @@
         <%= current_initiative.author.name %>
       </div>
       <div class="author--actions">
-        <% if authorizations.any? && authorizations.first.metadata.present? %>
+        <% if authorizations.any? && authorizations.first.metadata.present? && Decidim::Verifications.find_workflow_manifest(authorizations.first.name)&.admin_engine.present? %>
           <%= metadata_modal_button_to authorizations.first, method: :get, remote: true, class: "button tiny hollow" do %>
             <%= icon "shield" %>
             <%= t "actions.metadata", scope: "decidim.verifications.omniauth.admin.authorizations.index" %>
@@ -74,6 +74,14 @@
       </div>
     <% end %>
 
+    <% if current_initiative.type.no_signature_allowed? || current_initiative.no_signature.present? %>
+      <div class="row">
+        <div class="columns xlarge-6">
+          <%= form.check_box :no_signature, help_text: t(".help_text") %>
+        </div>
+      </div>
+    <% end %>
+
     <%= form.hidden_field :signature_type %>
 
     <% if current_initiative.accepts_offline_votes? && current_user.admin? %>
@@ -85,6 +93,10 @@
           <% end %>
         </div>
       </div>
+    <% end %>
+
+    <% if allowed_to?(:read, :attachment, initiative: current_participatory_space) %>
+      <%= render partial: "initiative_attachments", locals: { current_initiative: current_initiative, current_participatory_space: current_participatory_space } %>
     <% end %>
   </div>
 </div>
