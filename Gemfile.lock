@@ -382,6 +382,10 @@ GEM
     doorkeeper (5.3.1)
       railties (>= 5)
     doorkeeper-i18n (4.0.1)
+    dotenv (2.7.5)
+    dotenv-rails (2.7.5)
+      dotenv (= 2.7.5)
+      railties (>= 3.2, < 6.1)
     equalizer (0.0.11)
     erb_lint (0.0.30)
       activesupport
@@ -868,6 +872,7 @@ DEPENDENCIES
   decidim-dev!
   decidim-initiatives!
   decidim-term_customizer!
+  dotenv-rails (~> 2.7)
   faker (~> 1.9)
   fog-aws
   letter_opener_web (~> 1.3)

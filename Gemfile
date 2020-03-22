@@ -63,3 +63,5 @@ group :production do
   gem "fog-aws"
   gem "dalli-elasticache"
 end
+
+gem "dotenv-rails", "~> 2.7"
