@@ -9,6 +9,11 @@ Decidim.configure do |config|
   config.default_locale = :fr
   config.available_locales = [:fr, :en]
 
+  # Restrict access to the system part with an authorized ip list.
+  # You can use a single ip like ("1.2.3.4"), or an ip subnet like ("1.2.3.4/24")
+  # You may specify multiple ip in an array ["1.2.3.4", "1.2.3.4/24"]
+  config.system_whitelist_ips = ["0.0.0.0/0"]
+
   config.maximum_attachment_height_or_width = 6000
 
   # Geocoder configuration
