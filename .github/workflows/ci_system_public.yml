@@ -14,7 +14,8 @@ env:
   CI: "true"
   SIMPLECOV: "true"
   RUBY_VERSION: 2.5.3
-  DECIDIM_MODULE: decidim-proposals
+  BUNDLER_VERSION: 2.0.2
+  RAILS_ENV: test
 
 jobs:
   main:
@@ -70,7 +71,6 @@ jobs:
       - uses: nanasess/setup-chromedriver@v1.0.1
       - run: bundle exec rspec spec/system/admin
         name: RSpec
-        working-directory: ${{ env.DECIDIM_MODULE }}
       - uses: codecov/codecov-action@v1
         with:
           file: ./coverage/coverage.xml
