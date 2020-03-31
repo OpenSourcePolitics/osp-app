@@ -1,20 +1,21 @@
+---
 fr:
   activemodel:
     attributes:
-      participatory_process:
-        private_space: Espace privé
       osp_authorization_handler:
+        birthday: Date de naissance
         document_number: Numéro unique
         postal_code: Code postal
-        birthday: Date de naissance
+      participatory_process:
+        private_space: Espace privé
   decidim:
     authorization_handlers:
       osp_authorization_handler:
         explanation: Vérifier votre identité en saisissant un numéro unique
         fields:
+          birthday: Date de naissance
           document_number: Numéro unique
           postal_code: Code postal
-          birthday: Date de naissance
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
@@ -22,9 +23,17 @@ fr:
       authorizations:
         first_login:
           actions:
-            osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
-            osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+            osp_authorization_handler: Vérifier avec le formulaire de vérification
+              de l'identité
+            osp_authorization_workflow: Vérifier avec le formulaire de vérification
+              de l'identité
   layouts:
     decidim:
       footer:
         download_open_data: Données ouvertes
+        made_with_open_source: Made with open source
+      header:
+        close_menu: Close menu
+        navigation: Navigation
+        sign_in: Sign in
+        sign_up: Sign up

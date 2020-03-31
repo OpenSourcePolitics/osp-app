@@ -1,0 +1,21 @@
+---
+
+base_locale: fr
+locales: [en, fr]
+
+ignore_unused:
+  - "activemodel.attributes.osp_authorization_handler.birthday"
+  - "activemodel.attributes.osp_authorization_handler.document_number"
+  - "activemodel.attributes.osp_authorization_handler.postal_code"
+  - "activemodel.attributes.participatory_process.private_space"
+  - "decidim.authorization_handlers.osp_authorization_handler.explanation"
+  - "decidim.authorization_handlers.osp_authorization_handler.fields.birthday"
+  - "decidim.authorization_handlers.osp_authorization_handler.fields.document_number"
+  - "decidim.authorization_handlers.osp_authorization_handler.fields.postal_code"
+  - "decidim.authorization_handlers.osp_authorization_handler.name"
+  - "decidim.authorization_handlers.osp_authorization_workflow.name"
+  - "decidim.verifications.authorizations.first_login.actions.osp_authorization_handler"
+  - "decidim.verifications.authorizations.first_login.actions.osp_authorization_workflow"
+
+ignore_missing:
+  - ""
