@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 if Rails.application.secrets.dig(:sentry, :enabled)
   Rails.application.config.rails_activesupport_breadcrumbs = true
 
@@ -6,7 +8,7 @@ if Rails.application.secrets.dig(:sentry, :enabled)
   # config.action_dispatch.show_exceptions = false
 
   # Inject Sentry logger breadcrumbs
-  require 'raven/breadcrumbs/logger'
+  require "raven/breadcrumbs/logger"
 
   Raven.configure do |config|
     config.dsn = Rails.application.secrets.dig(:sentry, :dsn)

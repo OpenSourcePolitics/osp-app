@@ -17,7 +17,7 @@ module Decidim
       document_number
     end
 
-    private
+    # private
 
     # An example implementation of a DefaultActionAuthorizer inherited class to override authorization status
     # checking process. In this case, it allows to set a list of valid postal codes for an authorization.

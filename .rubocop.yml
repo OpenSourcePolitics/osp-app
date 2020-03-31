@@ -11,6 +11,9 @@ AllCops:
     - "**/Gemfile"
     - "**/Rakefile"
   Exclude:
+    - "bin/**/*"
+    - "db/migrate/**/*.rb"
+    - "db/schema.rb"
     - "**/vendor/**/*"
     - "development_app/**/*"
     - "spec/decidim_dummy_app/**/*"
