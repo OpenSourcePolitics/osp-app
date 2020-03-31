@@ -1,5 +1,11 @@
 # OSP App
 
+![[CI] UT](https://github.com/OpenSourcePolitics/osp-app/workflows/%5BCI%5D%20UT/badge.svg)
+![[CI] SPT](https://github.com/OpenSourcePolitics/osp-app/workflows/%5BCI%5D%20SPT/badge.svg)
+![[CI] SAT](https://github.com/OpenSourcePolitics/osp-app/workflows/%5BCI%5D%20SAT/badge.svg)
+![[CI] LC](https://github.com/OpenSourcePolitics/osp-app/workflows/%5BCI%5D%20LC/badge.svg)
+![[CI] APT](https://github.com/OpenSourcePolitics/osp-app/workflows/%5BCI%5D%20APT/badge.svg)
+
 Citizen Participation and Open Government application.
 
 This is a base app for all OSP projects. It uses OSP's decidim version.
