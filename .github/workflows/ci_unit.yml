@@ -36,6 +36,7 @@ jobs:
       DATABASE_PASSWORD: postgres
       DATABASE_HOST: localhost
       BUNDLER_VERSION: 2.0.2
+      RAILS_ENV: test
 
     steps:
       - uses: rokroskar/workflow-run-cleanup-action@v0.2.2
@@ -65,17 +66,12 @@ jobs:
       - run: |
           bundle exec rake db:create
           bundle exec rake db:migrate
-          bundle exec rake db:seed
         name: Create test app
       - run: mkdir -p ./spec/decidim_dummy_app/tmp/screenshots
         name: Create the screenshots folder
       - uses: nanasess/setup-chromedriver@v1.0.1
       - run: bundle exec rspec --exclude-pattern "**/system/*_spec.rb"
         name: RSpec
-      - uses: codecov/codecov-action@v1
-        with:
-          file: ./coverage/coverage.xml
-          name: ${{ env.DECIDIM_MODULE }}
       - uses: actions/upload-artifact@v2-preview
         if: always()
         with:

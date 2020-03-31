@@ -30,7 +30,7 @@ en:
   layouts:
     decidim:
       footer:
-        download_open_data: Open data
+        download_open_data: Download Open Data files
         made_with_open_source: Made with open source
       header:
         close_menu: Close menu
