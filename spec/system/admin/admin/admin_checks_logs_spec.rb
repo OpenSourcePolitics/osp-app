@@ -2,13 +2,25 @@
 
 require "spec_helper"
 
-describe "User manager manages impersonations", type: :system do
-  let(:user) { create(:user, :user_manager, :confirmed, organization: organization) }
+describe "Admin checks logs", type: :system do
+  let(:organization) { create(:organization) }
 
-  def navigate_to_impersonations_page
+  let!(:user) { create(:user, :admin, :confirmed, organization: organization) }
+  let!(:action_logs) { create_list :action_log, 3, organization: organization }
+
+  before do
+    switch_to_host(organization.host)
+    login_as user, scope: :user
     visit decidim_admin.root_path
-    click_link "Participants"
   end
 
-  it_behaves_like "manage impersonations examples"
+  it "lists all recent logs" do
+    click_link "Admin activity log"
+
+    expect(page).to have_content("ADMIN LOG")
+
+    within ".content" do
+      expect(page).to have_selector("li", count: 3)
+    end
+  end
 end
