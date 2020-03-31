@@ -54,7 +54,3 @@ jobs:
         name: Install JS deps
       - run: bundle exec rake assets:precompile
         name: Assets precompilation
-      - uses: codecov/codecov-action@v1
-        with:
-          file: ./coverage/coverage.xml
-          name: main-folder
