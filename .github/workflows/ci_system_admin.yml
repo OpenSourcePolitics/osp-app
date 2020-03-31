@@ -15,7 +15,6 @@ env:
   SIMPLECOV: "true"
   RUBY_VERSION: 2.5.3
   BUNDLER_VERSION: 2.0.2
-  RAILS_ENV: test
 
 jobs:
   main:

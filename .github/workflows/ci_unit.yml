@@ -36,7 +36,6 @@ jobs:
       DATABASE_PASSWORD: postgres
       DATABASE_HOST: localhost
       BUNDLER_VERSION: 2.0.2
-      RAILS_ENV: test
 
     steps:
       - uses: rokroskar/workflow-run-cleanup-action@v0.2.2
