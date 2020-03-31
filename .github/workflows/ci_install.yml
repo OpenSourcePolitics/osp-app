@@ -21,6 +21,21 @@ jobs:
   main:
     name: Install OSP App tests
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:11
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        env:
+          POSTGRES_PASSWORD: postgres
+    env:
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: postgres
+      DATABASE_HOST: localhost
     steps:
       - uses: rokroskar/workflow-run-cleanup-action@v0.2.2
         if: "github.ref != 'refs/heads/master' || github.ref != 'refs/heads/develop'"
@@ -53,7 +68,7 @@ jobs:
           bundle exec rake db:create
           bundle exec rake db:migrate
           bundle exec rake db:seed
-          name: Create test app
+        name: Create test app
       - run: npm ci
         name: Install JS deps
       - run: bundle exec rake assets:precompile
