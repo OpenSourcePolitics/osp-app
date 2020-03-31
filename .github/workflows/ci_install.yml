@@ -1,4 +1,4 @@
-name: "[CI] SOA"
+name: "[CI] IOA"
 on:
   push:
     branches:
@@ -19,7 +19,7 @@ env:
 
 jobs:
   main:
-    name: Setup OSP App tests
+    name: Install OSP App tests
     runs-on: ubuntu-latest
     steps:
       - uses: rokroskar/workflow-run-cleanup-action@v0.2.2
