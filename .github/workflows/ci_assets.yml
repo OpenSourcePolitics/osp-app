@@ -15,6 +15,7 @@ env:
   SIMPLECOV: "true"
   RUBY_VERSION: 2.5.3
   NODE_VERSION: 12.9.1
+  BUNDLER_VERSION: 2.0.2
 
 jobs:
   main:
@@ -43,7 +44,10 @@ jobs:
             ${{ runner.OS }}-rubydeps-${{ env.cache-name }}-
             ${{ runner.OS }}-rubydeps-
             ${{ runner.OS }}-
-      - run: bundle install --path vendor/bundle --jobs 4 --retry 3
+      - run: |
+          sudo apt-get -yqq install libpq-dev
+          gem install bundler -v ${{ env.BUNDLER_VERSION }}
+          bundle install --path vendor/bundle --jobs 4 --retry 3
         name: Install Ruby deps
       - run: npm ci
         name: Install JS deps
