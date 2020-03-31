@@ -1,4 +1,4 @@
-name: "[CI] UT"
+name: "[CI]"
 on:
   push:
     branches:
