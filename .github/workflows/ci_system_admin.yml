@@ -55,9 +55,15 @@ jobs:
             ${{ runner.OS }}-rubydeps-${{ env.cache-name }}-
             ${{ runner.OS }}-rubydeps-
             ${{ runner.OS }}-
-      - run: bundle install --path vendor/bundle --jobs 4 --retry 3
+      - run: |
+          sudo apt-get -yqq install libpq-dev
+          gem install bundler -v ${{ env.BUNDLER_VERSION }}
+          bundle install --path vendor/bundle --jobs 4 --retry 3
         name: Install Ruby deps
-      - run: bundle exec rake test_app
+      - run: |
+          bundle exec rake db:create
+          bundle exec rake db:migrate
+          bundle exec rake db:seed
         name: Create test app
       - run: mkdir -p ./spec/decidim_dummy_app/tmp/screenshots
         name: Create the screenshots folder
