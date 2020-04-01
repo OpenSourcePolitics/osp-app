@@ -47,7 +47,7 @@ describe "Proposals", type: :system do
 
       click_link proposal.title
 
-      expect(page).to have_content(decidim_html_escape(proposal.title))
+      expect(page).to have_content(proposal.title)
       expect(page).to have_content(strip_tags(proposal.body).strip)
       expect(page).to have_author(proposal.creator_author.name)
       expect(page).to have_content(proposal.reference)
@@ -421,6 +421,25 @@ describe "Proposals", type: :system do
       let!(:ressources) { create_list(:proposal, 3, component: component) }
 
       it_behaves_like "an uncommentable component"
+    end
+  end
+
+  context "when component is not commentable" do
+    let!(:proposals) { create_list(:proposal, 3, component: component) }
+    let!(:component) do
+      create(:component,
+             manifest: manifest,
+             participatory_space: participatory_space)
+    end
+
+    it "doesn't displays comments count" do
+      component.update!(settings: { comments_enabled: false })
+
+      visit_component
+
+      proposals.each do |proposal|
+        expect(page).not_to have_link(resource_locator(proposal).path)
+      end
     end
   end
 end
