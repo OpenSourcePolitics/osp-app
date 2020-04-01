@@ -19,11 +19,13 @@ describe "Menu", type: :system do
 
   it "renders the default main menu" do
     within ".main-nav" do
-      expect(page).to \
-        have_selector("li", count: 3) &
-        have_link("Home", href: "/") &
-        have_link("Initiatives", href: "/initiatives") &
-        have_link("Help", href: "/pages")
+      # TODO: Reintroduce initiatives
+      # expect(page).to have_selector("li", count: 3)
+      expect(page).to have_selector("li", count: 2)
+      expect(page).to have_link("Home", href: "/")
+      # TODO: Reintroduce initiatives
+      # expect(page).to have_link("Initiatives", href: "/initiatives")
+      expect(page).to have_link("Help", href: "/pages")
     end
   end
 

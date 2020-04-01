@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: ecf2c220c16fe0bbfa06940d0a304ca761e16a7e
+  revision: 080ce7929152b6ece42ca195e29b1c6d6ea73c50
   branch: fix/factories
   specs:
     decidim (0.18.0)
@@ -132,6 +132,7 @@ GIT
       rspec-cells (~> 0.3.4)
       rspec-html-matchers (~> 0.9.1)
       rspec-rails (~> 3.7)
+      rspec-retry (~> 0.6.2)
       rspec_junit_formatter (~> 0.3.0)
       rubocop (~> 0.58.0)
       rubocop-rspec (~> 1.21)
@@ -670,6 +671,8 @@ GEM
       rspec-expectations (~> 3.9.0)
       rspec-mocks (~> 3.9.0)
       rspec-support (~> 3.9.0)
+    rspec-retry (0.6.2)
+      rspec-core (> 3.3)
     rspec-support (3.9.2)
     rspec_junit_formatter (0.3.0)
       rspec-core (>= 2, < 4, != 2.12.0)
