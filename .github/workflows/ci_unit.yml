@@ -70,7 +70,7 @@ jobs:
       - run: mkdir -p ./spec/decidim_dummy_app/tmp/screenshots
         name: Create the screenshots folder
       - uses: nanasess/setup-chromedriver@v1.0.1
-      - run: bundle exec rspec --exclude-pattern "**/system/*_spec.rb"
+      - run: bundle exec rspec --exclude-pattern "spec/system/**/*_spec.rb"
         name: RSpec
       - uses: actions/upload-artifact@v2-preview
         if: always()
