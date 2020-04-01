@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module-initiatives_nosignature_allowed.git
-  revision: 6f528db5b75731bfb1107361ef66978d25c56a40
+  revision: 693c84cad29c005d61bdb26fe7ab7dc9cdfba58a
   branch: alt/petition
   specs:
     decidim-initiatives_no_signature_allowed (0.21.0.pre.dev)
@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 565f2a2c21bbc1f179c33caedfd1575a19d3219c
+  revision: 3770ad0243133b871b9600a71e491d31ede71625
   branch: alt/petition-without-signature
   specs:
     decidim (0.21.0.pre.dev)
@@ -316,7 +316,7 @@ GEM
     browser (2.7.1)
     builder (3.2.4)
     byebug (11.1.1)
-    capybara (3.31.0)
+    capybara (3.32.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -378,7 +378,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.9.0)
+    devise-i18n (1.9.1)
       devise (>= 4.7.1)
     devise_invitable (1.7.5)
       actionmailer (>= 4.1.0)
@@ -619,7 +619,7 @@ GEM
       activerecord (>= 4.2)
       request_store (~> 1.1)
     parallel (1.19.1)
-    parser (2.7.0.4)
+    parser (2.7.0.5)
       ast (~> 2.4.0)
     pg (1.1.4)
     pg_search (2.3.2)
@@ -835,7 +835,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.7.6)
+    unf_ext (0.0.7.7)
     unicode-display_width (1.6.1)
     valid_email2 (2.3.1)
       activemodel (>= 3.2)

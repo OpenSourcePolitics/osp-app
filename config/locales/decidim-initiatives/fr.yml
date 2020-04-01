@@ -450,6 +450,8 @@ fr:
           title:
             one: "%{count} pétition"
             other: "%{count} pétitions"
+        edit:
+          attachment_legend: Ajouter une pièce jointe (Facultatif) 
         filters:
           any: Toutes les pétitions
           author: Auteur

@@ -373,3 +373,8 @@ a.button.small > .icon {
   color: $alert;
   margin-left: .5rem;
 }
+
+label[for="initiative_no_signature"] {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}

@@ -9,6 +9,7 @@
   <div class="medium-centered">
     <div class="callout secondary">
       <%== t ".fill_data_help" %>
+      <%= link_to t(".more_information"), decidim.page_path("initiatives"), target: "_blank" %>.
     </div>
   </div>
 </div>
@@ -35,6 +36,12 @@
               <%= f.text_area :description, rows: 8, maxlength: 10000, autocomplete: :off, required: true %>
             </div>
 
+            <% if initiative_type.no_signature_allowed? %>
+              <div class="field">
+                <%= f.check_box :no_signature, help_text: t(".help_text") %>
+              </div>
+            <% end %>
+
             <% signature_type_options = signature_type_options(f.object) %>
             <% if signature_type_options.length == 1 %>
               <%= f.hidden_field :signature_type, value: signature_type_options.first.last %>
@@ -49,42 +56,44 @@
             <% else %>
               <div class="field">
                 <%= f.select :scope_id,
-                            scopes.map { |scope| [translated_attribute(scope.scope_name), scope&.scope&.id]},
-                            prompt: t(".select_scope") %>
+                             scopes.map { |scope| [translated_attribute(scope.scope_name), scope&.scope&.id] },
+                             prompt: t(".select_scope") %>
               </div>
             <% end %>
 
             <% if Decidim::UserGroups::ManageableUserGroups.for(current_user).verified.any? %>
               <div class="field">
                 <%= f.select :decidim_user_group_id,
-                             Decidim::UserGroups::ManageableUserGroups.for(current_user).verified.map{ |g| [g.name, g.id] },
+                             Decidim::UserGroups::ManageableUserGroups.for(current_user).verified.map { |g| [g.name, g.id] },
                              prompt: current_user.name %>
               </div>
             <% end %>
 
             <fieldset>
-              <legend><%= t("attachment_legend", scope: "decidim.proposals.proposals.edit") %></legend>
-              <%= f.fields_for :attachment, @form.attachment do |nested_form| %>
-                <div class="field">
-                  <%= nested_form.text_field :title %>
-                </div>
+              <legend><b><%= t("attachment_legend", scope: "decidim.initiatives.initiatives.edit") %></b></legend>
+              <div id="attachment-wrapper">
+                <%= f.fields_for :attachment, @form.attachment do |nested_form| %>
+                  <div class="field">
+                    <%= nested_form.text_field :title %>
+                  </div>
 
-                <div class="field">
-                  <%= nested_form.upload :file, optional: false %>
-                </div>
+                  <div class="field">
+                    <%= nested_form.upload :file, optional: false, accept: "application/pdf" %>
+                  </div>
 
-                <% if @form.errors[:attachment].present? %>
-                  <% @form.errors[:attachment].each do |message| %>
-                    <small class="form-error is-visible">
-                      <%= message %>
-                    </small>
+                  <% if @form.errors[:attachment].present? %>
+                    <% @form.errors[:attachment].each do |message| %>
+                      <small class="form-error is-visible">
+                        <%= message %>
+                      </small>
+                    <% end %>
                   <% end %>
                 <% end %>
-              <% end %>
+              </div>
             </fieldset>
           </div>
           <div class="actions">
-            <%= f.submit t(".continue"), class: "button expanded" %>
+            <%= f.submit t(".continue"), class: "button expanded", data: { disable_with: true } %>
           </div>
         <% end %>
       </div>
