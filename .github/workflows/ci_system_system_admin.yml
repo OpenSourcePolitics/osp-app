@@ -1,4 +1,4 @@
-name: "[CI] SSPT"
+name: "[CI] SST"
 on:
   push:
     branches:
@@ -18,7 +18,7 @@ env:
 
 jobs:
   main:
-    name: System System public tests
+    name: System System tests
     runs-on: ubuntu-latest
     services:
       postgres:

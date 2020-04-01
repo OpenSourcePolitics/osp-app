@@ -1,4 +1,4 @@
-name: "[CI] SSAT"
+name: "[CI] BuST"
 on:
   push:
     branches:
@@ -18,7 +18,7 @@ env:
 
 jobs:
   main:
-    name: Sortitions System admin tests
+    name: Budgets System tests
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -68,7 +68,7 @@ jobs:
       - run: mkdir -p ./spec/decidim_dummy_app/tmp/screenshots
         name: Create the screenshots folder
       - uses: nanasess/setup-chromedriver@v1.0.1
-      - run: bundle exec rspec spec/system/sortitions/admin
+      - run: bundle exec rspec spec/system/budgets/
         name: RSpec
       - uses: actions/upload-artifact@v2-preview
         if: always()

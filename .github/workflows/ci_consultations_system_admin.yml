@@ -1,4 +1,4 @@
-name: "[CI] ConSAT"
+name: "[CI] ConST"
 on:
   push:
     branches:
@@ -18,7 +18,7 @@ env:
 
 jobs:
   main:
-    name: Consultations System admin tests
+    name: Consultations System tests
     runs-on: ubuntu-latest
     services:
       postgres:

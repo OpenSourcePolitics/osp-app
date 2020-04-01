@@ -1,4 +1,4 @@
-name: "[CI] ComSPT"
+name: "[CI] ComST"
 on:
   push:
     branches:
@@ -18,7 +18,7 @@ env:
 
 jobs:
   main:
-    name: Comments System public tests
+    name: Comments System tests
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -68,7 +68,7 @@ jobs:
       - run: mkdir -p ./spec/decidim_dummy_app/tmp/screenshots
         name: Create the screenshots folder
       - uses: nanasess/setup-chromedriver@v1.0.1
-      - run: bundle exec rspec spec/system/comments --exclude-pattern 'spec/system/comments/admin/**/*_spec.rb'
+      - run: bundle exec rspec spec/system/comments/admin
         name: RSpec
       - uses: actions/upload-artifact@v2-preview
         if: always()
