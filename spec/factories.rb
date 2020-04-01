@@ -16,4 +16,3 @@ require "decidim/proposals/test/factories"
 require "decidim/accountability/test/factories"
 require "decidim/participatory_processes/test/factories"
 require "decidim/debates/test/factories"
-
