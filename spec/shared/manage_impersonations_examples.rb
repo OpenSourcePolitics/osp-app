@@ -65,15 +65,15 @@ shared_examples "manage impersonations examples" do
 
       let(:component) do
         create(
-            :component,
-            participatory_space: participatory_space,
-            permissions: {
-                "foo" => {
-                    "authorization_handlers" => {
-                        authorization_handler => {}
-                    }
-                }
+          :component,
+          participatory_space: participatory_space,
+          permissions: {
+            "foo" => {
+              "authorization_handlers" => {
+                authorization_handler => {}
+              }
             }
+          }
         )
       end
 
@@ -97,8 +97,8 @@ shared_examples "manage impersonations examples" do
 
         it "shows popup to require verification" do
           expect(page).to have_content(
-                              /In order to perform this action, you need to be authorized with "Another example authorization"/
-                          )
+            /In order to perform this action, you need to be authorized with "Another example authorization"/
+          )
         end
       end
     end
