@@ -1,4 +1,4 @@
-name: "[CI] CoSAT"
+name: "[CI] MST"
 on:
   push:
     branches:
@@ -18,7 +18,7 @@ env:
 
 jobs:
   main:
-    name: Conferences System admin tests
+    name: Meetings System tests
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -68,7 +68,7 @@ jobs:
       - run: mkdir -p ./spec/decidim_dummy_app/tmp/screenshots
         name: Create the screenshots folder
       - uses: nanasess/setup-chromedriver@v1.0.1
-      - run: bundle exec rspec spec/system/conferences/admin
+      - run: bundle exec rspec spec/system/meetings/
         name: RSpec
       - uses: actions/upload-artifact@v2-preview
         if: always()

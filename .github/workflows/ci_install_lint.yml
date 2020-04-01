@@ -1,4 +1,4 @@
-name: "[CI] ISPT"
+name: "[CI] ILOA"
 on:
   push:
     branches:
@@ -14,11 +14,12 @@ env:
   CI: "true"
   SIMPLECOV: "true"
   RUBY_VERSION: 2.5.3
+  NODE_VERSION: 12.9.1
   BUNDLER_VERSION: 2.0.2
 
 jobs:
   main:
-    name: Initiatives System public tests
+    name: Install and Lint OSP App tests
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -35,7 +36,6 @@ jobs:
       DATABASE_USERNAME: postgres
       DATABASE_PASSWORD: postgres
       DATABASE_HOST: localhost
-      RAILS_ENV: test
     steps:
       - uses: rokroskar/workflow-run-cleanup-action@v0.2.2
         if: "github.ref != 'refs/heads/master' || github.ref != 'refs/heads/develop'"
@@ -47,6 +47,9 @@ jobs:
       - uses: ruby/setup-ruby@master
         with:
           ruby-version: ${{ env.RUBY_VERSION }}
+      - uses: actions/setup-node@master
+        with:
+          node-version: ${{ env.NODE_VERSION }}
       - name: Recover Ruby dependency cache
         uses: actions/cache@v1
         with:
@@ -64,14 +67,13 @@ jobs:
       - run: |
           bundle exec rake db:create
           bundle exec rake db:schema:load
+          bundle exec rake db:seed
         name: Create test app
-      - run: mkdir -p ./spec/decidim_dummy_app/tmp/screenshots
-        name: Create the screenshots folder
-      - uses: nanasess/setup-chromedriver@v1.0.1
-      - run: bundle exec rspec spec/system/meetings --exclude-pattern 'spec/system/meetings/admin/**/*_spec.rb'
-        name: RSpec
-      - uses: actions/upload-artifact@v2-preview
-        if: always()
-        with:
-          name: screenshots
-          path: ./spec/tmp/screenshots
+      - run: npm ci
+        name: Install JS deps
+      - run: bundle exec rubocop -P
+        name: Lint Ruby files
+      - run: ./.github/run_erblint.sh
+        name: Lint ERB files
+      - run: bundle exec rake assets:precompile
+        name: Assets precompilation

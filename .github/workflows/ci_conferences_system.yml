@@ -1,4 +1,4 @@
-name: "[CI] MSPT"
+name: "[CI] CoST"
 on:
   push:
     branches:
@@ -18,7 +18,7 @@ env:
 
 jobs:
   main:
-    name: Meetings System public tests
+    name: Conferences System tests
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -68,7 +68,7 @@ jobs:
       - run: mkdir -p ./spec/decidim_dummy_app/tmp/screenshots
         name: Create the screenshots folder
       - uses: nanasess/setup-chromedriver@v1.0.1
-      - run: bundle exec rspec spec/system/meetings --exclude-pattern 'spec/system/meetings/admin/**/*_spec.rb'
+      - run: bundle exec rspec spec/system/conferences
         name: RSpec
       - uses: actions/upload-artifact@v2-preview
         if: always()
