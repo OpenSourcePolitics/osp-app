@@ -63,7 +63,7 @@ jobs:
         name: Install Ruby deps
       - run: |
           bundle exec rake db:create
-          bundle exec rake db:migrate
+          bundle exec rake db:schema:load
         name: Create test app
       - run: mkdir -p ./spec/decidim_dummy_app/tmp/screenshots
         name: Create the screenshots folder
