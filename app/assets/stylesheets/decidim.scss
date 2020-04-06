@@ -446,3 +446,15 @@ main.anonymous {
 .callout > form > :last-child {
   margin-bottom: 0;
 }
+
+.field.custom_agreement {
+  label {
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  input[type=checkbox] {
+    margin-top: 2px;
+    float: left;
+  }
+}

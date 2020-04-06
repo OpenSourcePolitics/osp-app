@@ -8,6 +8,8 @@ fr:
         file: Fichier (*.pdf)
         title: Titre
         weight: Ordre de présentation
+      user:
+        full_address: Votre adresse postale
     models:
       decidim/attachment_created_event: Pièce jointe
   decidim:
@@ -49,13 +51,13 @@ fr:
             - Confirmer une identité avec un compte Decidim externe
         france_connect:
           help:
-            - Confirmer une identité avec un compte France Connect
+            - Confirmer une identité avec un compte FranceConnect
         france_connect_uid:
           help:
-            - Confirmer une identité avec un compte France Connect "Anonyme"
+            - Confirmer une identité avec un compte FranceConnect Signataire
         france_connect_profile:
           help:
-            - Confirmer une identité avec un compte France Connect "Auteur"
+            - Confirmer une identité avec un compte FranceConnect Auteur
         saml:
           help:
             - Confirmer une identité avec un compte CSAM eID
@@ -64,16 +66,26 @@ fr:
         explanation: Confirmer votre identité avec un compte Decidim externe
       france_connect:
         name: France Connect
-        explanation: Confirmer votre identité avec un compte France Connect
+        explanation: Confirmer votre identité avec un compte FranceConnect
       france_connect_uid:
-        name: France Connect Level I
-        explanation: Confirmer votre identité avec un compte France Connect "Anonyme"
+        name: FranceConnect Signataire
+        explanation: Confirmer votre identité avec un compte FranceConnect Signataire
       france_connect_profile:
-        name: France Connect Level II
-        explanation: Confirmer votre identité avec un compte France Connect "Auteur"
+        name: FranceConnect Auteur
+        explanation: Confirmer votre identité avec un compte FranceConnect Auteur
       saml:
         name: CSAM eID
         explanation: Confirmer votre identité avec un compte CSAM eID
+    devise:
+      omniauth_registrations:
+        new:
+          custom_agreement: "Je certifie être citoyen français ou résidant régulièrement en France, ainsi que l’exactitude des informations du profil"
+          registration_info: |-
+            Texte d'information pour la création de compte qui supporte le <code>HTML</code>.
+            <br/><br/>
+            <small>
+              <i>Please change me with translation key <code>decidim.devise.omniauth_registrations.new.registration_info</code><i/>
+            <small/>
     pages:
       terms_and_conditions:
         refuse:

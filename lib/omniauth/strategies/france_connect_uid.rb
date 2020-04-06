@@ -14,8 +14,7 @@ module OmniAuth
         {
           name: I18n.t("decidim.anonymous_user"),
           nickname: Zlib::crc32(uid),
-          email: "",
-          date_of_birth: user_info.birthdate
+          email: ""
         }
       end
     end

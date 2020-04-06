@@ -2,8 +2,15 @@
   <h2 id="initiatives-count" class="title-action__title section-heading">
     <%= render partial: "count" %>
   </h2>
-  <%= link_to create_initiative_path(:select_initiative_type), class: "title-action__action button small hollow" do %>
+  <% if current_user %>
+    <%= link_to create_initiative_path(:select_initiative_type), class: "title-action__action button small hollow" do %>
+        <%= t(".new_initiative") %>
+        <%= icon "plus" %>
+    <% end %>
+  <% else %>
+    <%= authorized_creation_modal_button_to create_initiative_path(:select_initiative_type), remote: true, class: "title-action__action button small hollow" do %>
       <%= t(".new_initiative") %>
       <%= icon "plus" %>
+    <% end %>
   <% end %>
 </div>

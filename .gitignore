@@ -41,3 +41,5 @@ public/uploads
 !.elasticbeanstalk/*.global.yml
 
 **/*/wip
+
+.DS_Store

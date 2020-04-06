@@ -6,12 +6,24 @@ module OmniauthRegistrationFormExtend
   extend ActiveSupport::Concern
 
   included do
+
+    def self.extra_params
+      [:custom_agreement, :full_address]
+    end
+
+    attribute :custom_agreement, Virtus::Attribute::Boolean
+    attribute :full_address, String
+
     validates :email, 'valid_email_2/email': { mx: true }
     validates :name, presence: true
     validates :provider, presence: true
     validates :uid, presence: true
+    validates :custom_agreement, acceptance: true
 
-    validate :email, :email_is_unique, unless: -> { email.blank? }
+    validates :email, :full_address, presence: true, unless: -> (form) { form.email.blank? }
+    validates_length_of :full_address, maximum: 256, allow_blank: false, unless: -> (form) { form.email.blank? }
+
+    validate :email, :email_is_unique, unless: -> (form) { form.email.blank? }
 
     validate :minimum_age, if: -> { manifest.dig(:minimum_age).present? && raw_data.dig(:extra, :raw_info, :birthdate).present? }
 
