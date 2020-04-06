@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-questions.git
-  revision: de5a810583c205217338d9440b78f4b77dfc01fa
+  revision: da3dfd582e4c5e41470ba899aba5c4147f74551
   branch: feature/upstream_moderation
   specs:
     decidim-questions (0.18.0)
