@@ -12,15 +12,16 @@ Decidim.configure do |config|
   # Restrict access to the system part with an authorized ip list.
   # You can use a single ip like ("1.2.3.4"), or an ip subnet like ("1.2.3.4/24")
   # You may specify multiple ip in an array ["1.2.3.4", "1.2.3.4/24"]
+  # Use the following configuration to enable all IPs
   config.system_whitelist_ips = ["0.0.0.0/0"]
 
   # Geocoder configuration
-  config.geocoder = {
-      static_map_url: "https://image.maps.cit.api.here.com/mia/1.6/mapview",
-      here_api_key: Rails.application.secrets.geocoder[:here_api_key],
-      here_app_id: "DEPRECATED",
-      here_app_code: "DEPRECATED"
-  }
+  # config.geocoder = {
+  #     static_map_url: "https://image.maps.cit.api.here.com/mia/1.6/mapview",
+  #     here_api_key: Rails.application.secrets.geocoder[:here_api_key],
+  #     here_app_id: "DEPRECATED",
+  #     here_app_code: "DEPRECATED"
+  # }
 
   if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_require_authorization)
     Decidim::Initiatives.minimum_committee_members = 0
