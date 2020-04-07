@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_28_153643) do
+ActiveRecord::Schema.define(version: 2020_04_07_160724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -165,6 +165,7 @@ ActiveRecord::Schema.define(version: 2020_01_28_153643) do
     t.string "facebook_handler"
     t.string "youtube_handler"
     t.string "github_handler"
+    t.boolean "sort_children", default: false
     t.index ["decidim_area_id"], name: "index_decidim_assemblies_on_decidim_area_id"
     t.index ["decidim_organization_id", "slug"], name: "index_unique_assembly_slug_and_organization", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_assemblies_on_decidim_organization_id"

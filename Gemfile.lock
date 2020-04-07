@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 1aaa29d7fefff10dea4d3991b8093948834a4a93
+  revision: b0b698fbbc2e071e6e752057244679418f4ea31c
   branch: alt/toulouse
   specs:
     decidim (0.18.0)
