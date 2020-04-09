@@ -7,4 +7,10 @@
 <% if allowed_to? :read, :admin_dashboard %>
   <li><%= link_to t(".admin_dashboard"), decidim_admin.root_path %></li>
 <% end %>
-<li><%= link_to t(".sign_out"), '/users/auth/cultuur_connect/logout', method: :delete, class: "sign-out-link" %></li>
+<li>
+  <% if current_user.identities.present? %>
+    <%= link_to t(".sign_out"), '/users/auth/cultuur_connect/logout', method: :delete, class: "sign-out-link" %>
+  <% else %>
+    <%= link_to t(".sign_out"), decidim.destroy_user_session_path, method: :delete, class: "sign-out-link" %>
+  <% end %>
+</li>
