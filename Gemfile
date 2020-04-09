@@ -34,7 +34,7 @@ gem "sprockets", "~> 3.7"
 
 # gem "omniauth-saml", "~> 1.10.0"
 gem "omniauth-oauth2"
-# gem "omniauth_openid_connect", "0.3.1"
+gem "omniauth_openid_connect"
 # gem "omniauth-jwt"
 
 group :development, :test do

@@ -8,6 +8,11 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
 
+  devise_scope :user do
+    match "users/auth/cultuur_connect/logout" => "decidim/devise/omniauth_registrations#cultuur_connect", via: [:delete]
+    match "users/auth/cultuur_connect/logout/callback" => "decidim/devise/sessions#destroy", via: [:get]
+  end
+
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 
   mount Decidim::Core::Engine => '/'
