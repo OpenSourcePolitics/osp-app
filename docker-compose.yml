@@ -16,7 +16,7 @@ services:
       - 3000:3000
     links:
       - pg
-    command: ["puma"]
+    command: ["bundle", "exec", "puma"]
     entrypoint: /app/docker-entrypoint.sh
   pg:
     image: postgres:11

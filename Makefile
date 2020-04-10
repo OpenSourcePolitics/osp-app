@@ -1,35 +1,38 @@
 migration:
-	docker-compose run app "rails db:migrate"
+	docker-compose run app bundle exec rails db:migrate
 
 upgrade:
-	docker-compose run app "rake decidim:upgrade"
+	docker-compose run app bundle exec rails decidim:upgrade
 
 create:
-	docker-compose run app "rake db:create"
+	docker-compose run app bundle exec rails db:create
 
 up:
 	docker-compose up
 
-prod:
-	docker-compose -f docker-compose.prod.yml up
+staging:
+	docker-compose -f docker-compose.staging.yml up
 
 build:
 	docker-compose build --compress --parallel
 
 drop:
-	docker-compose run app "rake db:drop"
+	docker-compose run app bundle exec rails db:drop
 
 setup:
-	docker-compose run app "rake db:create db:migrate"
+	docker-compose run app bundle exec rails db:create db:migrate
 
 seed:
-	docker-compose run app "SEED=true rake db:seed"
+	docker-compose run app bundle exec rails db:seed
+
+remove-stopped:
+	docker-compose rm -f
 
 precompile:
-	docker-compose run app "RAILS_ENV=production rails assets:precompile"
+	docker-compose run app bundle exec rails assets:precompile
 
 cache:
-	docker-compose run app "rails tmp:cache:clear assets:clobber"
+	docker-compose run app bundle exec rails tmp:cache:clear assets:clobber
 
 ssh:
 	docker-compose run app /bin/bash
@@ -51,13 +54,15 @@ bump:
 	@make migration
 	@make cache
 	@make precompile
-	@make prod
+	@make remove-stopped
+	@make staging
 
 init:
 	@make create
 	@make migration
 	@make upgrade
 	@make seed
+	@make remove-stopped
 
 build-no-cache:
 	docker-compose build --no-cache
