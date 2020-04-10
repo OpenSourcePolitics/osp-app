@@ -17,7 +17,7 @@ prod:
 	docker-compose -f docker-compose.staging.yml up
 
 build:
-	docker-compose build --compress --parallel
+	docker-compose build --compress --parallel --force-rm
 
 drop:
 	docker-compose run app bundle exec rails db:drop
@@ -30,6 +30,13 @@ seed:
 
 remove-stopped:
 	docker-compose rm -f
+
+remove-danglings:
+	docker rmi $(docker images -f "dangling=true" -q) -f ; docker rmi $(docker volumes -f "dangling=true" -q) -f
+
+clean-up:
+	@make remove-stopped
+	@make remove-danglings
 
 precompile:
 	docker-compose run app bundle exec rails assets:precompile
