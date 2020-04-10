@@ -13,6 +13,9 @@ up:
 staging:
 	docker-compose -f docker-compose.staging.yml up
 
+prod:
+	docker-compose -f docker-compose.staging.yml up
+
 build:
 	docker-compose build --compress --parallel
 

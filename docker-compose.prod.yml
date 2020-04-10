@@ -1,0 +1,24 @@
+version: '3'
+services:
+  app:
+    build: .
+    image: osp-app:0.18-dev
+    volumes:
+      - .:/app
+      - bundle:/usr/local/bundle
+      - node_modules:/app/node_modules
+    ports:
+      - 3000:3000
+    command: ["bundle", "exec", "puma"]
+    entrypoint: /app/docker-entrypoint.sh
+
+  sidekiq:
+    build: .
+    image: osp-app:0.18-dev
+    command: ["bundle", "exec", "sidekiq", "-C", "config/sidekiq.yml"]
+    depends_on:
+      - app
+
+volumes:
+  node_modules: {}
+  bundle: {}
