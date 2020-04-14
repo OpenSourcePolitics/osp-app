@@ -56,6 +56,9 @@
 
           <%= f.email_field :email %>
 
+          <%= f.text_area :full_address, rows: 2, maxlength: 256, class: ""  %>
+          <%= f.check_box :custom_agreement, label: t(".custom_agreement") %>
+
           <div class="actions">
             <%= f.submit t(".update_account"),class: "button expanded"  ,disable_with: true %>
           </div>

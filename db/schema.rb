@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_06_095824) do
+ActiveRecord::Schema.define(version: 2020_04_14_162616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -1547,6 +1547,9 @@ ActiveRecord::Schema.define(version: 2020_04_06_095824) do
     t.datetime "admin_terms_accepted_at"
     t.string "session_token"
     t.string "direct_message_types", default: "all", null: false
+    t.string "full_address"
+    t.boolean "custom_agreement"
+    t.datetime "custom_agreement_at"
     t.index ["confirmation_token"], name: "index_decidim_users_on_confirmation_token", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_users_on_decidim_organization_id"
     t.index ["id", "type"], name: "index_decidim_users_on_id_and_type"

@@ -15,6 +15,7 @@ fr:
   decidim:
     account:
       show:
+        custom_agreement: "Je certifie être citoyen français ou résidant régulièrement en France, ainsi que l’exactitude des informations du profil"
         unconfirmed_email: "l'adresse <code>%{email}</code> est en cours de validation.<br/>
         Un courriel vous a été transmis à cette adresse contenant un lien nous permettant
         de confirmer son existence."
@@ -119,7 +120,7 @@ fr:
           title: Liste des autorisations
       metadata:
         content:
-          active_email: "<b>Cet utilisateur peut être contacté via l'adresse de courriel <br/><a href=\"mailto:%{email}\">%{email}</a></b>"
+          active_email: "<b>Cet utilisateur peut être contacté aux coordonnées suivantes: <p><a href=\"mailto:%{email}\">%{email}</a><br/>%{full_address}</p></b>"
   devise:
     mailer:
       confirmation_instructions:
