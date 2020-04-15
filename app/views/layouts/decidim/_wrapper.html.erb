@@ -24,6 +24,8 @@ end
       <div class="hide-for-medium" data-set="nav-holder"></div>
       <div class="hide-for-medium usermenu-off-canvas-holder"
            data-set="nav-login-holder"></div>
+      <div class="hide-for-medium mt-s ml-s mr-s search-off-canvas-holder"
+           data-set="nav-search-holder"></div>
     </div>
     <div class="off-canvas-content" data-off-canvas-content>
       <div class="footer-separator">
@@ -31,6 +33,7 @@ end
              creates a sticky footer-->
         <!-- Topbar -->
         <div class="title-bar">
+          <%= link_to t("skip_button", scope: "decidim.accessibility"), url_for(anchor: "content"), class: "skip" %>
           <% if current_organization.official_img_header? %>
             <%= link_to  current_organization.official_url, class: "logo-cityhall" do %>
               <%= image_tag current_organization.official_img_header.url.to_s , alt: current_organization.name %>
@@ -43,17 +46,17 @@ end
             <%= render partial: "layouts/decidim/topbar_search" %>
             <%= render partial: "layouts/decidim/language_chooser" %>
             <div class="hide-for-medium topbar__menu">
-              <button type="button" data-toggle="offCanvas">
+              <button type="button" data-toggle="offCanvas" aria-label="<%= t("layouts.decidim.header.navigation") %>">
                 <%= icon "menu", aria_label: t("layouts.decidim.header.navigation"), role: "img" %>
               </button>
             </div>
             <% if current_user %>
-              <div class="topbar__dropmenu topbar__user__logged">
-                <%= link_to decidim.notifications_path, class: "topbar__notifications #{current_user.notifications.any? ? "is-active" : ""}" do %>
-                  <%= icon "bell" %>
+              <nav class="topbar__dropmenu topbar__user__logged">
+                <%= link_to decidim.notifications_path, title: "notifications-link", class: "topbar__notifications #{current_user.notifications.any? ? "is-active" : ""}" do %>
+                  <%= icon "bell", role:"img" %>
                 <% end %>
-                <%= link_to decidim.conversations_path, class: "topbar__conversations #{current_user.unread_conversations.any? ? "is-active" : ""}" do %>
-                  <%= icon "envelope-closed" %>
+                <%= link_to decidim.conversations_path, title: "conversations-link", class: "topbar__conversations #{current_user.unread_conversations.any? ? "is-active" : ""}" do %>
+                  <%= icon "envelope-closed", role: "img" %>
                 <% end %>
                 <ul class="dropdown menu" data-dropdown-menu>
                   <li class="is-dropdown-submenu-parent show-for-medium">
@@ -68,9 +71,9 @@ end
                             <%= current_user.name %>
                           <% elsif I18n.exists?("decidim.omniauth.#{provider}.anonymous_user") %>
                             <%== t("decidim.omniauth.#{provider}.anonymous_user") %>
-                          <% elsif Rails.application.secrets.dig(:omniauth, provider.to_sym, :provider_name).present? %>
+                          <% elsif current_organization.enabled_omniauth_providers[provider.to_sym][:provider_name].present? %>
                             <%== t("devise.shared.links.signed_in_with_provider", provider: "") %>
-                            <b><%= Rails.application.secrets.dig(:omniauth, provider.to_sym, :provider_name) %></b>
+                            <b><%= current_organization.enabled_omniauth_providers[provider.to_sym][:provider_name] %></b>
                           <% else %>
                             <%== t("devise.shared.links.signed_in_with_provider", provider: normalize_provider_name(provider).titleize) %>
                           <% end %>
@@ -82,15 +85,15 @@ end
                     <ul class="menu is-dropdown-submenu js-append usermenu-off-canvas">
                       <%= render partial: "layouts/decidim/user_menu" %>
                     </ul>
-                    <span data-set="nav-login-holder" class="show-for-medium">
+                    <div data-set="nav-login-holder" class="show-for-medium">
                       <!-- Repeated due to dropdown limitations -->
                       <ul class="menu is-dropdown-submenu js-append usermenu-off-canvas">
                         <%= render partial: "layouts/decidim/user_menu" %>
                       </ul>
-                    </span>
+                    </div>
                   </li>
                 </ul>
-              </div>
+              </nav>
             <% else %>
               <div class="topbar__user show-for-medium" data-set="nav-login-holder">
                 <div class="topbar__user__login js-append">
@@ -113,54 +116,13 @@ end
           </nav>
         </div>
 
-        <main class="<%= (current_user && current_user.email.present?) ? "well-known" : "anonymous" %>">
+        <main id="content" class="<%= (current_user && current_user.email.present?) ? "well-known" : "anonymous" %>">
           <%= display_flash_messages key_matching: { omniauth: :success, logout: :success } %>
           <%= yield %>
         </main>
       </div><!-- /.footer-separator -->
-      <div class="main-footer">
-        <div class="row">
-          <div class="footer-logo">
-            <% if current_organization.official_img_footer? %>
-              <%= link_to  current_organization.official_url, class: "main-footer__badge" do %>
-                <%= image_tag current_organization.official_img_footer.url.to_s , alt: current_organization.name %>
-              <% end %>
-            <% end %>
-          </div>
-          <ul class="main__footer__nav footer-nav">
-            <% if current_organization.static_pages.any? %>
-              <% current_organization.static_page_topics.where(show_in_footer: true).each do |page_topic| %>
-                <% if page_topic.pages.any? %>
-                  <li><%= link_to translated_attribute(page_topic.title), decidim.page_path(page_topic.pages.first) %></li>
-                <% end %>
-              <% end %>
-
-              <% current_organization.static_pages.where(show_in_footer: true).each do |page| %>
-                <li><%= link_to translated_attribute(page.title), decidim.page_path(page) %></li>
-              <% end %>
-            <% end %>
-            <li><%= link_to t("layouts.decidim.footer.download_open_data"), decidim.open_data_download_path %></li>
-          </ul>
-          <%= render partial: "layouts/decidim/social_media_links" %>
-        </div>
-      </div>
-      <div class="mini-footer">
-        <div class="row">
-          <div class="decidim-logo">
-            <a rel="decidim" href="https://decidim.org/" target="_blank">
-              <%= image_tag("decidim/decidim-logo-mobile--inv.svg", alt: "Decidim Logo" ) %>
-            </a>
-          </div>
-          <a rel="license" class="cc-badge"
-             href="http://creativecommons.org/licenses/by-sa/4.0/"
-             target="_blank">
-            <%= image_tag("decidim/cc-by-sa--inv.svg", alt: "Creative Commons License" ) %>
-          </a>
-          <div class="mf-text">
-            <%= t("layouts.decidim.footer.made_with_open_source").html_safe %>
-          </div>
-        </div>
-      </div>
+      <%= render partial: "layouts/decidim/main_footer" %>
+      <%= render partial: "layouts/decidim/mini_footer" %>
     </div><!--/.off-canvas-content-->
   </div><!--/.off-canvas-wrapper-inner-->
 </div><!--/.off-canvas-wrapper-->

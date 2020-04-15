@@ -19,7 +19,9 @@ Decidim.configure do |config|
   # Geocoder configuration
   config.geocoder = {
       static_map_url: "https://image.maps.cit.api.here.com/mia/1.6/mapview",
-      here_api_key: Rails.application.secrets.geocoder[:here_api_key]
+      here_api_key: Rails.application.secrets.geocoder[:here_api_key],
+      here_app_id: "DEPRECATED",
+      here_app_code: "DEPRECATED"
   }
 
   if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_require_authorization)

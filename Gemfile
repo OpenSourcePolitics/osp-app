@@ -33,6 +33,7 @@ gem "omniauth-oauth2", ">= 1.4.0", "< 2.0"
 gem "omniauth_openid_connect", "0.3.1"
 gem "omniauth-saml", "~> 1.10"
 gem "savon", "~> 2.12.0"
+gem "akami", git: "https://github.com/OpenSourcePolitics/akami", branch: "fix-timestamp"
 
 gem "dotenv-rails"
 gem "rubyzip", require: "zip"

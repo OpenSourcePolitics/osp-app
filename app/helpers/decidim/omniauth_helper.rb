@@ -5,14 +5,12 @@ module Decidim
   module OmniauthHelper
     # Public: returns true if the social provider is enabled
     def social_provider_enabled?(provider)
-      Rails.application.secrets.dig(:omniauth, provider.to_sym, :enabled)
+      current_organization.enabled_omniauth_providers.key?(provider.to_sym)
     end
 
     # Public: returns true if any provider is enabled
     def any_social_provider_enabled?
-      User.omniauth_providers.any? do |provider|
-        social_provider_enabled? provider
-      end
+      current_organization.enabled_omniauth_providers.any?
     end
 
     # Public: normalize providers names to they can be used for buttons
@@ -23,7 +21,8 @@ module Decidim
 
     # Public: icon for omniauth buttons
     def oauth_icon(provider)
-      info = Rails.application.secrets.dig(:omniauth, provider.to_sym)
+      return unless social_provider_enabled?(provider)
+      info = current_organization.enabled_omniauth_providers[provider]
 
       if info
         icon_path = info[:icon_path]

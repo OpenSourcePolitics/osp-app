@@ -1,7 +1,7 @@
-<% if Devise.mappings[:user].omniauthable? && any_social_provider_enabled? %>
+<% if Devise.mappings[:user].omniauthable? && current_organization.enabled_omniauth_providers.any? %>
   <div class="row">
     <div class="columns large-4 mediumlarge-6 medium-8 medium-centered">
-      <%- Decidim::User.omniauth_providers.each do |provider| %>
+      <%- current_organization.enabled_omniauth_providers.keys.each do |provider| %>
         <% if social_provider_enabled?(provider) && (request.env.dig(:available_authorizations).nil? || request.env.dig(:available_authorizations).include?(provider.to_s)) %>
           <% if I18n.exists?("decidim.omniauth.#{provider}.explanation") %>
             <div class="callout">

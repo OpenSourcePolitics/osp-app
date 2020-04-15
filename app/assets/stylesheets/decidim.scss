@@ -131,39 +131,6 @@ $navbar-background: darken( $title-bar-background, 10%);
     white-space: nowrap;
   }
 
-  // .sessions & {
-  //   &.button--social {
-  //     margin: 0 auto;
-  //
-  //     height: 2.8em;
-  //     margin-bottom: 1rem;
-  //
-  //     .button--social__icon {
-  //       display: block;
-  //       float: left;
-  //       padding: .35em .5em;
-  //       height: 2.5em;
-  //
-  //       .icon {
-  //         width: 2em;
-  //         height: 2em;
-  //       }
-  //     }
-  //
-  //     .button--label {
-  //       display: block;
-  //       padding-top: 0.6em;
-  //       text-align: center;
-  //       line-height: 1.5rem;
-  //
-  //       b {
-  //         font-size: 1.2rem;
-  //       }
-  //     }
-  //   }
-  // }
-
-
 }
 
 .button--social--custom {
@@ -245,28 +212,6 @@ a.button.small > .icon {
 
   @media print, screen and (max-width: 640px) {
     margin: 0 0 1rem 0;
-  }
-}
-
-.logo-wrapper a {
-  display: inline-block;
-  align-items: center;
-
-  img {
-    display: flex;
-    margin-right: .5rem;
-  }
-
-  span{
-    display: flex;
-    color: $dark-gray;
-    font-weight: 600;
-    font-size: 1.4em;
-    border-left: 2px solid $navbar-background;
-    text-align: left;
-    padding: .5rem;
-    line-height: 1;
-    position: relative;
   }
 }
 

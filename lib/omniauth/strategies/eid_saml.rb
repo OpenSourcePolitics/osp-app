@@ -75,14 +75,16 @@ module OmniAuth
             logger: Rails.logger,
             pretty_print_xml: true,
 
-            namespace_identifier: :v2,
+            namespace_identifier: :v3,
             env_namespace: :soapenv,
             namespaces: {
               "xmlns:head" => "http://fsb.belgium.be/header"
             },
 
             soap_header: {
-              :message_id => person_id
+              "head:fsbHeader" => {
+                "head:message_id" => person_id
+              }
             },
 
             wsse_timestamp: true,
@@ -91,7 +93,11 @@ module OmniAuth
                 cert_string: format_cert(opts[:person_services][:cert] + opts[:person_services][:ca_cert]),
                 private_key_string: format_private_key(opts[:person_services][:key]),
                 private_key_password: opts[:person_services][:secret]
-              )
+              ),{
+                timestamp: true,
+                created_at: _tmp_stp = Time.now - 10,
+                expires_at: _tmp_stp + 300
+              }
             ),
 
             # ssl_cert: OpenSSL::X509::Certificate.new(format_cert(opts[:person_services][:cert])),
@@ -99,19 +105,19 @@ module OmniAuth
             # ssl_cert_key: OpenSSL::PKey::RSA.new(format_private_key(opts[:person_services][:key]), opts[:person_services][:secret])
           )
           begin
-            if ps_client.operations.include?(:echo)
-              response = ps_client.call(:echo, message: person_id)
-            end
-
-            # if ps_client.operations.include?(:get_person)
-            #   response = ps_client.call(:get_person, message: {
-            #     user_context: {
-            #       person_number: person_id,
-            #       langage: "en"
-            #     },
-            #     person_number: person_id
-            #   })
+            # if ps_client.operations.include?(:echo)
+            #   response = ps_client.call(:echo, message: person_id)
             # end
+
+            if ps_client.operations.include?(:get_person)
+              response = ps_client.call(:get_person, message: {
+                user_context: {
+                  person_number: person_id,
+                  langage: "en"
+                },
+                person_number: person_id
+              })
+            end
 
             Rails.logger.debug response
             return response.body
