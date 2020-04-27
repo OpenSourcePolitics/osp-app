@@ -11,9 +11,11 @@ up:
 	docker-compose up
 
 staging:
+	@make precompile
 	docker-compose -f docker-compose.staging.yml up
 
 prod:
+	@make precompile
 	docker-compose -f docker-compose.staging.yml up
 
 build:
