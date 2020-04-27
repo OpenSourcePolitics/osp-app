@@ -20,6 +20,9 @@ services:
     entrypoint: /app/docker-entrypoint.sh
   pg:
     image: postgres:11
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_HOST_AUTH_METHOD: trust
     volumes:
       - pg-data:/var/lib/postgresql/data
 
