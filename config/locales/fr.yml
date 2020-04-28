@@ -18,6 +18,9 @@ fr:
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
+    participatory_process:
+      show:
+        related_assemblies: "Assemblées liées"
     verifications:
       authorizations:
         first_login:
