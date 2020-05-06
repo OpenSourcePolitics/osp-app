@@ -1,3 +1,5 @@
+require "wicked_pdf"
+
 # Load the Rails application.
 require_relative 'application'
 
