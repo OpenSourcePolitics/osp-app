@@ -23,23 +23,23 @@ module DestroyAccountExtend
     end
 
     def manage_user_initiatives
-      Rails.logger.debug "+++++++++++++++++++++++++"
-      Rails.logger.debug "DestroyAccount.manage_user_initiatives"
-      Rails.logger.debug "with @user" if @user
-      Rails.logger.debug @form.to_h
-      Rails.logger.debug "+++++++++++++++++++++++++"
+      # Rails.logger.debug "+++++++++++++++++++++++++"
+      # Rails.logger.debug "DestroyAccount.manage_user_initiatives"
+      # Rails.logger.debug "with @user" if @user
+      # Rails.logger.debug @form.to_h
+      # Rails.logger.debug "+++++++++++++++++++++++++"
 
       Decidim::Initiative.where(author: @user).each do |initiative|
-        Rails.logger.debug initiative.id
-        Rails.logger.debug initiative.state
+        # Rails.logger.debug initiative.id
+        # Rails.logger.debug initiative.state
         if %w(created validating accepted).include?(initiative.state)
-          Rails.logger.debug "will be discarded"
+          # Rails.logger.debug "will be discarded"
           initiative.update_columns(state: "discarded")
         else
-          Rails.logger.debug "will be rejected"
+          # Rails.logger.debug "will be rejected"
           initiative.update_columns(state: "rejected")
         end
-        Rails.logger.debug "--"
+        # Rails.logger.debug "--"
       end
 
     end

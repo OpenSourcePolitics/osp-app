@@ -15,8 +15,9 @@ module DecidimAws
 
     Decidim.unconfirmed_access_for = 0.days
 
-    config.session_store :active_record_store,
-      :key => '_decidim_session'
+    # config.after_initialize do
+    #   config.session_store :active_record_store, :key => '_decidim_session'
+    # end
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

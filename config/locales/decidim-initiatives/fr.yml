@@ -483,12 +483,15 @@ fr:
           recent: Les plus récentes
         result:
           answer_title:
-            accepted: Cette proposition a été acceptée car
-            created: Cette proposition a été créée
-            discarded: Cette proposition a été rejetée car
-            published: Cette proposition est publiée parce que
-            rejected: Cette proposition a été rejetée parce que
-            validating: Cette proposition est en cours d'évaluation
+            accepted: Cette pétition a été acceptée car
+            classified: Cette pétition a été classée parce que
+            created: Cette pétition a été créée
+            debatted: Cette pétition a été débattue parce que
+            discarded: Cette pétition a été rejetée car
+            examinated: Cette pétition a été examinée pour les raisons suivantes
+            published: Cette pétition est publiée parce que
+            rejected: Cette pétition a été rejetée parce que
+            validating: Cette pétition est en cours d'évaluation
           initiative_rejected_reason: Cette pétition a été rejetée car elle n'a
             pas atteint le nombre de signatures requis dans le délai de collecte.
         show:

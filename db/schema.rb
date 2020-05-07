@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_14_162616) do
+ActiveRecord::Schema.define(version: 2020_05_07_125818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -715,6 +715,7 @@ ActiveRecord::Schema.define(version: 2020_04_14_162616) do
     t.string "online_signature_types", default: ["devise"], array: true
     t.jsonb "online_votes", default: {"total"=>0}
     t.jsonb "offline_votes", default: {"total"=>0}
+    t.date "answer_date"
     t.index "md5((description)::text)", name: "decidim_initiatives_description_search"
     t.index ["answered_at"], name: "index_decidim_initiatives_on_answered_at"
     t.index ["decidim_author_id", "decidim_author_type"], name: "index_decidim_initiatives_on_decidim_author"
