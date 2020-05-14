@@ -1,4 +1,4 @@
-<% if Devise.mappings[:user].omniauthable? && current_organization.enabled_omniauth_providers.any? %>
+<% if Devise.mappings[:user].omniauthable? && current_organization.enabled_omniauth_providers.any? && !request.env['PATH_INFO'].include?("/admin_sign_in") %>
   <div class="row">
     <div class="columns large-4 mediumlarge-6 medium-8 medium-centered">
       <%- current_organization.enabled_omniauth_providers.keys.each do |provider| %>
