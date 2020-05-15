@@ -49,7 +49,7 @@
         <%= decidim_form_for(@account, url: account_path, method: :put, html: { autocomplete: "nope" }) do |f| %>
           <%= f.hidden_field :id %>
 
-          <%= f.text_field :name, disabled: true %>
+          <%= f.text_field :name, readonly: true %>
 
           <%= f.hidden_field :name %>
           <%= f.hidden_field :nickname %>

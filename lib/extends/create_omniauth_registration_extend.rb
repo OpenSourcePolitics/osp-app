@@ -20,7 +20,7 @@ module CreateOmniauthRegistrationExtend
         if request.path.end_with?("france_connect_profile/callback")
           return broadcast(:error, user)
         end
-
+        
         return broadcast(:invalid) if form.invalid?
 
         transaction do
@@ -58,12 +58,12 @@ module CreateOmniauthRegistrationExtend
       else
 
         @user = Decidim::User.find_or_initialize_by(
-          email: verified_email,
+          email: (form.email || verified_email),
           organization: organization
         )
 
         if !@user.persisted? || @user.invited_to_sign_up?
-          @user.email = (verified_email || form.email)
+          @user.email = (form.email || verified_email)
           @user.name = form.name
           @user.nickname = form.normalized_nickname
           @user.newsletter_notifications_at = nil
