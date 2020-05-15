@@ -114,6 +114,25 @@ fr:
         <b>Les noms et prénoms des auteurs de pétition sont publiés avec la pétition.</b><br/>
         Les autres éléments ne sont en aucun cas rendus publics.
         </p>"
+    system:
+      organizations:
+        omniauth_settings:
+          france_connect_uid:
+            button_path: Chemin de l'image du bouton
+            provider_name: Nom du service
+            site: URL principale du service
+            client_id: ID client
+            client_secret: Clé secrète
+            end_session_endpoint: Endpoint de déconnexion
+            minimum_age: Age minimum
+          france_connect_profile:
+            button_path: Chemin de l'image du bouton
+            provider_name: Nom du service
+            site: URL principale du service
+            client_id: ID client
+            client_secret: Clé secrète
+            end_session_endpoint: Endpoint de déconnexion
+            minimum_age: Age minimum
     verifications:
       authorizations:
         index:

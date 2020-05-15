@@ -23,14 +23,6 @@ Decidim.configure do |config|
   #     here_app_code: "DEPRECATED"
   # }
 
-  if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_require_authorization)
-    Decidim::Initiatives.minimum_committee_members = 0
-    Decidim::Initiatives.default_signature_time_period_length = 6.months
-    Decidim::Initiatives.print_enabled = false
-    Decidim::Initiatives.default_components = []
-    Decidim::Initiatives.timestamp_service = "Decidim::Initiatives::UtcTimestamp"
-  end
-
   # Custom resource reference generator method
   # config.reference_generator = lambda do |resource, component|
   #   # Implement your custom method to generate resources references
