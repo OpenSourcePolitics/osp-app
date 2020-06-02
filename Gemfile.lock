@@ -9,8 +9,8 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 0e82219cbfb15b8fd84e01ae361a3954237adfa2
-  branch: alt/petition
+  revision: acd9c359d71eb64f4568fbb20c79af14e890996c
+  branch: alt/petition_merge
   specs:
     decidim (0.22.0.dev)
       decidim-accountability (= 0.22.0.dev)
@@ -162,6 +162,17 @@ GIT
       decidim-core (= 0.22.0.dev)
     decidim-generators (0.22.0.dev)
       decidim-core (= 0.22.0.dev)
+    decidim-initiatives (0.22.0.dev)
+      decidim-admin (= 0.22.0.dev)
+      decidim-comments (= 0.22.0.dev)
+      decidim-core (= 0.22.0.dev)
+      decidim-verifications (= 0.22.0.dev)
+      kaminari (~> 1.1)
+      origami (~> 2.1)
+      virtus-multiparams (~> 0.1)
+      wicked (~> 1.3)
+      wicked_pdf (~> 1.4)
+      wkhtmltopdf-binary (~> 0.12)
     decidim-meetings (0.22.0.dev)
       cells-erb (~> 0.1.0)
       cells-rails (~> 0.0.9)
@@ -280,7 +291,7 @@ GEM
       execjs (~> 2.0)
     batch-loader (1.5.0)
     bcrypt (3.1.13)
-    better_html (1.0.14)
+    better_html (1.0.15)
       actionview (>= 4.0)
       activesupport (>= 4.0)
       ast (~> 2.0)
@@ -295,7 +306,7 @@ GEM
     browser (2.7.1)
     builder (3.2.4)
     byebug (11.1.1)
-    capybara (3.32.1)
+    capybara (3.32.2)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -329,6 +340,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
+    colorize (0.8.1)
     concurrent-ruby (1.1.6)
     connection_pool (2.2.2)
     crack (0.4.3)
@@ -443,7 +455,7 @@ GEM
     graphiql-rails (1.4.11)
       railties
       sprockets-rails
-    graphql (1.10.9)
+    graphql (1.10.10)
     hashdiff (1.0.1)
     hashie (4.1.0)
     highline (2.0.3)
@@ -487,18 +499,18 @@ GEM
       aes_key_wrap
       bindata
     jwt (2.2.1)
-    kaminari (1.2.0)
+    kaminari (1.2.1)
       activesupport (>= 4.1.0)
-      kaminari-actionview (= 1.2.0)
-      kaminari-activerecord (= 1.2.0)
-      kaminari-core (= 1.2.0)
-    kaminari-actionview (1.2.0)
+      kaminari-actionview (= 1.2.1)
+      kaminari-activerecord (= 1.2.1)
+      kaminari-core (= 1.2.1)
+    kaminari-actionview (1.2.1)
       actionview
-      kaminari-core (= 1.2.0)
-    kaminari-activerecord (1.2.0)
+      kaminari-core (= 1.2.1)
+    kaminari-activerecord (1.2.1)
       activerecord
-      kaminari-core (= 1.2.0)
-    kaminari-core (1.2.0)
+      kaminari-core (= 1.2.1)
+    kaminari-core (1.2.1)
     kramdown (1.17.0)
     launchy (2.5.0)
       addressable (~> 2.7)
@@ -586,12 +598,14 @@ GEM
       validate_email
       validate_url
       webfinger (>= 1.0.1)
+    origami (2.1.0)
+      colorize (~> 0.7)
     orm_adapter (0.5.0)
     paper_trail (10.3.1)
       activerecord (>= 4.2)
       request_store (~> 1.1)
     parallel (1.19.1)
-    parser (2.7.1.2)
+    parser (2.7.1.3)
       ast (~> 2.4.0)
     pg (1.1.4)
     pg_search (2.3.2)
@@ -609,7 +623,7 @@ GEM
       nio4r (~> 2.0)
     raabro (1.1.6)
     rack (2.0.9)
-    rack-attack (6.3.0)
+    rack-attack (6.3.1)
       rack (>= 1.0, < 3)
     rack-cors (1.1.1)
       rack (>= 2.0.0)
@@ -675,7 +689,7 @@ GEM
     regexp_parser (1.7.0)
     request_store (1.5.0)
       rack (>= 1.4)
-    responders (3.0.0)
+    responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
     rest-client (2.1.0)
@@ -765,7 +779,7 @@ GEM
       simplecov (~> 0.8)
     simplecov-html (0.12.2)
     smart_properties (1.15.0)
-    social-share-button (1.2.1)
+    social-share-button (1.2.3)
       coffee-rails
     spreadsheet (1.2.6)
       ruby-ole (>= 1.0)
@@ -824,6 +838,8 @@ GEM
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
+    virtus-multiparams (0.1.1)
+      virtus (~> 1.0)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (3.7.0)
@@ -838,9 +854,11 @@ GEM
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
-    websocket-driver (0.7.1)
+    websocket-driver (0.7.2)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
+    wicked (1.3.4)
+      railties (>= 3.0.7)
     wicked_pdf (1.4.0)
       activesupport
     wisper (2.0.1)
@@ -859,6 +877,7 @@ DEPENDENCIES
   dalli-elasticache
   decidim!
   decidim-dev!
+  decidim-initiatives!
   decidim-term_customizer!
   dotenv-rails (~> 2.7)
   faker (~> 1.9)

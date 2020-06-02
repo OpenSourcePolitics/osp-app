@@ -4,9 +4,9 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
-# gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
-gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
+gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition_merge"
+# gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition_merge"
+gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition_merge"
 
 # gem "decidim", path: "../decidim"
 # gem "decidim-consultations", path: "../decidim"
@@ -42,10 +42,12 @@ gem "omniauth_openid_connect", "0.3.1"
 
 gem 'rubyzip', require: 'zip'
 
+# gem "stackprof"
+
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
+  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition_merge"
   # gem "decidim-dev", path: "../decidim"
 end
 
