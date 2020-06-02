@@ -14,14 +14,14 @@
       <div class="author--name">
         <%= initiative.author.name %>
       </div>
-      <div class="author--actions">
-        <% if authorizations && authorizations.any? && authorizations.first.metadata.present? %>
-          <%= metadata_modal_button_to authorizations.first, method: :get, remote: true, class: "button tiny hollow" do %>
-            <%= icon "shield" %>
-            <%= t "actions.metadata", scope: "decidim.verifications.omniauth.admin.authorizations.index" %>
-          <% end %>
-        <% end %>
-      </div>
+<!--      <div class="author--actions">-->
+        <%# if authorizations && authorizations.any? && authorizations.first.metadata.present? %>
+          <%#= metadata_modal_button_to authorizations.first, method: :get, remote: true, class: "button tiny hollow" do %>
+            <%#= icon "shield" %>
+            <%#= t "actions.metadata", scope: "decidim.verifications.omniauth.admin.authorizations.index" %>
+          <%# end %>
+        <%# end %>
+<!--      </div>-->
     </div>
   </div>
 
