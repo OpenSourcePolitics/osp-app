@@ -43,3 +43,5 @@ public/uploads
 **/*/wip
 
 .DS_Store
+.idea
+flamegraph*

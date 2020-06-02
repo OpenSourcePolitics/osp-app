@@ -12,8 +12,8 @@ module OmniAuth
 
       info do
         {
-          name: I18n.t("decidim.anonymous_user"),
-          nickname: Zlib::crc32(uid),
+          name: "Anonyme",
+          nickname: uid.truncate(::Decidim::User.nickname_max_length),
           email: ""
         }
       end

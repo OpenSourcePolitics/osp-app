@@ -1,12 +1,20 @@
 <div class="main-footer">
-  <div class="row">
-    <div class="footer-logo">
-      <% if current_organization.official_img_footer? %>
-        <%= link_to  current_organization.official_url, class: "main-footer__badge" do %>
-          <%= image_tag current_organization.official_img_footer.url.to_s , alt: current_organization.name %>
+  <div class="custom-footer">
+    <div class="custom-footer-top">
+      <%= image_tag current_organization.official_img_footer.url.to_s , alt: current_organization.name, class: "official_img_footer" %>
+    </div>
+    <div class="custom-separator">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="custom-footer-bottom">
+      <% if current_organization.official_url? %>
+        <%= link_to current_organization.official_url, class: "official_url" do %>
+          <%= t("layouts.decidim.footer.official_url") %>&nbsp;&nbsp;<%= icon "chevron-right" %>
         <% end %>
       <% end %>
     </div>
+  </div>
+  <div class="row">
     <ul class="main__footer__nav footer-nav">
       <% if current_organization.static_pages.any? %>
         <% current_organization.static_page_topics.where(show_in_footer: true).each do |page_topic| %>

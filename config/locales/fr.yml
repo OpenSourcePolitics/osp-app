@@ -159,6 +159,7 @@ fr:
     decidim:
       footer:
         download_open_data: Données ouvertes
+        official_url: "site de l'assemblée nationale"
       mailer:
         footer: À bientôt sur la plateforme de <a href="%{organization_url}">e-pétitions</a> du Sénat.
       user_profile:

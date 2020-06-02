@@ -1,5 +1,4 @@
-// // Variables
-//
+// DECIDIM VARIABLES
 
 // $primary: #ef604d;
 $primary: #2b3951;
@@ -18,107 +17,93 @@ $secondary: #e94b4e;
 // $facebook: #3b5998;
 // $google: #dd4b39;
 
+// Load Decidim core file
 @import "decidim/application";
 
+// ------------------------------------------------------------------
+// CUSTOM VARIABLES
+
+$title-bar-background: #FFFFFF;
+$title-user-bar-background: darken( $title-bar-background, 10%);
+
+$official_color_blue: #012e54;
+$official_color_white: white;
+$official_color_red: #e44052;
+
+// ------------------------------------------------------------------
+// FONT
+
 @import "fontface";
+
 // TODO : PR on decidim-core/app/assets/stylesheets/decidim/utils/_settings.scss to add !default on this variable.
-$body-font-family: 'Roboto Slab','Roboto', 'Source Sans Pro', Helvetica, Arial, sans-serif;
+$body-font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
 
 body, h1, h2, h3, h4, h5, h6, p, a, span {
   font-family: $body-font-family;
 }
 
-$title-bar-background: #FFFFFF;
-$navbar-background: darken( $title-bar-background, 10%);
+// ------------------------------------------------------------------
+// MAIN LAYOUT
 
-.initiative-types-select {
-  white-space: normal !important;
-  word-break: break-all !important;
-  overflow-wrap: break-word !important;
-
-  padding-bottom: 0;
-
-  option {
-    position: relative;
-    display: block;
-    margin: 0 -15px 5px  0;
-    padding: 5px 10px;
-    font-size: 90%;
-    line-height: 17px;
-    color: $secondary;
-    border: 1px solid #e8e8e8;
-    border-radius: 3px;
-    cursor: pointer;
-    white-space: normal !important;
-    word-break: break-all !important;
-    overflow-wrap: break-word !important;
-    text-overflow: clip;
-    overflow-x: hidden;
-
-    &:hover {
-      background: #e8e8e8;
-    }
-  }
-
-  &:focus {
-    border-color: #238FF7;
-    option:checked {
-      background: #238FF7;
-      color: white;
-    }
-  }
-}
-
-.highlighted_proposals .card--proposal {
-  width: 100%;
-}
-
-// Hide autorisation handler profile tab
-// #user-settings-tabs > li:nth-child(3) {
-//   display: none;
-// }
+// ------------------------------------------------------------------
+// TOPBAR
 
 .title-bar {
   background: $title-bar-background;
   color: $dark-gray;
-}
+  padding: 0 0 1rem;
 
-.navbar {
-  background: $navbar-background;
-}
-
-.topbar__search svg {
-  color: $dark-gray;
-}
-
-@media print, screen and (min-width: 40em) {
-  .topbar__search input,
-  .topbar__search input:focus {
-    background: darken( $title-bar-background, 10%);
-    color: $dark-gray;
-
-    &::placeholder {
-      color: darken($medium-gray, 20%);
-    }
+  @media screen and (max-width: 39.9375em) {
+    border: none;
   }
 }
 
-@media print, screen and (min-width: 40em) {
-  .main-nav__link--active a {
-    box-shadow: inset 0 4px 0 0 $primary;
+.off-canvas {
+  background: white;
+  border-left: 1px solid $medium-gray;
+
+  &.position-right.is-transition-push {
+    box-shadow: none;
   }
 }
 
-.main-nav__link a {
-  color: $dark-gray;
-  &:hover {
-    background: darken( $title-bar-background, 20%);;
-    color: $dark-gray;
+.title-user-bar {
+  background-color: $medium-gray;
+  padding: .5rem 0;
+
+  .topbar {
+    min-height: 42px;
+    vertical-align: middle;
   }
 }
+
+// .topbar__notifications,
+// .topbar__conversations {
+//   border-right: 1px solid lighten($dark-gray, 20%);
+//   height: 90%;
+//   padding: .5rem 1rem;
+//   vertical-align: middle;
+//
+//   .icon {
+//     fill: $dark-gray;
+//     opacity: 1;
+//   }
+//
+//   &:hover .icon {
+//     fill: $official_color_red;
+//   }
+// }
+
+.topbar__notifications,
+.topbar__conversations { display: none; }
+
 
 .topbar__user__login a {
   color: lighten($dark-gray, 20%);
+}
+
+.topbar__dropmenu .dropdown {
+  margin-right: 1rem;
 }
 
 .topbar__dropmenu > ul > li > a {
@@ -144,14 +129,83 @@ $navbar-background: darken( $title-bar-background, 10%);
   }
 }
 
-.topbar__edit__link {
-  .icon {
-    fill: darken($primary, 10%);
+.topbar__user__logged {
+  .menu li {
+    display: block;
+  }
 
-    &:hover {
-      fill: $primary;
+  .dropdown.menu > li.is-dropdown-submenu-parent {
+    & > a.user-menu {
+      display: flex ;
+      align-items: center;
+      padding: 0 1rem 0 0;
+
+      .user-menu--icon {
+        .icon {
+          width: 2.5em;
+          height: 2.5em;
+        }
+      }
+
+      .user-menu--label {
+        font-size: .65rem;
+        margin: 0 .5rem;
+
+        b {
+          font-size: .85rem;
+          line-height: 1rem;
+        }
+      }
+
+      &::after {
+        display: block;
+        top: 45%;
+      }
+
+      &:hover::after { border-top-color: $secondary !important; }
+
+      &.text-only::after {
+        right: 0 ;
+      }
+    }
+
+    &.is-active > a.user-menu::after { border-top-color: $secondary !important; }
+
+    .is-dropdown-submenu {
+      margin-top: .75rem;
+      min-width: 100%;
+
+      .is-dropdown-submenu-item {
+        text-align: center;
+        text-transform: uppercase;
+        padding: .15rem 0;
+        font-size: 90%;
+
+        &.small a {
+          color: $primary;
+          font-variant: small-caps;
+        }
+      }
     }
   }
+}
+
+.topbar__edit__link {
+
+  a {
+    border-left: 1px solid lighten($dark-gray, 20%);
+    height: 90%;
+    padding: .5rem 1rem;
+  }
+
+  .icon {
+    fill: $dark-gray;
+
+    &:hover {
+      fill: $official_color_red;
+    }
+  }
+
   span { display: none; }
 }
 
@@ -159,31 +213,282 @@ $navbar-background: darken( $title-bar-background, 10%);
   color: $secondary;
 }
 
-.main-footer {
-  background: $title-bar-background;
+.title-menu-bar {
+  padding-top: 1rem;
+
+  .topbar {
+    justify-content: space-between;
+  }
+}
+
+.logo-wrapper {
+  flex-grow: 1;
+
+  @media print, screen and (min-width: 40em) {
+    flex-grow: 0;
+  }
+
   a {
-    color: $dark-gray;
+    display: inline-block;
+    align-items: center;
+
+    img {
+      display: flex;
+      margin-right: .5rem;
+    }
+
+    span{
+      display: flex;
+      color: $dark-gray;
+      font-weight: 600;
+      font-size: 1.4em;
+      border-left: 2px solid $title-user-bar-background;
+      text-align: left;
+      padding: .5rem;
+      line-height: 1;
+      position: relative;
+    }
+  }
+
+  img {
+    max-height: 65px;
+
+    @media screen and (min-width: 50em) {
+      max-height: 75px;
+    }
+  }
+}
+
+div[data-set="nav-holder"] {
+  flex-grow: 1;
+}
+
+@media print, screen and (min-width: 40em) {
+  .logo-cityhall {
+    margin-top: -2px;
+  }
+}
+
+.navbar {
+  background: $title-bar-background;
+}
+
+@media print, screen and (min-width: 40em) {
+  .main-nav ul {
+    justify-content: center;
+
+    li {
+      flex: 0;
+      border-right: 1px solid $title-user-bar-background;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+}
+
+
+.main-nav__link a {
+  color: $official_color_blue;
+  &:hover, &:focus {
+    background: none;
+    color: $official_color_red;
+  }
+}
+
+.main-nav__link--active a {
+  color: $official_color_red;
+  @media print, screen and (min-width: 40em) {
+    box-shadow: none;
+  }
+}
+
+.topbar__search {
+
+  form:first-child {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  input, input:focus {
+    // background: darken( $title-bar-background, 10%);
+    background: none;
+    border: none;
+    outline: none;
+    color: darken($official_color_blue, 20%);
+    text-align: right;
+
+    &::placeholder {
+      color: $official_color_blue;
+      text-transform: lowercase;
+    }
+  }
+
+  button {
+    padding: 0 .5rem;
+    border: none;
+    border-left: 1px solid $official_color_blue;
+    background: none;
+    vertical-align: middle;
+
+    svg {
+      color: $official_color_blue;
+    }
+
+    &:hover, &:focus {
+      background: none;
+      transition: 0s;
+
+      svg {
+        color: $official_color_red;
+      }
+    }
+
+    @media print, screen and (min-width: 40em) {
+      height: 25px;
+      padding: 0 .2rem;
+      margin: .5rem 0;
+
+      svg {
+        position: relative;
+        top: 1px;
+      }
+    }
+  }
+}
+
+.custom-separator {
+  display: flex;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,.5);
+
+  span {
+    display: inline-block;
+    height: 3px;
+    flex-grow: 1;
+
+    &:nth-child(1) {
+      background-color: $official_color_blue;
+    }
+
+    &:nth-child(2) {
+      background-color: $official_color_white;
+    }
+
+    &:nth-child(3) {
+      background-color: $official_color_red;
+    }
+  }
+}
+
+.off-canvas .close-button {
+  color: $official_color_red;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.search-off-canvas-holder {
+  border-top: 1px solid $dark-gray;
+}
+
+.usermenu-off-canvas-holder .usermenu-off-canvas a {
+  color: $dark-gray;
+}
+
+// ------------------------------------------------------------------
+// FOOTER
+
+
+.main-footer {
+  background-color: #012e54;
+  padding-top: 0;
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  a {
+    color: white;
+  }
+}
+
+.custom-footer {
+  text-align: center;
+
+  .official_img_footer {
+    max-width: 70px;
+  }
+
+  .custom-footer-top {
+    padding-top: 2.5em;
+    background-color: white;
+  }
+
+  .custom-footer-bottom {
+    padding: 2.5em .5em;
+
+    .icon {
+      color: white;
+      font-size: 80%;
+    }
+
+    .official_url {
+      color: white;
+      font-size: 80%;
+      text-transform: uppercase;
+
+      &:hover {
+        text-decoration: none;
+        border-bottom: 1px solid white;
+      }
+    }
   }
 }
 
 .mini-footer {
-  background: darken($navbar-background,10%);
-  color: $dark-gray;
+  background-color: #012e54;
+
   a {
-    color: lighten($dark-gray, 20%);
+    color: white;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .decidim-logo {
+    display: flex;
+    flex-grow: 0;
+    width: auto;
+    margin: 0 .5rem;
+  }
+
+  img {
+    height: 1rem;
+  }
+
+  .mf-text {
+    font-size: 80%;
+    line-height: 1rem;
+
+    a {
+      font-weight: 600;
+
+      &:hover {
+        color: white;
+      }
+    }
   }
 }
 
-.main-footer__badge {
-  text-align: center;
-}
-
-@media print, screen and (min-width: 64em) {
-  .main-footer__badge {
-    position: relative;
-    text-align: left;
-  }
-}
+// ------------------------------------------------------------------
+// SIGNUP / SIGNIN / PROFILE
 
 .button--social {
   margin: 0 auto;
@@ -225,40 +530,6 @@ $navbar-background: darken( $title-bar-background, 10%);
   .button--label b {
     white-space: nowrap;
   }
-
-  // .sessions & {
-  //   &.button--social {
-  //     margin: 0 auto;
-  //
-  //     height: 2.8em;
-  //     margin-bottom: 1rem;
-  //
-  //     .button--social__icon {
-  //       display: block;
-  //       float: left;
-  //       padding: .35em .5em;
-  //       height: 2.5em;
-  //
-  //       .icon {
-  //         width: 2em;
-  //         height: 2em;
-  //       }
-  //     }
-  //
-  //     .button--label {
-  //       display: block;
-  //       padding-top: 0.6em;
-  //       text-align: center;
-  //       line-height: 1.5rem;
-  //
-  //       b {
-  //         font-size: 1.2rem;
-  //       }
-  //     }
-  //   }
-  // }
-
-
 }
 
 .button--social--custom {
@@ -276,53 +547,6 @@ $navbar-background: darken( $title-bar-background, 10%);
 .social-register {
   margin-bottom: 1rem;
   text-align: center;
-}
-
-.topbar__user__logged .dropdown.menu > li.is-dropdown-submenu-parent {
-  & > a.user-menu {
-    display:flex ;
-    align-items: center;
-    padding: 0 1rem 0 0;
-
-    .user-menu--icon {
-      .icon {
-        width: 2.5em;
-        height: 2.5em;
-      }
-    }
-
-    .user-menu--label {
-      font-size: .65rem;
-      margin: 0 .5rem;
-
-      b {
-        font-size: .85rem;
-        line-height: 1rem;
-      }
-    }
-
-    &::after{ display: block; }
-    &:hover::after { border-top-color: $secondary !important; }
-  }
-
-  &.is-active > a.user-menu::after { border-top-color: $secondary !important; }
-
-  .is-dropdown-submenu {
-    margin-top: .75rem;
-    min-width: 100%;
-
-    .is-dropdown-submenu-item {
-      text-align: center;
-      text-transform: uppercase;
-      padding: .15rem 0;
-      font-size: 90%;
-
-      &.small a {
-        color: $primary;
-        font-variant: small-caps;
-      }
-    }
-  }
 }
 
 a.button.small > .icon {
@@ -343,106 +567,6 @@ a.button.small > .icon {
   }
 }
 
-.logo-wrapper a {
-  display: inline-block;
-  align-items: center;
-
-  img {
-    display: flex;
-    margin-right: .5rem;
-  }
-
-  span{
-    display: flex;
-    color: $dark-gray;
-    font-weight: 600;
-    font-size: 1.4em;
-    border-left: 2px solid $navbar-background;
-    text-align: left;
-    padding: .5rem;
-    line-height: 1;
-    position: relative;
-  }
-}
-
-.main-footer .row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.mini-footer .row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .decidim-logo {
-    display: flex;
-    flex-grow: 0;
-    width: auto;
-    margin: 0 .5rem;
-  }
-
-  img {
-    height: 1rem;
-  }
-
-  .mf-text {
-    font-size: 80%;
-    line-height: 1rem;
-
-    a {
-      font-weight: 600;
-
-      &:hover {
-        color: white;
-      }
-    }
-  }
-}
-
-.edit_user {
-  .actions {
-    margin-top: 3rem;
-  }
-}
-
-#profile-tabs li:nth-of-type(1),
-#user-settings-tabs li:nth-of-type(2),
-#user-settings-tabs li:nth-of-type(4) { display: none; }
-
-main.anonymous {
-  #user-settings-tabs li:nth-of-type(1),
-  #user-settings-tabs li:nth-of-type(5),
-  #user-settings-tabs li:last-of-type { display: none; }
-}
-
-.reveal .section-heading {
-  margin-left: .15rem;
-}
-
-.initiative {
-  .follow-section { display: none; }
-
-  .tags--initiative {
-    margin-top: 1rem;
-  }
-}
-
-.omniauth-explanation { margin-bottom: 1.5rem; }
-
-.topbar__search, .topbar__notifications { display: none; }
-
-.initiative-description {
-  white-space: pre-line;
-}
-
-.filters__section {
-  .select2 option {
-    white-space: normal;
-  }
-}
-
 .callout > form > :last-child {
   margin-bottom: 0;
 }
@@ -457,4 +581,98 @@ main.anonymous {
     margin-top: 2px;
     float: left;
   }
+}
+
+main.anonymous {
+  #user-settings-tabs li:nth-of-type(1),
+  #user-settings-tabs li:nth-of-type(5),
+  #user-settings-tabs li:last-of-type { display: none; }
+}
+
+.omniauth-explanation { margin-bottom: 1.5rem; }
+
+.reveal .section-heading {
+  margin-left: .15rem;
+}
+
+// Hide autorisation handler profile tab
+// #user-settings-tabs > li:nth-child(3) {
+//   display: none;
+// }
+
+.edit_user {
+  .actions {
+    margin-top: 3rem;
+  }
+}
+
+#profile-tabs li:nth-of-type(1),
+#user-settings-tabs li:nth-of-type(2),
+#user-settings-tabs li:nth-of-type(4) { display: none; }
+
+
+// ------------------------------------------------------------------
+// COMPONENTS
+
+.highlighted_proposals .card--proposal {
+  width: 100%;
+}
+
+.filters__section {
+  .select2 option {
+    white-space: normal;
+  }
+}
+
+// ------------------------------------------------------------------
+// INITIATIVES
+
+.initiative-types-select {
+  white-space: normal !important;
+  word-break: break-all !important;
+  overflow-wrap: break-word !important;
+
+  padding-bottom: 0;
+
+  option {
+    position: relative;
+    display: block;
+    margin: 0 -15px 5px  0;
+    padding: 5px 10px;
+    font-size: 90%;
+    line-height: 17px;
+    color: $secondary;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    cursor: pointer;
+    white-space: normal !important;
+    word-break: break-all !important;
+    overflow-wrap: break-word !important;
+    text-overflow: clip;
+    overflow-x: hidden;
+
+    &:hover {
+      background: #e8e8e8;
+    }
+  }
+
+  &:focus {
+    border-color: #238FF7;
+    option:checked {
+      background: #238FF7;
+      color: white;
+    }
+  }
+}
+
+.initiative {
+  .follow-section { display: none; }
+
+  .tags--initiative {
+    margin-top: 1rem;
+  }
+}
+
+.initiative-description {
+  white-space: pre-line;
 }

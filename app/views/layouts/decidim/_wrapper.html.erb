@@ -22,10 +22,10 @@ end
       </button>
       <!-- Menu -->
       <div class="hide-for-medium" data-set="nav-holder"></div>
+      <div class="hide-for-medium search-off-canvas-holder"
+           data-set="nav-search-holder"></div>
       <div class="hide-for-medium usermenu-off-canvas-holder"
            data-set="nav-login-holder"></div>
-      <div class="hide-for-medium mt-s ml-s mr-s search-off-canvas-holder"
-           data-set="nav-search-holder"></div>
     </div>
     <div class="off-canvas-content" data-off-canvas-content>
       <div class="footer-separator">
@@ -39,81 +39,92 @@ end
               <%= image_tag current_organization.official_img_header.url.to_s , alt: current_organization.name %>
             <% end %>
           <% end %>
-          <div class="row column topbar">
-            <div class="logo-wrapper">
-              <%= render partial: "layouts/decidim/logo", locals: { organization: current_organization } %>
-            </div>
-            <%= render partial: "layouts/decidim/topbar_search" %>
-            <%= render partial: "layouts/decidim/language_chooser" %>
-            <div class="hide-for-medium topbar__menu">
-              <button type="button" data-toggle="offCanvas" aria-label="<%= t("layouts.decidim.header.navigation") %>">
-                <%= icon "menu", aria_label: t("layouts.decidim.header.navigation"), role: "img" %>
-              </button>
-            </div>
-            <% if current_user %>
-              <nav class="topbar__dropmenu topbar__user__logged">
-                <%= link_to decidim.notifications_path, title: "notifications-link", class: "topbar__notifications #{current_user.notifications.any? ? "is-active" : ""}" do %>
-                  <%= icon "bell", role:"img" %>
-                <% end %>
-                <%= link_to decidim.conversations_path, title: "conversations-link", class: "topbar__conversations #{current_user.unread_conversations.any? ? "is-active" : ""}" do %>
-                  <%= icon "envelope-closed", role: "img" %>
-                <% end %>
-                <ul class="dropdown menu" data-dropdown-menu>
-                  <li class="is-dropdown-submenu-parent show-for-medium">
-                    <% if current_user.identities.present? && current_user.identities.first.provider.match(/^france_connect.*/) %>
-                      <% provider = current_user.identities.first.provider %>
-                      <%= link_to decidim.account_path, class: "user-menu" do %>
-                        <div class="user-menu--icon">
-                          <%= oauth_icon provider %>
-                        </div>
-                        <div class="user-menu--label">
-                          <% if current_user.email.present? %>
-                            <%= current_user.name %>
-                          <% elsif I18n.exists?("decidim.omniauth.#{provider}.anonymous_user") %>
-                            <%== t("decidim.omniauth.#{provider}.anonymous_user") %>
-                          <% elsif current_organization.enabled_omniauth_providers[provider.to_sym][:provider_name].present? %>
-                            <%== t("devise.shared.links.signed_in_with_provider", provider: "") %>
-                            <b><%= current_organization.enabled_omniauth_providers[provider.to_sym][:provider_name] %></b>
-                          <% else %>
-                            <%== t("devise.shared.links.signed_in_with_provider", provider: normalize_provider_name(provider).titleize) %>
-                          <% end %>
-                        </div>
+          <div class="title-user-bar show-for-medium">
+            <div class="row column topbar">
+              <% if current_user %>
+                <nav class="topbar__dropmenu topbar__user__logged">
+                  <%= link_to decidim.notifications_path, title: "notifications-link", class: "topbar__notifications #{current_user.notifications.any? ? "is-active" : ""}" do %>
+                    <%= icon "bell", role:"img" %>
+                  <% end %>
+                  <%= link_to decidim.conversations_path, title: "conversations-link", class: "topbar__conversations #{current_user.unread_conversations.any? ? "is-active" : ""}" do %>
+                    <%= icon "envelope-closed", role: "img" %>
+                  <% end %>
+                  <ul class="dropdown menu" data-dropdown-menu>
+                    <li class="is-dropdown-submenu-parent show-for-medium">
+                      <% if current_user.identities.present? && current_user.identities.first.provider.match(/^france_connect.*/) %>
+                        <% provider = current_user.identities.first.provider %>
+                        <%= link_to decidim.account_path, class: "user-menu" do %>
+                          <div class="user-menu--icon">
+                            <%= oauth_icon provider %>
+                          </div>
+                          <div class="user-menu--label">
+                            <% if current_user.email.present? %>
+                              <%= current_user.name %>
+                            <% elsif I18n.exists?("decidim.omniauth.#{provider}.anonymous_user") %>
+                              <%== t("decidim.omniauth.#{provider}.anonymous_user") %>
+                            <% elsif current_organization.enabled_omniauth_providers[provider.to_sym][:provider_name].present? %>
+                              <%== t("devise.shared.links.signed_in_with_provider", provider: "") %>
+                              <b><%= current_organization.enabled_omniauth_providers[provider.to_sym][:provider_name] %></b>
+                            <% else %>
+                              <%== t("devise.shared.links.signed_in_with_provider", provider: normalize_provider_name(provider).titleize) %>
+                            <% end %>
+                          </div>
+                        <% end %>
+                      <% else %>
+                        <%= link_to (current_user.email.present? ? current_user.name : t("decidim.anonymous_user")), decidim.account_path, class: "user-menu text-only" %>
                       <% end %>
-                    <% else %>
-                      <%= link_to (current_user.email.present? ? current_user.name : t("decidim.anonymous_user")), decidim.account_path %>
-                    <% end %>
-                    <ul class="menu is-dropdown-submenu js-append usermenu-off-canvas">
-                      <%= render partial: "layouts/decidim/user_menu" %>
-                    </ul>
-                    <div data-set="nav-login-holder" class="show-for-medium">
-                      <!-- Repeated due to dropdown limitations -->
                       <ul class="menu is-dropdown-submenu js-append usermenu-off-canvas">
                         <%= render partial: "layouts/decidim/user_menu" %>
                       </ul>
-                    </div>
-                  </li>
-                </ul>
-              </nav>
-            <% else %>
-              <div class="topbar__user show-for-medium" data-set="nav-login-holder">
-                <div class="topbar__user__login js-append">
-                  <% if current_organization.sign_up_enabled? %>
-                    <%= link_to t("layouts.decidim.header.sign_up"), decidim.new_user_registration_path, class: "sign-up-link" %>
-                  <% end %>
-                  <%= link_to t("layouts.decidim.header.sign_in"), decidim.new_user_session_path, class: "sign-in-link" %>
+                      <div data-set="nav-login-holder" class="show-for-medium">
+                        <!-- Repeated due to dropdown limitations -->
+                        <ul class="menu is-dropdown-submenu js-append usermenu-off-canvas">
+                          <%= render partial: "layouts/decidim/user_menu" %>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </nav>
+                <% if current_user.admin? %>
+                  <%= render partial: "layouts/decidim/admin_links" %>
+                <% end %>
+              <% else %>
+                <div class="topbar__user show-for-medium" data-set="nav-login-holder">
+                  <div class="topbar__user__login js-append">
+                    <% if current_organization.sign_up_enabled? %>
+                      <%= link_to t("layouts.decidim.header.sign_up"), decidim.new_user_registration_path, class: "sign-up-link" %>
+                    <% end %>
+                    <%= link_to t("layouts.decidim.header.sign_in"), decidim.new_user_session_path, class: "sign-in-link" %>
+                  </div>
                 </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="title-menu-bar">
+            <div class="row column topbar">
+              <div class="logo-wrapper">
+                <%= render partial: "layouts/decidim/logo", locals: { organization: current_organization } %>
               </div>
-            <% end %>
-
-            <%= render partial: "layouts/decidim/admin_links" %>
+              <div class="show-for-medium" data-set="nav-holder">
+                <nav class="navbar js-append">
+                  <div class="row column">
+                    <%= main_menu.render %>
+                  </div>
+                </nav>
+              </div>
+              <%= render partial: "layouts/decidim/topbar_search" %>
+              <%= render partial: "layouts/decidim/language_chooser" %>
+              <div class="hide-for-medium topbar__menu">
+                <button type="button" data-toggle="offCanvas" aria-label="<%= t("layouts.decidim.header.navigation") %>">
+                  <%= icon "menu", aria_label: t("layouts.decidim.header.navigation"), role: "img" %>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="show-for-medium" data-set="nav-holder">
-          <nav class="navbar js-append">
-            <div class="row column">
-              <%= main_menu.render %>
-            </div>
-          </nav>
+
+        <div class="custom-separator">
+          <span></span><span></span><span></span>
         </div>
 
         <main id="content" class="<%= (current_user && current_user.email.present?) ? "well-known" : "anonymous" %>">
