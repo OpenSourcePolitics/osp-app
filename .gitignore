@@ -29,6 +29,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+.env
 
 # Ignore public uploads
 public/uploads
@@ -39,6 +40,8 @@ public/uploads
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 
-.DS_Store
-
 **/*/wip
+
+.DS_Store
+.idea
+flamegraph*
