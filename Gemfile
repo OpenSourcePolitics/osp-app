@@ -27,6 +27,9 @@ gem "faker", "~> 1.9"
 gem "wicked_pdf"
 gem "wkhtmltopdf-binary"
 
+gem "ruby-progressbar"
+gem "sentry-raven"
+
 gem "activerecord-session_store"
 
 gem "omniauth-oauth2", ">= 1.4.0", "< 2.0"
