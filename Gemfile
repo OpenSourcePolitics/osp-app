@@ -13,7 +13,7 @@ gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.g
 # gem "decidim-initiatives", path: "../decidim"
 
 gem "decidim-initiatives_no_signature_allowed", git: "https://github.com/OpenSourcePolitics/decidim-module-initiatives_nosignature_allowed.git", branch: "alt/petition"
-# gem "decidim-initiatives_no_signature_allowed", path: "../_modules/decidim-module-initiatives_nosignature_allowed"
+#gem "decidim-initiatives_no_signature_allowed", path: "../decidim-module-initiatives_nosignature_allowed"
 
 gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git", branch: "0.dev"
 
