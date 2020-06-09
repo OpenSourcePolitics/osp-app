@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_02_095125) do
+ActiveRecord::Schema.define(version: 2020_06_09_084533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -716,8 +716,10 @@ ActiveRecord::Schema.define(version: 2020_06_02_095125) do
     t.jsonb "online_votes", default: {"total"=>0}
     t.jsonb "offline_votes", default: {"total"=>0}
     t.date "answer_date"
+    t.bigint "decidim_area_id"
     t.index "md5((description)::text)", name: "decidim_initiatives_description_search"
     t.index ["answered_at"], name: "index_decidim_initiatives_on_answered_at"
+    t.index ["decidim_area_id"], name: "index_decidim_initiatives_on_decidim_area_id"
     t.index ["decidim_author_id", "decidim_author_type"], name: "index_decidim_initiatives_on_decidim_author"
     t.index ["decidim_organization_id"], name: "index_decidim_initiatives_on_decidim_organization_id"
     t.index ["decidim_user_group_id"], name: "index_decidim_initiatives_on_decidim_user_group_id"
@@ -766,6 +768,7 @@ ActiveRecord::Schema.define(version: 2020_06_02_095125) do
     t.boolean "child_scope_threshold_enabled", default: false, null: false
     t.boolean "only_global_scope_enabled", default: false, null: false
     t.boolean "custom_signature_end_date_enabled", default: false, null: false
+    t.boolean "area_enabled", default: false, null: false
     t.index ["decidim_organization_id"], name: "index_decidim_initiative_types_on_decidim_organization_id"
   end
 
