@@ -2,14 +2,14 @@
 fr:
   activemodel:
     attributes:
+      group:
+        avatar: Avatar
       initiative:
-        answer: Réponse
-        answer_url: Lien externe
         decidim_user_group_id: Auteur
         description: Description
         offline_votes: Votes en présentiel
         offline_votes_for_scope: Signatures en présentiel pour %{scope}
-        scope_id: Périmètre d'application
+        scope_id: Secteur
         signature_end_date: Fin de la période de collecte des signatures
         signature_start_date: Début de la période de collecte des signatures
         signature_type: Type de collecte des signatures
@@ -30,11 +30,15 @@ fr:
       initiatives_committee_member:
         user: Membre du Comité de promotion
       initiatives_type:
+        area_enabled: Enable authors to choose the area for their pétition
+        attachments_enabled: Enable attachments
         banner_image: Image d'en-tête
         child_scope_threshold_enabled: Activer les signatures des sous-périmètres
         collect_user_extra_fields: Collecter les données personnelles de l'utilisateur
           lors de la signature
         comments_enabled: Activer les commentaires
+        custom_signature_end_date_enabled: Enable authors to choose the end of signature
+          collection period
         description: Description
         document_number_authorization_handler: Niveau d'autorisation nécessaire pour
           signer les pétitions de ce type
@@ -45,7 +49,7 @@ fr:
         only_global_scope_enabled: Ne permettre que la création de pétitions de portée
           globale
         promoting_committee_enabled: Activer les comités de promotion sur ce type
-          de pétition(témoin.s dont l'invitation par l'auteur est obligatoire pour
+          de pétition (témoin.s dont l'invitation par l'auteur est obligatoire pour
           la validation de la pétition si cette fonctionnalité est activée)
         title: Titre
         undo_online_signatures_enabled: Autoriser les utilisateurs à annuler leurs
@@ -57,10 +61,19 @@ fr:
         document_number: Numéro de document
         name_and_surname: Nom et surnom
         postal_code: Code postal
+        resident: I'm a local resident
       organization_data:
         address: Adresse
         id_document: Document d'identité
         name: Nom complet
+    errors:
+      models:
+        initiative:
+          attributes:
+            attachment:
+              file: File is invalid
+              needs_to_be_reattached: Needs to be reattached
+              title: Title shouldn't be empty
   activerecord:
     models:
       decidim/initiative:
@@ -75,15 +88,44 @@ fr:
   decidim:
     admin:
       actions:
+        configure: Configure
+        confirm_destroy: Confirm destroy
+        destroy: Destroy
+        new: New
         new_initiative_type: Nouveau type de pétition
+        publish: Publish
+        unpublish: Unpublish
+      filters:
+        decidim_area_id_eq:
+          label: Area
+        search_placeholder:
+          title_or_description_cont: Recherche %{collection} par titre ou description.
+          title_or_description_or_id_string_or_author_name_or_author_nickname_cont: Recherche
+            %{collection} par titre, description, ID ou nom d'auteur.
+        state_eq:
+          values:
+            accepted: Acceptée
+            classified: Classée
+            created: Créé
+            debatted: Débattue
+            discarded: Rejetée
+            examinated: Examinée
+            published: Publiée
+            rejected: Rejetée
+            validating: Validation technique
+        type_id_eq:
+          label: Type
       menu:
         initiatives: Pétitions
-        initiatives_types: Types de pétition
+        initiatives_types: Types de pétitions
+        participatory_processes_submenu:
+          moderations: Modérations
       models:
         initiatives:
           fields:
             created_at: Créé à
             id: ID
+            published_at: Publié à l'adresse
             state: État
             supports_count: Signatures
             title: Pétitions
@@ -91,7 +133,7 @@ fr:
           fields:
             scope: Secteur
             supports_required: Signatures requises
-          name: Périmètre de signature
+          name: Secteur du type de pétition
         initiatives_types:
           fields:
             created_at: Créé à
@@ -109,7 +151,7 @@ fr:
             initiative_title: Titre de la pétition
             name_and_surname: Nom et surnom
             postal_code: Code postal
-            scope: Périmètre d'application
+            scope: Portée
             time_and_date: Heure et date
             timestamp: Horodatage
       titles:
@@ -128,23 +170,30 @@ fr:
             <a href="%{resource_path}">%{resource_title}</a> a été prolongée.
         milestone_completed:
           affected_user:
-            email_intro: Votre pétition" %{resource_title}" a atteint %{percentage}%
-              de signatures requises!
+            email_intro: Votre pétition %{resource_title} a atteint %{percentage}%
+              de signatures!
             email_outro: Vous avez reçu cette notification car vous êtes l'auteur
-              de cette pétition.
-            email_subject: Votre pétition" %{resource_title}" a atteint %{percentage}%
-              de signatures requises!
+              de la pétition %{resource_title}.
+            email_subject: Nouvelle étape franchie !
             notification_title: Votre pétition <a href="%{resource_path}">%{resource_title}</a>
-              a atteint %{percentage}% de signatures requises.
+              a atteint les %{percentage}% de signatures.
           follower:
-            email_intro: La pétition "%{resource_title}" a atteint %{percentage}% des
+            email_intro: la pétition %{resource_title} a atteint %{percentage}% des
               signatures requises !
-            email_outro: Vous avez reçu cette notification parce que vous suivez "%{resource_title}".
+            email_outro: Vous avez reçu cette notification parce que vous suivez %{resource_title}.
               Vous pouvez cesser de recevoir des notifications en suivant le lien
               précédent.
             email_subject: Nouvelle étape franchie !
-            notification_title: La pétition <a href="%{resource_path}">%{resource_title}</a>
-              a atteint %{percentage}% de signatures requises.
+            notification_title: la pétition <a href="%{resource_path}">%{resource_title}</a>
+              a atteint les %{percentage}% de signatures.
+          support_threshold_reached:
+            email_intro: The pétition %{resource_title} has reached the support
+              threshold
+            email_outro: You have received this notification because you are an admin
+              of the platform.
+            email_subject: Support threshold reached
+            notification_title: The <a href="%{resource_path}">%{resource_title}</a>
+              pétition has reached the support threshold
     gamification:
       badges:
         initiatives:
@@ -200,8 +249,8 @@ fr:
       admin:
         answers:
           edit:
-            answer: Répondre
-            title: Réponse pour %{title}
+            answer: Réponse
+            title: Répondez pour %{title}
           info_initiative:
             created_at: Créé à
             description: Description
@@ -220,6 +269,8 @@ fr:
         content_blocks:
           highlighted_initiatives:
             max_results: Quantité maximale d'éléments à afficher
+        exports:
+          initiatives: Pétitions
         initiatives:
           edit:
             accept: Accepter la pétition
@@ -229,29 +280,24 @@ fr:
             export_votes: Exporter la liste des votes
             reject: Rejeter la pétition
             send_to_technical_validation: Envoyer à la validation technique
-            success: La pétition a été envoyée à la validation technique
+            success: la pétition a été envoyée à la validation technique
             update: Mettre à jour
           form:
             title: Informations générales
           index:
             actions_title: Action
-            filter:
-              accepted: Acceptée
-              all: Tout
-              created: Créée
-              discarded: Retirée
-              published: Publiée
-              rejected: Rejetée
-              validating: Validation technique
-            filter_by: Filtrer par
             preview: Aperçu
             print: Impression
-            search: Rechercher
+          initiative_attachments:
+            documents: Documents
+            edit: Edit
+            new: New
+            photos: Photos
           show:
             print: Impression
           update:
             error: Une erreur est survenue
-            success: La pétition a été mise à jour avec succès
+            success: la pétition a été mise à jour avec succès
         initiatives_type_scopes:
           create:
             error: Une erreur s'est produite
@@ -274,9 +320,9 @@ fr:
         initiatives_types:
           create:
             error: Une erreur s'est produite
-            success: Un nouveau type de pétitiona été créé avec succès
+            success: Un nouveau type de pétition a été créé avec succès
           destroy:
-            success: Le type de pétitiona été supprimé avec succès
+            success: Le type de pétition a été supprimé avec succès
           edit:
             confirm_destroy: Êtes-vous certain ?
             destroy: Supprimer
@@ -292,7 +338,7 @@ fr:
             title: Nouveau type de pétition
           update:
             error: Une erreur s'est produite
-            success: Le type de pétitiona été mis à jour avec succès
+            success: Le type de pétition a été mis à jour avec succès
       admin_log:
         initiative:
           publish: "%{user_name} a publié la pétition %{resource_name}"
@@ -302,11 +348,32 @@ fr:
           update: "%{user_name} a mis à jour la pétition %{resource_name}"
       admin_states:
         accepted: Acceptée
+        classified: Classée
         created: Créée
+        debatted: Débattue
         discarded: Retirée
+        examinated: Examinée
         published: Publiée
         rejected: Rejetée
         validating: Validation technique
+      application_helper:
+        filter_area_values:
+          all: All
+        filter_scope_values:
+          all: Tous
+        filter_state_values:
+          accepted: Assez de signatures
+          all: Tous
+          answered: 'Réponse '
+          classified: Classée
+          closed: Fermée
+          debatted: Débattue
+          examinated: Examinée
+          open: Ouverte
+          published: Publiée
+          rejected: Pas assez de signatures
+        filter_type_values:
+          all: Tous
       committee_requests:
         new:
           continue: Continuer
@@ -321,21 +388,22 @@ fr:
         fill_data:
           back: Retour
           continue: Continuer
-          fill_data_help: |-
-            <ul>
-              <li>Vérifier le contenu de votre pétition. Votre titre est-il facile à comprendre ? L'objectif de votre pétition est-il clair ?</li>
-              <li>Vous devez choisir le type de recueil des signatures : en présentiel, en ligne ou une combinaison des deux</li>
-              <li>Quelle est le secteur géographique de la pétition? Ville, arrondissement, quartier?</li>
-            </ul>
+          fill_data_help: "<ul> <li>Vérifier le contenu de votre pétition. Votre
+            titre est-il facile à comprendre ? L'objectif de votre pétition est-il
+            clair ?</li> <li>Vous devez choisir le type de recueil des signatures
+            : en présentiel, en ligne ou une combinaison des deux</li> <li>Quelle
+            est le secteur géographique de la pétition ? Ville, arrondissement, quartier
+            ?</li> </ul>"
           initiative_type: Type de pétition
           more_information: "(Plus d'informations)"
+          select_area: Select an area
           select_scope: Sélectionnez une portée
         finish:
           back: Retour
           back_to_initiatives: Retour à l'index des pétitions
-          confirm: Êtes-vous sûr?
           callout_text: Bravo ! Votre pétition a été créée avec succès.
-          edit_my_initiative: Modifier ma pétition
+          confirm: Confirmer
+          edit_my_initiative: Modifier mon pétition
           go_to_my_initiatives: Consulter mes pétitions
           more_information: "(Plus d'informations)"
           send_my_initiative: Envoyer pour validation
@@ -358,7 +426,7 @@ fr:
         previous_form:
           back: Retour
           continue: Continuer
-          help: En quoi consiste la pétition? Saisissez son titre et sa description.
+          help: En quoi consiste la pétition ? Saisissez son titre et sa description.
             Nous recommandons un titre court et synthétique et une description axée
             sur la solution proposée.
           more_information: "(Plus d'informations)"
@@ -388,16 +456,16 @@ fr:
           compare_help: Si l'une des pétitions suivantes est similaire à la vôtre,
             nous vous encourageons à l'appuyer. Votre proposition aura ainsi plus
             de possibilités de se réaliser.
-          continue: Ma pétition est différente
+          continue: Mon pétition est différente
           more_information: "(Plus d'informations)"
       events:
         create_initiative_event:
           email_intro: "%{author_name} %{author_nickname}, que vous suivez, a créé
-            une nouvelle pétition, lisez-la et contribuez :"
+            une nouvelle pétition, lisez -la et contribuez :"
           email_outro: Vous avez reçu cette notification, car vous suivez %{author_nickname}.
             Vous pouvez arrêter de recevoir des notifications à partir du lien précédent.
           email_subject: Nouvelle pétition de %{author_nickname}
-          notification_title: La pétition <a href="%{resource_path}">%{resource_title}</a>
+          notification_title: la pétition <a href="%{resource_path}">%{resource_title}</a>
             a été créée par <a href="%{author_path}">%{author_name} %{author_nickname}</a>.
         endorse_initiative_event:
           email_intro: "%{author_name} %{author_nickname}, que vous suivez, a soutenu
@@ -405,7 +473,7 @@ fr:
           email_outro: Vous avez reçu cette notification parce que vous suivez %{author_nickname}.
             Vous pouvez arrêter de recevoir des notifications à partir du lien précédent.
           email_subject: Pétition soutenue par %{author_nickname}
-          notification_title: La pétition<a href="%{resource_path}">%{resource_title}</a>
+          notification_title: La pétition <a href="%{resource_path}">%{resource_title}</a>
             a été soutenue par <a href="%{author_path}">%{author_name} %{author_nickname}</a>.
       index:
         title: Pétitions
@@ -418,6 +486,7 @@ fr:
             year: Année
           help: S'il vous plaît, remplissez les champs suivants avec vos données personnelles
             pour signer la pétition
+          select_scope: Sélectionner un périmètre d'application
         finish:
           back_to_initiative: Retour à la pétition
         sms_code:
@@ -430,8 +499,8 @@ fr:
       initiative_votes:
         create:
           error: Il y a eu des erreurs lors de la signature de la pétition.
-          invalid: Les données fournies pour signer la pétitionne sont pas valides
-          success_html: Toutes nos félicitations! La pétition <strong> %{title}</strong>
+          invalid: Les données fournies pour signer la pétition ne sont pas valides
+          success_html: Toutes nos félicitations! la pétition <strong> %{title}</strong>
             a été signée correctement
         personal_data:
           invalid: Les données personnelles ne correspondent pas aux données fournies
@@ -445,6 +514,7 @@ fr:
       initiatives:
         author:
           deleted: Supprimé
+          identifier: 'Identifiant: <b>N°%{identifier}</b>'
         author_list:
           hidden_authors_count:
             one: et 1 autre personne
@@ -452,17 +522,19 @@ fr:
         count:
           title:
             one: "%{count} pétition"
-            other: "%{count} pétitions "
+            other: "%{count} pétitions"
         filters:
-          any: Toutes les pétitions
+          any: Tout
+          area: Area
           author: Auteur
           closed: Fermées
           myself: Mes pétitions
-          open: En cours
+          open: Ouvrir
+          scope: Champ d'application
           search: Rechercher
           state: État
           type: Type
-          type_prompt: Sélectionnez un type
+          type_prompt: Sélectionnez un type de pétition
         filters_small_view:
           close_modal: Fermer la fenêtre
           filter: Filtre
@@ -476,11 +548,13 @@ fr:
               one: Commentaire
               other: commentaires
         orders:
+          answer_date: Date de réponse
           label: 'Trier les pétitions par :'
           most_commented: Les plus commentées
           most_voted: Les plus soutenues
           random: Aléatoire
           recent: Les plus récentes
+          recently_published: Dernière publication
         result:
           answer_title:
             accepted: Cette pétition a été acceptée car
@@ -499,7 +573,10 @@ fr:
             qu'en présentiel.
           follow_description: Recevoir une notification lorsqu'il y a des actualités
             sur cette pétition
+          of_versions: "(of %{number})"
           offline_method: Cette pétition ne recueille que des soutiens en présentiel.
+          see_other_versions: voir les autres versions
+          version: Version %{number}
         signature_identities:
           select_identity: Sélectionner l'identifiant de l'utilisateur
         signatures_count:
@@ -520,28 +597,24 @@ fr:
           most_popular_initiative: Pétition la plus populaire
           need_more_votes: Besoin de plus de signatures
       initiatives_mailer:
-        creation_subject: Votre pétition "%{title}" est rédigée
+        creation_subject: Votre pétition '%{title}' a été créée
         initiative_link:
-          check_initiative_details: Vous pouvez y accéder
-          here: en suivant ce lien
-        more_information: |-
-          Vous pouvez la modifier et éventuellement ajouter des pièces jointes.<br/>
-          Pour cela, accéder au menu "Tableau de bord" de votre compte auteur,
-          cliquer sur  "Pétitions " dans le menu à gauche et cliquer sur votre pétition.<br/><br/>
-          Attention ! Elle n'est pas encore publiée :<br/>
-          il vous reste à l'envoyer à la validation technique du Sénat
-          en cliquant sur le bouton « Envoyer à la validation technique ».<br/><br/>
-          Une fois votre pétition envoyée, le Sénat s'engage à vous répondre dans un délai de quinze jours et,
-          <a href="https://petitions.senat.fr/pages/petition_recevabilite">si votre pétition est recevable</a>,
-          la publier et l’ouvrir au recueil de signatures.
-        progress_report_body_for: La pétition "%{title}" a atteint %{percentage}% des signatures requises.
-        progress_report_for: La pétition "%{title}" a atteint %{percentage}% des signatures requises.
+          check_initiative_details: Vous pouvez accéder aux détails de la pétition
+          here: ici
+        more_information: Vous trouverez ici plus d'informations sur le processus
+          de création d'une pétition.
+        progress_report_body_for: la pétition %{title} a atteint %{percentage}% des
+          soutiens requis.
+        progress_report_for: 'Résumé de la pétition : %{title}'
         promotal_committee_help: Rappelez-vous que vous devez inviter au moins %{member_count}
           personnes au Comité de promotion. Envoyez le lien suivant pour les inviter
-        status_change_body_for: 'Le statut de la pétition "%{title}" a été changé pour : %{state}'
-        status_change_for: La pétition "%{title}" a changé de statut
-        technical_validation_body_for: Une validation technique a été demandée pour la pétition "%{title}".
-        technical_validation_for: Une validation technique a été demandée pour la pétition %{title}.
+        status_change_body_for: 'Le statut de la pétition %{title} a été changé
+          pour : %{state}'
+        status_change_for: la pétition %{title} a changé de statut
+        technical_validation_body_for: Une validation technique a été demandée pour
+          la pétition %{title}.
+        technical_validation_for: Une validation technique a été demandée pour la pétition
+          %{title}.
       last_activity:
         new_initiative: Nouvelle pétition
       pages:
@@ -549,6 +622,17 @@ fr:
           highlighted_initiatives:
             active_initiatives: Pétitions actives
             see_all_initiatives: Voir toutes les pétitions
+      show:
+        badge_name:
+          accepted: Assez de signatures
+          classified: Classée
+          created: Créé
+          debatted: Débattue
+          discarded: Rejetée
+          examinated: Examinée
+          published: Publiée
+          rejected: Pas assez de signatures
+          validating: Validation technique
       state:
         accepted: Acceptée
         created: Créée
@@ -558,21 +642,46 @@ fr:
         validating: Validation technique
       states:
         accepted: Acceptées
+        classified: Classées
+        debatted: Débattues
+        examinated: Examinées
         expired: Expirées
       unavailable_scope: Portée indisponible
+      versions:
+        index:
+          number_of_versions: Versions
+          title: Versions
+        shared:
+          back_to_initiative: Back
+          changes_at_title: Changes at "%{title}"
+        show:
+          show_all_versions: Show all versions
+          version_author: Version author
+          version_created_at: Version created at
+          version_number_out_of_total: "%{current_version} out of %{total_count}"
+        version:
+          version_index: Version %{index}
     menu:
       initiatives: Pétitions
+    progress_bar:
+      number_delimiter: "."
+    proposals:
+      proposals:
+        edit:
+          attachment_legend: Ajouter une pièce jointe (facultatif)
     resources:
       initiatives_type:
         actions:
           create: Créer une pétition
-          vote: Signer une pétition
           title: Actions
+          vote: Vote
+    scopes:
+      global: Global
   layouts:
     decidim:
       admin:
         initiative:
-          attachments: Pièce(s) jointe(s)
+          attachments: Documents liés
           committee_members: Membres du Comité de promotion
           components: Fonctionnalités
           information: Informations
@@ -582,8 +691,8 @@ fr:
         finish: Publiez votre pétition
         previous_form: Créez votre pétition
         promotal_committee: Comité de promotion
-        select_initiative_type: Sélectionner
-        show_similar_initiatives: Comparer
+        select_initiative_type: Sélectionnez le type de pétition
+        show_similar_initiatives: Comparez avec les autres pétitions
         step: Étape %{current} de %{total}
         title: Créer une nouvelle pétition
       initiative_header:
