@@ -17,6 +17,14 @@ GIT
       decidim-initiatives (= 0.22.0.dev)
 
 GIT
+  remote: https://github.com/OpenSourcePolitics/decidim-module-navbar_links
+  revision: 48b4990b36a5a1590b5d971fb2c96f28895c6216
+  branch: 0.22.0.dev
+  specs:
+    decidim-navbar_links (0.22.0.dev)
+      decidim-core (= 0.22.0.dev)
+
+GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git
   revision: e5b83247eb33c8a6d4c1adb48d0ed9764b826530
   branch: 0.dev
@@ -24,6 +32,14 @@ GIT
     decidim-term_customizer (0.dev)
       decidim-admin
       decidim-core
+
+GIT
+  remote: https://github.com/OpenSourcePolitics/decidim-module_cookies
+  revision: 51ab446507dfc69d59d0ce3d44dfc881d72fb473
+  branch: feature/orejime
+  specs:
+    decidim-cookies (0.22.0.dev)
+      decidim-core (= 0.22.0.dev)
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
@@ -903,9 +919,11 @@ DEPENDENCIES
   byebug (~> 11.0)
   dalli-elasticache
   decidim!
+  decidim-cookies!
   decidim-dev!
   decidim-initiatives!
   decidim-initiatives_no_signature_allowed!
+  decidim-navbar_links!
   decidim-term_customizer!
   dotenv-rails
   faker (~> 1.9)
