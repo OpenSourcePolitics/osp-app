@@ -61,7 +61,8 @@ fr:
         document_number: Numéro de document
         name_and_surname: Nom et surnom
         postal_code: Code postal
-        resident: I'm a local resident
+        resident: Je suis résident du département sélectionné
+        user_scope_id: Département
       organization_data:
         address: Adresse
         id_document: Document d'identité
@@ -533,6 +534,7 @@ fr:
           scope: Champ d'application
           search: Rechercher
           state: État
+          sort: Sort
           type: Type
           type_prompt: Sélectionnez un type de pétition
         filters_small_view:
