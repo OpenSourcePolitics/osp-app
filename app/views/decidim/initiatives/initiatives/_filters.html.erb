@@ -1,32 +1,34 @@
-<%= initiatives_filter_form_for filter do |form| %>
-  <div class="filters__section">
-    <div class="filters__search">
-      <div class="input-group">
-        <%= form.search_field :search_text, label: false, class: "input-group-field", placeholder: t(".search"), title: t(".search") %>
-        <div class="input-group-button">
-          <button type="submit" class="button button--muted" aria-label="<%= t(".search") %>">
-            <%= icon "magnifying-glass", aria_label: t(".search"), role: "img" %>
-          </button>
+<% cache filter do %>
+  <%= initiatives_filter_form_for filter do |form| %>
+    <div class="filters__section">
+      <div class="filters__search">
+        <div class="input-group">
+          <%= form.search_field :search_text, label: false, class: "input-group-field", placeholder: t(".search"), title: t(".search") %>
+          <div class="input-group-button">
+            <button type="submit" class="button button--muted" aria-label="<%= t(".search") %>">
+              <%= icon "magnifying-glass", aria_label: t(".search"), role: "img" %>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <%= form.check_boxes_tree :state, filter_states_values, legend_title: t(".state") %>
-  <%= form.check_boxes_tree :scope_id, filter_scopes_values, legend_title: t(".scope") %>
+    <%= form.check_boxes_tree :state, filter_states_values, legend_title: t(".state") %>
+    <%= form.check_boxes_tree :scope_id, filter_scopes_values, legend_title: t(".scope") %>
 
-  <% if current_user %>
-    <%= form.collection_radio_buttons :author,
-                                      [["any", t(".any")], ["myself", t(".myself")]],
-                                      :first,
-                                      :last,
-                                      legend_title: t(".author") %>
+    <% if current_user %>
+      <%= form.collection_radio_buttons :author,
+                                        [["any", t(".any")], ["myself", t(".myself")]],
+                                        :first,
+                                        :last,
+                                        legend_title: t(".author") %>
+    <% end %>
+
+    <% unless single_initiative_type? %>
+      <%= form.check_boxes_tree :type_id, filter_types_values, legend_title: t(".type") %>
+      <%= hidden_field_tag :order, order, id: nil, class: "order_filter" %>
+    <% end %>
+
+    <%= form.check_boxes_tree :area_id, filter_areas_values, legend_title: t(".area") %>
   <% end %>
-
-  <% unless single_initiative_type? %>
-    <%= form.check_boxes_tree :type_id, filter_types_values, legend_title: t(".type") %>
-    <%= hidden_field_tag :order, order, id: nil, class: "order_filter" %>
-  <% end %>
-
-  <%= form.check_boxes_tree :area_id, filter_areas_values, legend_title: t(".area") %>
 <% end %>
