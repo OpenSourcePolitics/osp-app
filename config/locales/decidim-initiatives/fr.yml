@@ -5,6 +5,10 @@ fr:
       group:
         avatar: Avatar
       initiative:
+        area_id: Commission
+        answer: Réponse
+        answer_date: Date de réponse
+        answer_url: Lien associé
         decidim_user_group_id: Auteur
         description: Description
         offline_votes: Votes en présentiel
@@ -30,8 +34,8 @@ fr:
       initiatives_committee_member:
         user: Membre du Comité de promotion
       initiatives_type:
-        area_enabled: Enable authors to choose the area for their pétition
-        attachments_enabled: Enable attachments
+        area_enabled: Permettre aux auteurs de choisir la commission associée à leurs pétitions
+        attachments_enabled: Activer les pièces jointes
         banner_image: Image d'en-tête
         child_scope_threshold_enabled: Activer les signatures des sous-périmètres
         collect_user_extra_fields: Collecter les données personnelles de l'utilisateur
@@ -98,7 +102,7 @@ fr:
         unpublish: Unpublish
       filters:
         decidim_area_id_eq:
-          label: Area
+          label: Commission
         search_placeholder:
           title_or_description_cont: Recherche %{collection} par titre ou description.
           title_or_description_or_id_string_or_author_name_or_author_nickname_cont: Recherche
@@ -397,7 +401,7 @@ fr:
             ?</li> </ul>"
           initiative_type: Type de pétition
           more_information: "(Plus d'informations)"
-          select_area: Select an area
+          select_area: Sélectionnez une commission
           select_scope: Sélectionnez une portée
         finish:
           back: Retour
@@ -526,7 +530,7 @@ fr:
             other: "%{count} pétitions"
         filters:
           any: Tout
-          area: Area
+          area: Commission
           author: Auteur
           closed: Fermées
           myself: Mes pétitions
