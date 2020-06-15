@@ -18,9 +18,10 @@ module CreateOmniauthRegistrationExtend
         end
 
         if request.path.end_with?('france_connect_profile/callback')
+          form.minimum_age
           return broadcast(:error, user)
         end
-        
+
         return broadcast(:invalid) if form.invalid?
 
         transaction do
