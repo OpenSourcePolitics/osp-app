@@ -14,6 +14,8 @@ module Decidim
         filters_with_values.each_with_object({}) do |(filter, values), hash|
           next if filter == :type_id_eq
 
+          values = reorder_states(values) if filter == :state_eq
+
           link = filter_link_label(filter)
           hash[link] = if values.is_a?(Array)
                          build_submenu_options_tree_from_array(filter, values)
@@ -30,6 +32,7 @@ module Decidim
         links += values.map do |value|
           next if value == "rejected"
           next if value == "accepted"
+
           filter_link_value(filter, value)
         end
         links.each_with_object({}) { |link, hash| hash[link] = nil }
@@ -121,6 +124,22 @@ module Decidim
             t("decidim.admin.actions.cancel"),
             class: "action-icon--remove"
         )
+      end
+
+      private
+
+      def reorder_states(states)
+        ordered_states = []
+
+        ordered_states << "created" if states.member?("created")
+        ordered_states << "validating" if states.member?("validating")
+        ordered_states << "discarded" if states.member?("discarded")
+        ordered_states << "published" if states.member?("published")
+        ordered_states << "classified" if states.member?("classified")
+        ordered_states << "examinated" if states.member?("examinated")
+        ordered_states << "debatted" if states.member?("debatted")
+
+        ordered_states
       end
     end
   end
