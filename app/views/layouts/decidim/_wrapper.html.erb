@@ -1,13 +1,13 @@
 <%
-if respond_to?(:current_component) && current_component && can_be_managed?(current_component)
-  edit_link(
-    manage_component_path(current_component),
-    :read,
-    :component,
-    component: current_component,
-    current_participatory_space: current_participatory_space
-  )
-end
+  if respond_to?(:current_component) && current_component && can_be_managed?(current_component)
+    edit_link(
+        manage_component_path(current_component),
+        :read,
+        :component,
+        component: current_component,
+        current_participatory_space: current_participatory_space
+    )
+  end
 %>
 
 <div class="off-canvas-wrapper">
@@ -35,8 +35,8 @@ end
         <div class="title-bar">
           <%= link_to t("skip_button", scope: "decidim.accessibility"), url_for(anchor: "content"), class: "skip" %>
           <% if current_organization.official_img_header? %>
-            <%= link_to  current_organization.official_url, class: "logo-cityhall" do %>
-              <%= image_tag current_organization.official_img_header.url.to_s , alt: current_organization.name %>
+            <%= link_to current_organization.official_url, class: "logo-cityhall" do %>
+              <%= image_tag current_organization.official_img_header.url.to_s, alt: current_organization.name %>
             <% end %>
           <% end %>
           <div class="title-user-bar show-for-medium">
@@ -44,7 +44,7 @@ end
               <% if current_user %>
                 <nav class="topbar__dropmenu topbar__user__logged">
                   <%= link_to decidim.notifications_path, title: "notifications-link", class: "topbar__notifications #{current_user.notifications.any? ? "is-active" : ""}" do %>
-                    <%= icon "bell", role:"img" %>
+                    <%= icon "bell", role: "img" %>
                   <% end %>
                   <%= link_to decidim.conversations_path, title: "conversations-link", class: "topbar__conversations #{current_user.unread_conversations.any? ? "is-active" : ""}" do %>
                     <%= icon "envelope-closed", role: "img" %>
@@ -132,8 +132,10 @@ end
           <%= yield %>
         </main>
       </div><!-- /.footer-separator -->
-      <%= render partial: "layouts/decidim/main_footer" %>
-      <%= render partial: "layouts/decidim/mini_footer" %>
+      <% cache [current_organization, current_organization.static_pages] do %>
+        <%= render partial: "layouts/decidim/main_footer" %>
+        <%= render partial: "layouts/decidim/mini_footer" %>
+      <% end %>
     </div><!--/.off-canvas-content-->
   </div><!--/.off-canvas-wrapper-inner-->
 </div><!--/.off-canvas-wrapper-->
