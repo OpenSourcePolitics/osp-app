@@ -128,6 +128,7 @@ fr:
       models:
         initiatives:
           fields:
+            answered_at: Répondu à
             created_at: Créé à
             id: ID
             published_at: Publié à l'adresse
@@ -529,6 +530,7 @@ fr:
             one: "%{count} pétition"
             other: "%{count} pétitions"
         filters:
+          select_an_area: "Sélectionnez une zone d'application"
           any: Tout
           area: Commission
           author: Auteur
