@@ -2,6 +2,8 @@
   <div class="row">
     <div class="<%= column_classes %>">
       <%- current_organization.enabled_omniauth_providers.each do |name,provider| %>
+        <% next if name == :france_connect_uid && request.env['PATH_INFO'].include?("/committee_requests/new") %>
+
         <% if request.env.dig(:available_authorizations).nil? || request.env.dig(:available_authorizations).include?(name.to_s) %>
           <% if I18n.exists?("decidim.omniauth.#{name}.explanation") %>
             <div class="callout">
