@@ -32,7 +32,7 @@ fr:
         post_code: Code postal
         province: Région
       initiatives_committee_member:
-        user: Membre du Comité de promotion
+        user: Liste des auteurs de la pétition
       initiatives_type:
         area_enabled: Permettre aux auteurs de choisir la commission associée à leurs pétitions
         attachments_enabled: Activer les pièces jointes
