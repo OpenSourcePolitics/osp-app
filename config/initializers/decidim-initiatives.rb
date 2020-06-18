@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_require_authorization)
-  # Decidim::Initiatives.configure do |config|
+  Decidim::Initiatives.configure do |config|
   #
   #   # Public Setting that defines the similarity minimum value to consider two
   #   # initiatives similar. Defaults to 0.25.
@@ -20,7 +20,7 @@ if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_requir
   #   config.default_signature_time_period_length = 6.months
   #
   #   # Components enabled for a new initiative
-  #   config.default_components = []
+    config.default_components = []
   #
   #   # Print functionality enabled. Allows the user to get
   #   # a printed version of the initiative from the administration
@@ -33,5 +33,5 @@ if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_requir
   #   # timestamped and respond to a timestamp method
   #   config.timestamp_service = "Decidim::Initiatives::UtcTimestamp"
   #
-  # end
+  end
 end
