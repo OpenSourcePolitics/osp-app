@@ -36,3 +36,87 @@
     font-weight: 500;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Marianne';
+    src: asset-data-url('decidim/Marianne/Marianne-Medium.eot');
+    src: local('Marianne Medium'), local('Marianne-Medium'),
+        font-url('decidim/Marianne/Marianne-Medium.eot?#iefix') format('embedded-opentype'),
+        font-url('decidim/Marianne/Marianne-Medium.woff2') format('woff2'),
+        font-url('decidim/Marianne/Marianne-Medium.woff') format('woff'),
+        font-url('decidim/Marianne/Marianne-Medium.ttf') format('truetype'),
+        font-url('decidim/Marianne/Marianne-Medium.svg#Marianne-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marianne';
+    src: asset-data-url('decidim/Marianne/Marianne-Light.eot');
+    src: local('Marianne Light'), local('Marianne-Light'),
+        font-url('decidim/Marianne/Marianne-Light.eot?#iefix') format('embedded-opentype'),
+        font-url('decidim/Marianne/Marianne-Light.woff2') format('woff2'),
+        font-url('decidim/Marianne/Marianne-Light.woff') format('woff'),
+        font-url('decidim/Marianne/Marianne-Light.ttf') format('truetype'),
+        font-url('decidim/Marianne/Marianne-Light.svg#Marianne-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marianne';
+    src: asset-data-url('decidim/Marianne/Marianne-Regular.eot');
+    src: local('Marianne Regular'), local('Marianne-Regular'),
+        font-url('decidim/Marianne/Marianne-Regular.eot?#iefix') format('embedded-opentype'),
+        font-url('decidim/Marianne/Marianne-Regular.woff2') format('woff2'),
+        font-url('decidim/Marianne/Marianne-Regular.woff') format('woff'),
+        font-url('decidim/Marianne/Marianne-Regular.ttf') format('truetype'),
+        font-url('decidim/Marianne/Marianne-Regular.svg#Marianne-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marianne';
+    src: asset-data-url('decidim/Marianne/Marianne-Bold.eot');
+    src: local('Marianne Bold'), local('Marianne-Bold'),
+        font-url('decidim/Marianne/Marianne-Bold.eot?#iefix') format('embedded-opentype'),
+        font-url('decidim/Marianne/Marianne-Bold.woff2') format('woff2'),
+        font-url('decidim/Marianne/Marianne-Bold.woff') format('woff'),
+        font-url('decidim/Marianne/Marianne-Bold.ttf') format('truetype'),
+        font-url('decidim/Marianne/Marianne-Bold.svg#Marianne-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marianne';
+    src: asset-data-url('decidim/Marianne/Marianne-Thin.eot');
+    src: local('Marianne Thin'), local('Marianne-Thin'),
+        font-url('decidim/Marianne/Marianne-Thin.eot?#iefix') format('embedded-opentype'),
+        font-url('decidim/Marianne/Marianne-Thin.woff2') format('woff2'),
+        font-url('decidim/Marianne/Marianne-Thin.woff') format('woff'),
+        font-url('decidim/Marianne/Marianne-Thin.ttf') format('truetype'),
+        font-url('decidim/Marianne/Marianne-Thin.svg#Marianne-Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marianne';
+    src: asset-data-url('decidim/Marianne/Marianne-ExtraBold.eot');
+    src: local('Marianne ExtraBold'), local('Marianne-ExtraBold'),
+        font-url('decidim/Marianne/Marianne-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        font-url('decidim/Marianne/Marianne-ExtraBold.woff2') format('woff2'),
+        font-url('decidim/Marianne/Marianne-ExtraBold.woff') format('woff'),
+        font-url('decidim/Marianne/Marianne-ExtraBold.ttf') format('truetype'),
+        font-url('decidim/Marianne/Marianne-ExtraBold.svg#Marianne-ExtraBold') format('svg');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
