@@ -47,12 +47,7 @@
       <div class="callout">
 
         <%= decidim_form_for(@account, url: account_path, method: :put, html: { autocomplete: "nope" }) do |f| %>
-          <%= f.hidden_field :id %>
-
           <%= f.text_field :name, readonly: true %>
-
-          <%= f.hidden_field :name %>
-          <%= f.hidden_field :nickname %>
 
           <%= f.email_field :email %>
 

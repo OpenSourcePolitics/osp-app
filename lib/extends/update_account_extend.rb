@@ -9,8 +9,6 @@ module UpdateAccountExtend
     private
 
     def update_personal_data
-      @user.name = @form.name
-      @user.nickname = @form.nickname
       @user.email = @form.email
       @user.full_address = @form.full_address
       @user.custom_agreement_at = DateTime.now if @form.custom_agreement
