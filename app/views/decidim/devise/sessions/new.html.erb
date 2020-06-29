@@ -1,29 +1,28 @@
 <% add_decidim_page_title(t("devise.sessions.new.sign_in")) %>
-<% cache current_organization do %>
-  <main class="wrapper sessions">
+<main class="wrapper sessions">
+  <div class="row collapse">
     <div class="row collapse">
-      <div class="row collapse">
-        <div class="columns large-8 large-centered text-center page-title">
-          <h1 class="heading1"><%= t("devise.sessions.new.sign_in") %></h1>
-          <% if current_organization.sign_up_enabled? %>
-            <p>
-              <%= t(".are_you_new?") %>
-              <%= link_to t(".register"), new_user_registration_path %>
-            </p>
-          <% elsif current_organization.sign_in_enabled? %>
-            <p>
-              <%= t(".sign_up_disabled") %>
-            </p>
-          <% else %>
-            <p>
-              <%= t(".sign_in_disabled") %>
-            </p>
-          <% end %>
-        </div>
+      <div class="columns large-8 large-centered text-center page-title">
+        <h1 class="heading1"><%= t("devise.sessions.new.sign_in") %></h1>
+        <% if current_organization.sign_up_enabled? %>
+          <p>
+            <%= t(".are_you_new?") %>
+            <%= link_to t(".register"), new_user_registration_path %>
+          </p>
+        <% elsif current_organization.sign_in_enabled? %>
+          <p>
+            <%= t(".sign_up_disabled") %>
+          </p>
+        <% else %>
+          <p>
+            <%= t(".sign_in_disabled") %>
+          </p>
+        <% end %>
       </div>
-
+    </div>
+    <% cache current_organization do %>
       <%= render partial: "decidim/devise/shared/omniauth_buttons", locals: { column_classes: "columns large-6 medium-10 medium-centered" } %>
-
+    <% end %>
     <% if current_organization.sign_in_enabled? || request.env['PATH_INFO'].include?("/admin_sign_in") %>
       <div class="row">
         <div class="columns large-6 medium-centered">
@@ -38,23 +37,22 @@
                     <%= f.password_field :password, autocomplete: "off" %>
                   </div>
                 </div>
-                  <fieldset>
-                    <% if devise_mapping.rememberable? %>
-                      <div class="field">
-                        <%= f.check_box :remember_me %>
-                      </div>
-                    <% end %>
-                  </fieldset>
-                  <div class="actions">
-                    <%= f.submit t("devise.sessions.new.sign_in"), class: "button expanded" %>
-                  </div>
-                <% end %>
-                <%= render "decidim/devise/shared/links" %>
-              </div>
+                <fieldset>
+                  <% if devise_mapping.rememberable? %>
+                    <div class="field">
+                      <%= f.check_box :remember_me %>
+                    </div>
+                  <% end %>
+                </fieldset>
+                <div class="actions">
+                  <%= f.submit t("devise.sessions.new.sign_in"), class: "button expanded" %>
+                </div>
+              <% end %>
+              <%= render "decidim/devise/shared/links" %>
             </div>
           </div>
         </div>
-      <% end %>
-    </div>
-  </main>
-<% end %>
+      </div>
+    <% end %>
+  </div>
+</main>
