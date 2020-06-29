@@ -1,7 +1,7 @@
 <% if Devise.mappings[:user].omniauthable? && current_organization.enabled_omniauth_providers.any? && !request.env['PATH_INFO'].include?("/admin_sign_in") %>
   <div class="row">
     <div class="<%= column_classes %>">
-      <%- current_organization.enabled_omniauth_providers.each do |name, provider| %>
+      <% current_organization.enabled_omniauth_providers.each do |name, provider| %>
         <%# Don't display france connect uid when requesting to join a committee %>
         <% next if name == :france_connect_uid && request.env['PATH_INFO'].end_with?("/committee_requests/new") %>
 
