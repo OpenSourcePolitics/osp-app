@@ -2,37 +2,39 @@
   <div>
     <h2 class="section-heading"><%= t(".please_sign_in") %></h2>
     <button class="close-button" data-close aria-label="Close modal"
-      type="button">
+            type="button">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <% if current_organization.sign_in_enabled? %>
     <div class="row">
       <div class="columns medium-8 medium-centered">
-          <%= decidim_form_for(Decidim::User.new, as: :user, url: session_path(:user), html: { class: "register-form new_user" }) do |f| %>
-            <div>
-              <div class="field">
-                <%= f.email_field :email, autofocus: true %>
-              </div>
-              <div class="field">
-                <%= f.password_field :password, autocomplete: "off" %>
-              </div>
+        <%= decidim_form_for(Decidim::User.new, as: :user, url: session_path(:user), html: { class: "register-form new_user" }) do |f| %>
+          <div>
+            <div class="field">
+              <%= f.email_field :email, autofocus: true %>
             </div>
-            <div class="actions">
-              <%= f.submit t("devise.sessions.new.sign_in"), class: "button expanded" %>
+            <div class="field">
+              <%= f.password_field :password, autocomplete: "off" %>
             </div>
-          <% end %>
-          <% if current_organization.sign_up_enabled? %>
-            <p class="text-center">
-              <%= link_to t(".sign_up"), decidim.new_user_registration_path, class: "sign-up-link" %>
-            </p>
-          <% end %>
+          </div>
+          <div class="actions">
+            <%= f.submit t("devise.sessions.new.sign_in"), class: "button expanded" %>
+          </div>
+        <% end %>
+        <% if current_organization.sign_up_enabled? %>
           <p class="text-center">
-            <%= link_to t("devise.shared.links.forgot_your_password"), new_password_path(:user) %>
+            <%= link_to t(".sign_up"), decidim.new_user_registration_path, class: "sign-up-link" %>
           </p>
+        <% end %>
+        <p class="text-center">
+          <%= link_to t("devise.shared.links.forgot_your_password"), new_password_path(:user) %>
+        </p>
       </div>
     </div>
-    <%= render "decidim/devise/shared/omniauth_buttons_mini" %>
+    <% cache current_organization do %>
+      <%= render "decidim/devise/shared/omniauth_buttons_mini" %>
+    <% end %>
   <% elsif current_organization.sign_in_enabled? %>
     <%= render partial: "decidim/devise/shared/omniauth_buttons", locals: { column_classes: "columns medium-12 medium-centered" } %>
   <% else %>
@@ -43,6 +45,8 @@
         </p>
       </div>
     </div>
-    <%= render "decidim/devise/shared/omniauth_buttons" %>
+    <% cache current_organization do %>
+      <%= render "decidim/devise/shared/omniauth_buttons" %>
+    <% end %>
   <% end %>
 </div>
