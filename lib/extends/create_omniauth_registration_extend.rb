@@ -66,7 +66,7 @@ module CreateOmniauthRegistrationExtend
         if !@user.persisted? || @user.invited_to_sign_up?
           @user.email = (form.email || verified_email)
           @user.name = user_params[:name] || form.name
-          @user.nickname = form.normalized_nickname
+          @user.nickname = user_params[:nickname] || form.normalized_nickname
           @user.newsletter_notifications_at = nil
           @user.email_on_notification = true
           @user.password = generated_password
