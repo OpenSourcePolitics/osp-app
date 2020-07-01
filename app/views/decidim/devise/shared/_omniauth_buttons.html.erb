@@ -5,13 +5,7 @@
         <%# Don't display france connect uid when requesting to join a committee %>
         <% next if name == :france_connect_uid && request.env['PATH_INFO'].end_with?("/committee_requests/new") %>
 
-        <%# Don't display france connect uid when creating an initiative %>
-        <% next if name == :france_connect_uid && request.env['PATH_INFO'].end_with?("/initiatives") %>
-
-        <%# Don't display france connect author when signing an initiative %>
-        <% next if name == :france_connect_profile && request.env['PATH_INFO'].include?("/initiatives") && !request.env['PATH_INFO'].end_with?("/initiatives") && !request.env['PATH_INFO'].end_with?("/committee_requests/new") %>
-
-        <% if request.env.dig(:available_authorizations).nil? || request.env.dig(:available_authorizations).include?(name.to_s) %>
+        <% if allowed_omniauth?(name) %>
           <% if I18n.exists?("decidim.omniauth.#{name}.explanation") %>
             <div class="callout">
               <%== t("decidim.omniauth.#{name}.explanation") %>
