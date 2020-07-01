@@ -26,9 +26,7 @@
   <%= yield %>
 <% end %>
 
-<% cache current_organization do %>
-  <%= render partial: "decidim/shared/login_modal" %>
-<% end %>
+<%= render partial: "decidim/shared/login_modal" %>
 
 <%= render partial: "decidim/shared/authorization_modal" %>
 
