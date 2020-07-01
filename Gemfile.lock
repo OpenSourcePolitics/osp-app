@@ -15,6 +15,14 @@ GIT
       decidim-core (~> 0.18.0)
 
 GIT
+  remote: https://github.com/OpenSourcePolitics/decidim-module_cookies.git
+  revision: 12b7b3806f4a5aeee8e1b09b38abffd2ecd4cd5e
+  branch: osp/orejime-0.18
+  specs:
+    decidim-cookies (0.18.0)
+      decidim-core (= 0.18.0)
+
+GIT
   remote: https://github.com/OpenSourcePolitics/decidim-polis.git
   revision: 3fb32818ba678162dfadd2edc7493ca14aee6f31
   branch: 0.18-stable
@@ -825,6 +833,7 @@ DEPENDENCIES
   byebug (~> 10.0)
   dalli
   decidim!
+  decidim-cookies!
   decidim-dev!
   decidim-polis!
   decidim-socio_demographic_authorization_handler!

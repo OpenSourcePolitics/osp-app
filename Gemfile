@@ -17,6 +17,7 @@ gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch:
 # gem "decidim-initiatives", path: "../decidim"
 
 gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git", branch: "0.18-stable"
+gem "decidim-cookies", git: "https://github.com/OpenSourcePolitics/decidim-module_cookies.git", branch: "osp/orejime-0.18"
 gem "decidim-polis", git: "https://github.com/OpenSourcePolitics/decidim-polis.git", branch: "0.18-stable"
 gem "decidim-socio_demographic_authorization_handler", git: "https://github.com/OpenSourcePolitics/decidim-module-socio_demographic_authorization_handler"
 # gem "decidim-socio_demographic_authorization_handler",  path: "../decidim-module-socio_demographic_authorization_handler"
