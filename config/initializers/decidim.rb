@@ -27,6 +27,11 @@ Decidim.configure do |config|
     Decidim::Initiatives.face_to_face_voting_allowed = false
   end
 
+  # Set unconfirmed access delay, default is 2 days
+  # Override devise directly because Decidim config didn't work.
+  # Remove the 2 lines for default settings
+  config.unconfirmed_access_for = 90.days
+  Devise.allow_unconfirmed_access_for = 90.days
 
   # Custom resource reference generator method
   # config.resource_reference_generator = lambda do |resource, feature|
