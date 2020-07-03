@@ -9,7 +9,7 @@ CarrierWave.configure do |config|
   config.enable_processing = !Rails.env.test?
   # This needs to be set for correct attachment file URLs in emails
   # DON'T FORGET to ALSO set this in `config/application.rb`
-  # config.asset_host = "https://your.server.url"
+  config.asset_host = "https://368e05c7-cb9b-405c-a4f6-ecd5ac1e30de.pub.cloud.scaleway.com"
 end
 
 # Setup CarrierWave to use Amazon S3. Add `gem "fog-aws" to your Gemfile.

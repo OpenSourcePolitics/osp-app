@@ -17,7 +17,7 @@ module DevelopmentApp
 
     # This needs to be set for correct images URLs in emails
     # DON'T FORGET to ALSO set this in `config/initializers/carrierwave.rb`
-    # config.action_mailer.asset_host = "https://your.server.url"
+    config.action_mailer.asset_host = "https://368e05c7-cb9b-405c-a4f6-ecd5ac1e30de.pub.cloud.scaleway.com"
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
