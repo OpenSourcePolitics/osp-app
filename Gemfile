@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.18-merge"
+gem "decidim", git: "https://github.com/decidim/decidim.git", branch: "0.21-stable"
 # gem "decidim", path: "../decidim"
 # gem "decidim-map", path: "../decidim-map"
 
@@ -16,11 +16,12 @@ gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch:
 # gem "decidim-consultations", path: "../decidim"
 # gem "decidim-initiatives", path: "../decidim"
 
-# gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git"
+gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git", branch: "0.dev"
+gem "decidim-navbar_links", git: "https://github.com/OpenSourcePolitics/decidim-module-navbar_links", branch: "0.21.0"
 
 gem "bootsnap", "~> 1.3"
 
-gem "puma", "~> 3.0"
+gem "puma", "~> 4.3"
 gem "uglifier", "~> 4.1"
 
 gem "faker", "~> 1.8"
@@ -32,11 +33,12 @@ gem "letter_opener_web", "~> 1.3"
 
 gem "sprockets", "~> 3.7"
 
-group :development, :test do
-  gem "dotenv-rails"
-  gem "byebug", "~> 10.0", platform: :mri
+ gem "dotenv-rails"
 
-  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "0.18-merge"
+group :development, :test do
+  gem "byebug", "~> 11.0", platform: :mri
+
+  gem "decidim-dev", git: "https://github.com/decidim/decidim.git", branch: "0.21-stable"
   # gem "decidim-dev", path: "../decidim"
 end
 

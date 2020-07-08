@@ -17,7 +17,7 @@ module DevelopmentApp
 
     # This needs to be set for correct images URLs in emails
     # DON'T FORGET to ALSO set this in `config/initializers/carrierwave.rb`
-    # config.action_mailer.asset_host = "https://your.server.url"
+    config.action_mailer.asset_host = "https://arcep.osp.cat"
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
