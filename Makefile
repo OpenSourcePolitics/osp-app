@@ -1,33 +1,63 @@
-start: up setup
-
-prod: bg setup
-
-setup:
-	docker-compose run app bundle exec rake db:create decidim:upgrade db:migrate
+migration:
+	docker-compose run app "rails db:migrate"
 
 upgrade:
-	docker-compose run app bundle exec rake decidim:upgrade db:migrate
+	docker-compose run app "rake decidim:upgrade"
 
-seed:
-	docker-compose run -e SEED=true app bundle exec rake db:seed
-
-admin:
-	docker-compose run app echo 'Decidim::System::Admin.new(email: "system@example.org", password: "decidim123456", password_confirmation: "decidim123456)' | bundle exec rails c
+create:
+	docker-compose run app "rake db:create"
 
 up:
 	docker-compose up
 
-down:
-	docker-compose down
-
-bg:
-	docker-compose up -d
-
-release: build push
+prod:
+	docker-compose -f docker-compose.prod.yml up
 
 build:
-	docker build -t osp-app . --tag opensourcepolitics/osp-app:latest --tag opensourcepolitics/osp-app:0.12.0
+	docker-compose build --compress --parallel
 
-push:
-	docker push opensourcepolitics/osp-app:latest
-	docker push opensourcepolitics/osp-app:0.12.0
+drop:
+	docker-compose run app "rake db:drop"
+
+setup:
+	docker-compose run app "rake db:create db:migrate"
+
+seed:
+	docker-compose run app "SEED=true rake db:seed"
+
+precompile:
+	docker-compose run app "RAILS_ENV=production rails assets:precompile"
+
+cache:
+	docker-compose run app "rails tmp:cache:clear assets:clobber"
+
+ssh:
+	docker-compose run app /bin/bash
+
+local-bundle:
+	bundle install
+
+stop-all:
+	 docker stop $$(docker ps -q -a)
+
+prune:
+	@make stop-all
+	docker volume prune
+
+bump:
+	@make local-bundle
+	@make build
+	@make upgrade
+	@make migration
+	@make cache
+	@make precompile
+	@make prod
+
+init:
+	@make create
+	@make migration
+	@make upgrade
+	@make seed
+
+build-no-cache:
+	docker-compose build --no-cache

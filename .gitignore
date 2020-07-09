@@ -24,5 +24,4 @@
 public/uploads
 public/assets
 
-# Passenger
-passenger*.lock
+.env
