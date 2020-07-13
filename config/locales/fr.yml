@@ -20,6 +20,11 @@ fr:
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
+    forms:
+      admin:
+        models:
+          components:
+            title: Le titre
     verifications:
       authorizations:
         first_login:
