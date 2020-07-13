@@ -857,6 +857,7 @@ DEPENDENCIES
   passenger
   puma (~> 4.3)
   ruby-progressbar
+  rubyzip
   sendgrid-ruby
   sentry-raven
   sidekiq
@@ -871,4 +872,4 @@ RUBY VERSION
    ruby 2.5.3p105
 
 BUNDLED WITH
-   2.0.2
+   2.1.4
