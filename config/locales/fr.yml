@@ -1,6 +1,8 @@
 fr:
   activemodel:
     attributes:
+      attachment:
+        weight: Rang d'affichage
       participatory_process:
         private_space: Espace privé
       osp_authorization_handler:

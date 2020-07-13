@@ -30,6 +30,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  activemodel:
+    attributes:
+      attachment:
+        weight: Weight
   layouts:
     decidim:
       footer:
