@@ -25,7 +25,7 @@ if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_requir
   #   # Print functionality enabled. Allows the user to get
   #   # a printed version of the initiative from the administration
   #   # panel.
-  #   config.print_enabled = false
+  config.print_enabled = false
   #
   #   # Set a service to generate a timestamp on each vote. The
   #   # attribute is the name of a class whose instances are
