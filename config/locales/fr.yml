@@ -1,6 +1,8 @@
 fr:
   activemodel:
     attributes:
+      attachment:
+        weight: Rang d'affichage
       participatory_process:
         private_space: Espace privé
       osp_authorization_handler:
@@ -18,6 +20,11 @@ fr:
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
+    forms:
+      admin:
+        models:
+          components:
+            title: Le titre
     verifications:
       authorizations:
         first_login:

@@ -30,6 +30,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  activemodel:
+    attributes:
+      attachment:
+        weight: Weight
+  decidim:
+    forms:
+      admin:
+        models:
+          components:
+            title: Title
   layouts:
     decidim:
       footer:
