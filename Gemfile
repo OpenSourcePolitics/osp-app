@@ -34,11 +34,17 @@ gem "sentry-raven"
 
 gem "activerecord-session_store"
 
-gem "omniauth-oauth2", ">= 1.4.0", "< 2.0"
-gem "omniauth_openid_connect", "0.3.1"
+# gem "omniauth-oauth2", ">= 1.4.0", "< 2.0"
+# gem "omniauth_openid_connect", "0.3.1"
 gem "omniauth-saml", "~> 1.10"
+gem "omniauth-rails_csrf_protection"
 gem "savon", "~> 2.12.0"
-gem "akami", git: "https://github.com/OpenSourcePolitics/akami", branch: "fix-timestamp"
+
+# gem "akami", git: "https://github.com/OpenSourcePolitics/akami", branch: "fix-timestamp"
+# gem "akami", path: "../_lib/akami"
+gem "signer"
+gem "pry"
+gem "http_logger"
 
 gem "dotenv-rails"
 gem "rubyzip", require: "zip"

@@ -33,6 +33,8 @@
 
 # Ignore public uploads
 public/uploads
+public/certs
+public/wsdl
 
 # Elastic Beanstalk Files
 .elasticbeanstalk
@@ -41,6 +43,7 @@ public/uploads
 !.elasticbeanstalk/*.global.yml
 
 **/*/wip
+db/migrate-bkp*
 
 .DS_Store
 .idea

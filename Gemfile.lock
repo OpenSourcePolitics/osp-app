@@ -1,13 +1,4 @@
 GIT
-  remote: https://github.com/OpenSourcePolitics/akami
-  revision: 7ee04d137aeaf13297e2f11a3ded9d526849cf0e
-  branch: fix-timestamp
-  specs:
-    akami (1.3.1)
-      gyoku (>= 0.4.0)
-      nokogiri
-
-GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module-initiatives_nosignature_allowed.git
   revision: 9300411604ce30d5d81593bb4ba7a1fb52fc4500
   branch: alt/petition
@@ -43,7 +34,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 385bb356ceae5b657d914d9af46b045a4f52c478
+  revision: 85cae353dbc0092a3fbc93454007de6504a0b66e
   branch: alt/petition_merge
   specs:
     decidim (0.22.0.dev)
@@ -308,11 +299,12 @@ GEM
       activerecord (>= 3.0)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    aes_key_wrap (1.0.1)
+    akami (1.3.1)
+      gyoku (>= 0.4.0)
+      nokogiri
     anchored (1.1.0)
     arel (9.0.0)
-    ast (2.4.0)
-    attr_required (1.0.1)
+    ast (2.4.1)
     autoprefixer-rails (8.6.5)
       execjs
     axiom-types (0.1.1)
@@ -333,14 +325,13 @@ GEM
       html_tokenizer (~> 0.0.6)
       parser (>= 2.4)
       smart_properties
-    bindata (2.4.7)
     bindex (0.8.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
     browser (2.7.1)
     builder (3.2.4)
     byebug (11.1.1)
-    capybara (3.32.2)
+    capybara (3.33.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -365,6 +356,7 @@ GEM
       cells (>= 4.1.6, < 5.0.0)
     charlock_holmes (0.7.7)
     childprocess (3.0.0)
+    coderay (1.1.3)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     coffee-rails (5.0.0)
@@ -396,7 +388,7 @@ GEM
     declarative-option (0.1.0)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
-    devise (4.7.1)
+    devise (4.7.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
@@ -407,7 +399,7 @@ GEM
     devise_invitable (1.7.5)
       actionmailer (>= 4.1.0)
       devise (>= 4.0.0)
-    diff-lcs (1.3)
+    diff-lcs (1.4.4)
     diffy (3.3.0)
     doc2text (0.4.2)
       nokogiri (~> 1.10.0)
@@ -483,7 +475,7 @@ GEM
     graphiql-rails (1.4.11)
       railties
       sprockets-rails
-    graphql (1.10.10)
+    graphql (1.11.1)
     gyoku (1.3.1)
       builder (>= 2.1.2)
     hashdiff (1.0.1)
@@ -494,10 +486,10 @@ GEM
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    httparty (0.18.0)
+    http_logger (0.6.0)
+    httparty (0.18.1)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
-    httpclient (2.8.3)
     httpi (2.4.4)
       rack
       socksify
@@ -527,10 +519,6 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-tmpl-rails (1.1.0)
       rails (>= 3.1.0)
-    json-jwt (1.11.0)
-      activesupport (>= 4.2)
-      aes_key_wrap
-      bindata
     jwt (2.2.1)
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
@@ -587,7 +575,7 @@ GEM
     netrc (0.11.0)
     newrelic_rpm (6.11.0.365)
     nio4r (2.5.2)
-    nobspw (0.6.1)
+    nobspw (0.6.2)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     nori (2.6.0)
@@ -622,40 +610,29 @@ GEM
     omniauth-twitter (1.4.0)
       omniauth-oauth (~> 1.1)
       rack
-    omniauth_openid_connect (0.3.1)
-      addressable (~> 2.5)
-      omniauth (~> 1.3)
-      openid_connect (~> 1.1)
-    openid_connect (1.1.8)
-      activemodel
-      attr_required (>= 1.0.0)
-      json-jwt (>= 1.5.0)
-      rack-oauth2 (>= 1.6.1)
-      swd (>= 1.0.0)
-      tzinfo
-      validate_email
-      validate_url
-      webfinger (>= 1.0.1)
     origami (2.1.0)
       colorize (~> 0.7)
     orm_adapter (0.5.0)
     paper_trail (10.3.1)
       activerecord (>= 4.2)
       request_store (~> 1.1)
-    parallel (1.19.1)
-    parser (2.7.1.3)
-      ast (~> 2.4.0)
+    parallel (1.19.2)
+    parser (2.7.1.4)
+      ast (~> 2.4.1)
     pg (1.1.4)
     pg_search (2.3.2)
       activerecord (>= 5.2)
       activesupport (>= 5.2)
-    premailer (1.11.1)
+    premailer (1.12.1)
       addressable
       css_parser (>= 1.6.0)
       htmlentities (>= 4.0.0)
     premailer-rails (1.11.1)
       actionmailer (>= 3)
       premailer (~> 1.7, >= 1.7.9)
+    pry (0.13.1)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
     public_suffix (4.0.4)
     puma (4.3.3)
       nio4r (~> 2.0)
@@ -664,12 +641,6 @@ GEM
       rack (>= 1.0, < 3)
     rack-cors (1.1.1)
       rack (>= 2.0.0)
-    rack-oauth2 (1.12.0)
-      activesupport
-      attr_required
-      httpclient
-      json-jwt (>= 1.11.0)
-      rack (< 2.1)
     rack-protection (2.0.8.1)
       rack
     rack-test (1.1.0)
@@ -687,10 +658,10 @@ GEM
       bundler (>= 1.3.0)
       railties (= 5.2.4.2)
       sprockets-rails (>= 2.0.0)
-    rails-controller-testing (1.0.4)
-      actionpack (>= 5.0.1.x)
-      actionview (>= 5.0.1.x)
-      activesupport (>= 5.0.1.x)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -775,7 +746,7 @@ GEM
     rubocop-rails (2.0.1)
       rack (>= 1.1)
       rubocop (>= 0.70.0)
-    rubocop-rspec (1.39.0)
+    rubocop-rspec (1.41.0)
       rubocop (>= 0.68.1)
     ruby-ole (1.2.12.2)
     ruby-progressbar (1.10.1)
@@ -812,6 +783,8 @@ GEM
       rack (~> 2.0)
       rack-protection (>= 2.0.0)
       redis (>= 4.1.0)
+    signer (1.9.0)
+      nokogiri (>= 1.5.1)
     simplecov (0.18.5)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -839,10 +812,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    swd (1.1.2)
-      activesupport (>= 3)
-      attr_required (>= 0.0.5)
-      httpclient (>= 2.4)
     system_test_html_screenshots (0.1.2)
       actionpack (>= 5.2, < 6.0.a)
     temple (0.8.2)
@@ -867,12 +836,6 @@ GEM
     valid_email2 (2.3.1)
       activemodel (>= 3.2)
       mail (~> 2.5)
-    validate_email (0.1.6)
-      activemodel (>= 3.0)
-      mail (>= 2.2.5)
-    validate_url (1.0.8)
-      activemodel (>= 3.0.0)
-      public_suffix
     virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -890,14 +853,11 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
-    webfinger (1.1.0)
-      activesupport
-      httpclient (>= 2.4)
     webmock (3.8.3)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
-    websocket-driver (0.7.2)
+    websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     wicked (1.3.4)
@@ -915,7 +875,6 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-session_store
-  akami!
   bootsnap
   byebug (~> 11.0)
   dalli-elasticache
@@ -929,18 +888,20 @@ DEPENDENCIES
   dotenv-rails
   faker (~> 1.9)
   fog-aws
+  http_logger
   letter_opener_web (~> 1.3)
   listen (~> 3.1)
   newrelic_rpm
-  omniauth-oauth2 (>= 1.4.0, < 2.0)
+  omniauth-rails_csrf_protection
   omniauth-saml (~> 1.10)
-  omniauth_openid_connect (= 0.3.1)
+  pry
   puma
   ruby-progressbar
   rubyzip
   savon (~> 2.12.0)
   sentry-raven
   sidekiq
+  signer
   spring (~> 2.0)
   spring-watcher-listen (~> 2.0)
   uglifier

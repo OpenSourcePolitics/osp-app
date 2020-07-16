@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_09_190701) do
+ActiveRecord::Schema.define(version: 2020_07_16_134200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -118,6 +118,8 @@ ActiveRecord::Schema.define(version: 2020_06_09_190701) do
     t.bigint "decidim_organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "color"
+    t.string "logo"
     t.index ["area_type_id"], name: "index_decidim_areas_on_area_type_id"
     t.index ["decidim_organization_id"], name: "index_decidim_areas_on_decidim_organization_id"
   end
@@ -637,6 +639,7 @@ ActiveRecord::Schema.define(version: 2020_06_09_190701) do
     t.boolean "no_signature_allowed", default: false
     t.boolean "custom_signature_end_date_enabled", default: false, null: false
     t.boolean "area_enabled", default: false, null: false
+    t.boolean "attachments_enabled", default: false, null: false
     t.index ["decidim_organization_id"], name: "index_decidim_initiative_types_on_decidim_organization_id"
   end
 
@@ -913,12 +916,12 @@ ActiveRecord::Schema.define(version: 2020_06_09_190701) do
     t.boolean "user_groups_enabled", default: false, null: false
     t.jsonb "colors", default: {}
     t.jsonb "smtp_settings"
+    t.string "deepl_api_key"
     t.boolean "force_users_to_authenticate_before_access_organization", default: false
     t.jsonb "omniauth_settings"
     t.boolean "rich_text_editor_in_public_views", default: false
     t.jsonb "admin_terms_of_use_body"
     t.string "time_zone", limit: 255, default: "UTC"
-    t.string "deepl_api_key"
     t.index ["host"], name: "index_decidim_organizations_on_host", unique: true
     t.index ["name"], name: "index_decidim_organizations_on_name", unique: true
   end

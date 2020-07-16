@@ -58,6 +58,22 @@ en:
           invalid_field: "%{field} is not valid. %{value}"
           ok: Close
           title: Action forbidden
+    system:
+      organizations:
+        omniauth_settings:
+          saml:
+            provider_name: Provider name
+            icon_path: Icon path
+            idp_sso_target_url: Provider URL (idp_sso_target_url)
+            assertion_consumer_service_url: Callback URL (assertion_consumer_service_url)
+            authn_context: Authentication context (authn_context)
+            issuer: Issuer URL
+            idp_slo_target_url: Logout URL (idp_slo_target_url)
+            idp_cert_fingerprint : Certificate fingerprint
+            idp_cert: Certificate
+            idp_key: Certificate private key
+            enable_scope_mapping: 'Enable scope mapping ("true" or "false")'
+            scope_mapping_level_id: Scope mapping level Id (scope_type_id)
     verifications:
       authorizations:
         index:
