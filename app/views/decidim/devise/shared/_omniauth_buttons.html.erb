@@ -9,9 +9,7 @@
           <% if allowed_omniauth?(name) %>
             <% if I18n.exists?("decidim.omniauth.#{name}.explanation") %>
               <div class="callout">
-                <p>
-                  <%== t("decidim.omniauth.#{name}.explanation") %>
-                </p>
+                <p><%== t("decidim.omniauth.#{name}.explanation") %></p>
                 <div class="social-register">
                   <% if provider[:button_path].present? %>
                     <%= link_to decidim.send("user_#{name}_omniauth_authorize_path"), class: "button button--social--custom", method: :post do %>
