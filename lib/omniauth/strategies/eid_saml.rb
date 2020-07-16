@@ -13,8 +13,6 @@ module OmniAuth
       option :name, :saml
 
       option :origin_param, 'redirect_url'
-      option :person_services,
-             proxy: ''
 
       option :authn_context_comparison, 'minimum'
       option :name_identifier_format, 'urn:oasis:names:tc:SAML:2.0:nameid-format:transient'
@@ -43,6 +41,14 @@ module OmniAuth
              digest_method: XMLSecurity::Document::SHA1,
              signature_method: XMLSecurity::Document::RSA_SHA1,
              embed_sign: false
+
+      option :person_services_wsdl, nil
+      option :person_services_cert, nil
+      option :person_services_ca_cert, nil
+      option :person_services_key, nil
+      option :person_services_secret, nil
+      option :person_services_proxy, nil
+      option :person_services_fallback_rrn, nil
 
       option :enable_scope_mapping, false
       option :scope_mapping_level_id, nil
@@ -85,7 +91,7 @@ module OmniAuth
               @person_services_response = person_services_request(options.merge(settings: settings), find_attribute_by(options.attribute_statements['rrn']))
             rescue Savon::SOAPFault => e
               Rails.logger.error e.to_hash
-              @person_services_response = person_services_request(options.merge(settings: settings), options[:person_services][:fallbackRRN])
+              @person_services_response = person_services_request(options.merge(settings: settings), options[:person_services_fallback_rrn])
               # session["person_services_message_id"] = e.to_hash.dig(:"soapenv:fault", :detail, :message_id)
               # session["person_services_error"] = e.message
               # session["person_services_error_code"] = e.to_hash.dig(:"soapenv:fault", :detail, :"err:error", :code, :code)
@@ -108,13 +114,14 @@ module OmniAuth
       def person_services_request(opts, person_id)
         Rails.logger.debug "PersonServices request initiated for #{person_id}..."
 
-        pem_file = Rails.root.join('public', 'certs/osp_monopinion_int.bosa.be_terena_ssl_ca_3_.pem')
-        # key_file = Rails.root.join("public", "certs/osp_monopinion_int.bosa.be_terena_ssl_ca_3_.key")
-        password = opts[:person_services][:secret]
+        cert_file = opts[:person_services_cert]
+        ca_cert_file = opts[:person_services_cert]
+        key_file = opts[:person_services_key]
+        password = opts[:person_services_secret]
 
         ps_client = Savon.client(
-          wsdl: Rails.root.join('public', 'wsdl/csr/CPS_GetPersonService_1.wsdl'),
-          proxy: opts[:person_services][:proxy],
+          wsdl: opts[:person_services_wsdl],
+          proxy: opts[:person_services_proxy],
 
           log: true,
           logger: Logger.new(STDOUT),
@@ -153,8 +160,8 @@ module OmniAuth
 
           # Sign xml using Signer
           signer = Signer.new(doc.to_xml(encoding: 'UTF-8', indent: 0))
-          signer.cert = OpenSSL::X509::Certificate.new(File.read(pem_file))
-          signer.private_key = OpenSSL::PKey::RSA.new(File.read(pem_file), password)
+          signer.cert = OpenSSL::X509::Certificate.new(OneLogin::RubySaml::Utils.format_cert(cert_file + ca_cert_file))
+          signer.private_key = OpenSSL::PKey::RSA.new(OneLogin::RubySaml::Utils.format_private_key(key_file), password)
           signer.ds_namespace_prefix = 'ds'
 
           signer.document.xpath('//soapenv:Body').each do |node|
@@ -176,48 +183,6 @@ module OmniAuth
           Rails.logger.debug response.body
           return response.body
         end
-      end
-
-      # Return a properly formatted x509 certificate
-      #
-      # @param cert [String] The original certificate
-      # @return [String] The formatted certificate
-      #
-      def format_cert(cert)
-        OneLogin::RubySaml::Utils.format_cert(cert)
-      end
-
-      # Return a properly formatted private key
-      #
-      # @param key [String] The original private key
-      # @return [String] The formatted private key
-      #
-      # Adapted from OneLogin::RubySaml::Utils.format_private_key
-      # to manage encryption lines
-      # see https://github.com/onelogin/ruby-saml/blob/c652374ddfee884f260bce2eb1eb1e63161304f6/lib/onelogin/ruby-saml/utils.rb#L66
-      def format_private_key(key)
-        # don't try to format an encoded private key or if is empty
-        return key if key.nil? || key.empty? || key.match(/\x0d/)
-
-        # is this an rsa key?
-        rsa_key = key.match('RSA PRIVATE KEY')
-        key = key.gsub(/\-{5}\s?(BEGIN|END)( RSA)? PRIVATE KEY\s?\-{5}/, '')
-
-        encryption_headers = ''
-        if key.match(/\S*\-\S*: \S*/)
-          key.scan(/\S*\-\S*: \S*/).each do |header|
-            encryption_headers += "#{header}\n"
-            key = key.gsub(header, '')
-          end
-          encryption_headers += "\n"
-        end
-        key = key.gsub(/\n/, '')
-        key = key.gsub(/\r/, '')
-        key = key.gsub(/\s/, '')
-        key = key.scan(/.{1,64}/)
-        key = key.join("\n")
-        key_label = rsa_key ? 'RSA PRIVATE KEY' : 'PRIVATE KEY'
-        "-----BEGIN #{key_label}-----\n#{encryption_headers}#{key}\n-----END #{key_label}-----"
       end
     end
   end

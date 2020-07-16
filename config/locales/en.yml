@@ -72,6 +72,13 @@ en:
             idp_cert_fingerprint : Certificate fingerprint
             idp_cert: Certificate
             idp_key: Certificate private key
+            person_services_wsdl: Person Services WSDL URL
+            person_services_cert: Person Services Certificate
+            person_services_ca_cert: Person Services CA Certificate
+            person_services_key: Person Services private key
+            person_services_secret: Person Services private key secret
+            person_services_proxy: Person Services proxy URL
+            person_services_fallback_rrn: Person Services fallback RRN
             enable_scope_mapping: 'Enable scope mapping ("true" or "false")'
             scope_mapping_level_id: Scope mapping level Id (scope_type_id)
     verifications:
