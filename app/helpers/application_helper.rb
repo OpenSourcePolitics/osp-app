@@ -25,8 +25,12 @@ module ApplicationHelper
   end
 
   def request_available_authorizations
-    return "" if request.env.dig(:available_authorizations).nil? || request.env.dig(:available_authorizations).empty?
+    return '' if request.env.dig(:available_authorizations).nil? || request.env.dig(:available_authorizations).empty?
 
-    "/" + request.env.dig(:available_authorizations).join("-")
+    '/' + request.env.dig(:available_authorizations).join('-')
+  end
+
+  def existing_author?(author_id)
+    Decidim::User.find(author_id).delete_reason.nil?
   end
 end
