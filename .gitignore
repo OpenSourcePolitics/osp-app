@@ -43,6 +43,8 @@ public/uploads
 !.elasticbeanstalk/*.global.yml
 
 **/*/wip
+db/migrate-bkp*
+
 
 .DS_Store
 .idea
