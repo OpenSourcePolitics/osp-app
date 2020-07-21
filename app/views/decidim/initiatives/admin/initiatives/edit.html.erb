@@ -12,7 +12,7 @@
         <%= current_initiative.author.name %>
       </div>
       <div class="author--actions">
-        <% if authorizations.any? && authorizations.first.metadata.present? %>
+        <% if authorizations.any? && authorizations.first.metadata.present? && existing_author?(current_initiative.decidim_author_id) %>
           <%= metadata_modal_button_to authorizations.first, method: :get, remote: true, class: "button tiny hollow" do %>
             <%= icon "shield" %>
             <%= t "actions.metadata", scope: "decidim.verifications.omniauth.admin.authorizations.index" %>
