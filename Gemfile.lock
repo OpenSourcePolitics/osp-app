@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/armandfardeau/decidim
-  revision: 698d1cf99fe11b558cd81cd468258d672253f2dd
+  revision: 71351da6636a727019ef5dc0db04442c44ed3802
   branch: feature/draggable-cursor-on-proposal-map
   specs:
     decidim (0.23.0.dev)
