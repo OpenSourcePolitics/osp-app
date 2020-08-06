@@ -1,0 +1,216 @@
+---
+nl:
+  activemodel:
+    attributes:
+      initiative:
+        signature_type_values:
+          offline: Offline
+          online: Online
+  carrierwave:
+    errors:
+      image_too_big: Image too big
+  decidim:
+    accessibility:
+      skip_button: Skip button
+    admin:
+      actions:
+        publish: Publish
+        unpublish: Unpublish
+      organization_appearance:
+        form:
+          colors_title: Colors title
+          cta_button_path_help: Cta button path help
+          cta_button_text_help: Cta button text help
+          header_snippets_help: Header snippets help
+          homepage_appearance_title: Homepage appearance title
+          homepage_highlighted_content_banner_title: Homepage highlighted content
+            banner title
+          layout_appearance_title: Layout appearance title
+          omnipresent_banner_appearance_title: Omnipresent banner appearance title
+    anonymous_user: Anonymous user
+    authorization_handlers:
+      admin:
+        decidim:
+          help: '["Validate with an external Decidim account"]'
+        dummy_authorization_handler:
+          help: '["Validate with your external Decidim account"]'
+        saml:
+          help: '["Validate with a CSAM eID account"]'
+      decidim:
+        explanation: Validate with your external Decidim account
+        name: Omniauth Decidim
+      dummy_authorization_handler:
+        explanation: Add additional informations to your account
+        name: BOSA dummy authorization
+      expired_at: Expired at
+      expires_at: Expires at
+      granted_at: Granted at
+      omniauth_anti_affinity:
+        explanation: Explanation
+      saml:
+        explanation: Validate with your CSAM eID account
+        name: CSAM eID
+      started_at: Started at
+    authorization_modals:
+      content:
+        missing:
+          explanation: Explanation
+        unauthorized:
+          explanation: Sorry, you are not allowed to perfom this action
+          invalid_field: "%{field} is not valid. %{value}"
+          ok: Close
+          title: Action forbidden
+        unconfirmed:
+          confirmation_instructions: Confirmation instructions
+          explanation_html: Explanation html
+          request_confirmation_instructions: Request confirmation instructions
+          title: Title
+    devise:
+      omniauth_registrations:
+        new:
+          complete_profile: Complete profile
+          sign_up: Sign up
+          subtitle: Subtitle
+      sessions:
+        new:
+          are_you_new?: Are you new?
+          register: Register
+          sign_in_disabled: Sign in disabled
+          sign_up_disabled: Sign up disabled
+      shared:
+        omniauth_buttons:
+          or: Or
+    initiatives:
+      admin:
+        answers:
+          info_initiative:
+            created_at: Created at
+            description: Description
+            initiative_votes_count: Initiative votes count
+            initiatives: Initiatives
+            state: State
+        initiatives:
+          edit:
+            accept: Accept
+            confirm: Confirm
+            discard: Discard
+            export_pdf_signatures: Export pdf signatures
+            export_votes: Export votes
+            reject: Reject
+            send_to_technical_validation: Send to technical validation
+            update: Update
+          form:
+            help_text: Help text
+            title: Title
+      create_initiative:
+        fill_data:
+          back: Back
+          continue: Continue
+          fill_data_help: Fill data help
+          help_text: Help text
+          initiative_type: Initiative type
+          more_information: More information
+          select_scope: Select scope
+        previous_form:
+          back: Back
+          continue: Continue
+          help: Help
+      initiatives:
+        edit:
+          attachment_legend: Attachment legend
+        filters:
+          any: Any
+          area: Area
+          author: Author
+          myself: Myself
+          search: Search
+          state: State
+          type: Type
+      initiatives_mailer:
+        creation_subject: Creation subject
+        footer: Footer
+        initiative_link:
+          check_initiative_details: Check initiative details
+          here: Here
+        more_information: More information
+    omniauth:
+      france_connect:
+        external:
+          link: Link
+          text: Text
+    shared:
+      login_modal:
+        please_sign_in: Please sign in
+        sign_up: Sign up
+    system:
+      organizations:
+        omniauth_settings:
+          saml:
+            assertion_consumer_service_url: Callback URL (assertion_consumer_service_url)
+            authn_context: Authentication context (authn_context)
+            enable_scope_mapping: Enable scope mapping ("true" or "false")
+            icon_path: Icon path
+            idp_cert: Certificate
+            idp_cert_fingerprint: Certificate fingerprint
+            idp_key: Certificate private key
+            idp_slo_target_url: Logout URL (idp_slo_target_url)
+            idp_sso_target_url: Provider URL (idp_sso_target_url)
+            issuer: Issuer URL
+            provider_name: Provider name
+            scope_mapping_level_id: Scope mapping level Id (scope_type_id)
+    verifications:
+      authorizations:
+        first_login:
+          actions:
+            dummy_authorization_handler: Add additional informations to your account
+            saml: Validate with your CSAM eID account
+        index:
+          title: Authorizations list
+      metadata:
+        content:
+          active_email: Active email
+          title: Title
+      omniauth:
+        admin:
+          authorizations:
+            index:
+              actions:
+                metadata: Metadata
+  devise:
+    mailer:
+      confirmation_instructions:
+        action: Action
+        greeting: Greeting
+        instruction: Instruction
+      email_changed:
+        action: Action
+        greeting: Greeting
+        instruction: Instruction
+    sessions:
+      new:
+        sign_in: Sign in
+    shared:
+      links:
+        forgot_your_password: Forgot your password
+        sign_in_with_provider: Sign in with provider
+        signed_in_with_provider: Signed in with provider
+  layouts:
+    decidim:
+      cookie_warning:
+        description_html: Description html
+        link_label: Link label
+        ok: Ok
+      footer:
+        download_open_data: Open data
+        made_with_open_source: Made with open source
+      header:
+        close_menu: Close menu
+        navigation: Navigation
+        sign_in: Sign in
+        sign_up: Sign up
+      mailer:
+        footer: Footer
+      user_menu:
+        sign_out: Sign out
+      user_profile:
+        back_to_account: Back to account
