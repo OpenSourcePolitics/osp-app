@@ -880,6 +880,7 @@ ActiveRecord::Schema.define(version: 2020_07_20_153424) do
     t.integer "position"
     t.jsonb "cta_text", default: {}
     t.string "cta_path"
+    t.jsonb "action_btn_text"
     t.index ["decidim_participatory_process_id", "active"], name: "unique_index_to_avoid_duplicate_active_steps", unique: true, where: "(active = true)"
     t.index ["decidim_participatory_process_id", "position"], name: "index_unique_position_for_process", unique: true
     t.index ["decidim_participatory_process_id"], name: "index_decidim_processes_steps__on_decidim_process_id"
