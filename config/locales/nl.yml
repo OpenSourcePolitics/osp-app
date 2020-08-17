@@ -69,6 +69,12 @@ nl:
       omniauth_registrations:
         new:
           complete_profile: Complete profile
+          registration_info: |-
+            Registration info (this text supports <code>HTML</code>).
+            <br/><br/>
+            <small>
+              <i>Please change me with translation key <code>decidim.devise.omniauth_registrations.new.registration_info</code><i/>
+            <small/>
           sign_up: Sign up
           subtitle: Subtitle
       sessions:

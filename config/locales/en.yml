@@ -58,6 +58,15 @@ en:
           invalid_field: "%{field} is not valid. %{value}"
           ok: Close
           title: Action forbidden
+    devise:
+      omniauth_registrations:
+        new:
+          registration_info: |-
+            Registration info (this text supports <code>HTML</code>).
+            <br/><br/>
+            <small>
+              <i>Please change me with translation key <code>decidim.devise.omniauth_registrations.new.registration_info</code><i/>
+            <small/>
     system:
       organizations:
         omniauth_settings:

@@ -61,14 +61,20 @@ module OmniAuth
 
         hash_attributes = Hash[found_attributes]
 
+        hash_attributes["name"] = "#{hash_attributes["last_name"]} #{hash_attributes["first_name"]}"
+
+        if hash_attributes["first_name"].present? && hash_attributes["last_name"].present?
+          hash_attributes["nickname"] = "#{hash_attributes["first_name"].split(" ").first}#{hash_attributes["last_name"][0]}".downcase
+        end
+
         if @person_services_response.present?
           official_birth_date_day = @person_services_response.dig(:"v3:get_person_response", :"v2:basic_natural_person", :"v21:basic_person", :"v21:official_birth_date", :"v22:day")
           official_birth_date_month = @person_services_response.dig(:"v3:get_person_response", :"v2:basic_natural_person", :"v21:basic_person", :"v21:official_birth_date", :"v22:month")
           official_birth_date_year = @person_services_response.dig(:"v3:get_person_response", :"v2:basic_natural_person", :"v21:basic_person", :"v21:official_birth_date", :"v22:century") + @person_services_response.dig(:"v3:get_person_response", :"v2:basic_natural_person", :"v21:basic_person", :"v21:official_birth_date", :"v22:year")
 
-          hash_attributes[:official_birth_date] = Date.strptime("#{official_birth_date_day}/#{official_birth_date_month}/#{official_birth_date_year}", '%d/%m/%Y')
-          hash_attributes[:postal_code] = @person_services_response.dig(:"v3:get_person_response", :"v2:basic_natural_person", :"v1:address", :"v1:structured_address", :"v1:municipality", :"v11:code")
-          hash_attributes[:municipality] = @person_services_response.dig(:"v3:get_person_response", :"v2:basic_natural_person", :"v1:address", :"v1:structured_address", :"v1:municipality", :"v11:description")
+          hash_attributes["official_birth_date"] = Date.strptime("#{official_birth_date_day}/#{official_birth_date_month}/#{official_birth_date_year}", '%d/%m/%Y')
+          hash_attributes["postal_code"] = @person_services_response.dig(:"v3:get_person_response", :"v2:basic_natural_person", :"v1:address", :"v1:structured_address", :"v1:municipality", :"v11:code")
+          hash_attributes["municipality"] = @person_services_response.dig(:"v3:get_person_response", :"v2:basic_natural_person", :"v1:address", :"v1:structured_address", :"v1:municipality", :"v11:description")
         end
 
         if ActiveModel::Type::Boolean.new.cast(options[:enable_scope_mapping]) && hash_attributes[:postal_code].present?
@@ -107,6 +113,8 @@ module OmniAuth
               session["person_services_error"] = "#{e.class} : #{e.message}"
             end
           end
+
+          @response_object = nil
           yield
         end
       end

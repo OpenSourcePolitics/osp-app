@@ -68,6 +68,15 @@ fr:
           invalid_field: "%{field} n'est pas valide. %{value}"
           ok: Fermer
           title: Action impossible
+    devise:
+      omniauth_registrations:
+        new:
+          registration_info: |-
+            Texte d'information pour la création de compte qui supporte le <code>HTML</code>.
+            <br/><br/>
+            <small>
+              <i>Please change me with translation key <code>decidim.devise.omniauth_registrations.new.registration_info</code><i/>
+            <small/>
     pages:
       terms_and_conditions:
         refuse:

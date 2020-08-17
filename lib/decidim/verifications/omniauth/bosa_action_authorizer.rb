@@ -10,7 +10,7 @@ module Decidim
           status_code, data = *super
           minimum_age = manifest&.minimum_age
 
-          if status_code == :ok && action == "vote" && minimum_age.present? && has_minimum_age?(minimum_age)
+          if status_code == :ok && action == "vote" && minimum_age.present? && under_minimum_age?(minimum_age)
             status_code = :unauthorized
             data[:fields] = { "date_of_birth" => I18n.t("decidim.verifications.omniauth.errors.minimum_age", minimum_age: minimum_age, locale: authorization.user.locale) }
           end
@@ -18,9 +18,9 @@ module Decidim
           [status_code, data]
         end
 
-        def has_minimum_age?(minimum_age)
-          authorization.metadata[:date_of_birth].present? &&
-            (((Time.zone.now - authorization.metadata[:date_of_birth].to_time) / 1.year.seconds).floor < minimum_age)
+        def under_minimum_age?(minimum_age)
+          authorization.metadata[:official_birth_date].present? &&
+            (((Time.zone.now - authorization.metadata[:official_birth_date].to_time) / 1.year.seconds).floor < minimum_age)
         end
 
         def manifest
