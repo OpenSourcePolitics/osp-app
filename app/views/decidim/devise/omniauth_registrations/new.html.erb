@@ -17,8 +17,9 @@
       <div class="card">
         <div class="card__content">
           <%= decidim_form_for(@form, as: resource_name, url: omniauth_registrations_path(resource_name), html: { class: "register-form new_user" }) do |f| %>
+
             <div class="field">
-              <%= f.text_field :name, readonly: true %>
+              <%= f.text_field :name, readonly: @form.name.present? %>
             </div>
 
             <div class="field">
