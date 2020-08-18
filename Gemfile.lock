@@ -16,17 +16,6 @@ GIT
       decidim-core
 
 GIT
-  remote: https://github.com/Platoniq/decidim-module-comparative_stats
-  revision: 6202e984f11837e009f1310e5c23d49b1a968be0
-  specs:
-    decidim-comparative_stats (1.0)
-      chartkick (~> 3.3)
-      decidim-admin (>= 0.21.0.pre.dev)
-      decidim-core (>= 0.21.0.pre.dev)
-      graphlient (~> 0.3)
-      jquery-tmpl-rails (~> 1.1)
-
-GIT
   remote: https://github.com/Platoniq/decidim-module-decidim_awesome
   revision: c5d778ca2eef05f2609c6978b196cb363331d5f7
   specs:
@@ -34,30 +23,6 @@ GIT
       decidim-admin (>= 0.20.0)
       decidim-core (>= 0.20.0)
       redcarpet (~> 3.4)
-
-GIT
-  remote: https://github.com/Platoniq/decidim-module-navigation_maps
-  revision: 4800178303d77c29259b9d81829d91672ddfd1be
-  specs:
-    decidim-navigation_maps (1.0)
-      decidim-admin (>= 0.18.0)
-      decidim-core (>= 0.18.0)
-
-GIT
-  remote: https://github.com/Platoniq/decidim-verifications-direct_verifications
-  revision: 9f710c92a6c5f56ca99cf0c19c3d484ad37c3e29
-  specs:
-    decidim-direct_verifications (0.20)
-      decidim-admin (>= 0.17.0)
-      decidim-core (>= 0.17.0)
-
-GIT
-  remote: https://github.com/alabs/decidim-module-calendar
-  revision: 16a884b9077f295ddbeea44847bcc162c5da4ca0
-  specs:
-    decidim-calendar (0.19.0)
-      decidim-admin (>= 0.19.0)
-      decidim-core (>= 0.19.0)
 
 GIT
   remote: https://github.com/decidim/decidim.git
@@ -309,9 +274,11 @@ GEM
       activerecord (>= 3.0)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    aes_key_wrap (1.0.1)
     anchored (1.1.0)
     arel (9.0.0)
     ast (2.4.1)
+    attr_required (1.0.1)
     autoprefixer-rails (8.6.5)
       execjs
     axiom-types (0.1.1)
@@ -332,6 +299,7 @@ GEM
       html_tokenizer (~> 0.0.6)
       parser (>= 2.4)
       smart_properties
+    bindata (2.4.7)
     bindex (0.8.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
@@ -362,7 +330,6 @@ GEM
       actionpack (>= 3.0)
       cells (>= 4.1.6, < 5.0.0)
     charlock_holmes (0.7.7)
-    chartkick (3.3.1)
     childprocess (3.0.0)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -445,8 +412,6 @@ GEM
       i18n (>= 0.7)
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
-    faraday_middleware (1.0.0)
-      faraday (~> 1.0)
     ffi (1.9.25)
     file_validators (2.3.0)
       activemodel (>= 3.2)
@@ -487,14 +452,7 @@ GEM
     graphiql-rails (1.4.11)
       railties
       sprockets-rails
-    graphlient (0.4.0)
-      faraday (>= 1.0)
-      faraday_middleware
-      graphql-client
     graphql (1.11.1)
-    graphql-client (0.16.0)
-      activesupport (>= 3.0)
-      graphql (~> 1.8)
     hashdiff (1.0.1)
     hashie (3.6.0)
     highline (2.0.3)
@@ -506,6 +464,7 @@ GEM
     httparty (0.18.1)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
+    httpclient (2.8.3)
     i18n (1.8.3)
       concurrent-ruby (~> 1.0)
     i18n-tasks (0.9.31)
@@ -532,6 +491,10 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-tmpl-rails (1.1.0)
       rails (>= 3.1.0)
+    json-jwt (1.13.0)
+      activesupport (>= 4.2)
+      aes_key_wrap
+      bindata
     jwt (2.2.1)
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
@@ -624,6 +587,20 @@ GEM
     omniauth-twitter (1.4.0)
       omniauth-oauth (~> 1.1)
       rack
+    omniauth_openid_connect (0.3.3)
+      addressable (~> 2.5)
+      omniauth (~> 1.9)
+      openid_connect (~> 1.1)
+    openid_connect (1.2.0)
+      activemodel
+      attr_required (>= 1.0.0)
+      json-jwt (>= 1.5.0)
+      rack-oauth2 (>= 1.6.1)
+      swd (>= 1.0.0)
+      tzinfo
+      validate_email
+      validate_url
+      webfinger (>= 1.0.1)
     orm_adapter (0.5.0)
     paper_trail (10.3.1)
       activerecord (>= 4.2)
@@ -654,6 +631,12 @@ GEM
       rack (>= 1.0, < 3)
     rack-cors (1.1.1)
       rack (>= 2.0.0)
+    rack-oauth2 (1.10.1)
+      activesupport
+      attr_required
+      httpclient
+      json-jwt (>= 1.11.0)
+      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.4.3)
@@ -823,6 +806,10 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    swd (1.2.0)
+      activesupport (>= 3)
+      attr_required (>= 0.0.5)
+      httpclient (>= 2.4)
     system_test_html_screenshots (0.1.2)
       actionpack (>= 5.2, < 6.0.a)
     temple (0.8.2)
@@ -849,6 +836,12 @@ GEM
     valid_email2 (2.3.1)
       activemodel (>= 3.2)
       mail (~> 2.5)
+    validate_email (0.1.6)
+      activemodel (>= 3.0)
+      mail (>= 2.2.5)
+    validate_url (1.0.11)
+      activemodel (>= 3.0.0)
+      public_suffix
     virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -861,6 +854,9 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webfinger (1.1.0)
+      activesupport
+      httpclient (>= 2.4)
     webmock (3.8.3)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
@@ -881,13 +877,9 @@ DEPENDENCIES
   byebug (~> 11.0)
   dalli
   decidim!
-  decidim-calendar!
-  decidim-comparative_stats!
   decidim-decidim_awesome!
   decidim-dev!
-  decidim-direct_verifications!
   decidim-navbar_links!
-  decidim-navigation_maps!
   decidim-term_customizer!
   dotenv-rails
   faker (~> 1.8)
@@ -896,6 +888,7 @@ DEPENDENCIES
   listen (~> 3.1)
   lograge
   newrelic_rpm
+  omniauth_openid_connect
   passenger
   puma (~> 4.3)
   ruby-progressbar

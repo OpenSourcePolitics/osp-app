@@ -30,6 +30,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  decidim:
+    system:
+      organizations:
+        omniauth_settings:
+          gardian_websso:
+            site: Identity provider URL
+            client_id: Client ID
+            client_secret: Client Secret
+            callback_url: Callback URL
+            acr_values: ACR Values
   layouts:
     decidim:
       footer:

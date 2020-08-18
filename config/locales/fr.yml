@@ -18,6 +18,15 @@ fr:
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
+    system:
+      organizations:
+        omniauth_settings:
+          gardian_websso:
+            site: URL du fournisseur d'identité
+            client_id: Client ID
+            client_secret: Client Secret
+            callback_url: Callback URL
+            acr_values: ACR Values
     verifications:
       authorizations:
         first_login:
