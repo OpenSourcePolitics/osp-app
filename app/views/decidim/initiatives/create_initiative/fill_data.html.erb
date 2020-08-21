@@ -9,7 +9,11 @@
   <div class="medium-centered">
     <div class="callout secondary">
       <%== t ".fill_data_help" %>
-      <%= link_to t(".more_information"), decidim.page_path("initiatives"), target: "_blank" %>.
+      <% if Decidim::StaticPage.exists?(slug: "introduire_ou_soutenir_une_petition") %>
+        <%= link_to t(".more_information"), decidim.page_path("introduire_ou_soutenir_une_petition"), target: "_blank" %>.
+      <% elsif Decidim::StaticPage.exists?(slug: "initiatives") %>
+        <%= link_to t(".more_information"), decidim.page_path("initiatives"), target: "_blank" %>.
+      <% end %>
     </div>
   </div>
 </div>

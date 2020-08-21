@@ -257,7 +257,7 @@ nl:
       create_initiative:
         fill_data:
           back: Terug
-          continue: Doorgaan met
+          continue: Ga verder
           fill_data_help: "<ul> <li>Herbekijk de inhoud van je petitie. Is uw titel gemakkelijk te begrijpen? Is het doel van uw petitie duidelijk?</li> <li>Je moet het type handtekening kiezen. Persoonlijk, online of een combinatie van beide</li> <li>Wat is de geografische reikwijdte van het petitie? Stadsdeel?</li> </ul>"
           initiative_type: Petitietype
           more_information: "(Meer informatie)"
@@ -277,7 +277,7 @@ nl:
           page: pagina
         previous_form:
           back: Terug
-          continue: Doorgaan met
+          continue: Ga verder
           help: Waaruit bestaat het petitie? Noteer de titel en beschrijving. We adviseren een korte en bondige titel en een beschrijving gericht op de voorgestelde oplossing.
           more_information: "(Meer informatie)"
         promotal_committee:
@@ -291,7 +291,7 @@ nl:
           select: Ik wil dit petitie promoten
           select_initiative_type_help: Burgerinitiatieven zijn een middel waarmee het burgerschap kan ingrijpen, zodat de gemeenteraad acties kan ondernemen ter verdediging van het algemeen belang die zich binnen de rechtsgebieden van de gemeente bevinden. Welk petitie wil jij lanceren?
         share_committee_link:
-          continue: Doorgaan met
+          continue: Ga verder
           invite_to_committee_help: Link om mensen uit te nodigen die deel zullen uitmaken van de promotorcommissie
         show_similar_initiatives:
           back: Terug
@@ -349,6 +349,8 @@ nl:
           title:
             one: "%{count} petitie"
             other: "%{count} initiatieven"
+        edit:
+          attachment_legend: Een bijlage toevoegen (optioneel)
         filters:
           any: Alle
           author: Auteur
@@ -452,7 +454,7 @@ nl:
         back: Terug
         fill_data: creëren
         finish: Voltooien
-        previous_form: Begin
+        previous_form: Maak uw petitie aan
         promotal_committee: Promotieraad
         select_initiative_type: Kiezen
         show_similar_initiatives: Vergelijken

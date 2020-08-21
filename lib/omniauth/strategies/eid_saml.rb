@@ -70,21 +70,24 @@ module OmniAuth
         if @person_services_response.present?
           official_birth_date_day = @person_services_response.dig(:"v3:get_person_response", :"v2:basic_natural_person", :"v21:basic_person", :"v21:official_birth_date", :"v22:day")
           official_birth_date_month = @person_services_response.dig(:"v3:get_person_response", :"v2:basic_natural_person", :"v21:basic_person", :"v21:official_birth_date", :"v22:month")
-          official_birth_date_year = @person_services_response.dig(:"v3:get_person_response", :"v2:basic_natural_person", :"v21:basic_person", :"v21:official_birth_date", :"v22:century") + @person_services_response.dig(:"v3:get_person_response", :"v2:basic_natural_person", :"v21:basic_person", :"v21:official_birth_date", :"v22:year")
+          official_birth_date_year = "#{@person_services_response.dig(:"v3:get_person_response", :"v2:basic_natural_person", :"v21:basic_person", :"v21:official_birth_date", :"v22:century")}#{@person_services_response.dig(:"v3:get_person_response", :"v2:basic_natural_person", :"v21:basic_person", :"v21:official_birth_date", :"v22:year")}"
 
-          hash_attributes["official_birth_date"] = Date.strptime("#{official_birth_date_day}/#{official_birth_date_month}/#{official_birth_date_year}", '%d/%m/%Y')
+          if official_birth_date_day.present? && official_birth_date_month.present? && official_birth_date_year.present?
+            hash_attributes["official_birth_date"] = Date.strptime("#{official_birth_date_day}/#{official_birth_date_month}/#{official_birth_date_year}", '%d/%m/%Y')
+          end
+
           hash_attributes["postal_code"] = @person_services_response.dig(:"v3:get_person_response", :"v2:basic_natural_person", :"v1:address", :"v1:structured_address", :"v1:municipality", :"v11:code")
           hash_attributes["municipality"] = @person_services_response.dig(:"v3:get_person_response", :"v2:basic_natural_person", :"v1:address", :"v1:structured_address", :"v1:municipality", :"v11:description")
         end
 
-        if ActiveModel::Type::Boolean.new.cast(options[:enable_scope_mapping]) && hash_attributes[:postal_code].present?
-          scope = Decidim::Scope.find_by_code(hash_attributes[:postal_code])
+        if ActiveModel::Type::Boolean.new.cast(options[:enable_scope_mapping]) && hash_attributes["postal_code"].present?
+          scope = Decidim::Scope.find_by_code(hash_attributes["postal_code"])
 
           if options[:scope_mapping_level_id].present?
             scope = scope.part_of_scopes.find { |s| s.scope_type_id.to_s == options[:scope_mapping_level_id] }
           end
 
-          hash_attributes[:scope_id] = scope.id
+          hash_attributes["scope_id"] = scope.id
         end
 
         hash_attributes
@@ -95,9 +98,14 @@ module OmniAuth
           if @response_object.success?
             begin
               @person_services_response = person_services_request(options.merge(settings: settings), find_attribute_by(options.attribute_statements['rrn']))
+              if @person_services_response.present? && @person_services_response.dig(:"v3:get_person_response", :"v1:error").present?
+                Rails.logger.error @person_services_response
+                # @person_services_response = nil
+                @person_services_response = person_services_request(options.merge(settings: settings), options[:person_services_fallback_rrn]) if options[:person_services_fallback_rrn].present?
+              end
             rescue Savon::SOAPFault => e
               Rails.logger.error e.to_hash
-              @person_services_response = person_services_request(options.merge(settings: settings), options[:person_services_fallback_rrn])
+              @person_services_response = person_services_request(options.merge(settings: settings), options[:person_services_fallback_rrn]) if options[:person_services_fallback_rrn].present?
               # session["person_services_message_id"] = e.to_hash.dig(:"soapenv:fault", :detail, :message_id)
               # session["person_services_error"] = e.message
               # session["person_services_error_code"] = e.to_hash.dig(:"soapenv:fault", :detail, :"err:error", :code, :code)
