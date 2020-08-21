@@ -45,6 +45,12 @@ en:
           age: Age
           gender: Gender
           scope_id: Scope
+    components:
+      cookies:
+        jsessionid:
+          description: The JSESSIONID cookie is used to store a session identifier so that New Relic can monitor session counts for an application
+        matomo:
+          description: Allows to track to improve user experience
     proposals:
       proposals:
         proposals:

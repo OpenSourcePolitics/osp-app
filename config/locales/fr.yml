@@ -19,6 +19,11 @@ fr:
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
+    components:
+      jsessionid:
+        description: Le cookie JSESSIONID permet de sauvegarder un identifiant de session. Celui-ci est nécessaire pour permettre à New Relic de monitorer la session
+      matomo:
+        description: Permet de récolter des informations afin d'améliorer l'expérience
     devise:
       omniauth_callbacks:
         saml: e-ID ou via itsme
