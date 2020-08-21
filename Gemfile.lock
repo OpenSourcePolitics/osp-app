@@ -16,8 +16,8 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module_cookies.git
-  revision: 0d2367376ed0783e9a06bbab1f1e42d4004b90ea
-  branch: feature/refactor_osp-0.18
+  revision: a1654c1e75e69f0968306ae6ed65c74eec2e70d0
+  branch: osp/orejime-0.18
   specs:
     decidim-cookies (0.18.0)
       decidim-core (= 0.18.0)
