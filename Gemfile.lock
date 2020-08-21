@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module-initiatives_nosignature_allowed.git
-  revision: 9300411604ce30d5d81593bb4ba7a1fb52fc4500
+  revision: 6e8666c0f5f8600df140b61ec24be076216490e9
   branch: alt/petition
   specs:
     decidim-initiatives_no_signature_allowed (0.22.0.dev)
