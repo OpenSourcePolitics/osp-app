@@ -3,13 +3,13 @@
 require "decidim/core"
 
 
-desc "Usage: rake get_person <host> <provider>"
+desc "Usage: rake get_person <host> <provider> [<RRN>]"
 task get_person: :environment do |task|
   ARGV.each { |a| task a.to_sym do ; end }
 
-  if ARGV.count != 3
+  if ARGV.count < 3
     Rails.logger.error "Missing arguments ! Found : #{ARGV.drop(1)}"
-    Rails.logger.error "Usage: rake get_person <host> <provider>"
+    Rails.logger.error "Usage: rake get_person <host> <provider> [<RRN>]"
     exit 1
   end
 
@@ -36,7 +36,13 @@ task get_person: :environment do |task|
     Rails.logger.debug v
   end
 
-  person_services_request(@person_services_options, @person_services_options[:person_services_fallback_rrn])
+  @rrn = ARGV[3] || @person_services_options[:person_services_fallback_rrn]
+
+  if @rrn.blank?
+    Rails.logger.error "Missing RRN either as last task argument or in :person_services_fallback_rrn settings"
+  end
+
+  person_services_request(@person_services_options, @rrn)
 
   Rails.logger.close
   exit
