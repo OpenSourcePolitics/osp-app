@@ -1,12 +1,8 @@
 fr:
   activemodel:
     attributes:
-      newsletter:
-        body: Description
       participatory_process:
         private_space: Espace privé
-      proposal:
-        address: Adresse
       osp_authorization_handler:
         document_number: Numéro unique
         postal_code: Code postal
@@ -22,16 +18,16 @@ fr:
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
-    menu:
-      more_information: Plus d'informations
-    scopes:
-      global: Toute la ville
     verifications:
       authorizations:
         first_login:
           actions:
             osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
             osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+  layouts:
+    decidim:
+      footer:
+        download_open_data: Données ouvertes
   devise:
     invitations:
       user:

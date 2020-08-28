@@ -30,6 +30,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  layouts:
+    decidim:
+      footer:
+        download_open_data: Open data
   hello: Hello world
   devise:
     invitations:
