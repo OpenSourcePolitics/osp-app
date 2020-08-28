@@ -121,7 +121,7 @@
           <%= yield %>
         </main>
       </div><!-- /.footer-separator -->
-      <% cache current_organization do %>
+      <% cache [current_organization, current_locale] do %>
         <%= render partial: "layouts/decidim/main_footer" %>
         <%= render partial: "layouts/decidim/mini_footer" %>
       <% end %>
