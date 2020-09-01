@@ -1,39 +1,62 @@
+---
 fr:
   activemodel:
     attributes:
-      participatory_process:
-        private_space: Espace privé
       osp_authorization_handler:
+        birthday: Date de naissance
         document_number: Numéro unique
         postal_code: Code postal
-        birthday: Date de naissance
+      participatory_process:
+        private_space: Espace privé
   decidim:
     authorization_handlers:
       osp_authorization_handler:
         explanation: Vérifier votre identité en saisissant un numéro unique
         fields:
+          birthday: Date de naissance
           document_number: Numéro unique
           postal_code: Code postal
-          birthday: Date de naissance
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
     budgets:
       projects:
+        budget_excess:
+          budget_excess:
+            description: This project exceeds the maximum budget and can not be added.
+              If you want, you can delete a project you have already selected to add,
+              or make your vote with your preferences.
+            title: Maximum budget exceeded
+          close: Close
+          description: This project exceeds the maximum budget and can not be added.
+            If you want, you can delete a project you have already selected to add,
+            or make your vote with your preferences.
+          ok: OK
+          projects_excess:
+            description: This project exceeds the maximum number of projects and cannot
+              be added. If you want, you can delete a project you have already selected
+              to add, or make your vote with your preferences.
+            title: Maximum projects exceeded
         budget_summary:
           cancel_order: supprimer votre vote et recommencer
           checked_out:
-            description: Vous avez déjà voté. Si vous avez changé d'avis, vous pouvez %{cancel_link}.
+            description: Vous avez déjà voté. Si vous avez changé d'avis, vous pouvez
+              %{cancel_link}.
             title: Vote terminé
-          description_per_budget: Sélectionnez les projets que vous souhaitez voir être réalisés puis confirmez votre choix. Les projets choisis doivent atteindre le montant minimum cumulé de %{minimum_budget}.
-          description_per_project: Faîtes votre choix puis confirmer le. Vous devez choisir %{minimum_project} projet(s).
+          description_per_budget: Sélectionnez les projets que vous souhaitez voir
+            être réalisés puis confirmez votre choix. Les projets choisis doivent
+            atteindre le montant minimum cumulé de %{minimum_budget}.
+          description_per_project: Faîtes votre choix puis confirmer le. Vous devez
+            choisir %{minimum_project} projet(s).
           title: Vous décidez
     verifications:
       authorizations:
         first_login:
           actions:
-            osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
-            osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+            osp_authorization_handler: Vérifier avec le formulaire de vérification
+              de l'identité
+            osp_authorization_workflow: Vérifier avec le formulaire de vérification
+              de l'identité
   layouts:
     decidim:
       footer:
