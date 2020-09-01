@@ -9,6 +9,13 @@ fr:
       participatory_process:
         private_space: Espace privé
   decidim:
+    components:
+      budgets:
+        settings:
+          global:
+            vote_rule_group_1_maximum_budget_projects_enabled: 'Enable rule: Maximum number of projects to be voted on'
+            vote_rule_group_1_minimum_budget_projects_enabled: 'Enable rule: Minimum number of projects to be voted on'
+            vote_rule_threshold_percent_enabled: 'Enable rule: Minimum budget percentage'
     authorization_handlers:
       osp_authorization_handler:
         explanation: Vérifier votre identité en saisissant un numéro unique
