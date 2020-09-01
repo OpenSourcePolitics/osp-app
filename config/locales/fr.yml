@@ -13,9 +13,9 @@ fr:
       budgets:
         settings:
           global:
-            vote_rule_group_1_maximum_budget_projects_enabled: Activer la règle de vote : Nombre maximum de projets
-            vote_rule_group_1_minimum_budget_projects_enabled: Activer la règle de vote : Nombre minimum de projets
-            vote_rule_threshold_percent_enabled: Activer la règle de vote : Pourcentage du budget
+            vote_rule_group_1_maximum_budget_projects_enabled: "Activer la règle de vote : Nombre maximum de projets"
+            vote_rule_group_1_minimum_budget_projects_enabled: "Activer la règle de vote : Nombre minimum de projets"
+            vote_rule_threshold_percent_enabled: "Activer la règle de vote : Pourcentage du budget"
     authorization_handlers:
       osp_authorization_handler:
         explanation: Vérifier votre identité en saisissant un numéro unique
