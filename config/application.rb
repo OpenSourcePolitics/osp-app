@@ -16,11 +16,17 @@ module DecidimAws
     Decidim.unconfirmed_access_for = 0.days
 
     # config.action_mailer.asset_host = "https://broom.osp.cat"
+
     # config.session_store :active_record_store, :key => '_decidim_session'
+    ActiveRecord::SessionStore::Session.serializer = :json
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    # config.after_initialize do
+    #   Rails.application.config.cookies.delete_if {|cookie| cookie[:name] = "matomo" }
+    # end
   end
 end
