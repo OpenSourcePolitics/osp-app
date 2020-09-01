@@ -13,9 +13,9 @@ fr:
       budgets:
         settings:
           global:
-            vote_rule_group_1_maximum_budget_projects_enabled: 'Enable rule: Maximum number of projects to be voted on'
-            vote_rule_group_1_minimum_budget_projects_enabled: 'Enable rule: Minimum number of projects to be voted on'
-            vote_rule_threshold_percent_enabled: 'Enable rule: Minimum budget percentage'
+            vote_rule_group_1_maximum_budget_projects_enabled: Activer la règle de vote : Nombre maximum de projets
+            vote_rule_group_1_minimum_budget_projects_enabled: Activer la règle de vote : Nombre minimum de projets
+            vote_rule_threshold_percent_enabled: Activer la règle de vote : Pourcentage du budget
     authorization_handlers:
       osp_authorization_handler:
         explanation: Vérifier votre identité en saisissant un numéro unique
@@ -30,20 +30,14 @@ fr:
       projects:
         budget_excess:
           budget_excess:
-            description: This project exceeds the maximum budget and can not be added.
-              If you want, you can delete a project you have already selected to add,
-              or make your vote with your preferences.
-            title: Maximum budget exceeded
-          close: Close
-          description: This project exceeds the maximum budget and can not be added.
-            If you want, you can delete a project you have already selected to add,
-            or make your vote with your preferences.
+            description: Ce projet dépasse le budget maximum et ne peut pas être ajouté. Si vous le souhaitez, vous pouvez supprimer un projet que vous avez déjà sélectionné pour l'ajouter, ou voter en fonction de vos préférences.
+            title: Budget maximum dépassé
+          close: Fermer
+          description: Ce projet dépasse le budget maximum et ne peut pas être ajouté. Si vous le souhaitez, vous pouvez supprimer un projet que vous avez déjà sélectionné pour l'ajouter, ou voter en fonction de vos préférences.
           ok: OK
           projects_excess:
-            description: This project exceeds the maximum number of projects and cannot
-              be added. If you want, you can delete a project you have already selected
-              to add, or make your vote with your preferences.
-            title: Maximum projects exceeded
+            description: Ce projet dépasse le nombre maximum de projets et ne peut être ajouté. Si vous le souhaitez, vous pouvez supprimer un projet que vous avez déjà sélectionné pour l'ajouter, ou voter en fonction de vos préférences.
+            title: Nombre maximum de projets dépassé
         budget_summary:
           cancel_order: supprimer votre vote et recommencer
           checked_out:
@@ -53,17 +47,17 @@ fr:
           description_per_budget: Sélectionnez les projets que vous souhaitez voir
             être réalisés puis confirmez votre choix. Les projets choisis doivent
             atteindre le montant minimum cumulé de %{minimum_budget}.
-          description_per_project: Faîtes votre choix puis confirmer le. Vous devez
+          description_per_project: Faîtes votre choix puis confirmez le. Vous devez
             choisir %{minimum_project} projet(s).
-          title: Vous décidez
+          title: Vous décidez du budget
     verifications:
       authorizations:
         first_login:
           actions:
             osp_authorization_handler: Vérifier avec le formulaire de vérification
-              de l'identité
+              d'identité
             osp_authorization_workflow: Vérifier avec le formulaire de vérification
-              de l'identité
+              d'identité
   layouts:
     decidim:
       footer:
