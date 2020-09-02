@@ -5,10 +5,10 @@
         <span class="register__separator__text"><%= t("or", scope: "decidim.devise.shared.omniauth_buttons") %></span>
       </span>
       <div class="text-center">
-        <%- current_organization.enabled_omniauth_providers.keys.each do |provider| %>
-          <%= link_to decidim.send("user_#{provider}_omniauth_authorize_path"), class: "button button--social button--#{normalize_provider_name(provider)} button--social--mini", method: :post do %>
+        <%- current_organization.enabled_omniauth_providers.each do |provider_key, provider_data| %>
+          <%= link_to decidim.send("user_#{provider_key}_omniauth_authorize_path"), class: "button button--social button--#{provider_key.to_s.parameterize} button--social--mini", method: :post do %>
             <span class="button--social__icon">
-              <%= oauth_icon provider %>
+              <%= oauth_icon provider_key %>
             </span>
           <% end %>
         <% end %>

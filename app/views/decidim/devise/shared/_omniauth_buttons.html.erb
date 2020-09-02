@@ -1,36 +1,36 @@
 <% if Devise.mappings[:user].omniauthable? && current_organization.enabled_omniauth_providers.any? %>
   <div class="row">
     <div class="columns large-4 mediumlarge-6 medium-8 medium-centered">
-      <%- current_organization.enabled_omniauth_providers.keys.each do |provider| %>
-        <% if social_provider_enabled?(provider) && (request.env.dig(:available_authorizations).nil? || request.env.dig(:available_authorizations).include?(provider.to_s)) %>
-          <% if I18n.exists?("decidim.omniauth.#{provider}.explanation") %>
+      <%- current_organization.enabled_omniauth_providers.each do |provider_key, provider_data| %>
+        <% if social_provider_enabled?(provider_key) && (request.env.dig(:available_authorizations).nil? || request.env.dig(:available_authorizations).include?(provider_key.to_s)) %>
+          <% if I18n.exists?("decidim.omniauth.#{provider_key}.explanation") %>
             <div class="callout">
-              <%== t("decidim.omniauth.#{provider}.explanation") %>
+              <%== t("decidim.omniauth.#{provider_key}.explanation") %>
             </div>
           <% end %>
           <div class="social-register">
-            <% if Rails.application.secrets.dig(:omniauth, provider.to_sym, :button_path).present? %>
-              <%= link_to decidim.send("user_#{provider}_omniauth_authorize_path"), class: "button button--social--custom", method: :post do %>
-                <%= image_tag Rails.application.secrets.dig(:omniauth, provider.to_sym, :button_path), alt: t("devise.shared.links.sign_in_with_provider", provider: normalize_provider_name(provider).titleize) %>
+            <% if provider_data[:button_path].present? %>
+              <%= link_to decidim.send("user_#{provider_key}_omniauth_authorize_path"), class: "button button--social--custom", method: :post do %>
+                <%= image_tag provider_data[:button_path], alt: t("devise.shared.links.sign_in_with_provider", provider: normalize_provider_name(provider_key).titleize) %>
               <% end %>
-              <% if I18n.exists?("decidim.omniauth.france_connect.external.link") %>
-                <%= link_to t("link", scope: "decidim.omniauth.france_connect.external"), class: "primary", target: "_blank" do %>
+              <% if I18n.exists?("decidim.omniauth.#{provider_key}.external.link") %>
+                <%= link_to t("link", scope: "decidim.omniauth.#{provider_key}.external"), class: "primary", target: "_blank" do %>
                   <small>
-                    <%= t("text", scope: "decidim.omniauth.france_connect.external") %>
+                    <%= t("text", scope: "decidim.omniauth.#{provider_key}.external") %>
                   </small>
                 <% end %>
               <% end %>
             <% else %>
-              <%= link_to decidim.send("user_#{provider}_omniauth_authorize_path"), class: "button button--social button--#{provider.to_s.parameterize}", method: :post do %>
+              <%= link_to decidim.send("user_#{provider_key}_omniauth_authorize_path"), class: "button button--social button--#{provider_key.to_s.parameterize}", method: :post do %>
                 <span class="button--social__icon">
-                  <%= oauth_icon provider %>
+                  <%= oauth_icon provider_key %>
                 </span>
                 <span class="button--label">
-                  <% if Rails.application.secrets.dig(:omniauth, provider.to_sym, :provider_name).present? %>
+                  <% if provider_data[:provider_name].present? %>
                     <%= t("devise.shared.links.sign_in_with_provider", provider: "") %>
-                    <b><%= Rails.application.secrets.dig(:omniauth, provider.to_sym, :provider_name) %></b>
+                    <b><%= provider_data[:provider_name] %></b>
                   <% else %>
-                    <%= t("devise.shared.links.sign_in_with_provider", provider: normalize_provider_name(provider).titleize) %>
+                    <%= t("devise.shared.links.sign_in_with_provider", provider: normalize_provider_name(provider_key).titleize) %>
                   <% end %>
                 </span>
               <% end %>
