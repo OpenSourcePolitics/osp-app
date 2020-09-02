@@ -672,7 +672,7 @@ fr:
     menu:
       initiatives: Pétitions
     progress_bar:
-      number_delimiter: "."
+      number_delimiter: " "
     proposals:
       proposals:
         edit:
