@@ -49,3 +49,5 @@ db/migrate-bkp*
 .DS_Store
 .idea
 flamegraph*
+
+public/reports

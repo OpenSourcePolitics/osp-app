@@ -22,7 +22,11 @@
       </div>
     </div>
 
-    <%= render partial: "decidim/devise/shared/omniauth_buttons", locals: { column_classes: "columns large-6 medium-10 medium-centered" } %>
+    <% unless request.env['PATH_INFO'].include?("/admin_sign_in") %>
+      <% cache current_organization do %>
+        <%= render partial: "decidim/devise/shared/omniauth_buttons", locals: { column_classes: "columns large-6 medium-10 medium-centered" } %>
+      <% end %>
+    <% end %>
 
     <% if current_organization.sign_in_enabled? && request.env['PATH_INFO'].include?("/admin_sign_in") %>
       <div class="row">

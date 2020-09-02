@@ -27,6 +27,7 @@ default: &default
   password: <%= ENV['RDS_PASSWORD'] %>
   host: <%= ENV['RDS_HOSTNAME'] %>
   port: <%= ENV['RDS_PORT'] %>
+  prepared_statements: <%= ENV.fetch("PREPARED_STATEMENTS") { true } %>
 
 development:
   <<: *default

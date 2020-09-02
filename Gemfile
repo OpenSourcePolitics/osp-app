@@ -42,12 +42,13 @@ gem "omniauth_openid_connect", "0.3.1"
 
 gem 'rubyzip', require: 'zip'
 
-# gem "stackprof"
+gem "sentry-raven"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 
   gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition_merge"
+
   # gem "decidim-dev", path: "../decidim"
 end
 
@@ -64,6 +65,7 @@ group :production do
   gem "sidekiq-scheduler"
   gem "fog-aws"
   gem "dalli-elasticache"
+  gem "newrelic_rpm"
 end
 
 gem "dotenv-rails", "~> 2.7"
