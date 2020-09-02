@@ -1,4 +1,20 @@
 GIT
+  remote: https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git
+  revision: 8424d78d5c05398685fba65a4eefd3dbdfc381cd
+  branch: 0.18-stable
+  specs:
+    decidim-term_customizer (0.18.0)
+      decidim-admin (~> 0.18.0)
+      decidim-core (~> 0.18.0)
+
+GIT
+  remote: https://github.com/OpenSourcePolitics/decidim-module_phone_authorization_handler
+  revision: 7a92c5486c57a555e5b91be94efb31c7d5858c4f
+  specs:
+    decidim-phone_authorization_handler (0.18.0)
+      decidim-core (= 0.18.0)
+
+GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
   revision: 5bdaa2878288e50ec6ad54b1ac67d30707709f04
   branch: 0.18-merge
@@ -792,6 +808,8 @@ DEPENDENCIES
   dalli
   decidim!
   decidim-dev!
+  decidim-phone_authorization_handler!
+  decidim-term_customizer!
   faker (~> 1.8)
   fog-aws
   letter_opener_web (~> 1.3)
