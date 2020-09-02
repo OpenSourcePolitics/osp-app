@@ -8,6 +8,17 @@ fr:
         postal_code: Code postal
         birthday: Date de naissance
   decidim:
+    admin:
+      filters:
+        proposals:
+          category_id_eq:
+            label: Catégorie
+          is_emendation_true:
+            label: Amendable
+          state_eq:
+            label: Etats
+          scope_id_eq:
+            label: Portée
     authorization_handlers:
       osp_authorization_handler:
         explanation: Vérifier votre identité en saisissant un numéro unique
