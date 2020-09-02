@@ -13,12 +13,10 @@ module Decidim
       include ParticipatorySpaceContext
       participatory_space_layout
 
-      helper Decidim::FiltersHelper
       helper Decidim::OrdersHelper
       helper Decidim::ResourceReferenceHelper
       helper Decidim::TranslationsHelper
       helper Decidim::IconHelper
-      helper Decidim::ResourceHelper
       helper Decidim::ScopesHelper
       helper Decidim::ActionAuthorizationHelper
       helper Decidim::AttachmentsHelper
