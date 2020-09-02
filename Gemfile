@@ -42,8 +42,6 @@ gem "omniauth_openid_connect", "0.3.1"
 
 gem 'rubyzip', require: 'zip'
 
-gem "sentry-raven"
-
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 
@@ -61,6 +59,7 @@ group :development do
 end
 
 group :production do
+  gem "sentry-raven"
   gem "sidekiq"
   gem "sidekiq-scheduler"
   gem "fog-aws"
