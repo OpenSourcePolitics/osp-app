@@ -90,12 +90,6 @@ en:
             person_services_fallback_rrn: Person Services fallback RRN
             enable_scope_mapping: 'Enable scope mapping ("true" or "false")'
             scope_mapping_level_id: Scope mapping level Id (scope_type_id)
-        smtp_settings:
-          instructions:
-            from_label: "Sender Name <email@example.org>"
-          placeholder:
-            from_email: "email@example.org"
-            from_label: "Sender Name"
     verifications:
       authorizations:
         index:

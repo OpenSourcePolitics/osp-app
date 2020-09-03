@@ -26,7 +26,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module_cookies
-  revision: 6786fce1bf9de59e084bcc44948a66f71ba8b480
+  revision: fac0d0d4068a4cf98cd6946560529540b683b0e8
   branch: alt/bosa
   specs:
     decidim-cookies (0.22.0.dev)
@@ -34,7 +34,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 173a7045eabd6501aeb78d797c916bfad3026531
+  revision: eb813ca60b0ed30440bdd9999465c431c9ba6611
   branch: alt/petition_merge
   specs:
     decidim (0.22.0.dev)
@@ -394,7 +394,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.9.1)
+    devise-i18n (1.9.2)
       devise (>= 4.7.1)
     devise_invitable (1.7.5)
       actionmailer (>= 4.1.0)
@@ -475,7 +475,7 @@ GEM
     graphiql-rails (1.4.11)
       railties
       sprockets-rails
-    graphql (1.11.3)
+    graphql (1.11.4)
     gyoku (1.3.1)
       builder (>= 2.1.2)
     hashdiff (1.0.1)
@@ -519,7 +519,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-tmpl-rails (1.1.0)
       rails (>= 3.1.0)
-    jwt (2.2.1)
+    jwt (2.2.2)
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.1)
@@ -843,8 +843,8 @@ GEM
       equalizer (~> 0.0, >= 0.0.9)
     virtus-multiparams (0.1.1)
       virtus (~> 1.0)
-    warden (1.2.8)
-      rack (>= 2.0.6)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     wasabi (3.5.0)
       httpi (~> 2.0)
       nokogiri (>= 1.4.2)

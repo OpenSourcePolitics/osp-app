@@ -3,7 +3,7 @@
 Decidim.configure do |config|
   config.application_name = "opensourcepolitics"
   config.mailer_sender = "ne-pas-repondre@opensourcepolitics.eu"
-  config.mailer_reply = "reply@opensourcepolitics.eu"
+  # config.mailer_reply = "reply@opensourcepolitics.eu"
 
   # Change these lines to set your preferred locales
   config.default_locale = :en
