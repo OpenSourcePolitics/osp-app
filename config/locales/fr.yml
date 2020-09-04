@@ -17,8 +17,6 @@ fr:
         document_number: Numéro unique
         postal_code: Code postal
         birthday: Date de naissance
-      participatory_process:
-        private_space: Espace privé
       osp_authorization_handler:
         document_number: Numéro unique
         postal_code: Code postal
