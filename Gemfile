@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/decidim/decidim.git", branch: "develop"
+gem "decidim", git: "https://github.com/MoretS/decidim.git", branch: "feature/draggable-cursor-on-proposal-map"
 # gem "decidim", path: "../decidim"
 # gem "decidim-map", path: "../decidim-map"
 
@@ -49,7 +49,7 @@ group :development, :test do
   gem "dotenv-rails"
   gem "byebug", "~> 11.0", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/decidim/decidim.git", branch: "develop"
+  gem "decidim-dev", git: "https://github.com/MoretS/decidim.git", branch: "feature/draggable-cursor-on-proposal-map"
   # gem "decidim-dev", path: "../decidim"
 end
 
