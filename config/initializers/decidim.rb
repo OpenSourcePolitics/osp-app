@@ -19,7 +19,7 @@ Decidim.configure do |config|
     }
   end
 
-  if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_require_authorization)
+  if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_require_authorization) && defined?(Decidim::Initiatives.face_to_face_voting_allowed)
     # puts "Decidim::Initiatives are loaded"
     Decidim::Initiatives.minimum_committee_members = 1
     Decidim::Initiatives.do_not_require_authorization = true
