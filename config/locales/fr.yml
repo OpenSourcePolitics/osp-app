@@ -1,11 +1,7 @@
 ---
-en:
+fr:
   decidim:
     authorization_handlers:
       osp_authorization_handler:
         name: osp authorization handler
         explanation: explanation
-  layouts:
-    decidim:
-      footer:
-        download_open_data: Open data
