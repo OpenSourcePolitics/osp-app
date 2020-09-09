@@ -4,7 +4,7 @@ namespace :heroku do
     if ENV['SECRET_KEY_BASE'].nil?
       puts 'No SECRET_KEY_BASE found !'
       puts 'export SECRET_KEY_BASE first : '
-      puts "export SECRET_KEY_BASE=#{`bundle exe rake secret`}"
+      puts "export SECRET_KEY_BASE=#{`bundle exec rake secret`}"
       exit 1
     end
 
