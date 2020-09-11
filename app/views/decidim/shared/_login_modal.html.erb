@@ -36,7 +36,7 @@
       <%= render "decidim/devise/shared/omniauth_buttons_mini" %>
     <% end %>
   <% elsif current_organization.sign_in_enabled? %>
-    <%= render partial: "decidim/devise/shared/omniauth_buttons", locals: { column_classes: "columns medium-12 medium-centered" } %>
+    <%= render partial: "decidim/devise/shared/omniauth_buttons", locals: { column_classes: "columns medium-8 small-12 medium-centered" } %>
   <% else %>
     <div class="row">
       <div class="columns medium-8 medium-centered">
