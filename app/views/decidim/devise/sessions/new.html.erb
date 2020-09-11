@@ -20,7 +20,7 @@
     </div>
   </div>
   <% cache current_organization do %>
-    <%= render partial: "decidim/devise/shared/omniauth_buttons", locals: { column_classes: "columns large-6 medium-10 medium-centered" } %>
+    <%= render partial: "decidim/devise/shared/omniauth_buttons", locals: { column_classes: "columns large-4 mediumlarge-6 medium-8 medium-centered" } %>
   <% end %>
   <% if current_organization.sign_up_enabled? || request.env['PATH_INFO'].include?("/admin_sign_in") %>
     <div class="row">

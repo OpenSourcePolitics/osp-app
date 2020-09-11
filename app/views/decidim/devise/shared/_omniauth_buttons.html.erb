@@ -1,6 +1,6 @@
 <% if Devise.mappings[:user].omniauthable? && current_organization.enabled_omniauth_providers.any? %>
   <div class="row">
-    <div class="columns large-4 mediumlarge-6 medium-8 medium-centered">
+    <div class="<%= column_classes %>">
       <%- current_organization.enabled_omniauth_providers.each do |provider_key, provider_data| %>
         <% if social_provider_enabled?(provider_key) && (request.env.dig(:available_authorizations).nil? || request.env.dig(:available_authorizations).include?(provider_key.to_s)) %>
           <% if I18n.exists?("decidim.omniauth.#{provider_key}.explanation") %>
