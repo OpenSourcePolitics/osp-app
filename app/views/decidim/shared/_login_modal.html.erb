@@ -32,7 +32,7 @@
         </p>
       </div>
     </div>
-    <% cache current_organization do %>
+    <% cache [current_organization, current_locale] do %>
       <%= render "decidim/devise/shared/omniauth_buttons_mini" %>
     <% end %>
   <% elsif current_organization.sign_in_enabled? %>
@@ -45,7 +45,7 @@
         </p>
       </div>
     </div>
-    <% cache current_organization do %>
+    <% cache [current_organization, current_locale] do %>
       <%= render "decidim/devise/shared/omniauth_buttons" %>
     <% end %>
   <% end %>
