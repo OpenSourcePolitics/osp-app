@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-urlaliases.git
-  revision: 2d910f627b909e9a350f3cd3dfc4f2d8f180acf2
+  revision: 242f66e774cfeb7ec39ffb42aee6e1ce90ba83fa
   specs:
     decidim-url_aliases (0.0.1)
       decidim-core (>= 0.16.1)
@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
-  revision: 916dd6abf96f1c91aac491fe634d661107e08f4a
+  revision: ddbaf0d9f36c511f2dcb51169ae46623d9d6bfe9
   branch: alt/cd44
   specs:
     decidim (0.18.0)
