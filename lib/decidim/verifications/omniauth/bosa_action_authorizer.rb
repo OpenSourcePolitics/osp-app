@@ -12,7 +12,7 @@ module Decidim
 
           if status_code == :ok && action == "vote" && minimum_age.present? && under_minimum_age?(minimum_age)
             status_code = :unauthorized
-            data[:fields] = { "date_of_birth" => I18n.t("decidim.verifications.omniauth.errors.minimum_age", minimum_age: minimum_age, locale: authorization.user.locale) }
+            data[:fields] = { "date_of_birth" => I18n.t("decidim.verifications.omniauth.errors.minimum_age", minimum_age: minimum_age, locale: current_locale) }
           end
 
           [status_code, data]
