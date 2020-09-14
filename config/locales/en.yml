@@ -72,6 +72,11 @@ en:
     system:
       organizations:
         omniauth_settings:
+          decidim:
+            client_id: Client ID
+            client_secret: Client secret
+            provider_name: Provider name
+            site_url: Site url
           saml:
             provider_name: Provider name
             icon_path: Icon path
