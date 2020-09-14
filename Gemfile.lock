@@ -17,19 +17,11 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module_cookies
-  revision: 899ac226a264ee4a1906a4294f00497bd054533b
+  revision: 11e9831ea6228aab7952b464aa8fd788d3b108ad
   branch: 0.21-stable
   specs:
     decidim-cookies (0.21.0)
       decidim-core (= 0.21.0)
-
-GIT
-  remote: https://github.com/alabs/decidim-module-calendar
-  revision: 16a884b9077f295ddbeea44847bcc162c5da4ca0
-  specs:
-    decidim-calendar (0.19.0)
-      decidim-admin (>= 0.19.0)
-      decidim-core (>= 0.19.0)
 
 GIT
   remote: https://github.com/decidim/decidim.git
@@ -914,7 +906,6 @@ DEPENDENCIES
   byebug (~> 11.0)
   dalli
   decidim!
-  decidim-calendar!
   decidim-conferences!
   decidim-consultations!
   decidim-cookies!
