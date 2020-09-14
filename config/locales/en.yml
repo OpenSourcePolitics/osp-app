@@ -49,6 +49,8 @@ en:
         name: BOSA dummy authorization
         explanation: Add additional informations to your account
       saml:
+        fields:
+          date_of_birth: Date of birth
         name: CSAM eID
         explanation: Validate with your CSAM eID account
     authorization_modals:

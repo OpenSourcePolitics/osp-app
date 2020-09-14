@@ -48,6 +48,8 @@ nl:
       omniauth_anti_affinity:
         explanation: Explanation
       saml:
+        fields:
+          date_of_birth: Date of birth
         explanation: Validate with your CSAM eID account
         name: CSAM eID
       started_at: Started at
