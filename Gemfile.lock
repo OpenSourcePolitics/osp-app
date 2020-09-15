@@ -16,17 +16,6 @@ GIT
       decidim-core
 
 GIT
-  remote: https://github.com/Platoniq/decidim-module-comparative_stats
-  revision: 6202e984f11837e009f1310e5c23d49b1a968be0
-  specs:
-    decidim-comparative_stats (1.0)
-      chartkick (~> 3.3)
-      decidim-admin (>= 0.21.0.pre.dev)
-      decidim-core (>= 0.21.0.pre.dev)
-      graphlient (~> 0.3)
-      jquery-tmpl-rails (~> 1.1)
-
-GIT
   remote: https://github.com/Platoniq/decidim-module-decidim_awesome
   revision: c5d778ca2eef05f2609c6978b196cb363331d5f7
   specs:
@@ -34,30 +23,6 @@ GIT
       decidim-admin (>= 0.20.0)
       decidim-core (>= 0.20.0)
       redcarpet (~> 3.4)
-
-GIT
-  remote: https://github.com/Platoniq/decidim-module-navigation_maps
-  revision: 4800178303d77c29259b9d81829d91672ddfd1be
-  specs:
-    decidim-navigation_maps (1.0)
-      decidim-admin (>= 0.18.0)
-      decidim-core (>= 0.18.0)
-
-GIT
-  remote: https://github.com/Platoniq/decidim-verifications-direct_verifications
-  revision: 9f710c92a6c5f56ca99cf0c19c3d484ad37c3e29
-  specs:
-    decidim-direct_verifications (0.20)
-      decidim-admin (>= 0.17.0)
-      decidim-core (>= 0.17.0)
-
-GIT
-  remote: https://github.com/alabs/decidim-module-calendar
-  revision: 16a884b9077f295ddbeea44847bcc162c5da4ca0
-  specs:
-    decidim-calendar (0.19.0)
-      decidim-admin (>= 0.19.0)
-      decidim-core (>= 0.19.0)
 
 GIT
   remote: https://github.com/decidim/decidim.git
@@ -362,7 +327,6 @@ GEM
       actionpack (>= 3.0)
       cells (>= 4.1.6, < 5.0.0)
     charlock_holmes (0.7.7)
-    chartkick (3.3.1)
     childprocess (3.0.0)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -445,8 +409,6 @@ GEM
       i18n (>= 0.7)
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
-    faraday_middleware (1.0.0)
-      faraday (~> 1.0)
     ffi (1.9.25)
     file_validators (2.3.0)
       activemodel (>= 3.2)
@@ -487,14 +449,7 @@ GEM
     graphiql-rails (1.4.11)
       railties
       sprockets-rails
-    graphlient (0.4.0)
-      faraday (>= 1.0)
-      faraday_middleware
-      graphql-client
     graphql (1.11.1)
-    graphql-client (0.16.0)
-      activesupport (>= 3.0)
-      graphql (~> 1.8)
     hashdiff (1.0.1)
     hashie (3.6.0)
     highline (2.0.3)
@@ -881,13 +836,9 @@ DEPENDENCIES
   byebug (~> 11.0)
   dalli
   decidim!
-  decidim-calendar!
-  decidim-comparative_stats!
   decidim-decidim_awesome!
   decidim-dev!
-  decidim-direct_verifications!
   decidim-navbar_links!
-  decidim-navigation_maps!
   decidim-term_customizer!
   dotenv-rails
   faker (~> 1.8)
