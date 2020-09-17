@@ -8,7 +8,21 @@
     <div class="columns large-8 end">
       <%= f.text_field :name, readonly: true %>
       <%= f.text_field :nickname %>
+
       <%= f.email_field :email %>
+
+      <% if Devise.mappings[:user].confirmable? && current_user.unconfirmed_email.present? && current_user.unconfirmed_email != @account.email %>
+        <div class="callout warning">
+          <%= decidim_form_for current_user, as: :user, url: user_confirmation_path, html: { method: :post, class: "register-form new_user" } do |f| %>
+            <%= f.hidden_field :email, value: current_user.unconfirmed_email %>
+            <p>
+              <%== t(".unconfirmed_email", email: current_user.unconfirmed_email ) %>
+            </p>
+            <%= f.submit t("devise.confirmations.new.resend_confirmation_instructions"), class: "button expanded small" %>
+          <% end %>
+        </div>
+      <% end %>
+
       <%= f.url_field :personal_url %>
       <%= f.text_area :about, rows: 5 %>
 
