@@ -29,6 +29,8 @@ gem "decidim-decidim_awesome", git: "https://github.com/Platoniq/decidim-module-
 
 gem "decidim-navbar_links", git: "https://github.com/OpenSourcePolitics/decidim-module-navbar_links.git", branch: "0.22-stable"
 
+gem "decidim-polis", git: "https://github.com/OpenSourcePolitics/decidim-polis", branch: "0.22-stable"
+
 gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git", branch: "0.dev"
 
 gem "bootsnap", "~> 1.3"

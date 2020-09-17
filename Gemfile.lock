@@ -16,6 +16,14 @@ GIT
       decidim-core
 
 GIT
+  remote: https://github.com/OpenSourcePolitics/decidim-polis
+  revision: 2fedc6acd267a2d64cb6713d5a46bac0a4b148b5
+  branch: 0.22-stable
+  specs:
+    decidim-polis (0.22.0)
+      decidim-core (= 0.22.0)
+
+GIT
   remote: https://github.com/Platoniq/decidim-module-decidim_awesome
   revision: c5d778ca2eef05f2609c6978b196cb363331d5f7
   specs:
@@ -850,6 +858,7 @@ DEPENDENCIES
   decidim-decidim_awesome!
   decidim-dev!
   decidim-navbar_links!
+  decidim-polis!
   decidim-term_customizer!
   dotenv-rails
   faker (~> 1.8)
