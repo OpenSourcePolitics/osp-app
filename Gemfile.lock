@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module-navbar_links.git
   revision: bdf6326e45fd89f544d499c943f7d882356785aa
-  branch: 0.22.0.dev
+  branch: 0.22-stable
   specs:
     decidim-navbar_links (0.22.0)
       decidim-core (= 0.22.0)
