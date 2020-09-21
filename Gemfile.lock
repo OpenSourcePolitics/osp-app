@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/aspgems/decidim
-  revision: 58c4627805ffd2bd2e80e44b7e364777e951a462
+  revision: 74b6c91565b42bc80a88b93c1641b31047c9fbb8
   branch: feature/initiatives-signature-gauge
   specs:
     decidim (0.23.0.dev)
