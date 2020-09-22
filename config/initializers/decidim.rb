@@ -24,7 +24,6 @@ Decidim.configure do |config|
     Decidim::Initiatives.minimum_committee_members = 1
     Decidim::Initiatives.do_not_require_authorization = true
     Decidim::Initiatives.print_enabled = false
-    Decidim::Initiatives.face_to_face_voting_allowed = false
   end
 
 
