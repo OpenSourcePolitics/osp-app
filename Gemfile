@@ -10,26 +10,20 @@ gem "decidim", git: "https://github.com/decidim/decidim.git", branch: "0.21-stab
 
 # gem "decidim-conferences", git: "https://github.com/decidim/decidim.git", branch: "0.21-stable"
 # gem "decidim-consultations", git: "https://github.com/decidim/decidim.git", branch: "0.21-stable"
-# gem "decidim-initiatives", git: "https://github.com/decidim/decidim.git", branch: "0.21-stable"
-
-# gem "decidim-conferences", path: "../decidim"
-# gem "decidim-consultations", path: "../decidim"
-# gem "decidim-initiatives", path: "../decidim"
-
-gem "decidim-calendar", git: "https://github.com/alabs/decidim-module-calendar"
-#gem "decidim-cookies", git: "https://github.com/OpenSourcePolitics/decidim-module_cookies", branch: "feature/orejime"
-#gem "decidim-combined_budgeting", git: "https://github.com/mainio/decidim-module-combined_budgeting"
-gem "decidim-decidim_awesome", git: "https://github.com/Platoniq/decidim-module-decidim_awesome"
-gem "decidim-comparative_stats", git: "https://github.com/Platoniq/decidim-module-comparative_stats"
-gem "decidim-direct_verifications", git: "https://github.com/Platoniq/decidim-verifications-direct_verifications"
-#gem "decidim-homepage_interactive_map", git: "https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map.git"
-#gem "decidim-initiatives_no_signature_allowed", git: "https://github.com/OpenSourcePolitics/decidim-module-initiatives_nosignature_allowed.git"
-gem "decidim-navigation_maps", git: "https://github.com/Platoniq/decidim-module-navigation_maps"
-
+gem "decidim-initiatives", git: "https://github.com/decidim/decidim.git", branch: "0.21-stable"
 
 gem "decidim-navbar_links", git: "https://github.com/OpenSourcePolitics/decidim-module-navbar_links.git", branch: "0.21-stable"
-
+gem "decidim-navigation_maps", git: "https://github.com/Platoniq/decidim-module-navigation_maps"
 gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git", branch: "0.dev"
+
+#gem "decidim-calendar", git: "https://github.com/alabs/decidim-module-calendar"
+#gem "decidim-cookies", git: "https://github.com/OpenSourcePolitics/decidim-module_cookies", branch: "feature/orejime"
+#gem "decidim-combined_budgeting", git: "https://github.com/mainio/decidim-module-combined_budgeting"
+#gem "decidim-decidim_awesome", git: "https://github.com/Platoniq/decidim-module-decidim_awesome"
+#gem "decidim-comparative_stats", git: "https://github.com/Platoniq/decidim-module-comparative_stats"
+#gem "decidim-direct_verifications", git: "https://github.com/Platoniq/decidim-verifications-direct_verifications"
+#gem "decidim-homepage_interactive_map", git: "https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map.git"
+#gem "decidim-initiatives_no_signature_allowed", git: "https://github.com/OpenSourcePolitics/decidim-module-initiatives_nosignature_allowed.git"
 
 gem "bootsnap", "~> 1.3"
 
