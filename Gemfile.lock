@@ -1,17 +1,9 @@
 GIT
-  remote: https://github.com/MoretS/decidim-module-socio_demographic_authorization_handler
-  revision: d8f4b3f99707999c87ec1f4298a7ecacd4a41fa4
+  remote: https://github.com/OpenSourcePolitics/decidim-module-socio_demographic_authorization_handler
+  revision: 396724a3501b59cd3f8fc58c087592629a572434
   branch: release/0.22-stable
   specs:
     decidim-socio_demographic_authorization_handler (0.22.0)
-      decidim-core (= 0.22.0)
-
-GIT
-  remote: https://github.com/MoretS/decidim-module_phone_authorization_handler
-  revision: c85933cc7764310fd61684f8bbb9dd541c3dc443
-  branch: release/0.22-stable
-  specs:
-    decidim-phone_authorization_handler (0.22.0)
       decidim-core (= 0.22.0)
 
 GIT
@@ -22,6 +14,14 @@ GIT
     decidim-term_customizer (0.dev)
       decidim-admin
       decidim-core
+
+GIT
+  remote: https://github.com/OpenSourcePolitics/decidim-module_phone_authorization_handler
+  revision: 0b1def292d0f1f7bf5ccedf51cd941de790a757f
+  branch: release/0.22-stable
+  specs:
+    decidim-phone_authorization_handler (0.22.0)
+      decidim-core (= 0.22.0)
 
 GIT
   remote: https://github.com/decidim/decidim.git
