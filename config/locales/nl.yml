@@ -217,7 +217,7 @@ nl:
         sign_in: Sign in
         sign_up: Sign up
       mailer:
-        footer: Footer
+        footer: <a href="%{organization_url}">%{organization_name}</a> 
       user_menu:
         sign_out: Sign out
       user_profile:
