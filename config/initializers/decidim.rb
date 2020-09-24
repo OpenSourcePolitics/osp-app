@@ -1,13 +1,6 @@
 # frozen_string_literal: true
 
 Decidim.configure do |config|
-
-  config.release = {
-    commit: `git rev-parse --short HEAD`.strip,
-    branch: `git rev-parse --abbrev-ref HEAD`.strip,
-    repo: `basename \`git rev-parse --show-toplevel\``.strip
-  }
-
   config.skip_first_login_authorization = ENV["SKIP_FIRST_LOGIN_AUTHORIZATION"] ? ActiveRecord::Type::Boolean.new.cast(ENV["SKIP_FIRST_LOGIN_AUTHORIZATION"]) : true
   config.application_name = "participez.nanterre.fr"
   config.mailer_sender = "participez.nanterre.fr <ne-pas-repondre@opensourcepolitics.eu>"
@@ -28,7 +21,10 @@ Decidim.configure do |config|
 
   if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_require_authorization)
     # puts "Decidim::Initiatives are loaded"
+    Decidim::Initiatives.minimum_committee_members = 1
     Decidim::Initiatives.do_not_require_authorization = true
+    Decidim::Initiatives.print_enabled = false
+    Decidim::Initiatives.face_to_face_voting_allowed = false
   end
 
 
@@ -90,9 +86,9 @@ Decidim.configure do |config|
 
   if !Rails.application.secrets.etherpad[:server].blank?
     config.etherpad = {
-      server: Rails.application.secrets.etherpad[:server],
-      api_key: Rails.application.secrets.etherpad[:api_key],
-      api_version: Rails.application.secrets.etherpad[:api_version]
+        server: Rails.application.secrets.etherpad[:server],
+        api_key: Rails.application.secrets.etherpad[:api_key],
+        api_version: Rails.application.secrets.etherpad[:api_version]
     }
   end
 

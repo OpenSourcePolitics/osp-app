@@ -1,17 +1,24 @@
 fr:
   activemodel:
     attributes:
-      newsletter:
-        body: Description
       participatory_process:
         private_space: Espace privé
-      proposal:
-        address: Adresse
       osp_authorization_handler:
         document_number: Numéro unique
         postal_code: Code postal
         birthday: Date de naissance
   decidim:
+    admin:
+      filters:
+        proposals:
+          category_id_eq:
+            label: Catégorie
+          is_emendation_true:
+            label: Amendable
+          state_eq:
+            label: Etats
+          scope_id_eq:
+            label: Portée
     authorization_handlers:
       osp_authorization_handler:
         explanation: Vérifier votre identité en saisissant un numéro unique
@@ -22,16 +29,19 @@ fr:
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
-    menu:
-      more_information: Plus d'informations
-    scopes:
-      global: Toute la ville
     verifications:
       authorizations:
         first_login:
           actions:
             osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
             osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+    versions:
+      resource_version:
+        see_other_versions: voir d'autres versions
+  layouts:
+    decidim:
+      footer:
+        download_open_data: Données ouvertes
   devise:
     invitations:
       user:
