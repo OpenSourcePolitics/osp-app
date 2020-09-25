@@ -136,7 +136,7 @@ nl:
           type: Type
       initiatives_mailer:
         creation_subject: Creation subject
-        footer: Footer
+        footer: <a href="%{organization_url}">%{organization_name}</a>
         initiative_link:
           check_initiative_details: Check initiative details
           here: Here
@@ -211,13 +211,14 @@ nl:
       footer:
         download_open_data: Open data
         made_with_open_source: Made with open source
+        revoke_cookies: Revoke Cookies
       header:
         close_menu: Close menu
         navigation: Navigation
         sign_in: Sign in
         sign_up: Sign up
       mailer:
-        footer: <a href="%{organization_url}">%{organization_name}</a> 
+        footer: <a href="%{organization_url}">%{organization_name}</a>
       user_menu:
         sign_out: Sign out
       user_profile:
