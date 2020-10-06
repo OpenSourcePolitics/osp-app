@@ -40,6 +40,8 @@ gem "omniauth-saml", "~> 1.10.0"
 gem "sprockets", "~> 3.7"
 
 gem "dotenv-rails"
+gem "activerecord-session_store"
+
 
 group :development, :test do
   gem "byebug", "~> 10.0", platform: :mri

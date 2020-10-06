@@ -16,7 +16,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module_cookies.git
-  revision: 12b7b3806f4a5aeee8e1b09b38abffd2ecd4cd5e
+  revision: a1654c1e75e69f0968306ae6ed65c74eec2e70d0
   branch: osp/orejime-0.18
   specs:
     decidim-cookies (0.18.0)
@@ -260,6 +260,12 @@ GEM
       activemodel (= 5.2.4)
       activesupport (= 5.2.4)
       arel (>= 9.0)
+    activerecord-session_store (1.1.3)
+      actionpack (>= 4.0)
+      activerecord (>= 4.0)
+      multi_json (~> 1.11, >= 1.11.2)
+      rack (>= 1.5.2, < 3)
+      railties (>= 4.0)
     activestorage (5.2.4)
       actionpack (= 5.2.4)
       activerecord (= 5.2.4)
@@ -829,6 +835,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-session_store
   bootsnap (~> 1.3)
   byebug (~> 10.0)
   dalli
