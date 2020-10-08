@@ -11,19 +11,12 @@ module OmniAuth
 
       option :authn_context_comparison, 'minimum'
       option :name_identifier_format, 'urn:oasis:names:tc:SAML:2.0:nameid-format:persistent'
-      option :attribute_service_name, 'Eidas extra attributes'
       option :attribute_statements,
-             name: %w[uid name],
+             name: %w[name],
              email: %w[mail email],
-             first_name: %w[surname first_name firstname firstName],
-             last_name: %w[givenName last_name lastname lastName],
-             # default_locale: ['locale', 'urn:be:fedict:iam:attr:locale'],
-             locale: ['PrefLanguage', 'pref_language', 'preflanguage', 'locale', 'urn:be:fedict:iam:attr:locale'],
-             nickname: ['uid'],
-             rrn: %w[egovNRN egovnrn egov_nrn nrn rrn]
-      # authentication_method: ['authenticationmethod'],
-      # authentication_level: ['urn:be:fedict:iam:attr:authenticationmethod'],
-      # authentication_context: ['urn:be:fedict:iam:attr:context']
+             first_name: %w[givenName],
+             last_name: %w[sn],
+             nickname: ['uid', 'guid']
       option :idp_cert_fingerprint_validator, -> (fingerprint) { fingerprint }
       option :force_authn, true
       option :security,
@@ -35,6 +28,21 @@ module OmniAuth
              digest_method: XMLSecurity::Document::SHA1,
              signature_method: XMLSecurity::Document::RSA_SHA1,
              embed_sign: false
+
+       info do
+         found_attributes = options.attribute_statements.map do |key, values|
+           attribute = find_attribute_by(values)
+           [key, attribute]
+         end
+
+         hash_attributes = Hash[found_attributes]
+
+         hash_attributes["name"] = "#{hash_attributes["first_name"]} #{hash_attributes["last_name"]}"
+
+         if hash_attributes["first_name"].present? && hash_attributes["last_name"].present?
+           hash_attributes["nickname"] = "#{hash_attributes["first_name"].split(" ").first}#{hash_attributes["last_name"][0]}".downcase
+         end
+       end
 
     end
   end
