@@ -47,6 +47,9 @@ gem "letter_opener_web", "~> 1.3"
 
 gem "sprockets", "~> 3.7"
 
+gem "omniauth-saml", "~> 1.10"
+gem "omniauth-rails_csrf_protection"
+
 group :development, :test do
   gem "dotenv-rails"
   gem "byebug", "~> 11.0", platform: :mri
