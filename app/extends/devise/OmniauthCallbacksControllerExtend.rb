@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-Devise::OmniauthCallbacksController.class_eval
+Devise::OmniauthCallbacksController.class_eval do
   skip_before_action :verify_authenticity_token, if: :saml_callback?
 
   def saml_callback?
