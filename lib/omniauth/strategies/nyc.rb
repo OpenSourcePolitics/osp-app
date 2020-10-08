@@ -16,7 +16,7 @@ module OmniAuth
              email: %w[mail email],
              first_name: %w[givenName],
              last_name: %w[sn],
-             nickname: ['uid', 'guid']
+             nickname: %w[uid guid GUID]
       option :idp_cert_fingerprint_validator, -> (fingerprint) { fingerprint }
       option :force_authn, true
       option :security,
@@ -42,6 +42,8 @@ module OmniAuth
          if hash_attributes["first_name"].present? && hash_attributes["last_name"].present?
            hash_attributes["nickname"] = "#{hash_attributes["first_name"].split(" ").first}#{hash_attributes["last_name"][0]}".downcase
          end
+
+         hash_attributes
        end
 
     end
