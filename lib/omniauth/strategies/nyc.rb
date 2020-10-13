@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'omniauth-saml'
-require 'omniauth/strategies/nyc/email_not_validated_error'
+require 'omniauth/strategies/email_not_validated_error'
 
 module OmniAuth
   module Strategies
@@ -67,8 +67,8 @@ module OmniAuth
          fail!(:invalid_ticket, $!)
        rescue OneLogin::RubySaml::ValidationError
          fail!(:invalid_ticket, $!)
-       rescue OmniAuth::Strategies::NYC::EmailNotValidatedError
-         fail!(:email_not_validated, $!)
+       rescue OmniAuth::Strategies::EmailNotValidatedError
+         fail!(I18n.t("omniauth.strategies.nyc.email_not_validated"), $!)
        end
 
        def handle_response(raw_response, opts, settings)
@@ -77,7 +77,7 @@ module OmniAuth
             nycExtEmailValidationFlag = find_attribute_by(options.attribute_statements['nycExtEmailValidationFlag'])
             Rails.logger.debug "nycExtEmailValidationFlag --> #{nycExtEmailValidationFlag}"
             if nycExtEmailValidationFlag == "False"
-              raise OmniAuth::Strategies::SAML::EmailNotValidatedError.new
+              raise OmniAuth::Strategies::EmailNotValidatedError.new
             end
           end
           yield
