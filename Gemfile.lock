@@ -33,9 +33,9 @@ GIT
       decidim-core (= 0.22.0.dev)
 
 GIT
-  remote: https://github.com/OpenSourcePolitics/decidim.git
+  remote: https://gitlab.com/open-source-politics/deploy/bosa/petition/decidim.git
   revision: 01d609c8221259d1dc8af64f7979a665b8a7514a 
-  branch: alt/petition_merge
+  branch: master
   specs:
     decidim (0.22.0.dev)
       decidim-accountability (= 0.22.0.dev)
