@@ -51,4 +51,4 @@ en:
   omniauth:
     strategies:
       nyc:
-        email_not_validated: your email is not confirmed on your NYC.Id account. Please validate it before login to the platform.
+        email_not_validated: your email is not confirmed on your NYC.Id account
