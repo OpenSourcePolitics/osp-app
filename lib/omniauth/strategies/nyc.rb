@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'omniauth-saml'
+require 'omniauth/strategies/nyc/email_not_validated_error'
 
 module OmniAuth
   module Strategies
@@ -50,6 +51,38 @@ module OmniAuth
 
          hash_attributes
        end
+
+       def callback_phase
+         raise OmniAuth::Strategies::SAML::ValidationError.new("SAML response missing") unless request.params["SAMLResponse"]
+
+         with_settings do |settings|
+           # Call a fingerprint validation method if there's one
+           validate_fingerprint(settings) if options.idp_cert_fingerprint_validator
+
+           handle_response(request.params["SAMLResponse"], options_for_response_object, settings) do
+             super
+           end
+         end
+       rescue OmniAuth::Strategies::SAML::ValidationError
+         fail!(:invalid_ticket, $!)
+       rescue OneLogin::RubySaml::ValidationError
+         fail!(:invalid_ticket, $!)
+       rescue OmniAuth::Strategies::NYC::EmailNotValidatedError
+         fail!(:email_not_validated, $!)
+       end
+
+       def handle_response(raw_response, opts, settings)
+        super(raw_response, opts, settings) do
+          if @response_object.success?
+            nycExtEmailValidationFlag = find_attribute_by(options.attribute_statements['nycExtEmailValidationFlag'])
+            Rails.logger.debug "nycExtEmailValidationFlag --> #{nycExtEmailValidationFlag}"
+            if nycExtEmailValidationFlag == "False"
+              raise OmniAuth::Strategies::SAML::EmailNotValidatedError.new
+            end
+          end
+          yield
+        end
+      end
 
     end
   end
