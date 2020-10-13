@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/armandfardeau/decidim
-  revision: 219fe26bbc72d966c1d4c48b16e113ec5e7aa7c3
+  revision: 4216ee80eaf8b5793c459aaad5a602b6ec0bf909
   branch: alt/cultuur_connect
   specs:
     decidim (0.21.0)
