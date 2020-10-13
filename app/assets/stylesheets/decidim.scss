@@ -105,6 +105,14 @@
   }
 }
 
+#loginModal .columns.large-4.mediumlarge-6.medium-8.medium-centered {
+  width: auto;
+  max-width: fit-content;
+}
+
+.button--social--mini {
+  padding: 0 1rem;
+}
 
 .initiative-types-select {
   white-space: normal !important;
@@ -190,8 +198,10 @@
   .mf-text {
     font-size: 80%;
     line-height: 1rem;
+    color: white;
 
     a {
+      color: white;
       font-weight: 600;
 
       &:hover {

@@ -36,6 +36,7 @@ en:
         omniauth_settings:
           nyc:
             icon_path: Icon path
+            provider_name: Provider name
             idp_sso_target_url: Provider URL (idp_sso_target_url)
             assertion_consumer_service_url: Callback URL (assertion_consumer_service_url)
             authn_context: Authentication context (authn_context)

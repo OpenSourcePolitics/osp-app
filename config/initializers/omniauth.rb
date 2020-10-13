@@ -12,6 +12,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
       OmniAuth::Strategies::NYC,
       setup: setup_provider_proc(:nyc,
         icon_path: :icon_path,
+        provider_name: :provider_name,
         idp_cert_fingerprint: :idp_cert_fingerprint,
         idp_cert: :idp_cert,
         certificate: :idp_cert,
