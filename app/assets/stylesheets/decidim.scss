@@ -36,8 +36,8 @@ body, h1, h2, h3, h4, h5, h6, p, a, span {
     border-right: 1px solid #666;
     img {
       height: 14px;
-      margin: 2px 0;
-      vertical-align: text-top;
+      position: relative;
+      top: -1px;
     }
   }
 
@@ -45,7 +45,8 @@ body, h1, h2, h3, h4, h5, h6, p, a, span {
     color: white;
     font-weight: 700;
     font-size: .8rem;
-    vertical-align: text-top;
+    line-height: 1rem;
+    vertical-align: middle;
   }
 }
 
