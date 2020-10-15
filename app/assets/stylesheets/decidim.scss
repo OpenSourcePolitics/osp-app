@@ -17,13 +17,13 @@
 
 @import "decidim/application";
 
-// .logo-cityhall {
-//   position: static;
-//   margin: 0;
-//   @media print, screen and (min-width: 40em) {
-//     text-align: left;
-//   }
-// }
+// @import "fontface";
+// TODO : PR on decidim-core/app/assets/stylesheets/decidim/utils/_settings.scss to add !default on this variable.
+$body-font-family: 'Ultramagnetic', Helvetica, Arial, sans-serif;
+
+body, h1, h2, h3, h4, h5, h6, p, a, span {
+  font-family: $body-font-family;
+}
 
 .application-header {
   background-color: black;
