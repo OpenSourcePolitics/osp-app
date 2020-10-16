@@ -88,6 +88,11 @@ $navbar-background: darken( $title-bar-background, 10%);
   color: $dark-gray;
 }
 
+.topbar__search button {
+  height: 2.5rem;
+  padding: .5rem 1rem;
+}
+
 @media print, screen and (min-width: 40em) {
   .topbar__search input,
   .topbar__search input:focus {
