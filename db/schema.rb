@@ -140,7 +140,6 @@ ActiveRecord::Schema.define(version: 2020_07_20_153424) do
     t.boolean "show_statistics", default: false
     t.integer "decidim_scope_id"
     t.boolean "scopes_enabled", default: true, null: false
-    t.boolean "private_space", default: false
     t.string "reference"
     t.bigint "decidim_area_id"
     t.boolean "private_space", default: false
@@ -345,8 +344,8 @@ ActiveRecord::Schema.define(version: 2020_07_20_153424) do
     t.integer "parent_id"
     t.integer "decidim_participatory_space_id"
     t.string "decidim_participatory_space_type"
-    t.integer "weight", default: 0, null: false
     t.string "color"
+    t.integer "weight", default: 0, null: false
     t.index ["decidim_participatory_space_id", "decidim_participatory_space_type"], name: "index_decidim_categories_on_decidim_participatory_space"
     t.index ["parent_id"], name: "index_decidim_categories_on_parent_id"
   end
@@ -452,15 +451,6 @@ ActiveRecord::Schema.define(version: 2020_07_20_153424) do
     t.bigint "organization_id", null: false
     t.jsonb "content", null: false
     t.index ["organization_id"], name: "index_decidim_contextual_help_sections_on_organization_id"
-  end
-
-  create_table "decidim_continuity_badge_statuses", force: :cascade do |t|
-    t.integer "current_streak", default: 0, null: false
-    t.integer "integer", default: 0, null: false
-    t.date "last_session_at", null: false
-    t.string "subject_type", null: false
-    t.bigint "subject_id", null: false
-    t.index ["subject_type", "subject_id"], name: "decidim_continuity_statuses_subject"
   end
 
   create_table "decidim_debates_debates", id: :serial, force: :cascade do |t|
@@ -889,9 +879,9 @@ ActiveRecord::Schema.define(version: 2020_07_20_153424) do
     t.datetime "updated_at", null: false
     t.boolean "active", default: false
     t.integer "position"
+    t.jsonb "action_btn_text"
     t.jsonb "cta_text", default: {}
     t.string "cta_path"
-    t.jsonb "action_btn_text"
     t.index ["decidim_participatory_process_id", "active"], name: "unique_index_to_avoid_duplicate_active_steps", unique: true, where: "(active = true)"
     t.index ["decidim_participatory_process_id", "position"], name: "index_unique_position_for_process", unique: true
     t.index ["decidim_participatory_process_id"], name: "index_decidim_processes_steps__on_decidim_process_id"
