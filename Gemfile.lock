@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module_cookies
-  revision: 0a08a86b4d174bd37fb5a2954fda8398411c8c89
+  revision: 980fc23144bcec7872f2de063838f9d7a4d4fe6c
   branch: 0.21-stable
   specs:
     decidim-cookies (0.21.0)
@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/armandfardeau/decidim
-  revision: bb653b2acbea2c394ca62f606306dabb40931254
+  revision: 85b6896ba38a32222c0078b7c462dc14a1633c46
   branch: alt/cultuur_connect
   specs:
     decidim (0.21.0)
