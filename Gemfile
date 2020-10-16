@@ -24,6 +24,8 @@ gem "decidim-navbar_links", git: "https://github.com/OpenSourcePolitics/decidim-
 # gem "decidim-navigation_maps", git: "https://github.com/Platoniq/decidim-module-navigation_maps"
 gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git", branch: "0.dev"
 
+gem "decidim-url_aliases", git: "https://github.com/OpenSourcePolitics/decidim-urlaliases.git"
+
 gem "bootsnap", "~> 1.3"
 
 gem "dotenv-rails"
