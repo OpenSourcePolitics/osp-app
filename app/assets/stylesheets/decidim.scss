@@ -17,7 +17,7 @@
 
 @import "decidim/application";
 
-// @import "fontface";
+@import "fontface";
 // TODO : PR on decidim-core/app/assets/stylesheets/decidim/utils/_settings.scss to add !default on this variable.
 $body-font-family: 'Ultramagnetic', Helvetica, Arial, sans-serif;
 
