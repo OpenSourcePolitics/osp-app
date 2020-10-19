@@ -1,0 +1,31 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<%= csrf_meta_tags %>
+<%= stylesheet_link_tag    "decidim/admin/application", media: "all" %>
+<%= javascript_include_tag "decidim/admin/application" %>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+          pageLanguage: '<%= current_locale %>',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: false
+      }, 'google_translate_element');
+  }
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<style media="screen">
+  .language-choose .goog-te-gadget-icon, .language-choose img { display:none; }
+  .language-choose .goog-te-gadget-simple {
+    border: 0 !important;
+    background-color: transparent;
+    position: relative;
+    top: 1px;
+  }
+  .language-choose .goog-te-gadget-simple span {
+    border: 0 !important;
+    color: white !important;
+    font-size: 1rem !important;
+  }
+  .language-choose .goog-te-gadget-simple span span:first-child {
+    margin-right: 3px;
+  }
+</style>

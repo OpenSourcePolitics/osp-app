@@ -50,6 +50,45 @@ body, h1, h2, h3, h4, h5, h6, p, a, span {
   }
 }
 
+.language-choose {
+  // .goog-te-gadget-simple {
+  //   border: 0;
+  //   font-weight: bold;
+  //   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  // }
+
+  .goog-te-gadget-icon, img {
+    display: none;
+  }
+
+  .goog-te-gadget-simple {
+    border: 0 !important;
+    background-color: transparent;
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    span {
+      border: 0 !important;
+
+      span:first-child {
+        font-size: 1rem;
+        color: #8cc63e;
+        margin-right: 3px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      span:last-child {
+        color: #e8e8e8 !important;
+      }
+    }
+  }
+}
+
 
 
 @media screen and (max-width: 39.99875em) {
@@ -87,6 +126,11 @@ body, h1, h2, h3, h4, h5, h6, p, a, span {
       li:last-child a {
         border-bottom: none;
       }
+    }
+
+    .goog-te-gadget-simple span span:first-child{
+      font-size: .8rem;
+      font-weight: normal;
     }
   }
 
