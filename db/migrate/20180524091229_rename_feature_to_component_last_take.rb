@@ -9,6 +9,10 @@ class RenameFeatureToComponentLastTake < ActiveRecord::Migration[5.1]
     self.table_name = :versions
   end
 
+  class Notification < ApplicationRecord
+    self.table_name = :decidim_notifications
+  end
+
   def change
     # rename_table :decidim_features, :decidim_components
     # rename_column :decidim_action_logs, :decidim_feature_id, :decidim_component_id
@@ -19,12 +23,21 @@ class RenameFeatureToComponentLastTake < ActiveRecord::Migration[5.1]
     end
 
     # rubocop:disable Rails/SkipsModelValidations
+<<<<<<< Updated upstream
     if Version.table_exists?
       Version.where(item_type: "Decidim::Feature").update_all(item_type: "Decidim::Component")
     end
     if ActionLog.table_exists?
       ActionLog.where(resource_type: "Decidim::Feature").update_all(resource_type: "Decidim::Component")
       # rubocop:enable Rails/SkipsModelValidations
+=======
+    Version.where(item_type: "Decidim::Feature").update_all(item_type: "Decidim::Component")
+    ActionLog.where(resource_type: "Decidim::Feature").update_all(resource_type: "Decidim::Component")
+    Notification.where(decidim_resource_type: "Decidim::Feature").update_all(decidim_resource_type: "Decidim::Component")
+    Notification.where(event_class: "Decidim::FeaturePublishedEvent").update_all(event_class: "Decidim::ComponentPublishedEvent")
+    Notification.where(event_name: "decidim.events.features.feature_published").update_all(event_name: "decidim.events.components.component_published")
+    # rubocop:enable Rails/SkipsModelValidations
+>>>>>>> Stashed changes
 
       ActionLog.find_each do |log|
         new_extra = log.extra.dup
