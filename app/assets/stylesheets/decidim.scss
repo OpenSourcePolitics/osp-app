@@ -234,6 +234,10 @@ $navbar-background: darken( $title-bar-background, 10%);
   }
 }
 
+.topbar div {
+  align-items: center;
+}
+
 .main-footer .row {
   display: flex;
   align-items: center;
@@ -254,6 +258,7 @@ $navbar-background: darken( $title-bar-background, 10%);
 
   img {
     height: 1rem;
+    margin-top: -0.25rem;
   }
 
   .mf-text {
