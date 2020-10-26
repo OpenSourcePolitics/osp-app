@@ -11,58 +11,56 @@ fr:
       admin:
         direct_verifications:
           help:
-          - 'Allows the massive introduction of users in order to:'
-          - Direct register in the organization and sends invitations
-          - Verify them in any active verification method
-          - Revoke their verification in any active verification method
+          - 'Permet l'ajout massif d'utilisateur dans le but de :'
+          - Directement enregistrer les participants dans l'orgnisation et de leur envoyer des invitations
+          - Vérifier ces participants dans l'une des méthodes de vérification active
+          - Révoquer leurs vérifications dans l'une des méthodes de vérification active
       direct_verifications:
-        explanation: Manual verification by the administrators of the organization
-        name: Direct verification
+        explanation: Vérification manuelle par les administrateurs de l'organisation
+        name: Vérification directe
     direct_verifications:
       verification:
         admin:
           direct_verifications:
             create:
-              authorized: "%{authorized} users have been successfully verified using
-                [%{handler}] (%{count} detected, %{errors} errors)"
-              info: "%{count} users detected, of which %{registered} are registered,
-                %{authorized} authorized using [%{handler}] (%{unconfirmed} unconfirmed)"
-              registered: "%{registered} users have been successfully registered (%{count}
-                detected, %{errors} errors) "
-              revoked: Verification from %{revoked} users have been revoked using
-                [%{handler}] (%{count} detected, %{errors} errors)
-            gdpr_disclaimer: Do this under your responsibility. Remember that you
-              need to have explicit consent from your users in order to register them.
-              Otherwise you will be infringing the GDPR regulation in EU countries.
+              authorized: "%{authorized} participants ont été vérifiés avec succès grâce à 
+                [%{handler}] (%{count} détectés, %{errors} erreurs)"
+              info: "%{count} participants détectés, dont %{registered} sont inscrits et
+                %{authorized} vérifiés via [%{handler}] (%{unconfirmed} non confirmés)"
+              registered: "%{registered} participants ont été enregistrés avec succès, (%{count}
+                détectés, %{errors} erreurs) "
+              revoked: La vérificaiton des %{revoked} participants a été supprimée à l'aide de 
+                [%{handler}] (%{count} détectés, %{errors} erreurs)
+            gdpr_disclaimer: Cette action est sous votre responsabilité. Souvenez-vous que vous devez disposer du consentement explicite
+                de vos utilisateurs avant de les inscrire. Dans le cas contraire, vous enfreindriez le RGPD dans les pays de l'Union européenne.  
           index:
-            stats: User stats
-            title: Register and authorize users
+            stats: Statistiques utilisateurs
+            title: Inscrire et vérifier des utilisateurs
           new:
-            authorization_handler: Verification method
-            authorize: Authorize users
-            check: Check users status
-            info: Enter the emails here, one per line. If the emails are preceded
-              by a text, it will be interpreted as the user's name
-            register: Register users in the platform (if they exist they will be ignored)
-            revoke: Revoke authorization from users
-            submit: Send and process the list
-            textarea: Emails list
+            authorization_handler: Méthode de vérification
+            authorize: Valider les utilisateurs
+            check: Vérifier le statut des utilisateurs de cette liste (combien sont inscrits, combien vérifiés, ...)
+            info: Entrez les emails ici, ligne par ligne. Si les emails sont précédés d'un texte, celui-ci sera interprété comme le nom utilisateur. 
+            register: Inscrire les utilisateurs sur la plateforme (s'ils existent déjà ils seront ignorés)
+            revoke: Révoquer les autorisations
+            submit: Envoyer et traiter la liste
+            textarea: Liste d'emails
           stats:
             index:
-              authorized: Authorized
-              authorized_unconfirmed: Authorized but unconfirmed
-              global: "- Any verification method -"
-              registered: Registered
-              unconfirmed: Unconfirmed
+              authorized: Autorisés
+              authorized_unconfirmed: Autorisés mais non confirmés
+              global: "- Toutes les méthodes de vérification -"
+              registered: Inscrits
+              unconfirmed: Non confirmés
         authorizations:
           new:
-            no_action: This method requires an administrator that verifies you
+            no_action: Cette action nécessite qu'un administrateur autorise votre compte
     verifications:
       authorizations:
         first_login:
           actions:
-            direct_verifications: Direct verification
+            direct_verifications: Vérification directe
   devise:
     mailer:
       direct_invite:
-        subject: Invitation instructions
+        subject: Instructions d'invitation
