@@ -15,7 +15,7 @@ gem "decidim-initiatives", git: "https://github.com/decidim/decidim.git", branch
 # gem "decidim-calendar", git: "https://github.com/alabs/decidim-module-calendar"
 # gem "decidim-combined_budgeting", git: "https://github.com/mainio/decidim-module-combined_budgeting"
 # gem "decidim-comparative_stats", git: "https://github.com/Platoniq/decidim-module-comparative_stats"
-gem "decidim-cookies", path: "~/OSP/modules_decidim/decidim-module_cookies"
+gem "decidim-cookies", git: "https://github.com/OpenSourcePolitics/decidim-module_cookies", branch: "release/0.23-stable"
 # gem "decidim-decidim_awesome", git: "https://github.com/Platoniq/decidim-module-decidim_awesome"
 # gem "decidim-direct_verifications", git: "https://github.com/Platoniq/decidim-verifications-direct_verifications"
 # gem "decidim-homepage_interactive_map", git: "https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map.git"
