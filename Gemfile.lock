@@ -16,8 +16,16 @@ GIT
       decidim-core
 
 GIT
+  remote: https://github.com/OpenSourcePolitics/decidim-module_cookies
+  revision: b3ea1a0a5cdd5852617f1967b07216d8cd970621
+  branch: release/0.22-stable
+  specs:
+    decidim-cookies (0.22.0)
+      decidim-core (= 0.22.0)
+
+GIT
   remote: https://github.com/decidim/decidim.git
-  revision: d80d6cb6d1f59963b0a452e418f4a4788abaf1a9
+  revision: e0cb3a1ee409820e806262d29cae2c3ca4bd2f57
   branch: release/0.22-stable
   specs:
     decidim (0.22.0)
@@ -78,6 +86,15 @@ GIT
       decidim-core (= 0.22.0)
       jquery-rails (~> 4.3)
       redcarpet (~> 3.4)
+    decidim-conferences (0.22.0)
+      decidim-core (= 0.22.0)
+      decidim-meetings (= 0.22.0)
+      wicked_pdf (~> 1.4)
+      wkhtmltopdf-binary (~> 0.12)
+    decidim-consultations (0.22.0)
+      decidim-admin (= 0.22.0)
+      decidim-comments (= 0.22.0)
+      decidim-core (= 0.22.0)
     decidim-core (0.22.0)
       active_link_to (~> 1.0)
       anchored (>= 1.1.0)
@@ -170,6 +187,17 @@ GIT
       decidim-core (= 0.22.0)
     decidim-generators (0.22.0)
       decidim-core (= 0.22.0)
+    decidim-initiatives (0.22.0)
+      decidim-admin (= 0.22.0)
+      decidim-comments (= 0.22.0)
+      decidim-core (= 0.22.0)
+      decidim-verifications (= 0.22.0)
+      kaminari (~> 1.2, >= 1.2.1)
+      origami (~> 2.1)
+      virtus-multiparams (~> 0.1)
+      wicked (~> 1.3)
+      wicked_pdf (~> 1.4)
+      wkhtmltopdf-binary (~> 0.12)
     decidim-meetings (0.22.0)
       cells-erb (~> 0.1.0)
       cells-rails (~> 0.0.9)
@@ -321,7 +349,7 @@ GEM
       actionpack (>= 3.0)
       cells (>= 4.1.6, < 5.0.0)
     charlock_holmes (0.7.7)
-    chef-utils (16.5.64)
+    chef-utils (16.6.14)
     childprocess (3.0.0)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -332,6 +360,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
+    colorize (0.8.1)
     concurrent-ruby (1.1.7)
     connection_pool (2.2.3)
     crack (0.4.4)
@@ -443,7 +472,7 @@ GEM
     graphiql-rails (1.4.11)
       railties
       sprockets-rails
-    graphql (1.11.4)
+    graphql (1.11.5)
     hashdiff (1.0.1)
     hashie (4.1.0)
     highline (2.0.3)
@@ -455,6 +484,7 @@ GEM
     httparty (0.18.1)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
+    httpclient (2.8.3)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     i18n-tasks (0.9.31)
@@ -481,6 +511,10 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-tmpl-rails (1.1.0)
       rails (>= 3.1.0)
+    json-jwt (1.13.0)
+      activesupport (>= 4.2)
+      aes_key_wrap
+      bindata
     jwt (2.2.2)
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
@@ -607,7 +641,7 @@ GEM
       rack
       rake (>= 0.8.1)
     pg (1.1.4)
-    pg_search (2.3.3)
+    pg_search (2.3.4)
       activerecord (>= 5.2)
       activesupport (>= 5.2)
     premailer (1.14.2)
@@ -683,7 +717,7 @@ GEM
       wisper (>= 1.6.1)
     redcarpet (3.5.0)
     redis (4.2.2)
-    regexp_parser (1.8.0)
+    regexp_parser (1.8.2)
     request_store (1.5.0)
       rack (>= 1.4)
     responders (3.0.1)
@@ -704,10 +738,10 @@ GEM
       rspec-rails (< 5.0)
     rspec-core (3.9.3)
       rspec-support (~> 3.9.3)
-    rspec-expectations (3.9.2)
+    rspec-expectations (3.9.3)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
-    rspec-html-matchers (0.9.3)
+    rspec-html-matchers (0.9.4)
       nokogiri (~> 1)
       rspec (>= 3.0.0.a, < 4)
     rspec-mocks (3.9.1)
@@ -723,7 +757,7 @@ GEM
       rspec-support (~> 3.9.0)
     rspec-retry (0.6.2)
       rspec-core (> 3.3)
-    rspec-support (3.9.3)
+    rspec-support (3.9.4)
     rspec_junit_formatter (0.3.0)
       rspec-core (>= 2, < 4, != 2.12.0)
     rubocop (0.71.0)
@@ -844,6 +878,8 @@ GEM
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
+    virtus-multiparams (0.1.1)
+      virtus (~> 1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (3.7.0)
@@ -851,7 +887,10 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
-    webmock (3.9.1)
+    webfinger (1.1.0)
+      activesupport
+      httpclient (>= 2.4)
+    webmock (3.9.3)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
@@ -876,7 +915,11 @@ DEPENDENCIES
   byebug (~> 11.0)
   dalli
   decidim!
+  decidim-conferences!
+  decidim-consultations!
+  decidim-cookies!
   decidim-dev!
+  decidim-initiatives!
   decidim-navbar_links!
   decidim-term_customizer!
   dotenv-rails
