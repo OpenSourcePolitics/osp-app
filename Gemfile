@@ -8,9 +8,9 @@ gem "decidim", git: "https://github.com/decidim/decidim.git", branch: "release/0
 # gem "decidim", path: "../decidim"
 # gem "decidim-map", path: "../decidim-map"
 
-# gem "decidim-conferences", git: "https://github.com/decidim/decidim.git", branch: "release/0.22-stable"
-# gem "decidim-consultations", git: "https://github.com/decidim/decidim.git", branch: "release/0.22-stable"
-# gem "decidim-initiatives", git: "https://github.com/decidim/decidim.git", branch: "release/0.22-stable"
+gem "decidim-conferences", git: "https://github.com/decidim/decidim.git", branch: "release/0.22-stable"
+gem "decidim-consultations", git: "https://github.com/decidim/decidim.git", branch: "release/0.22-stable"
+gem "decidim-initiatives", git: "https://github.com/decidim/decidim.git", branch: "release/0.22-stable"
 
 # gem "decidim-calendar", git: "https://github.com/alabs/decidim-module-calendar"
 # gem "decidim-combined_budgeting", git: "https://github.com/mainio/decidim-module-combined_budgeting"
