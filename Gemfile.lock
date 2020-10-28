@@ -400,6 +400,7 @@ GEM
       i18n (>= 0.7)
     faraday (1.1.0)
       multipart-post (>= 1.2, < 3)
+      ruby2_keywords
     ffi (1.13.1)
     file_validators (2.3.0)
       activemodel (>= 3.2)
@@ -440,7 +441,7 @@ GEM
     graphiql-rails (1.4.11)
       railties
       sprockets-rails
-    graphql (1.11.4)
+    graphql (1.11.5)
     hashdiff (1.0.1)
     hashie (4.1.0)
     highline (2.0.3)
@@ -715,6 +716,7 @@ GEM
       rubocop (>= 0.68.1)
     ruby-ole (1.2.12.2)
     ruby-progressbar (1.10.1)
+    ruby2_keywords (0.0.2)
     ruby_http_client (3.5.1)
     rubyzip (2.0.0)
     rufus-scheduler (3.6.0)
