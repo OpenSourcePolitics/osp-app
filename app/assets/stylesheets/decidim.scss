@@ -171,6 +171,10 @@ $secondary: $dark-orange;
   }
 }
 
+.topbar div {
+  align-items: center;
+}
+
 .main-footer .row {
   display: flex;
   align-items: center;
@@ -191,6 +195,7 @@ $secondary: $dark-orange;
 
   img {
     height: 1rem;
+    margin-top: -0.25rem;
   }
 
   .mf-text {
