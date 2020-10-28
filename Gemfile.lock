@@ -31,9 +31,9 @@ GIT
       decidim-core (= 0.18.0)
 
 GIT
-  remote: https://github.com/OpenSourcePolitics/decidim.git
+  remote: https://gitlab.com/open-source-politics/deploy/bosa/mon-opinion/decidim.git
   revision: c6a7662b01c26b45b8d4b47cc48b1381a93d5cbc
-  branch: 0.18-merge
+  branch: master
   specs:
     decidim (0.18.0)
       decidim-accountability (= 0.18.0)
