@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_27_130987) do
+ActiveRecord::Schema.define(version: 2020_10_27_140003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -1459,8 +1459,6 @@ ActiveRecord::Schema.define(version: 2020_10_27_130987) do
   end
 
   create_table "decidim_proposals_proposals", id: :serial, force: :cascade do |t|
-    t.text "title", null: false
-    t.text "body", null: false
     t.integer "decidim_component_id", null: false
     t.integer "decidim_scope_id"
     t.datetime "created_at", null: false
@@ -1486,8 +1484,10 @@ ActiveRecord::Schema.define(version: 2020_10_27_130987) do
     t.datetime "state_published_at"
     t.integer "endorsements_count", default: 0, null: false
     t.integer "comments_count", default: 0, null: false
-    t.index "md5(body)", name: "decidim_proposals_proposal_body_search"
-    t.index "md5(title)", name: "decidim_proposals_proposal_title_search"
+    t.jsonb "title"
+    t.jsonb "body"
+    t.index "md5((body)::text)", name: "decidim_proposals_proposal_body_search"
+    t.index "md5((title)::text)", name: "decidim_proposals_proposal_title_search"
     t.index ["created_at"], name: "index_decidim_proposals_proposals_on_created_at"
     t.index ["decidim_component_id"], name: "index_decidim_proposals_proposals_on_decidim_component_id"
     t.index ["decidim_scope_id"], name: "index_decidim_proposals_proposals_on_decidim_scope_id"
