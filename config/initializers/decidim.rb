@@ -4,7 +4,7 @@ Decidim.configure do |config|
   config.skip_first_login_authorization = ENV["SKIP_FIRST_LOGIN_AUTHORIZATION"] ? ActiveRecord::Type::Boolean.new.cast(ENV["SKIP_FIRST_LOGIN_AUTHORIZATION"]) : true
   config.application_name = "My Opinion"
   # config.mailer_sender = "My Opinion <no-reply@myopinion.belgium.be>"
-  config.mailer_sender = "OSP Agora <ne-pas-repondre@opensourcepolitics.eu>"
+  config.mailer_sender = "My Opinion <ne-pas-repondre@opensourcepolitics.eu>"
 
   # Change these lines to set your preferred locales
   config.default_locale = :fr

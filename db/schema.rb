@@ -139,9 +139,9 @@ ActiveRecord::Schema.define(version: 2020_09_08_112637) do
     t.jsonb "participatory_structure"
     t.boolean "show_statistics", default: false
     t.integer "decidim_scope_id"
+    t.boolean "scopes_enabled", default: true, null: false
     t.string "reference"
     t.bigint "decidim_area_id"
-    t.boolean "scopes_enabled", default: true, null: false
     t.boolean "private_space", default: false
     t.bigint "parent_id"
     t.ltree "parents_path"

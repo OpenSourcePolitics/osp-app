@@ -1,16 +1,14 @@
 <% if Devise.mappings[:user].omniauthable? && current_organization.enabled_omniauth_providers.any? && !request.env['PATH_INFO'].include?("/admin_sign_in") %>
   <div class="row">
-    <div class="columns large-4 mediumlarge-6 medium-8 medium-centered">
-      <%- current_organization.enabled_omniauth_providers.keys.each do |provider| %>
-        <div class="social-register">
-          <%= link_to decidim.send("user_#{provider}_omniauth_authorize_path"), class: "button button--social button--#{normalize_provider_name(provider)}", method: :post do %>
-            <span class="button--social__icon">
-              <%= oauth_icon provider %>
-            </span>
-            <%= t("devise.shared.links.sign_in_with_provider", provider: normalize_provider_name(provider).titleize) %>
-          <% end %>
-        </div>
-      <% end %>
+    <div class="columns medium-centered" style="max-width: 400px;">
+      <div class="social-register">
+        <%= link_to decidim.send("user_saml_omniauth_authorize_path"), class: "button button--social button--#{normalize_provider_name(:saml)}", method: :post do %>
+          <span class="button--social__icon">
+            <%= oauth_icon :saml %>
+          </span>
+          <%= t("devise.shared.links.sign_in_with_provider", provider: normalize_provider_name(:saml).titleize) %>
+        <% end %>
+      </div>
       <%- if current_organization.sign_in_enabled? %>
         <span class="register__separator">
           <span class="register__separator__text"><%= t(".or") %></span>

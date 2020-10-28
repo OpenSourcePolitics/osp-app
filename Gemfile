@@ -36,12 +36,10 @@ gem "sentry-raven"
 
 gem "letter_opener_web", "~> 1.3"
 
-gem "omniauth-saml", "~> 1.10.0"
 gem "sprockets", "~> 3.7"
+gem "omniauth-saml", "~> 1.10.1"
 
 gem "dotenv-rails"
-gem "activerecord-session_store"
-
 
 group :development, :test do
   gem "byebug", "~> 10.0", platform: :mri
@@ -63,7 +61,7 @@ group :production do
   gem "fog-aws"
   gem "dalli"
   gem "sendgrid-ruby"
-  gem "newrelic_rpm"
+  # gem "newrelic_rpm"
   gem "lograge"
   gem "sidekiq"
   gem "sidekiq-scheduler"
