@@ -278,6 +278,9 @@ ActiveRecord::Schema.define(version: 2020_01_28_153643) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "reference"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["decidim_component_id"], name: "index_decidim_budgets_projects_on_decidim_component_id"
     t.index ["decidim_scope_id"], name: "index_decidim_budgets_projects_on_decidim_scope_id"
   end
@@ -805,6 +808,7 @@ ActiveRecord::Schema.define(version: 2020_01_28_153643) do
     t.datetime "updated_at", null: false
     t.boolean "active", default: false
     t.integer "position"
+    t.jsonb "action_btn_text"
     t.jsonb "cta_text", default: {}
     t.string "cta_path"
     t.index ["decidim_participatory_process_id", "active"], name: "unique_index_to_avoid_duplicate_active_steps", unique: true, where: "(active = true)"
