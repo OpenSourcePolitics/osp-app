@@ -16,11 +16,12 @@ if Rails.application.secrets.dig(:scaleway, :id).present? && Rails.env.productio
         enable_signature_v4_streaming: false
     }
     config.storage = :fog
-    config.fog_directory = Rails.application.secrets.dig(:scaleway, :bucket_name) { "bosa-bucket" }
+    config.fog_directory = Rails.application.secrets.dig(:scaleway, :bucket_name) { "bosa-prod-bucket" }
     config.fog_attributes = {
         'Cache-Control' => "max-age=#{365.day.to_i}",
         'X-Content-Type-Options' => "nosniff"
     }
+    config.asset_host = "https://static.bosa.opensourcepolitics.net"
   end
 else
   CarrierWave.configure do |config|
@@ -30,6 +31,6 @@ else
     config.enable_processing = !Rails.env.test?
     # This needs to be set for correct attachment file URLs in emails
     # DON'T FORGET to ALSO set this in `config/application.rb`
-    # config.asset_host = "https://broom.osp.cat"
+    # config.asset_host = "https://moorb.osp.cat"
   end
 end

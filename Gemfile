@@ -30,7 +30,7 @@ gem "wicked_pdf"
 gem "wkhtmltopdf-binary"
 
 gem "ruby-progressbar"
-gem "sentry-raven"
+# gem "sentry-raven"
 
 gem "activerecord-session_store"
 

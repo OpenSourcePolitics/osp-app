@@ -17,12 +17,14 @@ Decidim.configure do |config|
   # config.system_whitelist_ips = ["127.0.0.1"]
 
   # Geocoder configuration
-  config.geocoder = {
+  if !Rails.application.secrets.geocoder[:here_app_id].blank?
+    config.geocoder = {
       static_map_url: "https://image.maps.cit.api.here.com/mia/1.6/mapview",
       here_api_key: Rails.application.secrets.geocoder[:here_api_key],
       here_app_id: "DEPRECATED",
       here_app_code: "DEPRECATED"
-  }
+    }
+  end
 
   if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_require_authorization)
     Decidim::Initiatives.minimum_committee_members = 0
@@ -30,6 +32,7 @@ Decidim.configure do |config|
     Decidim::Initiatives.print_enabled = false
     Decidim::Initiatives.default_components = []
     Decidim::Initiatives.timestamp_service = "Decidim::Initiatives::UtcTimestamp"
+    Decidim::Initiatives.do_not_require_authorization = true
   end
 
   # Custom resource reference generator method
@@ -139,6 +142,8 @@ Decidim.configure do |config|
   #   api_key: Rails.application.secrets.etherpad[:api_key],
   #   api_version: Rails.application.secrets.etherpad[:api_version]
   # }
+
+  Rack::Attack.enabled = false if Rails.env.production?
 end
 
 Rails.application.config.i18n.available_locales = Decidim.available_locales

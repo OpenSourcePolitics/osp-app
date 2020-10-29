@@ -58,7 +58,7 @@ def person_services_request(opts, person_id)
 
   ps_client = Savon.client(
     wsdl: opts[:person_services_wsdl],
-    proxy: opts[:person_services_proxy],
+    # proxy: opts[:person_services_proxy],
 
     log: true,
     logger: Logger.new(STDOUT),

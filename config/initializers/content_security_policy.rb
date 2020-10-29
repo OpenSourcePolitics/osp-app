@@ -8,7 +8,8 @@
 
 if Rails.env.production?
   Rails.application.config.content_security_policy do |policy|
-    policy.default_src :self, :https, "argus.osp.cat", Decidim::Organization.all.collect { |org| "https://#{org.host}" }.join(',')
+    # policy.default_src :self, :https, "argus.osp.cat", Decidim::Organization.all.collect { |org| "https://#{org.host}" }.join(',')
+    policy.default_src :self, :https, "argus.osp.cat", 'https://moorb.osp.cat'
     policy.font_src :self, :https, :data
     policy.img_src :self, :https, :data
     policy.object_src :none

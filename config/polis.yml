@@ -1,0 +1,13 @@
+default: &default
+  enabled: true
+  site_id: "polis_site_id_XXXXXXXXXX"
+    # "<decidim_organizations.name>" : "polis_site_id_XXXXXXXXXX"
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
