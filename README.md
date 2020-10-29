@@ -65,6 +65,11 @@ user.save!
 
 ## Customizations
 
+### Sign in
+
+The sign in form has been changed to prevent public users to log into the platform with the standard
+email / password method. Platform admins can log into the platform using `<your app url>/admin_sign_in` route.
+
 ### Overrides
 see [OVERRIDES.md](./OVERRIDES.md)
 
