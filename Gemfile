@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://gitlab.com/open-source-politics/deploy/bosa/petition/decidim.git"
+gem "decidim", git: "https://gitlab.com/open-source-politics/deploy/bosa/mon-opinion/decidim.git"
 # gem "decidim", path: "../decidim"
 # gem "decidim-map", path: "../decidim-map"
 
