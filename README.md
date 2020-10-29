@@ -47,7 +47,6 @@ You're good to go!
 * Available config keys are the same as the one present in
 `config/secrets.yml` and `config/initializers/omniauth.rb`
 
-
 ## Use production data for staging
 
 > !! When working with production data for testing or development, always use the `development` mode (Letter Opener) or blank SMTP settings to prevent sending emails to real imported users !!
@@ -63,3 +62,24 @@ user.save!
 4. Launch the app i n `development` mode (default) --> `bundle exec rails s`
 4. Visit `<your app url>/system` and login with your system admin credentials
 5. Edit the organization your want to access with the correct host of your machine (like `localhost`)
+
+## Customizations
+
+### Overrides
+see [OVERRIDES.md](./OVERRIDES.md)
+
+### Jobs
+These jobs (Active Job) were added on top on the usual Decidim jobs.
+
+* `app/jobs/calculate_all_metrics_job.rb`
+* `app/jobs/check_published_initiatives.rb`
+* `app/jobs/check_validating_initiatives.rb`
+* `app/jobs/clean_sessions.rb`
+* `app/jobs/notify_progress_initiatives.rb`
+* `app/jobs/preload_open_data.rb`
+
+### Additional tasks
+
+* `lib/tasks/decidim_initiatives_extras.rake`
+* `lib/tasks/get_person.rake`
+* `lib/tasks/scopes.rake`

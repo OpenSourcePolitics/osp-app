@@ -11,7 +11,7 @@ namespace :decidim do
   Rails.logger = Logger.new(STDOUT)
 
   namespace :scopes do
-    desc "Import scopes"
+    desc "Import scopes. Usage : decidim:scopes:import <organization host>"
     task import: :environment do |task|
       ARGV.each { |a| task a.to_sym do ; end }
       @ROOT = task.application.original_dir
