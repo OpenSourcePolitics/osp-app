@@ -66,3 +66,20 @@ user.save!
 4. Launch the app i n `development` mode (default) --> `bundle exec rails s`
 4. Visit `<your app url>/system` and login with your system admin credentials
 5. Edit the organization your want to access with the correct host of your machine (like `localhost`)
+
+## Customizations
+
+### Sign in
+
+The sign in form has been changed to prevent public users to log into the platform with the standard
+email / password method. Platform admins can log into the platform using `<your app url>/admin_sign_in` route.
+
+### Overrides
+see [OVERRIDES.md](./OVERRIDES.md)
+
+### Jobs
+These jobs (Active Job) were added on top on the usual Decidim jobs.
+
+* `app/jobs/calculate_all_metrics_job.rb`
+* `app/jobs/orders_reminder_job.rb`
+* `app/jobs/preload_open_data.rb`
