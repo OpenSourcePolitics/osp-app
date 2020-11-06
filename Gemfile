@@ -25,6 +25,8 @@ gem "decidim-navbar_links", git: "https://github.com/OpenSourcePolitics/decidim-
 gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git", branch: "0.dev"
 
 gem "decidim-url_aliases", git: "https://github.com/OpenSourcePolitics/decidim-urlaliases.git"
+gem "decidim-question_captcha", git: "https://github.com/OpenSourcePolitics/decidim-module-question_captcha.git"
+gem "acts_as_textcaptcha", "~> 4.5.1"
 
 gem "bootsnap", "~> 1.3"
 
