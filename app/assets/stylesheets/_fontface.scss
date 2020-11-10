@@ -1,0 +1,167 @@
+@font-face {
+    font-family: 'Rubik';
+    src: url('Rubik-MediumItalic.eot');
+    src: local('Rubik Medium Italic'), local('Rubik-MediumItalic'),
+        url('Rubik-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('Rubik-MediumItalic.woff2') format('woff2'),
+        url('Rubik-MediumItalic.woff') format('woff'),
+        url('Rubik-MediumItalic.ttf') format('truetype'),
+        url('Rubik-MediumItalic.svg#Rubik-MediumItalic') format('svg');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('Rubik-Light.eot');
+    src: local('Rubik Light'), local('Rubik-Light'),
+        url('Rubik-Light.eot?#iefix') format('embedded-opentype'),
+        url('Rubik-Light.woff2') format('woff2'),
+        url('Rubik-Light.woff') format('woff'),
+        url('Rubik-Light.ttf') format('truetype'),
+        url('Rubik-Light.svg#Rubik-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('Rubik-Medium.eot');
+    src: local('Rubik Medium'), local('Rubik-Medium'),
+        url('Rubik-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Rubik-Medium.woff2') format('woff2'),
+        url('Rubik-Medium.woff') format('woff'),
+        url('Rubik-Medium.ttf') format('truetype'),
+        url('Rubik-Medium.svg#Rubik-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('Rubik-Italic.eot');
+    src: local('Rubik Italic'), local('Rubik-Italic'),
+        url('Rubik-Italic.eot?#iefix') format('embedded-opentype'),
+        url('Rubik-Italic.woff2') format('woff2'),
+        url('Rubik-Italic.woff') format('woff'),
+        url('Rubik-Italic.ttf') format('truetype'),
+        url('Rubik-Italic.svg#Rubik-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('Rubik-LightItalic.eot');
+    src: local('Rubik Light Italic'), local('Rubik-LightItalic'),
+        url('Rubik-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Rubik-LightItalic.woff2') format('woff2'),
+        url('Rubik-LightItalic.woff') format('woff'),
+        url('Rubik-LightItalic.ttf') format('truetype'),
+        url('Rubik-LightItalic.svg#Rubik-LightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('Rubik-Regular.eot');
+    src: local('Rubik Regular'), local('Rubik-Regular'),
+        url('Rubik-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Rubik-Regular.woff2') format('woff2'),
+        url('Rubik-Regular.woff') format('woff'),
+        url('Rubik-Regular.ttf') format('truetype'),
+        url('Rubik-Regular.svg#Rubik-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('Sahar-BlackItalic.eot');
+    src: local('Sahar Black Italic'), local('Sahar-BlackItalic'),
+        url('Sahar-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('Sahar-BlackItalic.woff2') format('woff2'),
+        url('Sahar-BlackItalic.woff') format('woff'),
+        url('Sahar-BlackItalic.ttf') format('truetype'),
+        url('Sahar-BlackItalic.svg#Sahar-BlackItalic') format('svg');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'sahar';
+    src: url('Sahar-Black.eot');
+    src: local('Sahar Black'), local('Sahar-Black'),
+        url('Sahar-Black.eot?#iefix') format('embedded-opentype'),
+        url('Sahar-Black.woff2') format('woff2'),
+        url('Sahar-Black.woff') format('woff'),
+        url('Sahar-Black.ttf') format('truetype'),
+        url('Sahar-Black.svg#Sahar-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('Sahar-Light.eot');
+    src: local('Sahar Light'), local('Sahar-Light'),
+        url('Sahar-Light.eot?#iefix') format('embedded-opentype'),
+        url('Sahar-Light.woff2') format('woff2'),
+        url('Sahar-Light.woff') format('woff'),
+        url('Sahar-Light.ttf') format('truetype'),
+        url('Sahar-Light.svg#Sahar-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('Sahar-LightItalic.eot');
+    src: local('Sahar Light Italic'), local('Sahar-LightItalic'),
+        url('Sahar-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Sahar-LightItalic.woff2') format('woff2'),
+        url('Sahar-LightItalic.woff') format('woff'),
+        url('Sahar-LightItalic.ttf') format('truetype'),
+        url('Sahar-LightItalic.svg#Sahar-LightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('Sahar-BoldItalic.eot');
+    src: local('Sahar Bold Italic'), local('Sahar-BoldItalic'),
+        url('Sahar-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Sahar-BoldItalic.woff2') format('woff2'),
+        url('Sahar-BoldItalic.woff') format('woff'),
+        url('Sahar-BoldItalic.ttf') format('truetype'),
+        url('Sahar-BoldItalic.svg#Sahar-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('Sahar-Bold.eot');
+    src: local('Sahar Bold'), local('Sahar-Bold'),
+        url('Sahar-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Sahar-Bold.woff2') format('woff2'),
+        url('Sahar-Bold.woff') format('woff'),
+        url('Sahar-Bold.ttf') format('truetype'),
+        url('Sahar-Bold.svg#Sahar-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
