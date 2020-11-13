@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width">
+    <%= stylesheet_link_tag "decidim/email" %>
+  </head>
+
+  <body>
+    <!-- <style> -->
+    <table class="body">
+      <% if content_for?(:see_on_website) %>
+        <table class="container">
+          <th class="small-12 first columns headnote float-center">
+            <%= yield(:see_on_website) %>
+          </th>
+        </table>
+      <% end %>
+      <tr>
+        <td class="float-center" align="center" valign="top">
+          <center>
+            <table class="main container">
+              <tr>
+                <td class="decidim-bar">
+                  <img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/5e804264-8800-4327-8c14-6bbad8b15504/header.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201113%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201113T111607Z&X-Amz-Expires=86400&X-Amz-Signature=bc7844ec2404397d74f167ea747c0fadd981e807ac5d047528aa490dbc8a15e1&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22header.png%22"/>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <table class="spacer">
+                    <tbody>
+                      <tr>
+                        <td height="40px" style="font-size:40px;line-height:40px;"> </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <table class="row content">
+                    <tr>
+                      <th class="small-12 first columns">
+                        <%= yield %>
+                      </th>
+                      <th class="expander"></th>
+                    </tr>
+                  </table>
+
+                  <table class="row">
+                    <tr>
+                      <th class="small-12 first columns">
+                      </th>
+                      <th class="expander"></th>
+                    </tr>
+                  </table>
+
+                  <table class="row" style="background-color: #0A0A0A;color: #FFFFFF;">
+                    <tr>
+                      <th class="cityhall-bar" style="padding: 50px; width: 30% !important;">
+                        <div class="decidim-logo">
+                          <img class="float-left" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6928387c-b862-46ec-91b8-ec311f7a81f0/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201113%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201113T142855Z&X-Amz-Expires=86400&X-Amz-Signature=f2f7fec4fb4d5f66024f1ca83cf20554040c8bc2f2a2b96337463062e4a95039&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22"/>
+                        </div>
+                      </th>
+                      <th style="width: 100%; height: 175px; display: flex; flex-wrap: wrap; flex-direction: column; justify-content: center; color: #FFFFFF; font-size: 12px">
+                        <a style="color: #FFFFFF; margin: 2.5px 0;" target="_blank" href="https://participation.lillemetropole.fr/processes">🖐 Participez aux concertations</a>
+                        <a style="color: #FFFFFF; margin: 2.5px 0;" target="_blank" href="http://www.conseildeveloppement-lillemetropole.fr/">🤝 Conseil de développement</a>
+                        <a style="color: #FFFFFF; margin: 2.5px 0;" target="_blank" href="https://opendata.lillemetropole.fr/explore/?refine.theme=Participation+citoyenne&sort=modified">📊 Consultez les données de la participation citoyenne en Open Data</a>
+                      </th>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+            <% if content_for?(:note) or content_for?(:unsubscribe) %>
+              <table class="container">
+                <tr>
+                  <td>
+                    <table class="row">
+                      <th class="expander"></th>
+                      <th class="small-12 first last columns footnote">
+                        <center>
+                          <%= yield(:note) if content_for?(:note) %>
+                          <%= yield(:unsubscribe) if content_for?(:unsubscribe) %>
+                        </center>
+                      </th>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            <% end %>
+          </center>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
