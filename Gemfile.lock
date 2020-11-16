@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim
-  revision: 7f9790aa238cd0db33efc7602b7a733d7a398e56
+  revision: 5808a69b821dcbe80914c6196c304256209da441
   branch: feature/maximum-number-of-vote-per-project
   specs:
     decidim (0.23.0.dev)
