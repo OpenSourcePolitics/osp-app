@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/decidim/decidim.git", branch: "release/0.22-stable"
+gem "decidim", git: "https://github.com/Quentinchampenois/decidim.git", branch: "backport/smtp-settings-0.22-stable"
 # gem "decidim", path: "../decidim"
 # gem "decidim-map", path: "../decidim-map"
 
@@ -54,7 +54,7 @@ group :development, :test do
   gem "dotenv-rails"
   gem "byebug", "~> 11.0", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/decidim/decidim.git", branch: "release/0.22-stable"
+  gem "decidim-dev", git: "https://github.com/Quentinchampenois/decidim.git", branch: "backport/smtp-settings-0.22-stable"
   # gem "decidim-dev", path: "../decidim"
 end
 
