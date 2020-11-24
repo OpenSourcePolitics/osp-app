@@ -4,8 +4,7 @@ module ApplicationHelper
 
     render_beacon(side, :main) unless helpscout_beacon_id(side, :fallback).present?
 
-    render_beacon(side, :main) if default_locale?
-    render_beacon(side, :fallback)
+    default_locale? ? render_beacon(side, :main) : render_beacon(side, :fallback)
   end
 
   private

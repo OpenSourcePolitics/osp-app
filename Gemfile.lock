@@ -33,6 +33,15 @@ GIT
       redirector
 
 GIT
+  remote: https://github.com/Platoniq/decidim-module-decidim_awesome
+  revision: 6eb9b40b706bbfc3f839851b50406ac7e90d269f
+  specs:
+    decidim-decidim_awesome (0.5.1)
+      decidim-admin (>= 0.21.0, < 0.23)
+      decidim-core (>= 0.21.0, < 0.23)
+      redcarpet (~> 3.4)
+
+GIT
   remote: https://github.com/decidim/decidim.git
   revision: e15e006140f8aaeb4ac41b6d49b3bdf888f4e124
   branch: release/0.22-stable
@@ -857,6 +866,7 @@ DEPENDENCIES
   byebug (~> 11.0)
   dalli
   decidim!
+  decidim-decidim_awesome!
   decidim-dev!
   decidim-navbar_links!
   decidim-question_captcha!

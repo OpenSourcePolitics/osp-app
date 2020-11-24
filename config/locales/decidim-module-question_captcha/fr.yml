@@ -1,0 +1,8 @@
+---
+fr:
+  decidim:
+    devise:
+      registrations:
+        new:
+          captcha_legend: Question de sécurité
+          captcha_instructions: Indiquez votre réponse ci-dessous
