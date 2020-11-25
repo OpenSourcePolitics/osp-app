@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/OpenSourcePolitics/decidim-module-navbar_links.git
+  revision: 78e9233c7d827355aaf7d0e95650e8255502c0b8
+  branch: 0.22-stable
+  specs:
+    decidim-navbar_links (0.22.0)
+      decidim-core (= 0.22.0)
+
+GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module-socio_demographic_authorization_handler
   revision: 396724a3501b59cd3f8fc58c087592629a572434
   branch: release/0.22-stable
@@ -847,6 +855,7 @@ DEPENDENCIES
   dalli
   decidim!
   decidim-dev!
+  decidim-navbar_links!
   decidim-phone_authorization_handler!
   decidim-socio_demographic_authorization_handler!
   decidim-term_customizer!
