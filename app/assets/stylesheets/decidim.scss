@@ -16,15 +16,17 @@
 // $google: #dd4b39;
 
 @import "decidim/application";
+@import "fontface";
 
-// .logo-cityhall {
-//   position: static;
-//   margin: 0;
-//   @media print, screen and (min-width: 40em) {
-//     text-align: left;
-//   }
-// }
+$body-font-family: 'Atkinson Hyperlegible', Helvetica, Arial, sans-serif;
 
+body, h1, h2, h3, h4, h5, h6, p, a, span {
+  font-family: $body-font-family;
+}
+
+.topbar__user__logged {
+  align-items: center;
+}
 
 .initiative-types-select {
   white-space: normal !important;
@@ -67,11 +69,6 @@
 .highlighted_proposals .card--proposal {
   width: 100%;
 }
-
-// Hide autorisation handler profile tab
-// #user-settings-tabs > li:nth-child(3) {
-//   display: none;
-// }
 
 .main-footer__badge {
   text-align: center;
