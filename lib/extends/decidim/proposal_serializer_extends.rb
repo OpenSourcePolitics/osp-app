@@ -50,6 +50,9 @@ module ProposalSerializerExtends
     authors
   end
 
+  def attachments_url
+    proposal.attachments.map { |attachment| proposal.organization.host + attachment.url }
+  end
 end
 
 Decidim::Proposals::ProposalSerializer.class_eval do
