@@ -1,0 +1,64 @@
+---
+fr:
+  decidim:
+    admin:
+      actions:
+        add: Ajouter
+        confirm_destroy: Confirmer la suppression
+        destroy: Supprimer
+        edit: Modifier
+      menu:
+        appearance: Apparence
+        area_types: Types de périmètres d’assemblée
+        areas: Périmètres d’assemblée
+        configuration: Configuration
+        help_sections: Sections d'aide
+        homepage: Page d'accueil
+        navbar_links: Barre de navigation
+        scope_types: Types de périmètres d’application
+        scopes: Périmètres d’application
+      models:
+        navbar_link:
+          fields:
+            link: Lien
+            title: Titre
+            weight: Ordre
+      navbar_links:
+        create:
+          error: Erreur
+          success: Succès
+        destroy:
+          success: Succès
+        no_links: Pas de lien
+        update:
+          error: Erreur
+          success: Succès
+      titles:
+        navbar_links: Barre de navigation
+    components:
+      navbar_links:
+        name: NavbarLinks
+    navbar_links:
+      admin:
+        navbar_links:
+          edit:
+            title: Titre
+            update: Modifier
+          form:
+            link: Lien
+            new_tab: Nouvel élément
+            same_tab: Élément identique
+            title: Titre
+            weight: Ordre
+          new:
+            create: Ajouter
+            title: Titre
+  decidim_navbar_links:
+    admin:
+      menu:
+        navbar_links: Barre de navigation
+  layouts:
+    decidim:
+      admin:
+        settings:
+          title: Titre
