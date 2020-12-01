@@ -26,7 +26,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module_cookies
-  revision: 4f4e58d1d3db975b30e65f9084ed501ffdd5c549
+  revision: e1716dc0980bad2afdef13aad5baf0e93c43e8e1
   branch: alt/bosa
   specs:
     decidim-cookies (0.22.0.dev)
