@@ -44,6 +44,8 @@ class DummyAuthorizationHandler < Decidim::AuthorizationHandler
   # If set, enforces the handler to validate the uniqueness of the field
   #
   def unique_id
+    return "" unless user
+
     user.id.to_s
   end
 
