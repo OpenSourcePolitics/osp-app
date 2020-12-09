@@ -35,12 +35,12 @@ end
         <div class="application-header">
           <div class="row column">
             <% if current_organization.official_img_header? %>
-              <%= link_to  current_organization.official_url, class: "logo-official" do %>
+              <%= link_to current_organization.official_url, class: "logo-official" do %>
                 <%= image_tag current_organization.official_img_header.url.to_s , alt: current_organization.name %>
               <% end %>
             <% end %>
             <% if current_organization %>
-              <%= link_to decidim.root_url(host: current_organization.host), title: t("logo", scope: "decidim.accessibility", organization: current_organization.name), class: "organization-name" do %>
+              <%= link_to current_organization.official_url, title: t("logo", scope: "decidim.accessibility", organization: current_organization.name), class: "organization-name" do %>
                 <%= current_organization.name %>
               <% end %>
             <% else %>
