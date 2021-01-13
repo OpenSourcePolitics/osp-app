@@ -1,304 +1,43 @@
 // // Variables
 //
-
-$light-green: #AEC900;
-$primary-hover: #95B000;
-$dark-green: #098E2C;
-$secondary-hover: #007513;
-$pink: #E2208C;
-$yellow: #FFD301;
-$blue: #45C4EC;
-$gray-dark: #616161;
-$primary: $light-green;
-$secondary: $dark-green;
-$warning: $yellow;
-
-// $primary: #ef604d;
-// $secondary: #599aa6;
+// $primary: #cb3c29;
+// $primary-rgb: 239,96,77;
+// $secondary: #3e7f8b;
+// $secondary-rgb: 89,154,166;
 // $success: #57d685;
+// $success-rgb: 87,214,133;
 // $warning: #ffae00;
+// $warning-rgb: 255,174,0;
 // $alert: #ec5840;
+// $alert-rgb: 236,88,64;
+// $highlight: #be6400;
+// $highlight-rgb: 190,100,0;
+// $highlight-alternative: #ff5731;
+// $highlight-alternative-rgb: 255,87,49;
 //
-// $proposals: #238FF7;
-// $actions: #57D685;
-// $debates: #FA6C96;
-// $meetings: #FABC6C;
+// $proposals: #238ff7;
+// $actions: #57d685;
+// $debates: #fa6c96;
+// $meetings: #fabc6c;
 //
 // $twitter: #55acee;
 // $facebook: #3b5998;
-// $google: #dd4b39;
+// $google: #4285f4;
+//
+// // background colors used in public diff views
+// $color-addition: #e6ffed;
+// $color-removal: #ffeef0;
 
 @import "decidim/application";
+@import "fontface";
+@import "custom-footer";
 
-$gray-dark: darken(#72758A, 30);
-$red: #e86a10;
-$blue: #009FE0;
+$body-font-family: 'Blogger Sans', Helvetica, Arial, sans-serif;
 
-$title-bar-background: #fff;
-$navbar-background: darken( $title-bar-background, 10%);
-
-.initiative-types-select {
-  white-space: normal !important;
-  word-break: break-all !important;
-  overflow-wrap: break-word !important;
-
-  padding-bottom: 0;
-
-  option {
-      position: relative;
-      display: block;
-      margin: 0 -15px 5px  0;
-      padding: 5px 10px;
-      font-size: 90%;
-      line-height: 17px;
-      color: $secondary;
-      border: 1px solid #e8e8e8;
-      border-radius: 3px;
-      cursor: pointer;
-      white-space: normal !important;
-      word-break: break-all !important;
-      overflow-wrap: break-word !important;
-      text-overflow: clip;
-      overflow-x: hidden;
-
-      &:hover {
-        background: #e8e8e8;
-      }
-  }
-
-  &:focus {
-    border-color: #238FF7;
-    option:checked {
-      background: #238FF7;
-      color: white;
-    }
-  }
+body, h1, h2, h3, h4, h5, h6, p, a, span {
+  font-family: $body-font-family;
 }
 
-.title-bar {
-  background: $title-bar-background;
-  color: $dark-gray;
-}
-
-.navbar {
-  background: $navbar-background;
-}
-
-.topbar__search svg {
-  color: $dark-gray;
-}
-
-@media print, screen and (min-width: 40em) {
-  .topbar__search input,
-  .topbar__search input:focus {
-    background: darken( $title-bar-background, 10%);
-    color: $dark-gray;
-
-    &::placeholder {
-      color: darken($medium-gray, 20%);
-    }
-  }
-}
-
-@media print, screen and (min-width: 40em) {
-  .main-nav__link--active a {
-    box-shadow: inset 0 4px 0 0 $primary;
-  }
-}
-
-.main-nav__link a {
-  color: $dark-gray;
-  &:hover {
-    background: darken( $title-bar-background, 20%);;
-    color: $dark-gray;
-  }
-}
-
-.topbar__notifications .icon, .topbar__conversations .icon {
-  fill: $yellow;
-}
-
-.topbar__notifications.is-active .icon {
-  fill: $success;
-}
-
-.topbar__conversations.is-active .icon {
-  fill: $primary;
-}
-
-.topbar__user .topbar__user__login > a {
-  color: $gray-dark;
-
-  &:focus,
-  &:hover {
-    color: $primary;
-  }
-}
-
-.topbar__dropmenu > ul > li > a {
-  color: $dark-gray;
-
-  &:hover, &:active {
-    color: $primary;
-  }
-
-  &::after{
-    margin-top: -1px !important;
-    border-top-color: $dark-gray !important;
-  }
-}
-
-.topbar__dropmenu .is-dropdown-submenu li {
-  a {
-    color: $primary;
-  }
-
-  &:hover a {
-    color: $gray-dark;
-  }
-}
-
-.dropdown.menu .is-active > a {
-  color: $primary;
-}
-
-.topbar__dropmenu > ul > li.is-dropdown-submenu-parent.is-active > a {
-  color: $gray-dark;
-}
-
-.topbar__menu {
-  color: #000;
-}
-
-.topbar__dropmenu .is-dropdown-submenu a {
-  color: $gray-dark;
-
-  &:focus,
-  &:hover {
-    color: $gray-dark;
-    opacity: 0.8;
-  }
-}
-
-.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
-  border-top-color: $gray-dark !important;
-  opacity: 0.6;
-}
-
-.label.proposal-status {
-  background: $red;
-
-  &.secondary {
-    background: $blue;
-    color: white;
-  }
-
-  &.success {
-    background: $success;
-    color: black;
-  }
-
-  &.warning {
-    background: $primary;
-    color: black;
-  }
-}
-
-.topbar__edit__link a{
-  color: $secondary;
-
-  &:hover{
-    background: $navbar-bg-hover;
-    color: lighten($secondary,20);
-  }
-}
-
-.hero {
-  &::after {
-    background-color: rgba($black, 0);
-  }
-}
-
-.process-header__main {
-  &::after {
-    background-color: rgba($black, 0);
-  }
-}
-
-.highligted-content-banner {
-  &::after {
-    background-color: rgba($black, 0);
-  }
-}
-
-.highlighted_proposals .card--proposal {
-  width: 100%;
-}
-
-// Hide autorisation handler profile tab
-#user-settings-tabs > li:nth-child(3) {
-  display: none;
-}
-
-.main-footer__badge {
-  text-align: center;
-}
-
-@media print, screen and (min-width: 64em) {
-  .main-footer__badge {
-    position: relative;
-    text-align: left;
-  }
-}
-
-.main-footer .row {
-  display: flex;
+.topbar__user__logged {
   align-items: center;
-  justify-content: space-between;
-}
-
-.mini-footer .row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .decidim-logo {
-    display: flex;
-    flex-grow: 0;
-    width: auto;
-    margin: 0 .5rem;
-  }
-
-  img {
-    height: 1rem;
-  }
-
-  .mf-text {
-    font-size: 80%;
-    line-height: 1rem;
-
-    a {
-      font-weight: 600;
-
-      &:hover {
-        color: white;
-      }
-    }
-  }
-}
-
-.icon--pencil .icon{font-weight:normal;color:$gray-dark;}
-
-@media print, screen and (min-width: 40em) {
-  .logo-wrapper img {
-    max-width: 30em;
-  }
-}
-
-.topbar__edit__link span {
-  display: inline;
-
-  @media print, screen and (max-width: 40em) {
-    display: none;
-  }
 }

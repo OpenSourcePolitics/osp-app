@@ -331,6 +331,12 @@ fr:
     shared:
       flag_modal:
         description: Ce contenu est-il inapproprié ?
+    amendments:
+      emendation:
+        announcement:
+          evaluating: |-
+            Cet amendement pour le %{amendable_type} %{proposal_link}
+            est en cours d’évaluation.
     verifications:
       authorizations:
         first_login:
@@ -352,10 +358,16 @@ fr:
     invitations:
       edit:
         nickname_help: Cet identifiant est public et unique sur cette plateforme ; il permet aux autres utilisateurs de vous suivre, de vous contacter ou de vous mentionner dans leurs commentaires. Il s’affichera précédé d’un « @ » ; il ne doit pas contenir d’espace ni de caractère spécial.
+  faker:
+    address:
+      country_code: ['FR','FR0','FR1','FR2','FR3','FR4','FR5','FR6','FR7','FR8','FR9']
   layouts:
     decidim:
       footer:
         download_open_data: Données ouvertes
+  faker:
+    address:
+      country_code: ['FR','FR0','FR1','FR2','FR3','FR4','FR5','FR6','FR7','FR8','FR9']
       participatory_processes:
         index:
           promoted_processes: A la une
