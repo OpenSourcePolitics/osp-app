@@ -1,3 +1,102 @@
+// ############################
+// MULI
+// ############################
+
+@font-face {
+  font-family: 'Muli';
+  src: local('Muli'), local('Muli'),
+  url('muli/Muli.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: local('Muli Bold'), local('Muli-Bold'),
+  url('muli/Muli-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: local('Muli Bold Italic'), local('Muli-BoldItalic'),
+  url('muli/Muli-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: local('Muli Extra Light'), local('Muli-Light'),
+  url('muli/Muli-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: local('Muli Extra Light Italic'), local('Muli-Light'),
+  url('muli/Muli-ExtraLightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: local('Muli Italic'), local('Muli-Italic'),
+  url('muli/Muli-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: local('Muli Light'), local('Muli-Light'),
+  url('muli/Muli-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: local('Muli Light Italic'), local('Muli-LightItalic'),
+  url('muli/Muli-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: local('Muli Semi Bold'), local('Muli-Medium'),
+  url('muli/Muli-SemiBold.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: local('Muli Semi Bold'), local('Muli-MediumItalic'),
+  url('muli/Muli-Semi-BoldItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+// ############################
+// BLOGGER SANS
+// ############################
+
 @font-face {
     font-family: 'Blogger Sans';
     src: url('BloggerSans/BloggerSans-BoldItalic.eot');
@@ -109,4 +208,3 @@
     font-style: normal;
     font-display: swap;
 }
-
