@@ -25,6 +25,14 @@ GIT
       decidim-core
 
 GIT
+  remote: https://github.com/OpenSourcePolitics/decidim-module_cookies.git
+  revision: 685ee81b4b9fd3dca3715a34e320b616eefeac24
+  branch: release/0.23-stable
+  specs:
+    decidim-cookies (0.23.1)
+      decidim-core (= 0.23.1)
+
+GIT
   remote: https://github.com/OpenSourcePolitics/decidim-urlaliases.git
   revision: 9ae4cc77b1f336aba15be92f38df90abd8d3afd5
   specs:
@@ -32,6 +40,15 @@ GIT
       decidim-core (>= 0.18.0)
       rails (>= 5.2)
       redirector
+
+GIT
+  remote: https://github.com/Platoniq/decidim-module-decidim_awesome
+  revision: f3e9cbd9b2c3743090beb3b4e5027e9372215e7b
+  specs:
+    decidim-decidim_awesome (0.6.1)
+      decidim-admin (>= 0.22.0, < 0.24)
+      decidim-core (>= 0.22.0, < 0.24)
+      redcarpet (~> 3.4)
 
 GIT
   remote: https://github.com/decidim/decidim.git
@@ -864,6 +881,8 @@ DEPENDENCIES
   byebug (~> 11.0)
   dalli
   decidim!
+  decidim-cookies!
+  decidim-decidim_awesome!
   decidim-dev!
   decidim-navbar_links!
   decidim-question_captcha!
