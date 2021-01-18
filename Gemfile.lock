@@ -17,11 +17,11 @@ GIT
 
 GIT
   remote: https://github.com/Platoniq/decidim-module-decidim_awesome
-  revision: 78dd8cff16735775535ac18bfb63e4f2ffd8ffe6
+  revision: f3e9cbd9b2c3743090beb3b4e5027e9372215e7b
   specs:
-    decidim-decidim_awesome (0.3)
-      decidim-admin (>= 0.20.0)
-      decidim-core (>= 0.20.0)
+    decidim-decidim_awesome (0.6.1)
+      decidim-admin (>= 0.22.0, < 0.24)
+      decidim-core (>= 0.22.0, < 0.24)
       redcarpet (~> 3.4)
 
 GIT
