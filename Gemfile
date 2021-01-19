@@ -5,10 +5,12 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 
 gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim", branch: "bump-feature/maximum-number-of-vote-per-project"
+# gem "decidim", git: "https://github.com/decidim/decidim", branch: "release/0.23-stable"
 # gem "decidim", path: "../decidim"
 # gem "decidim-map", path: "../decidim-map"
 
 gem "decidim-conferences", git: "https://github.com/OpenSourcePolitics/decidim", branch: "bump-feature/maximum-number-of-vote-per-project"
+# gem "decidim-conferences", git: "https://github.com/decidim/decidim", branch: "release/0.23-stable"
 # gem "decidim-consultations", git: "https://github.com/decidim/decidim.git", branch: "0.21-stable"
 # gem "decidim-initiatives", git: "https://github.com/decidim/decidim.git", branch: "0.21-stable"
 
@@ -50,6 +52,7 @@ group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 
   gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim", branch: "bump-feature/maximum-number-of-vote-per-project"
+  # gem "decidim-dev", git: "https://github.com/decidim/decidim", branch: "release/0.23-stable"
   # gem "decidim-dev", path: "../decidim"
 end
 
