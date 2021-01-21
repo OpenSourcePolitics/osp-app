@@ -4,11 +4,13 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim", branch: "feature/maximum-number-of-vote-per-project"
+gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim", branch: "bump-feature/maximum-number-of-vote-per-project"
+# gem "decidim", git: "https://github.com/decidim/decidim", branch: "release/0.23-stable"
 # gem "decidim", path: "../decidim"
 # gem "decidim-map", path: "../decidim-map"
 
-gem "decidim-conferences", git: "https://github.com/OpenSourcePolitics/decidim", branch: "feature/maximum-number-of-vote-per-project"
+gem "decidim-conferences", git: "https://github.com/OpenSourcePolitics/decidim", branch: "bump-feature/maximum-number-of-vote-per-project"
+# gem "decidim-conferences", git: "https://github.com/decidim/decidim", branch: "release/0.23-stable"
 # gem "decidim-consultations", git: "https://github.com/decidim/decidim.git", branch: "0.21-stable"
 # gem "decidim-initiatives", git: "https://github.com/decidim/decidim.git", branch: "0.21-stable"
 
@@ -26,7 +28,7 @@ gem "decidim-conferences", git: "https://github.com/OpenSourcePolitics/decidim",
 #gem "decidim-initiatives_no_signature_allowed", git: "https://github.com/OpenSourcePolitics/decidim-module-initiatives_nosignature_allowed.git"
 #gem "decidim-navigation_maps", git: "https://github.com/Platoniq/decidim-module-navigation_maps"
 
-gem "decidim-navbar_links", git: "https://github.com/OpenSourcePolitics/decidim-module-navbar_links.git", branch: "0.23.0.dev"
+gem "decidim-navbar_links", git: "https://github.com/OpenSourcePolitics/decidim-module-navbar_links.git", branch: "0.23-stable"
 
 gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git", branch: "0.dev"
 gem "decidim-phone_authorization_handler", git: "https://github.com/OpenSourcePolitics/decidim-module_phone_authorization_handler", branch: "release/0.23-stable"
@@ -49,7 +51,8 @@ group :development, :test do
   gem "dotenv-rails"
   gem "byebug", "~> 11.0", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim", branch: "feature/maximum-number-of-vote-per-project"
+  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim", branch: "bump-feature/maximum-number-of-vote-per-project"
+  # gem "decidim-dev", git: "https://github.com/decidim/decidim", branch: "release/0.23-stable"
   # gem "decidim-dev", path: "../decidim"
 end
 
