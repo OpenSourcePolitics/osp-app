@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_26_165657) do
+ActiveRecord::Schema.define(version: 2021_01_25_134122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -858,6 +858,32 @@ ActiveRecord::Schema.define(version: 2020_11_26_165657) do
     t.index ["decidim_organization_id"], name: "decidim_navbar_links_on_organization_id"
   end
 
+  create_table "decidim_navigation_maps_blueprint_areas", force: :cascade do |t|
+    t.jsonb "area"
+    t.bigint "decidim_navigation_maps_blueprint_id", null: false
+    t.jsonb "title", default: {}
+    t.jsonb "description", default: {}
+    t.string "area_type"
+    t.string "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "link_type"
+    t.string "area_id"
+    t.string "color"
+    t.index ["decidim_navigation_maps_blueprint_id"], name: "decidim_navigation_maps_constraint_blueprint_id"
+  end
+
+  create_table "decidim_navigation_maps_blueprints", force: :cascade do |t|
+    t.string "image"
+    t.bigint "decidim_organization_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.jsonb "title", default: {}
+    t.jsonb "description", default: {}
+    t.integer "height", default: 475, null: false
+    t.index ["decidim_organization_id"], name: "decidim_navigation_maps_constraint_organization"
+  end
+
   create_table "decidim_newsletters", id: :serial, force: :cascade do |t|
     t.jsonb "subject"
     t.integer "organization_id"
@@ -1519,6 +1545,8 @@ ActiveRecord::Schema.define(version: 2020_11_26_165657) do
   add_foreign_key "decidim_categorizations", "decidim_categories"
   add_foreign_key "decidim_comparative_stats_endpoints", "decidim_organizations"
   add_foreign_key "decidim_identities", "decidim_organizations"
+  add_foreign_key "decidim_navigation_maps_blueprint_areas", "decidim_navigation_maps_blueprints"
+  add_foreign_key "decidim_navigation_maps_blueprints", "decidim_organizations"
   add_foreign_key "decidim_newsletters", "decidim_users", column: "author_id"
   add_foreign_key "decidim_participatory_process_steps", "decidim_participatory_processes"
   add_foreign_key "decidim_participatory_processes", "decidim_organizations"
