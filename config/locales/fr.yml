@@ -18,12 +18,6 @@ fr:
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
-    amendments:
-      emendation:
-        announcement:
-          evaluating: |-
-            Cet amendement pour le %{amendable_type} %{proposal_link}
-            est en cours d’évaluation.
     verifications:
       authorizations:
         first_login:
@@ -34,6 +28,3 @@ fr:
     decidim:
       footer:
         download_open_data: Données ouvertes
-  faker:
-    address:
-      country_code: ['FR','FR0','FR1','FR2','FR3','FR4','FR5','FR6','FR7','FR8','FR9']

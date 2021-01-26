@@ -7,15 +7,16 @@ Decidim.configure do |config|
 
   # Change these lines to set your preferred locales
   config.default_locale = :fr
-  config.available_locales = [:en, :fr]
+  config.available_locales = [:fr]
 
   config.maximum_attachment_height_or_width = 6000
 
   # Geocoder configuration
-  if !Rails.application.secrets.geocoder[:here_api_key].blank?
+  if !Rails.application.secrets.geocoder[:here_app_id].blank?
     config.geocoder = {
-        static_map_url: "https://image.maps.ls.hereapi.com/mia/1.6/mapview",
-        here_api_key: Rails.application.secrets.geocoder[:here_api_key]
+      static_map_url: "https://image.maps.cit.api.here.com/mia/1.6/mapview",
+      here_app_id: Rails.application.secrets.geocoder[:here_app_id],
+      here_app_code: Rails.application.secrets.geocoder[:here_app_code]
     }
   end
 
@@ -23,8 +24,8 @@ Decidim.configure do |config|
     # puts "Decidim::Initiatives are loaded"
     Decidim::Initiatives.minimum_committee_members = 1
     Decidim::Initiatives.do_not_require_authorization = true
-    Decidim::Initiatives.print_enabled = false
-    Decidim::Initiatives.face_to_face_voting_allowed = false
+    Decidim::Initiatives.print_enabled = true
+    Decidim::Initiatives.face_to_face_voting_allowed = true
   end
 
 
@@ -86,9 +87,9 @@ Decidim.configure do |config|
 
   if !Rails.application.secrets.etherpad[:server].blank?
     config.etherpad = {
-        server: Rails.application.secrets.etherpad[:server],
-        api_key: Rails.application.secrets.etherpad[:api_key],
-        api_version: Rails.application.secrets.etherpad[:api_version]
+      server: Rails.application.secrets.etherpad[:server],
+      api_key: Rails.application.secrets.etherpad[:api_key],
+      api_version: Rails.application.secrets.etherpad[:api_version]
     }
   end
 
