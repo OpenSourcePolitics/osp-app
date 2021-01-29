@@ -1,0 +1,478 @@
+// RUBIK
+@font-face {
+    font-family: 'Rubik';
+    src: url('decidim/rubik/Rubik-BlackItalic.eot');
+    src: local('Rubik Black Italic'), local('Rubik-BlackItalic'),
+        url('decidim/rubik/Rubik-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('decidim/rubik/Rubik-BlackItalic.woff2') format('woff2'),
+        url('decidim/rubik/Rubik-BlackItalic.woff') format('woff'),
+        url('decidim/rubik/Rubik-BlackItalic.ttf') format('truetype'),
+        url('decidim/rubik/Rubik-BlackItalic.svg#Rubik-BlackItalic') format('svg');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('decidim/rubik/Rubik-Black.eot');
+    src: local('Rubik Black'), local('Rubik-Black'),
+        url('decidim/rubik/Rubik-Black.eot?#iefix') format('embedded-opentype'),
+        url('decidim/rubik/Rubik-Black.woff2') format('woff2'),
+        url('decidim/rubik/Rubik-Black.woff') format('woff'),
+        url('decidim/rubik/Rubik-Black.ttf') format('truetype'),
+        url('decidim/rubik/Rubik-Black.svg#Rubik-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('decidim/rubik/Rubik-Bold.eot');
+    src: local('Rubik Bold'), local('Rubik-Bold'),
+        url('decidim/rubik/Rubik-Bold.eot?#iefix') format('embedded-opentype'),
+        url('decidim/rubik/Rubik-Bold.woff2') format('woff2'),
+        url('decidim/rubik/Rubik-Bold.woff') format('woff'),
+        url('decidim/rubik/Rubik-Bold.ttf') format('truetype'),
+        url('decidim/rubik/Rubik-Bold.svg#Rubik-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('decidim/rubik/Rubik-BoldItalic.eot');
+    src: local('Rubik Bold Italic'), local('Rubik-BoldItalic'),
+        url('decidim/rubik/Rubik-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('decidim/rubik/Rubik-BoldItalic.woff2') format('woff2'),
+        url('decidim/rubik/Rubik-BoldItalic.woff') format('woff'),
+        url('decidim/rubik/Rubik-BoldItalic.ttf') format('truetype'),
+        url('decidim/rubik/Rubik-BoldItalic.svg#Rubik-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('decidim/rubik/Rubik-ExtraBold.eot');
+    src: local('Rubik ExtraBold'), local('Rubik-ExtraBold'),
+        url('decidim/rubik/Rubik-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('decidim/rubik/Rubik-ExtraBold.woff2') format('woff2'),
+        url('decidim/rubik/Rubik-ExtraBold.woff') format('woff'),
+        url('decidim/rubik/Rubik-ExtraBold.ttf') format('truetype'),
+        url('decidim/rubik/Rubik-ExtraBold.svg#Rubik-ExtraBold') format('svg');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('decidim/rubik/Rubik-ExtraBoldItalic.eot');
+    src: local('Rubik ExtraBold Italic'), local('Rubik-ExtraBoldItalic'),
+        url('decidim/rubik/Rubik-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('decidim/rubik/Rubik-ExtraBoldItalic.woff2') format('woff2'),
+        url('decidim/rubik/Rubik-ExtraBoldItalic.woff') format('woff'),
+        url('decidim/rubik/Rubik-ExtraBoldItalic.ttf') format('truetype'),
+        url('decidim/rubik/Rubik-ExtraBoldItalic.svg#Rubik-ExtraBoldItalic') format('svg');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('decidim/rubik/Rubik-Italic.eot');
+    src: local('Rubik Italic'), local('Rubik-Italic'),
+        url('decidim/rubik/Rubik-Italic.eot?#iefix') format('embedded-opentype'),
+        url('decidim/rubik/Rubik-Italic.woff2') format('woff2'),
+        url('decidim/rubik/Rubik-Italic.woff') format('woff'),
+        url('decidim/rubik/Rubik-Italic.ttf') format('truetype'),
+        url('decidim/rubik/Rubik-Italic.svg#Rubik-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('decidim/rubik/Rubik-Light.eot');
+    src: local('Rubik Light'), local('Rubik-Light'),
+        url('decidim/rubik/Rubik-Light.eot?#iefix') format('embedded-opentype'),
+        url('decidim/rubik/Rubik-Light.woff2') format('woff2'),
+        url('decidim/rubik/Rubik-Light.woff') format('woff'),
+        url('decidim/rubik/Rubik-Light.ttf') format('truetype'),
+        url('decidim/rubik/Rubik-Light.svg#Rubik-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('decidim/rubik/Rubik-LightItalic.eot');
+    src: local('Rubik Light Italic'), local('Rubik-LightItalic'),
+        url('decidim/rubik/Rubik-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('decidim/rubik/Rubik-LightItalic.woff2') format('woff2'),
+        url('decidim/rubik/Rubik-LightItalic.woff') format('woff'),
+        url('decidim/rubik/Rubik-LightItalic.ttf') format('truetype'),
+        url('decidim/rubik/Rubik-LightItalic.svg#Rubik-LightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('decidim/rubik/Rubik-LightItalic_1.eot');
+    src: local('Rubik Light Italic'), local('Rubik-LightItalic'),
+        url('decidim/rubik/Rubik-LightItalic_1.eot?#iefix') format('embedded-opentype'),
+        url('decidim/rubik/Rubik-LightItalic_1.woff2') format('woff2'),
+        url('decidim/rubik/Rubik-LightItalic_1.woff') format('woff'),
+        url('decidim/rubik/Rubik-LightItalic_1.ttf') format('truetype'),
+        url('decidim/rubik/Rubik-LightItalic_1.svg#Rubik-LightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('decidim/rubik/Rubik-MediumItalic.eot');
+    src: local('Rubik Medium Italic'), local('Rubik-MediumItalic'),
+        url('decidim/rubik/Rubik-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('decidim/rubik/Rubik-MediumItalic.woff2') format('woff2'),
+        url('decidim/rubik/Rubik-MediumItalic.woff') format('woff'),
+        url('decidim/rubik/Rubik-MediumItalic.ttf') format('truetype'),
+        url('decidim/rubik/Rubik-MediumItalic.svg#Rubik-MediumItalic') format('svg');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('decidim/rubik/Rubik-Medium.eot');
+    src: local('Rubik Medium'), local('Rubik-Medium'),
+        url('decidim/rubik/Rubik-Medium.eot?#iefix') format('embedded-opentype'),
+        url('decidim/rubik/Rubik-Medium.woff2') format('woff2'),
+        url('decidim/rubik/Rubik-Medium.woff') format('woff'),
+        url('decidim/rubik/Rubik-Medium.ttf') format('truetype'),
+        url('decidim/rubik/Rubik-Medium.svg#Rubik-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('decidim/rubik/Rubik-Regular.eot');
+    src: local('Rubik Regular'), local('Rubik-Regular'),
+        url('decidim/rubik/Rubik-Regular.eot?#iefix') format('embedded-opentype'),
+        url('decidim/rubik/Rubik-Regular.woff2') format('woff2'),
+        url('decidim/rubik/Rubik-Regular.woff') format('woff'),
+        url('decidim/rubik/Rubik-Regular.ttf') format('truetype'),
+        url('decidim/rubik/Rubik-Regular.svg#Rubik-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('decidim/rubik/Rubik-SemiBold.eot');
+    src: local('Rubik SemiBold'), local('Rubik-SemiBold'),
+        url('decidim/rubik/Rubik-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('decidim/rubik/Rubik-SemiBold.woff2') format('woff2'),
+        url('decidim/rubik/Rubik-SemiBold.woff') format('woff'),
+        url('decidim/rubik/Rubik-SemiBold.ttf') format('truetype'),
+        url('decidim/rubik/Rubik-SemiBold.svg#Rubik-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('decidim/rubik/Rubik-SemiBoldItalic.eot');
+    src: local('Rubik SemiBold Italic'), local('Rubik-SemiBoldItalic'),
+        url('decidim/rubik/Rubik-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('decidim/rubik/Rubik-SemiBoldItalic.woff2') format('woff2'),
+        url('decidim/rubik/Rubik-SemiBoldItalic.woff') format('woff'),
+        url('decidim/rubik/Rubik-SemiBoldItalic.ttf') format('truetype'),
+        url('decidim/rubik/Rubik-SemiBoldItalic.svg#Rubik-SemiBoldItalic') format('svg');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('decidim/rubik/Rubik-Light_1.eot');
+    src: local('Rubik Light'), local('Rubik-Light'),
+        url('decidim/rubik/Rubik-Light_1.eot?#iefix') format('embedded-opentype'),
+        url('decidim/rubik/Rubik-Light_1.woff2') format('woff2'),
+        url('decidim/rubik/Rubik-Light_1.woff') format('woff'),
+        url('decidim/rubik/Rubik-Light_1.ttf') format('truetype'),
+        url('decidim/rubik/Rubik-Light_1.svg#Rubik-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+// SAHAR
+@font-face {
+    font-family: 'Sahar';
+    src: url('decidim/sahar/Sahar-BlackItalic.eot');
+    src: local('Sahar Black Italic'), local('Sahar-BlackItalic'),
+        url('decidim/sahar/Sahar-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('decidim/sahar/Sahar-BlackItalic.woff2') format('woff2'),
+        url('decidim/sahar/Sahar-BlackItalic.woff') format('woff'),
+        url('decidim/sahar/Sahar-BlackItalic.ttf') format('truetype'),
+        url('decidim/sahar/Sahar-BlackItalic.svg#Sahar-BlackItalic') format('svg');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'sahar';
+    src: url('decidim/sahar/Sahar-Black.eot');
+    src: local('Sahar Black'), local('Sahar-Black'),
+        url('decidim/sahar/Sahar-Black.eot?#iefix') format('embedded-opentype'),
+        url('decidim/sahar/Sahar-Black.woff2') format('woff2'),
+        url('decidim/sahar/Sahar-Black.woff') format('woff'),
+        url('decidim/sahar/Sahar-Black.ttf') format('truetype'),
+        url('decidim/sahar/Sahar-Black.svg#Sahar-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('decidim/sahar/Sahar-BoldItalic.eot');
+    src: local('Sahar Bold Italic'), local('Sahar-BoldItalic'),
+        url('decidim/sahar/Sahar-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('decidim/sahar/Sahar-BoldItalic.woff2') format('woff2'),
+        url('decidim/sahar/Sahar-BoldItalic.woff') format('woff'),
+        url('decidim/sahar/Sahar-BoldItalic.ttf') format('truetype'),
+        url('decidim/sahar/Sahar-BoldItalic.svg#Sahar-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('decidim/sahar/Sahar-ExtraBold.eot');
+    src: local('Sahar ExtraBold'), local('Sahar-ExtraBold'),
+        url('decidim/sahar/Sahar-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('decidim/sahar/Sahar-ExtraBold.woff2') format('woff2'),
+        url('decidim/sahar/Sahar-ExtraBold.woff') format('woff'),
+        url('decidim/sahar/Sahar-ExtraBold.ttf') format('truetype'),
+        url('decidim/sahar/Sahar-ExtraBold.svg#Sahar-ExtraBold') format('svg');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('decidim/sahar/Sahar-Bold.eot');
+    src: local('Sahar Bold'), local('Sahar-Bold'),
+        url('decidim/sahar/Sahar-Bold.eot?#iefix') format('embedded-opentype'),
+        url('decidim/sahar/Sahar-Bold.woff2') format('woff2'),
+        url('decidim/sahar/Sahar-Bold.woff') format('woff'),
+        url('decidim/sahar/Sahar-Bold.ttf') format('truetype'),
+        url('decidim/sahar/Sahar-Bold.svg#Sahar-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('decidim/sahar/Sahar-ExtraBoldItalic.eot');
+    src: local('Sahar ExtraBold Italic'), local('Sahar-ExtraBoldItalic'),
+        url('decidim/sahar/Sahar-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('decidim/sahar/Sahar-ExtraBoldItalic.woff2') format('woff2'),
+        url('decidim/sahar/Sahar-ExtraBoldItalic.woff') format('woff'),
+        url('decidim/sahar/Sahar-ExtraBoldItalic.ttf') format('truetype'),
+        url('decidim/sahar/Sahar-ExtraBoldItalic.svg#Sahar-ExtraBoldItalic') format('svg');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('decidim/sahar/Sahar-ExtraLightItalic.eot');
+    src: local('Sahar ExtraLight Italic'), local('Sahar-ExtraLightItalic'),
+        url('decidim/sahar/Sahar-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('decidim/sahar/Sahar-ExtraLightItalic.woff2') format('woff2'),
+        url('decidim/sahar/Sahar-ExtraLightItalic.woff') format('woff'),
+        url('decidim/sahar/Sahar-ExtraLightItalic.ttf') format('truetype'),
+        url('decidim/sahar/Sahar-ExtraLightItalic.svg#Sahar-ExtraLightItalic') format('svg');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('decidim/sahar/Sahar-ExtraLight.eot');
+    src: local('Sahar ExtraLight'), local('Sahar-ExtraLight'),
+        url('decidim/sahar/Sahar-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('decidim/sahar/Sahar-ExtraLight.woff2') format('woff2'),
+        url('decidim/sahar/Sahar-ExtraLight.woff') format('woff'),
+        url('decidim/sahar/Sahar-ExtraLight.ttf') format('truetype'),
+        url('decidim/sahar/Sahar-ExtraLight.svg#Sahar-ExtraLight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('decidim/sahar/Sahar-HeavyItalic.eot');
+    src: local('Sahar Heavy Italic'), local('Sahar-HeavyItalic'),
+        url('decidim/sahar/Sahar-HeavyItalic.eot?#iefix') format('embedded-opentype'),
+        url('decidim/sahar/Sahar-HeavyItalic.woff2') format('woff2'),
+        url('decidim/sahar/Sahar-HeavyItalic.woff') format('woff'),
+        url('decidim/sahar/Sahar-HeavyItalic.ttf') format('truetype'),
+        url('decidim/sahar/Sahar-HeavyItalic.svg#Sahar-HeavyItalic') format('svg');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('decidim/sahar/Sahar-Heavy.eot');
+    src: local('Sahar Heavy'), local('Sahar-Heavy'),
+        url('decidim/sahar/Sahar-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('decidim/sahar/Sahar-Heavy.woff2') format('woff2'),
+        url('decidim/sahar/Sahar-Heavy.woff') format('woff'),
+        url('decidim/sahar/Sahar-Heavy.ttf') format('truetype'),
+        url('decidim/sahar/Sahar-Heavy.svg#Sahar-Heavy') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('decidim/sahar/Sahar-LightItalic.eot');
+    src: local('Sahar Light Italic'), local('Sahar-LightItalic'),
+        url('decidim/sahar/Sahar-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('decidim/sahar/Sahar-LightItalic.woff2') format('woff2'),
+        url('decidim/sahar/Sahar-LightItalic.woff') format('woff'),
+        url('decidim/sahar/Sahar-LightItalic.ttf') format('truetype'),
+        url('decidim/sahar/Sahar-LightItalic.svg#Sahar-LightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('decidim/sahar/Sahar-Light.eot');
+    src: local('Sahar Light'), local('Sahar-Light'),
+        url('decidim/sahar/Sahar-Light.eot?#iefix') format('embedded-opentype'),
+        url('decidim/sahar/Sahar-Light.woff2') format('woff2'),
+        url('decidim/sahar/Sahar-Light.woff') format('woff'),
+        url('decidim/sahar/Sahar-Light.ttf') format('truetype'),
+        url('decidim/sahar/Sahar-Light.svg#Sahar-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('decidim/sahar/Sahar-RegularItalic.eot');
+    src: local('Sahar Regular Italic'), local('Sahar-RegularItalic'),
+        url('decidim/sahar/Sahar-RegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('decidim/sahar/Sahar-RegularItalic.woff2') format('woff2'),
+        url('decidim/sahar/Sahar-RegularItalic.woff') format('woff'),
+        url('decidim/sahar/Sahar-RegularItalic.ttf') format('truetype'),
+        url('decidim/sahar/Sahar-RegularItalic.svg#Sahar-RegularItalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('decidim/sahar/Sahar-SemiBoldItalic.eot');
+    src: local('Sahar SemiBold Italic'), local('Sahar-SemiBoldItalic'),
+        url('decidim/sahar/Sahar-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('decidim/sahar/Sahar-SemiBoldItalic.woff2') format('woff2'),
+        url('decidim/sahar/Sahar-SemiBoldItalic.woff') format('woff'),
+        url('decidim/sahar/Sahar-SemiBoldItalic.ttf') format('truetype'),
+        url('decidim/sahar/Sahar-SemiBoldItalic.svg#Sahar-SemiBoldItalic') format('svg');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('decidim/sahar/Sahar-SemiBold.eot');
+    src: local('Sahar SemiBold'), local('Sahar-SemiBold'),
+        url('decidim/sahar/Sahar-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('decidim/sahar/Sahar-SemiBold.woff2') format('woff2'),
+        url('decidim/sahar/Sahar-SemiBold.woff') format('woff'),
+        url('decidim/sahar/Sahar-SemiBold.ttf') format('truetype'),
+        url('decidim/sahar/Sahar-SemiBold.svg#Sahar-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('decidim/sahar/Sahar-ThinItalic.eot');
+    src: local('Sahar Thin Italic'), local('Sahar-ThinItalic'),
+        url('decidim/sahar/Sahar-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('decidim/sahar/Sahar-ThinItalic.woff2') format('woff2'),
+        url('decidim/sahar/Sahar-ThinItalic.woff') format('woff'),
+        url('decidim/sahar/Sahar-ThinItalic.ttf') format('truetype'),
+        url('decidim/sahar/Sahar-ThinItalic.svg#Sahar-ThinItalic') format('svg');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('decidim/sahar/Sahar-Thin.eot');
+    src: local('Sahar Thin'), local('Sahar-Thin'),
+        url('decidim/sahar/Sahar-Thin.eot?#iefix') format('embedded-opentype'),
+        url('decidim/sahar/Sahar-Thin.woff2') format('woff2'),
+        url('decidim/sahar/Sahar-Thin.woff') format('woff'),
+        url('decidim/sahar/Sahar-Thin.ttf') format('truetype'),
+        url('decidim/sahar/Sahar-Thin.svg#Sahar-Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('decidim/sahar/Sahar-Regular.eot');
+    src: local('Sahar'), local('Sahar-Regular'),
+        url('decidim/sahar/Sahar-Regular.eot?#iefix') format('embedded-opentype'),
+        url('decidim/sahar/Sahar-Regular.woff2') format('woff2'),
+        url('decidim/sahar/Sahar-Regular.woff') format('woff'),
+        url('decidim/sahar/Sahar-Regular.ttf') format('truetype'),
+        url('decidim/sahar/Sahar-Regular.svg#Sahar-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
