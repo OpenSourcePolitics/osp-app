@@ -165,6 +165,9 @@ fr:
     components:
       add_comment_form:
         title: Ajouter un commentaire
+      cookies:
+        google-analytics:
+          description: Permet de récolter des informations afin d'améliorer l'expérience utilisateur
       comment:
         report:
           description: Ce contenu est-il inapproprié ?
