@@ -1767,3 +1767,30 @@ th,
 td{
   box-sizing: border-box;
 }
+
+// header
+td.decidim-bar,
+th.columns.decidim-bar {
+  background-color: #c1005f !important;
+}
+
+th center a {
+  color: #ffffff !important;
+}
+
+.headnote a {
+  color: #c1005f !important;
+}
+
+// footer
+th.columns.cityhall-bar {
+  background-color: #c1005f;
+}
+
+.decidim-logo a {
+  color: #ffffff !important;
+}
+
+.footnote center a {
+  color: #c1005f !important;
+}
