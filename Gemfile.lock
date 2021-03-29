@@ -8,6 +8,14 @@ GIT
       decidim-core
 
 GIT
+  remote: https://github.com/OpenSourcePolitics/decidim-module_cookies.git
+  revision: a1654c1e75e69f0968306ae6ed65c74eec2e70d0
+  branch: osp/orejime-0.18
+  specs:
+    decidim-cookies (0.18.0)
+      decidim-core (= 0.18.0)
+
+GIT
   remote: https://github.com/OpenSourcePolitics/decidim.git
   revision: c4a51166de3f062b75e01cc687500e81466d089c
   branch: alt/mel-0.18
@@ -804,6 +812,7 @@ DEPENDENCIES
   byebug (~> 10.0)
   dalli
   decidim!
+  decidim-cookies!
   decidim-dev!
   decidim-term_customizer!
   dotenv-rails
@@ -830,4 +839,4 @@ RUBY VERSION
    ruby 2.6.3p62
 
 BUNDLED WITH
-   2.0.2
+   2.2.11
