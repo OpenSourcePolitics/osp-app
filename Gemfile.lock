@@ -33,7 +33,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/voting_budgets_rule.git
-  revision: d0a95173a11412f82a4c05591cf0ede80192cc24
+  revision: 83d60411bfc79b98aa7ebd36e0b17140d581f97e
   specs:
     decidim-voting_budgets_rule (0.22.0)
       decidim-core (= 0.22.0)
