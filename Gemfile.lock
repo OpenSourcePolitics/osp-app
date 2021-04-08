@@ -32,6 +32,13 @@ GIT
       decidim-core (= 0.22.0)
 
 GIT
+  remote: https://github.com/OpenSourcePolitics/voting_budgets_rule.git
+  revision: d0a95173a11412f82a4c05591cf0ede80192cc24
+  specs:
+    decidim-voting_budgets_rule (0.22.0)
+      decidim-core (= 0.22.0)
+
+GIT
   remote: https://github.com/decidim/decidim.git
   revision: a393321f014154fb573bdb3bc2c7fa48402aa891
   branch: release/0.22-stable
@@ -859,6 +866,7 @@ DEPENDENCIES
   decidim-phone_authorization_handler!
   decidim-socio_demographic_authorization_handler!
   decidim-term_customizer!
+  decidim-voting_budgets_rule!
   dotenv-rails
   faker (~> 1.8)
   fog-aws

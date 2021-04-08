@@ -34,6 +34,8 @@ gem "decidim-phone_authorization_handler", git: "https://github.com/OpenSourcePo
 
 gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git", branch: "0.dev"
 
+gem "decidim-voting_budgets_rule", git: "https://github.com/OpenSourcePolitics/voting_budgets_rule.git"
+
 gem "bootsnap", "~> 1.3"
 
 gem "puma", "~> 4.3"
