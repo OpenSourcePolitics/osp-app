@@ -39,7 +39,7 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
-  config.active_storage.service = :local
+  config.active_storage.service = :amazon
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
@@ -87,6 +87,11 @@ Rails.application.configure do
       :domain => Rails.application.secrets.smtp_domain,
       :enable_starttls_auto => Rails.application.secrets.smtp_starttls_auto,
       :openssl_verify_mode => 'none'
+  }
+
+  config.action_mailer.default_options = {
+    "X-Mailjet-TrackOpen" => 0,
+    "X-Mailjet-TrackClick" => 0
   }
 
   # Use a different logger for distributed setups.

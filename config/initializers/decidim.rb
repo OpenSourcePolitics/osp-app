@@ -2,12 +2,14 @@
 
 Decidim.configure do |config|
   config.application_name = "opensourcepolitics"
-  config.mailer_sender = "ne-pas-repondre@opensourcepolitics.eu"
-  config.mailer_reply = "reply@opensourcepolitics.eu"
+  config.mailer_sender = "plateforme-petitions@diffusion-senat.fr"
+  config.mailer_reply = "support-petitions@senat.fr"
 
   # Change these lines to set your preferred locales
   config.default_locale = :fr
-  config.available_locales = [:en, :fr]
+  config.available_locales = [:fr, :en]
+
+  config.maximum_attachment_height_or_width = 6000
 
   # Geocoder configuration
   config.geocoder = {

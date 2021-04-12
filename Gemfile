@@ -41,6 +41,10 @@ gem "omniauth_openid_connect", "0.3.1"
 gem "omniauth-saml", "~> 1.10"
 
 gem 'rubyzip', require: 'zip'
+gem "ruby-progressbar"
+gem "sentry-raven"
+
+gem "dotenv-rails"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
@@ -58,8 +62,13 @@ group :development do
 end
 
 group :production do
+  gem "passenger"
+  gem "fog-aws"
+  gem 'aws-sdk-s3'
+  gem "dalli"
+  gem "sendgrid-ruby"
+  gem "newrelic_rpm"
+  gem "lograge"
   gem "sidekiq"
   gem "sidekiq-scheduler"
-  gem "fog-aws"
-  gem "dalli-elasticache"
 end

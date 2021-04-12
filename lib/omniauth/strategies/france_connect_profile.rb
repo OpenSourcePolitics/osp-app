@@ -19,7 +19,8 @@ module OmniAuth
       end
 
       def find_name
-        user_info.preferred_username.blank? ? user_info.family_name : user_info.preferred_username
+        # user_info.preferred_username.blank? ? user_info.family_name : user_info.preferred_username
+        user_info.family_name
       end
 
       def authorize_uri

@@ -64,7 +64,8 @@ if Rails.application.secrets.dig(:omniauth, :france_connect_profile).present? &&
     config.omniauth :france_connect_profile, {
       name: "france_connect_profile",
       issuer: "https://" + Rails.application.secrets.dig(:omniauth, :france_connect_profile, :host),
-      scope: [:openid, :email, :given_name, :family_name, :preferred_username, :birthdate],
+      # scope: [:openid, :email, :given_name, :family_name, :preferred_username, :birthdate],
+      scope: [:openid, :email, :given_name, :family_name, :birthdate],
       client_signing_alg: :HS256,
       client_auth_method: :body,
       acr_values: "eidas1" ,

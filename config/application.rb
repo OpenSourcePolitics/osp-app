@@ -14,6 +14,11 @@ module DecidimAws
     config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.yml').to_s]
 
     Decidim.unconfirmed_access_for = 0.days
+    config.force_ssl = true
+
+    # This needs to be set for correct images URLs in emails
+    # DON'T FORGET to ALSO set this in `config/initializers/carrierwave.rb`
+    config.action_mailer.asset_host = "https://petitions.senat.fr"
 
     config.session_store :active_record_store,
       :key => '_decidim_session'
