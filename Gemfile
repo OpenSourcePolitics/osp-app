@@ -40,7 +40,7 @@ gem "omniauth-oauth2", ">= 1.4.0", "< 2.0"
 gem "omniauth_openid_connect", "0.3.1"
 gem "omniauth-saml", "~> 1.10"
 
-gem 'rubyzip', require: 'zip'
+gem "rubyzip", require: 'zip'
 gem "ruby-progressbar"
 gem "sentry-raven"
 
@@ -71,4 +71,5 @@ group :production do
   gem "lograge"
   gem "sidekiq"
   gem "sidekiq-scheduler"
+  gem "dalli-elasticache"
 end

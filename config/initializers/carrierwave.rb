@@ -22,7 +22,6 @@ if Rails.application.secrets.dig(:scaleway, :id).present? && Rails.env.productio
       'Cache-Control' => "max-age=#{365.day.to_i}",
       'X-Content-Type-Options' => "nosniff"
     }
-    config.asset_host = "https://fichiers.petitions.senat.fr"
   end
 else
   CarrierWave.configure do |config|

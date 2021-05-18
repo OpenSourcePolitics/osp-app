@@ -18,7 +18,7 @@ module DecidimAws
 
     # This needs to be set for correct images URLs in emails
     # DON'T FORGET to ALSO set this in `config/initializers/carrierwave.rb`
-    config.action_mailer.asset_host = "https://petitions.senat.fr"
+    # config.action_mailer.asset_host = ""
 
     config.session_store :active_record_store,
       :key => '_decidim_session'
