@@ -4,13 +4,13 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
+# gem "decidim", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
 # gem "decidim-consultations", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
-gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
+# gem "decidim-initiatives", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
 
-# gem "decidim", path: "../decidim"
-# gem "decidim-consultations", path: "../decidim"
-# gem "decidim-initiatives", path: "../decidim"
+gem "decidim", path: "../../decidim-petition"
+# gem "decidim-consultations", path: "../../decidim-petition"
+gem "decidim-initiatives", path: "../../decidim-petition"
 
 gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git", branch: "0.dev"
 
@@ -25,7 +25,7 @@ gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decid
 # gem "decidim-blazer", path: "../decidim-module-blazer"
 
 gem "bootsnap"
-gem "puma"
+gem "puma", ">= 4.3"
 gem "uglifier"
 
 gem "faker", "~> 1.9"
@@ -36,21 +36,20 @@ gem "wkhtmltopdf-binary"
 
 gem 'activerecord-session_store'
 
-gem "omniauth-oauth2", ">= 1.4.0", "< 2.0"
 gem "omniauth_openid_connect", "0.3.1"
-gem "omniauth-saml", "~> 1.10"
 
 gem "rubyzip", require: 'zip'
 gem "ruby-progressbar"
 gem "sentry-raven"
 
 gem "dotenv-rails"
+gem "rails", "5.2.4.4"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
-  # gem "decidim-dev", path: "../decidim"
+  # gem "decidim-dev", git: "https://github.com/OpenSourcePolitics/decidim.git", branch: "alt/petition"
+  gem "decidim-dev", path: "../../decidim-petition"
 end
 
 group :development do
