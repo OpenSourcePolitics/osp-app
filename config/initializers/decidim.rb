@@ -12,19 +12,18 @@ Decidim.configure do |config|
   config.maximum_attachment_height_or_width = 6000
 
   # Geocoder configuration
-  config.geocoder = {
-      static_map_url: "https://image.maps.cit.api.here.com/mia/1.6/mapview",
-      here_app_id: Rails.application.secrets.geocoder[:here_app_id],
-      here_app_code: Rails.application.secrets.geocoder[:here_app_code]
-  }
+  # config.geocoder = {
+  #     static_map_url: "https://image.maps.cit.api.here.com/mia/1.6/mapview",
+  #     here_api_key: Rails.application.secrets.geocoder[:here_api_key],
+  #     here_app_id: "DEPRECATED",
+  #     here_app_code: "DEPRECATED"
+  # }
 
-  if defined?(Decidim::Initiatives) && defined?(Decidim::Initiatives.do_not_require_authorization)
-    Decidim::Initiatives.minimum_committee_members = 0
-    Decidim::Initiatives.default_signature_time_period_length = 6.months
-    Decidim::Initiatives.print_enabled = false
-    Decidim::Initiatives.default_components = []
-    Decidim::Initiatives.timestamp_service = "Decidim::Initiatives::UtcTimestamp"
-  end
+  # Restrict access to the system part with an authorized ip list.
+  # You can use a single ip like ("1.2.3.4"), or an ip subnet like ("1.2.3.4/24")
+  # You may specify multiple ip in an array ["1.2.3.4", "1.2.3.4/24"]
+  # Use the following configuration to enable all IPs
+  config.system_whitelist_ips = ["0.0.0.0/0"]
 
   # Custom resource reference generator method
   # config.reference_generator = lambda do |resource, component|
