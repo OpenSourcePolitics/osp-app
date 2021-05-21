@@ -1,37 +1,12 @@
 # frozen_string_literal: true
 
-require "omniauth/strategies/decidim"
 require "omniauth/strategies/france_connect_uid"
 require "omniauth/strategies/france_connect_profile"
-require "omniauth/strategies/eid_saml"
 
 Rails.application.config.middleware.use OmniAuth::Builder do
   OmniAuth.config.logger = Rails.logger
   # OmniAuth.config.allowed_request_methods = %i[get post delete]
 end
-
-
-# if Rails.application.secrets.dig(:omniauth, :france_connect_uid).present? && Rails.application.secrets.dig(:omniauth, :france_connect_uid, :enabled)
-#   ::Devise.setup do |config|
-#     config.omniauth :france_connect_uid,
-#       Rails.application.secrets.dig(:omniauth, :france_connect_uid, :identifier),
-#       Rails.application.secrets.dig(:omniauth, :france_connect_uid, :secret),
-#       Rails.application.secrets.dig(:omniauth, :france_connect_uid, :host)
-#   end
-#
-#   Decidim::User.omniauth_providers << :france_connect_uid
-# end
-#
-# if Rails.application.secrets.dig(:omniauth, :france_connect_profile).present? && Rails.application.secrets.dig(:omniauth, :france_connect_profile, :enabled)
-#   ::Devise.setup do |config|
-#     config.omniauth :france_connect_profile,
-#       Rails.application.secrets.dig(:omniauth, :france_connect_profile, :identifier),
-#       Rails.application.secrets.dig(:omniauth, :france_connect_profile, :secret),
-#       Rails.application.secrets.dig(:omniauth, :france_connect_profile, :host)
-#   end
-#
-#   Decidim::User.omniauth_providers << :france_connect_profile
-# end
 
 if Rails.application.secrets.dig(:omniauth, :france_connect_uid).present? && Rails.application.secrets.dig(:omniauth, :france_connect_uid, :enabled)
   ::Devise.setup do |config|
@@ -86,62 +61,8 @@ if Rails.application.secrets.dig(:omniauth, :france_connect_profile).present? &&
   Decidim::User.omniauth_providers << :france_connect_profile
 end
 
-if Rails.application.secrets.dig(:omniauth, :decidim).present? && Rails.application.secrets.dig(:omniauth, :decidim, :enabled)
-  ::Devise.setup do |config|
-    config.omniauth :decidim,
-      Rails.application.secrets.dig(:omniauth, :decidim, :client_id),
-      Rails.application.secrets.dig(:omniauth, :decidim, :client_secret),
-      Rails.application.secrets.dig(:omniauth, :decidim, :site_url),
-      scope: :public
-  end
-
-  Decidim::User.omniauth_providers << :decidim
-end
-
-if Rails.application.secrets.dig(:omniauth, :saml).present? && Rails.application.secrets.dig(:omniauth, :saml, :enabled)
-  Devise.setup do |config|
-    config.omniauth :saml,
-      idp_sso_target_url: Rails.application.secrets.dig(:omniauth, :saml, :idp_sso_target_url),
-      assertion_consumer_service_url: Rails.application.secrets.dig(:omniauth, :saml, :assertion_consumer_service_url),
-      authn_context: Rails.application.secrets.dig(:omniauth, :saml, :authn_context),
-      issuer: Rails.application.secrets.dig(:omniauth, :saml, :issuer),
-      # protocol_binding: "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
-      authn_context_comparison: "minimum",
-      idp_slo_target_url: Rails.application.secrets.dig(:omniauth, :saml, :idp_slo_target_url),
-      name_identifier_format: "urn:oasis:names:tc:SAML:2.0:nameid-format:transient",
-      uid_attribute: "urn:be:fedict:iam:attr:fedid",
-      attribute_service_name: 'Eidas extra attributes',
-      attribute_statements: {
-        name: ['uid','name'],
-        email: ['mail', 'email'],
-        first_name: ['surname', 'first_name', 'firstname', 'firstName'],
-        last_name: ['givenName', 'last_name', 'lastname', 'lastName'],
-        default_locale: ['locale', 'urn:be:fedict:iam:attr:locale'],
-        locale: ['PrefLanguage', 'pref_language', 'preflanguage', 'locale', 'urn:be:fedict:iam:attr:locale'],
-        nickname: ['uid'],
-        rrn: ['egovNRN', 'egovnrn', 'egov_nrn', 'nrn', 'rrn'],
-        authentication_method: ['authenticationmethod'],
-        authentication_level: ['urn:be:fedict:iam:attr:authenticationmethod'],
-        authentication_context: ['urn:be:fedict:iam:attr:context']
-      },
-      idp_cert_fingerprint: Rails.application.secrets.dig(:omniauth, :saml, :idp_cert_fingerprint),
-      idp_cert_fingerprint_validator: lambda { |fingerprint| fingerprint },
-      idp_cert: Rails.application.secrets.dig(:omniauth, :saml, :idp_cert),
-      # authn_force: false,
-      force_authn: true,
-      security: {
-        authn_requests_signed: true,     # Enable or not signature on AuthNRequest
-        logout_requests_signed:  true,     # Enable or not signature on Logout Request
-        logout_responses_signed:  true,     # Enable or not signature on Logout Response
-        want_assertions_signed:  true,     # Enable or not the requirement of signed assertion
-        metadata_signed:  true,     # Enable or not signature on Metadata
-        digest_method:  XMLSecurity::Document::SHA1,
-        signature_method:  XMLSecurity::Document::RSA_SHA1,
-        embed_sign:  false
-      },
-      certificate: Rails.application.secrets.dig(:omniauth, :saml, :idp_cert),
-      private_key: Rails.application.secrets.dig(:omniauth, :saml, :idp_key)
-  end
-
-  Decidim::User.omniauth_providers << :saml
-end
+Decidim::Verifications.unregister_workflow(:decidim)
+Decidim::Verifications.unregister_workflow(:saml)
+Decidim::Verifications.unregister_workflow(:csv_census)
+Decidim::Verifications.unregister_workflow(:postal_letter)
+Decidim::Verifications.unregister_workflow(:id_documents)
