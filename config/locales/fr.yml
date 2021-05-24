@@ -8,11 +8,21 @@ fr:
         file: Fichier (*.pdf)
         title: Titre
         weight: Ordre de présentation
+      user:
+        address_complement: Complément d'adresse
+        city: Commune
+        country: Pays
+        full_address: Votre adresse postale
+        number_and_street: Numéro et libellé de la voie
+        postal_code: Code postal
+
     models:
       decidim/attachment_created_event: Pièce jointe
   decidim:
     account:
       show:
+        change_address: Modifier mon adresse
+        custom_agreement: "Je certifie être citoyen français ou résidant régulièrement en France, ainsi que l’exactitude des informations du profil"
         unconfirmed_email: "l'adresse <code>%{email}</code> est en cours de validation.<br/>
         Un courriel vous a été transmis à cette adresse contenant un lien nous permettant
         de confirmer son existence."
@@ -49,13 +59,13 @@ fr:
             - Confirmer une identité avec un compte Decidim externe
         france_connect:
           help:
-            - Confirmer une identité avec un compte France Connect
+            - Confirmer une identité avec un compte FranceConnect
         france_connect_uid:
           help:
-            - Confirmer une identité avec un compte France Connect "Anonyme"
+            - Confirmer une identité avec un compte FranceConnect Signataire
         france_connect_profile:
           help:
-            - Confirmer une identité avec un compte France Connect "Auteur"
+            - Confirmer une identité avec un compte FranceConnect Auteur
         saml:
           help:
             - Confirmer une identité avec un compte CSAM eID
@@ -64,16 +74,26 @@ fr:
         explanation: Confirmer votre identité avec un compte Decidim externe
       france_connect:
         name: France Connect
-        explanation: Confirmer votre identité avec un compte France Connect
+        explanation: Confirmer votre identité avec un compte FranceConnect
       france_connect_uid:
-        name: France Connect Level I
-        explanation: Confirmer votre identité avec un compte France Connect "Anonyme"
+        name: FranceConnect Signataire
+        explanation: Confirmer votre identité avec un compte FranceConnect Signataire
       france_connect_profile:
-        name: France Connect Level II
-        explanation: Confirmer votre identité avec un compte France Connect "Auteur"
+        name: FranceConnect Auteur
+        explanation: Confirmer votre identité avec un compte FranceConnect Auteur
       saml:
         name: CSAM eID
         explanation: Confirmer votre identité avec un compte CSAM eID
+    devise:
+      omniauth_registrations:
+        new:
+          custom_agreement: "Je certifie être citoyen français ou résidant régulièrement en France, ainsi que l’exactitude des informations du profil"
+          registration_info: |-
+            Texte d'information pour la création de compte qui supporte le <code>HTML</code>.
+            <br/><br/>
+            <small>
+              <i>Please change me with translation key <code>decidim.devise.omniauth_registrations.new.registration_info</code><i/>
+            <small/>
     pages:
       terms_and_conditions:
         refuse:
@@ -101,6 +121,25 @@ fr:
         <b>Les noms et prénoms des auteurs de pétition sont publiés avec la pétition.</b><br/>
         Les autres éléments ne sont en aucun cas rendus publics.
         </p>"
+    system:
+      organizations:
+        omniauth_settings:
+          france_connect_uid:
+            button_path: Chemin de l'image du bouton
+            provider_name: Nom du service
+            site: URL principale du service
+            client_id: ID client
+            client_secret: Clé secrète
+            end_session_endpoint: Endpoint de déconnexion
+            minimum_age: Age minimum
+          france_connect_profile:
+            button_path: Chemin de l'image du bouton
+            provider_name: Nom du service
+            site: URL principale du service
+            client_id: ID client
+            client_secret: Clé secrète
+            end_session_endpoint: Endpoint de déconnexion
+            minimum_age: Age minimum
     verifications:
       authorizations:
         index:

@@ -1,43 +1,48 @@
-<% if Devise.mappings[:user].omniauthable? && any_social_provider_enabled? && !request.env['PATH_INFO'].include?("/admin_sign_in") %>
-  <div class="row">
-    <div class="<%= column_classes %>">
-      <%- Decidim::User.omniauth_providers.each do |provider| %>
-        <% if social_provider_enabled?(provider) && (request.env.dig(:available_authorizations).nil? || request.env.dig(:available_authorizations).include?(provider.to_s)) %>
-          <% if I18n.exists?("decidim.omniauth.#{provider}.explanation") %>
-            <div class="callout">
-              <%== t("decidim.omniauth.#{provider}.explanation") %>
-            </div>
-          <% end %>
-          <div class="social-register">
-            <% if Rails.application.secrets.dig(:omniauth, provider.to_sym, :button_path).present? %>
-              <%= link_to decidim.send("user_#{provider}_omniauth_authorize_path"), class: "button button--social--custom", method: :post do %>
-                <%= image_tag Rails.application.secrets.dig(:omniauth, provider.to_sym, :button_path), alt: t("devise.shared.links.sign_in_with_provider", provider: normalize_provider_name(provider).titleize) %>
-              <% end %>
-              <% if I18n.exists?("decidim.omniauth.france_connect.external.link") %>
-                <%= link_to t("link", scope: "decidim.omniauth.france_connect.external"), class: "primary", target: "_blank" do %>
-                  <small>
-                    <%= t("text", scope: "decidim.omniauth.france_connect.external") %>
-                  </small>
-                <% end %>
-              <% end %>
-            <% else %>
-              <%= link_to decidim.send("user_#{provider}_omniauth_authorize_path"), class: "button button--social button--#{provider.to_s.parameterize}", method: :post do %>
+<% cache omniauth_buttons_cache_version do %>
+  <% if Devise.mappings[:user].omniauthable? && current_organization.enabled_omniauth_providers.any? && !request.env['PATH_INFO'].include?("/admin_sign_in") %>
+    <div class="row">
+      <div class="<%= column_classes %>">
+        <% current_organization.enabled_omniauth_providers.each do |name, provider| %>
+
+          <% next if name == :france_connect_uid && request.env['PATH_INFO'].end_with?("/committee_requests/new") %>
+
+          <% if allowed_omniauth?(name) %>
+            <% if I18n.exists?("decidim.omniauth.#{name}.explanation") %>
+              <div class="callout">
+                <p><%== t("decidim.omniauth.#{name}.explanation") %></p>
+                <div class="social-register">
+                  <% if provider[:button_path].present? %>
+                    <%= link_to decidim.send("user_#{name}_omniauth_authorize_path"), class: "button button--social--custom", method: :post do %>
+                      <%= image_tag provider[:button_path], alt: t("devise.shared.links.sign_in_with_provider", provider: normalize_provider_name(name).titleize) %>
+                    <% end %>
+                    <% if I18n.exists?("decidim.omniauth.france_connect.external.link") %>
+                      <%= link_to t("link", scope: "decidim.omniauth.france_connect.external"), class: "primary", target: "_blank" do %>
+                        <small>
+                          <%= t("text", scope: "decidim.omniauth.france_connect.external") %>
+                        </small>
+                      <% end %>
+                    <% end %>
+                  <% else %>
+                    <%= link_to decidim.send("user_#{name}_omniauth_authorize_path"), class: "button button--social button--#{name.to_s.parameterize}", method: :post do %>
                 <span class="button--social__icon">
                   <%= oauth_icon provider %>
                 </span>
-                <span class="button--label">
-                  <% if Rails.application.secrets.dig(:omniauth, provider.to_sym, :provider_name).present? %>
+                      <span class="button--label">
+                  <% if provider[:provider_name].present? %>
                     <%= t("devise.shared.links.sign_in_with_provider", provider: "") %>
-                    <b><%= Rails.application.secrets.dig(:omniauth, provider.to_sym, :provider_name) %></b>
+                          <b><%= provider[:provider_name] %></b>
                   <% else %>
-                    <%= t("devise.shared.links.sign_in_with_provider", provider: normalize_provider_name(provider).titleize) %>
+                    <%= t("devise.shared.links.sign_in_with_provider", provider: normalize_provider_name(name).titleize) %>
                   <% end %>
                 </span>
-              <% end %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
             <% end %>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>

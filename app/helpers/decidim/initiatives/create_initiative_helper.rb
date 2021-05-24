@@ -12,6 +12,10 @@ module Decidim
         all_signature_type_options
       end
 
+      def send_to_technical_validation?
+        !promotal_committee_required? || unique_committee_member?
+      end
+
       private
 
       def online_signature_type_options

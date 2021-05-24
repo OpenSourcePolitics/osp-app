@@ -1565,6 +1565,9 @@ ActiveRecord::Schema.define(version: 2021_05_21_133246) do
     t.string "session_token"
     t.string "direct_message_types", default: "all", null: false
     t.datetime "admin_terms_accepted_at"
+    t.string "full_address"
+    t.datetime "custom_agreement_at"
+    t.jsonb "address", default: {}, null: false
     t.index ["confirmation_token"], name: "index_decidim_users_on_confirmation_token", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_users_on_decidim_organization_id"
     t.index ["id", "type"], name: "index_decidim_users_on_id_and_type"

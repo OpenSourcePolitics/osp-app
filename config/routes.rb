@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   authenticate :admin do
     mount Sidekiq::Web => '/sidekiq'
   end
-  
+
   devise_scope :user do
     get '/admin_sign_in', to: "decidim/devise/sessions#new"
   end
@@ -34,6 +34,10 @@ Rails.application.routes.draw do
   end
 
   get "/search", to: redirect('/404')
+
+  scope "/initiatives/:initiative_slug" do
+    resources :versions, to: redirect('/404')
+  end
 
   mount Decidim::Core::Engine => '/'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

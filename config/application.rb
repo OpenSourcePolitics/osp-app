@@ -20,8 +20,8 @@ module DecidimAws
     # DON'T FORGET to ALSO set this in `config/initializers/carrierwave.rb`
     # config.action_mailer.asset_host = ""
 
-    config.session_store :active_record_store,
-      :key => '_decidim_session'
+    # config.session_store :active_record_store,
+    #   :key => '_decidim_session'
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

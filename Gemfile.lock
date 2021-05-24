@@ -7,8 +7,10 @@ GIT
       decidim-admin
       decidim-core
 
-PATH
-  remote: ../../decidim-petition
+GIT
+  remote: https://github.com/OpenSourcePolitics/decidim.git
+  revision: e641b68a8eee61f823de240e29c8eff55e1a5f35
+  branch: alt/petition_merge
   specs:
     decidim (0.22.0.dev)
       decidim-accountability (= 0.22.0.dev)
@@ -952,4 +954,4 @@ RUBY VERSION
    ruby 2.6.5p114
 
 BUNDLED WITH
-   2.1.4
+   2.2.17

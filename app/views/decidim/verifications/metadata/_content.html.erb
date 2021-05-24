@@ -9,7 +9,11 @@
 <div class="card">
   <div class="callout primary">
     <p>
-      <%== t(".active_email", email: @user.email ) %>
+      <%= decidim_sanitize t(".active_email", email: @user.email, full_address: @user.full_address) %>
+
+      <% unless @user.address.blank? %>
+        <%= decidim_sanitize t(".address_complement", address_complement: @user.address["address_complement"]) unless @user.address["address_complement"].blank? %>
+      <% end %>
     </p>
   </div>
 </div>

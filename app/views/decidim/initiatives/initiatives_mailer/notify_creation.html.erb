@@ -1,20 +1,12 @@
 <p>
-  <%= t("devise.mailer.confirmation_instructions.greeting", recipient: @initiative.author.name) %>
+<%= t "decidim.initiatives.initiatives_mailer.creation_subject", title: translated_attribute(@initiative.title) %>.
+<%= link_to t("decidim.initiatives.initiatives_mailer.more_information"), decidim.page_url("definition_petition", host: @organization.host), rel: "notrack" %>
 </p>
-<br/>
 
-<p>
-  <%== t "decidim.initiatives.initiatives_mailer.creation_subject", title: translated_attribute(@initiative.title) %>.
-</p>
-<br/>
-
-<p>
-  <%== t("decidim.initiatives.initiatives_mailer.more_information") %>
-</p>
 <br/>
 
 <p>
   <%= t("check_initiative_details", scope: "decidim.initiatives.initiatives_mailer.initiative_link") %>
   <%= link_to t("here",  scope: "decidim.initiatives.initiatives_mailer.initiative_link"),
-              decidim_admin_initiatives.edit_initiative_url(@initiative, host: @organization.host) %>
+              decidim_initiatives.initiative_url(@initiative, host: @organization.host), rel: "notrack" %>
 </p>
