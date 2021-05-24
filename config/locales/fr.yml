@@ -15,21 +15,27 @@ fr:
         full_address: Votre adresse postale
         number_and_street: Numéro et libellé de la voie
         postal_code: Code postal
-
     models:
       decidim/attachment_created_event: Pièce jointe
   decidim:
+    shared:
+      version_author:
+        profile: Compte utilisateur supprimé
+    profile:
+      deleted: Compte utilisateur supprimé
     account:
       show:
         change_address: Modifier mon adresse
-        custom_agreement: "Je certifie être citoyen français ou résidant régulièrement en France, ainsi que l’exactitude des informations du profil"
-        unconfirmed_email: "l'adresse <code>%{email}</code> est en cours de validation.<br/>
-        Un courriel vous a été transmis à cette adresse contenant un lien nous permettant
-        de confirmer son existence."
+        custom_agreement: Je certifie être citoyen français ou résidant régulièrement
+          en France, ainsi que l’exactitude des informations du profil
+        unconfirmed_email: l'adresse <code>%{email}</code> est en cours de validation.<br/>
+          Un courriel vous a été transmis à cette adresse contenant un lien nous permettant
+          de confirmer son existence.
     admin:
       attachments:
         create:
-          error: Une erreur s'est produite lors de la création d'un nouvelle pièce jointe.
+          error: Une erreur s'est produite lors de la création d'un nouvelle pièce
+            jointe.
           success: Pièce jointe créée avec succès.
         destroy:
           success: Pièce jointe supprimée avec succès.
@@ -56,44 +62,75 @@ fr:
       admin:
         decidim:
           help:
-            - Confirmer une identité avec un compte Decidim externe
+          - Confirmer une identité avec un compte Decidim externe
         france_connect:
           help:
-            - Confirmer une identité avec un compte FranceConnect
-        france_connect_uid:
-          help:
-            - Confirmer une identité avec un compte FranceConnect Signataire
+          - Confirmer une identité avec un compte FranceConnect
         france_connect_profile:
           help:
-            - Confirmer une identité avec un compte FranceConnect Auteur
+          - Confirmer une identité avec un compte FranceConnect Auteur
+        france_connect_uid:
+          help:
+          - Confirmer une identité avec un compte FranceConnect Signataire
         saml:
           help:
-            - Confirmer une identité avec un compte CSAM eID
+          - Confirmer une identité avec un compte CSAM eID
       decidim:
-        name: Omniauth Decidim
         explanation: Confirmer votre identité avec un compte Decidim externe
+        name: Omniauth Decidim
       france_connect:
-        name: France Connect
         explanation: Confirmer votre identité avec un compte FranceConnect
-      france_connect_uid:
-        name: FranceConnect Signataire
-        explanation: Confirmer votre identité avec un compte FranceConnect Signataire
+        name: France Connect
       france_connect_profile:
-        name: FranceConnect Auteur
         explanation: Confirmer votre identité avec un compte FranceConnect Auteur
+        name: FranceConnect Auteur
+      france_connect_uid:
+        explanation: Confirmer votre identité avec un compte FranceConnect Signataire
+        name: FranceConnect Signataire
       saml:
-        name: CSAM eID
         explanation: Confirmer votre identité avec un compte CSAM eID
+        name: CSAM eID
     devise:
       omniauth_registrations:
         new:
-          custom_agreement: "Je certifie être citoyen français ou résidant régulièrement en France, ainsi que l’exactitude des informations du profil"
+          custom_agreement: Je certifie être citoyen français ou résidant régulièrement
+            en France, ainsi que l’exactitude des informations du profil
           registration_info: |-
             Texte d'information pour la création de compte qui supporte le <code>HTML</code>.
             <br/><br/>
             <small>
               <i>Please change me with translation key <code>decidim.devise.omniauth_registrations.new.registration_info</code><i/>
             <small/>
+    event:
+      initiatives:
+        admin:
+          support_threshold_reached:
+            email_intro: decidim.event.initiatives.admin.support_threshold_reached.email_intro
+            email_outro: decidim.event.initiatives.admin.support_threshold_reached.email_outro
+            email_subject: decidim.event.initiatives.admin.support_threshold_reached.email_subject
+            notification_title: decidim.event.initiatives.admin.support_threshold_reached.notification_title
+    initiatives:
+      update:
+        error: fr.decidim.initiatives.update.error
+        success: fr.decidim.initiatives.update.success
+    omniauth:
+      france_connect:
+        external:
+          link: https://franceconnect.gouv.fr/
+          text: Qu'est-ce-que FranceConnect ?
+      france_connect_profile:
+        explanation: '<b>L''auteur d''une pétition ne peut être anonyme.</b><br/>
+          <p>Toutefois, le Sénat ne récupère, via l''authentification FranceConnect
+          "Auteur", que les informations suivantes : <br/> nom, prénom(s), date de
+          naissance, adresse électronique et identifiant technique.<br/> <b>Les noms
+          et prénoms des auteurs de pétition sont publiés avec la pétition.</b><br/>
+          Les autres éléments ne sont en aucun cas rendus publics. </p>'
+      france_connect_uid:
+        anonymous_user: Authentifié(e) avec<br/><b>FranceConnect</b>
+        explanation: <b>La connexion via FranceConnect en tant que "Signataire" permet
+          de garantir votre anonymat</b>,<br/> tout en assurant qu'une pétition n'est
+          signée une seule fois par une même personne physique.<br/> <b>Aucune donnée
+          personnelle n'est récupérée lors de la connexion avec FranceConnect</b>
     pages:
       terms_and_conditions:
         refuse:
@@ -103,50 +140,34 @@ fr:
           modal_button: Refuser les conditions d'utilisation
           modal_close: Fermer la fenêtre
           modal_title: Refusez-vous vraiment les conditions d'utilisation ?
-    omniauth:
-      france_connect:
-        external:
-          link: "https://franceconnect.gouv.fr/"
-          text: "Qu'est-ce-que FranceConnect ?"
-      france_connect_uid:
-        explanation: "<b>La connexion via FranceConnect en tant que \"Signataire\" permet de garantir votre anonymat</b>,<br/>
-         tout en assurant qu'une pétition n'est signée une seule fois par une même personne physique.<br/>
-        <b>Aucune donnée personnelle n'est récupérée lors de la connexion avec FranceConnect</b>"
-        anonymous_user: "Authentifié(e) avec<br/><b>FranceConnect</b>"
-      france_connect_profile:
-        explanation: "<b>L'auteur d'une pétition ne peut être anonyme.</b><br/>
-        <p>Toutefois, le Sénat ne récupère, via l'authentification FranceConnect \"Auteur\",
-        que les informations suivantes : <br/>
-        nom, prénom(s), date de naissance, adresse électronique et identifiant technique.<br/>
-        <b>Les noms et prénoms des auteurs de pétition sont publiés avec la pétition.</b><br/>
-        Les autres éléments ne sont en aucun cas rendus publics.
-        </p>"
     system:
       organizations:
         omniauth_settings:
-          france_connect_uid:
-            button_path: Chemin de l'image du bouton
-            provider_name: Nom du service
-            site: URL principale du service
-            client_id: ID client
-            client_secret: Clé secrète
-            end_session_endpoint: Endpoint de déconnexion
-            minimum_age: Age minimum
           france_connect_profile:
             button_path: Chemin de l'image du bouton
-            provider_name: Nom du service
-            site: URL principale du service
             client_id: ID client
             client_secret: Clé secrète
             end_session_endpoint: Endpoint de déconnexion
             minimum_age: Age minimum
+            provider_name: Nom du service
+            site: URL principale du service
+          france_connect_uid:
+            button_path: Chemin de l'image du bouton
+            client_id: ID client
+            client_secret: Clé secrète
+            end_session_endpoint: Endpoint de déconnexion
+            minimum_age: Age minimum
+            provider_name: Nom du service
+            site: URL principale du service
     verifications:
       authorizations:
         index:
           title: Liste des autorisations
       metadata:
         content:
-          active_email: "<b>Cet utilisateur peut être contacté via l'adresse de courriel <br/><a href=\"mailto:%{email}\">%{email}</a></b>"
+          active_email: '<b>Cet utilisateur peut être contacté aux coordonnées suivantes:
+            <p><a href="mailto:%{email}">%{email}</a><br/>%{full_address}</p></b>'
+          address_complement: 'Complément d''adresse : %{address_complement}'
   devise:
     mailer:
       confirmation_instructions:
@@ -157,22 +178,27 @@ fr:
       email_changed:
         action: Confirmer ma nouvelle adresse
         greeting: Bonjour %{recipient},
-        instruction: 'Nous vous contactons pour vous informer que votre adresse e-mail a été modifiée à %{email}. Vous pouvez la confirmer via le lien ci-dessous:'
+        instruction: 'Nous vous contactons pour vous informer que votre adresse e-mail
+          a été modifiée à %{email}. Vous pouvez la confirmer via le lien ci-dessous:'
         subject: Courriel modifié
     shared:
       links:
-        signed_in_with_provider: "Authentifié(e) avec %{provider} <br/>"
+        signed_in_with_provider: Authentifié(e) avec %{provider} <br/>
+  forms:
+    required_explanation: "* Les champs obligatoires sont marqués d'un astérisque"
   layouts:
     decidim:
       footer:
         download_open_data: Données ouvertes
+        official_url: site du Sénat
       mailer:
-        footer: À bientôt sur la plateforme de <a href="%{organization_url}">e-pétitions</a> du Sénat.
+        footer: À bientôt sur la plateforme de <a href="%{organization_url}">e-pétitions</a>
+          du Sénat.
+      user_menu:
+        admin_dashboard: Administration
       user_profile:
         authorizations: Voir les autorisations associées à votre compte
         back_to_account: Retour à votre compte
-      user_menu:
-        admin_dashboard: Administration
   faker:
     address:
       country_code: ['FR','FR0','FR1','FR2','FR3','FR4','FR5','FR6','FR7','FR8','FR9']

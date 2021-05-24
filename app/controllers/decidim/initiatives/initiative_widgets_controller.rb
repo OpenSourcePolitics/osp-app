@@ -13,7 +13,7 @@ module Decidim
       include NeedsInitiative
 
       def show
-        redirect_to "/404" unless visible?
+        return redirect_to "/404" unless visible?
 
         super
       end
@@ -21,7 +21,7 @@ module Decidim
       private
 
       def visible?
-        current_initiative.published? || current_initiative.accepted? || current_initiative.rejected?
+        current_initiative.published? || current_initiative.debatted? || current_initiative.examinated?
       end
 
       def model

@@ -250,6 +250,10 @@ fr:
             à l’organisation.</p>\n"
           title: Comment fonctionnent les pétitions ?
     initiatives:
+      edit:
+        back: Retour
+        title: Editer
+        update: Mettre à jour
       actions:
         answer: Réponse
       admin:
@@ -423,6 +427,7 @@ fr:
           more_information: "(Plus d'informations)"
           send_my_initiative: Envoyer pour validation
         finish_help:
+          publish_helper_text: N'oubliez pas que pour que votre pétition soit publiée, vous devez compléter les informations requises et <strong>l'envoyer à la validation technique</strong> pour qu'un administrateur puisse l'examiner.
           access_reminder: Rappelez-vous que vous serez toujours en mesure d'accéder
             à vos pétitions via le menu utilisateur.
           help_for_organizations: Si vous êtes une association, vous devrez télécharger
@@ -528,6 +533,14 @@ fr:
           invalid: Le numéro de téléphone est invalide ou en attente d'autorisation.
             S'il vous plaît, vérifiez vos autorisations.
       initiatives:
+        approve: Accepter
+        committee_members:
+          approve: Accepter
+          confirm_revoke: Êtes-vous sûr(e) ?
+          invite_to_committee_help: Partagez ce lien pour inviter d'autres utilisateurs au Comité de promotion
+          no_members_yet: Il n'y a pas encore de membres dans le Comité de promotion
+          revoke: Révoquer
+          title: Membres du Comité de promotion
         author:
           deleted: Supprimé
           identifier: 'Identifiant: <b>N°%{identifier}</b>'
@@ -646,6 +659,8 @@ fr:
         home:
           highlighted_initiatives:
             active_initiatives: Pétitions actives
+          answered_initiatives:
+            active_initiatives: Pétitions ayant reçu un sort
             see_all_initiatives: Voir toutes les pétitions
       show:
         badge_name:

@@ -16,7 +16,7 @@ module OmniauthRegistrationFormExtend
     jsonb_attribute :address, [
         [:number_and_street, String],
         [:address_complement, String],
-        [:postal_code, Integer],
+        [:postal_code, String],
         [:city, String],
         [:country, String]
     ]
@@ -43,7 +43,7 @@ module OmniauthRegistrationFormExtend
       # Rails.logger.debug (((Time.zone.now - raw_data.dig(:extra, :raw_info, :birthdate).to_time) / 1.year.seconds).floor > manifest.dig(:minimum_age).to_i)
       # Rails.logger.debug "+++ ++++++++++++++++ +++"
 
-      if ((Time.zone.now - raw_data.dig(:extra, :raw_info, :birthdate).to_time) / 1.year.seconds).floor > manifest.dig(:minimum_age).to_i
+      if has_minimum_legal_birth_date?
         true
       else
         errors.add(:minimum_age,
@@ -52,6 +52,29 @@ module OmniauthRegistrationFormExtend
                           locale: I18n.locale))
         false
       end
+    end
+
+    def minimum_legal_birth_date
+      minimum_age = manifest.dig(:minimum_age)&.to_i
+
+      return if minimum_age.blank?
+
+      Time.zone.now -  minimum_age.years
+    end
+
+    def birth_date
+      birth_date = raw_data.dig(:extra, :raw_info, :birthdate)
+
+      return if birth_date.blank?
+
+      Time.zone.parse(birth_date)
+    end
+
+    def has_minimum_legal_birth_date?
+      return unless birth_date
+      return unless minimum_legal_birth_date
+
+      birth_date <= minimum_legal_birth_date
     end
 
     def manifest

@@ -10,6 +10,6 @@ if defined?(Decidim::Initiatives)
 end
 require "extends/organization_appearance_form_extend"
 require "extends/update_organization_appearance_extend"
-# require "extends/destroy_account_extend"
+require "extends/destroy_account_extend"
 require "extends/create_omniauth_registration_extend"
 require "extends/update_account_extend"

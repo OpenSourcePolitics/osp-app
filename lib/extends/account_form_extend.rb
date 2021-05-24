@@ -13,7 +13,7 @@ module AccountFormExtend
     jsonb_attribute :address, [
         [:number_and_street, String],
         [:address_complement, String],
-        [:postal_code, Integer],
+        [:postal_code, String],
         [:city, String],
         [:country, String]
     ]
@@ -21,7 +21,7 @@ module AccountFormExtend
     validates :email, 'valid_email_2/email': { mx: true }
     validates :avatar, file_size: { less_than_or_equal_to: ->(_record) { Decidim.maximum_avatar_size } }
     validates :custom_agreement, acceptance: true
-    validates :number_and_street, :postal_code, :city, :country, presence: true
+    validates :number_and_street, :city, :country, :postal_code, presence: true
 
     validate :unique_email
   end
