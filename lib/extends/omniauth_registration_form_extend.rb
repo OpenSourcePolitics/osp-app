@@ -9,28 +9,15 @@ module OmniauthRegistrationFormExtend
     include Decidim::JsonbAttributes
 
     def self.extra_params
-      [:custom_agreement, :full_address]
+      []
     end
-
-    attribute :custom_agreement, Virtus::Attribute::Boolean
-    jsonb_attribute :address, [
-        [:number_and_street, String],
-        [:address_complement, String],
-        [:postal_code, String],
-        [:city, String],
-        [:country, String]
-    ]
 
     validates :email, 'valid_email_2/email': { mx: true }
     validates :name, presence: true
     validates :provider, presence: true
     validates :uid, presence: true
-    validates :custom_agreement, acceptance: true
 
-    validates :email, :number_and_street,
-              :postal_code,
-              :city,
-              :country, presence: true, unless: -> (form) { form.email.blank? }
+    validates :email, presence: true, unless: -> (form) { form.email.blank? }
 
     validate :email, :email_is_unique, unless: -> (form) { form.email.blank? }
 

@@ -10,9 +10,6 @@ module UpdateAccountExtend
 
     def update_personal_data
       @user.email = @form.email
-      @user.address = @form.address
-      @user.full_address = @user.computed_full_address(@user.address)
-      @user.custom_agreement_at = DateTime.now if @form.custom_agreement
       @user.email_on_notification = @form.email_on_notification
     end
   end

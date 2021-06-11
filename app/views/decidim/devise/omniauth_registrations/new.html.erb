@@ -36,35 +36,7 @@
           <div class="card__content">
             <%= decidim_form_for(@form, as: resource_name, url: omniauth_registrations_path(resource_name), html: { class: "register-form new_user" }) do |f| %>
               <div class="field">
-                <%= f.text_field :name, readonly: true %>
-              </div>
-
-              <div class="field">
                 <%= f.email_field :email %>
-              </div>
-
-              <div class="field">
-                <%= f.text_field :number_and_street %>
-              </div>
-
-              <div class="field">
-                <%= f.text_field :address_complement %>
-              </div>
-
-              <div class="field">
-                <%= f.text_field :postal_code %>
-              </div>
-
-              <div class="field">
-                <%= f.text_field :city %>
-              </div>
-
-              <div class="field">
-                <%= f.text_field :country %>
-              </div>
-
-              <div class="field custom_agreement">
-                <%= f.check_box :custom_agreement, label: t(".custom_agreement") %>
               </div>
 
               <%= f.hidden_field :uid %>

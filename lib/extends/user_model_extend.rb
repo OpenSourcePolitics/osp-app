@@ -10,10 +10,6 @@ module UserModelExtend
       false
     end
 
-    def computed_full_address(address)
-      "#{address["number_and_street"]}, #{address["postal_code"]} #{address["city"]}, #{address["country"]}"
-    end
-
     def signataire?
       email.blank? && name == "Anonyme" && identities.collect(&:provider).include?("france_connect_uid")
     end

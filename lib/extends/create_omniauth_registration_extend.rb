@@ -72,9 +72,6 @@ module CreateOmniauthRegistrationExtend
           @user.password = generated_password
           @user.password_confirmation = generated_password
 
-          @user.address = form.address
-          @user.full_address = @user.computed_full_address(@user.address)
-          @user.custom_agreement_at = DateTime.now if form.custom_agreement
 
           # TODO: raise ActiveRecord::RecordInvalid because of quality setting on uploader, this line is a quick fix
           @user.remote_avatar_url = form.avatar_url if form.avatar_url.present? && !form.avatar_url.end_with?('svg')

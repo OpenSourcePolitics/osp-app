@@ -63,32 +63,6 @@
             <%= f.hidden_field :email_on_notification, value: @account.email_on_notification %>
           <% end %>
 
-          <%= f.text_field :full_address, value: current_user.try(:full_address) || "", readonly: true %>
-
-          <blockquote id="addressChange">
-            <div class="field">
-              <%= f.text_field :number_and_street %>
-            </div>
-
-            <div class="field">
-              <%= f.text_field :address_complement %>
-            </div>
-
-            <div class="field">
-              <%= f.text_field :postal_code %>
-            </div>
-
-            <div class="field">
-              <%= f.text_field :city %>
-            </div>
-
-            <div class="field">
-              <%= f.text_field :country %>
-            </div>
-          </blockquote>
-
-          <%= f.check_box :custom_agreement, label: t(".custom_agreement") %>
-
           <div class="actions">
             <%= f.submit t(".update_account"), class: "button expanded", disable_with: true %>
           </div>
