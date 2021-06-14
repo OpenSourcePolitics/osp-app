@@ -11,6 +11,7 @@ module DestroyAccountExtend
 
       Decidim::User.transaction do
         notify_admins
+        manage_user_initiatives
         destroy_user_account!
         destroy_user_authorizations
         destroy_user_identities
@@ -26,6 +27,12 @@ module DestroyAccountExtend
     def notify_admins
       organization_admins.each do |admin|
         Decidim::DestroyAccountMailer.notify(admin).deliver_later
+      end
+    end
+
+    def manage_user_initiatives
+      Decidim::Initiative.where(author: @user).each do |initiative|
+        initiative.update_columns(state: 'discarded')
       end
     end
 
