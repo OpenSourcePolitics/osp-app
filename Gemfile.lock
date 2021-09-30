@@ -358,6 +358,11 @@ GEM
     db-query-matchers (0.9.0)
       activesupport (>= 4.0, <= 6.0)
       rspec (~> 3.0)
+    decidim-decidim_awesome (0.7.0)
+      decidim-admin (>= 0.23.0, < 0.25)
+      decidim-core (>= 0.23.0, < 0.25)
+      redcarpet (~> 3.4)
+      sassc (~> 2.3)
     declarative-builder (0.1.0)
       declarative-option (< 0.2.0)
     declarative-option (0.1.0)
@@ -908,6 +913,7 @@ DEPENDENCIES
   dalli
   decidim!
   decidim-cookies!
+  decidim-decidim_awesome (~> 0.7.0)
   decidim-dev!
   decidim-term_customizer!
   dotenv-rails
