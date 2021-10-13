@@ -1334,10 +1334,10 @@ ActiveRecord::Schema.define(version: 2021_09_30_085995) do
     t.jsonb "execution_period"
     t.datetime "state_published_at"
     t.integer "endorsements_count", default: 0, null: false
-    t.jsonb "title"
-    t.jsonb "body"
     t.integer "comments_count", default: 0, null: false
     t.integer "follows_count", default: 0, null: false
+    t.jsonb "title"
+    t.jsonb "body"
     t.index "md5((body)::text)", name: "decidim_proposals_proposal_body_search"
     t.index "md5((title)::text)", name: "decidim_proposals_proposal_title_search"
     t.index ["created_at"], name: "index_decidim_proposals_proposals_on_created_at"
