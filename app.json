@@ -15,10 +15,10 @@
   },
   "env": {
     "AWS_ACCESS_KEY_ID": {
-      "required": true
+      "required": false
     },
     "AWS_SECRET_ACCESS_KEY": {
-      "required": true
+      "required": false
     },
     "CENSUS_PASSWORD": {
       "description": "Password for a custom CensusAuthenticationHandler, if needed",
@@ -46,5 +46,6 @@
       "description": "A secret used by Rails to identify sessions",
       "generator": "secret"
     }
-  }
+  },
+  "stack": "heroku-20"
 }

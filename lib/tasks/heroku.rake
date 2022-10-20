@@ -24,7 +24,7 @@ namespace :heroku do
 
     skip_first_login_authorization = ENV['SKIP_FIRST_LOGIN_AUTHORIZATION'].nil? ? true : ENV['SKIP_FIRST_LOGIN_AUTHORIZATION']
 
-    if system("heroku create #{app_name} --region eu")
+    if system("heroku create #{app_name} --region us")
       system("heroku addons:create newrelic:wayne -a #{app_name}")
       system("heroku addons:create heroku-redis:hobby-dev -a #{app_name}")
       system("heroku addons:create memcachedcloud:30 -a #{app_name}")
